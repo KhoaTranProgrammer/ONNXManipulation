@@ -30,6 +30,19 @@ default_input = \
     "Asinh": np.random.rand(3, 4, 5).astype(np.float32),
     "Atan": np.random.rand(3, 4, 5).astype(np.float32),
     "Atanh": np.random.rand(3, 4, 5).astype(np.float32),
+    "BitwiseAnd": {
+        "Input1": np.random.randint(1, high = 9, size=(3, 4, 5)),
+        "Input2": np.random.randint(1, high = 9, size=(3, 4, 5))
+    },
+    "BitwiseNot": np.random.randint(1, high = 9, size=(3, 4, 5), dtype=np.uint16),
+    "BitwiseOr": {
+        "Input1": np.random.randint(1, high = 9, size=(3, 4, 5)),
+        "Input2": np.random.randint(1, high = 9, size=(3, 4, 5))
+    },
+    "BitwiseXor": {
+        "Input1": np.random.randint(1, high = 9, size=(3, 4, 5)),
+        "Input2": np.random.randint(1, high = 9, size=(3, 4, 5))
+    },
 }
 
 def ONMARandomInput(dimensions, datatype=onnx.TensorProto.FLOAT):

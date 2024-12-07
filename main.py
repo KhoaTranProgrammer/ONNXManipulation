@@ -22,5 +22,11 @@ def main():
     if args.operator == "And":
         ONMAOperators.ONMAOperator_2_Inputs_1_Output(args.operator, 'newname', inputs=["X1", "X2"], outputs=["Y"], datatype=onnx.TensorProto.BOOL)
 
+    if args.operator == "BitwiseNot":
+        ONMAOperators.ONMAOperator_1_Input_1_Output(args.operator, 'newname', inputs=["X"], outputs=["Y"], datatype=onnx.TensorProto.UINT16)
+
+    if args.operator == "BitwiseAnd" or args.operator == "BitwiseOr" or args.operator == "BitwiseXor":
+        ONMAOperators.ONMAOperator_2_Inputs_1_Output(args.operator, 'newname', inputs=["X1", "X2"], outputs=["Y"], datatype=onnx.TensorProto.INT32)
+
 if main() == False:
     sys.exit(-1)
