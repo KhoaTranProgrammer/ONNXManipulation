@@ -16,8 +16,16 @@ default_input = \
     "Acos": np.array([[ 0.06329948, 0.0832994 ,  0.37930292],
                       [ 0.71035045, 0.6637981 ,  0.0044696 ]]).astype(np.float32),
     "Acosh": np.array([[ 10, np.e, 1]]).astype(np.float32),
-    "Add": np.array([[ 0.06329948, -1.0832994 ,  0.37930292],
+    "Add": {
+        "Input1": np.array([[ 0.06329948, -1.0832994 ,  0.37930292],
                      [ 0.71035045, -1.6637981 ,  1.0044696 ]]).astype(np.float32),
+        "Input2": np.array([[ 0.71035045, 0.0832994 ,  1.37930292],
+                     [ 0.71035045, -1.6637981 ,  1.0044696 ]]).astype(np.float32),
+    },
+    "And": {
+        "Input1": (np.random.randn(3, 4, 5) > 0).astype(bool),
+        "Input2": (np.random.randn(3, 4, 5) > 0).astype(bool)
+    }
 }
 
 def ONMARandomInput(dimensions, datatype=onnx.TensorProto.FLOAT):
@@ -62,11 +70,12 @@ def Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], o
 
     try:
         if input_data1 == None or input_data2 == None:
-            x = default_input[operator_name]
-            infer_input = {inputs[0]: x, inputs[1]: x}
-            input1 = onma_node.ONMACreateInput(inputs[0], datatype, x.shape)
-            input2 = onma_node.ONMACreateInput(inputs[1], datatype, x.shape)
-            output = onma_node.ONMACreateInput(outputs[0], datatype, x.shape)
+            x1 = default_input[operator_name]["Input1"]
+            x2 = default_input[operator_name]["Input2"]
+            infer_input = {inputs[0]: x1, inputs[1]: x2}
+            input1 = onma_node.ONMACreateInput(inputs[0], datatype, x1.shape)
+            input2 = onma_node.ONMACreateInput(inputs[1], datatype, x2.shape)
+            output = onma_node.ONMACreateInput(outputs[0], datatype, x1.shape)
     except:
         pass
 
