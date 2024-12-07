@@ -13,7 +13,7 @@ def main():
     parser.add_argument("--operator", "-op", help="Operator name", default="")
     args = parser.parse_args()
 
-    if args.operator == "Abs" or args.operator == "Acos" or args.operator == "Acosh":
+    if args.operator == "Abs" or args.operator == "Acos" or args.operator == "Acosh" or args.operator == "Asin" or args.operator == "Asinh" or args.operator == "Atan" or args.operator == "Atanh":
         ONMAOperators.ONMAOperator_1_Input_1_Output(args.operator, 'newname', inputs=["X"], outputs=["Y"])
 
     if args.operator == "Add":

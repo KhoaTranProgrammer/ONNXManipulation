@@ -25,7 +25,11 @@ default_input = \
     "And": {
         "Input1": (np.random.randn(3, 4, 5) > 0).astype(bool),
         "Input2": (np.random.randn(3, 4, 5) > 0).astype(bool)
-    }
+    },
+    "Asin": np.random.rand(3, 4, 5).astype(np.float32),
+    "Asinh": np.random.rand(3, 4, 5).astype(np.float32),
+    "Atan": np.random.rand(3, 4, 5).astype(np.float32),
+    "Atanh": np.random.rand(3, 4, 5).astype(np.float32),
 }
 
 def ONMARandomInput(dimensions, datatype=onnx.TensorProto.FLOAT):
