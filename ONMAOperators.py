@@ -47,6 +47,7 @@ default_input = \
         "Input1": np.random.randint(1, high = 9, size=(3, 4, 5)),
         "Input2": np.random.randint(1, high = 9, size=(3, 4, 5))
     },
+    "Ceil": np.array([-1.5, 1.2]).astype(np.float32)
 }
 
 def ONMARandomInput(dimensions, datatype=onnx.TensorProto.FLOAT):

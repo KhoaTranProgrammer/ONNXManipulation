@@ -31,7 +31,7 @@ operator_list = \
     "BlackmanWindow": { },
     "Cast": { },
     "CastLike": { },
-    "Ceil": { },
+    "Ceil": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "Ceil_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT},
     "Celu": { },
     "CenterCropPad": { },
     "Clip": { },
