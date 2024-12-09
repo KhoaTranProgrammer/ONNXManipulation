@@ -23,7 +23,7 @@ operator_list = \
     "AveragePool": { },
     "BatchNormalization": { },
     "Bernoulli": { },
-    "BitShift": { },
+    "BitShift": {"function": "ONMAOperator_2_Inputs_1_Output", "graph_name": "BitShift_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.UINT8, "direction": "LEFT"},
     "BitwiseAnd": {"function": "ONMAOperator_2_Inputs_1_Output", "graph_name": "BitwiseAnd_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.INT32},
     "BitwiseNot": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "BitwiseNot_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.UINT16},
     "BitwiseOr": {"function": "ONMAOperator_2_Inputs_1_Output", "graph_name": "BitwiseOr_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.INT32},
@@ -212,7 +212,11 @@ def main():
 
     function_name = operator_list[args.operator]["function"]
     operator_processing = getattr(ONMAOperators, function_name)
-    operator_processing(args.operator, operator_list[args.operator]["graph_name"], inputs=operator_list[args.operator]["inputs"], outputs=operator_list[args.operator]["outputs"], datatype=operator_list[args.operator]["datatype"])
+
+    if "direction" in operator_list[args.operator]:
+        operator_processing(args.operator, operator_list[args.operator]["graph_name"], inputs=operator_list[args.operator]["inputs"], outputs=operator_list[args.operator]["outputs"], datatype=operator_list[args.operator]["datatype"], direction=operator_list[args.operator]["direction"])
+    else:
+        operator_processing(args.operator, operator_list[args.operator]["graph_name"], inputs=operator_list[args.operator]["inputs"], outputs=operator_list[args.operator]["outputs"], datatype=operator_list[args.operator]["datatype"])
 
 if main() == False:
     sys.exit(-1)

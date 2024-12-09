@@ -30,6 +30,10 @@ default_input = \
     "Asinh": np.random.rand(3, 4, 5).astype(np.float32),
     "Atan": np.random.rand(3, 4, 5).astype(np.float32),
     "Atanh": np.random.rand(3, 4, 5).astype(np.float32),
+    "BitShift": {
+        "Input1": np.array([16, 4, 1]).astype(np.uint8),
+        "Input2": np.array([1, 2, 3]).astype(np.uint8)
+    },
     "BitwiseAnd": {
         "Input1": np.random.randint(1, high = 9, size=(3, 4, 5)),
         "Input2": np.random.randint(1, high = 9, size=(3, 4, 5))
@@ -81,9 +85,9 @@ def Operator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=[
 
     onma_model.ONMAInference(infer_input)
 
-def Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], datatype=onnx.TensorProto.FLOAT, input_data1=None, input_data2=None):
+def Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], datatype=onnx.TensorProto.FLOAT, input_data1=None, input_data2=None, direction=None):
     onma_node = ONMANode()
-    onma_node.ONMAMakeNode(operator_name, inputs, outputs)
+    onma_node.ONMAMakeNode(operator_name, inputs, outputs, direction)
 
     try:
         if input_data1 == None or input_data2 == None:
@@ -117,5 +121,5 @@ class ONMAOperators:
     def ONMAOperator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=["Y"], datatype=onnx.TensorProto.FLOAT, input_data=None):
         Operator_1_Input_1_Output(operator_name, graph_name, inputs, outputs, datatype, input_data)
 
-    def ONMAOperator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], datatype=onnx.TensorProto.FLOAT, input_data1=None, input_data2=None):
-        Operator_2_Inputs_1_Output(operator_name, graph_name, inputs, outputs, datatype, input_data1, input_data2)
+    def ONMAOperator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], datatype=onnx.TensorProto.FLOAT, input_data1=None, input_data2=None, direction=None):
+        Operator_2_Inputs_1_Output(operator_name, graph_name, inputs, outputs, datatype, input_data1, input_data2, direction)

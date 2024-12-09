@@ -10,17 +10,23 @@ class ONMANode:
     def __init__(self):
         self._node = None
 
-    def ONMAMakeNode(self, name, inputs, outputs):
-        self._node = onnx.helper.make_node(
-            name,
-            inputs=inputs,
-            outputs=outputs,
-        )
+    def ONMAMakeNode(self, name, inputs, outputs, direction=None):
+        if direction == None:
+            self._node = onnx.helper.make_node(
+                name,
+                inputs=inputs,
+                outputs=outputs
+            )
+        else:
+            self._node = onnx.helper.make_node(
+                name,
+                inputs=inputs,
+                outputs=outputs,
+                direction=direction
+            )
     
     def ONMAGetNode(self):
         return self._node
     
     def ONMACreateInput(self, name, type, dimension):
         return make_tensor_value_info(name, type, dimension)
-
-    # def MakeTensorValue(self, )
