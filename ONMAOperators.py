@@ -47,7 +47,27 @@ default_input = \
         "Input1": np.random.randint(1, high = 9, size=(3, 4, 5)),
         "Input2": np.random.randint(1, high = 9, size=(3, 4, 5))
     },
-    "Ceil": np.array([-1.5, 1.2]).astype(np.float32)
+    "Ceil": np.array([-1.5, 1.2]).astype(np.float32),
+    "Celu": np.array(
+                [
+                    [
+                        [[0.8439683], [0.5665144], [0.05836735]],
+                        [[0.02916367], [0.12964272], [0.5060197]],
+                        [[0.79538304], [0.9411346], [0.9546573]],
+                    ],
+                    [
+                        [[0.17730942], [0.46192095], [0.26480448]],
+                        [[0.6746842], [0.01665257], [0.62473077]],
+                        [[0.9240844], [0.9722341], [0.11965699]],
+                    ],
+                    [
+                        [[0.41356155], [0.9129373], [0.59330076]],
+                        [[0.81929934], [0.7862604], [0.11799799]],
+                        [[0.69248444], [0.54119414], [0.07513223]],
+                    ],
+                ],
+                dtype=np.float32,
+            )
 }
 
 def ONMARandomInput(dimensions, datatype=onnx.TensorProto.FLOAT):
@@ -57,9 +77,9 @@ def ONMARandomInput(dimensions, datatype=onnx.TensorProto.FLOAT):
         return np.random.randn(*dimensions).astype(np.int32)
     return None
 
-def Operator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=["Y"], datatype=onnx.TensorProto.FLOAT, input_data=None):
+def Operator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=["Y"], datatype=onnx.TensorProto.FLOAT, input_data=None, alpha=None):
     onma_node = ONMANode()
-    onma_node.ONMAMakeNode(operator_name, inputs, outputs)
+    onma_node.ONMAMakeNode(operator_name, inputs=inputs, outputs=outputs, alpha=alpha)
 
     try:
         if input_data == None:
@@ -88,7 +108,7 @@ def Operator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=[
 
 def Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], datatype=onnx.TensorProto.FLOAT, input_data1=None, input_data2=None, direction=None):
     onma_node = ONMANode()
-    onma_node.ONMAMakeNode(operator_name, inputs, outputs, direction)
+    onma_node.ONMAMakeNode(operator_name, inputs=inputs, outputs=outputs, direction=direction)
 
     try:
         if input_data1 == None or input_data2 == None:
@@ -119,8 +139,8 @@ def Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], o
     onma_model.ONMAInference(infer_input)
 
 class ONMAOperators:
-    def ONMAOperator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=["Y"], datatype=onnx.TensorProto.FLOAT, input_data=None):
-        Operator_1_Input_1_Output(operator_name, graph_name, inputs, outputs, datatype, input_data)
+    def ONMAOperator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=["Y"], datatype=onnx.TensorProto.FLOAT, input_data=None, alpha=None):
+        Operator_1_Input_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, datatype=datatype, input_data=input_data, alpha=alpha)
 
     def ONMAOperator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], datatype=onnx.TensorProto.FLOAT, input_data1=None, input_data2=None, direction=None):
-        Operator_2_Inputs_1_Output(operator_name, graph_name, inputs, outputs, datatype, input_data1, input_data2, direction)
+        Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, datatype=datatype, input_data1=input_data1, input_data2=input_data2, direction=direction)

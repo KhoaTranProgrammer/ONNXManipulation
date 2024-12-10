@@ -32,7 +32,7 @@ operator_list = \
     "Cast": { },
     "CastLike": { },
     "Ceil": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "Ceil_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT},
-    "Celu": { },
+    "Celu": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "Celu_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT, "alpha": 2.0},
     "CenterCropPad": { },
     "Clip": { },
     "Col2Im": { },
@@ -215,6 +215,8 @@ def main():
 
     if "direction" in operator_list[args.operator]:
         operator_processing(args.operator, operator_list[args.operator]["graph_name"], inputs=operator_list[args.operator]["inputs"], outputs=operator_list[args.operator]["outputs"], datatype=operator_list[args.operator]["datatype"], direction=operator_list[args.operator]["direction"])
+    elif "alpha" in operator_list[args.operator]:
+        operator_processing(args.operator, operator_list[args.operator]["graph_name"], inputs=operator_list[args.operator]["inputs"], outputs=operator_list[args.operator]["outputs"], datatype=operator_list[args.operator]["datatype"], alpha=operator_list[args.operator]["alpha"])
     else:
         operator_processing(args.operator, operator_list[args.operator]["graph_name"], inputs=operator_list[args.operator]["inputs"], outputs=operator_list[args.operator]["outputs"], datatype=operator_list[args.operator]["datatype"])
 
