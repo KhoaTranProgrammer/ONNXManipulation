@@ -33,7 +33,7 @@ operator_list = \
     "CastLike": { },
     "Ceil": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "Ceil_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT},
     "Celu": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "Celu_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT, "alpha": 2.0},
-    "CenterCropPad": { },
+    "CenterCropPad": {"function": "ONMAOperator_2_Inputs_2_Datatype_1_Output", "graph_name": "CenterCropPad_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype1": onnx.TensorProto.FLOAT, "datatype2": onnx.TensorProto.INT64, "axes": [-3, -2]},
     "Clip": { },
     "Col2Im": { },
     "Compress": { },
@@ -217,6 +217,9 @@ def main():
         operator_processing(args.operator, operator_list[args.operator]["graph_name"], inputs=operator_list[args.operator]["inputs"], outputs=operator_list[args.operator]["outputs"], datatype=operator_list[args.operator]["datatype"], direction=operator_list[args.operator]["direction"])
     elif "alpha" in operator_list[args.operator]:
         operator_processing(args.operator, operator_list[args.operator]["graph_name"], inputs=operator_list[args.operator]["inputs"], outputs=operator_list[args.operator]["outputs"], datatype=operator_list[args.operator]["datatype"], alpha=operator_list[args.operator]["alpha"])
+    elif "datatype1" in operator_list[args.operator] and "datatype2" in operator_list[args.operator]:
+        if "axes" in operator_list[args.operator]:
+            operator_processing(args.operator, operator_list[args.operator]["graph_name"], inputs=operator_list[args.operator]["inputs"], outputs=operator_list[args.operator]["outputs"], datatype1=operator_list[args.operator]["datatype1"], datatype2=operator_list[args.operator]["datatype2"], axes=operator_list[args.operator]["axes"])    
     else:
         operator_processing(args.operator, operator_list[args.operator]["graph_name"], inputs=operator_list[args.operator]["inputs"], outputs=operator_list[args.operator]["outputs"], datatype=operator_list[args.operator]["datatype"])
 

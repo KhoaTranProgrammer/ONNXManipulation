@@ -10,9 +10,8 @@ class ONMANode:
     def __init__(self):
         self._node = None
 
-    def ONMAMakeNode(self, name, inputs, outputs, direction=None, alpha=None):
+    def ONMAMakeNode(self, name, inputs, outputs, direction=None, alpha=None, axes=None):
         if direction != None:
-            print("Hello")
             self._node = onnx.helper.make_node(
                 name,
                 inputs=inputs,
@@ -25,6 +24,13 @@ class ONMANode:
                 inputs=inputs,
                 outputs=outputs,
                 alpha=alpha
+            )
+        elif axes != None:
+            self._node = onnx.helper.make_node(
+                name,
+                inputs=inputs,
+                outputs=outputs,
+                axes=axes
             )
         else:
             self._node = onnx.helper.make_node(
