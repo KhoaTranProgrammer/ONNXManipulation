@@ -11,33 +11,14 @@ class ONMANode:
         self._node = None
 
     def ONMAMakeNode(self, name, inputs, outputs, direction=None, alpha=None, axes=None):
-        if direction != None:
-            self._node = onnx.helper.make_node(
-                name,
-                inputs=inputs,
-                outputs=outputs,
-                direction=direction
-            )
-        elif alpha != None:
-            self._node = onnx.helper.make_node(
-                name,
-                inputs=inputs,
-                outputs=outputs,
-                alpha=alpha
-            )
-        elif axes != None:
-            self._node = onnx.helper.make_node(
-                name,
-                inputs=inputs,
-                outputs=outputs,
-                axes=axes
-            )
-        else:
-            self._node = onnx.helper.make_node(
-                name,
-                inputs=inputs,
-                outputs=outputs
-            )
+        self._node = onnx.helper.make_node(
+            name,
+            inputs=inputs,
+            outputs=outputs,
+            direction=direction,
+            alpha=alpha,
+            axes=axes
+        )
 
     def ONMAGetNode(self):
         return self._node

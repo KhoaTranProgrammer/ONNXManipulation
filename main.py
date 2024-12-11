@@ -8,32 +8,32 @@ global args
 
 operator_list = \
 {
-    "Abs": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "Abs_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT},
-    "Acos": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "Acos_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT},
-    "Acosh": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "Acosh_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT},
-    "Add": {"function": "ONMAOperator_2_Inputs_1_Output", "graph_name": "Add_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT},
+    "Abs": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Abs_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT}},
+    "Acos": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Acos_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT}},
+    "Acosh": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Acosh_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT}},
+    "Add": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "Add_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT}},
     "AffineGrid": { },
-    "And": {"function": "ONMAOperator_2_Inputs_1_Output", "graph_name": "And_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.BOOL},
+    "And": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "And_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.BOOL}},
     "ArgMax": { },
     "ArgMin": { },
-    "Asin": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "Asin_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT},
-    "Asinh": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "Asinh_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT},
-    "Atan": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "Atan_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT},
-    "Atanh": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "Atanh_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT},
+    "Asin": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Asin_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT}},
+    "Asinh": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Asinh_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT}},
+    "Atan": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Atan_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT}},
+    "Atanh": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Atanh_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT}},
     "AveragePool": { },
     "BatchNormalization": { },
     "Bernoulli": { },
-    "BitShift": {"function": "ONMAOperator_2_Inputs_1_Output", "graph_name": "BitShift_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.UINT8, "direction": "LEFT"},
-    "BitwiseAnd": {"function": "ONMAOperator_2_Inputs_1_Output", "graph_name": "BitwiseAnd_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.INT32},
-    "BitwiseNot": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "BitwiseNot_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.UINT16},
-    "BitwiseOr": {"function": "ONMAOperator_2_Inputs_1_Output", "graph_name": "BitwiseOr_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.INT32},
-    "BitwiseXor": {"function": "ONMAOperator_2_Inputs_1_Output", "graph_name": "BitwiseXor_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.INT32},
+    "BitShift": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "BitShift_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.UINT8, "direction": "LEFT"}},
+    "BitwiseAnd": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "BitwiseAnd_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.INT32}},
+    "BitwiseNot": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "BitwiseNot_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.UINT16}},
+    "BitwiseOr": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "BitwiseOr_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.INT32}},
+    "BitwiseXor": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "BitwiseXor_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype": onnx.TensorProto.INT32}},
     "BlackmanWindow": { },
     "Cast": { },
     "CastLike": { },
-    "Ceil": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "Ceil_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT},
-    "Celu": {"function": "ONMAOperator_1_Input_1_Output", "graph_name": "Celu_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT, "alpha": 2.0},
-    "CenterCropPad": {"function": "ONMAOperator_2_Inputs_2_Datatype_1_Output", "graph_name": "CenterCropPad_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype1": onnx.TensorProto.FLOAT, "datatype2": onnx.TensorProto.INT64, "axes": [-3, -2]},
+    "Ceil": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Ceil_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT}},
+    "Celu": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Celu_sample", "inputs": ["X"], "outputs": ["Y"], "datatype": onnx.TensorProto.FLOAT, "alpha": 2.0}},
+    "CenterCropPad": {"function": "ONMAOperator_2_Inputs_2_Datatype_1_Output", "arguments": { "graph_name": "CenterCropPad_sample", "inputs": ["X1", "X2"], "outputs": ["Y"], "datatype1": onnx.TensorProto.FLOAT, "datatype2": onnx.TensorProto.INT64, "axes": [-3, -2]}},
     "Clip": { },
     "Col2Im": { },
     "Compress": { },
@@ -212,16 +212,7 @@ def main():
 
     function_name = operator_list[args.operator]["function"]
     operator_processing = getattr(ONMAOperators, function_name)
-
-    if "direction" in operator_list[args.operator]:
-        operator_processing(args.operator, operator_list[args.operator]["graph_name"], inputs=operator_list[args.operator]["inputs"], outputs=operator_list[args.operator]["outputs"], datatype=operator_list[args.operator]["datatype"], direction=operator_list[args.operator]["direction"])
-    elif "alpha" in operator_list[args.operator]:
-        operator_processing(args.operator, operator_list[args.operator]["graph_name"], inputs=operator_list[args.operator]["inputs"], outputs=operator_list[args.operator]["outputs"], datatype=operator_list[args.operator]["datatype"], alpha=operator_list[args.operator]["alpha"])
-    elif "datatype1" in operator_list[args.operator] and "datatype2" in operator_list[args.operator]:
-        if "axes" in operator_list[args.operator]:
-            operator_processing(args.operator, operator_list[args.operator]["graph_name"], inputs=operator_list[args.operator]["inputs"], outputs=operator_list[args.operator]["outputs"], datatype1=operator_list[args.operator]["datatype1"], datatype2=operator_list[args.operator]["datatype2"], axes=operator_list[args.operator]["axes"])    
-    else:
-        operator_processing(args.operator, operator_list[args.operator]["graph_name"], inputs=operator_list[args.operator]["inputs"], outputs=operator_list[args.operator]["outputs"], datatype=operator_list[args.operator]["datatype"])
+    operator_processing(args.operator, **operator_list[args.operator]["arguments"])
 
 if main() == False:
     sys.exit(-1)
