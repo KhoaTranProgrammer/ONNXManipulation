@@ -76,6 +76,20 @@ default_input = \
         "Input1": np.array([-2, 0, 2]).astype(np.float32),
         "Input2": np.array([-1]).astype(np.float32),
         "Input3": np.array([1]).astype(np.float32)
+    },
+    "Col2Im": {
+        "Input1": np.array(
+                    [
+                        [
+                            [1.0, 6.0, 11.0, 16.0, 21.0],  # (1, 5, 5)
+                            [2.0, 7.0, 12.0, 17.0, 22.0],
+                            [3.0, 8.0, 13.0, 18.0, 23.0],
+                            [4.0, 9.0, 14.0, 19.0, 24.0],
+                            [5.0, 0.0, 15.0, 20.0, 25.0],
+                        ]
+                    ]).astype(np.float32),
+        "Input2": np.array([5, 5]).astype(np.int64),
+        "Input3": np.array([1, 5]).astype(np.int64)
     }
 }
 
