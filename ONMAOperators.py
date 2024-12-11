@@ -71,6 +71,11 @@ default_input = \
     "CenterCropPad": {
         "Input1": np.random.randn(20, 8, 3).astype(np.float32),
         "Input2": np.array([10, 9], dtype=np.int64)
+    },
+    "Clip": {
+        "Input1": np.array([-2, 0, 2]).astype(np.float32),
+        "Input2": np.array([-1]).astype(np.float32),
+        "Input3": np.array([1]).astype(np.float32)
     }
 }
 
@@ -159,9 +164,47 @@ def Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], o
 
     onma_model.ONMAInference(infer_input)
 
+def Operator_3_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2", "X3"], outputs=["Y"], input_data1=None, input_data2=None, input_data3=None):
+    onma_node = ONMANode()
+    onma_node.ONMAMakeNode(operator_name, inputs=inputs, outputs=outputs)
+
+    try:
+        if input_data1 == None or input_data2 == None or input_data3 == None:
+            x1 = default_input[operator_name]["Input1"]
+            x2 = default_input[operator_name]["Input2"]
+            x3 = default_input[operator_name]["Input3"]
+            infer_input = {inputs[0]: x1, inputs[1]: x2, inputs[2]: x3}
+            input1 = onma_node.ONMACreateInput(inputs[0], GetTensorDataTypeFromnp(x1.dtype), x1.shape)
+            input2 = onma_node.ONMACreateInput(inputs[1], GetTensorDataTypeFromnp(x2.dtype), x2.shape)
+            input3 = onma_node.ONMACreateInput(inputs[2], GetTensorDataTypeFromnp(x3.dtype), x3.shape)
+            output = onma_node.ONMACreateInput(outputs[0], GetTensorDataTypeFromnp(x1.dtype), x1.shape)
+    except:
+        pass
+
+    try:
+        if input_data1.all() and input_data2.all() and input_data3.all():
+            infer_input = {inputs[0]: input_data1, inputs[1]: input_data2, inputs[2]: input_data3}
+            input1 = onma_node.ONMACreateInput(inputs[0], GetTensorDataTypeFromnp(input_data1.dtype), input_data1.shape)
+            input2 = onma_node.ONMACreateInput(inputs[1], GetTensorDataTypeFromnp(input_data2.dtype), input_data2.shape)
+            input3 = onma_node.ONMACreateInput(inputs[2], GetTensorDataTypeFromnp(input_data3.dtype), input_data3.shape)
+            output = onma_node.ONMACreateInput(outputs[0], GetTensorDataTypeFromnp(input_data1.dtype), input_data1.shape)
+    except:
+        pass
+
+    onma_graph = ONMAGraph()
+    onma_graph.ONMAMakeGraph(graph_name, [onma_node.ONMAGetNode()], [input1, input2, input3], [output])
+
+    onma_model = ONMAModel()
+    onma_model.ONMAMakeModel(onma_graph)
+
+    onma_model.ONMAInference(infer_input)
+
 class ONMAOperators:
     def ONMAOperator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=["Y"], input_data=None, alpha=None):
         Operator_1_Input_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data=input_data, alpha=alpha)
 
     def ONMAOperator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], input_data1=None, input_data2=None, direction=None, axes=None):
         Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data1=input_data1, input_data2=input_data2, direction=direction, axes=axes)
+
+    def ONMAOperator_3_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2", "X3"], outputs=["Y"], input_data1=None, input_data2=None, input_data3=None):
+        Operator_3_Inputs_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data1=input_data1, input_data2=input_data2, input_data3=input_data3)

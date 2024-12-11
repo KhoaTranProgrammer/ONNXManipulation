@@ -34,7 +34,7 @@ operator_list = \
     "Ceil": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Ceil_sample"}},
     "Celu": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Celu_sample", "alpha": 2.0}},
     "CenterCropPad": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "CenterCropPad_sample", "axes": [-3, -2]}},
-    "Clip": { },
+    "Clip": {"function": "ONMAOperator_3_Inputs_1_Output", "arguments": { "graph_name": "Clip_sample"}},
     "Col2Im": { },
     "Compress": { },
     "Concat": { },
