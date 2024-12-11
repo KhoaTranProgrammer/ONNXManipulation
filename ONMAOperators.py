@@ -75,12 +75,20 @@ default_input = \
 }
 
 def GetTensorDataTypeFromnp(npdtype):
-    print(f'Np datatyoe: {npdtype}')
+    print(f'Np datatype: {npdtype}')
     datatype = onnx.TensorProto.FLOAT
     if npdtype == "float32":
         datatype = onnx.TensorProto.FLOAT
+    elif npdtype == "int64":
+        datatype = onnx.TensorProto.INT64
     elif npdtype == "uint16":
         datatype = onnx.TensorProto.UINT16
+    elif npdtype == "bool":
+        datatype = onnx.TensorProto.BOOL
+    elif npdtype == "uint8":
+        datatype = onnx.TensorProto.UINT8
+    elif npdtype == "int32":
+        datatype = onnx.TensorProto.INT32
     return datatype
 
 def ONMARandomInput(dimensions, datatype=onnx.TensorProto.FLOAT):
@@ -119,59 +127,27 @@ def Operator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=[
 
     onma_model.ONMAInference(infer_input)
 
-def Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], datatype=onnx.TensorProto.FLOAT, input_data1=None, input_data2=None, direction=None):
+def Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], input_data1=None, input_data2=None, direction=None, axes=None):
     onma_node = ONMANode()
-    onma_node.ONMAMakeNode(operator_name, inputs=inputs, outputs=outputs, direction=direction)
+    onma_node.ONMAMakeNode(operator_name, inputs=inputs, outputs=outputs, direction=direction, axes=axes)
 
     try:
         if input_data1 == None or input_data2 == None:
             x1 = default_input[operator_name]["Input1"]
             x2 = default_input[operator_name]["Input2"]
             infer_input = {inputs[0]: x1, inputs[1]: x2}
-            input1 = onma_node.ONMACreateInput(inputs[0], datatype, x1.shape)
-            input2 = onma_node.ONMACreateInput(inputs[1], datatype, x2.shape)
-            output = onma_node.ONMACreateInput(outputs[0], datatype, x1.shape)
+            input1 = onma_node.ONMACreateInput(inputs[0], GetTensorDataTypeFromnp(x1.dtype), x1.shape)
+            input2 = onma_node.ONMACreateInput(inputs[1], GetTensorDataTypeFromnp(x2.dtype), x2.shape)
+            output = onma_node.ONMACreateInput(outputs[0], GetTensorDataTypeFromnp(x1.dtype), x1.shape)
     except:
         pass
 
     try:
         if input_data1.all() and input_data2.all():
             infer_input = {inputs[0]: input_data1, inputs[1]: input_data2}
-            input1 = onma_node.ONMACreateInput(inputs[0], datatype, input_data1.shape)
-            input2 = onma_node.ONMACreateInput(inputs[1], datatype, input_data2.shape)
-            output = onma_node.ONMACreateInput(outputs[0], datatype, input_data1.shape)
-    except:
-        pass
-
-    onma_graph = ONMAGraph()
-    onma_graph.ONMAMakeGraph(graph_name, [onma_node.ONMAGetNode()], [input1, input2], [output])
-
-    onma_model = ONMAModel()
-    onma_model.ONMAMakeModel(onma_graph)
-
-    onma_model.ONMAInference(infer_input)
-
-def Operator_2_Inputs_2_Datatype_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], datatype1=onnx.TensorProto.FLOAT, datatype2=onnx.TensorProto.FLOAT, input_data1=None, input_data2=None, axes=None):
-    onma_node = ONMANode()
-    onma_node.ONMAMakeNode(operator_name, inputs=inputs, outputs=outputs, axes=axes)
-
-    try:
-        if input_data1 == None or input_data2 == None:
-            x1 = default_input[operator_name]["Input1"]
-            x2 = default_input[operator_name]["Input2"]
-            infer_input = {inputs[0]: x1, inputs[1]: x2}
-            input1 = onma_node.ONMACreateInput(inputs[0], datatype1, x1.shape)
-            input2 = onma_node.ONMACreateInput(inputs[1], datatype2, x2.shape)
-            output = onma_node.ONMACreateInput(outputs[0], datatype1, x1.shape)
-    except:
-        pass
-
-    try:
-        if input_data1.all() and input_data2.all():
-            infer_input = {inputs[0]: input_data1, inputs[1]: input_data2}
-            input1 = onma_node.ONMACreateInput(inputs[0], datatype1, input_data1.shape)
-            input2 = onma_node.ONMACreateInput(inputs[1], datatype2, input_data2.shape)
-            output = onma_node.ONMACreateInput(outputs[0], datatype1, input_data1.shape)
+            input1 = onma_node.ONMACreateInput(inputs[0], GetTensorDataTypeFromnp(input_data1.dtype), input_data1.shape)
+            input2 = onma_node.ONMACreateInput(inputs[1], GetTensorDataTypeFromnp(input_data2.dtype), input_data2.shape)
+            output = onma_node.ONMACreateInput(outputs[0], GetTensorDataTypeFromnp(input_data1.dtype), input_data1.shape)
     except:
         pass
 
@@ -187,8 +163,5 @@ class ONMAOperators:
     def ONMAOperator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=["Y"], input_data=None, alpha=None):
         Operator_1_Input_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data=input_data, alpha=alpha)
 
-    def ONMAOperator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], datatype=onnx.TensorProto.FLOAT, input_data1=None, input_data2=None, direction=None):
-        Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, datatype=datatype, input_data1=input_data1, input_data2=input_data2, direction=direction)
-
-    def ONMAOperator_2_Inputs_2_Datatype_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], datatype1=onnx.TensorProto.FLOAT, datatype2=onnx.TensorProto.INT64, input_data1=None, input_data2=None, axes=None):
-        Operator_2_Inputs_2_Datatype_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], datatype1=datatype1, datatype2=datatype2, input_data1=input_data1, input_data2=input_data2, axes=axes)
+    def ONMAOperator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], input_data1=None, input_data2=None, direction=None, axes=None):
+        Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data1=input_data1, input_data2=input_data2, direction=direction, axes=axes)
