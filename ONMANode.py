@@ -10,14 +10,15 @@ class ONMANode:
     def __init__(self):
         self._node = None
 
-    def ONMAMakeNode(self, name, inputs, outputs, direction=None, alpha=None, axes=None):
+    def ONMAMakeNode(self, name, inputs, outputs, direction=None, alpha=None, axes=None,  axis=None):
         self._node = onnx.helper.make_node(
             name,
             inputs=inputs,
             outputs=outputs,
             direction=direction,
             alpha=alpha,
-            axes=axes
+            axes=axes,
+            axis=axis
         )
 
     def ONMAGetNode(self):
