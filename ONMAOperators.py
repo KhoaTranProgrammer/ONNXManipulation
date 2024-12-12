@@ -94,6 +94,10 @@ default_input = \
     "Compress": {
         "Input1": np.array([[1, 2], [3, 4], [5, 6]]).astype(np.float32),
         "Input2": np.array([0, 1, 1]).astype(bool)
+    },
+    "Concat": {
+        "Input1": np.array([[1, 2], [3, 4]]).astype(np.float32),
+        "Input2": np.array([[5, 6], [7, 8]]).astype(np.float32),
     }
 }
 

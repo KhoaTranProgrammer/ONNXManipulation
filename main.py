@@ -37,7 +37,7 @@ operator_list = \
     "Clip": {"function": "ONMAOperator_3_Inputs_1_Output", "arguments": { "graph_name": "Clip_sample"}},
     "Col2Im": {"function": "ONMAOperator_3_Inputs_1_Output", "arguments": { "graph_name": "Col2Im_sample"}},
     "Compress": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "Compress_sample", "axis": 0}},
-    "Concat": { },
+    "Concat": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "Compress_sample", "axis": 1}},
     "ConcatFromSequence": { },
     "Constant": { },
     "ConstantOfShape": { },
