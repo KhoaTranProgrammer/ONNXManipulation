@@ -39,7 +39,7 @@ operator_list = \
     "Compress": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "Compress_sample", "axis": 0}},
     "Concat": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "Compress_sample", "axis": 1}},
     "ConcatFromSequence": { },
-    "Constant": { },
+    "Constant": {"function": "ONMAOperator_None_Input_1_Output", "arguments": { "graph_name": "Constant_sample"}},
     "ConstantOfShape": { },
     "Conv": { },
     "ConvInteger": { },

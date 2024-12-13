@@ -98,7 +98,8 @@ default_input = \
     "Concat": {
         "Input1": np.array([[1, 2], [3, 4]]).astype(np.float32),
         "Input2": np.array([[5, 6], [7, 8]]).astype(np.float32),
-    }
+    },
+    "Constant": np.random.randn(5, 5).astype(np.float32)
 }
 
 def GetTensorDataTypeFromnp(npdtype):
@@ -124,6 +125,32 @@ def ONMARandomInput(dimensions, datatype=onnx.TensorProto.FLOAT):
     elif datatype == onnx.TensorProto.INT32:
         return np.random.randn(*dimensions).astype(np.int32)
     return None
+
+def Operator_None_Input_1_Output(operator_name, graph_name, outputs=["Y"], values=None):
+    onma_node = ONMANode()
+
+    try:
+        if values == None:
+            x = default_input[operator_name]
+            onma_node.ONMAMakeNode(operator_name, outputs, x)
+            output = onma_node.ONMACreateInput(outputs[0], GetTensorDataTypeFromnp(x.dtype), x.shape)
+    except:
+        pass
+
+    try:
+        if values.all():
+            onma_node.ONMAMakeNode(operator_name, outputs, values)
+            output = onma_node.ONMACreateInput(outputs[0], GetTensorDataTypeFromnp(values.dtype), values.shape)
+    except:
+        pass
+
+    onma_graph = ONMAGraph()
+    onma_graph.ONMAMakeGraph(graph_name, [onma_node.ONMAGetNode()], [], [output])
+
+    onma_model = ONMAModel()
+    onma_model.ONMAMakeModel(onma_graph)
+
+    onma_model.ONMAInference({})
 
 def Operator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=["Y"], input_data=None, alpha=None):
     onma_node = ONMANode()
@@ -222,6 +249,9 @@ def Operator_3_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2", "X
     onma_model.ONMAInference(infer_input)
 
 class ONMAOperators:
+    def ONMAOperator_None_Input_1_Output(operator_name, graph_name, outputs=["Y"], values=None):
+        Operator_None_Input_1_Output(operator_name, graph_name, outputs=outputs, values=values)
+    
     def ONMAOperator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=["Y"], input_data=None, alpha=None):
         Operator_1_Input_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data=input_data, alpha=alpha)
 

@@ -21,6 +21,19 @@ class ONMANode:
             axis=axis
         )
 
+    def ONMAMakeNode(self, name, outputs, values):
+        self._node = onnx.helper.make_node(
+            name,
+            inputs=[],
+            outputs=outputs,
+            value=onnx.helper.make_tensor(
+                name="const_tensor",
+                data_type=onnx.TensorProto.FLOAT,
+                dims=values.shape,
+                vals=values.flatten().astype(float),
+            )
+        )
+
     def ONMAGetNode(self):
         return self._node
     
