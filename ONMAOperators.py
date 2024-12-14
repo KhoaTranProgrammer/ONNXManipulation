@@ -129,6 +129,12 @@ default_input = \
     "Reshape": {
         "Input1": np.random.random_sample([2, 3, 4]).astype(np.float32),
         "Input2": np.array([4, 2, 3], dtype=np.int64)
+    },
+    "Cos": np.array([-1, 0, 1]).astype(np.float32),
+    "Cosh": np.array([-1, 0, 1]).astype(np.float32),
+    "CumSum": {
+        "Input1": np.array([1.0, 2.0, 3.0, 4.0, 5.0]).astype(np.float32),
+        "Input2": np.array([0]).astype(np.int32)
     }
 }
 
@@ -211,9 +217,9 @@ def Operator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=[
 
     onma_model.ONMAInference(infer_input)
 
-def Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], input_data1=None, input_data2=None, output_dimensions=None, output_datatype=None, direction=None, axes=None, axis=None, kernel_shape=None, pads=None, allowzero=None):
+def Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], input_data1=None, input_data2=None, output_dimensions=None, output_datatype=None, direction=None, axes=None, axis=None, kernel_shape=None, pads=None, allowzero=None, exclusive=None, reverse=None):
     onma_node = ONMANode()
-    onma_node.ONMAMakeNode(operator_name, inputs=inputs, outputs=outputs, direction=direction, axes=axes, axis=axis, kernel_shape=kernel_shape, pads=pads, allowzero=allowzero)
+    onma_node.ONMAMakeNode(operator_name, inputs=inputs, outputs=outputs, direction=direction, axes=axes, axis=axis, kernel_shape=kernel_shape, pads=pads, allowzero=allowzero, exclusive=exclusive, reverse=reverse)
 
     try:
         if input_data1 == None or input_data2 == None:
@@ -301,8 +307,8 @@ class ONMAOperators:
     def ONMAOperator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=["Y"], input_data=None, alpha=None):
         Operator_1_Input_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data=input_data, alpha=alpha)
 
-    def ONMAOperator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], input_data1=None, input_data2=None, direction=None, axes=None, axis=None, kernel_shape=None, pads=None, allowzero=None):
-        Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data1=input_data1, input_data2=input_data2, direction=direction, axes=axes, axis=axis, kernel_shape=kernel_shape, pads=pads, allowzero=allowzero)
+    def ONMAOperator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], input_data1=None, input_data2=None, direction=None, axes=None, axis=None, kernel_shape=None, pads=None, allowzero=None, exclusive=None, reverse=None):
+        Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data1=input_data1, input_data2=input_data2, direction=direction, axes=axes, axis=axis, kernel_shape=kernel_shape, pads=pads, allowzero=allowzero, exclusive=exclusive, reverse=reverse)
 
     def ONMAOperator_3_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2", "X3"], outputs=["Y"], input_data1=None, input_data2=None, input_data3=None):
         Operator_3_Inputs_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data1=input_data1, input_data2=input_data2, input_data3=input_data3)

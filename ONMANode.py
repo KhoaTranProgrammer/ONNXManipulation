@@ -10,7 +10,7 @@ class ONMANode:
     def __init__(self):
         self._node = None
 
-    def ONMAMakeNode(self, name, inputs, outputs, direction=None, alpha=None, axes=None, axis=None, values=None, kernel_shape=None, pads=None, allowzero=None):
+    def ONMAMakeNode(self, name, inputs, outputs, direction=None, alpha=None, axes=None, axis=None, values=None, kernel_shape=None, pads=None, allowzero=None, exclusive=None, reverse=None):
         try:
             if values == None:
                 self._node = onnx.helper.make_node(
@@ -23,7 +23,9 @@ class ONMANode:
                     axis=axis,
                     kernel_shape=kernel_shape,
                     pads=pads,
-                    allowzero=allowzero
+                    allowzero=allowzero,
+                    exclusive=exclusive,
+                    reverse=reverse
                 )
         except:
             pass
