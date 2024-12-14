@@ -148,7 +148,7 @@ operator_list = \
     "ReduceSumSquare": { },
     "RegexFullMatch": { },
     "Relu": { },
-    "Reshape": { },
+    "Reshape": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "Reshape_sample", "allowzero": 1}},
     "Resize": { },
     "ReverseSequence": { },
     "RoiAlign": { },
