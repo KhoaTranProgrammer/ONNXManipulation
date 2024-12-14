@@ -10,29 +10,36 @@ class ONMANode:
     def __init__(self):
         self._node = None
 
-    def ONMAMakeNode(self, name, inputs, outputs, direction=None, alpha=None, axes=None,  axis=None):
-        self._node = onnx.helper.make_node(
-            name,
-            inputs=inputs,
-            outputs=outputs,
-            direction=direction,
-            alpha=alpha,
-            axes=axes,
-            axis=axis
-        )
+    def ONMAMakeNode(self, name, inputs, outputs, direction=None, alpha=None, axes=None, axis=None, values=None):
+        try:
+            if values == None:
+                self._node = onnx.helper.make_node(
+                    name,
+                    inputs=inputs,
+                    outputs=outputs,
+                    direction=direction,
+                    alpha=alpha,
+                    axes=axes,
+                    axis=axis
+                )
+        except:
+            pass
 
-    def ONMAMakeNode(self, name, outputs, values):
-        self._node = onnx.helper.make_node(
-            name,
-            inputs=[],
-            outputs=outputs,
-            value=onnx.helper.make_tensor(
-                name="const_tensor",
-                data_type=onnx.TensorProto.FLOAT,
-                dims=values.shape,
-                vals=values.flatten().astype(float),
-            )
-        )
+        try:
+            if values.all():
+                self._node = onnx.helper.make_node(
+                    name,
+                    inputs=inputs,
+                    outputs=outputs,
+                    value=onnx.helper.make_tensor(
+                        name="const_tensor",
+                        data_type=onnx.TensorProto.FLOAT,
+                        dims=values.shape,
+                        vals=values.flatten().astype(float),
+                    )
+                )
+        except:
+            pass
 
     def ONMAGetNode(self):
         return self._node

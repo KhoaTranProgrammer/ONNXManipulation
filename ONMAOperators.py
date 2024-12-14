@@ -132,14 +132,14 @@ def Operator_None_Input_1_Output(operator_name, graph_name, outputs=["Y"], value
     try:
         if values == None:
             x = default_input[operator_name]
-            onma_node.ONMAMakeNode(operator_name, outputs, x)
+            onma_node.ONMAMakeNode(operator_name, inputs=[], outputs=outputs, values=x)
             output = onma_node.ONMACreateInput(outputs[0], GetTensorDataTypeFromnp(x.dtype), x.shape)
     except:
         pass
 
     try:
         if values.all():
-            onma_node.ONMAMakeNode(operator_name, outputs, values)
+            onma_node.ONMAMakeNode(operator_name, inputs=[], outputs=outputs, values=values)
             output = onma_node.ONMACreateInput(outputs[0], GetTensorDataTypeFromnp(values.dtype), values.shape)
     except:
         pass
