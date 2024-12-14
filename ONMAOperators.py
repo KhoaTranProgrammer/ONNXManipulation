@@ -99,7 +99,33 @@ default_input = \
         "Input1": np.array([[1, 2], [3, 4]]).astype(np.float32),
         "Input2": np.array([[5, 6], [7, 8]]).astype(np.float32),
     },
-    "Constant": np.random.randn(5, 5).astype(np.float32)
+    "Constant": np.random.randn(5, 5).astype(np.float32),
+    "Conv": {
+        "Input1": np.array(
+                        [
+                            [
+                                [
+                                    [0.0, 1.0, 2.0, 3.0, 4.0],  # (1, 1, 5, 5) input tensor
+                                    [5.0, 6.0, 7.0, 8.0, 9.0],
+                                    [10.0, 11.0, 12.0, 13.0, 14.0],
+                                    [15.0, 16.0, 17.0, 18.0, 19.0],
+                                    [20.0, 21.0, 22.0, 23.0, 24.0],
+                                ]
+                            ]
+                        ]
+                    ).astype(np.float32),
+        "Input2": np.array(
+                        [
+                            [
+                                [
+                                    [1.0, 1.0, 1.0],  # (1, 1, 3, 3) tensor for convolution weights
+                                    [1.0, 1.0, 1.0],
+                                    [1.0, 1.0, 1.0],
+                                ]
+                            ]
+                        ]
+                    ).astype(np.float32)
+    }
 }
 
 def GetTensorDataTypeFromnp(npdtype):
@@ -181,9 +207,9 @@ def Operator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=[
 
     onma_model.ONMAInference(infer_input)
 
-def Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], input_data1=None, input_data2=None, direction=None, axes=None, axis=None):
+def Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], input_data1=None, input_data2=None, direction=None, axes=None, axis=None, kernel_shape=None, pads=None):
     onma_node = ONMANode()
-    onma_node.ONMAMakeNode(operator_name, inputs=inputs, outputs=outputs, direction=direction, axes=axes, axis=axis)
+    onma_node.ONMAMakeNode(operator_name, inputs=inputs, outputs=outputs, direction=direction, axes=axes, axis=axis, kernel_shape=kernel_shape, pads=pads)
 
     try:
         if input_data1 == None or input_data2 == None:
@@ -255,8 +281,8 @@ class ONMAOperators:
     def ONMAOperator_1_Input_1_Output(operator_name, graph_name, inputs=["X"], outputs=["Y"], input_data=None, alpha=None):
         Operator_1_Input_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data=input_data, alpha=alpha)
 
-    def ONMAOperator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], input_data1=None, input_data2=None, direction=None, axes=None, axis=None):
-        Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data1=input_data1, input_data2=input_data2, direction=direction, axes=axes, axis=axis)
+    def ONMAOperator_2_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2"], outputs=["Y"], input_data1=None, input_data2=None, direction=None, axes=None, axis=None, kernel_shape=None, pads=None):
+        Operator_2_Inputs_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data1=input_data1, input_data2=input_data2, direction=direction, axes=axes, axis=axis, kernel_shape=kernel_shape, pads=pads)
 
     def ONMAOperator_3_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2", "X3"], outputs=["Y"], input_data1=None, input_data2=None, input_data3=None):
         Operator_3_Inputs_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data1=input_data1, input_data2=input_data2, input_data3=input_data3)

@@ -41,7 +41,7 @@ operator_list = \
     "ConcatFromSequence": { },
     "Constant": {"function": "ONMAOperator_None_Input_1_Output", "arguments": { "graph_name": "Constant_sample"}},
     "ConstantOfShape": { },
-    "Conv": { },
+    "Conv": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "Conv_sample", "kernel_shape": [3, 3], "pads": [1, 1, 1, 1]}},
     "ConvInteger": { },
     "ConvTranspose": { },
     "Cos": { },
