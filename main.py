@@ -454,7 +454,16 @@ default_input = \
         "axis": 1
     },
     "ConcatFromSequence": { },
-    "Constant": {"function": "ONMAOperator_None_Input_1_Output", "arguments": { "graph_name": "Constant_sample"}},
+    "Constant": {
+        "graph_name": "Constant_sample",
+        "inputs": {
+            
+        },
+        "outputs": {
+            "Y": np.empty(shape=(5, 5), dtype=np.float32)
+        },
+        "values": np.random.randn(5, 5).astype(np.float32)
+    },
     "ConstantOfShape": { },
     "Conv": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "Conv_sample", "kernel_shape": [3, 3], "pads": [1, 1, 1, 1]}},
     "ConvInteger": { },

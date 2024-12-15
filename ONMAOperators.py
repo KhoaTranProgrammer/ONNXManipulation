@@ -322,26 +322,38 @@ def CreateNetworkWithOperator(  \
         allowzero=None,         \
         exclusive=None,         \
         reverse=None,           \
-        alpha=None
+        alpha=None,             \
+        values=None
 ):
     # Get Input
     print(f'{list(inputs.keys())}')
 
     # Get Output
-    # print(f'{outputs.keys()}')
+    print(f'{list(outputs.values())}')
 
     # Create Node
     onma_node = ONMANode()
     onma_node.ONMAMakeNode(operator_name, inputs=list(inputs.keys()), outputs=list(outputs.keys()), direction=direction, axes=axes, axis=axis, \
-                           kernel_shape=kernel_shape, pads=pads, allowzero=allowzero, exclusive=exclusive, reverse=reverse, alpha=alpha)
+                           kernel_shape=kernel_shape, pads=pads, allowzero=allowzero, exclusive=exclusive, reverse=reverse, alpha=alpha, values=values)
 
     # Create graph input
     graph_input = []
     for i in range(0, len(list(inputs.keys()))):
         graph_input.append(onma_node.ONMACreateInput(list(inputs.keys())[i], GetTensorDataTypeFromnp((list(inputs.values())[i]).dtype), (list(inputs.values())[i]).shape))
 
+    # Create graph output
     graph_output = []
-    graph_output.append(onma_node.ONMACreateInput(list(outputs.keys())[0], GetTensorDataTypeFromnp((list(inputs.values())[0]).dtype), (list(inputs.values())[0]).shape))
+    try:
+        if list(outputs.values()) == [None]:
+            graph_output.append(onma_node.ONMACreateInput(list(outputs.keys())[0], GetTensorDataTypeFromnp((list(inputs.values())[0]).dtype), (list(inputs.values())[0]).shape))
+    except:
+        pass
+
+    try:
+        if len(list(outputs.values())) != 0:
+            graph_output.append(onma_node.ONMACreateInput(list(outputs.keys())[0], GetTensorDataTypeFromnp((list(outputs.values())[0]).dtype), (list(outputs.values())[0]).shape))
+    except:
+        pass
 
     onma_graph = ONMAGraph()
     onma_graph.ONMAMakeGraph(graph_name, [onma_node.ONMAGetNode()], graph_input, graph_output)
@@ -379,7 +391,8 @@ class ONMAOperators:
         allowzero=None,         \
         exclusive=None,         \
         reverse=None,           \
-        alpha=None
+        alpha=None,             \
+        values=None
 ):
         CreateNetworkWithOperator(              \
             operator_name,                      \
@@ -396,5 +409,6 @@ class ONMAOperators:
             allowzero=allowzero,                \
             exclusive=exclusive,                \
             reverse=reverse,                    \
-            alpha=alpha
+            alpha=alpha,                        \
+            values=values
         )
