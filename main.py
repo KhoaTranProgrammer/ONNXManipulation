@@ -465,18 +465,95 @@ default_input = \
         "values": np.random.randn(5, 5).astype(np.float32)
     },
     "ConstantOfShape": { },
-    "Conv": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "Conv_sample", "kernel_shape": [3, 3], "pads": [1, 1, 1, 1]}},
+    "Conv": {
+        "graph_name": "Conv_sample",
+        "inputs": {
+            "X1": np.array(
+                        [
+                            [
+                                [
+                                    [0.0, 1.0, 2.0, 3.0, 4.0],  # (1, 1, 5, 5) input tensor
+                                    [5.0, 6.0, 7.0, 8.0, 9.0],
+                                    [10.0, 11.0, 12.0, 13.0, 14.0],
+                                    [15.0, 16.0, 17.0, 18.0, 19.0],
+                                    [20.0, 21.0, 22.0, 23.0, 24.0],
+                                ]
+                            ]
+                        ]
+                    ).astype(np.float32),
+            "X2": np.array(
+                        [
+                            [
+                                [
+                                    [1.0, 1.0, 1.0],  # (1, 1, 3, 3) tensor for convolution weights
+                                    [1.0, 1.0, 1.0],
+                                    [1.0, 1.0, 1.0],
+                                ]
+                            ]
+                        ]
+                    ).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        },
+        "kernel_shape": [3, 3],
+        "pads": [1, 1, 1, 1]
+    },
     "ConvInteger": { },
     "ConvTranspose": { },
-    "Cos": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Cos_sample"}},
-    "Cosh": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Cosh_sample"}},
-    "CumSum": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "CumSum_sample", "reverse": 1, "exclusive": 1}},
+    "Cos": {
+        "graph_name": "Cos_sample",
+        "inputs": {
+            "X": np.array([-1, 0, 1]).astype(np.float32),
+        },
+        "outputs": {
+            "Y": None
+        }
+    },
+    "Cosh": {
+        "graph_name": "Cosh_sample",
+        "inputs": {
+            "X": np.array([-1, 0, 1]).astype(np.float32),
+        },
+        "outputs": {
+            "Y": None
+        }
+    },
+    "CumSum": {
+        "graph_name": "CumSum_sample",
+        "inputs": {
+            "X1": np.array([1.0, 2.0, 3.0, 4.0, 5.0]).astype(np.float32),
+            "X2": np.array([0]).astype(np.int32)
+        },
+        "outputs": {
+            "Y": None
+        },
+        "reverse": 1,
+        "exclusive": 1
+    },
     "DFT": { },
     "DeformConv": { },
     "DepthToSpace": { },
     "DequantizeLinear": { },
-    "Det": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Det_sample"}},
-    "Div": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "Div_sample"}},
+    "Det": {
+        "graph_name": "Det_sample",
+        "inputs": {
+            "X": np.array([[[1, 2], [3, 4]], [[1, 2], [2, 1]], [[1, 3], [3, 1]]]).astype(np.float32),
+        },
+        "outputs": {
+            "Y": None
+        }
+    },
+    "Div": {
+        "graph_name": "Div_sample",
+        "inputs": {
+            "X1": np.array([3, 4]).astype(np.float32),
+            "X2": np.array([1, 2]).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        },
+    },
     "Dropout": { },
     "DynamicQuantizeLinear": { },
     "Einsum": { },
@@ -572,7 +649,17 @@ default_input = \
     "ReduceSumSquare": { },
     "RegexFullMatch": { },
     "Relu": { },
-    "Reshape": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "Reshape_sample", "allowzero": 1}},
+    "Reshape": {
+        "graph_name": "Reshape_sample",
+        "inputs": {
+            "X1": np.random.random_sample([2, 3, 4]).astype(np.float32),
+            "X2": np.array([4, 2, 3], dtype=np.int64)
+        },
+        "outputs": {
+            "Y": None
+        },
+        "allowzero": 1
+    },
     "Resize": { },
     "ReverseSequence": { },
     "RoiAlign": { },
