@@ -305,6 +305,52 @@ def Operator_3_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2", "X
 
     onma_model.ONMAInference(infer_input)
 
+# operator_name: "Abs"
+# graph_name: "Sample"
+def CreateNetworkWithOperator(  \
+        operator_name,          \
+        graph_name,             \
+        inputs,                 \
+        outputs,                \
+        output_dimension=None,  \
+        output_datatype=None,   \
+        direction=None,         \
+        axes=None,              \
+        axis=None,              \
+        kernel_shape=None,      \
+        pads=None,              \
+        allowzero=None,         \
+        exclusive=None,         \
+        reverse=None,           \
+        alpha=None
+):
+    # Get Input
+    print(f'{list(inputs.keys())}')
+
+    # Get Output
+    # print(f'{outputs.keys()}')
+
+    # Create Node
+    onma_node = ONMANode()
+    onma_node.ONMAMakeNode(operator_name, inputs=list(inputs.keys()), outputs=list(outputs.keys()), direction=direction, axes=axes, axis=axis, \
+                           kernel_shape=kernel_shape, pads=pads, allowzero=allowzero, exclusive=exclusive, reverse=reverse, alpha=alpha)
+
+    # Create graph input
+    graph_input = []
+    for i in range(0, len(list(inputs.keys()))):
+        graph_input.append(onma_node.ONMACreateInput(list(inputs.keys())[i], GetTensorDataTypeFromnp((list(inputs.values())[i]).dtype), (list(inputs.values())[i]).shape))
+
+    graph_output = []
+    graph_output.append(onma_node.ONMACreateInput(list(outputs.keys())[0], GetTensorDataTypeFromnp((list(inputs.values())[0]).dtype), (list(inputs.values())[0]).shape))
+
+    onma_graph = ONMAGraph()
+    onma_graph.ONMAMakeGraph(graph_name, [onma_node.ONMAGetNode()], graph_input, graph_output)
+
+    onma_model = ONMAModel()
+    onma_model.ONMAMakeModel(onma_graph)
+
+    onma_model.ONMAInference(inputs)
+
 class ONMAOperators:
     def ONMAOperator_None_Input_1_Output(operator_name, graph_name, outputs=["Y"], values=None):
         Operator_None_Input_1_Output(operator_name, graph_name, outputs=outputs, values=values)
@@ -317,3 +363,38 @@ class ONMAOperators:
 
     def ONMAOperator_3_Inputs_1_Output(operator_name, graph_name, inputs=["X1", "X2", "X3"], outputs=["Y"], input_data1=None, input_data2=None, input_data3=None):
         Operator_3_Inputs_1_Output(operator_name, graph_name, inputs=inputs, outputs=outputs, input_data1=input_data1, input_data2=input_data2, input_data3=input_data3)
+
+    def ONNX_CreateNetworkWithOperator(  \
+        operator_name,          \
+        graph_name,             \
+        inputs,                 \
+        outputs,                \
+        output_dimension=None,  \
+        output_datatype=None,   \
+        direction=None,         \
+        axes=None,              \
+        axis=None,              \
+        kernel_shape=None,      \
+        pads=None,              \
+        allowzero=None,         \
+        exclusive=None,         \
+        reverse=None,           \
+        alpha=None
+):
+        CreateNetworkWithOperator(              \
+            operator_name,                      \
+            graph_name,                         \
+            inputs,                             \
+            outputs,                            \
+            output_dimension=output_dimension,  \
+            output_datatype=output_dimension,   \
+            direction=direction,                \
+            axes=axes,                          \
+            axis=axis,                          \
+            kernel_shape=kernel_shape,          \
+            pads=pads,                          \
+            allowzero=allowzero,                \
+            exclusive=exclusive,                \
+            reverse=reverse,                    \
+            alpha=alpha
+        )
