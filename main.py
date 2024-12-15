@@ -51,7 +51,7 @@ operator_list = \
     "DeformConv": { },
     "DepthToSpace": { },
     "DequantizeLinear": { },
-    "Det": { },
+    "Det": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Det_sample"}},
     "Div": { },
     "Dropout": { },
     "DynamicQuantizeLinear": { },
