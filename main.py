@@ -52,7 +52,7 @@ operator_list = \
     "DepthToSpace": { },
     "DequantizeLinear": { },
     "Det": {"function": "ONMAOperator_1_Input_1_Output", "arguments": { "graph_name": "Det_sample"}},
-    "Div": { },
+    "Div": {"function": "ONMAOperator_2_Inputs_1_Output", "arguments": { "graph_name": "Div_sample"}},
     "Dropout": { },
     "DynamicQuantizeLinear": { },
     "Einsum": { },

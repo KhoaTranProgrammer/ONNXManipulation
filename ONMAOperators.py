@@ -136,7 +136,11 @@ default_input = \
         "Input1": np.array([1.0, 2.0, 3.0, 4.0, 5.0]).astype(np.float32),
         "Input2": np.array([0]).astype(np.int32)
     },
-    "Det": np.array([[[1, 2], [3, 4]], [[1, 2], [2, 1]], [[1, 3], [3, 1]]]).astype(np.float32)
+    "Det": np.array([[[1, 2], [3, 4]], [[1, 2], [2, 1]], [[1, 3], [3, 1]]]).astype(np.float32),
+    "Div": {
+        "Input1": np.array([3, 4]).astype(np.float32),
+        "Input2": np.array([1, 2]).astype(np.float32)
+    }
 }
 
 def GetTensorDataTypeFromnp(npdtype):
