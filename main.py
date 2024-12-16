@@ -359,7 +359,17 @@ default_input = \
     },
     "Dropout": { },
     "DynamicQuantizeLinear": { },
-    "Einsum": { },
+    "Einsum": {
+        "graph_name": "Einsum_sample",
+        "inputs": {
+            "X": np.random.randn(5).astype(np.float32),
+            "Y": np.random.randn(5).astype(np.float32)
+        },
+        "outputs": {
+            "Z": None
+        },
+        "equation": "i,i"
+    },
     "Elu": { },
     "Equal": { },
     "Erf": { },
