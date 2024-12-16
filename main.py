@@ -370,7 +370,16 @@ default_input = \
         },
         "equation": "i,i"
     },
-    "Elu": { },
+    "Elu": {
+        "graph_name": "Elu_sample",
+        "inputs": {
+            "X": np.random.randn(5).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        },
+        "alpha": 2.0
+    },
     "Equal": { },
     "Erf": { },
     "Exp": { },
