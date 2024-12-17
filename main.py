@@ -390,8 +390,24 @@ default_input = \
             "Z": np.empty(shape=(3, 4, 5), dtype=bool)
         }
     },
-    "Erf": { },
-    "Exp": { },
+    "Erf": {
+        "graph_name": "Erf_sample",
+        "inputs": {
+            "X": np.random.randn(1, 3, 32, 32).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        }
+    },
+    "Exp": {
+        "graph_name": "Exp_sample",
+        "inputs": {
+            "X": np.array([-1, 0, 1]).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        }
+    },
     "Expand": { },
     "EyeLike": { },
     "Flatten": { },
