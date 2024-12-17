@@ -452,9 +452,25 @@ default_input = \
     },
     "GatherElements": { },
     "GatherND": { },
-    "Gelu": { },
+    "Gelu": {
+        "graph_name": "Gelu_sample",
+        "inputs": {
+            "X": np.array([-1, 0, 1]).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        }
+    },
     "Gemm": { },
-    "GlobalAveragePool": { },
+    "GlobalAveragePool": {
+        "graph_name": "GlobalAveragePool_sample",
+        "inputs": {
+            "X": np.random.randn(1, 3, 2, 2).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        }
+    },
     "GlobalLpPool": { },
     "GlobalMaxPool": { },
     "Greater": { },
