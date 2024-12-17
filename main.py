@@ -408,7 +408,16 @@ default_input = \
             "Y": None
         }
     },
-    "Expand": { },
+    "Expand": {
+        "graph_name": "Expand_sample",
+        "inputs": {
+            "X": np.reshape(np.arange(1, np.prod([3, 1]) + 1, dtype=np.float32), [3, 1]),
+            "Y": np.array([2, 1, 6], dtype=np.int64)
+        },
+        "outputs": {
+            "Z": None
+        }
+    },
     "EyeLike": { },
     "Flatten": { },
     "Floor": { },
