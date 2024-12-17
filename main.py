@@ -380,7 +380,16 @@ default_input = \
         },
         "alpha": 2.0
     },
-    "Equal": { },
+    "Equal": {
+        "graph_name": "Equal_sample",
+        "inputs": {
+            "X": (np.random.randn(3, 4, 5) * 10).astype(np.int32),
+            "Y": (np.random.randn(3, 4, 5) * 10).astype(np.int32)
+        },
+        "outputs": {
+            "Z": np.empty(shape=(3, 4, 5), dtype=bool)
+        }
+    },
     "Erf": { },
     "Exp": { },
     "Expand": { },
