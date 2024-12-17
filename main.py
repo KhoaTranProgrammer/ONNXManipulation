@@ -419,7 +419,16 @@ default_input = \
         }
     },
     "EyeLike": { },
-    "Flatten": { },
+    "Flatten": {
+        "graph_name": "Flatten_sample",
+        "inputs": {
+            "X": np.random.random_sample((2, 3, 4)).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        },
+        "axis": 2
+    },
     "Floor": { },
     "GRU": { },
     "Gather": { },
