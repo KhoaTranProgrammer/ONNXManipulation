@@ -429,9 +429,27 @@ default_input = \
         },
         "axis": 2
     },
-    "Floor": { },
+    "Floor": {
+        "graph_name": "Floor_sample",
+        "inputs": {
+            "X": np.array([-1.5, 1.2, 2]).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        }
+    },
     "GRU": { },
-    "Gather": { },
+    "Gather": {
+        "graph_name": "Gather_sample",
+        "inputs": {
+            "data": np.random.randn(3, 3, 4).astype(np.float32),
+            "indices": np.array([1, 2])
+        },
+        "outputs": {
+            "y": None
+        },
+        "axis": 0
+    },
     "GatherElements": { },
     "GatherND": { },
     "Gelu": { },
