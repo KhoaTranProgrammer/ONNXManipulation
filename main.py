@@ -472,7 +472,15 @@ default_input = \
         }
     },
     "GlobalLpPool": { },
-    "GlobalMaxPool": { },
+    "GlobalMaxPool": {
+        "graph_name": "GlobalMaxPool_sample",
+        "inputs": {
+            "X": np.random.randn(1, 3, 5, 5).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        }
+    },
     "Greater": { },
     "GreaterOrEqual": { },
     "GridSample": { },
