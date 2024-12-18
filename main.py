@@ -592,9 +592,36 @@ default_input = \
     },
     "LSTM": { },
     "LayerNormalization": { },
-    "LeakyRelu": { },
-    "Less": { },
-    "LessOrEqual": { },
+    "LeakyRelu": {
+        "graph_name": "LeakyRelu_sample",
+        "inputs": {
+            "x": np.array([-1, 0, 1]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "alpha": 0.1
+    },
+    "Less": {
+        "graph_name": "Less_sample",
+        "inputs": {
+            "x": np.random.randn(3, 4, 5).astype(np.float32),
+            "y": np.random.randn(5).astype(np.float32)
+        },
+        "outputs": {
+            "less": np.empty(shape=(3, 4, 5), dtype=bool)
+        }
+    },
+    "LessOrEqual": {
+        "graph_name": "LessOrEqual_sample",
+        "inputs": {
+            "x": np.random.randn(3, 4, 5).astype(np.float32),
+            "y": np.random.randn(5).astype(np.float32)
+        },
+        "outputs": {
+            "less_equal": np.empty(shape=(3, 4, 5), dtype=bool)
+        }
+    },
     "Log": { },
     "LogSoftmax": { },
     "Loop": { },
