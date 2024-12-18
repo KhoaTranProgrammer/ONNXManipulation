@@ -686,8 +686,43 @@ default_input = \
     "MaxPool": { },
     "MaxRoiPool": { },
     "MaxUnpool": { },
-    "Mean": { },
-    "MeanVarianceNormalization": { },
+    "Mean": {
+        "graph_name": "Mean_sample",
+        "inputs": {
+            "data_0": np.array([3, 0, 2]).astype(np.float32),
+            "data_1": np.array([1, 3, 4]).astype(np.float32),
+            "data_2": np.array([2, 6, 6]).astype(np.float32)
+        },
+        "outputs": {
+            "result": None
+        }
+    },
+    "MeanVarianceNormalization": {
+        "graph_name": "MeanVarianceNormalization_sample",
+        "inputs": {
+            "X": np.array(
+                [
+                    [
+                        [[0.8439683], [0.5665144], [0.05836735]],
+                        [[0.02916367], [0.12964272], [0.5060197]],
+                        [[0.79538304], [0.9411346], [0.9546573]],
+                    ],
+                    [
+                        [[0.17730942], [0.46192095], [0.26480448]],
+                        [[0.6746842], [0.01665257], [0.62473077]],
+                        [[0.9240844], [0.9722341], [0.11965699]],
+                    ],
+                    [
+                        [[0.41356155], [0.9129373], [0.59330076]],
+                        [[0.81929934], [0.7862604], [0.11799799]],
+                        [[0.69248444], [0.54119414], [0.07513223]],
+                    ],
+                ],dtype=np.float32,)
+        },
+        "outputs": {
+            "Y": None
+        }
+    },
     "MelWeightMatrix": { },
     "Min": { },
     "Mish": { },
