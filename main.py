@@ -755,13 +755,46 @@ default_input = \
         },
         "fmod": 1
     },
-    "Mul": { },
+    "Mul": {
+        "graph_name": "Mul_sample",
+        "inputs": {
+            "x": np.array([1, 2, 3]).astype(np.float32),
+            "y": np.array([4, 5, 6]).astype(np.float32)
+        },
+        "outputs": {
+            "z": None
+        }
+    },
     "Multinomial": { },
-    "Neg": { },
+    "Neg": {
+        "graph_name": "Neg_sample",
+        "inputs": {
+            "x": np.array([-4, 2]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
     "NegativeLogLikelihoodLoss": { },
     "NonMaxSuppression": { },
-    "NonZero": { },
-    "Not": { },
+    "NonZero": {
+        "graph_name": "NonZero_sample",
+        "inputs": {
+            "condition": np.array([[1, 0], [1, 1]], dtype=bool)
+        },
+        "outputs": {
+            "result": np.empty(shape=(1), dtype=np.int64)
+        }
+    },
+    "Not": {
+        "graph_name": "Not_sample",
+        "inputs": {
+            "x": (np.random.randn(3, 4, 5) > 0).astype(bool)
+        },
+        "outputs": {
+            "not": None
+        }
+    },
     "OneHot": { },
     "Optional": { },
     "OptionalGetElement": { },
