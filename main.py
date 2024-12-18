@@ -724,9 +724,37 @@ default_input = \
         }
     },
     "MelWeightMatrix": { },
-    "Min": { },
-    "Mish": { },
-    "Mod": { },
+    "Min": {
+        "graph_name": "Min_sample",
+        "inputs": {
+            "data_0": np.array([3, 2, 1]).astype(np.float32),
+            "data_1": np.array([1, 4, 4]).astype(np.float32),
+            "data_2": np.array([2, 5, 3]).astype(np.float32)
+        },
+        "outputs": {
+            "result": None
+        }
+    },
+    "Mish": {
+        "graph_name": "Mish_sample",
+        "inputs": {
+            "X": np.linspace(-10, 10, 10000, dtype=np.float32)
+        },
+        "outputs": {
+            "Y": None
+        }
+    },
+    "Mod": {
+        "graph_name": "Mod_sample",
+        "inputs": {
+            "x": np.array([-4.3, 7.2, 5.0, 4.3, -7.2, 8.0]).astype(np.float32),
+            "y": np.array([2.1, -3.4, 8.0, -2.1, 3.4, 5.0]).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        },
+        "fmod": 1
+    },
     "Mul": { },
     "Multinomial": { },
     "Neg": { },

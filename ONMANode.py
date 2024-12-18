@@ -31,6 +31,7 @@ class ONMANode:
             detect_negative=None,   \
             bias=None,              \
             size=None,              \
+            fmod=None,              \
         ):
         try:
             if values == None:
@@ -52,7 +53,8 @@ class ONMANode:
                     detect_positive=detect_positive,
                     detect_negative=detect_negative,
                     bias=bias,
-                    size=size
+                    size=size,
+                    fmod=fmod
                 )
         except:
             pass
