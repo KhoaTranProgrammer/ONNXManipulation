@@ -481,8 +481,26 @@ default_input = \
             "Y": None
         }
     },
-    "Greater": { },
-    "GreaterOrEqual": { },
+    "Greater": {
+        "graph_name": "Greater_sample",
+        "inputs": {
+            "X": np.random.randn(3, 4, 5).astype(np.float32),
+            "Y": np.random.randn(3, 4, 5).astype(np.float32)
+        },
+        "outputs": {
+            "greater": np.empty(shape=(3, 4, 5), dtype=bool)
+        }
+    },
+    "GreaterOrEqual": {
+        "graph_name": "GreaterOrEqual_sample",
+        "inputs": {
+            "X": np.random.randn(3, 4, 5).astype(np.float32),
+            "Y": np.random.randn(3, 4, 5).astype(np.float32)
+        },
+        "outputs": {
+            "greater": np.empty(shape=(3, 4, 5), dtype=bool)
+        }
+    },
     "GridSample": { },
     "GroupNormalization": { },
     "HammingWindow": { },
