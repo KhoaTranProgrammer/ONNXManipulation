@@ -577,7 +577,19 @@ default_input = \
             "y": np.empty(shape=(6), dtype=bool)
         }
     },
-    "LRN": { },
+    "LRN": {
+        "graph_name": "LRN_sample",
+        "inputs": {
+            "x": np.random.randn(5, 5, 5, 5).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "alpha": 0.0002,
+        "beta": 0.5,
+        "bias": 2.0,
+        "size": 3
+    },
     "LSTM": { },
     "LayerNormalization": { },
     "LeakyRelu": { },

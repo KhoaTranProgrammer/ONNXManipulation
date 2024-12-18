@@ -29,6 +29,8 @@ class ONMANode:
             beta=None,              \
             detect_positive=None,   \
             detect_negative=None,   \
+            bias=None,              \
+            size=None,              \
         ):
         try:
             if values == None:
@@ -48,7 +50,9 @@ class ONMANode:
                     equation=equation,
                     beta=beta,
                     detect_positive=detect_positive,
-                    detect_negative=detect_negative
+                    detect_negative=detect_negative,
+                    bias=bias,
+                    size=size
                 )
         except:
             pass
