@@ -568,7 +568,15 @@ default_input = \
         },
         "detect_negative": 0
     },
-    "IsNaN": { },
+    "IsNaN": {
+        "graph_name": "IsNaN_sample",
+        "inputs": {
+            "x": np.array([-1.2, np.nan, np.inf, 2.8, -np.inf, np.inf], dtype=np.float32)
+        },
+        "outputs": {
+            "y": np.empty(shape=(6), dtype=bool)
+        }
+    },
     "LRN": { },
     "LSTM": { },
     "LayerNormalization": { },
