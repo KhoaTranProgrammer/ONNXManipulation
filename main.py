@@ -672,7 +672,17 @@ default_input = \
             "Y": np.empty(shape=(1), dtype=np.int32)
         }
     },
-    "Max": { },
+    "Max": {
+        "graph_name": "Max_sample",
+        "inputs": {
+            "data_0": np.array([3, 2, 1]).astype(np.float32),
+            "data_1": np.array([1, 4, 4]).astype(np.float32),
+            "data_2": np.array([2, 5, 3]).astype(np.float32)
+        },
+        "outputs": {
+            "result": None
+        }
+    },
     "MaxPool": { },
     "MaxRoiPool": { },
     "MaxUnpool": { },
