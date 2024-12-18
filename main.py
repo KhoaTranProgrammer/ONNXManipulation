@@ -622,13 +622,56 @@ default_input = \
             "less_equal": np.empty(shape=(3, 4, 5), dtype=bool)
         }
     },
-    "Log": { },
-    "LogSoftmax": { },
+    "Log": {
+        "graph_name": "Log_sample",
+        "inputs": {
+            "x": np.array([1, 10]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
+    "LogSoftmax": {
+        "graph_name": "LogSoftmax_sample",
+        "inputs": {
+            "x": np.array([[-1, 0, 1]]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
     "Loop": { },
     "LpNormalization": { },
     "LpPool": { },
-    "MatMul": { },
-    "MatMulInteger": { },
+    "MatMul": {
+        "graph_name": "MatMul_sample",
+        "inputs": {
+            "a": np.random.randn(3, 4).astype(np.float32),
+            "b": np.random.randn(4, 3).astype(np.float32)
+        },
+        "outputs": {
+            "c": None
+        }
+    },
+    "MatMulInteger": {
+        "graph_name": "MatMulInteger_sample",
+        "inputs": {
+            "A": np.array([
+                        [11, 7, 3],
+                        [10, 6, 2],
+                        [9, 5, 1],
+                        [8, 4, 0],], dtype=np.uint8),
+            "B": np.array([
+                        [1, 4],
+                        [2, 5],
+                        [3, 6],], dtype=np.uint8),
+            "a_zero_point": np.array([12], dtype=np.uint8),
+            "b_zero_point": np.array([0], dtype=np.uint8)
+        },
+        "outputs": {
+            "Y": np.empty(shape=(1), dtype=np.int32)
+        }
+    },
     "Max": { },
     "MaxPool": { },
     "MaxRoiPool": { },
