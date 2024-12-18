@@ -25,7 +25,8 @@ class ONMANode:
             allowzero=None,     \
             exclusive=None,     \
             reverse=None,       \
-            equation=None       \
+            equation=None,      \
+            beta=None           \
         ):
         try:
             if values == None:
@@ -42,7 +43,8 @@ class ONMANode:
                     allowzero=allowzero,
                     exclusive=exclusive,
                     reverse=reverse,
-                    equation=equation
+                    equation=equation,
+                    beta=beta
                 )
         except:
             pass

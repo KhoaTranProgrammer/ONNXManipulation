@@ -45,12 +45,16 @@ def CreateNetworkWithOperator(  \
         reverse=None,           \
         alpha=None,             \
         values=None,            \
-        equation=None           \
+        equation=None,          \
+        beta=None               \
 ):
     # Create Node
     onma_node = ONMANode()
-    onma_node.ONMAMakeNode(operator_name, inputs=list(inputs.keys()), outputs=list(outputs.keys()), direction=direction, axes=axes, axis=axis, \
-                           kernel_shape=kernel_shape, pads=pads, allowzero=allowzero, exclusive=exclusive, reverse=reverse, alpha=alpha, values=values, equation=equation)
+    onma_node.ONMAMakeNode(
+        operator_name, inputs=list(inputs.keys()), outputs=list(outputs.keys()), direction=direction, axes=axes, axis=axis, \
+        kernel_shape=kernel_shape, pads=pads, allowzero=allowzero, exclusive=exclusive, reverse=reverse, alpha=alpha, values=values, equation=equation, \
+        beta=beta
+    )
 
     # Create graph input
     graph_input = []
@@ -97,7 +101,8 @@ class ONMAOperators:
         reverse=None,           \
         alpha=None,             \
         values=None,            \
-        equation=None           \
+        equation=None,          \
+        beta=None               \
     ):
         CreateNetworkWithOperator(              \
             operator_name,                      \
@@ -116,5 +121,6 @@ class ONMAOperators:
             reverse=reverse,                    \
             alpha=alpha,                        \
             values=values,                      \
-            equation=equation                   \
+            equation=equation,                  \
+            beta=beta                           \
         )

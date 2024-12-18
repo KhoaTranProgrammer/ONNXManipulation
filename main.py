@@ -505,9 +505,35 @@ default_input = \
     "GroupNormalization": { },
     "HammingWindow": { },
     "HannWindow": { },
-    "HardSigmoid": { },
-    "HardSwish": { },
-    "Hardmax": { },
+    "HardSigmoid": {
+        "graph_name": "HardSigmoid_sample",
+        "inputs": {
+            "X": np.array([-1, 0, 1]).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        },
+        "alpha": 0.5, 
+        "beta": 0.6
+    },
+    "HardSwish": {
+        "graph_name": "HardSwish_sample",
+        "inputs": {
+            "X": np.random.randn(3, 4, 5).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        }
+    },
+    "Hardmax": {
+        "graph_name": "Hardmax_sample",
+        "inputs": {
+            "X": np.array([[3, 0, 1, 2], [2, 5, 1, 0], [0, 1, 3, 2], [0, 1, 2, 3]]).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        }
+    },
     "Identity": { },
     "If": { },
     "ImageDecoder": { },
