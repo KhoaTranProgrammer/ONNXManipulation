@@ -11,22 +11,24 @@ class ONMANode:
         self._node = None
 
     def ONMAMakeNode(
-            self,               \
-            name,               \
-            inputs,             \
-            outputs,            \
-            direction=None,     \
-            alpha=None,         \
-            axes=None,          \
-            axis=None,          \
-            values=None,        \
-            kernel_shape=None,  \
-            pads=None,          \
-            allowzero=None,     \
-            exclusive=None,     \
-            reverse=None,       \
-            equation=None,      \
-            beta=None           \
+            self,                   \
+            name,                   \
+            inputs,                 \
+            outputs,                \
+            direction=None,         \
+            alpha=None,             \
+            axes=None,              \
+            axis=None,              \
+            values=None,            \
+            kernel_shape=None,      \
+            pads=None,              \
+            allowzero=None,         \
+            exclusive=None,         \
+            reverse=None,           \
+            equation=None,          \
+            beta=None,              \
+            detect_positive=None,   \
+            detect_negative=None,   \
         ):
         try:
             if values == None:
@@ -44,7 +46,9 @@ class ONMANode:
                     exclusive=exclusive,
                     reverse=reverse,
                     equation=equation,
-                    beta=beta
+                    beta=beta,
+                    detect_positive=detect_positive,
+                    detect_negative=detect_negative
                 )
         except:
             pass

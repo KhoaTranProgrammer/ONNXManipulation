@@ -558,7 +558,16 @@ default_input = \
             "y": None
         }
     },
-    "IsInf": { },
+    "IsInf": {
+        "graph_name": "IsInf_sample",
+        "inputs": {
+            "x": np.array([-1.7, np.nan, np.inf, -3.6, -np.inf, np.inf], dtype=np.float32)
+        },
+        "outputs": {
+            "y": np.empty(shape=(6), dtype=bool)
+        },
+        "detect_negative": 0
+    },
     "IsNaN": { },
     "LRN": { },
     "LSTM": { },
