@@ -20,4 +20,4 @@ class ONMAModel:
         sess = InferenceSession(self._model.SerializeToString(), providers=["CPUExecutionProvider"])
         res = sess.run(None, infer_input)
         print("input", infer_input)
-        print("result", res)
+        print(f'result: {res}')

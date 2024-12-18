@@ -534,10 +534,30 @@ default_input = \
             "Y": None
         }
     },
-    "Identity": { },
+    "Identity": {
+        "graph_name": "Identity_sample",
+        "inputs": {
+            "X": np.array([[[
+                [1, 2],
+                [3, 4],]]],dtype=np.float32,)
+        },
+        "outputs": {
+            "Y": None
+        }
+    },
     "If": { },
     "ImageDecoder": { },
-    "InstanceNormalization": { },
+    "InstanceNormalization": {
+        "graph_name": "InstanceNormalization_sample",
+        "inputs": {
+            "x": np.array([[[[-1, 0, 1]], [[2, 3, 4]]]]).astype(np.float32),
+            "s": np.array([1.0, 1.5]).astype(np.float32),
+            "bias": np.array([0, 1]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
     "IsInf": { },
     "IsNaN": { },
     "LRN": { },
