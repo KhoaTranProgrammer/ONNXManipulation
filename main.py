@@ -1037,10 +1037,45 @@ default_input = \
     },
     "StringNormalizer": { },
     "StringSplit": { },
-    "Sub": { },
-    "Sum": { },
-    "Tan": { },
-    "Tanh": { },
+    "Sub": {
+        "graph_name": "Sub_sample",
+        "inputs": {
+            "x": np.array([1, 2, 3]).astype(np.float32),
+            "y": np.array([3, 2, 1]).astype(np.float32)
+        },
+        "outputs": {
+            "z": None
+        }
+    },
+    "Sum": {
+        "graph_name": "Sum_sample",
+        "inputs": {
+            "x1": np.array([3, 0, 2]).astype(np.float32),
+            "x2": np.array([1, 3, 4]).astype(np.float32),
+            "x3": np.array([2, 6, 6]).astype(np.float32)
+        },
+        "outputs": {
+            "result": None
+        }
+    },
+    "Tan": {
+        "graph_name": "Tan_sample",
+        "inputs": {
+            "x": np.array([-1, 0, 1]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
+    "Tanh": {
+        "graph_name": "Tanh_sample",
+        "inputs": {
+            "x": np.array([-1, 0, 1]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
     "TfIdfVectorizer": { },
     "ThresholdedRelu": { },
     "Tile": { },
