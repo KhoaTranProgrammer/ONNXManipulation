@@ -838,8 +838,26 @@ default_input = \
     "RandomNormalLike": { },
     "RandomUniform": { },
     "RandomUniformLike": { },
-    "Range": { },
-    "Reciprocal": { },
+    "Range": {
+        "graph_name": "Range_sample",
+        "inputs": {
+            "start": np.array([1]).astype(np.float32),
+            "limit": np.array([5]).astype(np.float32),
+            "delta": np.array([2]).astype(np.float32)
+        },
+        "outputs": {
+            "output": None
+        }
+    },
+    "Reciprocal": {
+        "graph_name": "Reciprocal_sample",
+        "inputs": {
+            "x": np.array([-4, 2]).astype(np.float32),
+        },
+        "outputs": {
+            "y": None
+        }
+    },
     "ReduceL1": { },
     "ReduceL2": { },
     "ReduceLogSum": { },
