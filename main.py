@@ -1101,10 +1101,38 @@ default_input = \
     "Transpose": { },
     "Trilu": { },
     "Unique": { },
-    "Unsqueeze": { },
+    "Unsqueeze": {
+        "graph_name": "Unsqueeze_sample",
+        "inputs": {
+            "x": np.random.randn(1, 3, 1, 5).astype(np.float32),
+            "axes": np.array([-2]).astype(np.int64)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
     "Upsample": { },
-    "Where": { },
-    "Xor": { },
+    "Where": {
+        "graph_name": "Where_sample",
+        "inputs": {
+            "condition": np.array([[1, 0], [1, 1]], dtype=bool),
+            "x": np.array([[1, 2], [3, 4]], dtype=np.int64),
+            "y": np.array([[9, 8], [7, 6]], dtype=np.int64)
+        },
+        "outputs": {
+            "z": np.empty(shape=(1), dtype=np.int64)
+        }
+    },
+    "Xor": {
+        "graph_name": "Xor_sample",
+        "inputs": {
+            "x": (np.random.randn(3, 4, 5) > 0).astype(bool),
+            "y": (np.random.randn(3, 4, 5) > 0).astype(bool)
+        },
+        "outputs": {
+            "z": None
+        }
+    },
 }
 
 def main():
