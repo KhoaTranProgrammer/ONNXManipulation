@@ -869,7 +869,15 @@ default_input = \
     "ReduceSum": { },
     "ReduceSumSquare": { },
     "RegexFullMatch": { },
-    "Relu": { },
+    "Relu": {
+        "graph_name": "Relu_sample",
+        "inputs": {
+            "x": np.random.randn(3, 4, 5).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
     "Reshape": {
         "graph_name": "Reshape_sample",
         "inputs": {
