@@ -926,10 +926,42 @@ default_input = \
         "lambd": 1.5,
         "bias": 1.5
     },
-    "Sigmoid": { },
-    "Sign": { },
-    "Sin": { },
-    "Sinh": { },
+    "Sigmoid": {
+        "graph_name": "Sigmoid_sample",
+        "inputs": {
+            "x": np.array([-1, 0, 1]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
+    "Sign": {
+        "graph_name": "Sign_sample",
+        "inputs": {
+            "x": np.array(range(-5, 6)).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
+    "Sin": {
+        "graph_name": "Sin_sample",
+        "inputs": {
+            "x": np.array([-1, 0, 1]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
+    "Sinh": {
+        "graph_name": "Sinh_sample",
+        "inputs": {
+            "x": np.array([-1, 0, 1]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
     "Size": { },
     "Slice": { },
     "Softmax": { },
