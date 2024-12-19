@@ -892,7 +892,15 @@ default_input = \
     "Resize": { },
     "ReverseSequence": { },
     "RoiAlign": { },
-    "Round": { },
+    "Round": {
+        "graph_name": "Round_sample",
+        "inputs": {
+            "x": np.array([0.1, 0.5, 0.9, 1.2, 1.5, 1.8, 2.3, 2.5, 2.7, -1.1, -1.5, -1.9, -2.2,  -2.5, -2.8,]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
     "STFT": { },
     "Scan": { },
     "Scatter": { },
@@ -907,7 +915,17 @@ default_input = \
     "SequenceLength": { },
     "SequenceMap": { },
     "Shape": { },
-    "Shrink": { },
+    "Shrink": {
+        "graph_name": "Shrink_sample",
+        "inputs": {
+            "x": np.arange(-2.0, 2.1, dtype=np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "lambd": 1.5,
+        "bias": 1.5
+    },
     "Sigmoid": { },
     "Sign": { },
     "Sin": { },
