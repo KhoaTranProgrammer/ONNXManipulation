@@ -962,9 +962,28 @@ default_input = \
             "y": None
         }
     },
-    "Size": { },
+    "Size": {
+        "graph_name": "Size_sample",
+        "inputs": {
+            "x": np.array([
+                        [1, 2, 3],
+                        [4, 5, 6],]).astype(np.float32)
+        },
+        "outputs": {
+            "y": np.empty(shape=(1), dtype=np.int64)
+        }
+    },
     "Slice": { },
-    "Softmax": { },
+    "Softmax": {
+        "graph_name": "Softmax_sample",
+        "inputs": {
+            "x": np.abs(np.random.randn(3, 4, 5).astype(np.float32))
+        },
+        "outputs": {
+            "y": None
+        },
+        "axis": 0
+    },
     "SoftmaxCrossEntropyLoss": { },
     "Softplus": { },
     "Softsign": { },
