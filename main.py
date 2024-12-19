@@ -1077,8 +1077,26 @@ default_input = \
         }
     },
     "TfIdfVectorizer": { },
-    "ThresholdedRelu": { },
-    "Tile": { },
+    "ThresholdedRelu": {
+        "graph_name": "ThresholdedRelu_sample",
+        "inputs": {
+            "x": np.array([-1.5, 0.0, 1.2, 2.0, 2.2]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "alpha": 2.0
+    },
+    "Tile": {
+        "graph_name": "Tile_sample",
+        "inputs": {
+            "x": np.array([[0, 1], [2, 3]], dtype=np.float32),
+            "repeat": np.array([1, 2], dtype=np.int64)
+        },
+        "outputs": {
+            "z": None
+        }
+    },
     "TopK": { },
     "Transpose": { },
     "Trilu": { },
