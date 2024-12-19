@@ -985,13 +985,46 @@ default_input = \
         "axis": 0
     },
     "SoftmaxCrossEntropyLoss": { },
-    "Softplus": { },
-    "Softsign": { },
+    "Softplus": {
+        "graph_name": "Softplus_sample",
+        "inputs": {
+            "x": np.array([-1, 0, 1]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
+    "Softsign": {
+        "graph_name": "Softsign_sample",
+        "inputs": {
+            "x": np.array([-1, 0, 1]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
     "SpaceToDepth": { },
     "Split": { },
     "SplitToSequence": { },
-    "Sqrt": { },
-    "Squeeze": { },
+    "Sqrt": {
+        "graph_name": "Sqrt_sample",
+        "inputs": {
+            "x": np.array([1, 4, 9]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
+    "Squeeze": {
+        "graph_name": "Squeeze_sample",
+        "inputs": {
+            "x": np.random.randn(1, 3, 4, 5).astype(np.float32),
+            "axes": np.array([0], dtype=np.int64)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
     "StringConcat": { },
     "StringNormalizer": { },
     "StringSplit": { },
