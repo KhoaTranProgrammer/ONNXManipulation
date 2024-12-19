@@ -799,10 +799,37 @@ default_input = \
     "Optional": { },
     "OptionalGetElement": { },
     "OptionalHasElement": { },
-    "Or": { },
-    "PRelu": { },
+    "Or": {
+        "graph_name": "Or_sample",
+        "inputs": {
+            "x": (np.random.randn(3, 4, 5) > 0).astype(bool),
+            "y": (np.random.randn(3, 4, 5) > 0).astype(bool)
+        },
+        "outputs": {
+            "z": None
+        }
+    },
+    "PRelu": {
+        "graph_name": "PRelu_sample",
+        "inputs": {
+            "x": np.random.randn(3, 4, 5).astype(np.float32),
+            "slope": np.random.randn(3, 4, 5).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
     "Pad": { },
-    "Pow": { },
+    "Pow": {
+        "graph_name": "Pow_sample",
+        "inputs": {
+            "x": np.array([1, 2, 3]).astype(np.float32),
+            "y": np.array([4, 5, 6]).astype(np.float32)
+        },
+        "outputs": {
+            "z": None
+        }
+    },
     "QLinearConv": { },
     "QLinearMatMul": { },
     "QuantizeLinear": { },
