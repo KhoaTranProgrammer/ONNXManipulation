@@ -24,6 +24,8 @@ def GetTensorDataTypeFromnp(npdtype):
         datatype = onnx.TensorProto.UINT8
     elif npdtype == "int32":
         datatype = onnx.TensorProto.INT32
+    elif npdtype == "object":
+        datatype = onnx.TensorProto.STRING
     return datatype
 
 # operator_name: "Abs"

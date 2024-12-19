@@ -1025,7 +1025,16 @@ default_input = \
             "y": None
         }
     },
-    "StringConcat": { },
+    "StringConcat": {
+        "graph_name": "StringConcat_sample",
+        "inputs": {
+            "x": np.array(["abc", "def"]).astype("object"),
+            "y": np.array([".com", ".net"]).astype("object")
+        },
+        "outputs": {
+            "result": None
+        }
+    },
     "StringNormalizer": { },
     "StringSplit": { },
     "Sub": { },
