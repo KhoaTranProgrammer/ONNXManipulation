@@ -34,6 +34,8 @@ class ONMANode:
             fmod=None,              \
             lambd=None,             \
             align_corners=None,     \
+            keepdims=None,          \
+            select_last_index=None, \
         ):
         try:
             if values == None:
@@ -59,6 +61,8 @@ class ONMANode:
                     fmod=fmod,
                     lambd=lambd,
                     align_corners=align_corners,
+                    keepdims=keepdims,
+                    select_last_index=select_last_index,
                 )
         except:
             pass

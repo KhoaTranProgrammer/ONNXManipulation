@@ -71,8 +71,30 @@ default_input = \
             "Y": None
         },
     },
-    "ArgMax": { },
-    "ArgMin": { },
+    "ArgMax": {
+        "graph_name": "ArgMax_sample",
+        "inputs": {
+            "data": np.array([[2, 2], [3, 10]], dtype=np.float32)
+        },
+        "outputs": {
+            "result": np.empty(shape=(1), dtype=np.int64)
+        },
+        "axis": 0,
+        "keepdims": 0,
+        "select_last_index": True,
+    },
+    "ArgMin": {
+        "graph_name": "ArgMin_sample",
+        "inputs": {
+            "data": np.array([[2, 2], [3, 10]], dtype=np.float32)
+        },
+        "outputs": {
+            "result": np.empty(shape=(1), dtype=np.int64)
+        },
+        "axis": 1,
+        "keepdims": 1,
+        "select_last_index": True,
+    },
     "Asin": {
         "graph_name": "Asin_sample",
         "inputs": {
