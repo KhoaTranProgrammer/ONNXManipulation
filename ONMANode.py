@@ -36,6 +36,11 @@ class ONMANode:
             align_corners=None,     \
             keepdims=None,          \
             select_last_index=None, \
+            strides=None,           \
+            ceil_mode=None,         \
+            dilations=None,         \
+            count_include_pad=None, \
+            auto_pad=None,          \
         ):
         try:
             if values == None:
@@ -63,6 +68,11 @@ class ONMANode:
                     align_corners=align_corners,
                     keepdims=keepdims,
                     select_last_index=select_last_index,
+                    strides=strides,
+                    ceil_mode=ceil_mode,
+                    dilations=dilations,
+                    count_include_pad=count_include_pad,
+                    auto_pad=auto_pad,
                 )
         except:
             pass

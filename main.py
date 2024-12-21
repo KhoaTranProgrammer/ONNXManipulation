@@ -131,7 +131,21 @@ default_input = \
             "Y": None
         },
     },
-    "AveragePool": { },
+    "AveragePool": {
+        "graph_name": "AveragePool_sample",
+        "inputs": {
+            "X": np.random.randn(1, 1, *(32, 32, 32)).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        },
+        "kernel_shape": (5, 5, 5),
+        "strides": (3, 3, 3),
+        "dilations": (2, 2, 2),
+        "count_include_pad": 0,
+        "ceil_mode": True,
+        "auto_pad": "SAME_UPPER"
+    },
     "BatchNormalization": { },
     "Bernoulli": { },
     "BitShift": {

@@ -58,6 +58,11 @@ def CreateNetworkWithOperator(  \
         align_corners=None,     \
         keepdims=None,          \
         select_last_index=None, \
+        strides=None,           \
+        ceil_mode=None,         \
+        dilations=None,         \
+        count_include_pad=None, \
+        auto_pad=None,          \
 ):
     # Create Node
     onma_node = ONMANode()
@@ -65,7 +70,8 @@ def CreateNetworkWithOperator(  \
         operator_name, inputs=list(inputs.keys()), outputs=list(outputs.keys()), direction=direction, axes=axes, axis=axis, \
         kernel_shape=kernel_shape, pads=pads, allowzero=allowzero, exclusive=exclusive, reverse=reverse, alpha=alpha, values=values, equation=equation, \
         beta=beta, detect_positive=detect_positive, detect_negative=detect_negative, bias=bias, size=size, fmod=fmod, lambd=lambd, align_corners=align_corners, \
-        keepdims=keepdims, select_last_index=select_last_index
+        keepdims=keepdims, select_last_index=select_last_index, strides=strides, ceil_mode=ceil_mode, dilations=dilations, count_include_pad=count_include_pad, \
+        auto_pad=auto_pad
     )
 
     # Create graph input
@@ -124,6 +130,11 @@ class ONMAOperators:
         align_corners=None,     \
         keepdims=None,          \
         select_last_index=None, \
+        strides=None,           \
+        ceil_mode=None,         \
+        dilations=None,         \
+        count_include_pad=None, \
+        auto_pad=None,          \
     ):
         CreateNetworkWithOperator(                  \
             operator_name,                          \
@@ -153,4 +164,9 @@ class ONMAOperators:
             align_corners=align_corners,            \
             keepdims=keepdims,                      \
             select_last_index=select_last_index,    \
+            strides=strides,                        \
+            ceil_mode=ceil_mode,                    \
+            dilations=dilations,                    \
+            count_include_pad=count_include_pad,    \
+            auto_pad=auto_pad,                      \
         )
