@@ -41,6 +41,8 @@ class ONMANode:
             dilations=None,         \
             count_include_pad=None, \
             auto_pad=None,          \
+            epsilon=None,           \
+            training_mode=None,     \
         ):
         try:
             if values == None:
@@ -73,6 +75,8 @@ class ONMANode:
                     dilations=dilations,
                     count_include_pad=count_include_pad,
                     auto_pad=auto_pad,
+                    epsilon=epsilon,
+                    training_mode=training_mode,
                 )
         except:
             pass

@@ -146,7 +146,20 @@ default_input = \
         "ceil_mode": True,
         "auto_pad": "SAME_UPPER"
     },
-    "BatchNormalization": { },
+    "BatchNormalization": {
+        "graph_name": "BatchNormalization_sample",
+        "inputs": {
+            "x": np.random.randn(2, 3, 4, 5).astype(np.float32),
+            "s": np.random.randn(3).astype(np.float32),
+            "bias": np.random.randn(3).astype(np.float32),
+            "mean": np.random.randn(3).astype(np.float32),
+            "var": np.random.rand(3).astype(np.float32),
+        },
+        "outputs": {
+            "Y": None,
+        },
+        "epsilon": 1e-2,
+    },
     "Bernoulli": { },
     "BitShift": {
         "graph_name": "BitShift_sample",
