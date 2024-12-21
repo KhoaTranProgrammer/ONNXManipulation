@@ -65,6 +65,8 @@ def CreateNetworkWithOperator(  \
         auto_pad=None,          \
         epsilon=None,           \
         training_mode=None,     \
+        seed=None,              \
+        periodic=None,          \
 ):
     # Create Node
     onma_node = ONMANode()
@@ -73,7 +75,7 @@ def CreateNetworkWithOperator(  \
         kernel_shape=kernel_shape, pads=pads, allowzero=allowzero, exclusive=exclusive, reverse=reverse, alpha=alpha, values=values, equation=equation, \
         beta=beta, detect_positive=detect_positive, detect_negative=detect_negative, bias=bias, size=size, fmod=fmod, lambd=lambd, align_corners=align_corners, \
         keepdims=keepdims, select_last_index=select_last_index, strides=strides, ceil_mode=ceil_mode, dilations=dilations, count_include_pad=count_include_pad, \
-        auto_pad=auto_pad, epsilon=epsilon, training_mode=training_mode
+        auto_pad=auto_pad, epsilon=epsilon, training_mode=training_mode, seed=seed, periodic=periodic
     )
 
     # Create graph input
@@ -139,6 +141,8 @@ class ONMAOperators:
         auto_pad=None,          \
         epsilon=None,           \
         training_mode=None,     \
+        seed=None,              \
+        periodic=None,          \
     ):
         CreateNetworkWithOperator(                  \
             operator_name,                          \
@@ -175,4 +179,6 @@ class ONMAOperators:
             auto_pad=auto_pad,                      \
             epsilon=epsilon,                        \
             training_mode=training_mode,            \
+            seed=seed,                              \
+            periodic=periodic,                      \
         )

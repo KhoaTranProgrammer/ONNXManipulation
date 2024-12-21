@@ -43,6 +43,8 @@ class ONMANode:
             auto_pad=None,          \
             epsilon=None,           \
             training_mode=None,     \
+            seed=None,              \
+            periodic=None,          \
         ):
         try:
             if values == None:
@@ -77,6 +79,8 @@ class ONMANode:
                     auto_pad=auto_pad,
                     epsilon=epsilon,
                     training_mode=training_mode,
+                    seed=seed,
+                    periodic=periodic,
                 )
         except:
             pass

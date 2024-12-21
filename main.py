@@ -160,7 +160,16 @@ default_input = \
         },
         "epsilon": 1e-2,
     },
-    "Bernoulli": { },
+    "Bernoulli": {
+        "graph_name": "Bernoulli_sample",
+        "inputs": {
+            "x": np.random.uniform(0.0, 1.0, 10).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "seed": float(0),
+    },
     "BitShift": {
         "graph_name": "BitShift_sample",
         "inputs": {
@@ -211,7 +220,16 @@ default_input = \
             "Y": None
         },
     },
-    "BlackmanWindow": { },
+    "BlackmanWindow": {
+        "graph_name": "BlackmanWindow_sample",
+        "inputs": {
+            "x": np.array([10], dtype=np.int32),
+        },
+        "outputs": {
+            "y": np.empty(shape=(1), dtype=np.float32)
+        },
+        "periodic": 0
+    },
     "Cast": { },
     "CastLike": { },
     "Ceil": {
