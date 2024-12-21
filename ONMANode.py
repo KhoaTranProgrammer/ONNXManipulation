@@ -33,6 +33,7 @@ class ONMANode:
             size=None,              \
             fmod=None,              \
             lambd=None,             \
+            align_corners=None,     \
         ):
         try:
             if values == None:
@@ -56,7 +57,8 @@ class ONMANode:
                     bias=bias,
                     size=size,
                     fmod=fmod,
-                    lambd=lambd
+                    lambd=lambd,
+                    align_corners=align_corners,
                 )
         except:
             pass

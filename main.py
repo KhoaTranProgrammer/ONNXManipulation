@@ -3,6 +3,7 @@ import onnx
 import argparse
 import numpy as np
 from ONMAOperators import ONMAOperators
+from onnx.backend.test.case.node.affinegrid import create_theta_2d
 
 global args
 
@@ -49,7 +50,17 @@ default_input = \
             "Y": None
         },
     },
-    "AffineGrid": { },
+    "AffineGrid": {
+        "graph_name": "AffineGrid_sample",
+        "inputs": {
+            "theta": create_theta_2d(),
+            "size": np.array([len(create_theta_2d()), 3, 5, 6], dtype=np.int64),
+        },
+        "outputs": {
+            "Y": None
+        },
+        "align_corners": 0
+    },
     "And": {
         "graph_name": "And_sample",
         "inputs": {
