@@ -1075,7 +1075,23 @@ default_input = \
         },
         "allowzero": 1
     },
-    "Resize": { },
+    "Resize": {
+        "graph_name": "Resize_sample",
+        "inputs": {
+            "X": np.array([[[
+                    [1, 2, 3, 4],
+                    [5, 6, 7, 8],
+                    [9, 10, 11, 12],
+                    [13, 14, 15, 16],
+                ]]],dtype=np.float32,),
+            "": "",
+            "scales": np.array([1.0, 1.0, 0.8, 0.8], dtype=np.float32)
+        },
+        "outputs": {
+            "Y": None
+        },
+        "mode": "cubic"
+    },
     "ReverseSequence": { },
     "RoiAlign": { },
     "Round": {

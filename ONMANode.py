@@ -11,41 +11,49 @@ class ONMANode:
         self._node = None
 
     def ONMAMakeNode(
-            self,                   \
-            name,                   \
-            inputs,                 \
-            outputs,                \
-            direction=None,         \
-            alpha=None,             \
-            axes=None,              \
-            axis=None,              \
-            values=None,            \
-            kernel_shape=None,      \
-            pads=None,              \
-            allowzero=None,         \
-            exclusive=None,         \
-            reverse=None,           \
-            equation=None,          \
-            beta=None,              \
-            detect_positive=None,   \
-            detect_negative=None,   \
-            bias=None,              \
-            size=None,              \
-            fmod=None,              \
-            lambd=None,             \
-            align_corners=None,     \
-            keepdims=None,          \
-            select_last_index=None, \
-            strides=None,           \
-            ceil_mode=None,         \
-            dilations=None,         \
-            count_include_pad=None, \
-            auto_pad=None,          \
-            epsilon=None,           \
-            training_mode=None,     \
-            seed=None,              \
-            periodic=None,          \
-            pattern=None,           \
+            self,
+            name,
+            inputs,
+            outputs,
+            direction=None,
+            alpha=None,
+            axes=None,
+            axis=None,
+            values=None,
+            kernel_shape=None,
+            pads=None,
+            allowzero=None,
+            exclusive=None,
+            reverse=None,
+            equation=None,
+            beta=None,
+            detect_positive=None,
+            detect_negative=None,
+            bias=None,
+            size=None,
+            fmod=None,
+            lambd=None,
+            align_corners=None,
+            keepdims=None,
+            select_last_index=None,                 \
+            strides=None,                           \
+            ceil_mode=None,                         \
+            dilations=None,                         \
+            count_include_pad=None,                 \
+            auto_pad=None,                          \
+            epsilon=None,                           \
+            training_mode=None,                     \
+            seed=None,                              \
+            periodic=None,                          \
+            pattern=None,                           \
+            mode=None,                              \
+            cubic_coeff_a=None,                     \
+            exclude_outside=None,                   \
+            coordinate_transformation_mode=None,    \
+            antialias=None,                         \
+            keep_aspect_ratio_policy=None,          \
+            extrapolation_value=None,               \
+            nearest_mode=None,                      \
         ):
         try:
             if values == None:
@@ -83,6 +91,14 @@ class ONMANode:
                     seed=seed,
                     periodic=periodic,
                     pattern=pattern,
+                    mode=mode,
+                    cubic_coeff_a=cubic_coeff_a,
+                    exclude_outside=exclude_outside,
+                    coordinate_transformation_mode=coordinate_transformation_mode,
+                    antialias=antialias,
+                    keep_aspect_ratio_policy=keep_aspect_ratio_policy,
+                    extrapolation_value=extrapolation_value,
+                    nearest_mode=nearest_mode,
                 )
         except:
             pass
