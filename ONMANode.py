@@ -56,6 +56,10 @@ class ONMANode:
             nearest_mode=None,
             time_axis=None,
             batch_axis=None,
+            spatial_scale=None,
+            output_height=None,
+            output_width=None,
+            sampling_ratio=None,
         ):
         try:
             if values == None:
@@ -103,6 +107,10 @@ class ONMANode:
                     nearest_mode=nearest_mode,
                     time_axis=time_axis,
                     batch_axis=batch_axis,
+                    spatial_scale=spatial_scale,
+                    output_height=output_height,
+                    output_width=output_width,
+                    sampling_ratio=sampling_ratio,
                 )
         except:
             pass

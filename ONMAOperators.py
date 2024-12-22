@@ -78,6 +78,10 @@ def CreateNetworkWithOperator(
         nearest_mode=None,
         time_axis=None,
         batch_axis=None,
+        spatial_scale=None,
+        output_height=None,
+        output_width=None,
+        sampling_ratio=None,
 ):
     # Create Node
     onma_node = ONMANode()
@@ -88,7 +92,8 @@ def CreateNetworkWithOperator(
         keepdims=keepdims, select_last_index=select_last_index, strides=strides, ceil_mode=ceil_mode, dilations=dilations, count_include_pad=count_include_pad,
         auto_pad=auto_pad, epsilon=epsilon, training_mode=training_mode, seed=seed, periodic=periodic, pattern=pattern, mode=mode, cubic_coeff_a=cubic_coeff_a,
         exclude_outside=exclude_outside, coordinate_transformation_mode=coordinate_transformation_mode, antialias=antialias, nearest_mode=nearest_mode,
-        keep_aspect_ratio_policy=keep_aspect_ratio_policy, extrapolation_value=extrapolation_value, time_axis=time_axis, batch_axis=batch_axis
+        keep_aspect_ratio_policy=keep_aspect_ratio_policy, extrapolation_value=extrapolation_value, time_axis=time_axis, batch_axis=batch_axis,
+        spatial_scale=spatial_scale, output_height=output_height, output_width=output_width, sampling_ratio=sampling_ratio
     )
 
     # Remove empty input
@@ -173,6 +178,10 @@ class ONMAOperators:
         nearest_mode=None,
         time_axis=None,
         batch_axis=None,
+        spatial_scale=None,
+        output_height=None,
+        output_width=None,
+        sampling_ratio=None,
     ):
         CreateNetworkWithOperator(
             operator_name,
@@ -222,4 +231,8 @@ class ONMAOperators:
             nearest_mode=nearest_mode,
             time_axis=time_axis,
             batch_axis=batch_axis,
+            spatial_scale=spatial_scale,
+            output_height=output_height,
+            output_width=output_width,
+            sampling_ratio=sampling_ratio,
         )
