@@ -1045,7 +1045,16 @@ default_input = \
         },
         "keepdims": 1
     },
-    "RegexFullMatch": { },
+    "RegexFullMatch": {
+        "graph_name": "RegexFullMatch_sample",
+        "inputs": {
+            "X": np.array(["www.google.com", "www.facebook.com", "www.bbc.co.uk"]).astype(object)
+        },
+        "outputs": {
+            "Y": np.empty(shape=(1), dtype=bool)
+        },
+        "pattern": r"www\.[\w.-]+\.\bcom\b"
+    },
     "Relu": {
         "graph_name": "Relu_sample",
         "inputs": {

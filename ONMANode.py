@@ -45,6 +45,7 @@ class ONMANode:
             training_mode=None,     \
             seed=None,              \
             periodic=None,          \
+            pattern=None,           \
         ):
         try:
             if values == None:
@@ -81,6 +82,7 @@ class ONMANode:
                     training_mode=training_mode,
                     seed=seed,
                     periodic=periodic,
+                    pattern=pattern,
                 )
         except:
             pass
