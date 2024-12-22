@@ -936,9 +936,39 @@ default_input = \
             "y": None
         }
     },
-    "ReduceL1": { },
-    "ReduceL2": { },
-    "ReduceLogSum": { },
+    "ReduceL1": {
+        "graph_name": "ReduceL1_sample",
+        "inputs": {
+            "data": np.reshape(np.arange(1, np.prod([3, 2, 2]) + 1, dtype=np.float32), [3, 2, 2]),
+            "axes": np.array([], dtype=np.int64)
+        },
+        "outputs": {
+            "reduced": None
+        },
+        "keepdims": 1
+    },
+    "ReduceL2": {
+        "graph_name": "ReduceL2_sample",
+        "inputs": {
+            "data": np.reshape(np.arange(1, np.prod([3, 2, 2]) + 1, dtype=np.float32), [3, 2, 2]),
+            "axes": np.array([], dtype=np.int64)
+        },
+        "outputs": {
+            "reduced": None
+        },
+        "keepdims": 1
+    },
+    "ReduceLogSum": {
+        "graph_name": "ReduceLogSum_sample",
+        "inputs": {
+            "data": np.array([], dtype=np.float32).reshape([2, 0, 4]),
+            "axes": np.array([1], dtype=np.int64)
+        },
+        "outputs": {
+            "reduced": None
+        },
+        "keepdims": 1
+    },
     "ReduceLogSumExp": { },
     "ReduceMax": { },
     "ReduceMean": { },
