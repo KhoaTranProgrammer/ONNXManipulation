@@ -460,7 +460,17 @@ default_input = \
         "reverse": 1,
         "exclusive": 1
     },
-    "DFT": { },
+    "DFT": {
+        "graph_name": "DFT_sample",
+        "inputs": {
+            "x": np.arange(0, 100).reshape(10, 10).astype(np.float32).reshape(1, 10, 10, 1),
+            "": "",
+            "axis": np.array(1, dtype=np.int64)
+        },
+        "outputs": {
+            "y": None
+        }
+    },
     "DeformConv": { },
     "DepthToSpace": { },
     "DequantizeLinear": { },
