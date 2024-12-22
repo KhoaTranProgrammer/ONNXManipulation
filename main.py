@@ -364,7 +364,16 @@ default_input = \
         },
         "values": np.random.randn(5, 5).astype(np.float32)
     },
-    "ConstantOfShape": { },
+    "ConstantOfShape": {
+        "graph_name": "ConstantOfShape_sample",
+        "inputs": {
+            "X": np.array([10, 6]).astype(np.int64)
+        },
+        "outputs": {
+            "Y": np.empty(shape=(1), dtype=np.int32)
+        },
+        "values": onnx.helper.make_tensor("value", onnx.TensorProto.INT32, [1], [0])
+    },
     "Conv": {
         "graph_name": "Conv_sample",
         "inputs": {

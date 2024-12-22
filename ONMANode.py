@@ -133,6 +133,16 @@ class ONMANode:
         except:
             pass
 
+        try:
+            self._node = onnx.helper.make_node(
+                    name,
+                    inputs=inputs,
+                    outputs=outputs,
+                    value=values
+                )
+        except:
+            pass
+
     def ONMAGetNode(self):
         return self._node
     
