@@ -35,25 +35,27 @@ class ONMANode:
             lambd=None,
             align_corners=None,
             keepdims=None,
-            select_last_index=None,                 \
-            strides=None,                           \
-            ceil_mode=None,                         \
-            dilations=None,                         \
-            count_include_pad=None,                 \
-            auto_pad=None,                          \
-            epsilon=None,                           \
-            training_mode=None,                     \
-            seed=None,                              \
-            periodic=None,                          \
-            pattern=None,                           \
-            mode=None,                              \
-            cubic_coeff_a=None,                     \
-            exclude_outside=None,                   \
-            coordinate_transformation_mode=None,    \
-            antialias=None,                         \
-            keep_aspect_ratio_policy=None,          \
-            extrapolation_value=None,               \
-            nearest_mode=None,                      \
+            select_last_index=None,
+            strides=None,
+            ceil_mode=None,
+            dilations=None,
+            count_include_pad=None,
+            auto_pad=None,
+            epsilon=None,
+            training_mode=None,
+            seed=None,
+            periodic=None,
+            pattern=None,
+            mode=None,
+            cubic_coeff_a=None,
+            exclude_outside=None,
+            coordinate_transformation_mode=None,
+            antialias=None,
+            keep_aspect_ratio_policy=None,
+            extrapolation_value=None,
+            nearest_mode=None,
+            time_axis=None,
+            batch_axis=None,
         ):
         try:
             if values == None:
@@ -99,6 +101,8 @@ class ONMANode:
                     keep_aspect_ratio_policy=keep_aspect_ratio_policy,
                     extrapolation_value=extrapolation_value,
                     nearest_mode=nearest_mode,
+                    time_axis=time_axis,
+                    batch_axis=batch_axis,
                 )
         except:
             pass

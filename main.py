@@ -1092,7 +1092,22 @@ default_input = \
         },
         "mode": "cubic"
     },
-    "ReverseSequence": { },
+    "ReverseSequence": {
+        "graph_name": "ReverseSequence_sample",
+        "inputs": {
+            "x": np.array([
+                        [0.0, 1.0, 2.0, 3.0],
+                        [4.0, 5.0, 6.0, 7.0],
+                        [8.0, 9.0, 10.0, 11.0],
+                        [12.0, 13.0, 14.0, 15.0],],dtype=np.float32,),
+            "sequence_lens": np.array([1, 2, 3, 4], dtype=np.int64)
+        },
+        "outputs": {
+            "y": None
+        },
+        "time_axis": 1,
+        "batch_axis": 0
+    },
     "RoiAlign": { },
     "Round": {
         "graph_name": "Round_sample",
