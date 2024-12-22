@@ -408,8 +408,28 @@ default_input = \
         "kernel_shape": [3, 3],
         "pads": [1, 1, 1, 1]
     },
-    "ConvInteger": { },
-    "ConvTranspose": { },
+    "ConvInteger": {
+        "graph_name": "ConvInteger_sample",
+        "inputs": {
+            "x": (np.array([2, 3, 4, 5, 6, 7, 8, 9, 10]).astype(np.uint8).reshape((1, 1, 3, 3))),
+            "w": np.array([1, 1, 1, 1]).astype(np.uint8).reshape((1, 1, 2, 2)),
+            "x_zero_point": np.array([1]).astype(np.uint8)
+        },
+        "outputs": {
+            "Y": np.empty(shape=(1), dtype=np.int32)
+        },
+        "pads": [1, 1, 1, 1]
+    },
+    "ConvTranspose": {
+        "graph_name": "ConvTranspose_sample",
+        "inputs": {
+            "x": np.array([[[0.0, 1.0, 2.0]]]).astype(np.float32),
+            "w": np.array([[[1.0, 1.0, 1.0], [1.0, 1.0, 1.0]]]).astype(np.float32),
+        },
+        "outputs": {
+            "y": np.empty(shape=(1), dtype=np.float32)
+        },
+    },
     "Cos": {
         "graph_name": "Cos_sample",
         "inputs": {
