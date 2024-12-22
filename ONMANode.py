@@ -60,6 +60,7 @@ class ONMANode:
             output_height=None,
             output_width=None,
             sampling_ratio=None,
+            to=None,
         ):
         try:
             if values == None:
@@ -111,6 +112,7 @@ class ONMANode:
                     output_height=output_height,
                     output_width=output_width,
                     sampling_ratio=sampling_ratio,
+                    to=to,
                 )
         except:
             pass
