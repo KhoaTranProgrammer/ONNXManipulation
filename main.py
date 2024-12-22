@@ -1013,9 +1013,38 @@ default_input = \
         },
         "keepdims": 1
     },
-    "ReduceProd": { },
-    "ReduceSum": { },
-    "ReduceSumSquare": { },
+    "ReduceProd": {
+        "graph_name": "ReduceProd_sample",
+        "inputs": {
+            "data": np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 10], [11, 12]]], dtype=np.float32)
+        },
+        "outputs": {
+            "reduced": None
+        },
+        "keepdims": 1
+    },
+    "ReduceSum": {
+        "graph_name": "ReduceSum_sample",
+        "inputs": {
+            "data": np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 10], [11, 12]]], dtype=np.float32),
+            "axes": np.array([], dtype=np.int64)
+        },
+        "outputs": {
+            "reduced": None
+        },
+        "keepdims": 1
+    },
+    "ReduceSumSquare": {
+        "graph_name": "ReduceSumSquare_sample",
+        "inputs": {
+            "data": np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 10], [11, 12]]], dtype=np.float32),
+            "axes": np.array([], dtype=np.int64)
+        },
+        "outputs": {
+            "reduced": None
+        },
+        "keepdims": 1
+    },
     "RegexFullMatch": { },
     "Relu": {
         "graph_name": "Relu_sample",
