@@ -241,7 +241,16 @@ default_input = \
         },
         "to": onnx.TensorProto.UINT8,
     },
-    "CastLike": { },
+    "CastLike": {
+        "graph_name": "CastLike_sample",
+        "inputs": {
+            "x": np.array(["0.47892547","0.48033667","0.49968487","0.81910545","0.47031248","0.7229038","1000000","1e-7","NaN","INF","+INF","-INF","-0.0000001","0.0000001","-1000000",], dtype=np.float32),
+            "like": np.empty(shape=(1), dtype=np.uint8)
+        },
+        "outputs": {
+            "y": np.empty(shape=(1), dtype=np.uint8)
+        },
+    },
     "Ceil": {
         "graph_name": "Ceil_sample",
         "inputs": {
