@@ -969,10 +969,50 @@ default_input = \
         },
         "keepdims": 1
     },
-    "ReduceLogSumExp": { },
-    "ReduceMax": { },
-    "ReduceMean": { },
-    "ReduceMin": { },
+    "ReduceLogSumExp": {
+        "graph_name": "ReduceLogSumExp_sample",
+        "inputs": {
+            "data": np.array([[[5, 1], [20, 2]], [[30, 1], [40, 2]], [[55, 1], [60, 2]]], dtype=np.float32),
+            "axes": np.array([], dtype=np.int64)
+        },
+        "outputs": {
+            "reduced": None
+        },
+        "keepdims": 1
+    },
+    "ReduceMax": {
+        "graph_name": "ReduceMax_sample",
+        "inputs": {
+            "data": np.array([[True, True], [True, False], [False, True], [False, False]],),
+            "axes": np.array([1], dtype=np.int64)
+        },
+        "outputs": {
+            "reduced": None
+        },
+        "keepdims": 1
+    },
+    "ReduceMean": {
+        "graph_name": "ReduceMean_sample",
+        "inputs": {
+            "data": np.array([[[5, 1], [20, 2]], [[30, 1], [40, 2]], [[55, 1], [60, 2]]],dtype=np.float32,),
+            "axes": np.array([], dtype=np.int64)
+        },
+        "outputs": {
+            "reduced": None
+        },
+        "keepdims": 1
+    },
+    "ReduceMin": {
+        "graph_name": "ReduceMin_sample",
+        "inputs": {
+            "data": np.array([[True, True], [True, False], [False, True], [False, False]],),
+            "axes": np.array([1], dtype=np.int64)
+        },
+        "outputs": {
+            "reduced": None
+        },
+        "keepdims": 1
+    },
     "ReduceProd": { },
     "ReduceSum": { },
     "ReduceSumSquare": { },
