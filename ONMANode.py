@@ -62,6 +62,7 @@ class ONMANode:
             sampling_ratio=None,
             to=None,
             block_size=None,
+            ratio=None,
         ):
         try:
             if values == None:
@@ -115,6 +116,7 @@ class ONMANode:
                     sampling_ratio=sampling_ratio,
                     to=to,
                     block_size=block_size,
+                    ratio=ratio,
                 )
         except:
             pass

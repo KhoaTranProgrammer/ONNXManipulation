@@ -503,7 +503,18 @@ default_input = \
             "Y": None
         },
     },
-    "Dropout": { },
+    "Dropout": {
+        "graph_name": "Dropout_sample",
+        "inputs": {
+            "x": np.random.randn(3, 4, 5).astype(np.float32),
+            "r": np.array(0.75).astype(np.float32),
+            "t": np.array(True).astype(np.bool_)
+        },
+        "outputs": {
+            "y": None
+        },
+        "seed": 0
+    },
     "DynamicQuantizeLinear": { },
     "Einsum": {
         "graph_name": "Einsum_sample",
