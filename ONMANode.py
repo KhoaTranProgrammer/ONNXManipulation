@@ -65,6 +65,7 @@ class ONMANode:
             ratio=None,
             k=None,
             dtype=None,
+            batch_dims=None,
         ):
         try:
             if values == None:
@@ -121,6 +122,7 @@ class ONMANode:
                     ratio=ratio,
                     k=k,
                     dtype=dtype,
+                    batch_dims=batch_dims,
                 )
         except:
             pass

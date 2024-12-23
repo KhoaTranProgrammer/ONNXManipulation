@@ -628,7 +628,17 @@ default_input = \
         },
         "axis": 0
     },
-    "GatherND": { },
+    "GatherND": {
+        "graph_name": "GatherND_sample",
+        "inputs": {
+            "data": np.array([[[0, 1], [2, 3]], [[4, 5], [6, 7]]], dtype=np.int32),
+            "indices": np.array([[1], [0]], dtype=np.int64)
+        },
+        "outputs": {
+            "y": None
+        },
+        "batch_dims": 1
+    },
     "Gelu": {
         "graph_name": "Gelu_sample",
         "inputs": {
