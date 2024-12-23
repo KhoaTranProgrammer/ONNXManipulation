@@ -61,6 +61,7 @@ class ONMANode:
             output_width=None,
             sampling_ratio=None,
             to=None,
+            block_size=None,
         ):
         try:
             if values == None:
@@ -113,6 +114,7 @@ class ONMANode:
                     output_width=output_width,
                     sampling_ratio=sampling_ratio,
                     to=to,
+                    block_size=block_size,
                 )
         except:
             pass

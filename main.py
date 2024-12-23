@@ -473,7 +473,17 @@ default_input = \
     },
     "DeformConv": { },
     "DepthToSpace": { },
-    "DequantizeLinear": { },
+    "DequantizeLinear": {
+        "graph_name": "DequantizeLinear_sample",
+        "inputs": {
+            "x": np.array([0, 3, 128, 255]).astype(np.uint8),
+            "x_scale": np.array([2]).astype(np.float32),
+            "x_zero_point": np.array([128]).astype(np.uint8)
+        },
+        "outputs": {
+            "Y": np.empty(shape=(1), dtype=np.float32)
+        }
+    },
     "Det": {
         "graph_name": "Det_sample",
         "inputs": {
