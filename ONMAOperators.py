@@ -85,6 +85,8 @@ def CreateNetworkWithOperator(
         to=None,
         block_size=None,
         ratio=None,
+        k=None,
+        dtype=None,
 ):
     # Create Node
     onma_node = ONMANode()
@@ -97,7 +99,7 @@ def CreateNetworkWithOperator(
         exclude_outside=exclude_outside, coordinate_transformation_mode=coordinate_transformation_mode, antialias=antialias, nearest_mode=nearest_mode,
         keep_aspect_ratio_policy=keep_aspect_ratio_policy, extrapolation_value=extrapolation_value, time_axis=time_axis, batch_axis=batch_axis,
         spatial_scale=spatial_scale, output_height=output_height, output_width=output_width, sampling_ratio=sampling_ratio, to=to, block_size=block_size,
-        ratio=ratio,
+        ratio=ratio, k=k, dtype=dtype,
     )
 
     # Remove empty input
@@ -189,6 +191,8 @@ class ONMAOperators:
         to=None,
         block_size=None,
         ratio=None,
+        k=None,
+        dtype=None,
     ):
         CreateNetworkWithOperator(
             operator_name,
@@ -245,4 +249,6 @@ class ONMAOperators:
             to=to,
             block_size=block_size,
             ratio=ratio,
+            k=k,
+            dtype=dtype,
         )

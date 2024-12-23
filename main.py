@@ -575,7 +575,17 @@ default_input = \
             "Z": None
         }
     },
-    "EyeLike": { },
+    "EyeLike": {
+        "graph_name": "EyeLike_sample",
+        "inputs": {
+            "X": np.random.randint(0, 100, size=(4, 5), dtype=np.int32)
+        },
+        "outputs": {
+            "Y": None
+        },
+        "k": 1,
+        "dtype": onnx.TensorProto.FLOAT,
+    },
     "Flatten": {
         "graph_name": "Flatten_sample",
         "inputs": {

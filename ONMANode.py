@@ -63,6 +63,8 @@ class ONMANode:
             to=None,
             block_size=None,
             ratio=None,
+            k=None,
+            dtype=None,
         ):
         try:
             if values == None:
@@ -117,6 +119,8 @@ class ONMANode:
                     to=to,
                     block_size=block_size,
                     ratio=ratio,
+                    k=k,
+                    dtype=dtype,
                 )
         except:
             pass
