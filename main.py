@@ -1145,7 +1145,19 @@ default_input = \
             "y": None
         }
     },
-    "Pad": { },
+    "Pad": {
+        "graph_name": "Pad_sample",
+        "inputs": {
+            "x": np.random.randn(1, 3, 4, 5).astype(np.float32),
+            "pads": np.array([0, 3, 0, 4]).astype(np.int64),
+            "value": np.array(1.2, dtype=np.float32),
+            "axes": np.array([1, 3], dtype=np.int64)
+        },
+        "outputs": {
+            "y": None
+        },
+        "mode": "constant"
+    },
     "Pow": {
         "graph_name": "Pow_sample",
         "inputs": {
