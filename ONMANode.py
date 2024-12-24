@@ -68,6 +68,7 @@ class ONMANode:
             batch_dims=None,
             transA=None,
             transB=None,
+            padding_mode=None,
         ):
         try:
             if values == None:
@@ -127,6 +128,7 @@ class ONMANode:
                     batch_dims=batch_dims,
                     transA=transA,
                     transB=transB,
+                    padding_mode=padding_mode,
                 )
         except:
             pass
