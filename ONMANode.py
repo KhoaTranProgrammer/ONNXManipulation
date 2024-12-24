@@ -69,6 +69,7 @@ class ONMANode:
             transA=None,
             transB=None,
             padding_mode=None,
+            num_groups=None,
         ):
 
         isCreated = False
@@ -131,6 +132,7 @@ class ONMANode:
                     transA=transA,
                     transB=transB,
                     padding_mode=padding_mode,
+                    num_groups=num_groups,
                 )
                 isCreated = True
         except:

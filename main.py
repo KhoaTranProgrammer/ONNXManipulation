@@ -723,7 +723,19 @@ default_input = \
         "padding_mode": "zeros",
         "align_corners": 0,
     },
-    "GroupNormalization": { },
+    "GroupNormalization": {
+        "graph_name": "GroupNormalization_sample",
+        "inputs": {
+            "x": np.random.randn(3, 4, 2, 2).astype(np.float32),
+            "scale": np.random.randn(4).astype(np.float32),
+            "bias": np.random.randn(4).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "epsilon": 1e-2,
+        "num_groups": 2,
+    },
     "HammingWindow": {
         "graph_name": "HammingWindow_sample",
         "inputs": {
