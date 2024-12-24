@@ -73,6 +73,7 @@ class ONMANode:
             p=None,
             reduction=None,
             ignore_index=None,
+            center_point_box=None,
         ):
 
         isCreated = False
@@ -139,6 +140,7 @@ class ONMANode:
                     p=p,
                     reduction=reduction,
                     ignore_index=ignore_index,
+                    center_point_box=center_point_box,
                 )
                 isCreated = True
         except:

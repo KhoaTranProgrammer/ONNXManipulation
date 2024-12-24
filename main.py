@@ -1072,7 +1072,26 @@ default_input = \
         },
         "reduction": "sum"
     },
-    "NonMaxSuppression": { },
+    "NonMaxSuppression": {
+        "graph_name": "LpPool_sample",
+        "inputs": {
+            "boxes": np.array([[
+                        [0.5, 0.5, 1.0, 1.0],
+                        [0.5, 0.6, 1.0, 1.0],
+                        [0.5, 0.4, 1.0, 1.0],
+                        [0.5, 10.5, 1.0, 1.0],
+                        [0.5, 10.6, 1.0, 1.0],
+                        [0.5, 100.5, 1.0, 1.0],]]).astype(np.float32),
+            "scores": np.array([[[0.9, 0.75, 0.6, 0.95, 0.5, 0.3]]]).astype(np.float32),
+            "max_output_boxes_per_class": np.array([3]).astype(np.int64),
+            "iou_threshold": np.array([0.5]).astype(np.float32),
+            "score_threshold": np.array([0.0]).astype(np.float32),
+        },
+        "outputs": {
+            "y": np.empty(shape=(1), dtype=np.int64)
+        },
+        "center_point_box": 1,
+    },
     "NonZero": {
         "graph_name": "NonZero_sample",
         "inputs": {
