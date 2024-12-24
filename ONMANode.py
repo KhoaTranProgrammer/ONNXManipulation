@@ -75,6 +75,9 @@ class ONMANode:
             ignore_index=None,
             center_point_box=None,
             output_dtype=None,
+            gamma=None,
+            start=None,
+            end=None,
         ):
 
         isCreated = False
@@ -143,6 +146,9 @@ class ONMANode:
                     ignore_index=ignore_index,
                     center_point_box=center_point_box,
                     output_dtype=output_dtype,
+                    gamma=gamma,
+                    start=start,
+                    end=end,
                 )
                 isCreated = True
         except:

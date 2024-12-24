@@ -1492,7 +1492,17 @@ default_input = \
         },
         "reduction": "mul",
     },
-    "Selu": { },
+    "Selu": {
+        "graph_name": "Selu_sample",
+        "inputs": {
+            "x": np.array([-1, 0, 1]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "alpha": 2.0,
+        "gamma": 3.0
+    },
     "SequenceAt": { },
     "SequenceConstruct": { },
     "SequenceEmpty": { },
@@ -1500,7 +1510,17 @@ default_input = \
     "SequenceInsert": { },
     "SequenceLength": { },
     "SequenceMap": { },
-    "Shape": { },
+    "Shape": {
+        "graph_name": "Shape_sample",
+        "inputs": {
+            "x": np.random.randn(3, 4, 5).astype(np.float32)
+        },
+        "outputs": {
+            "y": np.empty(shape=(1), dtype=np.int64)
+        },
+        "start": 1,
+        "end": 2,
+    },
     "Shrink": {
         "graph_name": "Shrink_sample",
         "inputs": {
