@@ -71,6 +71,8 @@ class ONMANode:
             padding_mode=None,
             num_groups=None,
             p=None,
+            reduction=None,
+            ignore_index=None,
         ):
 
         isCreated = False
@@ -135,6 +137,8 @@ class ONMANode:
                     padding_mode=padding_mode,
                     num_groups=num_groups,
                     p=p,
+                    reduction=reduction,
+                    ignore_index=ignore_index,
                 )
                 isCreated = True
         except:

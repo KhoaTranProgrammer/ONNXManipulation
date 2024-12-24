@@ -1060,7 +1060,18 @@ default_input = \
             "y": None
         }
     },
-    "NegativeLogLikelihoodLoss": { },
+    "NegativeLogLikelihoodLoss": {
+        "graph_name": "NegativeLogLikelihoodLoss_sample",
+        "inputs": {
+            "input": np.random.rand(3, 5, 6, 6).astype(np.float32),
+            "target": np.random.randint(0, high=5, size=(3, 6, 6)).astype(np.int64),
+            "weight": np.random.rand(5).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "reduction": "sum"
+    },
     "NonMaxSuppression": { },
     "NonZero": {
         "graph_name": "NonZero_sample",
