@@ -893,7 +893,18 @@ default_input = \
     },
     "Loop": { },
     "LpNormalization": { },
-    "LpPool": { },
+    "LpPool": {
+        "graph_name": "LpPool_sample",
+        "inputs": {
+            "x": np.random.randn(1, 3, 32, 32).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "kernel_shape": [2, 2],
+        "auto_pad": "SAME_UPPER",
+        "p": 2,
+    },
     "MatMul": {
         "graph_name": "MatMul_sample",
         "inputs": {
