@@ -1621,7 +1621,21 @@ default_input = \
             "y": None
         }
     },
-    "SpaceToDepth": { },
+    "SpaceToDepth": {
+        "graph_name": "SpaceToDepth_sample",
+        "inputs": {
+            "x": np.array([[[
+                    [0, 6, 1, 7, 2, 8],
+                    [12, 18, 13, 19, 14, 20],
+                    [3, 9, 4, 10, 5, 11],
+                    [15, 21, 16, 22, 17, 23],
+                ]]]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "blocksize": 2
+    },
     "Split": { },
     "SplitToSequence": { },
     "Sqrt": {

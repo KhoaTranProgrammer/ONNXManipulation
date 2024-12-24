@@ -78,6 +78,7 @@ class ONMANode:
             gamma=None,
             start=None,
             end=None,
+            blocksize=None,
         ):
 
         isCreated = False
@@ -149,6 +150,7 @@ class ONMANode:
                     gamma=gamma,
                     start=start,
                     end=end,
+                    blocksize=blocksize,
                 )
                 isCreated = True
         except:
