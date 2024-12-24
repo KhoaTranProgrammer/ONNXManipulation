@@ -1168,7 +1168,29 @@ default_input = \
             "z": None
         }
     },
-    "QLinearConv": { },
+    "QLinearConv": {
+        "graph_name": "QLinearConv_sample",
+        "inputs": {
+            "x": np.array([
+                    [255, 174, 162, 25, 203, 168, 58],
+                    [15, 59, 237, 95, 129, 0, 64],
+                    [56, 242, 153, 221, 168, 12, 166],
+                    [232, 178, 186, 195, 237, 162, 237],
+                    [188, 39, 124, 77, 80, 102, 43],
+                    [127, 230, 21, 83, 41, 40, 134],
+                    [255, 154, 92, 141, 42, 148, 247],],dtype=np.uint8,).reshape((1, 1, 7, 7)),
+            "x_scale": np.array(0.00369204697, dtype=np.float32),
+            "x_zero_point": np.array(132, dtype=np.uint8),
+            "w": np.array([0], dtype=np.uint8).reshape((1, 1, 1, 1)),
+            "w_scale": np.array([0.00172794575], dtype=np.float32),
+            "w_zero_point": np.array([255], dtype=np.uint8),
+            "y_scale": np.array(0.00162681262, dtype=np.float32),
+            "y_zero_point": np.array(123, dtype=np.uint8),
+        },
+        "outputs": {
+            "y": None
+        },
+    },
     "QLinearMatMul": { },
     "QuantizeLinear": { },
     "RNN": { },
