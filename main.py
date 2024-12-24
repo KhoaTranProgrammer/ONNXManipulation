@@ -1461,8 +1461,37 @@ default_input = \
     "STFT": { },
     "Scan": { },
     "Scatter": { },
-    "ScatterElements": { },
-    "ScatterND": { },
+    "ScatterElements": {
+        "graph_name": "ScatterElements_sample",
+        "inputs": {
+            "data": np.array([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=np.float32),
+            "indices": np.array([[1, 1]], dtype=np.int64),
+            "updates": np.array([[1.1, 2.1]], dtype=np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "axis": 1,
+        "reduction": "add",
+    },
+    "ScatterND": {
+        "graph_name": "ScatterND_sample",
+        "inputs": {
+            "data": np.array([
+                    [[1, 2, 3, 4], [5, 6, 7, 8], [8, 7, 6, 5], [4, 3, 2, 1]],
+                    [[1, 2, 3, 4], [5, 6, 7, 8], [8, 7, 6, 5], [4, 3, 2, 1]],
+                    [[8, 7, 6, 5], [4, 3, 2, 1], [1, 2, 3, 4], [5, 6, 7, 8]],
+                    [[8, 7, 6, 5], [4, 3, 2, 1], [1, 2, 3, 4], [5, 6, 7, 8]],],dtype=np.float32,),
+            "indices": np.array([[0], [0]], dtype=np.int64),
+            "updates": np.array([
+                    [[5, 5, 5, 5], [6, 6, 6, 6], [7, 7, 7, 7], [8, 8, 8, 8]],
+                    [[1, 1, 1, 1], [2, 2, 2, 2], [3, 3, 3, 3], [4, 4, 4, 4]],],dtype=np.float32,)
+        },
+        "outputs": {
+            "y": None
+        },
+        "reduction": "mul",
+    },
     "Selu": { },
     "SequenceAt": { },
     "SequenceConstruct": { },
