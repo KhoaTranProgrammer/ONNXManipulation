@@ -996,7 +996,19 @@ default_input = \
             "Y": None
         }
     },
-    "MelWeightMatrix": { },
+    "MelWeightMatrix": {
+        "graph_name": "MelWeightMatrix_sample",
+        "inputs": {
+            "num_mel_bins": np.array([8]).astype(np.int32),
+            "dft_length": np.array([16]).astype(np.int32),
+            "sample_rate": np.array([8192]).astype(np.int32),
+            "lower_edge_hertz": np.array([0]).astype(np.float32),
+            "upper_edge_hertz": np.array([8192 / 2]).astype(np.float32),
+        },
+        "outputs": {
+            "output": np.empty(shape=(3, 4, 5), dtype=np.float32)
+        },
+    },
     "Min": {
         "graph_name": "Min_sample",
         "inputs": {
