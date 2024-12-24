@@ -734,7 +734,16 @@ default_input = \
         },
         "periodic": 0
     },
-    "HannWindow": { },
+    "HannWindow": {
+        "graph_name": "HannWindow_sample",
+        "inputs": {
+            "size": np.array([10]).astype(np.int32)
+        },
+        "outputs": {
+            "Y": np.empty(shape=(6), dtype=np.float32)
+        },
+        "periodic": 0
+    },
     "HardSigmoid": {
         "graph_name": "HardSigmoid_sample",
         "inputs": {
