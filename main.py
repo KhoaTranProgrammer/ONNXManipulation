@@ -724,7 +724,16 @@ default_input = \
         "align_corners": 0,
     },
     "GroupNormalization": { },
-    "HammingWindow": { },
+    "HammingWindow": {
+        "graph_name": "HammingWindow_sample",
+        "inputs": {
+            "size": np.array([10]).astype(np.int32)
+        },
+        "outputs": {
+            "Y": np.empty(shape=(6), dtype=np.float32)
+        },
+        "periodic": 0
+    },
     "HannWindow": { },
     "HardSigmoid": {
         "graph_name": "HardSigmoid_sample",
