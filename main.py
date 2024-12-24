@@ -1751,7 +1751,17 @@ default_input = \
         },
         "perm": (0, 2, 1)
     },
-    "Trilu": { },
+    "Trilu": {
+        "graph_name": "Trilu_sample",
+        "inputs": {
+            "x": np.random.randint(10, size=(2, 3, 3)).astype(np.int64),
+            "k": np.array(-1).astype(np.int64)
+        },
+        "outputs": {
+            "y": None
+        },
+        "upper": 0
+    },
     "Unique": { },
     "Unsqueeze": {
         "graph_name": "Unsqueeze_sample",
