@@ -1667,7 +1667,18 @@ default_input = \
             "result": None
         }
     },
-    "StringNormalizer": { },
+    "StringNormalizer": {
+        "graph_name": "StringNormalizer_sample",
+        "inputs": {
+            "x": np.array(["monday", "tuesday", "wednesday", "thursday"]).astype(object)
+        },
+        "outputs": {
+            "y": None
+        },
+        "case_change_action": "LOWER",
+        "is_case_sensitive": 1,
+        "stopwords": ["monday"],
+    },
     "StringSplit": { },
     "Sub": {
         "graph_name": "Sub_sample",

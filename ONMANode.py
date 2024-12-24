@@ -79,6 +79,11 @@ class ONMANode:
             start=None,
             end=None,
             blocksize=None,
+            case_change_action=None,
+            is_case_sensitive=None,
+            stopwords=None,
+            delimiter=None,
+            maxsplit=None,
         ):
 
         isCreated = False
@@ -151,6 +156,11 @@ class ONMANode:
                     start=start,
                     end=end,
                     blocksize=blocksize,
+                    case_change_action=case_change_action,
+                    is_case_sensitive=is_case_sensitive,
+                    stopwords=stopwords,
+                    delimiter=delimiter,
+                    maxsplit=maxsplit,
                 )
                 isCreated = True
         except:
