@@ -648,7 +648,18 @@ default_input = \
             "Y": None
         }
     },
-    "Gemm": { },
+    "Gemm": {
+        "graph_name": "Gemm_sample",
+        "inputs": {
+            "a": np.random.ranf([3, 5]).astype(np.float32),
+            "b": np.random.ranf([5, 4]).astype(np.float32),
+            "c": np.zeros([1, 4]).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None
+        },
+        "alpha": 0.5
+    },
     "GlobalAveragePool": {
         "graph_name": "GlobalAveragePool_sample",
         "inputs": {

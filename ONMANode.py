@@ -66,6 +66,8 @@ class ONMANode:
             k=None,
             dtype=None,
             batch_dims=None,
+            transA=None,
+            transB=None,
         ):
         try:
             if values == None:
@@ -123,6 +125,8 @@ class ONMANode:
                     k=k,
                     dtype=dtype,
                     batch_dims=batch_dims,
+                    transA=transA,
+                    transB=transB,
                 )
         except:
             pass
