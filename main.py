@@ -947,7 +947,18 @@ default_input = \
     },
     "MaxPool": { },
     "MaxRoiPool": { },
-    "MaxUnpool": { },
+    "MaxUnpool": {
+        "graph_name": "MaxUnpool_sample",
+        "inputs": {
+            "xT": np.array([[[[1, 2], [3, 4]]]], dtype=np.float32),
+            "xI": np.array([[[[5, 7], [13, 15]]]], dtype=np.int64)
+        },
+        "outputs": {
+            "y": None
+        },
+        "kernel_shape": [2, 2],
+        "strides": [2, 2]
+    },
     "Mean": {
         "graph_name": "Mean_sample",
         "inputs": {
