@@ -1741,7 +1741,16 @@ default_input = \
         }
     },
     "TopK": { },
-    "Transpose": { },
+    "Transpose": {
+        "graph_name": "Transpose_sample",
+        "inputs": {
+            "x": np.random.random_sample((2, 3, 4)).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "perm": (0, 2, 1)
+    },
     "Trilu": { },
     "Unique": { },
     "Unsqueeze": {

@@ -84,6 +84,7 @@ class ONMANode:
             stopwords=None,
             delimiter=None,
             maxsplit=None,
+            perm=None,
         ):
 
         isCreated = False
@@ -161,6 +162,7 @@ class ONMANode:
                     stopwords=stopwords,
                     delimiter=delimiter,
                     maxsplit=maxsplit,
+                    perm=perm,
                 )
                 isCreated = True
         except:

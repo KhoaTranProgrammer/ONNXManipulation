@@ -106,6 +106,7 @@ def CreateNetworkWithOperator(
         stopwords=None,
         delimiter=None,
         maxsplit=None,
+        perm=None,
 ):
     # Create Node
     onma_node = ONMANode()
@@ -120,7 +121,7 @@ def CreateNetworkWithOperator(
         spatial_scale=spatial_scale, output_height=output_height, output_width=output_width, sampling_ratio=sampling_ratio, to=to, block_size=block_size,
         ratio=ratio, k=k, dtype=dtype, batch_dims=batch_dims, transA=transA, transB=transB, padding_mode=padding_mode, num_groups=num_groups, p=p,
         reduction=reduction, ignore_index=ignore_index, center_point_box=center_point_box, output_dtype=output_dtype, gamma=gamma, start=start, end=end,
-        blocksize=blocksize, case_change_action=case_change_action, is_case_sensitive=is_case_sensitive, stopwords=stopwords, delimiter=delimiter,
+        blocksize=blocksize, case_change_action=case_change_action, is_case_sensitive=is_case_sensitive, stopwords=stopwords, delimiter=delimiter, perm=perm,
         maxsplit=maxsplit,
     )
 
@@ -234,6 +235,7 @@ class ONMAOperators:
         stopwords=None,
         delimiter=None,
         maxsplit=None,
+        perm=None,
     ):
         CreateNetworkWithOperator(
             operator_name,
@@ -311,4 +313,5 @@ class ONMAOperators:
             stopwords=stopwords,
             delimiter=delimiter,
             maxsplit=maxsplit,
+            perm=perm,
         )
