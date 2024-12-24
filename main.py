@@ -1191,8 +1191,41 @@ default_input = \
             "y": None
         },
     },
-    "QLinearMatMul": { },
-    "QuantizeLinear": { },
+    "QLinearMatMul": {
+        "graph_name": "QLinearMatMul_sample",
+        "inputs": {
+            "a": np.array([[208, 236, 0, 238], [3, 214, 255, 29]]).astype(np.uint8),
+            "a_scale": np.array([0.0066], dtype=np.float32),
+            "a_zero_point": np.array([113], dtype=np.uint8),
+            "b": np.array([[152, 51, 244], [60, 26, 255], [0, 127, 246], [127, 254, 247]]).astype(np.uint8),
+            "b_scale": np.array([0.00705], dtype=np.float32),
+            "b_zero_point": np.array([114], dtype=np.uint8),
+            "y_scale": np.array([0.0107], dtype=np.float32),
+            "y_zero_point": np.array([118], dtype=np.uint8)
+        },
+        "outputs": {
+            "y": None
+        },
+    },
+    "QuantizeLinear": {
+        "graph_name": "QuantizeLinear_sample",
+        "inputs": {
+            "x": np.array([
+                        [6.0, -8, -10, 5.0],
+                        [1.0, 8.0, 4.0, 5.0],
+                        [0.0, 20.0, 10.0, 4.0],],dtype=np.float32),
+            "y_scale": np.array([
+                        [1.5, 2.5],
+                        [3.0, 4.9],
+                        [5.1, 6.9],],dtype=np.float32)
+        },
+        "outputs": {
+            "y": np.empty(shape=(1), dtype=np.uint8)
+        },
+        "axis": 1,
+        "block_size": 2,
+        "output_dtype": onnx.TensorProto.UINT8,
+    },
     "RNN": { },
     "RandomNormal": { },
     "RandomNormalLike": { },

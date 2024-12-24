@@ -74,6 +74,7 @@ class ONMANode:
             reduction=None,
             ignore_index=None,
             center_point_box=None,
+            output_dtype=None,
         ):
 
         isCreated = False
@@ -141,6 +142,7 @@ class ONMANode:
                     reduction=reduction,
                     ignore_index=ignore_index,
                     center_point_box=center_point_box,
+                    output_dtype=output_dtype,
                 )
                 isCreated = True
         except:
