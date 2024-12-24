@@ -1110,7 +1110,18 @@ default_input = \
             "not": None
         }
     },
-    "OneHot": { },
+    "OneHot": {
+        "graph_name": "OneHot_sample",
+        "inputs": {
+            "indices": np.array([[1, 9], [2, 4]], dtype=np.float32),
+            "depth": np.array([10], dtype=np.float32),
+            "values": np.array([1, 3], dtype=np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "axis": 1,
+    },
     "Optional": { },
     "OptionalGetElement": { },
     "OptionalHasElement": { },
