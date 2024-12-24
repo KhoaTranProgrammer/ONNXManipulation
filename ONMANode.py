@@ -70,6 +70,8 @@ class ONMANode:
             transB=None,
             padding_mode=None,
         ):
+
+        isCreated = False
         try:
             if values == None:
                 self._node = onnx.helper.make_node(
@@ -130,11 +132,12 @@ class ONMANode:
                     transB=transB,
                     padding_mode=padding_mode,
                 )
+                isCreated = True
         except:
             pass
 
         try:
-            if values.all():
+            if values.all() and isCreated == False:
                 self._node = onnx.helper.make_node(
                     name,
                     inputs=inputs,
@@ -146,16 +149,19 @@ class ONMANode:
                         vals=values.flatten().astype(float),
                     )
                 )
+                isCreated = True
         except:
             pass
 
         try:
-            self._node = onnx.helper.make_node(
-                    name,
-                    inputs=inputs,
-                    outputs=outputs,
-                    value=values
-                )
+            if isCreated == False:
+                self._node = onnx.helper.make_node(
+                        name,
+                        inputs=inputs,
+                        outputs=outputs,
+                        value=values
+                    )
+                isCreated = True
         except:
             pass
 
