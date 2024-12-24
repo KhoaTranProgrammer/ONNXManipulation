@@ -1579,7 +1579,19 @@ default_input = \
             "y": np.empty(shape=(1), dtype=np.int64)
         }
     },
-    "Slice": { },
+    "Slice": {
+        "graph_name": "Slice_sample",
+        "inputs": {
+            "x": np.random.randn(20, 10, 5).astype(np.float32),
+            "starts": np.array([0, 0], dtype=np.int64),
+            "ends": np.array([3, 10], dtype=np.int64),
+            "axes": np.array([0, 1], dtype=np.int64),
+            "steps": np.array([1, 1], dtype=np.int64)
+        },
+        "outputs": {
+            "y": None
+        },
+    },
     "Softmax": {
         "graph_name": "Softmax_sample",
         "inputs": {
