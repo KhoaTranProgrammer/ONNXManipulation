@@ -86,6 +86,8 @@ class ONMANode:
             maxsplit=None,
             perm=None,
             upper=None,
+            hidden_size=None,
+            layout=None,
         ):
 
         isCreated = False
@@ -165,6 +167,8 @@ class ONMANode:
                     maxsplit=maxsplit,
                     perm=perm,
                     upper=upper,
+                    hidden_size=hidden_size,
+                    layout=layout,
                 )
                 isCreated = True
         except:

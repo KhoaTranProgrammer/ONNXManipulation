@@ -869,7 +869,19 @@ default_input = \
         "bias": 2.0,
         "size": 3
     },
-    "LSTM": { },
+    "LSTM": {
+        "graph_name": "LSTM_sample",
+        "inputs": {
+            "X": np.array([[[1.0, 2.0]], [[3.0, 4.0]], [[5.0, 6.0]]]).astype(np.float32),
+            "W": 0.3 * np.ones((1, 4 * 7, 2)).astype(np.float32),
+            "R": 0.3 * np.ones((1, 4 * 7, 7)).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None,
+            "Y_h": None
+        },
+        "hidden_size": 7,
+    },
     "LayerNormalization": { },
     "LeakyRelu": {
         "graph_name": "LeakyRelu_sample",
