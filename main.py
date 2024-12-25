@@ -1682,7 +1682,17 @@ default_input = \
         },
         "axis": 0
     },
-    "SoftmaxCrossEntropyLoss": { },
+    "SoftmaxCrossEntropyLoss": {
+        "graph_name": "SoftmaxCrossEntropyLoss_sample",
+        "inputs": {
+            "x": np.random.rand(3, 5).astype(np.float32),
+            "labels": np.random.randint(0, high=5, size=(3,)).astype(np.int64),
+        },
+        "outputs": {
+            "y": None
+        },
+        "reduction": "sum"
+    },
     "Softplus": {
         "graph_name": "Softplus_sample",
         "inputs": {
