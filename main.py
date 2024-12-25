@@ -1879,7 +1879,20 @@ default_input = \
         },
         "upper": 0
     },
-    "Unique": { },
+    "Unique": {
+        "graph_name": "Unique_sample",
+        "inputs": {
+            "x": np.array([[1, 0, 0], [1, 0, 0], [2, 3, 3]], dtype=np.float32)
+        },
+        "outputs": {
+            "Y": None,
+            "indices": np.empty(shape=(1), dtype=np.int64),
+            "inverse_indices": np.empty(shape=(1), dtype=np.int64),
+            "counts": np.empty(shape=(1), dtype=np.int64)
+        },
+        "sorted": 1,
+        "axis": -1,
+    },
     "Unsqueeze": {
         "graph_name": "Unsqueeze_sample",
         "inputs": {
