@@ -1841,7 +1841,23 @@ default_input = \
             "z": None
         }
     },
-    "TopK": { },
+    "TopK": {
+        "graph_name": "TopK_sample",
+        "inputs": {
+            "x": np.array([
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [11, 10, 9, 8],],dtype=np.float32,),
+            "K": np.array([3], dtype=np.int64)
+        },
+        "outputs": {
+            "values": None,
+            "indices": np.empty(shape=(1), dtype=np.int64)
+        },
+        "axis": 1,
+        "largest": 0,
+        "sorted": 1,
+    },
     "Transpose": {
         "graph_name": "Transpose_sample",
         "inputs": {

@@ -88,6 +88,8 @@ class ONMANode:
             upper=None,
             hidden_size=None,
             layout=None,
+            largest=None,
+            sorted=None,
         ):
 
         isCreated = False
@@ -169,6 +171,8 @@ class ONMANode:
                     upper=upper,
                     hidden_size=hidden_size,
                     layout=layout,
+                    largest=largest,
+                    sorted=sorted,
                 )
                 isCreated = True
         except:
