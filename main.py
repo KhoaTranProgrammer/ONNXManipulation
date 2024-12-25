@@ -998,7 +998,23 @@ default_input = \
             "result": None
         }
     },
-    "MaxPool": { },
+    "MaxPool": {
+        "graph_name": "MaxPool_sample",
+        "inputs": {
+            "x": np.array([[[
+                    [1, 2, 3, 4],
+                    [5, 6, 7, 8],
+                    [9, 10, 11, 12],
+                    [13, 14, 15, 16],
+                ]]]).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "kernel_shape": [3, 3],
+        "strides": [2, 2],
+        "ceil_mode": True,
+    },
     "MaxRoiPool": { },
     "MaxUnpool": {
         "graph_name": "MaxUnpool_sample",
