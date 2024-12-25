@@ -139,17 +139,11 @@ def CreateNetworkWithOperator(
 
     # Create graph output
     graph_output = []
-    try:
-        if list(outputs.values()) == [None]:
-            graph_output.append(onma_node.ONMACreateInput(list(outputs.keys())[0], GetTensorDataTypeFromnp((list(refine_input.values())[0]).dtype), (list(refine_input.values())[0]).shape))
-    except:
-        pass
-
-    try:
-        if len(list(outputs.values())) != 0:
-            graph_output.append(onma_node.ONMACreateInput(list(outputs.keys())[0], GetTensorDataTypeFromnp((list(outputs.values())[0]).dtype), (list(outputs.values())[0]).shape))
-    except:
-        pass
+    for item in outputs:
+        if outputs[item] == None:
+            graph_output.append(onma_node.ONMACreateInput(item, GetTensorDataTypeFromnp((list(refine_input.values())[0]).dtype), (list(refine_input.values())[0]).shape))
+        else:
+            graph_output.append(onma_node.ONMACreateInput(item, GetTensorDataTypeFromnp((outputs[item]).dtype), (outputs[item]).shape))
 
     onma_graph = ONMAGraph()
     onma_graph.ONMAMakeGraph(graph_name, [onma_node.ONMAGetNode()], graph_input, graph_output)

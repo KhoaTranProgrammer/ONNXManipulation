@@ -533,7 +533,17 @@ default_input = \
         },
         "seed": 0
     },
-    "DynamicQuantizeLinear": { },
+    "DynamicQuantizeLinear": {
+        "graph_name": "DynamicQuantizeLinear_sample",
+        "inputs": {
+            "x": np.array([0, 2, -3, -2.5, 1.34, 0.5]).astype(np.float32)
+        },
+        "outputs": {
+            "y": np.empty(shape=(1), dtype=np.uint8),
+            "y_scale": None,
+            "y_zero_point": np.empty(shape=(1), dtype=np.uint8),
+        },
+    },
     "Einsum": {
         "graph_name": "Einsum_sample",
         "inputs": {
