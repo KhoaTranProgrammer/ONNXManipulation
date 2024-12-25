@@ -5,6 +5,7 @@ import numpy as np
 from ONMAOperators import ONMAOperators
 from onnx.backend.test.case.node.affinegrid import create_theta_2d
 from onnx.backend.test.case.node.roialign import get_roi_align_input_values
+from onnx.backend.test.case.node.layernormalization import calculate_normalized_shape
 
 global args
 
@@ -882,7 +883,19 @@ default_input = \
         },
         "hidden_size": 7,
     },
-    "LayerNormalization": { },
+    "LayerNormalization": {
+        "graph_name": "LayerNormalization_sample",
+        "inputs": {
+            "X": np.random.randn(2, 3, 4, 5).astype(np.float32),
+            "W": np.random.randn(*calculate_normalized_shape((2, 3, 4, 5), -1)).astype(np.float32),
+            "B": np.random.randn(*calculate_normalized_shape((2, 3, 4, 5), -1)).astype(np.float32)
+        },
+        "outputs": {
+            "Y": None,
+            "Mean": None,
+            "InvStdDev": None
+        },
+    },
     "LeakyRelu": {
         "graph_name": "LeakyRelu_sample",
         "inputs": {
