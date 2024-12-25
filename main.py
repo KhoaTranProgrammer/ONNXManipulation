@@ -1726,7 +1726,18 @@ default_input = \
         },
         "blocksize": 2
     },
-    "Split": { },
+    "Split": {
+        "graph_name": "Split_sample",
+        "inputs": {
+            "x": np.array([1.0, 2.0, 3.0, 4.0, 5.0, 6.0]).astype(np.float32),
+            "split": np.array([2, 4]).astype(np.int64)
+        },
+        "outputs": {
+            "output_1": None,
+            "output_2": None
+        },
+        "axis": 0
+    },
     "SplitToSequence": { },
     "Sqrt": {
         "graph_name": "Sqrt_sample",
