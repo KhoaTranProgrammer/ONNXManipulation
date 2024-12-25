@@ -1295,7 +1295,18 @@ default_input = \
         "block_size": 2,
         "output_dtype": onnx.TensorProto.UINT8,
     },
-    "RNN": { },
+    "RNN": {
+        "graph_name": "RNN_sample",
+        "inputs": {
+            "X": np.array([[[1.0, 2.0]], [[3.0, 4.0]], [[5.0, 6.0]]]).astype(np.float32),
+            "W": 0.5 * np.ones((1, 4, 2)).astype(np.float32),
+            "R": 0.5 * np.ones((1, 4, 4)).astype(np.float32)
+        },
+        "outputs": {
+            "y": None
+        },
+        "hidden_size": 4
+    },
     "RandomNormal": { },
     "RandomNormalLike": { },
     "RandomUniform": { },
