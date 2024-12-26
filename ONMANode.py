@@ -90,6 +90,8 @@ class ONMANode:
             layout=None,
             largest=None,
             sorted=None,
+            then_branch=None,
+            else_branch=None,
         ):
 
         isCreated = False
@@ -173,6 +175,8 @@ class ONMANode:
                     layout=layout,
                     largest=largest,
                     sorted=sorted,
+                    then_branch=then_branch,
+                    else_branch=else_branch,
                 )
                 isCreated = True
         except:
