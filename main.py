@@ -2,7 +2,7 @@ import sys
 import onnx
 import argparse
 import numpy as np
-from ONMAOperators import ONMAOperators
+from ONMAModel import ONMAModel
 from onnx.backend.test.case.node.affinegrid import create_theta_2d
 from onnx.backend.test.case.node.roialign import get_roi_align_input_values
 from onnx.backend.test.case.node.layernormalization import calculate_normalized_shape
@@ -1969,27 +1969,6 @@ default_input = \
     },
 }
 
-def displayNumpyArray(results, **argv):
-    for oneargv in argv:
-        if oneargv == "inputs":
-            print("\n==========INPUT==========")
-            for key, value in argv["inputs"].items():
-                print(f'Name: {key} - Shape: {value.shape}')
-                for dim in range(0, len(value.shape) - 1):
-                    if dim == (len(value.shape) - 2):
-                        print(value)
-        elif oneargv == "outputs":
-            print("\n==========OUTPUT==========")
-            outputs = list(argv["outputs"].keys())
-            for index in range(0, len(outputs)):
-                result = results[index]
-                print(f'Name: {outputs[index]} - Shape: {result.shape}')
-                for dim in range(0, len(result.shape) - 1):
-                    if dim == (len(result.shape) - 2):
-                        print(result)
-        else:
-            print(f'\nName: {oneargv} - Value: {argv[oneargv]}')
-
 def main():
     global args
 
@@ -1997,10 +1976,9 @@ def main():
     parser.add_argument("--operator", "-op", help="Operator name", default="")
     args = parser.parse_args()
 
-    operator_processing = getattr(ONMAOperators, "ONNX_CreateNetworkWithOperator")
-    results = operator_processing(args.operator, **default_input[args.operator])
-
-    displayNumpyArray(results, **default_input[args.operator])
+    model = ONMAModel()
+    results = model.ONNXCreateNetworkWithOperator(args.operator, **default_input[args.operator])
+    model.ONMADisplayInformation(results, **default_input[args.operator])
 
 if main() == False:
     sys.exit(-1)
