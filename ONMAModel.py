@@ -19,5 +19,4 @@ class ONMAModel:
     def ONMAInference(self, infer_input):
         sess = InferenceSession(self._model.SerializeToString(), providers=["CPUExecutionProvider"])
         res = sess.run(None, infer_input)
-        print("input", infer_input)
-        print(f'result: {res}')
+        return res

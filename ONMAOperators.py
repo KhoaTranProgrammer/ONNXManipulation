@@ -154,4 +154,4 @@ class ONMAOperators:
         onma_model = ONMAModel()
         onma_model.ONMAMakeModel(onma_graph)
 
-        onma_model.ONMAInference(refine_input)
+        return onma_model.ONMAInference(refine_input)

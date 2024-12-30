@@ -1969,6 +1969,27 @@ default_input = \
     },
 }
 
+def displayNumpyArray(results, **argv):
+    for oneargv in argv:
+        if oneargv == "inputs":
+            print("\n==========INPUT==========")
+            for key, value in argv["inputs"].items():
+                print(f'Name: {key} - Shape: {value.shape}')
+                for dim in range(0, len(value.shape) - 1):
+                    if dim == (len(value.shape) - 2):
+                        print(value)
+        elif oneargv == "outputs":
+            print("\n==========OUTPUT==========")
+            outputs = list(argv["outputs"].keys())
+            for index in range(0, len(outputs)):
+                result = results[index]
+                print(f'Name: {outputs[index]} - Shape: {result.shape}')
+                for dim in range(0, len(result.shape) - 1):
+                    if dim == (len(result.shape) - 2):
+                        print(result)
+        else:
+            print(f'\nName: {oneargv} - Value: {argv[oneargv]}')
+
 def main():
     global args
 
@@ -1977,7 +1998,9 @@ def main():
     args = parser.parse_args()
 
     operator_processing = getattr(ONMAOperators, "ONNX_CreateNetworkWithOperator")
-    operator_processing(args.operator, **default_input[args.operator])
+    results = operator_processing(args.operator, **default_input[args.operator])
+
+    displayNumpyArray(results, **default_input[args.operator])
 
 if main() == False:
     sys.exit(-1)
