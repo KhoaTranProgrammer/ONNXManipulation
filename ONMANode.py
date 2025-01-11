@@ -12,9 +12,10 @@ class ONMANode:
 
     def ONMAMakeNode(
             self,
-            name,
+            type,
             inputs,
             outputs,
+            name=None,
             direction=None,
             alpha=None,
             axes=None,
@@ -98,7 +99,8 @@ class ONMANode:
         try:
             if values == None:
                 self._node = onnx.helper.make_node(
-                    name,
+                    type,
+                    name=name,
                     inputs=inputs,
                     outputs=outputs,
                     direction=direction,
@@ -185,7 +187,8 @@ class ONMANode:
         try:
             if values.all() and isCreated == False:
                 self._node = onnx.helper.make_node(
-                    name,
+                    type,
+                    name=name,
                     inputs=inputs,
                     outputs=outputs,
                     value=onnx.helper.make_tensor(
@@ -202,7 +205,8 @@ class ONMANode:
         try:
             if isCreated == False:
                 self._node = onnx.helper.make_node(
-                        name,
+                        type,
+                        name=name,
                         inputs=inputs,
                         outputs=outputs,
                         value=values
