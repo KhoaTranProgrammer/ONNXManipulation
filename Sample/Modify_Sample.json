@@ -1,0 +1,59 @@
+{
+    "2500":
+    {
+        "Action": "Modify",
+        "Category": "Initializer",
+        "tensor": [[[[[[1.0, 2.0]]],[[[3.0, 4.0]]],[[[8.0, 7.0]]]]]]
+    },
+    "New_Add_Node":
+    {
+        "Action": "Add",
+        "Category": "Node",
+        "Type": "Abs",
+        "inputs": {
+            "x": "1371"
+        },
+        "outputs": {
+            "z": "New_Add_Node_1"
+        }
+    },
+    "Pow_799":
+    {
+        "Action": "Modify",
+        "Category": "Node",
+        "Type": "Pow",
+        "inputs": {
+            "x": "New_Add_Node_1",
+            "y": "1242"
+        },
+        "outputs": {
+            "z": "1373"
+        }
+    },
+    "Pow_1107":
+    {
+        "Action": "Remove",
+        "Category": "Node",
+        "Type": "Pow"
+    },
+    "Mul_1108":
+    {
+        "Action": "Modify",
+        "Category": "Node",
+        "Type": "Mul",
+        "inputs": {
+            "x": "1701",
+            "y": "2512"
+        },
+        "outputs": {
+            "z": "1706"
+        }
+    },
+    "LeakyRelu_96":
+    {
+        "Action": "Modify",
+        "Category": "Node",
+        "Type": "LeakyRelu",
+        "alpha": 0.3
+    }
+}

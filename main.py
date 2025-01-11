@@ -2,6 +2,7 @@ import sys
 import onnx
 import argparse
 import numpy as np
+import json
 from ONMAModel import ONMAModel
 from onnx.backend.test.case.node.affinegrid import create_theta_2d
 from onnx.backend.test.case.node.roialign import get_roi_align_input_values
@@ -1974,11 +1975,24 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--operator", "-op", help="Operator name", default="")
+    parser.add_argument("--modify", "-md", help="Setting to modify network", default="")
+    parser.add_argument("--input_onnx", "-io", help="Input ONNX file path")
+    parser.add_argument("--output_onnx", "-oo", help="Output ONNX file path")
     args = parser.parse_args()
 
-    model = ONMAModel()
-    results = model.ONNXCreateNetworkWithOperator(args.operator, **default_input[args.operator])
-    model.ONMADisplayInformation(results, **default_input[args.operator])
+    if args.operator != "":
+        model = ONMAModel()
+        results = model.ONNXCreateNetworkWithOperator(args.operator, **default_input[args.operator])
+        model.ONMADisplayInformation(results, **default_input[args.operator])
+    
+    if args.modify != "":
+        with open(args.modify) as user_file:
+            file_contents = user_file.read()
+        json_contents = json.loads(file_contents)
+
+        model = ONMAModel()
+        model.ONMALoadModel(args.input_onnx)
+        model.ONMAUpdateModel(json_contents, args.output_onnx)
 
 if main() == False:
     sys.exit(-1)
