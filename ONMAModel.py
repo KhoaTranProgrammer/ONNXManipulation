@@ -95,14 +95,13 @@ def UpdateNode(model, name, data):
     if data["Action"] == "Add":
         onma_node = ONMANode()
         onma_node.ONMAMakeNode(
-            data["Type"], inputs=list((data["inputs"]).values()), outputs=list((data["outputs"]).values())
+            data["Type"], inputs=list((data["inputs"]).values()), outputs=list((data["outputs"]).values()), name=name
         )
         node_ind,_ = GetPreviousNodeFromInputName(model, data["inputs"])
         model.graph.node.insert(node_ind[0] + 1, onma_node.ONMAGetNode())
     elif data["Action"] == "Modify":
         for i, node in enumerate(model.graph.node):
             if node.name == name:
-                print(node.name)
                 onma_node = ONMANode()
                 
                 # Decide input
@@ -118,7 +117,7 @@ def UpdateNode(model, name, data):
                     outputs = node.output
 
                 onma_node.ONMAMakeNode(
-                    data["Type"], inputs=inputs, outputs=outputs
+                    data["Type"], inputs=inputs, outputs=outputs, name=name
                 )
 
                 for attribute in node.attribute:
