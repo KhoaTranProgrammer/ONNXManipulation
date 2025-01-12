@@ -93,11 +93,23 @@ def GetPreviousNodeFromInputName(model, inputs):
 
 def UpdateNode(model, name, data):
     if data["Action"] == "Add":
+        op_type = data["Type"]
+        inputs=list((data["inputs"]).values())
+        outputs=list((data["outputs"]).values())
+
+        node_ind,_ = GetPreviousNodeFromInputName(model, data["inputs"])
+
+        # Simplify data
+        data.pop("Action")
+        data.pop("Category")
+        data.pop("Type")
+        data.pop("inputs")
+        data.pop("outputs")
+
         onma_node = ONMANode()
         onma_node.ONMAMakeNode(
-            data["Type"], inputs=list((data["inputs"]).values()), outputs=list((data["outputs"]).values()), name=name
+            op_type, inputs=inputs, outputs=outputs, name=name, **data
         )
-        node_ind,_ = GetPreviousNodeFromInputName(model, data["inputs"])
         model.graph.node.insert(node_ind[0] + 1, onma_node.ONMAGetNode())
     elif data["Action"] == "Modify":
         for i, node in enumerate(model.graph.node):
