@@ -10,8 +10,8 @@ class ONMAGraph:
     def __init__(self):
         self._graph = None
 
-    def ONMAMakeGraph(self, name, nodes, inputs, outputs):
+    def ONMAGraph_MakeGraph(self, name, nodes, inputs, outputs):
         self._graph = onnx.helper.make_graph(nodes, name, inputs, outputs)
     
-    def ONMAGetGraph(self):
+    def ONMAGraph_GetGraph(self):
         return self._graph

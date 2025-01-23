@@ -153,19 +153,19 @@ class ONMAModel:
     def __init__(self):
         self._model = None
 
-    def ONMAMakeModel(self, onma_graph):
-        self._model = make_model(onma_graph.ONMAGetGraph())
+    def ONMAModel_MakeModel(self, graph):
+        self._model = make_model(graph)
         check_model(self._model)
 
-    def ONMALoadModel(self, input_path):
+    def ONMAModel_LoadModel(self, input_path):
         self._model = onnx.load(input_path)
 
-    def ONMAInference(self, infer_input):
+    def ONMAModel_Inference(self, infer_input):
         sess = InferenceSession(self._model.SerializeToString(), providers=["CPUExecutionProvider"])
         res = sess.run(None, infer_input)
         return res
     
-    def ONNXCreateNetworkWithOperator(
+    def ONMAModel_CreateNetworkWithOperator(
         self,
         operator_name,
         graph_name,
@@ -175,7 +175,7 @@ class ONMAModel:
     ):
         # Create Node
         onma_node = ONMANode()
-        onma_node.ONMAMakeNode(
+        onma_node.ONMANode_MakeNode(
             operator_name, inputs=list(inputs.keys()), outputs=list(outputs.keys()), name=graph_name, **kwargs
         )
 
@@ -188,24 +188,24 @@ class ONMAModel:
         # Create graph input
         graph_input = []
         for i in range(0, len(list(refine_input.keys()))):
-            graph_input.append(onma_node.ONMACreateInput(list(refine_input.keys())[i], GetTensorDataTypeFromnp((list(refine_input.values())[i]).dtype), (list(refine_input.values())[i]).shape))
+            graph_input.append(onma_node.ONMANode_CreateInput(list(refine_input.keys())[i], GetTensorDataTypeFromnp((list(refine_input.values())[i]).dtype), (list(refine_input.values())[i]).shape))
 
         # Create graph output
         graph_output = []
         for item in outputs:
             if outputs[item] == None:
-                graph_output.append(onma_node.ONMACreateInput(item, GetTensorDataTypeFromnp((list(refine_input.values())[0]).dtype), (list(refine_input.values())[0]).shape))
+                graph_output.append(onma_node.ONMANode_CreateInput(item, GetTensorDataTypeFromnp((list(refine_input.values())[0]).dtype), (list(refine_input.values())[0]).shape))
             else:
-                graph_output.append(onma_node.ONMACreateInput(item, GetTensorDataTypeFromnp((outputs[item]).dtype), (outputs[item]).shape))
+                graph_output.append(onma_node.ONMANode_CreateInput(item, GetTensorDataTypeFromnp((outputs[item]).dtype), (outputs[item]).shape))
 
         onma_graph = ONMAGraph()
-        onma_graph.ONMAMakeGraph(graph_name, [onma_node.ONMAGetNode()], graph_input, graph_output)
+        onma_graph.ONMAGraph_MakeGraph(graph_name, [onma_node.ONMANode_GetNode()], graph_input, graph_output)
 
-        self.ONMAMakeModel(onma_graph)
+        self.ONMAModel_MakeModel(onma_graph.ONMAGraph_GetGraph())
 
-        return self.ONMAInference(refine_input)
+        return self.ONMAModel_Inference(refine_input)
     
-    def ONMADisplayInformation(self, results, **argv):
+    def ONMAModel_DisplayInformation(self, results, **argv):
         for oneargv in argv:
             if oneargv == "inputs":
                 print("\n==========INPUT==========")
@@ -226,14 +226,17 @@ class ONMAModel:
             else:
                 print(f'\nName: {oneargv} - Value: {argv[oneargv]}')
 
-    def ONMAUpdateModel(self, data, output_onnx):
+    def ONMAModel_UpdateModel(self, data, output_onnx):
         for item in data:
-            if data[item]["Category"] == "Initializer":
-                if type(data[item]["tensor"]) is list:
-                    data[item]["tensor"] = np.array(data[item]["tensor"])
-                UpdateInitializer(self._model.graph.initializer, item, data[item])
-            elif data[item]["Category"] == "Node":
-                UpdateNode(self._model, item, data[item])
+            try:
+                if data[item]["Category"] == "Initializer":
+                    if type(data[item]["tensor"]) is list:
+                        data[item]["tensor"] = np.array(data[item]["tensor"])
+                    UpdateInitializer(self._model.graph.initializer, item, data[item])
+                elif data[item]["Category"] == "Node":
+                    UpdateNode(self._model, item, data[item])
+            except:
+                pass
 
         # Save model
         inferred_model = onnx.shape_inference.infer_shapes(self._model)

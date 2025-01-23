@@ -10,7 +10,7 @@ class ONMANode:
     def __init__(self):
         self._node = None
 
-    def ONMAMakeNode(
+    def ONMANode_MakeNode(
             self,
             type,
             inputs,
@@ -215,8 +215,8 @@ class ONMANode:
         except:
             pass
 
-    def ONMAGetNode(self):
+    def ONMANode_GetNode(self):
         return self._node
     
-    def ONMACreateInput(self, name, type, dimension):
+    def ONMANode_CreateInput(self, name, type, dimension):
         return make_tensor_value_info(name, type, dimension)

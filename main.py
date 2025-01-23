@@ -1982,8 +1982,8 @@ def main():
 
     if args.operator != "":
         model = ONMAModel()
-        results = model.ONNXCreateNetworkWithOperator(args.operator, **default_input[args.operator])
-        model.ONMADisplayInformation(results, **default_input[args.operator])
+        results = model.ONMAModel_CreateNetworkWithOperator(args.operator, **default_input[args.operator])
+        model.ONMAModel_DisplayInformation(results, **default_input[args.operator])
     
     if args.modify != "":
         with open(args.modify) as user_file:
@@ -1991,8 +1991,8 @@ def main():
         json_contents = json.loads(file_contents)
 
         model = ONMAModel()
-        model.ONMALoadModel(args.input_onnx)
-        model.ONMAUpdateModel(json_contents, args.output_onnx)
+        model.ONMAModel_LoadModel(args.input_onnx)
+        model.ONMAModel_UpdateModel(json_contents, args.output_onnx)
 
 if main() == False:
     sys.exit(-1)
