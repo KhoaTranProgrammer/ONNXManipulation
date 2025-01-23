@@ -217,6 +217,3 @@ class ONMANode:
 
     def ONMANode_GetNode(self):
         return self._node
-    
-    def ONMANode_CreateInput(self, name, type, dimension):
-        return make_tensor_value_info(name, type, dimension)
