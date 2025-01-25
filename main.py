@@ -4185,6 +4185,66 @@ right_operators = \
                         "z": "z"
                     }
                 }
+            },
+            {
+                "graph_name": "Reshape_sample",
+                "inputs": {
+                    "x": {"data": [[0.06329948, -1.0832994 , 0.37930292], [0.71035045, -1.6637981 , 1.0044696]],},
+                    "y": {"data": [-1]}
+                },
+                "outputs": {
+                    "z": None
+                },
+                "Mul_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Mul",
+                    "inputs": {
+                        "x": "x",
+                        "y": "y"
+                    },
+                    "outputs": {
+                        "output": "Mul_Node_output"
+                    }
+                },
+                "Relu_Node_1":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Relu",
+                    "inputs": {
+                        "a": "Mul_Node_output"
+                    },
+                    "outputs": {
+                        "output": "Relu_Node_1_output"
+                    }
+                },
+                "Relu_Node_2":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Relu",
+                    "inputs": {
+                        "a": "x"
+                    },
+                    "outputs": {
+                        "output": "Relu_Node_2_output"
+                    }
+                },
+                "Add_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Add",
+                    "inputs": {
+                        "x1": "Relu_Node_1_output",
+                        "x2": "Relu_Node_2_output"
+                    },
+                    "outputs": {
+                        "y": "z"
+                    }
+                }
             }
         ]
     }
@@ -4216,7 +4276,7 @@ def main():
 
     model = ONMAModel()
     inf1 = model.ONMAModel_CreateNetworkFromGraph(left_operators["Abs"])
-    inf2 = model.ONMAModel_CreateNetworkFromGraph(right_operators["Abs"]["list"][0])
+    inf2 = model.ONMAModel_CreateNetworkFromGraph(right_operators["Abs"]["list"][1])
 
     print(inf1)
     print(inf2)

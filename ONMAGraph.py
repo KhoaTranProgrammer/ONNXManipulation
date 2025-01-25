@@ -111,11 +111,15 @@ def UpdateNode(graph, name, data):
         onma_node.ONMANode_MakeNode(
             op_type, inputs=inputs, outputs=outputs, name=name, **data
         )
+        
         if len(node_ind) == 0:
             graph.node.append(onma_node.ONMANode_GetNode())
         else:
-            print("append new node")
-            graph.node.insert(node_ind[0] + 1, onma_node.ONMANode_GetNode())
+            index = 0
+            for i in range(0, len(node_ind)):
+                if index < node_ind[i]:
+                    index = node_ind[i]
+            graph.node.insert(index + 1, onma_node.ONMANode_GetNode())
     elif data["Action"] == "Modify":
         for i, node in enumerate(graph.node):
             if node.name == name:
