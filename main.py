@@ -4277,9 +4277,7 @@ def main():
     model = ONMAModel()
     inf1 = model.ONMAModel_CreateNetworkFromGraph(left_operators["Abs"])
     inf2 = model.ONMAModel_CreateNetworkFromGraph(right_operators["Abs"]["list"][1])
-
-    print(inf1)
-    print(inf2)
+    model.ONMAModel_Compare2Array(inf1, inf2)
 
 if main() == False:
     sys.exit(-1)

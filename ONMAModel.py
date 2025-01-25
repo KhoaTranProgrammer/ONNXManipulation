@@ -88,3 +88,19 @@ class ONMAModel:
                         print("Inference and expect are not available")
             else:
                 pass
+
+    def ONMAModel_Compare2Array(self, array1, array2):
+        array1 = np.array(array1)
+        array2 = np.array(array2)
+        isSame = True
+        if array1.shape == array2.shape:
+            for idx, x in np.ndenumerate(array1):
+                if round(x) != round(array2[idx]):
+                    isSame = False
+        else:
+            isSame = False
+
+        if isSame == True:
+            print("Inference and expect are SAME")
+        else:
+            print("Inference and expect are DIFFERENT")
