@@ -4117,139 +4117,6 @@ default_input = \
     },
 }
 
-left_operators = \
-{
-    "Abs": {
-        "graph_name": "Reshape_sample",
-        "inputs": {
-            "X": {
-                "data": [[0.06329948, -1.0832994 , 0.37930292], [0.71035045, -1.6637981 , 1.0044696]],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": None
-        },
-        "Abs_Node":
-        {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Abs",
-            "inputs": {
-                "x": "X"
-            },
-            "outputs": {
-                "y": "Y"
-            }
-        }
-    }
-}
-
-right_operators = \
-{
-    "Abs": 
-    {
-        "list":[
-            {
-                "graph_name": "Reshape_sample",
-                "inputs": {
-                    "x": {"data": [[0.06329948, -1.0832994 , 0.37930292], [0.71035045, -1.6637981 , 1.0044696]],},
-                    "y": {"data": [-1]}
-                },
-                "outputs": {
-                    "z": None
-                },
-                "Mul_Node":
-                {
-                    "Action": "Add",
-                    "Category": "Node",
-                    "Type": "Mul",
-                    "inputs": {
-                        "x": "x",
-                        "y": "y"
-                    },
-                    "outputs": {
-                        "output": "output"
-                    }
-                },
-                "Max_Node":
-                {
-                    "Action": "Add",
-                    "Category": "Node",
-                    "Type": "Max",
-                    "inputs": {
-                        "data_0": "x",
-                        "data_1": "output"
-                    },
-                    "outputs": {
-                        "z": "z"
-                    }
-                }
-            },
-            {
-                "graph_name": "Reshape_sample",
-                "inputs": {
-                    "x": {"data": [[0.06329948, -1.0832994 , 0.37930292], [0.71035045, -1.6637981 , 1.0044696]],},
-                    "y": {"data": [-1]}
-                },
-                "outputs": {
-                    "z": None
-                },
-                "Mul_Node":
-                {
-                    "Action": "Add",
-                    "Category": "Node",
-                    "Type": "Mul",
-                    "inputs": {
-                        "x": "x",
-                        "y": "y"
-                    },
-                    "outputs": {
-                        "output": "Mul_Node_output"
-                    }
-                },
-                "Relu_Node_1":
-                {
-                    "Action": "Add",
-                    "Category": "Node",
-                    "Type": "Relu",
-                    "inputs": {
-                        "a": "Mul_Node_output"
-                    },
-                    "outputs": {
-                        "output": "Relu_Node_1_output"
-                    }
-                },
-                "Relu_Node_2":
-                {
-                    "Action": "Add",
-                    "Category": "Node",
-                    "Type": "Relu",
-                    "inputs": {
-                        "a": "x"
-                    },
-                    "outputs": {
-                        "output": "Relu_Node_2_output"
-                    }
-                },
-                "Add_Node":
-                {
-                    "Action": "Add",
-                    "Category": "Node",
-                    "Type": "Add",
-                    "inputs": {
-                        "x1": "Relu_Node_1_output",
-                        "x2": "Relu_Node_2_output"
-                    },
-                    "outputs": {
-                        "y": "z"
-                    }
-                }
-            }
-        ]
-    }
-}
-
 def main():
     global args
 
@@ -4258,26 +4125,32 @@ def main():
     parser.add_argument("--modify", "-md", help="Setting to modify network", default="")
     parser.add_argument("--input_onnx", "-io", help="Input ONNX file path")
     parser.add_argument("--output_onnx", "-oo", help="Output ONNX file path")
+    parser.add_argument("--sameoperator", "-so", help="Config that stores operators has same behavior")
     args = parser.parse_args()
 
-    # if args.operator != "":
-    #     model = ONMAModel()
-    #     inf1 = model.ONMAModel_CreateNetworkFromGraph(default_input[args.operator])
-    #     model.ONMAModel_DisplayInformation(inf1, **default_input[args.operator])
+    if args.operator != "":
+        model = ONMAModel()
+        inf1 = model.ONMAModel_CreateNetworkFromGraph(default_input[args.operator])
+        model.ONMAModel_DisplayInformation(inf1, **default_input[args.operator])
 
-    # if args.modify != "":
-    #     with open(args.modify) as user_file:
-    #         file_contents = user_file.read()
-    #     json_contents = json.loads(file_contents)
+    if args.modify != "":
+        with open(args.modify) as user_file:
+            file_contents = user_file.read()
+        json_contents = json.loads(file_contents)
 
-    #     model = ONMAModel()
-    #     model.ONMAModel_LoadModel(args.input_onnx)
-    #     model.ONMAModel_UpdateModel(json_contents, args.output_onnx)
+        model = ONMAModel()
+        model.ONMAModel_LoadModel(args.input_onnx)
+        model.ONMAModel_UpdateModel(json_contents, args.output_onnx)
 
-    model = ONMAModel()
-    inf1 = model.ONMAModel_CreateNetworkFromGraph(left_operators["Abs"])
-    inf2 = model.ONMAModel_CreateNetworkFromGraph(right_operators["Abs"]["list"][1])
-    model.ONMAModel_Compare2Array(inf1, inf2)
+    if args.sameoperator != "":
+        with open(args.sameoperator) as user_file:
+            file_contents = user_file.read()
+        json_contents = json.loads(file_contents)
+        model = ONMAModel()
+        inf1 = model.ONMAModel_CreateNetworkFromGraph(json_contents["left_operators"]["Abs"])
+        for item in json_contents["right_operators"]["Abs"]["list"]:
+            inf2 = model.ONMAModel_CreateNetworkFromGraph(item)
+            model.ONMAModel_Compare2Array(inf1, inf2)
 
 if main() == False:
     sys.exit(-1)
