@@ -29,6 +29,13 @@ class ONMAModel:
         res = sess.run(None, infer_input)
         return res
 
+    def ONMAModel_UpdateModel(self, json_contents, output_onnx):
+        onma_graph = ONMAGraph()
+        onma_graph.ONMAGraph_SetGraph(self._model.graph)
+        onma_graph.ONMAModel_UpdateGraph(json_contents)
+
+        self.ONMAModel_SaveModel(output_onnx)
+
     def ONMAModel_CreateNetworkFromGraph(self, data):
         refine_input = {}
         inputs = data["inputs"]

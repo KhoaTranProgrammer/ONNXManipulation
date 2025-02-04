@@ -114,8 +114,11 @@ def UpdateNode(graph, name, data):
         if len(node_ind) == 0:
             graph.node.append(onma_node.ONMANode_GetNode())
         else:
-            print("append new node")
-            graph.node.insert(node_ind[0] + 1, onma_node.ONMANode_GetNode())
+            index = 0
+            for i in range(0, len(node_ind)):
+                if index < node_ind[i]:
+                    index = node_ind[i]
+            graph.node.insert(index + 1, onma_node.ONMANode_GetNode())
     elif data["Action"] == "Modify":
         for i, node in enumerate(graph.node):
             if node.name == name:
@@ -133,7 +136,7 @@ def UpdateNode(graph, name, data):
                 except:
                     outputs = node.output
 
-                onma_node.ONMAMakeNode(
+                onma_node.ONMANode_MakeNode(
                     data["Type"], inputs=inputs, outputs=outputs, name=name
                 )
 
@@ -143,12 +146,12 @@ def UpdateNode(graph, name, data):
                         if item == attribute.name:
                             isReplace = True
                             new_attribute = onnx.helper.make_attribute(item, data[item])
-                            onma_node.ONMAGetNode().attribute.append(new_attribute)
+                            onma_node.ONMANode_GetNode().attribute.append(new_attribute)
                     if isReplace == False:
-                        onma_node.ONMAGetNode().attribute.append(attribute)
+                        onma_node.ONMANode_GetNode().attribute.append(attribute)
 
                 graph.node.pop(i)
-                graph.node.insert(i, onma_node.ONMAGetNode())
+                graph.node.insert(i, onma_node.ONMANode_GetNode())
     elif data["Action"] == "Remove":
         for i, node in enumerate(graph.node):
             if node.name == name:
@@ -163,6 +166,9 @@ class ONMAGraph:
     
     def ONMAGraph_GetGraph(self):
         return self._graph
+    
+    def ONMAGraph_SetGraph(self, graph):
+        self._graph = graph
 
     def ONMAGraph_CreateInput(self, name, type, dimension):
         return make_tensor_value_info(name, type, dimension)
