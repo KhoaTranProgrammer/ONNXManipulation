@@ -70,17 +70,19 @@ def UpdateInitializer(initializers, name, data):
             initializers.insert(index, new_initializer)
         elif action == "Remove":
             initializers.remove(initializer)
-        elif action == "Add":
-            values = data[action]["values"]
-
+        else:
+            pass
+    else:
+        action = data["Action"]
+        if action == "Add":
+            values = np.array(data["tensor"], dtype='float32')
             # Create new initializer with new value
             new_initializer = CreateInitializerTensor(
                         name=name,
                         tensor_array=values,
                         data_type=GetTensorDataTypeFromnp(values.dtype))
             initializers.append(new_initializer)
-        else:
-            pass
+        
 
 def GetPreviousNodeFromInputName(graph, inputs):
     node_res = []
