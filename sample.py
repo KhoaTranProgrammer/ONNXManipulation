@@ -231,8 +231,11 @@ def readSpecForOneNode(spec):
             input_name = input_name.replace("<dt><tt>", "")
             input_name = input_name.replace("</tt> (differentiable)", "")
             input_name = input_name.replace("</tt> (non-differentiable)", "")
+            input_name = input_name.replace("</tt> (optional, non-differentiable)", "")
             input_value = item_sepa[1]
             input_value = input_value.replace("</dt>\n", "")
+            input_value = input_value.replace("tensor(", "")
+            input_value = input_value.replace(")", "")
             node_input[input_name] = input_value
 
     for item in output:
@@ -242,8 +245,11 @@ def readSpecForOneNode(spec):
             output_name = output_name.replace("<dt><tt>", "")
             output_name = output_name.replace("</tt> (differentiable)", "")
             output_name = output_name.replace("</tt> (non-differentiable)", "")
+            output_name = output_name.replace("</tt> (optional, non-differentiable)", "")
             output_value = item_sepa[1]
             output_value = output_value.replace("</dt>\n", "")
+            output_value = output_value.replace("tensor(", "")
+            output_value = output_value.replace(")", "")
             node_output[output_name] = output_value
 
     for item in attributes:
@@ -276,6 +282,8 @@ def readOnnxNodeSpec():
                 node_dict[node_name] = node_spec
                 print(node_name)
                 print(node_spec)
+                node_dict[node_name] = node_spec
+                node_dict[node_name] = node_spec
                 spec = []
 
             result = re.findall(r"^### <a name=*>*", line) # Get start segment of node
@@ -284,6 +292,7 @@ def readOnnxNodeSpec():
                     isStart = True
                     if spec != []:
                         node_name, node_spec = readSpecForOneNode(spec)
+                        node_dict[node_name] = node_spec
                         node_dict[node_name] = node_spec
                         print(node_name)
                         print(node_spec)
@@ -294,6 +303,7 @@ def readOnnxNodeSpec():
 
             if isStart == True:
                 spec.append(line)
+    # print(node_dict)
 
 # for item in nodes_list:
 #     if item == "Add":
