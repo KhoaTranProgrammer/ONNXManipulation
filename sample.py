@@ -236,7 +236,10 @@ def readSpecForOneNode(spec):
             input_value = input_value.replace("</dt>\n", "")
             input_value = input_value.replace("tensor(", "")
             input_value = input_value.replace(")", "")
-            node_input[input_name] = input_value
+            try:
+                node_input[input_name] = node_type[input_value]
+            except:
+                node_input[input_name] = input_value
 
     for item in output:
         if "<dt><tt>" in item: # <dt><tt>X</tt> (differentiable) : T</dt>
@@ -250,7 +253,10 @@ def readSpecForOneNode(spec):
             output_value = output_value.replace("</dt>\n", "")
             output_value = output_value.replace("tensor(", "")
             output_value = output_value.replace(")", "")
-            node_output[output_name] = output_value
+            try:
+                node_output[output_name] = node_type[output_value]
+            except:
+                node_output[output_name] = output_value
 
     for item in attributes:
         if "<dt><tt>" in item: # <dt><tt>axis</tt> : int (default is 0)</dt>
