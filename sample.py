@@ -232,6 +232,7 @@ def readSpecForOneNode(spec):
             input_name = input_name.replace("</tt> (differentiable)", "")
             input_name = input_name.replace("</tt> (non-differentiable)", "")
             input_name = input_name.replace("</tt> (optional, non-differentiable)", "")
+            input_name = input_name.replace("</tt>", "")
             input_value = item_sepa[1]
             input_value = input_value.replace("</dt>\n", "")
             input_value = input_value.replace("tensor(", "")
@@ -249,6 +250,7 @@ def readSpecForOneNode(spec):
             output_name = output_name.replace("</tt> (differentiable)", "")
             output_name = output_name.replace("</tt> (non-differentiable)", "")
             output_name = output_name.replace("</tt> (optional, non-differentiable)", "")
+            output_name = output_name.replace("</tt>", "")
             output_value = item_sepa[1]
             output_value = output_value.replace("</dt>\n", "")
             output_value = output_value.replace("tensor(", "")
@@ -271,7 +273,7 @@ def readSpecForOneNode(spec):
     node_spec["Attributes"] = node_attributes
     node_spec["Inputs"] = node_input
     node_spec["Outputs"] = node_output
-    node_spec["Type"] = node_type
+    # node_spec["Type"] = node_type
     return node_name, node_spec
 
 def readOnnxNodeSpec():
@@ -282,7 +284,7 @@ def readOnnxNodeSpec():
         spec = []
         # Read each line in the file
         for line in file:
-            if "## ai.onnx.preview.training" in line and spec != []:
+            if ("## ai.onnx.preview.training" in line or "(deprecated)" in line) and spec != []:
                 isStart = False
                 node_name, node_spec = readSpecForOneNode(spec)
                 node_dict[node_name] = node_spec
@@ -294,7 +296,7 @@ def readOnnxNodeSpec():
 
             result = re.findall(r"^### <a name=*>*", line) # Get start segment of node
             if result != []:
-                if "ai.onnx.preview.training" not in line:
+                if "ai.onnx.preview.training" not in line and "(deprecated)" not in line:
                     isStart = True
                     if spec != []:
                         node_name, node_spec = readSpecForOneNode(spec)
