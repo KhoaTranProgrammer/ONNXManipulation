@@ -288,8 +288,8 @@ def readOnnxNodeSpec():
                 isStart = False
                 node_name, node_spec = readSpecForOneNode(spec)
                 node_dict[node_name] = node_spec
-                print(node_name)
-                print(node_spec)
+                # print(node_name)
+                # print(node_spec)
                 node_dict[node_name] = node_spec
                 node_dict[node_name] = node_spec
                 spec = []
@@ -302,8 +302,8 @@ def readOnnxNodeSpec():
                         node_name, node_spec = readSpecForOneNode(spec)
                         node_dict[node_name] = node_spec
                         node_dict[node_name] = node_spec
-                        print(node_name)
-                        print(node_spec)
+                        # print(node_name)
+                        # print(node_spec)
                         spec = []
                 else:
                     isStart = False
@@ -311,7 +311,7 @@ def readOnnxNodeSpec():
 
             if isStart == True:
                 spec.append(line)
-    # print(node_dict)
+    return node_dict
 
 # for item in nodes_list:
 #     if item == "Add":
@@ -338,4 +338,39 @@ def readOnnxNodeSpec():
         #     except:
         #         pass
 
-readOnnxNodeSpec()
+def generate_TestCases_Combinations(config_values, currentindex, numberofconfig, combination, output_list, config_names):
+    if currentindex < numberofconfig - 1:
+        for item in config_values[currentindex]:
+            combination.append(item)
+            generate_TestCases_Combinations(config_values, currentindex + 1, numberofconfig, combination, output_list, config_names)
+        if combination: combination.pop()
+    else:
+        for item in config_values[currentindex]:
+            dict_combination = {}
+            for i in range(0, len(config_names) - 1):
+                dict_combination[config_names[i]] = combination[i]
+            dict_combination[config_names[-1]] = item
+            output_list.append(dict_combination)
+        if combination: combination.pop()
+
+node_dict = readOnnxNodeSpec()
+
+for node in node_dict:
+    config_names = []
+    config_values = []
+    if node == "Abs":
+        print(node_dict[node])
+        for item in node_dict[node]["Inputs"]:
+            config_names.append(item)
+            config_values.append((node_dict[node]["Inputs"][item]).split(","))
+        for item in node_dict[node]["Outputs"]:
+            config_names.append(item)
+            config_values.append((node_dict[node]["Outputs"][item]).split(","))
+
+        combination = []
+        output_list = []
+        # print(config_names)
+        # print(config_values)
+        generate_TestCases_Combinations(config_values, 0, len(config_values), combination, output_list, config_names)
+        print(output_list)
+
