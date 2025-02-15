@@ -72,57 +72,6 @@ def expect(
         # print(f'expected: {expected}')
         # print(f'output: {output}')
 
-nodes_list = ["Abs", "Acos", "Acosh", "Add", "And", "ArgMax", "ArgMin", "Asin", "Asinh", "Atan", "Atanh", "AveragePool", "BatchNormalization", "BitShift", "BitwiseAnd", "BitwiseNot", "BitwiseOr", "BitwiseXor", "Cast", "Ceil", "Col2Im", "Compress", "Concat", "ConcatFromSequence", "Constant", "ConstantOfShape", "Conv", "ConvInteger", "ConvTranspose", "Cos", "Cosh", "CumSum", "DFT", "DeformConv", "DepthToSpace", "DequantizeLinear", "Det", "Div", "Dropout", "Einsum", "Equal", "Erf", "Exp", "Expand", "EyeLike", "Flatten", "Floor", "GRU", "Gather", "GatherElements", "GatherND", "Gemm", "GlobalAveragePool", "GlobalLpPool", "GlobalMaxPool", "Greater", "GridSample", "Hardmax", "Identity", "If", "ImageDecoder", "InstanceNormalization", "IsInf", "IsNaN", "LRN", "LSTM", "Less", "Log", "Loop", "LpNormalization", "LpPool", "MatMul", "MatMulInteger", "Max", "MaxPool", "MaxRoiPool", "MaxUnpool", "Mean", "MelWeightMatrix", "Min", "Mod", "Mul", "Multinomial", "Neg", "NonMaxSuppression", "NonZero", "Not", "OneHot", "Optional", "OptionalGetElement", "OptionalHasElement", "Or", "Pad", "Pow", "QLinearConv", "QLinearMatMul", "QuantizeLinear", "RNN", "RandomNormal", "RandomNormalLike", "RandomUniform", "RandomUniformLike", "Reciprocal", "ReduceMax", "ReduceMean", "ReduceMin", "ReduceProd", "ReduceSum", "RegexFullMatch", "Reshape", "Resize", "ReverseSequence", "RoiAlign", "Round", "STFT", "Scan", "Scatter (deprecated)", "ScatterElements", "ScatterND", "SequenceAt", "SequenceConstruct", "SequenceEmpty", "SequenceErase", "SequenceInsert", "SequenceLength", "Shape", "Sigmoid", "Sign", "Sin", "Sinh", "Size", "Slice", "SpaceToDepth", "Split", "SplitToSequence", "Sqrt", "Squeeze", "StringConcat", "StringNormalizer", "StringSplit", "Sub", "Sum", "Tan", "Tanh", "TfIdfVectorizer", "Tile", "TopK", "Transpose", "Trilu", "Unique", "Unsqueeze", "Upsample (deprecated)", "Where", "Xor", "AffineGrid", "Bernoulli", "BlackmanWindow", "CastLike", "Celu", "CenterCropPad", "Clip", "DynamicQuantizeLinear", "Elu", "Gelu", "GreaterOrEqual", "GroupNormalization", "HammingWindow", "HannWindow", "HardSigmoid", "HardSwish", "LayerNormalization", "LeakyRelu", "LessOrEqual", "LogSoftmax", "MeanVarianceNormalization", "Mish", "NegativeLogLikelihoodLoss", "PRelu", "Range", "ReduceL1", "ReduceL2", "ReduceLogSum", "ReduceLogSumExp", "ReduceSumSquare", "Relu", "Selu", "SequenceMap", "Shrink", "Softmax", "SoftmaxCrossEntropyLoss", "Softplus", "Softsign", "ThresholdedRelu"]
-
-nodes_spec = {
-    "Abs": {
-        "Inputs": {
-            "X": "tensor(uint8), tensor(uint16), tensor(uint32), tensor(uint64), tensor(int8), tensor(int16), tensor(int32), tensor(int64), tensor(float16), tensor(float), tensor(double), tensor(bfloat16)"
-        },
-        "Outputs": {
-            "Y": "tensor(uint8), tensor(uint16), tensor(uint32), tensor(uint64), tensor(int8), tensor(int16), tensor(int32), tensor(int64), tensor(float16), tensor(float), tensor(double), tensor(bfloat16)"
-        }
-    },
-    "Acos": {
-        "Inputs": {
-            "X": "tensor(bfloat16), tensor(float16), tensor(float), tensor(double)"
-        },
-        "Outputs": {
-            "Y": "tensor(bfloat16), tensor(float16), tensor(float), tensor(double)"
-        }
-    },
-    "Acosh": {
-        "Inputs": {
-            "X": "tensor(bfloat16), tensor(float16), tensor(float), tensor(double)"
-        },
-        "Outputs": {
-            "Y": "tensor(bfloat16), tensor(float16), tensor(float), tensor(double)"
-        }
-    },
-    "Add": {
-        "Inputs": {
-            "A": "tensor(uint8), tensor(uint16), tensor(uint32), tensor(uint64), tensor(int8), tensor(int16), tensor(int32), tensor(int64), tensor(float16), tensor(float), tensor(double), tensor(bfloat16)",
-            "B": "tensor(uint8), tensor(uint16), tensor(uint32), tensor(uint64), tensor(int8), tensor(int16), tensor(int32), tensor(int64), tensor(float16), tensor(float), tensor(double), tensor(bfloat16)"
-        },
-        "Outputs": {
-            "C": "tensor(uint8), tensor(uint16), tensor(uint32), tensor(uint64), tensor(int8), tensor(int16), tensor(int32), tensor(int64), tensor(float16), tensor(float), tensor(double), tensor(bfloat16)"
-        }
-    },
-    "AffineGrid": {
-        "Attributes": {
-            "align_corners": {"type": int, "default": 0, "optional": False}
-        },
-        "Inputs": {
-            "theta": "tensor(bfloat16), tensor(float16), tensor(float), tensor(double)",
-            "size": "tensor(int64)"
-        },
-        "Outputs": {
-            "grid": "tensor(bfloat16), tensor(float16), tensor(float), tensor(double)"
-        }
-    }
-    #"And", "ArgMax", "ArgMin", "Asin", "Asinh", "Atan", "Atanh", "AveragePool", "BatchNormalization", "BitShift", "BitwiseAnd", "BitwiseNot", "BitwiseOr", "BitwiseXor", "Cast", "Ceil", "Col2Im", "Compress", "Concat", "ConcatFromSequence", "Constant", "ConstantOfShape", "Conv", "ConvInteger", "ConvTranspose", "Cos", "Cosh", "CumSum", "DFT", "DeformConv", "DepthToSpace", "DequantizeLinear", "Det", "Div", "Dropout", "Einsum", "Equal", "Erf", "Exp", "Expand", "EyeLike", "Flatten", "Floor", "GRU", "Gather", "GatherElements", "GatherND", "Gemm", "GlobalAveragePool", "GlobalLpPool", "GlobalMaxPool", "Greater", "GridSample", "Hardmax", "Identity", "If", "ImageDecoder", "InstanceNormalization", "IsInf", "IsNaN", "LRN", "LSTM", "Less", "Log", "Loop", "LpNormalization", "LpPool", "MatMul", "MatMulInteger", "Max", "MaxPool", "MaxRoiPool", "MaxUnpool", "Mean", "MelWeightMatrix", "Min", "Mod", "Mul", "Multinomial", "Neg", "NonMaxSuppression", "NonZero", "Not", "OneHot", "Optional", "OptionalGetElement", "OptionalHasElement", "Or", "Pad", "Pow", "QLinearConv", "QLinearMatMul", "QuantizeLinear", "RNN", "RandomNormal", "RandomNormalLike", "RandomUniform", "RandomUniformLike", "Reciprocal", "ReduceMax", "ReduceMean", "ReduceMin", "ReduceProd", "ReduceSum", "RegexFullMatch", "Reshape", "Resize", "ReverseSequence", "RoiAlign", "Round", "STFT", "Scan", "Scatter (deprecated)", "ScatterElements", "ScatterND", "SequenceAt", "SequenceConstruct", "SequenceEmpty", "SequenceErase", "SequenceInsert", "SequenceLength", "Shape", "Sigmoid", "Sign", "Sin", "Sinh", "Size", "Slice", "SpaceToDepth", "Split", "SplitToSequence", "Sqrt", "Squeeze", "StringConcat", "StringNormalizer", "StringSplit", "Sub", "Sum", "Tan", "Tanh", "TfIdfVectorizer", "Tile", "TopK", "Transpose", "Trilu", "Unique", "Unsqueeze", "Upsample (deprecated)", "Where", "Xor", "AffineGrid", "Bernoulli", "BlackmanWindow", "CastLike", "Celu", "CenterCropPad", "Clip", "DynamicQuantizeLinear", "Elu", "Gelu", "GreaterOrEqual", "GroupNormalization", "HammingWindow", "HannWindow", "HardSigmoid", "HardSwish", "LayerNormalization", "LeakyRelu", "LessOrEqual", "LogSoftmax", "MeanVarianceNormalization", "Mish", "NegativeLogLikelihoodLoss", "PRelu", "Range", "ReduceL1", "ReduceL2", "ReduceLogSum", "ReduceLogSumExp", "ReduceSumSquare", "Relu", "Selu", "SequenceMap", "Shrink", "Softmax", "SoftmaxCrossEntropyLoss", "Softplus", "Softsign", "ThresholdedRelu"
-}
-
 # Element type: https://onnx.ai/onnx/intro/concepts.html#element-type
 element_type = {
     "onnx.TensorProto.FLOAT": np.float32,
@@ -353,6 +302,34 @@ def generate_TestCases_Combinations(config_values, currentindex, numberofconfig,
             output_list.append(dict_combination)
         if combination: combination.pop()
 
+# create input and output
+def createOneTestCase(node, combination):
+    node_input = []
+    network_input = []
+    node_output = []
+    network_output = []
+    status = 0
+    try:
+        for item in combination:
+            if item in node["Inputs"]:
+                node_input.append(item)
+                network_input.append(createSampleData([1, 2, 3], combination[item]))
+            if item in node["Outputs"]:
+                node_output.append(item)
+                network_output.append(createSampleData([1, 2, 3], combination[item]))
+        node = onnx.helper.make_node(
+            "Abs",
+            inputs=node_input,
+            outputs=node_output,
+        )
+        
+        status = expect(node, inputs=network_input, outputs=network_output, name="test_abs")
+    except:
+        pass
+
+    if status == 1:
+        print(combination)
+
 node_dict = readOnnxNodeSpec()
 
 for node in node_dict:
@@ -372,5 +349,7 @@ for node in node_dict:
         # print(config_names)
         # print(config_values)
         generate_TestCases_Combinations(config_values, 0, len(config_values), combination, output_list, config_names)
-        print(output_list)
+        # print(output_list[0])
+        for onenode in output_list:
+            createOneTestCase(node_dict[node], onenode)
 
