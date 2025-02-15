@@ -180,6 +180,7 @@ def readSpecForOneNode(spec):
             input_name = input_name.replace("</tt> (differentiable)", "")
             input_name = input_name.replace("</tt> (non-differentiable)", "")
             input_name = input_name.replace("</tt> (optional, non-differentiable)", "")
+            input_name = input_name.replace("</tt> (optional, differentiable)", "")
             input_name = input_name.replace("</tt>", "")
             input_value = item_sepa[1]
             input_value = input_value.replace("</dt>\n", "")
@@ -198,6 +199,7 @@ def readSpecForOneNode(spec):
             output_name = output_name.replace("</tt> (differentiable)", "")
             output_name = output_name.replace("</tt> (non-differentiable)", "")
             output_name = output_name.replace("</tt> (optional, non-differentiable)", "")
+            output_name = output_name.replace("</tt> (optional, differentiable)", "")
             output_name = output_name.replace("</tt>", "")
             output_value = item_sepa[1]
             output_value = output_value.replace("</dt>\n", "")
@@ -236,8 +238,6 @@ def readOnnxNodeSpec():
                 isStart = False
                 node_name, node_spec = readSpecForOneNode(spec)
                 node_dict[node_name] = node_spec
-                # print(node_name)
-                # print(node_spec)
                 node_dict[node_name] = node_spec
                 node_dict[node_name] = node_spec
                 spec = []
@@ -250,8 +250,6 @@ def readOnnxNodeSpec():
                         node_name, node_spec = readSpecForOneNode(spec)
                         node_dict[node_name] = node_spec
                         node_dict[node_name] = node_spec
-                        # print(node_name)
-                        # print(node_spec)
                         spec = []
                 else:
                     isStart = False
@@ -260,31 +258,6 @@ def readOnnxNodeSpec():
             if isStart == True:
                 spec.append(line)
     return node_dict
-
-# for item in nodes_list:
-#     if item == "Add":
-#         print(f'Node: {item}')
-#         node = onnx.helper.make_node(
-#             item,
-#             inputs=["x1"],
-#             outputs=["y"],
-#         )
-#         print(f'Node: {item} is created OK')
-#         x = createSampleData([1, 2, 3], np.float32)
-#         y = x
-#         status = expect(node, inputs=[x, x], outputs=[y], name="test_abs")
-#         if status: print("Inferrence is OK")
-#         else: print("Inferrence is FAILED")
-
-        # for datatype in element_type:
-        #     try:
-        #         x = createSampleData([1, 2, 3], element_type[datatype])
-        #         y = x
-        #         status = expect(node, inputs=[x, x], outputs=[y], name="test_abs")
-        #         if status: print("Inferrence is OK")
-        #         else: print("Inferrence is FAILED")
-        #     except:
-        #         pass
 
 def generate_TestCases_Combinations(config_values, currentindex, numberofconfig, combination, output_list, config_names):
     if currentindex < numberofconfig - 1:
@@ -302,7 +275,7 @@ def generate_TestCases_Combinations(config_values, currentindex, numberofconfig,
         if combination: combination.pop()
 
 # create input and output
-def createOneTestCase(node_name, node, combination):
+def checkCombination(node_name, node, combination):
     node_input = []
     network_input = []
     node_output = []
@@ -326,15 +299,14 @@ def createOneTestCase(node_name, node, combination):
     except:
         pass
 
-    if status == 1:
-        print(combination)
+    return status
 
 node_dict = readOnnxNodeSpec()
 
 for node in node_dict:
     config_names = []
     config_values = []
-    if node == "Abs":
+    if node == "Conv":
         for item in node_dict[node]["Inputs"]:
             config_names.append(item)
             config_values.append((node_dict[node]["Inputs"][item]).split(","))
@@ -346,5 +318,6 @@ for node in node_dict:
         output_list = []
         generate_TestCases_Combinations(config_values, 0, len(config_values), combination, output_list, config_names)
         for onenode in output_list:
-            createOneTestCase(node, node_dict[node], onenode)
+            status = checkCombination(node, node_dict[node], onenode)
+            if status == 1: print(onenode)
 
