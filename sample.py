@@ -63,7 +63,6 @@ def expect(
                                             providers=["CPUExecutionProvider"])
         feeds = {name: value for name, value in zip(node.input, inputs)}
         results = sess.run(None, feeds)
-        print("Finish creating InferenceSession")
         return 1
     except:
         return 0
@@ -303,7 +302,7 @@ def generate_TestCases_Combinations(config_values, currentindex, numberofconfig,
         if combination: combination.pop()
 
 # create input and output
-def createOneTestCase(node, combination):
+def createOneTestCase(node_name, node, combination):
     node_input = []
     network_input = []
     node_output = []
@@ -318,7 +317,7 @@ def createOneTestCase(node, combination):
                 node_output.append(item)
                 network_output.append(createSampleData([1, 2, 3], combination[item]))
         node = onnx.helper.make_node(
-            "Abs",
+            node_name,
             inputs=node_input,
             outputs=node_output,
         )
@@ -336,7 +335,6 @@ for node in node_dict:
     config_names = []
     config_values = []
     if node == "Abs":
-        print(node_dict[node])
         for item in node_dict[node]["Inputs"]:
             config_names.append(item)
             config_values.append((node_dict[node]["Inputs"][item]).split(","))
@@ -346,10 +344,7 @@ for node in node_dict:
 
         combination = []
         output_list = []
-        # print(config_names)
-        # print(config_values)
         generate_TestCases_Combinations(config_values, 0, len(config_values), combination, output_list, config_names)
-        # print(output_list[0])
         for onenode in output_list:
-            createOneTestCase(node_dict[node], onenode)
+            createOneTestCase(node, node_dict[node], onenode)
 
