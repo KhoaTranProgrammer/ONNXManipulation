@@ -102,7 +102,18 @@ element_type = {
 }
 
 def createSampleData(dimentions, datatype):
-    return np.random.randn(*dimentions).astype(datatype)
+    if datatype == "unit8": return np.random.randn(*dimentions).astype(np.unit8)
+    elif datatype == "uint16": return np.random.randn(*dimentions).astype(np.uint16)
+    elif datatype == "uint32": return np.random.randn(*dimentions).astype(np.uint32)
+    elif datatype == "uint64": return np.random.randn(*dimentions).astype(np.uint64)
+    elif datatype == "int8": return np.random.randn(*dimentions).astype(np.int8)
+    elif datatype == "int16": return np.random.randn(*dimentions).astype(np.int16)
+    elif datatype == "int32": return np.random.randn(*dimentions).astype(np.int32)
+    elif datatype == "int64": return np.random.randn(*dimentions).astype(np.int64)
+    elif datatype == "float16": return np.random.randn(*dimentions).astype(np.float16)
+    elif datatype == "float": return np.random.randn(*dimentions).astype(np.float32)
+    elif datatype == "double": return np.random.randn(*dimentions).astype(np.double)
+    else: return np.random.randn(*dimentions).astype(datatype)
 
 def readSpecForOneNode(spec):
     isInput = False
@@ -289,13 +300,13 @@ def checkCombination(node_name, node, combination):
             if item in node["Inputs"]:
                 node_input.append(item)
                 x = createSampleData([1, 2, 3], combination[item])
-                x[x == 0.0] = 1.0
+                x[x == 0.0] = 0.5
                 x[x == 0] = 1
                 network_input.append(x)
             if item in node["Outputs"]:
                 node_output.append(item)
                 x = createSampleData([1, 2, 3], combination[item])
-                x[x == 0.0] = 1.0
+                x[x == 0.0] = 0.5
                 x[x == 0] = 1
                 network_output.append(x)
         node = onnx.helper.make_node(
@@ -304,8 +315,6 @@ def checkCombination(node_name, node, combination):
             outputs=node_output,
         )
 
-        # print(network_input)
-        # print(network_output)
         status = expect(node, inputs=network_input, outputs=network_output, name="test_abs")
     except:
         pass
