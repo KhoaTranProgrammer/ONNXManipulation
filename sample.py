@@ -63,6 +63,7 @@ def expect(
                                             providers=["CPUExecutionProvider"])
         feeds = {name: value for name, value in zip(node.input, inputs)}
         results = sess.run(None, feeds)
+        # print("Inferrence is OK")
         return 1
     except:
         return 0
@@ -285,16 +286,24 @@ def checkCombination(node_name, node, combination):
         for item in combination:
             if item in node["Inputs"]:
                 node_input.append(item)
-                network_input.append(createSampleData([1, 2, 3], combination[item]))
+                x = createSampleData([1, 2, 3], combination[item])
+                x[x == 0.0] = 1.0
+                x[x == 0] = 1
+                network_input.append(x)
             if item in node["Outputs"]:
                 node_output.append(item)
-                network_output.append(createSampleData([1, 2, 3], combination[item]))
+                x = createSampleData([1, 2, 3], combination[item])
+                x[x == 0.0] = 1.0
+                x[x == 0] = 1
+                network_output.append(x)
         node = onnx.helper.make_node(
             node_name,
             inputs=node_input,
             outputs=node_output,
         )
-        
+
+        # print(network_input)
+        # print(network_output)
         status = expect(node, inputs=network_input, outputs=network_output, name="test_abs")
     except:
         pass
@@ -306,7 +315,9 @@ node_dict = readOnnxNodeSpec()
 for node in node_dict:
     config_names = []
     config_values = []
-    if node == "Conv":
+    if node:
+        print(f'======{node}======')
+        # print(f'======{node_dict[node]}======')
         for item in node_dict[node]["Inputs"]:
             config_names.append(item)
             config_values.append((node_dict[node]["Inputs"][item]).split(","))
@@ -316,8 +327,12 @@ for node in node_dict:
 
         combination = []
         output_list = []
+        
         generate_TestCases_Combinations(config_values, 0, len(config_values), combination, output_list, config_names)
-        for onenode in output_list:
-            status = checkCombination(node, node_dict[node], onenode)
-            if status == 1: print(onenode)
-
+        # print(output_list)
+        try:
+            for onenode in output_list:
+                status = checkCombination(node, node_dict[node], onenode)
+                if status == 1: print(onenode)
+        except:
+            pass
