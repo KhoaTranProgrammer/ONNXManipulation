@@ -12,6 +12,8 @@ from onnx.backend.test.case.node.roialign import get_roi_align_input_values
 from onnx.backend.test.case.node.layernormalization import calculate_normalized_shape
 import re
 
+global args
+
 def expect(
     node: onnx.NodeProto,
     inputs: Sequence[np.ndarray],
@@ -310,29 +312,41 @@ def checkCombination(node_name, node, combination):
 
     return status
 
-node_dict = readOnnxNodeSpec()
+def createTC(node_dict, node_name):
+    for node in node_dict:
+        config_names = []
+        config_values = []
+        if node == node_name or node_name == "ALL":
+            print(f'======{node}======')
+            # print(f'======{node_dict[node]}======')
+            for item in node_dict[node]["Inputs"]:
+                config_names.append(item)
+                config_values.append((node_dict[node]["Inputs"][item]).split(","))
+            for item in node_dict[node]["Outputs"]:
+                config_names.append(item)
+                config_values.append((node_dict[node]["Outputs"][item]).split(","))
 
-for node in node_dict:
-    config_names = []
-    config_values = []
-    if node:
-        print(f'======{node}======')
-        # print(f'======{node_dict[node]}======')
-        for item in node_dict[node]["Inputs"]:
-            config_names.append(item)
-            config_values.append((node_dict[node]["Inputs"][item]).split(","))
-        for item in node_dict[node]["Outputs"]:
-            config_names.append(item)
-            config_values.append((node_dict[node]["Outputs"][item]).split(","))
+            combination = []
+            output_list = []
+            
+            generate_TestCases_Combinations(config_values, 0, len(config_values), combination, output_list, config_names)
+            # print(output_list)
+            try:
+                for onenode in output_list:
+                    status = checkCombination(node, node_dict[node], onenode)
+                    if status == 1: print(onenode)
+            except:
+                pass
 
-        combination = []
-        output_list = []
-        
-        generate_TestCases_Combinations(config_values, 0, len(config_values), combination, output_list, config_names)
-        # print(output_list)
-        try:
-            for onenode in output_list:
-                status = checkCombination(node, node_dict[node], onenode)
-                if status == 1: print(onenode)
-        except:
-            pass
+def main():
+    global args
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--operator", "-op", help="Operator name", default="")
+    args = parser.parse_args()
+
+    node_dict = readOnnxNodeSpec()
+    createTC(node_dict, args.operator)
+
+if main() == False:
+    sys.exit(-1)
