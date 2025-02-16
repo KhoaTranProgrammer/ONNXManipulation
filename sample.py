@@ -103,7 +103,8 @@ element_type = {
 }
 
 attributes = {
-    "direction": "RIGHT,LEFT"
+    "direction": ["RIGHT", "LEFT"],
+    "to": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
 }
 
 def createSampleData(dimentions, datatype):
@@ -343,8 +344,11 @@ def createTC(node_dict, node_name):
                 config_names.append(item)
                 config_values.append((node_dict[node]["Outputs"][item]).split(","))
             for item in node_dict[node]["Attributes"]:
-                config_names.append(item)
-                config_values.append((attributes[item]).split(","))
+                try:
+                    config_values.append(attributes[item])
+                    config_names.append(item)
+                except:
+                    pass
 
             combination = []
             output_list = []
