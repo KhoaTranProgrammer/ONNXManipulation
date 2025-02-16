@@ -11,6 +11,7 @@ from onnx.backend.test.case.node.affinegrid import create_theta_2d
 from onnx.backend.test.case.node.roialign import get_roi_align_input_values
 from onnx.backend.test.case.node.layernormalization import calculate_normalized_shape
 import re
+from ONMANode import ONMANode
 
 global args
 
@@ -99,6 +100,10 @@ element_type = {
     "onnx.TensorProto.UINT4": "",
     "onnx.TensorProto.INT4": "",
     "onnx.TensorProto.FLOAT4E2M1": ""
+}
+
+attributes = {
+    "direction": "RIGHT,LEFT"
 }
 
 def createSampleData(dimentions, datatype):
@@ -294,6 +299,7 @@ def checkCombination(node_name, node, combination):
     network_input = []
     node_output = []
     network_output = []
+    attri = {}
     status = 0
     try:
         for item in combination:
@@ -309,13 +315,15 @@ def checkCombination(node_name, node, combination):
                 x[x == 0.0] = 0.5
                 x[x == 0] = 1
                 network_output.append(x)
-        node = onnx.helper.make_node(
-            node_name,
-            inputs=node_input,
-            outputs=node_output,
+            if item in node["Attributes"]:
+                attri[item] = combination[item]
+
+        onma_node = ONMANode()
+        onma_node.ONMANode_MakeNode(
+            node_name, inputs=node_input, outputs=node_output, **attri
         )
 
-        status = expect(node, inputs=network_input, outputs=network_output, name="test_abs")
+        status = expect(onma_node.ONMANode_GetNode(), inputs=network_input, outputs=network_output, name="test_abs")
     except:
         pass
 
@@ -334,6 +342,9 @@ def createTC(node_dict, node_name):
             for item in node_dict[node]["Outputs"]:
                 config_names.append(item)
                 config_values.append((node_dict[node]["Outputs"][item]).split(","))
+            for item in node_dict[node]["Attributes"]:
+                config_names.append(item)
+                config_values.append((attributes[item]).split(","))
 
             combination = []
             output_list = []
