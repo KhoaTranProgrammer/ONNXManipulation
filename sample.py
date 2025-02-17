@@ -104,7 +104,8 @@ element_type = {
 
 attributes = {
     "direction": ["RIGHT", "LEFT"],
-    "to": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+    "to": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],
+    "kernel_shape": [[3, 3]]
 }
 
 def createSampleData(dimentions, datatype):
@@ -306,13 +307,13 @@ def checkCombination(node_name, node, combination):
         for item in combination:
             if item in node["Inputs"]:
                 node_input.append(item)
-                x = createSampleData([1, 2, 3], combination[item])
+                x = createSampleData([1, 2, 3, 3], combination[item])
                 x[x == 0.0] = 0.5
                 x[x == 0] = 1
                 network_input.append(x)
             if item in node["Outputs"]:
                 node_output.append(item)
-                x = createSampleData([1, 2, 3], combination[item])
+                x = createSampleData([1, 2, 3, 3], combination[item])
                 x[x == 0.0] = 0.5
                 x[x == 0] = 1
                 network_output.append(x)
