@@ -10,6 +10,7 @@ from onnx.backend.test.case.node import _extract_value_info
 from onnx.backend.test.case.node.affinegrid import create_theta_2d
 from onnx.backend.test.case.node.roialign import get_roi_align_input_values
 from onnx.backend.test.case.node.layernormalization import calculate_normalized_shape
+from onnx.backend.test.case.node.batchnorm import _batchnorm_training_mode
 import re
 from ONMANode import ONMANode
 
@@ -106,6 +107,21 @@ attributes = {
     "direction": ["RIGHT", "LEFT"],
     "to": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],
     "kernel_shape": [[3, 3]]
+}
+
+input_special = {
+    "BatchNormalization": {
+        'Inputs': {
+            'X': [2, 3, 4, 5],
+            'scale': [3],
+            'B': [3],
+            'input_mean': [3],
+            'input_var': [3]
+        },
+        'Outputs': {
+            'Y': [2, 3, 4, 5],
+        }
+    }
 }
 
 def createSampleData(dimentions, datatype):
@@ -305,18 +321,32 @@ def checkCombination(node_name, node, combination):
     status = 0
     try:
         for item in combination:
-            if item in node["Inputs"]:
-                node_input.append(item)
-                x = createSampleData([1, 2, 3, 3], combination[item])
-                x[x == 0.0] = 0.5
-                x[x == 0] = 1
-                network_input.append(x)
-            if item in node["Outputs"]:
-                node_output.append(item)
-                x = createSampleData([1, 2, 3, 3], combination[item])
-                x[x == 0.0] = 0.5
-                x[x == 0] = 1
-                network_output.append(x)
+            if node_name in input_special:
+                if item in input_special[node_name]["Inputs"]:
+                    node_input.append(item)
+                    x = createSampleData(input_special[node_name]["Inputs"][item], combination[item])
+                    x[x == 0.0] = 0.5
+                    x[x == 0] = 1
+                    network_input.append(x)
+                if item in input_special[node_name]["Outputs"]:
+                    node_output.append(item)
+                    x = createSampleData(input_special[node_name]["Outputs"][item], combination[item])
+                    x[x == 0.0] = 0.5
+                    x[x == 0] = 1
+                    network_output.append(x)
+            else:
+                if item in node["Inputs"]:
+                    node_input.append(item)
+                    x = createSampleData([1, 2, 3, 3], combination[item])
+                    x[x == 0.0] = 0.5
+                    x[x == 0] = 1
+                    network_input.append(x)
+                if item in node["Outputs"]:
+                    node_output.append(item)
+                    x = createSampleData([1, 2, 3, 3], combination[item])
+                    x[x == 0.0] = 0.5
+                    x[x == 0] = 1
+                    network_output.append(x)
             if item in node["Attributes"]:
                 attri[item] = combination[item]
 
