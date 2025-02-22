@@ -13,6 +13,7 @@ from onnx.backend.test.case.node.layernormalization import calculate_normalized_
 from onnx.backend.test.case.node.batchnorm import _batchnorm_training_mode
 import re
 from ONMANode import ONMANode
+import itertools
 
 global args
 
@@ -216,8 +217,8 @@ def readSpecForOneNode(spec):
             input_name = input_name.replace("<dt><tt>", "")
             input_name = input_name.replace("</tt> (differentiable)", "")
             input_name = input_name.replace("</tt> (non-differentiable)", "")
-            input_name = input_name.replace("</tt> (optional, non-differentiable)", "")
-            input_name = input_name.replace("</tt> (optional, differentiable)", "")
+            input_name = input_name.replace("</tt> (optional, non-differentiable)", "(optional)")
+            input_name = input_name.replace("</tt> (optional, differentiable)", "(optional)")
             input_name = input_name.replace("</tt>", "")
             input_value = item_sepa[1]
             input_value = input_value.replace("</dt>\n", "")
@@ -235,8 +236,8 @@ def readSpecForOneNode(spec):
             output_name = output_name.replace("<dt><tt>", "")
             output_name = output_name.replace("</tt> (differentiable)", "")
             output_name = output_name.replace("</tt> (non-differentiable)", "")
-            output_name = output_name.replace("</tt> (optional, non-differentiable)", "")
-            output_name = output_name.replace("</tt> (optional, differentiable)", "")
+            output_name = output_name.replace("</tt> (optional, non-differentiable)", "(optional)")
+            output_name = output_name.replace("</tt> (optional, differentiable)", "(optional)")
             output_name = output_name.replace("</tt>", "")
             output_value = item_sepa[1]
             output_value = output_value.replace("</dt>\n", "")
@@ -365,15 +366,25 @@ def createTC(node_dict, node_name):
     for node in node_dict:
         config_names = []
         config_values = []
+        config_names_option = []
+        config_values_option = []
         if node == node_name or node_name == "ALL":
             print(f'======{node}======')
             # print(f'======{node_dict[node]}======')
             for item in node_dict[node]["Inputs"]:
-                config_names.append(item)
-                config_values.append((node_dict[node]["Inputs"][item]).split(","))
+                if "(optional)" in item:
+                    config_names_option.append(item)
+                    config_values_option.append((node_dict[node]["Inputs"][item]).split(","))
+                else:
+                    config_names.append(item)
+                    config_values.append((node_dict[node]["Inputs"][item]).split(","))
             for item in node_dict[node]["Outputs"]:
-                config_names.append(item)
-                config_values.append((node_dict[node]["Outputs"][item]).split(","))
+                if "(optional)" in item:
+                    config_names_option.append(item)
+                    config_values_option.append((node_dict[node]["Outputs"][item]).split(","))
+                else:
+                    config_names.append(item)
+                    config_values.append((node_dict[node]["Outputs"][item]).split(","))
             for item in node_dict[node]["Attributes"]:
                 try:
                     config_values.append(attributes[item])
@@ -381,17 +392,65 @@ def createTC(node_dict, node_name):
                 except:
                     pass
 
+            print(config_names)
+            print(config_values)
+            print(config_names_option)
+            print(config_values_option)
+
+            full_config_names = []
+            full_config_values = []
+            full_config_names = full_config_names + config_names
+            full_config_values = full_config_values + config_values
+            print(f'Config name: {full_config_names}')
+            print(f'Config value: {full_config_values}')
+
             combination = []
             output_list = []
-            
-            generate_TestCases_Combinations(config_values, 0, len(config_values), combination, output_list, config_names)
-            # print(output_list)
+            generate_TestCases_Combinations(full_config_values, 0, len(full_config_values), combination, output_list, full_config_names)
             try:
                 for onenode in output_list:
                     status = checkCombination(node, node_dict[node], onenode)
                     if status == 1: print(onenode)
             except:
                 pass
+
+            for i in range(0, len(config_names_option)):
+                options_combination = list(itertools.combinations(config_names_option, i + 1))
+                for item in options_combination:
+                    renew_config_names_option = []
+                    renew_config_values_option = []
+                    reitem = str(item)
+                    reitem = reitem.replace("('", "'")
+                    reitem = reitem.replace(",)", "")
+                    reitem = reitem.replace("')", "'")
+                    reitem = reitem.replace("'", "")
+                    reitem = reitem.split(", ")
+                    for new_option in reitem:
+                        renew_config_names_option.append(new_option)
+                        for j in range(0, len(config_names_option)):
+                            if new_option == config_names_option[j]:
+                                renew_config_values_option.append(config_values_option[j])
+                    print(renew_config_names_option)
+                    print(renew_config_values_option)
+
+                    full_config_names = []
+                    full_config_values = []
+                    full_config_names = full_config_names + config_names
+                    full_config_names = full_config_names + renew_config_names_option
+                    full_config_values = full_config_values + config_values
+                    full_config_values = full_config_values + renew_config_values_option
+                    print(f'Config name: {full_config_names}')
+                    print(f'Config value: {full_config_values}')
+
+                    combination = []
+                    output_list = []                    
+                    generate_TestCases_Combinations(full_config_values, 0, len(full_config_values), combination, output_list, full_config_names)
+                    try:
+                        for onenode in output_list:
+                            status = checkCombination(node, node_dict[node], onenode)
+                            if status == 1: print(onenode)
+                    except:
+                        pass
 
 def main():
     global args
