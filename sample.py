@@ -121,6 +121,8 @@ input_special = {
         },
         'Outputs': {
             'Y': [2, 3, 4, 5],
+            'running_mean(optional)': [1],
+            'running_var(optional)': [1],
         }
     }
 }
@@ -392,17 +394,17 @@ def createTC(node_dict, node_name):
                 except:
                     pass
 
-            print(config_names)
-            print(config_values)
-            print(config_names_option)
-            print(config_values_option)
+            # print(config_names)
+            # print(config_values)
+            # print(config_names_option)
+            # print(config_values_option)
 
             full_config_names = []
             full_config_values = []
             full_config_names = full_config_names + config_names
             full_config_values = full_config_values + config_values
-            print(f'Config name: {full_config_names}')
-            print(f'Config value: {full_config_values}')
+            # print(f'Config name: {full_config_names}')
+            # print(f'Config value: {full_config_values}')
 
             combination = []
             output_list = []
@@ -430,8 +432,8 @@ def createTC(node_dict, node_name):
                         for j in range(0, len(config_names_option)):
                             if new_option == config_names_option[j]:
                                 renew_config_values_option.append(config_values_option[j])
-                    print(renew_config_names_option)
-                    print(renew_config_values_option)
+                    # print(renew_config_names_option)
+                    # print(renew_config_values_option)
 
                     full_config_names = []
                     full_config_values = []
@@ -439,8 +441,8 @@ def createTC(node_dict, node_name):
                     full_config_names = full_config_names + renew_config_names_option
                     full_config_values = full_config_values + config_values
                     full_config_values = full_config_values + renew_config_values_option
-                    print(f'Config name: {full_config_names}')
-                    print(f'Config value: {full_config_values}')
+                    # print(f'Config name: {full_config_names}')
+                    # print(f'Config value: {full_config_values}')
 
                     combination = []
                     output_list = []                    
