@@ -61,14 +61,15 @@ def expect(
         ]
 
     model = onnx.helper.make_model_gen_version(graph, **kwargs)
-
     # Checking the produces are the expected ones.
     try:
         sess = onnxruntime.InferenceSession(model.SerializeToString(),
                                             providers=["CPUExecutionProvider"])
         feeds = {name: value for name, value in zip(node.input, inputs)}
-        results = sess.run(None, feeds)
-        # print("Inferrence is OK")
+        try:
+            results = sess.run(None, feeds)
+        except Exception as e:
+            return 0
         return 1
     except:
         return 0
@@ -123,6 +124,17 @@ input_special = {
             'Y': [2, 3, 4, 5],
             'running_mean(optional)': [1],
             'running_var(optional)': [1],
+        }
+    },
+    "Resize": {
+        'Inputs': {
+            'X': [1, 1, 4, 4],
+            'roi': [1, 4],
+            'sizes': [1, 2],
+            'scales': [1, 4]
+        },
+        'Outputs': {
+
         }
     }
 }
@@ -357,7 +369,6 @@ def checkCombination(node_name, node, combination):
         onma_node.ONMANode_MakeNode(
             node_name, inputs=node_input, outputs=node_output, **attri
         )
-
         status = expect(onma_node.ONMANode_GetNode(), inputs=network_input, outputs=network_output, name="test_abs")
     except:
         pass
@@ -370,9 +381,8 @@ def createTC(node_dict, node_name):
         config_values = []
         config_names_option = []
         config_values_option = []
-        if node == node_name or node_name == "ALL":
+        if (node == node_name or node_name == "ALL") and node != "LSTM":
             print(f'======{node}======')
-            # print(f'======{node_dict[node]}======')
             for item in node_dict[node]["Inputs"]:
                 if "(optional)" in item:
                     config_names_option.append(item)
@@ -408,8 +418,8 @@ def createTC(node_dict, node_name):
 
             combination = []
             output_list = []
-            generate_TestCases_Combinations(full_config_values, 0, len(full_config_values), combination, output_list, full_config_names)
             try:
+                generate_TestCases_Combinations(full_config_values, 0, len(full_config_values), combination, output_list, full_config_names)
                 for onenode in output_list:
                     status = checkCombination(node, node_dict[node], onenode)
                     if status == 1: print(onenode)
@@ -446,8 +456,8 @@ def createTC(node_dict, node_name):
 
                     combination = []
                     output_list = []                    
-                    generate_TestCases_Combinations(full_config_values, 0, len(full_config_values), combination, output_list, full_config_names)
                     try:
+                        generate_TestCases_Combinations(full_config_values, 0, len(full_config_values), combination, output_list, full_config_names)
                         for onenode in output_list:
                             status = checkCombination(node, node_dict[node], onenode)
                             if status == 1: print(onenode)
