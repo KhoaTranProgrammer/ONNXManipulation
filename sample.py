@@ -111,7 +111,9 @@ attributes = {
     "kernel_shape": [[3, 3]],
     "axis": [0],
     "keepdims": [1],
-    "select_last_index": [0]
+    "select_last_index": [0],
+    "dtype": [1],
+    "seed": [5]
 }
 
 input_special = {
@@ -265,7 +267,8 @@ def readSpecForOneNode(spec):
             except:
                 node_output[output_name] = output_value
 
-    for item in attributes:
+    # for item in attributes:
+    for i, item in enumerate(attributes):
         if "<dt><tt>" in item: # <dt><tt>axis</tt> : int (default is 0)</dt>
             item_sepa = item.split(" : ")
             attributes_name = item_sepa[0]
@@ -273,6 +276,8 @@ def readSpecForOneNode(spec):
             attributes_name = attributes_name.replace("</tt>", "")
             attributes_value = item_sepa[1]
             attributes_value = attributes_value.replace("</dt>\n", "")
+            if "(Optional)" in attributes[i+1]:
+                attributes_name = attributes_name + "(optional)"
             node_attributes[attributes_name] = attributes_value
 
     node_spec["Attributes"] = node_attributes
@@ -402,8 +407,13 @@ def createTC(node_dict, node_name):
                     config_values.append((node_dict[node]["Outputs"][item]).split(","))
             for item in node_dict[node]["Attributes"]:
                 try:
-                    config_values.append(attributes[item])
-                    config_names.append(item)
+                    if "(optional)" in item:
+                        reitem = item.replace("(optional)", "")
+                        config_values_option.append(attributes[reitem])
+                        config_names_option.append(reitem)
+                    else:
+                        config_values.append(attributes[item])
+                        config_names.append(item)
                 except:
                     pass
 
