@@ -112,8 +112,8 @@ attributes = {
     "axis": [0],
     "keepdims": [1],
     "select_last_index": [0],
-    "dtype": [1],
-    "seed": [5]
+    # "dtype": [1],
+    # "seed": [5]
 }
 
 input_special = {
@@ -139,7 +139,12 @@ input_special = {
             'scales': [1, 4]
         },
         'Outputs': {
-
+        }
+    },
+    "Bernoulli": {
+        'Attributes': {
+            "dtype": [1],
+            "seed": [5]
         }
     }
 }
@@ -344,32 +349,37 @@ def checkCombination(node_name, node, combination):
     status = 0
     try:
         for item in combination:
-            if node_name in input_special:
+            # if node_name in input_special:
+            try:
                 if item in input_special[node_name]["Inputs"]:
                     node_input.append(item)
                     x = createSampleData(input_special[node_name]["Inputs"][item], combination[item])
                     x[x == 0.0] = 0.5
                     x[x == 0] = 1
                     network_input.append(x)
-                if item in input_special[node_name]["Outputs"]:
-                    node_output.append(item)
-                    x = createSampleData(input_special[node_name]["Outputs"][item], combination[item])
-                    x[x == 0.0] = 0.5
-                    x[x == 0] = 1
-                    network_output.append(x)
-            else:
+            except:
                 if item in node["Inputs"]:
                     node_input.append(item)
                     x = createSampleData([1, 2, 3, 3], combination[item])
                     x[x == 0.0] = 0.5
                     x[x == 0] = 1
                     network_input.append(x)
+            
+            try:
+                if item in input_special[node_name]["Outputs"]:
+                    node_output.append(item)
+                    x = createSampleData(input_special[node_name]["Outputs"][item], combination[item])
+                    x[x == 0.0] = 0.5
+                    x[x == 0] = 1
+                    network_output.append(x)
+            except:
                 if item in node["Outputs"]:
                     node_output.append(item)
                     x = createSampleData([1, 2, 3, 3], combination[item])
                     x[x == 0.0] = 0.5
                     x[x == 0] = 1
                     network_output.append(x)
+            
             if item in node["Attributes"]:
                 attri[item] = combination[item]
 
@@ -409,10 +419,16 @@ def createTC(node_dict, node_name):
                 try:
                     if "(optional)" in item:
                         reitem = item.replace("(optional)", "")
-                        config_values_option.append(attributes[reitem])
+                        try:
+                            config_values_option.append(input_special[node]["Attributes"][reitem])
+                        except:
+                            config_values_option.append(attributes[reitem])
                         config_names_option.append(reitem)
                     else:
-                        config_values.append(attributes[item])
+                        try:
+                            config_values.append(input_special[node]["Attributes"][item])
+                        except:
+                            config_values.append(attributes[item])
                         config_names.append(item)
                 except:
                     pass
