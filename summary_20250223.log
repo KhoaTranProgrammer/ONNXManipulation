@@ -1,0 +1,1153 @@
+======Abs======
+{'X': 'uint8', 'Y': 'uint8'}
+{'X': 'uint16', 'Y': 'uint16'}
+{'X': 'uint32', 'Y': 'uint32'}
+{'X': 'uint64', 'Y': 'uint64'}
+{'X': 'int8', 'Y': 'int8'}
+{'X': 'int16', 'Y': 'int16'}
+{'X': 'int32', 'Y': 'int32'}
+{'X': 'int64', 'Y': 'int64'}
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+{'X': 'double', 'Y': 'double'}
+======Acos======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+======Acosh======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+======Add======
+{'A': 'int32', 'B': 'int32', 'C': 'int32'}
+{'A': 'int64', 'B': 'int64', 'C': 'int64'}
+{'A': 'float16', 'B': 'float16', 'C': 'float16'}
+{'A': 'float', 'B': 'float', 'C': 'float'}
+{'A': 'double', 'B': 'double', 'C': 'double'}
+======AffineGrid======
+======And======
+{'A': 'bool', 'B': 'bool', 'C': 'bool'}
+======ArgMax======
+{'data': 'uint8', 'reduced': 'int64', 'axis': 0, 'keepdims': 1, 'select_last_index': 0}
+{'data': 'int8', 'reduced': 'int64', 'axis': 0, 'keepdims': 1, 'select_last_index': 0}
+{'data': 'int32', 'reduced': 'int64', 'axis': 0, 'keepdims': 1, 'select_last_index': 0}
+{'data': 'int64', 'reduced': 'int64', 'axis': 0, 'keepdims': 1, 'select_last_index': 0}
+{'data': 'float16', 'reduced': 'int64', 'axis': 0, 'keepdims': 1, 'select_last_index': 0}
+{'data': 'float', 'reduced': 'int64', 'axis': 0, 'keepdims': 1, 'select_last_index': 0}
+{'data': 'double', 'reduced': 'int64', 'axis': 0, 'keepdims': 1, 'select_last_index': 0}
+======ArgMin======
+{'data': 'uint8', 'reduced': 'int64', 'axis': 0, 'keepdims': 1, 'select_last_index': 0}
+{'data': 'int8', 'reduced': 'int64', 'axis': 0, 'keepdims': 1, 'select_last_index': 0}
+{'data': 'int32', 'reduced': 'int64', 'axis': 0, 'keepdims': 1, 'select_last_index': 0}
+{'data': 'int64', 'reduced': 'int64', 'axis': 0, 'keepdims': 1, 'select_last_index': 0}
+{'data': 'float16', 'reduced': 'int64', 'axis': 0, 'keepdims': 1, 'select_last_index': 0}
+{'data': 'float', 'reduced': 'int64', 'axis': 0, 'keepdims': 1, 'select_last_index': 0}
+{'data': 'double', 'reduced': 'int64', 'axis': 0, 'keepdims': 1, 'select_last_index': 0}
+======Asin======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+======Asinh======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+======Atan======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+======Atanh======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+======AveragePool======
+{'X': 'float16', 'Y': 'float16', 'kernel_shape': [3, 3]}
+{'X': 'float', 'Y': 'float', 'kernel_shape': [3, 3]}
+======BatchNormalization======
+{'X': 'float16', 'scale': 'float16', 'B': 'float16', 'input_mean': 'float16', 'input_var': 'float16', 'Y': 'float16'}
+{'X': 'float16', 'scale': 'float16', 'B': 'float16', 'input_mean': 'float', 'input_var': 'float', 'Y': 'float16'}
+{'X': 'float16', 'scale': 'float', 'B': 'float', 'input_mean': 'float16', 'input_var': 'float16', 'Y': 'float16'}
+{'X': 'float16', 'scale': 'float', 'B': 'float', 'input_mean': 'float', 'input_var': 'float', 'Y': 'float16'}
+{'X': 'float', 'scale': 'float16', 'B': 'float16', 'input_mean': 'float16', 'input_var': 'float16', 'Y': 'float'}
+{'X': 'float', 'scale': 'float16', 'B': 'float16', 'input_mean': 'float', 'input_var': 'float', 'Y': 'float'}
+{'X': 'float', 'scale': 'float', 'B': 'float', 'input_mean': 'float16', 'input_var': 'float16', 'Y': 'float'}
+{'X': 'float', 'scale': 'float', 'B': 'float', 'input_mean': 'float', 'input_var': 'float', 'Y': 'float'}
+{'X': 'double', 'scale': 'double', 'B': 'double', 'input_mean': 'double', 'input_var': 'double', 'Y': 'double'}
+======Bernoulli======
+{'input': 'float16', 'output': 'float', 'dtype': 1}
+{'input': 'float', 'output': 'float', 'dtype': 1}
+{'input': 'double', 'output': 'float', 'dtype': 1}
+{'input': 'float16', 'output': 'float', 'dtype': 1, 'seed': 5}
+{'input': 'float', 'output': 'float', 'dtype': 1, 'seed': 5}
+{'input': 'double', 'output': 'float', 'dtype': 1, 'seed': 5}
+======BitShift======
+{'X': 'uint8', 'Y': 'uint8', 'Z': 'uint8', 'direction': 'RIGHT'}
+{'X': 'uint8', 'Y': 'uint8', 'Z': 'uint8', 'direction': 'LEFT'}
+{'X': 'uint32', 'Y': 'uint32', 'Z': 'uint32', 'direction': 'RIGHT'}
+{'X': 'uint32', 'Y': 'uint32', 'Z': 'uint32', 'direction': 'LEFT'}
+{'X': 'uint64', 'Y': 'uint64', 'Z': 'uint64', 'direction': 'RIGHT'}
+{'X': 'uint64', 'Y': 'uint64', 'Z': 'uint64', 'direction': 'LEFT'}
+======BitwiseAnd======
+{'A': 'uint8', 'B': 'uint8', 'C': 'uint8'}
+{'A': 'uint16', 'B': 'uint16', 'C': 'uint16'}
+{'A': 'uint32', 'B': 'uint32', 'C': 'uint32'}
+{'A': 'uint64', 'B': 'uint64', 'C': 'uint64'}
+{'A': 'int8', 'B': 'int8', 'C': 'int8'}
+{'A': 'int16', 'B': 'int16', 'C': 'int16'}
+{'A': 'int32', 'B': 'int32', 'C': 'int32'}
+{'A': 'int64', 'B': 'int64', 'C': 'int64'}
+======BitwiseNot======
+{'X': 'uint8', 'Y': 'uint8'}
+{'X': 'uint16', 'Y': 'uint16'}
+{'X': 'uint32', 'Y': 'uint32'}
+{'X': 'uint64', 'Y': 'uint64'}
+{'X': 'int8', 'Y': 'int8'}
+{'X': 'int16', 'Y': 'int16'}
+{'X': 'int32', 'Y': 'int32'}
+{'X': 'int64', 'Y': 'int64'}
+======BitwiseOr======
+{'A': 'uint8', 'B': 'uint8', 'C': 'uint8'}
+{'A': 'uint16', 'B': 'uint16', 'C': 'uint16'}
+{'A': 'uint32', 'B': 'uint32', 'C': 'uint32'}
+{'A': 'uint64', 'B': 'uint64', 'C': 'uint64'}
+{'A': 'int8', 'B': 'int8', 'C': 'int8'}
+{'A': 'int16', 'B': 'int16', 'C': 'int16'}
+{'A': 'int32', 'B': 'int32', 'C': 'int32'}
+{'A': 'int64', 'B': 'int64', 'C': 'int64'}
+======BitwiseXor======
+{'A': 'uint8', 'B': 'uint8', 'C': 'uint8'}
+{'A': 'uint16', 'B': 'uint16', 'C': 'uint16'}
+{'A': 'uint32', 'B': 'uint32', 'C': 'uint32'}
+{'A': 'uint64', 'B': 'uint64', 'C': 'uint64'}
+{'A': 'int8', 'B': 'int8', 'C': 'int8'}
+{'A': 'int16', 'B': 'int16', 'C': 'int16'}
+{'A': 'int32', 'B': 'int32', 'C': 'int32'}
+{'A': 'int64', 'B': 'int64', 'C': 'int64'}
+======BlackmanWindow======
+======Cast======
+{'input': 'uint8', 'output': 'uint8', 'to': 2}
+{'input': 'uint8', 'output': 'uint16', 'to': 4}
+{'input': 'uint8', 'output': 'uint32', 'to': 12}
+{'input': 'uint8', 'output': 'uint64', 'to': 13}
+{'input': 'uint8', 'output': 'int8', 'to': 3}
+{'input': 'uint8', 'output': 'int16', 'to': 5}
+{'input': 'uint8', 'output': 'int32', 'to': 6}
+{'input': 'uint8', 'output': 'int64', 'to': 7}
+{'input': 'uint8', 'output': 'float16', 'to': 10}
+{'input': 'uint8', 'output': 'float', 'to': 1}
+{'input': 'uint8', 'output': 'double', 'to': 11}
+{'input': 'uint8', 'output': 'bool', 'to': 9}
+{'input': 'uint16', 'output': 'uint8', 'to': 2}
+{'input': 'uint16', 'output': 'uint16', 'to': 4}
+{'input': 'uint16', 'output': 'uint32', 'to': 12}
+{'input': 'uint16', 'output': 'uint64', 'to': 13}
+{'input': 'uint16', 'output': 'int8', 'to': 3}
+{'input': 'uint16', 'output': 'int16', 'to': 5}
+{'input': 'uint16', 'output': 'int32', 'to': 6}
+{'input': 'uint16', 'output': 'int64', 'to': 7}
+{'input': 'uint16', 'output': 'float16', 'to': 10}
+{'input': 'uint16', 'output': 'float', 'to': 1}
+{'input': 'uint16', 'output': 'double', 'to': 11}
+{'input': 'uint16', 'output': 'bool', 'to': 9}
+{'input': 'uint32', 'output': 'uint8', 'to': 2}
+{'input': 'uint32', 'output': 'uint16', 'to': 4}
+{'input': 'uint32', 'output': 'uint32', 'to': 12}
+{'input': 'uint32', 'output': 'uint64', 'to': 13}
+{'input': 'uint32', 'output': 'int8', 'to': 3}
+{'input': 'uint32', 'output': 'int16', 'to': 5}
+{'input': 'uint32', 'output': 'int32', 'to': 6}
+{'input': 'uint32', 'output': 'int64', 'to': 7}
+{'input': 'uint32', 'output': 'float16', 'to': 10}
+{'input': 'uint32', 'output': 'float', 'to': 1}
+{'input': 'uint32', 'output': 'double', 'to': 11}
+{'input': 'uint32', 'output': 'bool', 'to': 9}
+{'input': 'uint64', 'output': 'uint8', 'to': 2}
+{'input': 'uint64', 'output': 'uint16', 'to': 4}
+{'input': 'uint64', 'output': 'uint32', 'to': 12}
+{'input': 'uint64', 'output': 'uint64', 'to': 13}
+{'input': 'uint64', 'output': 'int8', 'to': 3}
+{'input': 'uint64', 'output': 'int16', 'to': 5}
+{'input': 'uint64', 'output': 'int32', 'to': 6}
+{'input': 'uint64', 'output': 'int64', 'to': 7}
+{'input': 'uint64', 'output': 'float16', 'to': 10}
+{'input': 'uint64', 'output': 'float', 'to': 1}
+{'input': 'uint64', 'output': 'double', 'to': 11}
+{'input': 'uint64', 'output': 'bool', 'to': 9}
+{'input': 'int8', 'output': 'uint8', 'to': 2}
+{'input': 'int8', 'output': 'uint16', 'to': 4}
+{'input': 'int8', 'output': 'uint32', 'to': 12}
+{'input': 'int8', 'output': 'uint64', 'to': 13}
+{'input': 'int8', 'output': 'int8', 'to': 3}
+{'input': 'int8', 'output': 'int16', 'to': 5}
+{'input': 'int8', 'output': 'int32', 'to': 6}
+{'input': 'int8', 'output': 'int64', 'to': 7}
+{'input': 'int8', 'output': 'float16', 'to': 10}
+{'input': 'int8', 'output': 'float', 'to': 1}
+{'input': 'int8', 'output': 'double', 'to': 11}
+{'input': 'int8', 'output': 'bool', 'to': 9}
+{'input': 'int16', 'output': 'uint8', 'to': 2}
+{'input': 'int16', 'output': 'uint16', 'to': 4}
+{'input': 'int16', 'output': 'uint32', 'to': 12}
+{'input': 'int16', 'output': 'uint64', 'to': 13}
+{'input': 'int16', 'output': 'int8', 'to': 3}
+{'input': 'int16', 'output': 'int16', 'to': 5}
+{'input': 'int16', 'output': 'int32', 'to': 6}
+{'input': 'int16', 'output': 'int64', 'to': 7}
+{'input': 'int16', 'output': 'float16', 'to': 10}
+{'input': 'int16', 'output': 'float', 'to': 1}
+{'input': 'int16', 'output': 'double', 'to': 11}
+{'input': 'int16', 'output': 'bool', 'to': 9}
+{'input': 'int32', 'output': 'uint8', 'to': 2}
+{'input': 'int32', 'output': 'uint16', 'to': 4}
+{'input': 'int32', 'output': 'uint32', 'to': 12}
+{'input': 'int32', 'output': 'uint64', 'to': 13}
+{'input': 'int32', 'output': 'int8', 'to': 3}
+{'input': 'int32', 'output': 'int16', 'to': 5}
+{'input': 'int32', 'output': 'int32', 'to': 6}
+{'input': 'int32', 'output': 'int64', 'to': 7}
+{'input': 'int32', 'output': 'float16', 'to': 10}
+{'input': 'int32', 'output': 'float', 'to': 1}
+{'input': 'int32', 'output': 'double', 'to': 11}
+{'input': 'int32', 'output': 'bool', 'to': 9}
+{'input': 'int64', 'output': 'uint8', 'to': 2}
+{'input': 'int64', 'output': 'uint16', 'to': 4}
+{'input': 'int64', 'output': 'uint32', 'to': 12}
+{'input': 'int64', 'output': 'uint64', 'to': 13}
+{'input': 'int64', 'output': 'int8', 'to': 3}
+{'input': 'int64', 'output': 'int16', 'to': 5}
+{'input': 'int64', 'output': 'int32', 'to': 6}
+{'input': 'int64', 'output': 'int64', 'to': 7}
+{'input': 'int64', 'output': 'float16', 'to': 10}
+{'input': 'int64', 'output': 'float', 'to': 1}
+{'input': 'int64', 'output': 'double', 'to': 11}
+{'input': 'int64', 'output': 'bool', 'to': 9}
+{'input': 'float16', 'output': 'uint8', 'to': 2}
+{'input': 'float16', 'output': 'uint16', 'to': 4}
+{'input': 'float16', 'output': 'uint32', 'to': 12}
+{'input': 'float16', 'output': 'uint64', 'to': 13}
+{'input': 'float16', 'output': 'int8', 'to': 3}
+{'input': 'float16', 'output': 'int16', 'to': 5}
+{'input': 'float16', 'output': 'int32', 'to': 6}
+{'input': 'float16', 'output': 'int64', 'to': 7}
+{'input': 'float16', 'output': 'float16', 'to': 10}
+{'input': 'float16', 'output': 'float', 'to': 1}
+{'input': 'float16', 'output': 'double', 'to': 11}
+{'input': 'float16', 'output': 'bool', 'to': 9}
+{'input': 'float', 'output': 'uint8', 'to': 2}
+{'input': 'float', 'output': 'uint16', 'to': 4}
+{'input': 'float', 'output': 'uint32', 'to': 12}
+{'input': 'float', 'output': 'uint64', 'to': 13}
+{'input': 'float', 'output': 'int8', 'to': 3}
+{'input': 'float', 'output': 'int16', 'to': 5}
+{'input': 'float', 'output': 'int32', 'to': 6}
+{'input': 'float', 'output': 'int64', 'to': 7}
+{'input': 'float', 'output': 'float16', 'to': 10}
+{'input': 'float', 'output': 'float', 'to': 1}
+{'input': 'float', 'output': 'double', 'to': 11}
+{'input': 'float', 'output': 'bool', 'to': 9}
+{'input': 'double', 'output': 'uint8', 'to': 2}
+{'input': 'double', 'output': 'uint16', 'to': 4}
+{'input': 'double', 'output': 'uint32', 'to': 12}
+{'input': 'double', 'output': 'uint64', 'to': 13}
+{'input': 'double', 'output': 'int8', 'to': 3}
+{'input': 'double', 'output': 'int16', 'to': 5}
+{'input': 'double', 'output': 'int32', 'to': 6}
+{'input': 'double', 'output': 'int64', 'to': 7}
+{'input': 'double', 'output': 'float16', 'to': 10}
+{'input': 'double', 'output': 'float', 'to': 1}
+{'input': 'double', 'output': 'double', 'to': 11}
+{'input': 'double', 'output': 'bool', 'to': 9}
+{'input': 'bool', 'output': 'uint8', 'to': 2}
+{'input': 'bool', 'output': 'uint16', 'to': 4}
+{'input': 'bool', 'output': 'uint32', 'to': 12}
+{'input': 'bool', 'output': 'uint64', 'to': 13}
+{'input': 'bool', 'output': 'int8', 'to': 3}
+{'input': 'bool', 'output': 'int16', 'to': 5}
+{'input': 'bool', 'output': 'int32', 'to': 6}
+{'input': 'bool', 'output': 'int64', 'to': 7}
+{'input': 'bool', 'output': 'float16', 'to': 10}
+{'input': 'bool', 'output': 'float', 'to': 1}
+{'input': 'bool', 'output': 'double', 'to': 11}
+{'input': 'bool', 'output': 'bool', 'to': 9}
+======CastLike======
+{'input': 'uint8', 'target_type': 'uint8', 'output': 'uint8'}
+{'input': 'uint8', 'target_type': 'uint16', 'output': 'uint16'}
+{'input': 'uint8', 'target_type': 'uint32', 'output': 'uint32'}
+{'input': 'uint8', 'target_type': 'uint64', 'output': 'uint64'}
+{'input': 'uint8', 'target_type': 'int8', 'output': 'int8'}
+{'input': 'uint8', 'target_type': 'int16', 'output': 'int16'}
+{'input': 'uint8', 'target_type': 'int32', 'output': 'int32'}
+{'input': 'uint8', 'target_type': 'int64', 'output': 'int64'}
+{'input': 'uint8', 'target_type': 'float16', 'output': 'float16'}
+{'input': 'uint8', 'target_type': 'float', 'output': 'float'}
+{'input': 'uint8', 'target_type': 'double', 'output': 'double'}
+{'input': 'uint8', 'target_type': 'bool', 'output': 'bool'}
+{'input': 'uint16', 'target_type': 'uint8', 'output': 'uint8'}
+{'input': 'uint16', 'target_type': 'uint16', 'output': 'uint16'}
+{'input': 'uint16', 'target_type': 'uint32', 'output': 'uint32'}
+{'input': 'uint16', 'target_type': 'uint64', 'output': 'uint64'}
+{'input': 'uint16', 'target_type': 'int8', 'output': 'int8'}
+{'input': 'uint16', 'target_type': 'int16', 'output': 'int16'}
+{'input': 'uint16', 'target_type': 'int32', 'output': 'int32'}
+{'input': 'uint16', 'target_type': 'int64', 'output': 'int64'}
+{'input': 'uint16', 'target_type': 'float16', 'output': 'float16'}
+{'input': 'uint16', 'target_type': 'float', 'output': 'float'}
+{'input': 'uint16', 'target_type': 'double', 'output': 'double'}
+{'input': 'uint16', 'target_type': 'bool', 'output': 'bool'}
+{'input': 'uint32', 'target_type': 'uint8', 'output': 'uint8'}
+{'input': 'uint32', 'target_type': 'uint16', 'output': 'uint16'}
+{'input': 'uint32', 'target_type': 'uint32', 'output': 'uint32'}
+{'input': 'uint32', 'target_type': 'uint64', 'output': 'uint64'}
+{'input': 'uint32', 'target_type': 'int8', 'output': 'int8'}
+{'input': 'uint32', 'target_type': 'int16', 'output': 'int16'}
+{'input': 'uint32', 'target_type': 'int32', 'output': 'int32'}
+{'input': 'uint32', 'target_type': 'int64', 'output': 'int64'}
+{'input': 'uint32', 'target_type': 'float16', 'output': 'float16'}
+{'input': 'uint32', 'target_type': 'float', 'output': 'float'}
+{'input': 'uint32', 'target_type': 'double', 'output': 'double'}
+{'input': 'uint32', 'target_type': 'bool', 'output': 'bool'}
+{'input': 'uint64', 'target_type': 'uint8', 'output': 'uint8'}
+{'input': 'uint64', 'target_type': 'uint16', 'output': 'uint16'}
+{'input': 'uint64', 'target_type': 'uint32', 'output': 'uint32'}
+{'input': 'uint64', 'target_type': 'uint64', 'output': 'uint64'}
+{'input': 'uint64', 'target_type': 'int8', 'output': 'int8'}
+{'input': 'uint64', 'target_type': 'int16', 'output': 'int16'}
+{'input': 'uint64', 'target_type': 'int32', 'output': 'int32'}
+{'input': 'uint64', 'target_type': 'int64', 'output': 'int64'}
+{'input': 'uint64', 'target_type': 'float16', 'output': 'float16'}
+{'input': 'uint64', 'target_type': 'float', 'output': 'float'}
+{'input': 'uint64', 'target_type': 'double', 'output': 'double'}
+{'input': 'uint64', 'target_type': 'bool', 'output': 'bool'}
+{'input': 'int8', 'target_type': 'uint8', 'output': 'uint8'}
+{'input': 'int8', 'target_type': 'uint16', 'output': 'uint16'}
+{'input': 'int8', 'target_type': 'uint32', 'output': 'uint32'}
+{'input': 'int8', 'target_type': 'uint64', 'output': 'uint64'}
+{'input': 'int8', 'target_type': 'int8', 'output': 'int8'}
+{'input': 'int8', 'target_type': 'int16', 'output': 'int16'}
+{'input': 'int8', 'target_type': 'int32', 'output': 'int32'}
+{'input': 'int8', 'target_type': 'int64', 'output': 'int64'}
+{'input': 'int8', 'target_type': 'float16', 'output': 'float16'}
+{'input': 'int8', 'target_type': 'float', 'output': 'float'}
+{'input': 'int8', 'target_type': 'double', 'output': 'double'}
+{'input': 'int8', 'target_type': 'bool', 'output': 'bool'}
+{'input': 'int16', 'target_type': 'uint8', 'output': 'uint8'}
+{'input': 'int16', 'target_type': 'uint16', 'output': 'uint16'}
+{'input': 'int16', 'target_type': 'uint32', 'output': 'uint32'}
+{'input': 'int16', 'target_type': 'uint64', 'output': 'uint64'}
+{'input': 'int16', 'target_type': 'int8', 'output': 'int8'}
+{'input': 'int16', 'target_type': 'int16', 'output': 'int16'}
+{'input': 'int16', 'target_type': 'int32', 'output': 'int32'}
+{'input': 'int16', 'target_type': 'int64', 'output': 'int64'}
+{'input': 'int16', 'target_type': 'float16', 'output': 'float16'}
+{'input': 'int16', 'target_type': 'float', 'output': 'float'}
+{'input': 'int16', 'target_type': 'double', 'output': 'double'}
+{'input': 'int16', 'target_type': 'bool', 'output': 'bool'}
+{'input': 'int32', 'target_type': 'uint8', 'output': 'uint8'}
+{'input': 'int32', 'target_type': 'uint16', 'output': 'uint16'}
+{'input': 'int32', 'target_type': 'uint32', 'output': 'uint32'}
+{'input': 'int32', 'target_type': 'uint64', 'output': 'uint64'}
+{'input': 'int32', 'target_type': 'int8', 'output': 'int8'}
+{'input': 'int32', 'target_type': 'int16', 'output': 'int16'}
+{'input': 'int32', 'target_type': 'int32', 'output': 'int32'}
+{'input': 'int32', 'target_type': 'int64', 'output': 'int64'}
+{'input': 'int32', 'target_type': 'float16', 'output': 'float16'}
+{'input': 'int32', 'target_type': 'float', 'output': 'float'}
+{'input': 'int32', 'target_type': 'double', 'output': 'double'}
+{'input': 'int32', 'target_type': 'bool', 'output': 'bool'}
+{'input': 'int64', 'target_type': 'uint8', 'output': 'uint8'}
+{'input': 'int64', 'target_type': 'uint16', 'output': 'uint16'}
+{'input': 'int64', 'target_type': 'uint32', 'output': 'uint32'}
+{'input': 'int64', 'target_type': 'uint64', 'output': 'uint64'}
+{'input': 'int64', 'target_type': 'int8', 'output': 'int8'}
+{'input': 'int64', 'target_type': 'int16', 'output': 'int16'}
+{'input': 'int64', 'target_type': 'int32', 'output': 'int32'}
+{'input': 'int64', 'target_type': 'int64', 'output': 'int64'}
+{'input': 'int64', 'target_type': 'float16', 'output': 'float16'}
+{'input': 'int64', 'target_type': 'float', 'output': 'float'}
+{'input': 'int64', 'target_type': 'double', 'output': 'double'}
+{'input': 'int64', 'target_type': 'bool', 'output': 'bool'}
+{'input': 'float16', 'target_type': 'uint8', 'output': 'uint8'}
+{'input': 'float16', 'target_type': 'uint16', 'output': 'uint16'}
+{'input': 'float16', 'target_type': 'uint32', 'output': 'uint32'}
+{'input': 'float16', 'target_type': 'uint64', 'output': 'uint64'}
+{'input': 'float16', 'target_type': 'int8', 'output': 'int8'}
+{'input': 'float16', 'target_type': 'int16', 'output': 'int16'}
+{'input': 'float16', 'target_type': 'int32', 'output': 'int32'}
+{'input': 'float16', 'target_type': 'int64', 'output': 'int64'}
+{'input': 'float16', 'target_type': 'float16', 'output': 'float16'}
+{'input': 'float16', 'target_type': 'float', 'output': 'float'}
+{'input': 'float16', 'target_type': 'double', 'output': 'double'}
+{'input': 'float16', 'target_type': 'bool', 'output': 'bool'}
+{'input': 'float', 'target_type': 'uint8', 'output': 'uint8'}
+{'input': 'float', 'target_type': 'uint16', 'output': 'uint16'}
+{'input': 'float', 'target_type': 'uint32', 'output': 'uint32'}
+{'input': 'float', 'target_type': 'uint64', 'output': 'uint64'}
+{'input': 'float', 'target_type': 'int8', 'output': 'int8'}
+{'input': 'float', 'target_type': 'int16', 'output': 'int16'}
+{'input': 'float', 'target_type': 'int32', 'output': 'int32'}
+{'input': 'float', 'target_type': 'int64', 'output': 'int64'}
+{'input': 'float', 'target_type': 'float16', 'output': 'float16'}
+{'input': 'float', 'target_type': 'float', 'output': 'float'}
+{'input': 'float', 'target_type': 'double', 'output': 'double'}
+{'input': 'float', 'target_type': 'bool', 'output': 'bool'}
+{'input': 'double', 'target_type': 'uint8', 'output': 'uint8'}
+{'input': 'double', 'target_type': 'uint16', 'output': 'uint16'}
+{'input': 'double', 'target_type': 'uint32', 'output': 'uint32'}
+{'input': 'double', 'target_type': 'uint64', 'output': 'uint64'}
+{'input': 'double', 'target_type': 'int8', 'output': 'int8'}
+{'input': 'double', 'target_type': 'int16', 'output': 'int16'}
+{'input': 'double', 'target_type': 'int32', 'output': 'int32'}
+{'input': 'double', 'target_type': 'int64', 'output': 'int64'}
+{'input': 'double', 'target_type': 'float16', 'output': 'float16'}
+{'input': 'double', 'target_type': 'float', 'output': 'float'}
+{'input': 'double', 'target_type': 'double', 'output': 'double'}
+{'input': 'double', 'target_type': 'bool', 'output': 'bool'}
+{'input': 'bool', 'target_type': 'uint8', 'output': 'uint8'}
+{'input': 'bool', 'target_type': 'uint16', 'output': 'uint16'}
+{'input': 'bool', 'target_type': 'uint32', 'output': 'uint32'}
+{'input': 'bool', 'target_type': 'uint64', 'output': 'uint64'}
+{'input': 'bool', 'target_type': 'int8', 'output': 'int8'}
+{'input': 'bool', 'target_type': 'int16', 'output': 'int16'}
+{'input': 'bool', 'target_type': 'int32', 'output': 'int32'}
+{'input': 'bool', 'target_type': 'int64', 'output': 'int64'}
+{'input': 'bool', 'target_type': 'float16', 'output': 'float16'}
+{'input': 'bool', 'target_type': 'float', 'output': 'float'}
+{'input': 'bool', 'target_type': 'double', 'output': 'double'}
+{'input': 'bool', 'target_type': 'bool', 'output': 'bool'}
+======Ceil======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+{'X': 'double', 'Y': 'double'}
+======Celu======
+{'X': 'float', 'Y': 'float'}
+======CenterCropPad======
+======Clip======
+{'input': 'uint8', 'output': 'uint8'}
+{'input': 'uint16', 'output': 'uint16'}
+{'input': 'uint32', 'output': 'uint32'}
+{'input': 'uint64', 'output': 'uint64'}
+{'input': 'int8', 'output': 'int8'}
+{'input': 'int16', 'output': 'int16'}
+{'input': 'int32', 'output': 'int32'}
+{'input': 'int64', 'output': 'int64'}
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+{'input': 'double', 'output': 'double'}
+======Col2Im======
+======Compress======
+{'input': 'uint8', 'condition': 'bool', 'output': 'uint8'}
+{'input': 'uint16', 'condition': 'bool', 'output': 'uint16'}
+{'input': 'uint32', 'condition': 'bool', 'output': 'uint32'}
+{'input': 'uint64', 'condition': 'bool', 'output': 'uint64'}
+{'input': 'int8', 'condition': 'bool', 'output': 'int8'}
+{'input': 'int16', 'condition': 'bool', 'output': 'int16'}
+{'input': 'int32', 'condition': 'bool', 'output': 'int32'}
+{'input': 'int64', 'condition': 'bool', 'output': 'int64'}
+{'input': 'float16', 'condition': 'bool', 'output': 'float16'}
+{'input': 'float', 'condition': 'bool', 'output': 'float'}
+{'input': 'double', 'condition': 'bool', 'output': 'double'}
+{'input': 'bool', 'condition': 'bool', 'output': 'bool'}
+{'input': 'uint8', 'condition': 'bool', 'output': 'uint8', 'axis': 0}
+{'input': 'uint16', 'condition': 'bool', 'output': 'uint16', 'axis': 0}
+{'input': 'uint32', 'condition': 'bool', 'output': 'uint32', 'axis': 0}
+{'input': 'uint64', 'condition': 'bool', 'output': 'uint64', 'axis': 0}
+{'input': 'int8', 'condition': 'bool', 'output': 'int8', 'axis': 0}
+{'input': 'int16', 'condition': 'bool', 'output': 'int16', 'axis': 0}
+{'input': 'int32', 'condition': 'bool', 'output': 'int32', 'axis': 0}
+{'input': 'int64', 'condition': 'bool', 'output': 'int64', 'axis': 0}
+{'input': 'float16', 'condition': 'bool', 'output': 'float16', 'axis': 0}
+{'input': 'float', 'condition': 'bool', 'output': 'float', 'axis': 0}
+{'input': 'double', 'condition': 'bool', 'output': 'double', 'axis': 0}
+{'input': 'bool', 'condition': 'bool', 'output': 'bool', 'axis': 0}
+======Concat======
+{'inputs (variadic, differentiable)': 'uint8', 'concat_result': 'uint8', 'axis': 0}
+{'inputs (variadic, differentiable)': 'uint16', 'concat_result': 'uint16', 'axis': 0}
+{'inputs (variadic, differentiable)': 'uint32', 'concat_result': 'uint32', 'axis': 0}
+{'inputs (variadic, differentiable)': 'uint64', 'concat_result': 'uint64', 'axis': 0}
+{'inputs (variadic, differentiable)': 'int8', 'concat_result': 'int8', 'axis': 0}
+{'inputs (variadic, differentiable)': 'int16', 'concat_result': 'int16', 'axis': 0}
+{'inputs (variadic, differentiable)': 'int32', 'concat_result': 'int32', 'axis': 0}
+{'inputs (variadic, differentiable)': 'int64', 'concat_result': 'int64', 'axis': 0}
+{'inputs (variadic, differentiable)': 'float16', 'concat_result': 'float16', 'axis': 0}
+{'inputs (variadic, differentiable)': 'float', 'concat_result': 'float', 'axis': 0}
+{'inputs (variadic, differentiable)': 'double', 'concat_result': 'double', 'axis': 0}
+{'inputs (variadic, differentiable)': 'bool', 'concat_result': 'bool', 'axis': 0}
+======ConcatFromSequence======
+======Constant======
+======ConstantOfShape======
+======Conv======
+{'X': 'float16', 'W': 'float16', 'Y': 'float16', 'kernel_shape': [3, 3]}
+{'X': 'float', 'W': 'float', 'Y': 'float', 'kernel_shape': [3, 3]}
+{'X': 'float16', 'W': 'float16', 'Y': 'float16', 'kernel_shape': [3, 3], 'B(optional)': 'float16'}
+{'X': 'float', 'W': 'float', 'Y': 'float', 'kernel_shape': [3, 3], 'B(optional)': 'float'}
+======ConvInteger======
+{'x': 'uint8', 'w': 'uint8', 'y': 'int32', 'kernel_shape': [3, 3]}
+======ConvTranspose======
+======Cos======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+======Cosh======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+======CumSum======
+======DFT======
+======DeformConv======
+======DepthToSpace======
+======DequantizeLinear======
+======Det======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+======Div======
+{'A': 'int32', 'B': 'int32', 'C': 'int32'}
+{'A': 'int64', 'B': 'int64', 'C': 'int64'}
+{'A': 'float16', 'B': 'float16', 'C': 'float16'}
+{'A': 'float', 'B': 'float', 'C': 'float'}
+{'A': 'double', 'B': 'double', 'C': 'double'}
+======Dropout======
+{'data': 'float16', 'output': 'float16'}
+{'data': 'float', 'output': 'float'}
+{'data': 'double', 'output': 'double'}
+{'data': 'float16', 'output': 'float16', 'mask(optional)': 'bool'}
+{'data': 'float', 'output': 'float', 'mask(optional)': 'bool'}
+{'data': 'double', 'output': 'double', 'mask(optional)': 'bool'}
+======DynamicQuantizeLinear======
+{'x': 'float', 'y': 'uint8', 'y_scale': 'float', 'y_zero_point': 'uint8'}
+======Einsum======
+======Elu======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+======Equal======
+{'A': 'bool', 'B': 'bool', 'C': 'bool'}
+{'A': 'int32', 'B': 'int32', 'C': 'bool'}
+{'A': 'int64', 'B': 'int64', 'C': 'bool'}
+{'A': 'float16', 'B': 'float16', 'C': 'bool'}
+{'A': 'float', 'B': 'float', 'C': 'bool'}
+{'A': 'double', 'B': 'double', 'C': 'bool'}
+======Erf======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+======Exp======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+{'input': 'double', 'output': 'double'}
+======Expand======
+======EyeLike======
+======Flatten======
+{'input': 'uint8', 'output': 'uint8', 'axis': 0}
+{'input': 'uint16', 'output': 'uint16', 'axis': 0}
+{'input': 'uint32', 'output': 'uint32', 'axis': 0}
+{'input': 'uint64', 'output': 'uint64', 'axis': 0}
+{'input': 'int8', 'output': 'int8', 'axis': 0}
+{'input': 'int16', 'output': 'int16', 'axis': 0}
+{'input': 'int32', 'output': 'int32', 'axis': 0}
+{'input': 'int64', 'output': 'int64', 'axis': 0}
+{'input': 'float16', 'output': 'float16', 'axis': 0}
+{'input': 'float', 'output': 'float', 'axis': 0}
+{'input': 'double', 'output': 'double', 'axis': 0}
+{'input': 'bool', 'output': 'bool', 'axis': 0}
+======Floor======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+{'X': 'double', 'Y': 'double'}
+======GRU======
+======Gather======
+======GatherElements======
+======GatherND======
+======Gelu======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+======Gemm======
+======GlobalAveragePool======
+{'X': 'float', 'Y': 'float'}
+======GlobalLpPool======
+======GlobalMaxPool======
+{'X': 'float', 'Y': 'float'}
+======Greater======
+{'A': 'int32', 'B': 'int32', 'C': 'bool'}
+{'A': 'int64', 'B': 'int64', 'C': 'bool'}
+{'A': 'float16', 'B': 'float16', 'C': 'bool'}
+{'A': 'float', 'B': 'float', 'C': 'bool'}
+{'A': 'double', 'B': 'double', 'C': 'bool'}
+======GreaterOrEqual======
+{'A': 'int32', 'B': 'int32', 'C': 'bool'}
+{'A': 'int64', 'B': 'int64', 'C': 'bool'}
+{'A': 'float16', 'B': 'float16', 'C': 'bool'}
+{'A': 'float', 'B': 'float', 'C': 'bool'}
+{'A': 'double', 'B': 'double', 'C': 'bool'}
+======GridSample======
+======GroupNormalization======
+======HammingWindow======
+======HannWindow======
+======HardSigmoid======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+======HardSwish======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+======Hardmax======
+{'input': 'float16', 'output': 'float16', 'axis': 0}
+{'input': 'float', 'output': 'float', 'axis': 0}
+======Identity======
+{'input': 'uint8', 'output': 'uint8'}
+{'input': 'uint16', 'output': 'uint16'}
+{'input': 'uint32', 'output': 'uint32'}
+{'input': 'uint64', 'output': 'uint64'}
+{'input': 'int8', 'output': 'int8'}
+{'input': 'int16', 'output': 'int16'}
+{'input': 'int32', 'output': 'int32'}
+{'input': 'int64', 'output': 'int64'}
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+{'input': 'double', 'output': 'double'}
+{'input': 'bool', 'output': 'bool'}
+======If======
+======ImageDecoder======
+======InstanceNormalization======
+======IsInf======
+{'X': 'float16', 'Y': 'bool'}
+{'X': 'float', 'Y': 'bool'}
+{'X': 'double', 'Y': 'bool'}
+======IsNaN======
+{'X': 'float16', 'Y': 'bool'}
+{'X': 'float', 'Y': 'bool'}
+{'X': 'double', 'Y': 'bool'}
+======LRN======
+======LayerNormalization======
+{'X': 'float16', 'Scale': 'float16', 'Y': 'float16', 'axis': 0}
+{'X': 'float', 'Scale': 'float', 'Y': 'float', 'axis': 0}
+{'X': 'double', 'Scale': 'double', 'Y': 'double', 'axis': 0}
+{'X': 'float16', 'Scale': 'float16', 'Y': 'float16', 'axis': 0, 'B (optional)': 'float16'}
+{'X': 'float', 'Scale': 'float', 'Y': 'float', 'axis': 0, 'B (optional)': 'float'}
+{'X': 'double', 'Scale': 'double', 'Y': 'double', 'axis': 0, 'B (optional)': 'double'}
+{'X': 'float16', 'Scale': 'float16', 'Y': 'float16', 'axis': 0, 'Mean (optional)': 'float'}
+{'X': 'float', 'Scale': 'float', 'Y': 'float', 'axis': 0, 'Mean (optional)': 'float'}
+{'X': 'double', 'Scale': 'double', 'Y': 'double', 'axis': 0, 'Mean (optional)': 'float'}
+{'X': 'float16', 'Scale': 'float16', 'Y': 'float16', 'axis': 0, 'InvStdDev (optional)': 'float'}
+{'X': 'float', 'Scale': 'float', 'Y': 'float', 'axis': 0, 'InvStdDev (optional)': 'float'}
+{'X': 'double', 'Scale': 'double', 'Y': 'double', 'axis': 0, 'InvStdDev (optional)': 'float'}
+{'X': 'float16', 'Scale': 'float16', 'Y': 'float16', 'axis': 0, 'B (optional)': 'float16', 'Mean (optional)': 'float'}
+{'X': 'float', 'Scale': 'float', 'Y': 'float', 'axis': 0, 'B (optional)': 'float', 'Mean (optional)': 'float'}
+{'X': 'double', 'Scale': 'double', 'Y': 'double', 'axis': 0, 'B (optional)': 'double', 'Mean (optional)': 'float'}
+{'X': 'float16', 'Scale': 'float16', 'Y': 'float16', 'axis': 0, 'B (optional)': 'float16', 'InvStdDev (optional)': 'float'}
+{'X': 'float', 'Scale': 'float', 'Y': 'float', 'axis': 0, 'B (optional)': 'float', 'InvStdDev (optional)': 'float'}
+{'X': 'double', 'Scale': 'double', 'Y': 'double', 'axis': 0, 'B (optional)': 'double', 'InvStdDev (optional)': 'float'}
+{'X': 'float16', 'Scale': 'float16', 'Y': 'float16', 'axis': 0, 'Mean (optional)': 'float', 'InvStdDev (optional)': 'float'}
+{'X': 'float', 'Scale': 'float', 'Y': 'float', 'axis': 0, 'Mean (optional)': 'float', 'InvStdDev (optional)': 'float'}
+{'X': 'double', 'Scale': 'double', 'Y': 'double', 'axis': 0, 'Mean (optional)': 'float', 'InvStdDev (optional)': 'float'}
+{'X': 'float16', 'Scale': 'float16', 'Y': 'float16', 'axis': 0, 'B (optional)': 'float16', 'Mean (optional)': 'float', 'InvStdDev (optional)': 'float'}
+{'X': 'float', 'Scale': 'float', 'Y': 'float', 'axis': 0, 'B (optional)': 'float', 'Mean (optional)': 'float', 'InvStdDev (optional)': 'float'}
+{'X': 'double', 'Scale': 'double', 'Y': 'double', 'axis': 0, 'B (optional)': 'double', 'Mean (optional)': 'float', 'InvStdDev (optional)': 'float'}
+======LeakyRelu======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+{'X': 'double', 'Y': 'double'}
+======Less======
+{'A': 'int32', 'B': 'int32', 'C': 'bool'}
+{'A': 'int64', 'B': 'int64', 'C': 'bool'}
+{'A': 'float16', 'B': 'float16', 'C': 'bool'}
+{'A': 'float', 'B': 'float', 'C': 'bool'}
+{'A': 'double', 'B': 'double', 'C': 'bool'}
+======LessOrEqual======
+{'A': 'int32', 'B': 'int32', 'C': 'bool'}
+{'A': 'int64', 'B': 'int64', 'C': 'bool'}
+{'A': 'float16', 'B': 'float16', 'C': 'bool'}
+{'A': 'float', 'B': 'float', 'C': 'bool'}
+{'A': 'double', 'B': 'double', 'C': 'bool'}
+======Log======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+{'input': 'double', 'output': 'double'}
+======LogSoftmax======
+{'input': 'float16', 'output': 'float16', 'axis': 0}
+{'input': 'float', 'output': 'float', 'axis': 0}
+{'input': 'double', 'output': 'double', 'axis': 0}
+======Loop======
+======LpNormalization======
+{'input': 'float', 'output': 'float', 'axis': 0}
+{'input': 'double', 'output': 'double', 'axis': 0}
+======LpPool======
+{'X': 'float16', 'Y': 'float16', 'kernel_shape': [3, 3]}
+{'X': 'float', 'Y': 'float', 'kernel_shape': [3, 3]}
+======MatMul======
+{'A': 'float16', 'B': 'float16', 'Y': 'float16'}
+{'A': 'float', 'B': 'float', 'Y': 'float'}
+{'A': 'double', 'B': 'double', 'Y': 'double'}
+{'A': 'uint32', 'B': 'uint32', 'Y': 'uint32'}
+{'A': 'uint64', 'B': 'uint64', 'Y': 'uint64'}
+{'A': 'int32', 'B': 'int32', 'Y': 'int32'}
+{'A': 'int64', 'B': 'int64', 'Y': 'int64'}
+======MatMulInteger======
+{'A': 'int8', 'B': 'int8', 'Y': 'int32'}
+{'A': 'uint8', 'B': 'int8', 'Y': 'int32'}
+{'A': 'uint8', 'B': 'uint8', 'Y': 'int32'}
+======Max======
+{'data_0 (variadic, differentiable)': 'uint32', 'max': 'uint32'}
+{'data_0 (variadic, differentiable)': 'uint64', 'max': 'uint64'}
+{'data_0 (variadic, differentiable)': 'int32', 'max': 'int32'}
+{'data_0 (variadic, differentiable)': 'int64', 'max': 'int64'}
+{'data_0 (variadic, differentiable)': 'float16', 'max': 'float16'}
+{'data_0 (variadic, differentiable)': 'float', 'max': 'float'}
+{'data_0 (variadic, differentiable)': 'double', 'max': 'double'}
+======MaxPool======
+{'X': 'float16', 'Y': 'float16', 'kernel_shape': [3, 3]}
+{'X': 'float', 'Y': 'float', 'kernel_shape': [3, 3]}
+{'X': 'double', 'Y': 'double', 'kernel_shape': [3, 3]}
+{'X': 'int8', 'Y': 'int8', 'kernel_shape': [3, 3]}
+{'X': 'uint8', 'Y': 'uint8', 'kernel_shape': [3, 3]}
+{'X': 'float16', 'Y': 'float16', 'kernel_shape': [3, 3], 'Indices(optional)': 'int64'}
+{'X': 'float', 'Y': 'float', 'kernel_shape': [3, 3], 'Indices(optional)': 'int64'}
+{'X': 'double', 'Y': 'double', 'kernel_shape': [3, 3], 'Indices(optional)': 'int64'}
+{'X': 'int8', 'Y': 'int8', 'kernel_shape': [3, 3], 'Indices(optional)': 'int64'}
+{'X': 'uint8', 'Y': 'uint8', 'kernel_shape': [3, 3], 'Indices(optional)': 'int64'}
+======MaxRoiPool======
+======MaxUnpool======
+======Mean======
+{'data_0 (variadic, differentiable)': 'float16', 'mean': 'float16'}
+{'data_0 (variadic, differentiable)': 'float', 'mean': 'float'}
+======MeanVarianceNormalization======
+{'X': 'float', 'Y': 'float'}
+======MelWeightMatrix======
+======Min======
+{'data_0 (variadic, differentiable)': 'uint32', 'min': 'uint32'}
+{'data_0 (variadic, differentiable)': 'uint64', 'min': 'uint64'}
+{'data_0 (variadic, differentiable)': 'int32', 'min': 'int32'}
+{'data_0 (variadic, differentiable)': 'int64', 'min': 'int64'}
+{'data_0 (variadic, differentiable)': 'float16', 'min': 'float16'}
+{'data_0 (variadic, differentiable)': 'float', 'min': 'float'}
+{'data_0 (variadic, differentiable)': 'double', 'min': 'double'}
+======Mish======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+{'X': 'double', 'Y': 'double'}
+======Mod======
+{'A': 'uint8', 'B': 'uint8', 'C': 'uint8'}
+{'A': 'uint16', 'B': 'uint16', 'C': 'uint16'}
+{'A': 'uint32', 'B': 'uint32', 'C': 'uint32'}
+{'A': 'uint64', 'B': 'uint64', 'C': 'uint64'}
+{'A': 'int8', 'B': 'int8', 'C': 'int8'}
+{'A': 'int16', 'B': 'int16', 'C': 'int16'}
+{'A': 'int32', 'B': 'int32', 'C': 'int32'}
+{'A': 'int64', 'B': 'int64', 'C': 'int64'}
+======Mul======
+{'A': 'int32', 'B': 'int32', 'C': 'int32'}
+{'A': 'int64', 'B': 'int64', 'C': 'int64'}
+{'A': 'float16', 'B': 'float16', 'C': 'float16'}
+{'A': 'float', 'B': 'float', 'C': 'float'}
+{'A': 'double', 'B': 'double', 'C': 'double'}
+======Multinomial======
+======Neg======
+{'X': 'float', 'Y': 'float'}
+{'X': 'int32', 'Y': 'int32'}
+{'X': 'int8', 'Y': 'int8'}
+{'X': 'int64', 'Y': 'int64'}
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'double', 'Y': 'double'}
+======NegativeLogLikelihoodLoss======
+======NonMaxSuppression======
+======NonZero======
+{'X': 'uint8', 'Y': 'int64'}
+{'X': 'int32', 'Y': 'int64'}
+{'X': 'int64', 'Y': 'int64'}
+{'X': 'float16', 'Y': 'int64'}
+{'X': 'float', 'Y': 'int64'}
+{'X': 'bool', 'Y': 'int64'}
+======Not======
+{'X': 'bool', 'Y': 'bool'}
+======OneHot======
+======Optional======
+======OptionalGetElement======
+{'input': 'uint8', 'output': 'uint8'}
+{'input': 'uint16', 'output': 'uint16'}
+{'input': 'uint32', 'output': 'uint32'}
+{'input': 'uint64', 'output': 'uint64'}
+{'input': 'int8', 'output': 'int8'}
+{'input': 'int16', 'output': 'int16'}
+{'input': 'int32', 'output': 'int32'}
+{'input': 'int64', 'output': 'int64'}
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+{'input': 'double', 'output': 'double'}
+{'input': 'bool', 'output': 'bool'}
+======OptionalHasElement======
+{'output': 'bool'}
+{'output': 'bool', 'input (optional)': 'uint8'}
+{'output': 'bool', 'input (optional)': 'uint16'}
+{'output': 'bool', 'input (optional)': 'uint32'}
+{'output': 'bool', 'input (optional)': 'uint64'}
+{'output': 'bool', 'input (optional)': 'int8'}
+{'output': 'bool', 'input (optional)': 'int16'}
+{'output': 'bool', 'input (optional)': 'int32'}
+{'output': 'bool', 'input (optional)': 'int64'}
+{'output': 'bool', 'input (optional)': 'float16'}
+{'output': 'bool', 'input (optional)': 'float'}
+{'output': 'bool', 'input (optional)': 'double'}
+{'output': 'bool', 'input (optional)': 'bool'}
+======Or======
+{'A': 'bool', 'B': 'bool', 'C': 'bool'}
+======PRelu======
+{'X': 'float16', 'slope': 'float16', 'Y': 'float16'}
+{'X': 'float', 'slope': 'float', 'Y': 'float'}
+{'X': 'double', 'slope': 'double', 'Y': 'double'}
+{'X': 'int32', 'slope': 'int32', 'Y': 'int32'}
+{'X': 'int64', 'slope': 'int64', 'Y': 'int64'}
+======Pad======
+======Pow======
+{'X': 'int32', 'Y': 'int32', 'Z': 'int32'}
+{'X': 'int32', 'Y': 'int64', 'Z': 'int32'}
+{'X': 'int32', 'Y': 'float16', 'Z': 'int32'}
+{'X': 'int32', 'Y': 'float', 'Z': 'int32'}
+{'X': 'int32', 'Y': 'double', 'Z': 'int32'}
+{'X': 'int64', 'Y': 'int32', 'Z': 'int64'}
+{'X': 'int64', 'Y': 'int64', 'Z': 'int64'}
+{'X': 'int64', 'Y': 'float16', 'Z': 'int64'}
+{'X': 'int64', 'Y': 'float', 'Z': 'int64'}
+{'X': 'int64', 'Y': 'double', 'Z': 'int64'}
+{'X': 'float16', 'Y': 'int32', 'Z': 'float16'}
+{'X': 'float16', 'Y': 'int64', 'Z': 'float16'}
+{'X': 'float16', 'Y': 'float16', 'Z': 'float16'}
+{'X': 'float16', 'Y': 'float', 'Z': 'float16'}
+{'X': 'float16', 'Y': 'double', 'Z': 'float16'}
+{'X': 'float', 'Y': 'int32', 'Z': 'float'}
+{'X': 'float', 'Y': 'int64', 'Z': 'float'}
+{'X': 'float', 'Y': 'float16', 'Z': 'float'}
+{'X': 'float', 'Y': 'float', 'Z': 'float'}
+{'X': 'float', 'Y': 'double', 'Z': 'float'}
+{'X': 'double', 'Y': 'int32', 'Z': 'double'}
+{'X': 'double', 'Y': 'int64', 'Z': 'double'}
+{'X': 'double', 'Y': 'float16', 'Z': 'double'}
+{'X': 'double', 'Y': 'float', 'Z': 'double'}
+{'X': 'double', 'Y': 'double', 'Z': 'double'}
+======QLinearConv======
+======QLinearMatMul======
+======QuantizeLinear======
+======RNN======
+======RandomNormal======
+======RandomNormalLike======
+{'input': 'float', 'output': 'float'}
+{'input': 'double', 'output': 'double'}
+======RandomUniform======
+======RandomUniformLike======
+{'input': 'float', 'output': 'float'}
+{'input': 'double', 'output': 'double'}
+======Range======
+======Reciprocal======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+{'X': 'double', 'Y': 'double'}
+======ReduceL1======
+{'data': 'int32', 'reduced': 'int32', 'keepdims': 1}
+{'data': 'int64', 'reduced': 'int64', 'keepdims': 1}
+{'data': 'float16', 'reduced': 'float16', 'keepdims': 1}
+{'data': 'float', 'reduced': 'float', 'keepdims': 1}
+{'data': 'double', 'reduced': 'double', 'keepdims': 1}
+======ReduceL2======
+{'data': 'int32', 'reduced': 'int32', 'keepdims': 1}
+{'data': 'int64', 'reduced': 'int64', 'keepdims': 1}
+{'data': 'float16', 'reduced': 'float16', 'keepdims': 1}
+{'data': 'float', 'reduced': 'float', 'keepdims': 1}
+{'data': 'double', 'reduced': 'double', 'keepdims': 1}
+======ReduceLogSum======
+{'data': 'int32', 'reduced': 'int32', 'keepdims': 1}
+{'data': 'int64', 'reduced': 'int64', 'keepdims': 1}
+{'data': 'float16', 'reduced': 'float16', 'keepdims': 1}
+{'data': 'float', 'reduced': 'float', 'keepdims': 1}
+{'data': 'double', 'reduced': 'double', 'keepdims': 1}
+======ReduceLogSumExp======
+{'data': 'uint32', 'reduced': 'uint32', 'keepdims': 1}
+{'data': 'uint64', 'reduced': 'uint64', 'keepdims': 1}
+{'data': 'int32', 'reduced': 'int32', 'keepdims': 1}
+{'data': 'int64', 'reduced': 'int64', 'keepdims': 1}
+{'data': 'float16', 'reduced': 'float16', 'keepdims': 1}
+{'data': 'float', 'reduced': 'float', 'keepdims': 1}
+{'data': 'double', 'reduced': 'double', 'keepdims': 1}
+======ReduceMax======
+{'data': 'int32', 'reduced': 'int32', 'keepdims': 1}
+{'data': 'int64', 'reduced': 'int64', 'keepdims': 1}
+{'data': 'float16', 'reduced': 'float16', 'keepdims': 1}
+{'data': 'float', 'reduced': 'float', 'keepdims': 1}
+{'data': 'double', 'reduced': 'double', 'keepdims': 1}
+{'data': 'uint8', 'reduced': 'uint8', 'keepdims': 1}
+{'data': 'int8', 'reduced': 'int8', 'keepdims': 1}
+{'data': 'bool', 'reduced': 'bool', 'keepdims': 1}
+======ReduceMean======
+{'data': 'int32', 'reduced': 'int32', 'keepdims': 1}
+{'data': 'int64', 'reduced': 'int64', 'keepdims': 1}
+{'data': 'float16', 'reduced': 'float16', 'keepdims': 1}
+{'data': 'float', 'reduced': 'float', 'keepdims': 1}
+{'data': 'double', 'reduced': 'double', 'keepdims': 1}
+======ReduceMin======
+{'data': 'int32', 'reduced': 'int32', 'keepdims': 1}
+{'data': 'int64', 'reduced': 'int64', 'keepdims': 1}
+{'data': 'float16', 'reduced': 'float16', 'keepdims': 1}
+{'data': 'float', 'reduced': 'float', 'keepdims': 1}
+{'data': 'double', 'reduced': 'double', 'keepdims': 1}
+{'data': 'uint8', 'reduced': 'uint8', 'keepdims': 1}
+{'data': 'int8', 'reduced': 'int8', 'keepdims': 1}
+{'data': 'bool', 'reduced': 'bool', 'keepdims': 1}
+======ReduceProd======
+{'data': 'int32', 'reduced': 'int32', 'keepdims': 1}
+{'data': 'int64', 'reduced': 'int64', 'keepdims': 1}
+{'data': 'float16', 'reduced': 'float16', 'keepdims': 1}
+{'data': 'float', 'reduced': 'float', 'keepdims': 1}
+{'data': 'double', 'reduced': 'double', 'keepdims': 1}
+======ReduceSum======
+{'data': 'int32', 'reduced': 'int32', 'keepdims': 1}
+{'data': 'int64', 'reduced': 'int64', 'keepdims': 1}
+{'data': 'float16', 'reduced': 'float16', 'keepdims': 1}
+{'data': 'float', 'reduced': 'float', 'keepdims': 1}
+{'data': 'double', 'reduced': 'double', 'keepdims': 1}
+======ReduceSumSquare======
+{'data': 'int32', 'reduced': 'int32', 'keepdims': 1}
+{'data': 'int64', 'reduced': 'int64', 'keepdims': 1}
+{'data': 'float16', 'reduced': 'float16', 'keepdims': 1}
+{'data': 'float', 'reduced': 'float', 'keepdims': 1}
+{'data': 'double', 'reduced': 'double', 'keepdims': 1}
+======RegexFullMatch======
+======Relu======
+{'X': 'float', 'Y': 'float'}
+{'X': 'int32', 'Y': 'int32'}
+{'X': 'int8', 'Y': 'int8'}
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'double', 'Y': 'double'}
+======Reshape======
+======Resize======
+======ReverseSequence======
+======RoiAlign======
+======Round======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+{'X': 'double', 'Y': 'double'}
+======STFT======
+======Scan======
+======ScatterElements======
+======ScatterND======
+======Selu======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+======SequenceAt======
+======SequenceConstruct======
+======SequenceEmpty======
+======SequenceErase======
+======SequenceInsert======
+======SequenceLength======
+======SequenceMap======
+======Shape======
+{'data': 'uint8', 'shape': 'int64'}
+{'data': 'uint16', 'shape': 'int64'}
+{'data': 'uint32', 'shape': 'int64'}
+{'data': 'uint64', 'shape': 'int64'}
+{'data': 'int8', 'shape': 'int64'}
+{'data': 'int16', 'shape': 'int64'}
+{'data': 'int32', 'shape': 'int64'}
+{'data': 'int64', 'shape': 'int64'}
+{'data': 'float16', 'shape': 'int64'}
+{'data': 'float', 'shape': 'int64'}
+{'data': 'double', 'shape': 'int64'}
+{'data': 'bool', 'shape': 'int64'}
+======Shrink======
+{'input': 'uint8', 'output': 'uint8'}
+{'input': 'uint16', 'output': 'uint16'}
+{'input': 'uint32', 'output': 'uint32'}
+{'input': 'uint64', 'output': 'uint64'}
+{'input': 'int8', 'output': 'int8'}
+{'input': 'int16', 'output': 'int16'}
+{'input': 'int32', 'output': 'int32'}
+{'input': 'int64', 'output': 'int64'}
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+{'input': 'double', 'output': 'double'}
+======Sigmoid======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+{'X': 'double', 'Y': 'double'}
+======Sign======
+{'input': 'uint8', 'output': 'uint8'}
+{'input': 'uint16', 'output': 'uint16'}
+{'input': 'uint32', 'output': 'uint32'}
+{'input': 'uint64', 'output': 'uint64'}
+{'input': 'int8', 'output': 'int8'}
+{'input': 'int16', 'output': 'int16'}
+{'input': 'int32', 'output': 'int32'}
+{'input': 'int64', 'output': 'int64'}
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+{'input': 'double', 'output': 'double'}
+======Sin======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+{'input': 'double', 'output': 'double'}
+======Sinh======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+======Size======
+{'data': 'uint8', 'size': 'int64'}
+{'data': 'uint16', 'size': 'int64'}
+{'data': 'uint32', 'size': 'int64'}
+{'data': 'uint64', 'size': 'int64'}
+{'data': 'int8', 'size': 'int64'}
+{'data': 'int16', 'size': 'int64'}
+{'data': 'int32', 'size': 'int64'}
+{'data': 'int64', 'size': 'int64'}
+{'data': 'float16', 'size': 'int64'}
+{'data': 'float', 'size': 'int64'}
+{'data': 'double', 'size': 'int64'}
+{'data': 'bool', 'size': 'int64'}
+======Slice======
+======Softmax======
+{'input': 'float16', 'output': 'float16', 'axis': 0}
+{'input': 'float', 'output': 'float', 'axis': 0}
+{'input': 'double', 'output': 'double', 'axis': 0}
+======SoftmaxCrossEntropyLoss======
+======Softplus======
+{'X': 'float', 'Y': 'float'}
+======Softsign======
+{'input': 'float', 'output': 'float'}
+======SpaceToDepth======
+======Split======
+======SplitToSequence======
+======Sqrt======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+{'X': 'double', 'Y': 'double'}
+======Squeeze======
+{'data': 'uint8', 'squeezed': 'uint8'}
+{'data': 'uint16', 'squeezed': 'uint16'}
+{'data': 'uint32', 'squeezed': 'uint32'}
+{'data': 'uint64', 'squeezed': 'uint64'}
+{'data': 'int8', 'squeezed': 'int8'}
+{'data': 'int16', 'squeezed': 'int16'}
+{'data': 'int32', 'squeezed': 'int32'}
+{'data': 'int64', 'squeezed': 'int64'}
+{'data': 'float16', 'squeezed': 'float16'}
+{'data': 'float', 'squeezed': 'float'}
+{'data': 'double', 'squeezed': 'double'}
+{'data': 'bool', 'squeezed': 'bool'}
+======StringConcat======
+======StringNormalizer======
+======StringSplit======
+======Sub======
+{'A': 'int32', 'B': 'int32', 'C': 'int32'}
+{'A': 'int64', 'B': 'int64', 'C': 'int64'}
+{'A': 'float16', 'B': 'float16', 'C': 'float16'}
+{'A': 'float', 'B': 'float', 'C': 'float'}
+{'A': 'double', 'B': 'double', 'C': 'double'}
+======Sum======
+{'data_0 (variadic, differentiable)': 'float16', 'sum': 'float16'}
+{'data_0 (variadic, differentiable)': 'float', 'sum': 'float'}
+{'data_0 (variadic, differentiable)': 'double', 'sum': 'double'}
+======Tan======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+======Tanh======
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+{'input': 'double', 'output': 'double'}
+======TfIdfVectorizer======
+======ThresholdedRelu======
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+======Tile======
+======TopK======
+======Transpose======
+{'data': 'uint8', 'transposed': 'uint8'}
+{'data': 'uint16', 'transposed': 'uint16'}
+{'data': 'uint32', 'transposed': 'uint32'}
+{'data': 'uint64', 'transposed': 'uint64'}
+{'data': 'int8', 'transposed': 'int8'}
+{'data': 'int16', 'transposed': 'int16'}
+{'data': 'int32', 'transposed': 'int32'}
+{'data': 'int64', 'transposed': 'int64'}
+{'data': 'float16', 'transposed': 'float16'}
+{'data': 'float', 'transposed': 'float'}
+{'data': 'double', 'transposed': 'double'}
+{'data': 'bool', 'transposed': 'bool'}
+======Trilu======
+{'input': 'int64', 'output': 'int64'}
+{'input': 'float16', 'output': 'float16'}
+{'input': 'float', 'output': 'float'}
+{'input': 'double', 'output': 'double'}
+{'input': 'bool', 'output': 'bool'}
+======Unique======
+{'X': 'int8', 'Y': 'int8'}
+{'X': 'int64', 'Y': 'int64'}
+{'X': 'float16', 'Y': 'float16'}
+{'X': 'float', 'Y': 'float'}
+{'X': 'double', 'Y': 'double'}
+{'X': 'int8', 'Y': 'int8', 'indices(optional)': 'int64'}
+{'X': 'int64', 'Y': 'int64', 'indices(optional)': 'int64'}
+{'X': 'float16', 'Y': 'float16', 'indices(optional)': 'int64'}
+{'X': 'float', 'Y': 'float', 'indices(optional)': 'int64'}
+{'X': 'double', 'Y': 'double', 'indices(optional)': 'int64'}
+{'X': 'int8', 'Y': 'int8', 'inverse_indices(optional)': 'int64'}
+{'X': 'int64', 'Y': 'int64', 'inverse_indices(optional)': 'int64'}
+{'X': 'float16', 'Y': 'float16', 'inverse_indices(optional)': 'int64'}
+{'X': 'float', 'Y': 'float', 'inverse_indices(optional)': 'int64'}
+{'X': 'double', 'Y': 'double', 'inverse_indices(optional)': 'int64'}
+{'X': 'int8', 'Y': 'int8', 'counts(optional)': 'int64'}
+{'X': 'int64', 'Y': 'int64', 'counts(optional)': 'int64'}
+{'X': 'float16', 'Y': 'float16', 'counts(optional)': 'int64'}
+{'X': 'float', 'Y': 'float', 'counts(optional)': 'int64'}
+{'X': 'double', 'Y': 'double', 'counts(optional)': 'int64'}
+{'X': 'int8', 'Y': 'int8', 'axis': 0}
+{'X': 'int64', 'Y': 'int64', 'axis': 0}
+{'X': 'float16', 'Y': 'float16', 'axis': 0}
+{'X': 'float', 'Y': 'float', 'axis': 0}
+{'X': 'double', 'Y': 'double', 'axis': 0}
+{'X': 'int8', 'Y': 'int8', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64'}
+{'X': 'int64', 'Y': 'int64', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64'}
+{'X': 'float16', 'Y': 'float16', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64'}
+{'X': 'float', 'Y': 'float', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64'}
+{'X': 'double', 'Y': 'double', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64'}
+{'X': 'int8', 'Y': 'int8', 'indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'int64', 'Y': 'int64', 'indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'float16', 'Y': 'float16', 'indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'float', 'Y': 'float', 'indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'double', 'Y': 'double', 'indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'int8', 'Y': 'int8', 'indices(optional)': 'int64', 'axis': 0}
+{'X': 'int64', 'Y': 'int64', 'indices(optional)': 'int64', 'axis': 0}
+{'X': 'float16', 'Y': 'float16', 'indices(optional)': 'int64', 'axis': 0}
+{'X': 'float', 'Y': 'float', 'indices(optional)': 'int64', 'axis': 0}
+{'X': 'double', 'Y': 'double', 'indices(optional)': 'int64', 'axis': 0}
+{'X': 'int8', 'Y': 'int8', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'int64', 'Y': 'int64', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'float16', 'Y': 'float16', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'float', 'Y': 'float', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'double', 'Y': 'double', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'int8', 'Y': 'int8', 'inverse_indices(optional)': 'int64', 'axis': 0}
+{'X': 'int64', 'Y': 'int64', 'inverse_indices(optional)': 'int64', 'axis': 0}
+{'X': 'float16', 'Y': 'float16', 'inverse_indices(optional)': 'int64', 'axis': 0}
+{'X': 'float', 'Y': 'float', 'inverse_indices(optional)': 'int64', 'axis': 0}
+{'X': 'double', 'Y': 'double', 'inverse_indices(optional)': 'int64', 'axis': 0}
+{'X': 'int8', 'Y': 'int8', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'int64', 'Y': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'float16', 'Y': 'float16', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'float', 'Y': 'float', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'double', 'Y': 'double', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'int8', 'Y': 'int8', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'int64', 'Y': 'int64', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'float16', 'Y': 'float16', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'float', 'Y': 'float', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'double', 'Y': 'double', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64'}
+{'X': 'int8', 'Y': 'int8', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'axis': 0}
+{'X': 'int64', 'Y': 'int64', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'axis': 0}
+{'X': 'float16', 'Y': 'float16', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'axis': 0}
+{'X': 'float', 'Y': 'float', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'axis': 0}
+{'X': 'double', 'Y': 'double', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'axis': 0}
+{'X': 'int8', 'Y': 'int8', 'indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'int64', 'Y': 'int64', 'indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'float16', 'Y': 'float16', 'indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'float', 'Y': 'float', 'indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'double', 'Y': 'double', 'indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'int8', 'Y': 'int8', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'int64', 'Y': 'int64', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'float16', 'Y': 'float16', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'float', 'Y': 'float', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'double', 'Y': 'double', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'int8', 'Y': 'int8', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'int64', 'Y': 'int64', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'float16', 'Y': 'float16', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'float', 'Y': 'float', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+{'X': 'double', 'Y': 'double', 'indices(optional)': 'int64', 'inverse_indices(optional)': 'int64', 'counts(optional)': 'int64', 'axis': 0}
+======Unsqueeze======
+======Where======
+{'condition': 'bool', 'X': 'uint8', 'Y': 'uint8', 'output': 'uint8'}
+{'condition': 'bool', 'X': 'int32', 'Y': 'int32', 'output': 'int32'}
+{'condition': 'bool', 'X': 'int64', 'Y': 'int64', 'output': 'int64'}
+{'condition': 'bool', 'X': 'float16', 'Y': 'float16', 'output': 'float16'}
+{'condition': 'bool', 'X': 'float', 'Y': 'float', 'output': 'float'}
+{'condition': 'bool', 'X': 'double', 'Y': 'double', 'output': 'double'}
+======Xor======
+{'A': 'bool', 'B': 'bool', 'C': 'bool'}
