@@ -117,6 +117,23 @@ attributes = {
 }
 
 input_special = {
+    "AveragePool": {
+        'Inputs': {
+            'X': [1, 2, 3, 3]
+        },
+        'Outputs': {
+            'Y': [1, 2, 1, 1]
+        },
+        'Attributes': {
+            'auto_pad': ["NOTSET", "SAME_UPPER", "SAME_LOWER", "VALID"],
+            'ceil_mode': [0],
+            'count_include_pad': [0],
+            'dilations': [(1, 1)],
+            'kernel_shape': [(3, 3)],
+            'pads': [(0, 0, 0 ,0)],
+            'strides': [(1, 1)]
+        }
+    },
     "BatchNormalization": {
         'Inputs': {
             'X': [2, 3, 4, 5],
