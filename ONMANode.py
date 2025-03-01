@@ -94,7 +94,9 @@ class ONMANode:
             then_branch=None,
             else_branch=None,
             momentum=None,
-            saturate=None
+            saturate=None,
+            min=None,
+            max=None
         ):
 
         isCreated = False
@@ -182,7 +184,9 @@ class ONMANode:
                     then_branch=then_branch,
                     else_branch=else_branch,
                     momentum=momentum,
-                    saturate=saturate
+                    saturate=saturate,
+                    min=min,
+                    max=max
                 )
                 isCreated = True
         except:
