@@ -146,6 +146,11 @@ input_special = {
             'Y': [2, 3, 4, 5],
             'running_mean(optional)': [1],
             'running_var(optional)': [1],
+        },
+        'Attributes': {
+            'epsilon': [1e-05],
+            'momentum': [0.9],
+            'training_mode': [0, 1]
         }
     },
     "Resize": {
