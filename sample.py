@@ -112,9 +112,8 @@ attributes = {
     "axis": [0],
     "keepdims": [1],
     "select_last_index": [0],
-    "saturate": [1]
-    # "dtype": [1],
-    # "seed": [5]
+    "saturate": [1],
+    "alpha": [1.0]
 }
 
 input_special = {
