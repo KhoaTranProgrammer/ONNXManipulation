@@ -273,6 +273,7 @@ def readSpecForOneNode(spec):
             input_name = input_name.replace("<dt><tt>", "")
             input_name = input_name.replace("</tt> (differentiable)", "")
             input_name = input_name.replace("</tt> (non-differentiable)", "")
+            input_name = input_name.replace("</tt> (variadic, differentiable)", "")
             input_name = input_name.replace("</tt> (optional, non-differentiable)", "(optional)")
             input_name = input_name.replace("</tt> (optional, differentiable)", "(optional)")
             input_name = input_name.replace("</tt>", "")
