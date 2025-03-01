@@ -153,6 +153,16 @@ input_special = {
             'training_mode': [0, 1]
         }
     },
+    "Clip": {
+        'Inputs': {
+            'input': [1, 2, 3, 3],
+            'min(optional)': [1],
+            'max(optional)': [1],
+        },
+        'Outputs': {
+            'output': [1, 2, 3, 3]
+        },
+    },
     "Resize": {
         'Inputs': {
             'X': [1, 1, 4, 4],
