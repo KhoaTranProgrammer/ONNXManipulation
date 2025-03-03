@@ -373,7 +373,7 @@ def generate_TestCases_Combinations(config_values, currentindex, numberofconfig,
         if combination: combination.pop()
 
 # create input and output
-def checkCombination(node_name, node, combination):
+def checkCombination(node_name, node, combination, one_special_input):
     node_input = []
     network_input = []
     node_output = []
@@ -384,9 +384,9 @@ def checkCombination(node_name, node, combination):
         for item in combination:
             # if node_name in input_special:
             try:
-                if item in input_special[node_name]["Inputs"]:
+                if item in one_special_input["Inputs"]:
                     node_input.append(item)
-                    x = createSampleData(input_special[node_name]["Inputs"][item], combination[item])
+                    x = createSampleData(one_special_input["Inputs"][item], combination[item])
                     x[x == 0.0] = 0.5
                     x[x == 0] = 1
                     network_input.append(x)
@@ -399,9 +399,9 @@ def checkCombination(node_name, node, combination):
                     network_input.append(x)
             
             try:
-                if item in input_special[node_name]["Outputs"]:
+                if item in one_special_input["Outputs"]:
                     node_output.append(item)
-                    x = createSampleData(input_special[node_name]["Outputs"][item], combination[item])
+                    x = createSampleData(one_special_input["Outputs"][item], combination[item])
                     x[x == 0.0] = 0.5
                     x[x == 0] = 1
                     network_output.append(x)
@@ -483,7 +483,7 @@ def createTC(node_dict, node_name):
             try:
                 generate_TestCases_Combinations(full_config_values, 0, len(full_config_values), combination, output_list, full_config_names)
                 for onenode in output_list:
-                    status = checkCombination(node, node_dict[node], onenode)
+                    status = checkCombination(node, node_dict[node], onenode, input_special[node])
                     if status == 1: print(onenode)
             except:
                 pass
@@ -521,7 +521,7 @@ def createTC(node_dict, node_name):
                     try:
                         generate_TestCases_Combinations(full_config_values, 0, len(full_config_values), combination, output_list, full_config_names)
                         for onenode in output_list:
-                            status = checkCombination(node, node_dict[node], onenode)
+                            status = checkCombination(node, node_dict[node], onenode, input_special[node])
                             if status == 1: print(onenode)
                     except:
                         pass
