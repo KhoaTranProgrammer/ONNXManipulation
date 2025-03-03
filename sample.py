@@ -426,62 +426,96 @@ def checkCombination(node_name, node, combination, one_special_input):
 
     return status
 
-def createTC(node_dict, node_name):
-    for node in node_dict:
-        config_names = []
-        config_values = []
-        config_names_option = []
-        config_values_option = []
-        if (node == node_name or node_name == "ALL") and node != "LSTM":
-            print(f'======{node}======')
-            one_special_input = input_special[node]
-            node_data = node_dict[node]
-            for item in node_data["Inputs"]:
-                if "(optional)" in item:
-                    config_names_option.append(item)
-                    config_values_option.append((node_data["Inputs"][item]).split(","))
-                else:
-                    config_names.append(item)
-                    config_values.append((node_data["Inputs"][item]).split(","))
-            for item in node_data["Outputs"]:
-                if "(optional)" in item:
-                    config_names_option.append(item)
-                    config_values_option.append((node_data["Outputs"][item]).split(","))
-                else:
-                    config_names.append(item)
-                    config_values.append((node_data["Outputs"][item]).split(","))
-            for item in node_data["Attributes"]:
+def create_TCs_for_one_input_setting(node, node_data, one_special_input):
+    config_names = []
+    config_values = []
+    config_names_option = []
+    config_values_option = []
+    
+    for item in node_data["Inputs"]:
+        if "(optional)" in item:
+            config_names_option.append(item)
+            config_values_option.append((node_data["Inputs"][item]).split(","))
+        else:
+            config_names.append(item)
+            config_values.append((node_data["Inputs"][item]).split(","))
+    for item in node_data["Outputs"]:
+        if "(optional)" in item:
+            config_names_option.append(item)
+            config_values_option.append((node_data["Outputs"][item]).split(","))
+        else:
+            config_names.append(item)
+            config_values.append((node_data["Outputs"][item]).split(","))
+    for item in node_data["Attributes"]:
+        try:
+            if "(optional)" in item:
+                reitem = item.replace("(optional)", "")
                 try:
-                    if "(optional)" in item:
-                        reitem = item.replace("(optional)", "")
-                        try:
-                            config_values_option.append(one_special_input["Attributes"][reitem])
-                        except:
-                            config_values_option.append(attributes[reitem])
-                        config_names_option.append(reitem)
-                    else:
-                        try:
-                            config_values.append(one_special_input["Attributes"][item])
-                        except:
-                            config_values.append(attributes[item])
-                        config_names.append(item)
+                    config_values_option.append(one_special_input["Attributes"][reitem])
                 except:
-                    pass
+                    config_values_option.append(attributes[reitem])
+                config_names_option.append(reitem)
+            else:
+                try:
+                    config_values.append(one_special_input["Attributes"][item])
+                except:
+                    config_values.append(attributes[item])
+                config_names.append(item)
+        except:
+            pass
 
-            # print(config_names)
-            # print(config_values)
-            # print(config_names_option)
-            # print(config_values_option)
+    # print(config_names)
+    # print(config_values)
+    # print(config_names_option)
+    # print(config_values_option)
+
+    full_config_names = []
+    full_config_values = []
+    full_config_names = full_config_names + config_names
+    full_config_values = full_config_values + config_values
+    # print(f'Config name: {full_config_names}')
+    # print(f'Config value: {full_config_values}')
+
+    combination = []
+    output_list = []
+    try:
+        generate_TestCases_Combinations(full_config_values, 0, len(full_config_values), combination, output_list, full_config_names)
+        for onenode in output_list:
+            status = checkCombination(node, node_data, onenode, one_special_input)
+            if status == 1: print(onenode)
+    except:
+        pass
+
+    for i in range(0, len(config_names_option)):
+        options_combination = list(itertools.combinations(config_names_option, i + 1))
+        for item in options_combination:
+            renew_config_names_option = []
+            renew_config_values_option = []
+            reitem = str(item)
+            reitem = reitem.replace("('", "'")
+            reitem = reitem.replace(",)", "")
+            reitem = reitem.replace("')", "'")
+            reitem = reitem.replace("'", "")
+            reitem = reitem.split(", ")
+            for new_option in reitem:
+                renew_config_names_option.append(new_option)
+                for j in range(0, len(config_names_option)):
+                    if new_option == config_names_option[j]:
+                        renew_config_values_option.append(config_values_option[j])
+            # print(renew_config_names_option)
+            # print(renew_config_values_option)
 
             full_config_names = []
             full_config_values = []
             full_config_names = full_config_names + config_names
+            full_config_names = full_config_names + renew_config_names_option
             full_config_values = full_config_values + config_values
+            full_config_values = full_config_values + renew_config_values_option
             # print(f'Config name: {full_config_names}')
             # print(f'Config value: {full_config_values}')
 
             combination = []
-            output_list = []
+            output_list = []                    
             try:
                 generate_TestCases_Combinations(full_config_values, 0, len(full_config_values), combination, output_list, full_config_names)
                 for onenode in output_list:
@@ -490,43 +524,17 @@ def createTC(node_dict, node_name):
             except:
                 pass
 
-            for i in range(0, len(config_names_option)):
-                options_combination = list(itertools.combinations(config_names_option, i + 1))
-                for item in options_combination:
-                    renew_config_names_option = []
-                    renew_config_values_option = []
-                    reitem = str(item)
-                    reitem = reitem.replace("('", "'")
-                    reitem = reitem.replace(",)", "")
-                    reitem = reitem.replace("')", "'")
-                    reitem = reitem.replace("'", "")
-                    reitem = reitem.split(", ")
-                    for new_option in reitem:
-                        renew_config_names_option.append(new_option)
-                        for j in range(0, len(config_names_option)):
-                            if new_option == config_names_option[j]:
-                                renew_config_values_option.append(config_values_option[j])
-                    # print(renew_config_names_option)
-                    # print(renew_config_values_option)
-
-                    full_config_names = []
-                    full_config_values = []
-                    full_config_names = full_config_names + config_names
-                    full_config_names = full_config_names + renew_config_names_option
-                    full_config_values = full_config_values + config_values
-                    full_config_values = full_config_values + renew_config_values_option
-                    # print(f'Config name: {full_config_names}')
-                    # print(f'Config value: {full_config_values}')
-
-                    combination = []
-                    output_list = []                    
-                    try:
-                        generate_TestCases_Combinations(full_config_values, 0, len(full_config_values), combination, output_list, full_config_names)
-                        for onenode in output_list:
-                            status = checkCombination(node, node_data, onenode, one_special_input)
-                            if status == 1: print(onenode)
-                    except:
-                        pass
+def createTC(node_dict, node_name):
+    for node in node_dict:
+        if (node == node_name or node_name == "ALL") and node != "LSTM":
+            print(f'======{node}======')
+            one_special_input = {}
+            try:
+                one_special_input = input_special[node]
+            except:
+                pass
+            node_data = node_dict[node]
+            create_TCs_for_one_input_setting(node, node_data, one_special_input)
 
 def main():
     global args
