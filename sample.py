@@ -434,32 +434,34 @@ def createTC(node_dict, node_name):
         config_values_option = []
         if (node == node_name or node_name == "ALL") and node != "LSTM":
             print(f'======{node}======')
-            for item in node_dict[node]["Inputs"]:
+            one_special_input = input_special[node]
+            node_data = node_dict[node]
+            for item in node_data["Inputs"]:
                 if "(optional)" in item:
                     config_names_option.append(item)
-                    config_values_option.append((node_dict[node]["Inputs"][item]).split(","))
+                    config_values_option.append((node_data["Inputs"][item]).split(","))
                 else:
                     config_names.append(item)
-                    config_values.append((node_dict[node]["Inputs"][item]).split(","))
-            for item in node_dict[node]["Outputs"]:
+                    config_values.append((node_data["Inputs"][item]).split(","))
+            for item in node_data["Outputs"]:
                 if "(optional)" in item:
                     config_names_option.append(item)
-                    config_values_option.append((node_dict[node]["Outputs"][item]).split(","))
+                    config_values_option.append((node_data["Outputs"][item]).split(","))
                 else:
                     config_names.append(item)
-                    config_values.append((node_dict[node]["Outputs"][item]).split(","))
-            for item in node_dict[node]["Attributes"]:
+                    config_values.append((node_data["Outputs"][item]).split(","))
+            for item in node_data["Attributes"]:
                 try:
                     if "(optional)" in item:
                         reitem = item.replace("(optional)", "")
                         try:
-                            config_values_option.append(input_special[node]["Attributes"][reitem])
+                            config_values_option.append(one_special_input["Attributes"][reitem])
                         except:
                             config_values_option.append(attributes[reitem])
                         config_names_option.append(reitem)
                     else:
                         try:
-                            config_values.append(input_special[node]["Attributes"][item])
+                            config_values.append(one_special_input["Attributes"][item])
                         except:
                             config_values.append(attributes[item])
                         config_names.append(item)
@@ -483,7 +485,7 @@ def createTC(node_dict, node_name):
             try:
                 generate_TestCases_Combinations(full_config_values, 0, len(full_config_values), combination, output_list, full_config_names)
                 for onenode in output_list:
-                    status = checkCombination(node, node_dict[node], onenode, input_special[node])
+                    status = checkCombination(node, node_data, onenode, one_special_input)
                     if status == 1: print(onenode)
             except:
                 pass
@@ -521,7 +523,7 @@ def createTC(node_dict, node_name):
                     try:
                         generate_TestCases_Combinations(full_config_values, 0, len(full_config_values), combination, output_list, full_config_names)
                         for onenode in output_list:
-                            status = checkCombination(node, node_dict[node], onenode, input_special[node])
+                            status = checkCombination(node, node_data, onenode, one_special_input)
                             if status == 1: print(onenode)
                     except:
                         pass
