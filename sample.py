@@ -163,6 +163,43 @@ input_special = {
             'output': [1, 2, 3, 3]
         },
     },
+    "Conv": {
+        "list":
+        [
+            {
+                'Inputs': {
+                    'X': [1, 1, 5, 5],
+                    'W': [1, 1, 3, 3],
+                    'B(optional)': [1]
+                },
+                'Outputs': {
+                    'Y': [1, 1, 3, 3]
+                },
+                'Attributes': {
+                    'auto_pad': ["NOTSET", "SAME_UPPER", "SAME_LOWER", "VALID"],
+                    'dilations': [(1, 1)],
+                    'kernel_shape': [(3, 3)],
+                    'strides': [(1, 1)]
+                }
+            },
+            {
+                'Inputs': {
+                    'X': [1, 1, 5, 5],
+                    'W': [1, 1, 3, 3],
+                    'B(optional)': [1]
+                },
+                'Outputs': {
+                    'Y': [1, 1, 3, 3]
+                },
+                'Attributes': {
+                    'dilations': [(1, 1)],
+                    'kernel_shape': [(3, 3)],
+                    'pads': [(0, 0, 0 ,0)],
+                    'strides': [(1, 1)]
+                }
+            }
+        ]
+    },
     "Resize": {
         'Inputs': {
             'X': [1, 1, 4, 4],
@@ -529,12 +566,16 @@ def createTC(node_dict, node_name):
         if (node == node_name or node_name == "ALL") and node != "LSTM":
             print(f'======{node}======')
             one_special_input = {}
+            node_data = node_dict[node]
             try:
                 one_special_input = input_special[node]
+                if "list" in one_special_input: # "list" inside
+                    for item in one_special_input["list"]:
+                        create_TCs_for_one_input_setting(node, node_data, item)
+                else:
+                    create_TCs_for_one_input_setting(node, node_data, one_special_input)
             except:
-                pass
-            node_data = node_dict[node]
-            create_TCs_for_one_input_setting(node, node_data, one_special_input)
+                create_TCs_for_one_input_setting(node, node_data, one_special_input)
 
 def main():
     global args
