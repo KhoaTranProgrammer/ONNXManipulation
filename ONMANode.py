@@ -93,6 +93,12 @@ class ONMANode:
             sorted=None,
             then_branch=None,
             else_branch=None,
+            momentum=None,
+            saturate=None,
+            group=None,
+            output_padding=None,
+            output_shape=None,
+            pooled_shape=None
         ):
 
         isCreated = False
@@ -179,6 +185,12 @@ class ONMANode:
                     sorted=sorted,
                     then_branch=then_branch,
                     else_branch=else_branch,
+                    momentum=momentum,
+                    saturate=saturate,
+                    group=group,
+                    output_padding=output_padding,
+                    output_shape=output_shape,
+                    pooled_shape=pooled_shape
                 )
                 isCreated = True
         except:
