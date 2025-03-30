@@ -8,7 +8,6 @@ from onnxruntime import InferenceSession
 from ONMANode import ONMANode
 
 def GetTensorDataTypeFromnp(npdtype):
-    print(f'Np datatype: {npdtype}')
     datatype = onnx.TensorProto.FLOAT
     if npdtype == "float32":
         datatype = onnx.TensorProto.FLOAT
@@ -26,6 +25,16 @@ def GetTensorDataTypeFromnp(npdtype):
         datatype = onnx.TensorProto.INT32
     elif npdtype == "object":
         datatype = onnx.TensorProto.STRING
+    elif npdtype == "uint32":
+        datatype = onnx.TensorProto.UINT32
+    elif npdtype == "uint64":
+        datatype = onnx.TensorProto.UINT64
+    elif npdtype == "int8":
+        datatype = onnx.TensorProto.INT8
+    elif npdtype == "int16":
+        datatype = onnx.TensorProto.INT16
+    elif npdtype == "float16":
+        datatype = onnx.TensorProto.FLOAT16
     return datatype
 
 def CreateInitializerTensor(
