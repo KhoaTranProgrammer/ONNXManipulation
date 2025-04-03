@@ -38,6 +38,18 @@ jobs:
           pip install onnx
           pip install onnxruntime
           pytest unittesting.py | tee testlog.log
+      
+      - name: 'Upload Artifact'
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+            name: my-artifact
+            path: summary_report.csv
+            retention-days: 5
+
+      - name: 'Decide JOB Status'
+        if: always()
+        run: |
           if grep "FAILED unittesting.py::testaccuracy" testlog.log
           then
               echo "JOB is FAILED"
@@ -46,4 +58,3 @@ jobs:
               echo "JOB is PASSED"
               exit 0
           fi
-          
