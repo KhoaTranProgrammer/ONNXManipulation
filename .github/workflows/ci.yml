@@ -37,7 +37,7 @@ jobs:
           pip install numpy
           pip install onnx
           pip install onnxruntime
-          pytest unittesting.py | tee testlog.log
+          pytest Tests/unittesting.py | tee testlog.log
       
       - name: 'Upload Artifact'
         if: always()
