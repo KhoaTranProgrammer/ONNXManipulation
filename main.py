@@ -4122,6 +4122,7 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--operator", "-op", help="Operator name", default="")
+    parser.add_argument("--create_graph", "-cg", help="Create graph from json", default="")
     parser.add_argument("--modify", "-md", help="Setting to modify network", default="")
     parser.add_argument("--input_onnx", "-io", help="Input ONNX file path")
     parser.add_argument("--output_onnx", "-oo", help="Output ONNX file path")
@@ -4141,6 +4142,14 @@ def main():
         model = ONMAModel()
         model.ONMAModel_LoadModel(args.input_onnx)
         model.ONMAModel_UpdateModel(json_contents, args.output_onnx)
+
+    if args.create_graph != "":
+        with open(args.create_graph) as user_file:
+            file_contents = user_file.read()
+        json_contents = json.loads(file_contents)
+        model = ONMAModel()
+        model.ONMAModel_CreateNetworkFromGraph(json_contents)
+        model.ONMAModel_SaveModel(args.output_onnx)
 
 if main() == False:
     sys.exit(-1)

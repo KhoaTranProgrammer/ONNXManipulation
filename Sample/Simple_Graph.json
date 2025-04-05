@@ -1,0 +1,49 @@
+{
+    "graph_name": "Abs_Graph",
+    "inputs": {
+        "X": {
+            "data": {"dimensions": [1, 2, 512, 512]},
+            "type": "float32"
+        }
+    },
+    "outputs": {
+        "Y": {
+            "data": {"dimensions": [1, 2, 512, 512]},
+            "type": "float32"
+        }
+    },
+    "Abs_Node": {
+        "Action": "Add",
+        "Category": "Node",
+        "Type": "Abs",
+        "inputs": {
+            "X": "X"
+        },
+        "outputs": {
+            "Y": "Abs_Node_output"
+        }
+    },
+    "Relu_Node": {
+        "Action": "Add",
+        "Category": "Node",
+        "Type": "Relu",
+        "inputs": {
+            "X": "Abs_Node_output"
+        },
+        "outputs": {
+            "Y": "Relu_Node_output"
+        }
+    },
+    "Softmax_Node": {
+        "Action": "Add",
+        "Category": "Node",
+        "Type": "Softmax",
+        "axis": 0,
+        "inputs": {
+            "input": "Relu_Node_output"
+        },
+        "outputs": {
+            "output": "Y"
+        }
+    }
+}

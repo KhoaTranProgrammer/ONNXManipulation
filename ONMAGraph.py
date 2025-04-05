@@ -202,10 +202,17 @@ class ONMAGraph:
         inputs = data["inputs"]
         for key, value in inputs.items():
             if key != "":
-                try:
-                    value_np = np.array(value["data"], dtype=value["type"])
-                except:
-                    value_np = np.array(value["data"], dtype='float32')
+                if "dimensions" in value["data"]:
+                    dimensions = value["data"]["dimensions"]
+                    try:
+                        value_np = np.random.randn(*dimensions).astype(value["data"]["type"])
+                    except:
+                        value_np = np.random.randn(*dimensions).astype("float32")
+                else:
+                    try:
+                        value_np = np.array(value["data"], dtype=value["type"])
+                    except:
+                        value_np = np.array(value["data"], dtype='float32')
                 refine_input[key] = value_np
         
         # Create graph input
@@ -221,9 +228,16 @@ class ONMAGraph:
                 graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(np.array((list(refine_input.values())[0])).dtype), np.array(list(refine_input.values())[0]).shape))
             else:
                 try:
-                    graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(outputs[item]["type"]), np.array(outputs[item]["data"]).shape))
+                    dimensions = outputs[item]["data"]["dimensions"]
+                    try:
+                        graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(outputs[item]["type"]), dimensions))
+                    except:
+                        graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp("float32"), dimensions))
                 except:
-                    graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp("float32"), np.array(outputs[item]["data"]).shape))
+                    try:
+                        graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(outputs[item]["type"]), np.array(outputs[item]["data"]).shape))
+                    except:
+                        graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp("float32"), np.array(outputs[item]["data"]).shape))
 
         self.ONMAGraph_MakeGraph(data["graph_name"], [], graph_input, graph_output)
 
