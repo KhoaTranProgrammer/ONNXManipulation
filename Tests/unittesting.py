@@ -64,7 +64,8 @@ def run_TC(tcname, graph_data, expect):
     model = ONMAModel()
     total_TC = total_TC + 1
     try:
-        inf1 = model.ONMAModel_CreateNetworkFromGraph(graph_data)
+        model.ONMAModel_CreateNetworkFromGraph(graph_data)
+        inf1 = model.ONMAModel_Inference(graph_data["inputs"])
         outputs = list(expect.keys())
         for index in range(0, len(outputs)):
             result = inf1[index]

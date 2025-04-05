@@ -4129,7 +4129,8 @@ def main():
 
     if args.operator != "":
         model = ONMAModel()
-        inf1 = model.ONMAModel_CreateNetworkFromGraph(default_input[args.operator])
+        model.ONMAModel_CreateNetworkFromGraph(default_input[args.operator])
+        inf1 = model.ONMAModel_Inference(default_input[args.operator]["inputs"])
         model.ONMAModel_DisplayInformation(inf1, **default_input[args.operator])
 
     if args.modify != "":

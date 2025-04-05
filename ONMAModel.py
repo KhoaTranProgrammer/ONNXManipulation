@@ -25,8 +25,18 @@ class ONMAModel:
         onnx.save(inferred_model, output_path)
 
     def ONMAModel_Inference(self, infer_input):
+        refine_input = {}
+        inputs = infer_input
+        for key, value in inputs.items():
+            if key != "":
+                try:
+                    value_np = np.array(value["data"], dtype=value["type"])
+                except:
+                    value_np = np.array(value["data"], dtype='float32')
+                refine_input[key] = value_np
+
         sess = InferenceSession(self._model.SerializeToString(), providers=["CPUExecutionProvider"])
-        res = sess.run(None, infer_input)
+        res = sess.run(None, refine_input)
         return res
 
     def ONMAModel_UpdateModel(self, json_contents, output_onnx):
@@ -37,21 +47,9 @@ class ONMAModel:
         self.ONMAModel_SaveModel(output_onnx)
 
     def ONMAModel_CreateNetworkFromGraph(self, data):
-        refine_input = {}
-        inputs = data["inputs"]
-        for key, value in inputs.items():
-            if key != "":
-                try:
-                    value_np = np.array(value["data"], dtype=value["type"])
-                except:
-                    value_np = np.array(value["data"], dtype='float32')
-                refine_input[key] = value_np
-
         onma_graph = ONMAGraph()
         onma_graph.ONMAGraph_CreateNetworkFromGraph(data)
         self.ONMAModel_MakeModel(onma_graph.ONMAGraph_GetGraph())
-
-        return self.ONMAModel_Inference(refine_input)
     
     def ONMAModel_DisplayInformation(self, results, **argv):
         for oneargv in argv:
