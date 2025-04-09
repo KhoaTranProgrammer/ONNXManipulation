@@ -1,0 +1,26 @@
+{
+    "graph_name": "Abs_Graph",
+    "inputs": {
+        "X": {
+            "data": {"dimensions": [1, 2, 512, 512]},
+            "type": "float32"
+        }
+    },
+    "outputs": {
+        "Y": {
+            "data": {"dimensions": [1, 2, 512, 512]},
+            "type": "float32"
+        }
+    },
+    "Abs_Node": {
+        "Action": "Add",
+        "Category": "Node",
+        "Type": "Abs",
+        "inputs": {
+            "X": "X"
+        },
+        "outputs": {
+            "Y": "Y"
+        }
+    }
+}
