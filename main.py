@@ -3,7 +3,7 @@ import onnx
 import argparse
 import numpy as np
 import json
-from ONMAModel import ONMAModel
+from ONMA.ONMAModel import ONMAModel
 from onnx.backend.test.case.node.affinegrid import create_theta_2d
 from onnx.backend.test.case.node.roialign import get_roi_align_input_values
 from onnx.backend.test.case.node.layernormalization import calculate_normalized_shape

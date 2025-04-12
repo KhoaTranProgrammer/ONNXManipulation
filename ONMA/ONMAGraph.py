@@ -5,7 +5,7 @@ from onnx.helper import (
 from onnx.numpy_helper import from_array
 from onnx.checker import check_model
 from onnxruntime import InferenceSession
-from ONMANode import ONMANode
+from ONMA.ONMANode import ONMANode
 
 def GetTensorDataTypeFromnp(npdtype):
     datatype = onnx.TensorProto.FLOAT

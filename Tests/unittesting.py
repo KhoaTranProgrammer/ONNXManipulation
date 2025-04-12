@@ -11,7 +11,7 @@ file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 file_path = Path(file_path).as_posix()
 sys.path.append(file_path)
 
-from ONMAModel import ONMAModel
+from ONMA.ONMAModel import ONMAModel
 
 total_TC = 0
 passed_TC = 0

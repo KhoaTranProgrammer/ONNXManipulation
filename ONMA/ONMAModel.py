@@ -5,8 +5,8 @@ from onnx.helper import (
 from onnx.numpy_helper import from_array
 from onnx.checker import check_model
 from onnxruntime import InferenceSession
-from ONMANode import ONMANode
-from ONMAGraph import ONMAGraph
+from ONMA.ONMANode import ONMANode
+from ONMA.ONMAGraph import ONMAGraph
 
 class ONMAModel:
     def __init__(self):
