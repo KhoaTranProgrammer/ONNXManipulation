@@ -7,10 +7,7 @@
         }
     },
     "outputs": {
-        "Y": {
-            "data": {"dimensions": [1, 2, 512, 512]},
-            "type": "float32"
-        }
+        "Y": "None"
     },
     "Abs_Node": {
         "Action": "Add",

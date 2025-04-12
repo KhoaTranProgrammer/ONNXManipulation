@@ -224,7 +224,7 @@ class ONMAGraph:
         outputs = data["outputs"]
         graph_output = []
         for item in outputs:
-            if outputs[item] == None:
+            if outputs[item] == None or outputs[item] == "None":
                 graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(np.array((list(refine_input.values())[0])).dtype), np.array(list(refine_input.values())[0]).shape))
             else:
                 try:
