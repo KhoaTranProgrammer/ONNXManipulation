@@ -242,3 +242,14 @@ class ONMAGraph:
         self.ONMAGraph_MakeGraph(data["graph_name"], [], graph_input, graph_output)
 
         self.ONMAModel_UpdateGraph(data)
+
+    def ONMAGraph_UpdateOutputDimension(self, output_value):
+        output_name = []
+        for one_output in self.ONMAGraph_GetGraph().output:
+            output_name.append(one_output.name)
+
+        for i in range(0, len(self.ONMAGraph_GetGraph().output)):
+            self.ONMAGraph_GetGraph().output.pop(i)
+
+        for i, item in enumerate(output_name):
+            self.ONMAGraph_GetGraph().output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(output_value[i].dtype), output_value[i].shape))

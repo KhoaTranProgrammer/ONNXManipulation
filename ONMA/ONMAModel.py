@@ -57,7 +57,11 @@ class ONMAModel:
         onma_graph = ONMAGraph()
         onma_graph.ONMAGraph_CreateNetworkFromGraph(data)
         self.ONMAModel_MakeModel(onma_graph.ONMAGraph_GetGraph())
-    
+        # Inference to update output
+        onma_graph.ONMAGraph_SetGraph(self._model.graph)
+        res = self.ONMAModel_Inference(data["inputs"])
+        onma_graph.ONMAGraph_UpdateOutputDimension(res)
+
     def ONMAModel_DisplayInformation(self, results, **argv):
         for oneargv in argv:
             if oneargv == "inputs":
