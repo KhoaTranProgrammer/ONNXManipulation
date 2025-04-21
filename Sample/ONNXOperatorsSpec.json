@@ -1,0 +1,2360 @@
+{
+    "Abs": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "Y": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "Acos": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "Acosh": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "Add": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16",
+            "B": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "C": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "AffineGrid": {
+        "Attributes": {
+            "align_corners": "int (default is 0)"
+        },
+        "Inputs": {
+            "theta": "bfloat16,float16,float,double",
+            "size": "int64"
+        },
+        "Outputs": {
+            "grid": "bfloat16,float16,float,double"
+        }
+    },
+    "And": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "bool",
+            "B": "bool"
+        },
+        "Outputs": {
+            "C": "bool"
+        }
+    },
+    "ArgMax": {
+        "Attributes": {
+            "axis": "int (default is 0)",
+            "keepdims": "int (default is 1)",
+            "select_last_index": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "reduced": "int64"
+        }
+    },
+    "ArgMin": {
+        "Attributes": {
+            "axis": "int (default is 0)",
+            "keepdims": "int (default is 1)",
+            "select_last_index": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "reduced": "int64"
+        }
+    },
+    "Asin": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "Asinh": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "Atan": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "Atanh": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "Attention": {
+        "Attributes": {
+            "is_causal": "int (default is 0)",
+            "kv_num_heads": "int",
+            "q_num_heads": "int",
+            "qk_matmul_output_mode": "int (default is 0)",
+            "scale": "float",
+            "softcap": "float (default is 0.0)",
+            "softmax_precision": "int"
+        },
+        "Inputs": {
+            "Q": "bfloat16,float16,float,double",
+            "K": "bfloat16,float16,float,double",
+            "V": "bfloat16,float16,float,double",
+            "attn_mask (optional)": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,bool",
+            "past_key (optional)": "bfloat16,float16,float,double",
+            "past_value (optional)": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double",
+            "present_key (optional)": "bfloat16,float16,float,double",
+            "present_value (optional)": "bfloat16,float16,float,double",
+            "qk_matmul_output (optional)": "bfloat16,float16,float,double"
+        }
+    },
+    "AveragePool": {
+        "Attributes": {
+            "auto_pad": "string (default is NOTSET)",
+            "ceil_mode": "int (default is 0)",
+            "count_include_pad": "int (default is 0)",
+            "dilations": "list of ints",
+            "kernel_shape": "list of ints (required)",
+            "pads": "list of ints",
+            "strides": "list of ints"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "BatchNormalization": {
+        "Attributes": {
+            "epsilon": "float (default is 1e-05)",
+            "momentum": "float (default is 0.9)",
+            "training_mode": "int (default is 0)"
+        },
+        "Inputs": {
+            "X": "float16,float,double,bfloat16",
+            "scale": "float16,float,double,bfloat16",
+            "B": "float16,float,double,bfloat16",
+            "input_mean": "float16,float,double,bfloat16",
+            "input_var": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float16,float,double,bfloat16",
+            "running_mean(optional)": "float16,float,double,bfloat16",
+            "running_var(optional)": "float16,float,double,bfloat16"
+        }
+    },
+    "Bernoulli": {
+        "Attributes": {
+            "dtype": "int",
+            "seed(optional)": "float"
+        },
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,bool"
+        }
+    },
+    "BitShift": {
+        "Attributes": {
+            "direction": "string (required)"
+        },
+        "Inputs": {
+            "X": "uint8,uint16,uint32,uint64",
+            "Y": "uint8,uint16,uint32,uint64"
+        },
+        "Outputs": {
+            "Z": "uint8,uint16,uint32,uint64"
+        }
+    },
+    "BitwiseAnd": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "uint8,uint16,uint32,uint64,int8,int16,int32,int64",
+            "B": "uint8,uint16,uint32,uint64,int8,int16,int32,int64"
+        },
+        "Outputs": {
+            "C": "uint8,uint16,uint32,uint64,int8,int16,int32,int64"
+        }
+    },
+    "BitwiseNot": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "uint8,uint16,uint32,uint64,int8,int16,int32,int64"
+        },
+        "Outputs": {
+            "Y": "uint8,uint16,uint32,uint64,int8,int16,int32,int64"
+        }
+    },
+    "BitwiseOr": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "uint8,uint16,uint32,uint64,int8,int16,int32,int64",
+            "B": "uint8,uint16,uint32,uint64,int8,int16,int32,int64"
+        },
+        "Outputs": {
+            "C": "uint8,uint16,uint32,uint64,int8,int16,int32,int64"
+        }
+    },
+    "BitwiseXor": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "uint8,uint16,uint32,uint64,int8,int16,int32,int64",
+            "B": "uint8,uint16,uint32,uint64,int8,int16,int32,int64"
+        },
+        "Outputs": {
+            "C": "uint8,uint16,uint32,uint64,int8,int16,int32,int64"
+        }
+    },
+    "BlackmanWindow": {
+        "Attributes": {
+            "output_datatype": "int (default is 1)",
+            "periodic": "int (default is 1)"
+        },
+        "Inputs": {
+            "size": "int32,int64"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "Cast": {
+        "Attributes": {
+            "saturate": "int (default is 1)",
+            "to": "int (required)"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        }
+    },
+    "CastLike": {
+        "Attributes": {
+            "saturate": "int (default is 1)"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1",
+            "target_type": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        }
+    },
+    "Ceil": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float16,float,double,bfloat16"
+        }
+    },
+    "Celu": {
+        "Attributes": {
+            "alpha": "float (default is 1.0)"
+        },
+        "Inputs": {
+            "X": "float"
+        },
+        "Outputs": {
+            "Y": "float"
+        }
+    },
+    "CenterCropPad": {
+        "Attributes": {
+            "axes": "list of ints"
+        },
+        "Inputs": {
+            "input_data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "shape": "int32,int64"
+        },
+        "Outputs": {
+            "output_data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "Clip": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16",
+            "min(optional)": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16",
+            "max(optional)": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "Col2Im": {
+        "Attributes": {
+            "dilations": "list of ints",
+            "pads": "list of ints",
+            "strides": "list of ints"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "image_shape": "int64",
+            "block_shape": "int64"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "Compress": {
+        "Attributes": {
+            "axis(optional)": "int"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128",
+            "condition": "bool"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "Concat": {
+        "Attributes": {
+            "axis": "int (required)"
+        },
+        "Inputs": {
+            "inputs": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        },
+        "Outputs": {
+            "concat_result": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "ConcatFromSequence": {
+        "Attributes": {
+            "axis": "int (required)",
+            "new_axis": "int (default is 0)"
+        },
+        "Inputs": {
+            "input_sequence": "seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)"
+        },
+        "Outputs": {
+            "concat_result": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "Constant": {
+        "Attributes": {
+            "sparse_value": "sparse_tensor",
+            "value": "tensor",
+            "value_float": "float",
+            "value_floats": "list of floats",
+            "value_int": "int",
+            "value_ints": "list of ints",
+            "value_string": "string",
+            "value_strings": "list of strings"
+        },
+        "Inputs": {},
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        }
+    },
+    "ConstantOfShape": {
+        "Attributes": {
+            "value(optional)": "tensor"
+        },
+        "Inputs": {
+            "input": "int64"
+        },
+        "Outputs": {
+            "output": "float16,float,double,int8,int16,int32,int64,uint8,uint16,uint32,uint64,uint4,int4,bool,bfloat16,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,float4e2m1"
+        }
+    },
+    "Conv": {
+        "Attributes": {
+            "auto_pad": "string (default is NOTSET)",
+            "dilations": "list of ints",
+            "group": "int (default is 1)",
+            "kernel_shape": "list of ints",
+            "pads": "list of ints",
+            "strides": "list of ints"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double",
+            "W": "bfloat16,float16,float,double",
+            "B(optional)": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "ConvInteger": {
+        "Attributes": {
+            "auto_pad": "string (default is NOTSET)",
+            "dilations": "list of ints",
+            "group": "int (default is 1)",
+            "kernel_shape": "list of ints",
+            "pads": "list of ints",
+            "strides": "list of ints"
+        },
+        "Inputs": {
+            "x": "int8,uint8",
+            "w": "int8,uint8",
+            "x_zero_point (optional)": "int8,uint8",
+            "w_zero_point (optional)": "int8,uint8"
+        },
+        "Outputs": {
+            "y": "int32"
+        }
+    },
+    "ConvTranspose": {
+        "Attributes": {
+            "auto_pad": "string (default is NOTSET)",
+            "dilations": "list of ints",
+            "group": "int (default is 1)",
+            "kernel_shape": "list of ints",
+            "output_padding": "list of ints",
+            "output_shape": "list of ints",
+            "pads": "list of ints",
+            "strides": "list of ints"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double",
+            "W": "bfloat16,float16,float,double",
+            "B(optional)": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "Cos": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "Cosh": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "CumSum": {
+        "Attributes": {
+            "exclusive": "int (default is 0)",
+            "reverse": "int (default is 0)"
+        },
+        "Inputs": {
+            "x": "uint32,uint64,int32,int64,float16,float,double,bfloat16",
+            "axis": "int32,int64"
+        },
+        "Outputs": {
+            "y": "uint32,uint64,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "DFT": {
+        "Attributes": {
+            "inverse": "int (default is 0)",
+            "onesided": "int (default is 0)"
+        },
+        "Inputs": {
+            "input": "bfloat16,float16,float,double",
+            "dft_length(optional)": "int32,int64",
+            "axis(optional)": "int64"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "DeformConv": {
+        "Attributes": {
+            "dilations": "list of ints",
+            "group": "int (default is 1)",
+            "kernel_shape": "list of ints",
+            "offset_group": "int (default is 1)",
+            "pads": "list of ints",
+            "strides": "list of ints"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double",
+            "W": "bfloat16,float16,float,double",
+            "offset": "bfloat16,float16,float,double",
+            "B (optional)": "bfloat16,float16,float,double",
+            "mask (optional)": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "DepthToSpace": {
+        "Attributes": {
+            "blocksize": "int (required)",
+            "mode": "string (default is DCR)"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "DequantizeLinear": {
+        "Attributes": {
+            "axis(optional)": "int (default is 1)",
+            "block_size(optional)": "int (default is 0)",
+            "output_dtype(optional)": "int (default is 0)"
+        },
+        "Inputs": {
+            "x": "int8,uint8,int16,uint16,int32,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1",
+            "x_scale": "float,float16,bfloat16",
+            "x_zero_point (optional)": "int8,uint8,int16,uint16,int32,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        },
+        "Outputs": {
+            "y": "float,float16,bfloat16"
+        }
+    },
+    "Det": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "Div": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16",
+            "B": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "C": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "Dropout": {
+        "Attributes": {
+            "seed(optional)": "int"
+        },
+        "Inputs": {
+            "data": "bfloat16,float16,float,double,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz",
+            "ratio(optional)": "bfloat16,float16,float,double,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz",
+            "training_mode(optional)": "bool"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz",
+            "mask(optional)": "bool"
+        }
+    },
+    "DynamicQuantizeLinear": {
+        "Attributes": {},
+        "Inputs": {
+            "x": "float"
+        },
+        "Outputs": {
+            "y": "uint8",
+            "y_scale": "float",
+            "y_zero_point": "uint8"
+        }
+    },
+    "Einsum": {
+        "Attributes": {
+            "equation": "string (required)"
+        },
+        "Inputs": {
+            "Inputs": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double"
+        },
+        "Outputs": {
+            "Output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double"
+        }
+    },
+    "Elu": {
+        "Attributes": {
+            "alpha": "float (default is 1.0)"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "Equal": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "bool,uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16,string",
+            "B": "bool,uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16,string"
+        },
+        "Outputs": {
+            "C": "bool"
+        }
+    },
+    "Erf": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "Exp": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "Expand": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "shape": "int64"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "EyeLike": {
+        "Attributes": {
+            "dtype(optional)": "int",
+            "k(optional)": "int (default is 0)"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,bool"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,bool"
+        }
+    },
+    "Flatten": {
+        "Attributes": {
+            "axis": "int (default is 1)"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        }
+    },
+    "Floor": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float16,float,double,bfloat16"
+        }
+    },
+    "GRU": {
+        "Attributes": {
+            "activation_alpha": "list of floats",
+            "activation_beta": "list of floats",
+            "activations": "list of strings",
+            "clip": "float",
+            "direction": "string (default is forward)",
+            "hidden_size": "int",
+            "layout": "int (default is 0)",
+            "linear_before_reset": "int (default is 0)"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double",
+            "W": "bfloat16,float16,float,double",
+            "R": "bfloat16,float16,float,double",
+            "B(optional)": "bfloat16,float16,float,double",
+            "sequence_lens(optional)": "int32",
+            "initial_h(optional)": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y(optional)": "bfloat16,float16,float,double",
+            "Y_h(optional)": "bfloat16,float16,float,double"
+        }
+    },
+    "Gather": {
+        "Attributes": {
+            "axis": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "indices": "int32,int64"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "GatherElements": {
+        "Attributes": {
+            "axis": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "indices": "int32,int64"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "GatherND": {
+        "Attributes": {
+            "batch_dims": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "indices": "int64"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "Gelu": {
+        "Attributes": {
+            "approximate": "string (default is none)"
+        },
+        "Inputs": {
+            "X": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float16,float,double,bfloat16"
+        }
+    },
+    "Gemm": {
+        "Attributes": {
+            "alpha": "float (default is 1.0)",
+            "beta": "float (default is 1.0)",
+            "transA": "int (default is 0)",
+            "transB": "int (default is 0)"
+        },
+        "Inputs": {
+            "A": "float16,float,double,uint32,uint64,int32,int64,bfloat16",
+            "B": "float16,float,double,uint32,uint64,int32,int64,bfloat16",
+            "C(optional)": "float16,float,double,uint32,uint64,int32,int64,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float16,float,double,uint32,uint64,int32,int64,bfloat16"
+        }
+    },
+    "GlobalAveragePool": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "GlobalLpPool": {
+        "Attributes": {
+            "p": "int (default is 2)"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "GlobalMaxPool": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "Greater": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16",
+            "B": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "C": "bool"
+        }
+    },
+    "GreaterOrEqual": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16",
+            "B": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "C": "bool"
+        }
+    },
+    "GridSample": {
+        "Attributes": {
+            "align_corners": "int (default is 0)",
+            "mode": "string (default is linear)",
+            "padding_mode": "string (default is zeros)"
+        },
+        "Inputs": {
+            "X": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "grid": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "GroupNormalization": {
+        "Attributes": {
+            "epsilon": "float (default is 1e-05)",
+            "num_groups": "int (required)",
+            "stash_type": "int (default is 1)"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double",
+            "scale": "bfloat16,float16,float,double",
+            "bias": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "HammingWindow": {
+        "Attributes": {
+            "output_datatype": "int (default is 1)",
+            "periodic": "int (default is 1)"
+        },
+        "Inputs": {
+            "size": "int32,int64"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "HannWindow": {
+        "Attributes": {
+            "output_datatype": "int (default is 1)",
+            "periodic": "int (default is 1)"
+        },
+        "Inputs": {
+            "size": "int32,int64"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "HardSigmoid": {
+        "Attributes": {
+            "alpha": "float (default is 0.2)",
+            "beta": "float (default is 0.5)"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "HardSwish": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "Hardmax": {
+        "Attributes": {
+            "axis": "int (default is -1)"
+        },
+        "Inputs": {
+            "input": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "output": "float16,float,double,bfloat16"
+        }
+    },
+    "Identity": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1,seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128),optional(seq(uint8)),optional(seq(uint16)),optional(seq(uint32)),optional(seq(uint64)),optional(seq(int8)),optional(seq(int16)),optional(seq(int32)),optional(seq(int64)),optional(seq(float16)),optional(seq(float)),optional(seq(double)),optional(seq(string)),optional(seq(bool)),optional(seq(complex64)),optional(seq(complex128)),optional(uint8),optional(uint16),optional(uint32),optional(uint64),optional(int8),optional(int16),optional(int32),optional(int64),optional(float16),optional(float),optional(double),optional(string),optional(bool),optional(complex64),optional(complex128)"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1,seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128),optional(seq(uint8)),optional(seq(uint16)),optional(seq(uint32)),optional(seq(uint64)),optional(seq(int8)),optional(seq(int16)),optional(seq(int32)),optional(seq(int64)),optional(seq(float16)),optional(seq(float)),optional(seq(double)),optional(seq(string)),optional(seq(bool)),optional(seq(complex64)),optional(seq(complex128)),optional(uint8),optional(uint16),optional(uint32),optional(uint64),optional(int8),optional(int16),optional(int32),optional(int64),optional(float16),optional(float),optional(double),optional(string),optional(bool),optional(complex64),optional(complex128)"
+        }
+    },
+    "If": {
+        "Attributes": {
+            "else_branch": "graph (required)",
+            "then_branch": "graph (required)"
+        },
+        "Inputs": {
+            "cond": "bool"
+        },
+        "Outputs": {
+            "outputs (variadic, heterogeneous)": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1,seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(bfloat16),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128),seq(float8e4m3fn),seq(float8e4m3fnuz),seq(float8e5m2),seq(float8e5m2fnuz),seq(uint4),seq(int4),seq(float4e2m1),optional(seq(uint8)),optional(seq(uint16)),optional(seq(uint32)),optional(seq(uint64)),optional(seq(int8)),optional(seq(int16)),optional(seq(int32)),optional(seq(int64)),optional(seq(bfloat16)),optional(seq(float16)),optional(seq(float)),optional(seq(double)),optional(seq(string)),optional(seq(bool)),optional(seq(complex64)),optional(seq(complex128)),optional(uint8),optional(uint16),optional(uint32),optional(uint64),optional(int8),optional(int16),optional(int32),optional(int64),optional(bfloat16),optional(float16),optional(float),optional(double),optional(string),optional(bool),optional(complex64),optional(complex128),optional(float8e4m3fn),optional(float8e4m3fnuz),optional(float8e5m2),optional(float8e5m2fnuz),optional(uint4),optional(int4),optional(float4e2m1)"
+        }
+    },
+    "ImageDecoder": {
+        "Attributes": {
+            "pixel_format": "string (default is RGB)"
+        },
+        "Inputs": {
+            "encoded_stream": "uint8"
+        },
+        "Outputs": {
+            "image": "uint8"
+        }
+    },
+    "InstanceNormalization": {
+        "Attributes": {
+            "epsilon": "float (default is 1e-05)"
+        },
+        "Inputs": {
+            "input": "bfloat16,float16,float,double",
+            "scale": "bfloat16,float16,float,double",
+            "B": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "IsInf": {
+        "Attributes": {
+            "detect_negative(optional)": "int (default is 1)",
+            "detect_positive(optional)": "int (default is 1)"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz"
+        },
+        "Outputs": {
+            "Y": "bool"
+        }
+    },
+    "IsNaN": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "bfloat16,float16,float,double,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz"
+        },
+        "Outputs": {
+            "Y": "bool"
+        }
+    },
+    "LRN": {
+        "Attributes": {
+            "alpha": "float (default is 0.0001)",
+            "beta": "float (default is 0.75)",
+            "bias": "float (default is 1.0)",
+            "size": "int (required)"
+        },
+        "Inputs": {
+            "X": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float16,float,double,bfloat16"
+        }
+    },
+    "LSTM": {
+        "Attributes": {
+            "activation_alpha": "list of floats",
+            "activation_beta": "list of floats",
+            "activations": "list of strings",
+            "clip": "float",
+            "direction": "string (default is forward)",
+            "hidden_size": "int",
+            "input_forget": "int (default is 0)",
+            "layout": "int (default is 0)"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double",
+            "W": "bfloat16,float16,float,double",
+            "R": "bfloat16,float16,float,double",
+            "B(optional)": "bfloat16,float16,float,double",
+            "sequence_lens(optional)": "int32",
+            "initial_h(optional)": "bfloat16,float16,float,double",
+            "initial_c(optional)": "bfloat16,float16,float,double",
+            "P(optional)": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y(optional)": "bfloat16,float16,float,double",
+            "Y_h(optional)": "bfloat16,float16,float,double",
+            "Y_c(optional)": "bfloat16,float16,float,double"
+        }
+    },
+    "LayerNormalization": {
+        "Attributes": {
+            "axis": "int (default is -1)",
+            "epsilon": "float (default is 1e-05)",
+            "stash_type": "int (default is 1)"
+        },
+        "Inputs": {
+            "X": "float16,float,double,bfloat16",
+            "Scale": "float16,float,double,bfloat16",
+            "B (optional)": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float16,float,double,bfloat16",
+            "Mean (optional)": "float,bfloat16",
+            "InvStdDev (optional)": "float,bfloat16"
+        }
+    },
+    "LeakyRelu": {
+        "Attributes": {
+            "alpha": "float (default is 0.01)"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "Less": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16",
+            "B": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "C": "bool"
+        }
+    },
+    "LessOrEqual": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16",
+            "B": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "C": "bool"
+        }
+    },
+    "Log": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "output": "float16,float,double,bfloat16"
+        }
+    },
+    "LogSoftmax": {
+        "Attributes": {
+            "axis": "int (default is -1)"
+        },
+        "Inputs": {
+            "input": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "output": "float16,float,double,bfloat16"
+        }
+    },
+    "Loop": {
+        "Attributes": {
+            "body": "graph (required)"
+        },
+        "Inputs": {
+            "M (optional)": "int64",
+            "cond (optional)": "bool",
+            "v_initial (variadic, heterogeneous)": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1,seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(bfloat16),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128),seq(float8e4m3fn),seq(float8e4m3fnuz),seq(float8e5m2),seq(float8e5m2fnuz),seq(uint4),seq(int4),seq(float4e2m1),optional(seq(uint8)),optional(seq(uint16)),optional(seq(uint32)),optional(seq(uint64)),optional(seq(int8)),optional(seq(int16)),optional(seq(int32)),optional(seq(int64)),optional(seq(bfloat16)),optional(seq(float16)),optional(seq(float)),optional(seq(double)),optional(seq(string)),optional(seq(bool)),optional(seq(complex64)),optional(seq(complex128)),optional(uint8),optional(uint16),optional(uint32),optional(uint64),optional(int8),optional(int16),optional(int32),optional(int64),optional(bfloat16),optional(float16),optional(float),optional(double),optional(string),optional(bool),optional(complex64),optional(complex128),optional(float8e4m3fn),optional(float8e4m3fnuz),optional(float8e5m2),optional(float8e5m2fnuz),optional(uint4),optional(int4),optional(float4e2m1)"
+        },
+        "Outputs": {
+            "v_final_and_scan_outputs (variadic, heterogeneous)": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1,seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(bfloat16),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128),seq(float8e4m3fn),seq(float8e4m3fnuz),seq(float8e5m2),seq(float8e5m2fnuz),seq(uint4),seq(int4),seq(float4e2m1),optional(seq(uint8)),optional(seq(uint16)),optional(seq(uint32)),optional(seq(uint64)),optional(seq(int8)),optional(seq(int16)),optional(seq(int32)),optional(seq(int64)),optional(seq(bfloat16)),optional(seq(float16)),optional(seq(float)),optional(seq(double)),optional(seq(string)),optional(seq(bool)),optional(seq(complex64)),optional(seq(complex128)),optional(uint8),optional(uint16),optional(uint32),optional(uint64),optional(int8),optional(int16),optional(int32),optional(int64),optional(bfloat16),optional(float16),optional(float),optional(double),optional(string),optional(bool),optional(complex64),optional(complex128),optional(float8e4m3fn),optional(float8e4m3fnuz),optional(float8e5m2),optional(float8e5m2fnuz),optional(uint4),optional(int4),optional(float4e2m1)"
+        }
+    },
+    "LpNormalization": {
+        "Attributes": {
+            "axis": "int (default is -1)",
+            "p": "int (default is 2)"
+        },
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "LpPool": {
+        "Attributes": {
+            "auto_pad": "string (default is NOTSET)",
+            "ceil_mode": "int (default is 0)",
+            "dilations": "list of ints",
+            "kernel_shape": "list of ints (required)",
+            "p": "int (default is 2)",
+            "pads": "list of ints",
+            "strides": "list of ints"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "MatMul": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "float16,float,double,uint32,uint64,int32,int64,bfloat16",
+            "B": "float16,float,double,uint32,uint64,int32,int64,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float16,float,double,uint32,uint64,int32,int64,bfloat16"
+        }
+    },
+    "MatMulInteger": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "int8,uint8",
+            "B": "int8,uint8",
+            "a_zero_point(optional)": "int8,uint8",
+            "b_zero_point(optional)": "int8,uint8"
+        },
+        "Outputs": {
+            "Y": "int32"
+        }
+    },
+    "Max": {
+        "Attributes": {},
+        "Inputs": {
+            "data_0": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "max": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "MaxPool": {
+        "Attributes": {
+            "auto_pad": "string (default is NOTSET)",
+            "ceil_mode": "int (default is 0)",
+            "dilations": "list of ints",
+            "kernel_shape": "list of ints (required)",
+            "pads": "list of ints",
+            "storage_order": "int (default is 0)",
+            "strides": "list of ints"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double,int8,uint8"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double,int8,uint8",
+            "Indices(optional)": "int64"
+        }
+    },
+    "MaxRoiPool": {
+        "Attributes": {
+            "pooled_shape": "list of ints (required)",
+            "spatial_scale": "float (default is 1.0)"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double",
+            "rois": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "MaxUnpool": {
+        "Attributes": {
+            "kernel_shape": "list of ints (required)",
+            "pads": "list of ints",
+            "strides": "list of ints"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double",
+            "I": "int64",
+            "output_shape(optional)": "int64"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "Mean": {
+        "Attributes": {},
+        "Inputs": {
+            "data_0": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "mean": "float16,float,double,bfloat16"
+        }
+    },
+    "MeanVarianceNormalization": {
+        "Attributes": {
+            "axes": "list of ints (default is ['0', '2', '3'])"
+        },
+        "Inputs": {
+            "X": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float16,float,double,bfloat16"
+        }
+    },
+    "MelWeightMatrix": {
+        "Attributes": {
+            "output_datatype": "int (default is 1)"
+        },
+        "Inputs": {
+            "num_mel_bins": "int32,int64",
+            "dft_length": "int32,int64",
+            "sample_rate": "int32,int64",
+            "lower_edge_hertz": "float,float16,double,bfloat16",
+            "upper_edge_hertz": "float,float16,double,bfloat16"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "Min": {
+        "Attributes": {},
+        "Inputs": {
+            "data_0": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "min": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "Mish": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "Mod": {
+        "Attributes": {
+            "fmod": "int (default is 0)"
+        },
+        "Inputs": {
+            "A": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16",
+            "B": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "C": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "Mul": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16",
+            "B": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "C": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "Multinomial": {
+        "Attributes": {
+            "dtype(optional)": "int (default is 6)",
+            "sample_size": "int (default is 1)",
+            "seed(optional)": "float"
+        },
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "int32,int64"
+        }
+    },
+    "Neg": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "float,int32,int8,int16,int64,float16,double,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float,int32,int8,int16,int64,float16,double,bfloat16"
+        }
+    },
+    "NegativeLogLikelihoodLoss": {
+        "Attributes": {
+            "ignore_index": "int",
+            "reduction": "string (default is mean)"
+        },
+        "Inputs": {
+            "input": "bfloat16,float16,float,double",
+            "target": "int32,int64",
+            "weight(optional)": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "loss": "bfloat16,float16,float,double"
+        }
+    },
+    "NonMaxSuppression": {
+        "Attributes": {
+            "center_point_box": "int (default is 0)"
+        },
+        "Inputs": {
+            "boxes": "float",
+            "scores": "float",
+            "max_output_boxes_per_class (optional)": "int64",
+            "iou_threshold (optional)": "float",
+            "score_threshold (optional)": "float"
+        },
+        "Outputs": {
+            "selected_indices": "int64"
+        }
+    },
+    "NonZero": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        },
+        "Outputs": {
+            "Y": "int64"
+        }
+    },
+    "Not": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "bool"
+        },
+        "Outputs": {
+            "Y": "bool"
+        }
+    },
+    "OneHot": {
+        "Attributes": {
+            "axis(optional)": "int (default is -1)"
+        },
+        "Inputs": {
+            "indices": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double",
+            "depth": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double",
+            "values": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "Optional": {
+        "Attributes": {
+            "type": "type_proto"
+        },
+        "Inputs": {
+            "input (optional)": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128,seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)"
+        },
+        "Outputs": {
+            "output": "optional(seq(uint8)),optional(seq(uint16)),optional(seq(uint32)),optional(seq(uint64)),optional(seq(int8)),optional(seq(int16)),optional(seq(int32)),optional(seq(int64)),optional(seq(float16)),optional(seq(float)),optional(seq(double)),optional(seq(string)),optional(seq(bool)),optional(seq(complex64)),optional(seq(complex128)),optional(uint8),optional(uint16),optional(uint32),optional(uint64),optional(int8),optional(int16),optional(int32),optional(int64),optional(float16),optional(float),optional(double),optional(string),optional(bool),optional(complex64),optional(complex128)"
+        }
+    },
+    "OptionalGetElement": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "optional(seq(uint8)),optional(seq(uint16)),optional(seq(uint32)),optional(seq(uint64)),optional(seq(int8)),optional(seq(int16)),optional(seq(int32)),optional(seq(int64)),optional(seq(float16)),optional(seq(float)),optional(seq(double)),optional(seq(string)),optional(seq(bool)),optional(seq(complex64)),optional(seq(complex128)),optional(uint8),optional(uint16),optional(uint32),optional(uint64),optional(int8),optional(int16),optional(int32),optional(int64),optional(float16),optional(float),optional(double),optional(string),optional(bool),optional(complex64),optional(complex128),uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128,seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128,seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)"
+        }
+    },
+    "OptionalHasElement": {
+        "Attributes": {},
+        "Inputs": {
+            "input (optional)": "optional(seq(uint8)),optional(seq(uint16)),optional(seq(uint32)),optional(seq(uint64)),optional(seq(int8)),optional(seq(int16)),optional(seq(int32)),optional(seq(int64)),optional(seq(float16)),optional(seq(float)),optional(seq(double)),optional(seq(string)),optional(seq(bool)),optional(seq(complex64)),optional(seq(complex128)),optional(uint8),optional(uint16),optional(uint32),optional(uint64),optional(int8),optional(int16),optional(int32),optional(int64),optional(float16),optional(float),optional(double),optional(string),optional(bool),optional(complex64),optional(complex128),uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128,seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)"
+        },
+        "Outputs": {
+            "output": "bool"
+        }
+    },
+    "Or": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "bool",
+            "B": "bool"
+        },
+        "Outputs": {
+            "C": "bool"
+        }
+    },
+    "PRelu": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "bfloat16,float16,float,double,uint32,uint64,int32,int64",
+            "slope": "bfloat16,float16,float,double,uint32,uint64,int32,int64"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double,uint32,uint64,int32,int64"
+        }
+    },
+    "Pad": {
+        "Attributes": {
+            "mode": "string (default is constant)"
+        },
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1",
+            "pads": "int64",
+            "constant_value(optional)": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1",
+            "axes(optional)": "int32,int64"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        }
+    },
+    "Pow": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "int32,int64,float16,float,double,bfloat16",
+            "Y": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "Z": "int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "QLinearConv": {
+        "Attributes": {
+            "auto_pad": "string (default is NOTSET)",
+            "dilations": "list of ints",
+            "group": "int (default is 1)",
+            "kernel_shape": "list of ints",
+            "pads": "list of ints",
+            "strides": "list of ints"
+        },
+        "Inputs": {
+            "x": "int8,uint8",
+            "x_scale": "float",
+            "x_zero_point": "int8,uint8",
+            "w": "int8,uint8",
+            "w_scale": "float",
+            "w_zero_point": "int8,uint8",
+            "y_scale": "float",
+            "y_zero_point": "int8,uint8",
+            "B (optional)": "int32"
+        },
+        "Outputs": {
+            "y": "int8,uint8"
+        }
+    },
+    "QLinearMatMul": {
+        "Attributes": {},
+        "Inputs": {
+            "a": "int8,uint8,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz",
+            "a_scale": "float,float16,bfloat16",
+            "a_zero_point": "int8,uint8,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz",
+            "b": "int8,uint8,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz",
+            "b_scale": "float,float16,bfloat16",
+            "b_zero_point": "int8,uint8,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz",
+            "y_scale": "float,float16,bfloat16",
+            "y_zero_point": "int8,uint8,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz"
+        },
+        "Outputs": {
+            "y": "int8,uint8,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz"
+        }
+    },
+    "QuantizeLinear": {
+        "Attributes": {
+            "axis(optional)": "int (default is 1)",
+            "block_size(optional)": "int (default is 0)",
+            "output_dtype(optional)": "int (default is 0)",
+            "precision(optional)": "int (default is 0)",
+            "saturate": "int (default is 1)"
+        },
+        "Inputs": {
+            "x": "float,float16,bfloat16,int32",
+            "y_scale": "float,float16,bfloat16,int32",
+            "y_zero_point (optional)": "int8,uint8,int16,uint16,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        },
+        "Outputs": {
+            "y": "int8,uint8,int16,uint16,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        }
+    },
+    "RMSNormalization": {
+        "Attributes": {
+            "axis": "int (default is -1)",
+            "epsilon": "float (default is 1e-05)",
+            "stash_type": "int (default is 1)"
+        },
+        "Inputs": {
+            "X": "float16,float,double,bfloat16",
+            "scale": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float16,float,double,bfloat16"
+        }
+    },
+    "RNN": {
+        "Attributes": {
+            "activation_alpha": "list of floats",
+            "activation_beta": "list of floats",
+            "activations": "list of strings (default is ['Tanh', 'Tanh'])",
+            "clip": "float",
+            "direction": "string (default is forward)",
+            "hidden_size": "int",
+            "layout": "int (default is 0)"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double",
+            "W": "bfloat16,float16,float,double",
+            "R": "bfloat16,float16,float,double",
+            "B(optional)": "bfloat16,float16,float,double",
+            "sequence_lens(optional)": "int32",
+            "initial_h(optional)": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y(optional)": "bfloat16,float16,float,double",
+            "Y_h(optional)": "bfloat16,float16,float,double"
+        }
+    },
+    "RandomNormal": {
+        "Attributes": {
+            "dtype": "int (default is 1)",
+            "mean": "float (default is 0.0)",
+            "scale": "float (default is 1.0)",
+            "seed(optional)": "float",
+            "shape": "list of ints (required)"
+        },
+        "Inputs": {},
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "RandomNormalLike": {
+        "Attributes": {
+            "dtype(optional)": "int",
+            "mean": "float (default is 0.0)",
+            "scale": "float (default is 1.0)",
+            "seed(optional)": "float"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "RandomUniform": {
+        "Attributes": {
+            "dtype": "int (default is 1)",
+            "high": "float (default is 1.0)",
+            "low": "float (default is 0.0)",
+            "seed(optional)": "float",
+            "shape": "list of ints (required)"
+        },
+        "Inputs": {},
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "RandomUniformLike": {
+        "Attributes": {
+            "dtype(optional)": "int",
+            "high": "float (default is 1.0)",
+            "low": "float (default is 0.0)",
+            "seed(optional)": "float"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "Range": {
+        "Attributes": {},
+        "Inputs": {
+            "start": "float,double,int16,int32,int64",
+            "limit": "float,double,int16,int32,int64",
+            "delta": "float,double,int16,int32,int64"
+        },
+        "Outputs": {
+            "output": "float,double,int16,int32,int64"
+        }
+    },
+    "Reciprocal": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float16,float,double,bfloat16"
+        }
+    },
+    "ReduceL1": {
+        "Attributes": {
+            "keepdims": "int (default is 1)",
+            "noop_with_empty_axes": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint32,uint64,int32,int64,float16,float,double,bfloat16",
+            "axes(optional)": "int64"
+        },
+        "Outputs": {
+            "reduced": "uint32,uint64,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "ReduceL2": {
+        "Attributes": {
+            "keepdims": "int (default is 1)",
+            "noop_with_empty_axes": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint32,uint64,int32,int64,float16,float,double,bfloat16",
+            "axes(optional)": "int64"
+        },
+        "Outputs": {
+            "reduced": "uint32,uint64,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "ReduceLogSum": {
+        "Attributes": {
+            "keepdims": "int (default is 1)",
+            "noop_with_empty_axes": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint32,uint64,int32,int64,float16,float,double,bfloat16",
+            "axes(optional)": "int64"
+        },
+        "Outputs": {
+            "reduced": "uint32,uint64,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "ReduceLogSumExp": {
+        "Attributes": {
+            "keepdims": "int (default is 1)",
+            "noop_with_empty_axes": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint32,uint64,int32,int64,float16,float,double,bfloat16",
+            "axes(optional)": "int64"
+        },
+        "Outputs": {
+            "reduced": "uint32,uint64,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "ReduceMax": {
+        "Attributes": {
+            "keepdims": "int (default is 1)",
+            "noop_with_empty_axes": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint32,uint64,int32,int64,float16,float,double,bfloat16,uint8,int8,bool",
+            "axes(optional)": "int64"
+        },
+        "Outputs": {
+            "reduced": "uint32,uint64,int32,int64,float16,float,double,bfloat16,uint8,int8,bool"
+        }
+    },
+    "ReduceMean": {
+        "Attributes": {
+            "keepdims": "int (default is 1)",
+            "noop_with_empty_axes": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint32,uint64,int32,int64,float16,float,double,bfloat16",
+            "axes(optional)": "int64"
+        },
+        "Outputs": {
+            "reduced": "uint32,uint64,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "ReduceMin": {
+        "Attributes": {
+            "keepdims": "int (default is 1)",
+            "noop_with_empty_axes": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint32,uint64,int32,int64,float16,float,double,bfloat16,uint8,int8,bool",
+            "axes(optional)": "int64"
+        },
+        "Outputs": {
+            "reduced": "uint32,uint64,int32,int64,float16,float,double,bfloat16,uint8,int8,bool"
+        }
+    },
+    "ReduceProd": {
+        "Attributes": {
+            "keepdims": "int (default is 1)",
+            "noop_with_empty_axes": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint32,uint64,int32,int64,float16,float,double,bfloat16",
+            "axes(optional)": "int64"
+        },
+        "Outputs": {
+            "reduced": "uint32,uint64,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "ReduceSum": {
+        "Attributes": {
+            "keepdims": "int (default is 1)",
+            "noop_with_empty_axes": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint32,uint64,int32,int64,float16,float,double,bfloat16",
+            "axes(optional)": "int64"
+        },
+        "Outputs": {
+            "reduced": "uint32,uint64,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "ReduceSumSquare": {
+        "Attributes": {
+            "keepdims": "int (default is 1)",
+            "noop_with_empty_axes": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint32,uint64,int32,int64,float16,float,double,bfloat16",
+            "axes(optional)": "int64"
+        },
+        "Outputs": {
+            "reduced": "uint32,uint64,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "RegexFullMatch": {
+        "Attributes": {
+            "pattern": "string"
+        },
+        "Inputs": {
+            "X": "string"
+        },
+        "Outputs": {
+            "Y": "bool"
+        }
+    },
+    "Relu": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "float,int32,int8,int16,int64,float16,double,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float,int32,int8,int16,int64,float16,double,bfloat16"
+        }
+    },
+    "Reshape": {
+        "Attributes": {
+            "allowzero(optional)": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1",
+            "shape": "int64"
+        },
+        "Outputs": {
+            "reshaped": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        }
+    },
+    "Resize": {
+        "Attributes": {
+            "antialias": "int (default is 0)",
+            "axes": "list of ints",
+            "coordinate_transformation_mode": "string (default is half_pixel)",
+            "cubic_coeff_a": "float (default is -0.75)",
+            "exclude_outside": "int (default is 0)",
+            "extrapolation_value": "float (default is 0.0)",
+            "keep_aspect_ratio_policy": "string (default is stretch)",
+            "mode": "string (default is nearest)",
+            "nearest_mode": "string (default is round_prefer_floor)"
+        },
+        "Inputs": {
+            "X": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "roi(optional)": "float16,float,double",
+            "scales(optional)": "float",
+            "sizes(optional)": "int64"
+        },
+        "Outputs": {
+            "Y": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "ReverseSequence": {
+        "Attributes": {
+            "batch_axis(optional)": "int (default is 1)",
+            "time_axis(optional)": "int (default is 0)"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128",
+            "sequence_lens": "int64"
+        },
+        "Outputs": {
+            "Y": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "RoiAlign": {
+        "Attributes": {
+            "coordinate_transformation_mode": "string (default is half_pixel)",
+            "mode": "string (default is avg)",
+            "output_height": "int (default is 1)",
+            "output_width": "int (default is 1)",
+            "sampling_ratio": "int (default is 0)",
+            "spatial_scale": "float (default is 1.0)"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double",
+            "rois": "bfloat16,float16,float,double",
+            "batch_indices": "int64"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "RotaryEmbedding": {
+        "Attributes": {
+            "interleaved": "int (default is 0)",
+            "num_heads": "int",
+            "rotary_embedding_dim": "int (default is 0)"
+        },
+        "Inputs": {
+            "X": "float,float16,bfloat16",
+            "cos_cache": "float,float16,bfloat16",
+            "sin_cache": "float,float16,bfloat16",
+            "position_ids (optional)": "int64"
+        },
+        "Outputs": {
+            "Y": "float,float16,bfloat16"
+        }
+    },
+    "Round": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "STFT": {
+        "Attributes": {
+            "onesided": "int (default is 1)"
+        },
+        "Inputs": {
+            "signal": "float,float16,double,bfloat16",
+            "frame_step": "int32,int64",
+            "window(optional)": "float,float16,double,bfloat16",
+            "frame_length(optional)": "int32,int64"
+        },
+        "Outputs": {
+            "output": "float,float16,double,bfloat16"
+        }
+    },
+    "Scan": {
+        "Attributes": {
+            "body": "graph (required)",
+            "num_scan_inputs": "int (required)",
+            "scan_input_axes": "list of ints",
+            "scan_input_directions": "list of ints",
+            "scan_output_axes": "list of ints",
+            "scan_output_directions": "list of ints"
+        },
+        "Inputs": {
+            "initial_state_and_scan_inputs (variadic, heterogeneous)": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        },
+        "Outputs": {
+            "final_state_and_scan_outputs (variadic, heterogeneous)": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        }
+    },
+    "ScatterElements": {
+        "Attributes": {
+            "axis": "int (default is 0)",
+            "reduction": "string (default is none)"
+        },
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "indices": "int32,int64",
+            "updates": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "ScatterND": {
+        "Attributes": {
+            "reduction": "string (default is none)"
+        },
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "indices": "int64",
+            "updates": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "Selu": {
+        "Attributes": {
+            "alpha": "float (default is 1.67326)",
+            "gamma": "float (default is 1.0507)"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "SequenceAt": {
+        "Attributes": {},
+        "Inputs": {
+            "input_sequence": "seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)",
+            "position": "int32,int64"
+        },
+        "Outputs": {
+            "tensor": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "SequenceConstruct": {
+        "Attributes": {},
+        "Inputs": {
+            "inputs (variadic)": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128"
+        },
+        "Outputs": {
+            "output_sequence": "seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)"
+        }
+    },
+    "SequenceEmpty": {
+        "Attributes": {
+            "dtype(optional)": "int"
+        },
+        "Inputs": {},
+        "Outputs": {
+            "output": "seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)"
+        }
+    },
+    "SequenceErase": {
+        "Attributes": {},
+        "Inputs": {
+            "input_sequence": "seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)",
+            "position (optional)": "int32,int64"
+        },
+        "Outputs": {
+            "output_sequence": "seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)"
+        }
+    },
+    "SequenceInsert": {
+        "Attributes": {},
+        "Inputs": {
+            "input_sequence": "seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)",
+            "tensor": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128",
+            "position (optional)": "int32,int64"
+        },
+        "Outputs": {
+            "output_sequence": "seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)"
+        }
+    },
+    "SequenceLength": {
+        "Attributes": {},
+        "Inputs": {
+            "input_sequence": "seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)"
+        },
+        "Outputs": {
+            "length": "int64"
+        }
+    },
+    "SequenceMap": {
+        "Attributes": {
+            "body": "graph (required)"
+        },
+        "Inputs": {
+            "input_sequence": "seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)",
+            "additional_inputs (variadic, heterogeneous)": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128,seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)"
+        },
+        "Outputs": {
+            "out_sequence (variadic, heterogeneous)": "seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)"
+        }
+    },
+    "Shape": {
+        "Attributes": {
+            "end(optional)": "int",
+            "start(optional)": "int (default is 0)"
+        },
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        },
+        "Outputs": {
+            "shape": "int64"
+        }
+    },
+    "Shrink": {
+        "Attributes": {
+            "bias": "float (default is 0.0)",
+            "lambd": "float (default is 0.5)"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double"
+        }
+    },
+    "Sigmoid": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float16,float,double,bfloat16"
+        }
+    },
+    "Sign": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "Sin": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "Sinh": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "Size": {
+        "Attributes": {},
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        },
+        "Outputs": {
+            "size": "int64"
+        }
+    },
+    "Slice": {
+        "Attributes": {},
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "starts": "int32,int64",
+            "ends": "int32,int64",
+            "axes(optional)": "int32,int64",
+            "steps(optional)": "int32,int64"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "Softmax": {
+        "Attributes": {
+            "axis": "int (default is -1)"
+        },
+        "Inputs": {
+            "input": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "output": "float16,float,double,bfloat16"
+        }
+    },
+    "SoftmaxCrossEntropyLoss": {
+        "Attributes": {
+            "ignore_index": "int",
+            "reduction": "string (default is mean)"
+        },
+        "Inputs": {
+            "scores": "float16,float,double,bfloat16",
+            "labels": "int32,int64",
+            "weights(optional)": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "output": "float16,float,double,bfloat16",
+            "log_prob(optional)": "float16,float,double,bfloat16"
+        }
+    },
+    "Softplus": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "Softsign": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "SpaceToDepth": {
+        "Attributes": {
+            "blocksize": "int (required)"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "Split": {
+        "Attributes": {
+            "axis": "int (default is 0)",
+            "num_outputs": "int"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "split(optional)": "int64"
+        },
+        "Outputs": {
+            "outputs(variadic)": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "SplitToSequence": {
+        "Attributes": {
+            "axis": "int (default is 0)",
+            "keepdims": "int (default is 1)"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128",
+            "split (optional)": "int32,int64"
+        },
+        "Outputs": {
+            "output_sequence": "seq(uint8),seq(uint16),seq(uint32),seq(uint64),seq(int8),seq(int16),seq(int32),seq(int64),seq(float16),seq(float),seq(double),seq(string),seq(bool),seq(complex64),seq(complex128)"
+        }
+    },
+    "Sqrt": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "Y": "float16,float,double,bfloat16"
+        }
+    },
+    "Squeeze": {
+        "Attributes": {},
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1",
+            "axes(optional)": "int64"
+        },
+        "Outputs": {
+            "squeezed": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        }
+    },
+    "StringConcat": {
+        "Attributes": {},
+        "Inputs": {
+            "X": "string",
+            "Y": "string"
+        },
+        "Outputs": {
+            "Z": "string"
+        }
+    },
+    "StringNormalizer": {
+        "Attributes": {
+            "case_change_action": "string (default is NONE)",
+            "is_case_sensitive": "int (default is 0)",
+            "locale": "string",
+            "stopwords": "list of strings"
+        },
+        "Inputs": {
+            "X": "string"
+        },
+        "Outputs": {
+            "Y": "string"
+        }
+    },
+    "StringSplit": {
+        "Attributes": {
+            "delimiter": "string",
+            "maxsplit": "int"
+        },
+        "Inputs": {
+            "X": "string"
+        },
+        "Outputs": {
+            "Y": "string",
+            "Z": "int64"
+        }
+    },
+    "Sub": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16",
+            "B": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "C": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,bfloat16"
+        }
+    },
+    "Sum": {
+        "Attributes": {},
+        "Inputs": {
+            "data_0": "float16,float,double,bfloat16"
+        },
+        "Outputs": {
+            "sum": "float16,float,double,bfloat16"
+        }
+    },
+    "Tan": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "Tanh": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "output": "bfloat16,float16,float,double"
+        }
+    },
+    "TfIdfVectorizer": {
+        "Attributes": {
+            "max_gram_length": "int (required)",
+            "max_skip_count": "int (required)",
+            "min_gram_length": "int (required)",
+            "mode": "string (required)",
+            "ngram_counts": "list of ints (required)",
+            "ngram_indexes": "list of ints (required)",
+            "pool_int64s": "list of ints",
+            "pool_strings": "list of strings",
+            "weights": "list of floats"
+        },
+        "Inputs": {
+            "X": "string,int32,int64"
+        },
+        "Outputs": {
+            "Y": "float"
+        }
+    },
+    "ThresholdedRelu": {
+        "Attributes": {
+            "alpha": "float (default is 1.0)"
+        },
+        "Inputs": {
+            "X": "bfloat16,float16,float,double"
+        },
+        "Outputs": {
+            "Y": "bfloat16,float16,float,double"
+        }
+    },
+    "Tile": {
+        "Attributes": {},
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "repeats": "int64"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "TopK": {
+        "Attributes": {
+            "axis": "int (default is -1)",
+            "largest": "int (default is 1)",
+            "sorted": "int (default is 1)"
+        },
+        "Inputs": {
+            "X": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double",
+            "K": "int64"
+        },
+        "Outputs": {
+            "Values": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double",
+            "Indices": "int64"
+        }
+    },
+    "Transpose": {
+        "Attributes": {
+            "perm": "list of ints"
+        },
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        },
+        "Outputs": {
+            "transposed": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        }
+    },
+    "Trilu": {
+        "Attributes": {
+            "upper": "int (default is 1)"
+        },
+        "Inputs": {
+            "input": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "k(optional)": "int64"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "Unique": {
+        "Attributes": {
+            "axis(optional)": "int",
+            "sorted(optional)": "int (default is 1)"
+        },
+        "Inputs": {
+            "X": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128"
+        },
+        "Outputs": {
+            "Y": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,float16,float,double,string,bool,complex64,complex128",
+            "indices(optional)": "int64",
+            "inverse_indices(optional)": "int64",
+            "counts(optional)": "int64"
+        }
+    },
+    "Unsqueeze": {
+        "Attributes": {},
+        "Inputs": {
+            "data": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1",
+            "axes": "int64"
+        },
+        "Outputs": {
+            "expanded": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128,float8e4m3fn,float8e4m3fnuz,float8e5m2,float8e5m2fnuz,uint4,int4,float4e2m1"
+        }
+    },
+    "Where": {
+        "Attributes": {},
+        "Inputs": {
+            "condition": "bool",
+            "X": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128",
+            "Y": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        },
+        "Outputs": {
+            "output": "uint8,uint16,uint32,uint64,int8,int16,int32,int64,bfloat16,float16,float,double,string,bool,complex64,complex128"
+        }
+    },
+    "Xor": {
+        "Attributes": {},
+        "Inputs": {
+            "A": "bool",
+            "B": "bool"
+        },
+        "Outputs": {
+            "C": "bool"
+        }
+    }
+}
