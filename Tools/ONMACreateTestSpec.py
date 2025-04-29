@@ -71,6 +71,8 @@ Run this script by command: Tools/ONMACreateTestSpec.py
 Example version of test spec is put at: Tests/reference_data.json
 """
 
+exclude_node = []
+
 class NumpyEncoder(json.JSONEncoder):
     """ Special json encoder for numpy types """
     def default(self, obj):
@@ -305,6 +307,7 @@ def checkCombination(node_name, node, combination, one_special_input):
     return status, graph_dictionary
 
 def create_TCs_for_one_input_setting(node, node_data, one_special_input, output_dictionary, attributes):
+    result = False
     config_names = []
     config_values = []
     config_names_option = []
@@ -362,7 +365,7 @@ def create_TCs_for_one_input_setting(node, node_data, one_special_input, output_
         for onenode in output_list:
             status, graph_dictionary = checkCombination(node, node_data, onenode, one_special_input)
             if status == 1:
-                print(onenode)
+                result = True
                 TC_name = find_index(output_dictionary, node)
                 output_dictionary[TC_name] = graph_dictionary
     except:
@@ -399,15 +402,18 @@ def create_TCs_for_one_input_setting(node, node_data, one_special_input, output_
                 for onenode in output_list:
                     status, graph_dictionary = checkCombination(node, node_data, onenode, one_special_input)
                     if status == 1:
-                        print(onenode)
+                        result = True
                         TC_name = find_index(output_dictionary, node)
                         output_dictionary[TC_name] = graph_dictionary
             except:
                 pass
+    return result
 
 def createTC(node_dict, node_name, input_special, attributes, test_spec):
+    global exclude_node
     output_dictionary = {}
     for node in node_dict:
+        status = False
         if (node == node_name or node_name == "ALL") and node != "Attention" and node != "LSTM" and node != "Bernoulli" and node != "Dropout" and node != "LeakyRelu" and node != "Mish" and node != "PRelu" and node != "RandomNormalLike" and node != "RandomUniformLike" and node != "ReduceLogSumExp"  and node != "ConvTranspose" and node != "Elu" and node != "GroupNormalization" and node != "LRN" and node != "Log" and node != "LpNormalization" and node != "ReduceLogSum" and node != "RoiAlign" and node != "Shrink" and node != "Sigmoid" and node != "Softplus" and node != "Sqrt":
             print(f'======{node}======')
             one_special_input = {}
@@ -416,11 +422,13 @@ def createTC(node_dict, node_name, input_special, attributes, test_spec):
                 one_special_input = input_special[node]
                 if "list" in one_special_input: # "list" inside
                     for item in one_special_input["list"]:
-                        create_TCs_for_one_input_setting(node, node_data, item, output_dictionary, attributes)
+                        status = create_TCs_for_one_input_setting(node, node_data, item, output_dictionary, attributes)
                 else:
-                    create_TCs_for_one_input_setting(node, node_data, one_special_input, output_dictionary, attributes)
+                    status = create_TCs_for_one_input_setting(node, node_data, one_special_input, output_dictionary, attributes)
             except:
-                create_TCs_for_one_input_setting(node, node_data, one_special_input, output_dictionary, attributes)
+                status = create_TCs_for_one_input_setting(node, node_data, one_special_input, output_dictionary, attributes)
+        if status == False:
+            exclude_node.append(node)
 
     with open(test_spec, "w") as fp:
         json.dump(output_dictionary, fp, indent = 4, cls=NumpyEncoder)
@@ -453,12 +461,14 @@ def main():
                     elif one == "np.inf":  refine_input.append(np.inf)
                     elif one == "-np.inf":  refine_input.append(-np.inf)
                     else: refine_input.append(one)
-                print(refine_input)
                 input_special["IsInf"]["Inputs"][item] = refine_input
         except:
             pass
 
     createTC(node_dict, args.operator, input_special, attributes, args.test_spec)
+    with open('Sample/Exclude_Node.txt', 'w') as filehandle:
+        for line in exclude_node:
+            print("{}".format(line), file=filehandle)
 
 if main() == False:
     sys.exit(-1)
