@@ -14,16 +14,12 @@ DeformConv
 DepthToSpace
 DequantizeLinear
 Dropout
-Elu
 GRU
 GlobalLpPool
-GroupNormalization
 If
 ImageDecoder
-LRN
 LSTM
 LeakyRelu
-Log
 Loop
 LpNormalization
 MaxRoiPool
@@ -41,7 +37,6 @@ RandomNormal
 RandomNormalLike
 RandomUniform
 RandomUniformLike
-ReduceLogSum
 ReduceLogSumExp
 Resize
 RoiAlign
@@ -56,9 +51,6 @@ SequenceInsert
 SequenceLength
 SequenceMap
 Shrink
-Sigmoid
-Softplus
 SplitToSequence
-Sqrt
 StringSplit
 TfIdfVectorizer

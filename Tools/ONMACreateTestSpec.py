@@ -414,7 +414,7 @@ def createTC(node_dict, node_name, input_special, attributes, test_spec):
     output_dictionary = {}
     for node in node_dict:
         status = False
-        if (node == node_name or node_name == "ALL") and node != "Attention" and node != "LSTM" and node != "Bernoulli" and node != "Dropout" and node != "LeakyRelu" and node != "Mish" and node != "PRelu" and node != "RandomNormalLike" and node != "RandomUniformLike" and node != "ReduceLogSumExp"  and node != "ConvTranspose" and node != "Elu" and node != "GroupNormalization" and node != "LRN" and node != "Log" and node != "LpNormalization" and node != "ReduceLogSum" and node != "RoiAlign" and node != "Shrink" and node != "Sigmoid" and node != "Softplus" and node != "Sqrt":
+        if (node == node_name or node_name == "ALL") and node != "Attention" and node != "LSTM" and node != "Bernoulli" and node != "Dropout" and node != "LeakyRelu" and node != "Mish" and node != "PRelu" and node != "RandomNormalLike" and node != "ReduceLogSumExp" and node != "RandomUniformLike"  and node != "ConvTranspose" and node != "LpNormalization" and node != "RoiAlign" and node != "Shrink":
             print(f'======{node}======')
             one_special_input = {}
             node_data = node_dict[node]
