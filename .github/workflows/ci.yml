@@ -32,7 +32,8 @@ jobs:
           source _miniconda_dir/etc/profile.d/conda.sh
           conda init
           conda activate
-          ls -la
+          conda env create --file .github/workflows/default.yml
+          conda activate Python_3.11.5
           pip install -U pytest
           pip install numpy
           pip install onnx
