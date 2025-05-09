@@ -68,7 +68,7 @@ def UpdateInitializer(initializers, name, data):
         action = data["Action"]
         
         if action == "Modify" or action == "Add":
-            values = data["tensor"]
+            values = np.array(data["tensor"]["data"], dtype=data["tensor"]["type"])
 
             # Create new initializer with new value
             new_initializer = CreateInitializerTensor(
@@ -84,7 +84,7 @@ def UpdateInitializer(initializers, name, data):
     else:
         action = data["Action"]
         if action == "Add":
-            values = np.array(data["tensor"], dtype='float32')
+            values = np.array(data["tensor"]["data"], dtype=data["tensor"]["type"])
             # Create new initializer with new value
             new_initializer = CreateInitializerTensor(
                         name=name,
