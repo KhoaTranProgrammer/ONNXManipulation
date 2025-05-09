@@ -1,0 +1,30 @@
+{
+    "graph_name": "Pad_Graph",
+    "pads":
+    {
+        "Action": "Add",
+        "Category": "Initializer",
+        "tensor": {"data": [0,0,1,1,0,0,1,1], "type": "int64"}
+    },
+    "inputs": {
+        "X": {
+            "data": {"dimensions": [1, 2, 16, 16]},
+            "type": "float32"
+        }
+    },
+    "outputs": {
+        "Y": "None"
+    },
+    "Pad_Node": {
+        "Action": "Add",
+        "Category": "Node",
+        "Type": "Pad",
+        "inputs": {
+            "X": "X",
+            "pads": "pads"
+        },
+        "outputs": {
+            "Y": "Y"
+        }
+    }
+}
