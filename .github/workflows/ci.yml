@@ -26,18 +26,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a unit testing
         run: |
-          wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-          bash miniconda.sh -b -u -p _miniconda_dir
-          rm miniconda.sh
-          source _miniconda_dir/etc/profile.d/conda.sh
-          conda init
-          conda activate
-          conda env create --file .github/workflows/default.yml
-          conda activate Python_3.11.5
-          pip install -U pytest
-          pip install numpy
-          pip install onnx
-          pip install onnxruntime
+          pip install -U pytest==8.3.5
+          pip install numpy==2.2.5
+          pip install onnx==1.17.0
+          pip install onnxruntime==1.21.0
           pytest Tests/unittesting.py | tee testlog.log
       
       - name: 'Upload Artifact'
