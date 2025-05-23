@@ -168,50 +168,53 @@
         [
             {
                 "Inputs": {
-                    "X": {"dimension": [1, 1, 5, 5]},
-                    "W": {"dimension": [1, 1, 3, 3]},
-                    "B(optional)": {"dimension": [1]}
+                    "X": [[[[0.0, 1.0, 2.0], [3.0, 4.0, 5.0], [6.0, 7.0, 8.0]]]],
+                    "W": [[[[1.0, 1.0, 1.0], [1.0, 1.0, 1.0], [1.0, 1.0, 1.0]],
+                           [[1.0, 1.0, 1.0], [1.0, 1.0, 1.0], [1.0, 1.0, 1.0]]]],
+                    "B (optional)": [0.0]
                 },
                 "Outputs": {
-                    "Y": {"dimension": [1, 1, 3, 3]}
+                    "Y": {"dimension": [1, 2, 10, 8]}
                 },
                 "Attributes": {
                     "auto_pad": ["NOTSET", "SAME_UPPER", "SAME_LOWER", "VALID"],
                     "dilations": [[1, 1]],
                     "group": [1],
                     "kernel_shape": [[3, 3]],
-                    "strides": [[1, 1]],
+                    "strides": [[3, 2]],
                     "output_padding": [[1, 1]],
-                    "output_shape": [[3, 3]],
+                    "output_shape": [[10, 8]],
                     "pads": [[0, 0, 0 ,0]]
                 }
             }
         ]
     },
     "Dropout": {
-        "Inputs": {
-            "data": {"dimension": [1, 1, 4, 4]},
-            "ratio(optional)": 0.75,
-            "training_mode(optional)": true
-        },
-        "Outputs": {
-            "output": {"dimension": [1, 1, 4, 4]}
-        },
-        "Attributes": {
-            "seed": [0]
-        }
+        "list":
+        [
+            {
+                "Inputs": {
+                    "data": {"dimension": [1, 1, 4, 4]}
+                },
+                "Outputs": {
+                    "output": {"dimension": [1, 1, 4, 4]},
+                    "mask(optional)": {"dimension": [1, 1, 4, 4]}
+                },
+                "Attributes": {
+                    "seed": [1]
+                }
+            }
+        ]
     },
     "Einsum": {
+        "Inputs": {
+            "Inputs": {"dimension": [3,5,5]}
+        },
         "Outputs": {
-            "Output": {"dimension": [1,2,3]}
+            "Output": {"dimension": [3,5]}
         },
         "Attributes": {
             "equation": ["...ii ->...i"]
-        }
-    },
-    "Elu": {
-        "Attributes": {
-            "alpha": [1.0]
         }
     },
     "Expand": {
@@ -514,7 +517,7 @@
             "score_threshold (optional)": [0.0]
         },
         "Outputs": {
-            "selected_indices": [[0, 0, 3], [0, 0, 0], [0, 0, 5]]
+            "selected_indices": {"dimension": [3, 3]}
         },
         "Attributes": {
             "center_point_box": [1]
@@ -662,7 +665,7 @@
     },
     "ReduceLogSumExp": {
         "Inputs": {
-            "data": {"dimension": [3, 2, 2]},
+            "data": [[[5, 1], [20, 2]], [[30, 1], [40, 2]], [[55, 1], [60, 2]]],
             "axes(optional)": [0]
         },
         "Outputs": {
@@ -1090,6 +1093,40 @@
         },
         "Outputs": {
             "expanded": {"dimension": [1, 3, 1, 1, 5]}
+        }
+    },
+    "LeakyRelu": {
+        "Inputs": {
+            "X": [-1, 0, 1]
+        },
+        "Outputs": {
+            "Y": {"dimension": [3]}
+        },
+        "Attributes": {
+            "alpha": [0.5]
+        }
+    },
+    "Shrink": {
+        "Inputs": {
+            "input": [1.0, 2.0, 3.0, 4.0, 5.0]
+        },
+        "Outputs": {
+            "output": {"dimension": [5]}
+        },
+        "Attributes": {
+            "lambd": [0.5],
+            "bias": [0.0]
+        }
+    },
+    "Constant": {
+        "Inputs": {
+            "": ""
+        },
+        "Outputs": {
+            "output": {"dimension": [1]}
+        },
+        "Attributes": {
+            "values": [[0.5]]
         }
     }
 }

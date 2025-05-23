@@ -124,7 +124,7 @@ def expect(
             node.op_type, domain=node.domain
         ).since_version
         kwargs["opset_imports"] = [
-            onnx.helper.make_operatorsetid(node.domain, produce_opset_version)
+            onnx.helper.make_operatorsetid(node.domain, 21)
         ]
 
     model = onnx.helper.make_model_gen_version(graph, **kwargs)
@@ -225,6 +225,7 @@ def createArrayFromData(data, datatype):
     if datatype == "string": return np.array(data).astype(object)
     elif datatype == "float": return np.array(data).astype(np.float32)
     elif datatype == "int64": return np.array(data).astype(np.int64)
+    elif datatype == "double": return np.array(data).astype(np.double)
     else: return np.array(data).astype(datatype)
 
 def generate_TestCases_Combinations(config_values, currentindex, numberofconfig, combination, output_list, config_names):
@@ -307,7 +308,7 @@ def checkCombination(node_name, node, combination, one_special_input):
                     x[x == 0] = 1
                     network_output.append(x)
             
-            if item in node["Attributes"]:
+            if item in node["Attributes"] or f'{item}(optional)' in node["Attributes"]:
                 attri[item] = combination[item]
 
         # Process for empty input
@@ -320,6 +321,8 @@ def checkCombination(node_name, node, combination, one_special_input):
             node_name, inputs=node_input, outputs=node_output, name="Sample_Node", **attri
         )
         status, result = expect(onma_node.ONMANode_GetNode(), inputs=network_input, outputs=network_output, name="test_sample")
+        if len(result[0]) == 0:
+            status = 0
     except:
         pass
 
@@ -438,9 +441,9 @@ def createTC(node_dict, node_name, input_special, attributes, test_spec):
     for node in node_dict:
         status = False
         if (node == node_name or node_name == "ALL") and node != "Attention" and node != "LSTM" and node != "Bernoulli" \
-            and node != "Dropout" and node != "LeakyRelu" and node != "Mish" and node != "PRelu" and node != "RandomNormalLike" \
-            and node != "ReduceLogSumExp" and node != "RandomUniformLike"  and node != "ConvTranspose" \
-            and node != "LpNormalization" and node != "RoiAlign" and node != "Shrink" and node != "NonMaxSuppression":
+            and node != "RandomNormalLike" and node != "GlobalLpPool" \
+            and node != "RandomUniformLike" \
+            and node != "LpNormalization" and node != "RoiAlign":
             print(f'======{node}======')
             one_special_input = {}
             node_data = node_dict[node]
