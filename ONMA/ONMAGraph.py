@@ -1,11 +1,28 @@
 import numpy as np
 import onnx
+import json
 from onnx.helper import (
     make_node, make_graph, make_model, make_tensor_value_info)
 from onnx.numpy_helper import from_array
 from onnx.checker import check_model
 from onnxruntime import InferenceSession
 from ONMA.ONMANode import ONMANode
+
+def NumpyDataTypeFromTensor(type):
+    if type == 1: return "float32"
+    elif type == 2: return "uint8"
+    elif type == 3: return "int8"
+    elif type == 4: return "uint16"
+    elif type == 5: return "int16"
+    elif type == 6: return "int32"
+    elif type == 7: return "int64"
+    elif type == 8: return "object"
+    elif type == 9: return "bool"
+    elif type == 10: return "float16"
+    elif type == 11: return "float64"
+    elif type == 12: return "uint32"
+    elif type == 13: return "uint64"
+    else: return "float32"
 
 def GetTensorDataTypeFromnp(npdtype):
     datatype = onnx.TensorProto.FLOAT
@@ -91,7 +108,6 @@ def UpdateInitializer(initializers, name, data):
                         tensor_array=values,
                         data_type=GetTensorDataTypeFromnp(values.dtype))
             initializers.append(new_initializer)
-        
 
 def GetPreviousNodeFromInputName(graph, inputs):
     node_res = []
@@ -167,6 +183,104 @@ def UpdateNode(graph, name, data):
         for i, node in enumerate(graph.node):
             if node.name == name:
                 graph.node.pop(i)
+
+def GetAtrributeValue(attribute):
+    result = []
+    items = str(attribute).split("\n")
+    items.pop(0)
+    items.pop(-1)
+    type = items[-1]
+    items.pop(-1)
+    for item in items:
+        data = item.split(": ")
+        if "INT" in type: data = int(data[1])
+        elif "FLOAT" in type: data = float(data[1])
+        elif "STRING" in type:
+            data = str(data[1])
+            data = data.replace("\"", "")
+        else: data = data[1]
+        result.append(data)
+    if len(result) == 1: return result[0]
+    else: return result
+
+def ConvertONNXToJson(graph, output_path):
+    graph_dictionary = {}
+    inputs = {}
+    outputs = {}
+
+    graph_dictionary["graph_name"] = graph.name
+
+    for initializer in graph.initializer:
+        init_dic = {}
+        init_dic["Action"] = "Add"
+        init_dic["Category"] = "Initializer"
+
+        tensor_dic = {}
+        data = onnx.numpy_helper.to_array(initializer)
+        tensor_dic["data"] = data.tolist()
+        tensor_dic["type"] = str(data.dtype)
+
+        init_dic["tensor"] = tensor_dic
+
+        graph_dictionary[initializer.name] = init_dic
+
+    for input in graph.input:
+        input_shape = []
+        for d in input.type.tensor_type.shape.dim:
+            if d.dim_value == 0:
+                input_shape.append(None)
+            else:
+                input_shape.append(d.dim_value)
+        input_dic = {}
+        input_dic["data"] = {"dimensions": input_shape}
+        input_dic["type"] = NumpyDataTypeFromTensor(input.type.tensor_type.elem_type)
+        inputs[input.name] = input_dic
+
+    for output in graph.output:
+        output_shape = []
+        for d in output.type.tensor_type.shape.dim:
+            if d.dim_value == 0:
+                output_shape.append(None)
+            else:
+                output_shape.append(d.dim_value)
+        output_dic = {}
+        output_dic["data"] = {"dimensions": output_shape}
+        output_dic["type"] = NumpyDataTypeFromTensor(output.type.tensor_type.elem_type)
+        outputs[output.name] = output_dic
+    
+    graph_dictionary["inputs"] = inputs
+    graph_dictionary["outputs"] = outputs
+
+    for node in graph.node:
+        node_dic = {}
+        node_dic["Action"] = "Add"
+        node_dic["Category"] = "Node"
+        node_dic["Type"] = node.op_type
+
+        input_dic = {}
+        for nodeinput in node.input:
+            inputname = nodeinput
+            index = 0
+            while inputname in input_dic:
+                inputname = f'{nodeinput}_{index}'
+                index = index + 1
+            input_dic[inputname] = nodeinput
+
+        output_dic = {}
+        for nodeoutput in node.output:
+            output_dic[nodeoutput] = nodeoutput
+
+        node_dic["inputs"] = input_dic
+        node_dic["outputs"] = output_dic
+
+        for attribute in node.attribute:
+            result = GetAtrributeValue(attribute)
+            node_dic[attribute.name] = result
+
+        graph_dictionary[node.name] = node_dic
+
+    with open(output_path, "w") as fp:
+        json.dump(graph_dictionary, fp, indent = 4)
 
 class ONMAGraph:
     def __init__(self):
@@ -253,3 +367,6 @@ class ONMAGraph:
 
         for i, item in enumerate(output_name):
             self.ONMAGraph_GetGraph().output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(output_value[i].dtype), output_value[i].shape))
+
+    def ONMAModel_ConvertONNXToJson(self, output_path):
+        ConvertONNXToJson(self.ONMAGraph_GetGraph(), output_path)
