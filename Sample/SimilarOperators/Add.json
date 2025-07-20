@@ -1,0 +1,135 @@
+{
+    "Add":
+    {
+        "list":
+        [
+            {
+                "graph_name": "Add_sample_1",
+                "inputs": {
+                    "x1": {
+                        "data":  [[[[0.0, 1.0, 2.0, 3.0, 4.0],
+                                    [5.0, 6.0, 7.0, 8.0, 9.0],
+                                    [10.0, 11.0, 12.0, 13.0, 14.0],
+                                    [15.0, 16.0, 17.0, 18.0, 19.0],
+                                    [20.0, 21.0, 22.0, 23.0, 24.0]]]]},
+                    "x2": {"data": [5]}
+                },
+                "outputs": {
+                    "y": "None"
+                },
+                "Add_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Add",
+                    "inputs": {
+                        "x1": "x1",
+                        "x2": "x2"
+                    },
+                    "outputs": {
+                        "y": "y"
+                    }
+                }
+            },
+            {
+                "graph_name": "Add_sample_2",
+                "inputs": {
+                    "x1": {
+                        "data":  [[[[0.0, 1.0, 2.0, 3.0, 4.0],
+                                    [5.0, 6.0, 7.0, 8.0, 9.0],
+                                    [10.0, 11.0, 12.0, 13.0, 14.0],
+                                    [15.0, 16.0, 17.0, 18.0, 19.0],
+                                    [20.0, 21.0, 22.0, 23.0, 24.0]]]]}
+                },
+                "outputs": {
+                    "y": "None"
+                },
+                "x2":
+                {
+                    "Action": "Add",
+                    "Category": "Initializer",
+                    "tensor": {"data": [5], "type": "float32"}
+                },
+                "Add_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Add",
+                    "inputs": {
+                        "x1": "x1",
+                        "x2": "x2"
+                    },
+                    "outputs": {
+                        "y": "y"
+                    }
+                }
+            },
+            {
+                "graph_name": "Conv_sample",
+                "inputs": {
+                    "X1": {"data": "None"},
+                    "W": {"data": [[[[1.0]]]]},
+                    "Bias": {"data": [5.0]}
+                },
+                "outputs": {
+                    "Y": "None"
+                },
+                "Conv_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Conv",
+                    "inputs": {
+                        "x1": "X1",
+                        "w": "W",
+                        "B": "Bias"
+                    },
+                    "outputs": {
+                        "y": "Y"
+                    },
+                    "kernel_shape": [1, 1],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            },
+            {
+                "graph_name": "Conv_sample_2",
+                "inputs": {
+                    "X1": {"data": "None"}
+                },
+                "outputs": {
+                    "Y": "None"
+                },
+                "W":
+                {
+                    "Action": "Add",
+                    "Category": "Initializer",
+                    "tensor": {"data": [[[[1.0]]]], "type": "float32"}
+                },
+                "Bias":
+                {
+                    "Action": "Add",
+                    "Category": "Initializer",
+                    "tensor": {"data": [5.0], "type": "float32"}
+                },
+                "Conv_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Conv",
+                    "inputs": {
+                        "x1": "X1",
+                        "w": "W",
+                        "B": "Bias"
+                    },
+                    "outputs": {
+                        "y": "Y"
+                    },
+                    "kernel_shape": [1, 1],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }
+        ]
+    }
+}
