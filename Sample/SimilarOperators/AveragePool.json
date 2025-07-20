@@ -1,0 +1,114 @@
+{
+    "AveragePool": {
+        "list":
+        [
+            {
+                "graph_name": "AveragePool_sample",
+                "inputs": {
+                    "X": {
+                        "data": [
+                            [
+                                [
+                                    [0.0, 1.0, 2.0, 3.0, 4.0],
+                                    [5.0, 6.0, 7.0, 8.0, 9.0],
+                                    [10.0, 11.0, 12.0, 13.0, 14.0],
+                                    [15.0, 16.0, 17.0, 18.0, 19.0],
+                                    [20.0, 21.0, 22.0, 23.0, 24.0]
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                "outputs": {
+                    "Y": "None"
+                },
+                "AveragePool_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "AveragePool",
+                    "inputs": {
+                        "x": "X"
+                    },
+                    "outputs": {
+                        "y": "Y"
+                    },
+                    "kernel_shape": [2, 2],
+                    "strides": [1, 1],
+                    "pads": [0, 0, 0, 0]
+                }
+            },
+            {
+                "graph_name": "Conv_sample",
+                "inputs": {
+                    "X1": {"data": "None"},
+                    "W": { "data": [
+                        [
+                            [
+                                [0.25, 0.25],
+                                [0.25, 0.25]
+                            ]
+                        ]
+                    ]}
+                },
+                "outputs": {
+                    "Y": "None"
+                },
+                "Conv_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Conv",
+                    "inputs": {
+                        "x1": "X1",
+                        "w": "W"
+                    },
+                    "outputs": {
+                        "y": "Y"
+                    },
+                    "kernel_shape": [2, 2],
+                    "strides": [1, 1],
+                    "pads": [0, 0, 0, 0]
+                }
+            },
+            {
+                "graph_name": "Conv_sample",
+                "inputs": {
+                    "X1": {"data": "None"}
+                },
+                "outputs": {
+                    "Y": "None"
+                },
+                "W":
+                {
+                    "Action": "Add",
+                    "Category": "Initializer",
+                    "tensor": {"data": [
+                                            [
+                                                [
+                                                    [0.25, 0.25],
+                                                    [0.25, 0.25]
+                                                ]
+                                            ]
+                                        ], "type": "float32"}
+                },
+                "Conv_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Conv",
+                    "inputs": {
+                        "x1": "X1",
+                        "w": "W"
+                    },
+                    "outputs": {
+                        "y": "Y"
+                    },
+                    "kernel_shape": [2, 2],
+                    "strides": [1, 1],
+                    "pads": [0, 0, 0, 0]
+                }
+            }
+        ]
+    }
+}
