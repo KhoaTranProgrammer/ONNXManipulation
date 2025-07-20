@@ -1,0 +1,127 @@
+{
+    "Abs":
+    {
+        "list":
+        [
+            {
+                "graph_name": "Abs_sample",
+                "inputs": {
+                    "x": {
+                        "data": [[0.06329948, -1.0832994 , 0.37930292], [0.71035045, -1.6637981 , 1.0044696]]
+                    }
+                },
+                "outputs": {
+                    "y": "None"
+                },
+                "Abs_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Abs",
+                    "inputs": {
+                        "x": "x"
+                    },
+                    "outputs": {
+                        "y": "y"
+                    }
+                }
+            },
+            {
+                "graph_name": "Abs_sample",
+                "inputs": {
+                    "x": "None",
+                    "y": {"data": [-1]}
+                },
+                "outputs": {
+                    "z": "None"
+                },
+                "Mul_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Mul",
+                    "inputs": {
+                        "x": "x",
+                        "y": "y"
+                    },
+                    "outputs": {
+                        "output": "output"
+                    }
+                },
+                "Max_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Max",
+                    "inputs": {
+                        "data_0": "x",
+                        "data_1": "output"
+                    },
+                    "outputs": {
+                        "z": "z"
+                    }
+                }
+            },
+            {
+                "graph_name": "Reshape_sample",
+                "inputs": {
+                    "x": "None",
+                    "y": {"data": [-1]}
+                },
+                "outputs": {
+                    "z": "None"
+                },
+                "Mul_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Mul",
+                    "inputs": {
+                        "x": "x",
+                        "y": "y"
+                    },
+                    "outputs": {
+                        "output": "Mul_Node_output"
+                    }
+                },
+                "Relu_Node_1":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Relu",
+                    "inputs": {
+                        "a": "Mul_Node_output"
+                    },
+                    "outputs": {
+                        "output": "Relu_Node_1_output"
+                    }
+                },
+                "Relu_Node_2":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Relu",
+                    "inputs": {
+                        "a": "x"
+                    },
+                    "outputs": {
+                        "output": "Relu_Node_2_output"
+                    }
+                },
+                "Add_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Add",
+                    "inputs": {
+                        "x1": "Relu_Node_1_output",
+                        "x2": "Relu_Node_2_output"
+                    },
+                    "outputs": {
+                        "y": "z"
+                    }
+                }
+            }
+        ]
+    }
+}
