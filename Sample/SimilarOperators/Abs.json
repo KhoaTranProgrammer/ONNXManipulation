@@ -27,7 +27,7 @@
                 }
             },
             {
-                "graph_name": "Abs_sample",
+                "graph_name": "Abs_sample_2",
                 "inputs": {
                     "x": "None",
                     "y": {"data": [-1]}

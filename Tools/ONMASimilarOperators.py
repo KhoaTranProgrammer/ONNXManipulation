@@ -28,6 +28,20 @@ def compare_outputs(output1, output2, atol=1e-5, rtol=1e-5):
         return False
     return all(np.allclose(out1, out2, atol=atol, rtol=rtol) for out1, out2 in zip(output1, output2))
 
+def generate_input(infer_input):
+    refine_input = {}
+    inputs = infer_input
+    for key, value in inputs.items():
+        if key != "":
+            if "dimensions" in value["data"]:
+                dimensions = value["data"]["dimensions"]
+                try:
+                    value["data"] = np.random.randn(*dimensions).astype(value["data"]["type"])
+                except:
+                    value["data"] = np.random.randn(*dimensions).astype("float32")
+            refine_input[key] = value
+    return refine_input
+
 def main():
     global args
 
@@ -46,16 +60,15 @@ def main():
 
     inf_result = []
 
-    # Get data of first network
-    input_data = json_contents[args.operators]["list"][0]["inputs"]
-    if args.same_input:
-        first_key, first_value = next(iter(input_data.items()))
+    # Refine input to generate data base on dimensions
+    refine_input = generate_input(json_contents[args.operators]["list"][0]["inputs"])
 
     for item in json_contents[args.operators]["list"]:
         if args.same_input:
             # Assign input of next networks by the input of first network
-            _key, _value = next(iter((item["inputs"]).items()))
-            item["inputs"][_key] = first_value
+            for oneinput in item["inputs"]:
+                if oneinput in refine_input:
+                    item["inputs"][oneinput] = refine_input[oneinput]
 
         model.ONMAModel_CreateNetworkFromGraph(item)
         inf = model.ONMAModel_Inference(item["inputs"])

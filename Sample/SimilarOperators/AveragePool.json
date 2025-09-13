@@ -41,7 +41,7 @@
             {
                 "graph_name": "Conv_sample",
                 "inputs": {
-                    "X1": {"data": "None"},
+                    "X": "None",
                     "W": { "data": [
                         [
                             [
@@ -60,7 +60,7 @@
                     "Category": "Node",
                     "Type": "Conv",
                     "inputs": {
-                        "x1": "X1",
+                        "x1": "X",
                         "w": "W"
                     },
                     "outputs": {
@@ -74,7 +74,7 @@
             {
                 "graph_name": "Conv_sample",
                 "inputs": {
-                    "X1": {"data": "None"}
+                    "X": "None"
                 },
                 "outputs": {
                     "Y": "None"
@@ -98,7 +98,7 @@
                     "Category": "Node",
                     "Type": "Conv",
                     "inputs": {
-                        "x1": "X1",
+                        "x1": "X",
                         "w": "W"
                     },
                     "outputs": {

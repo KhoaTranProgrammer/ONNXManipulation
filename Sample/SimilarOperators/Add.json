@@ -34,12 +34,7 @@
             {
                 "graph_name": "Add_sample_2",
                 "inputs": {
-                    "x1": {
-                        "data":  [[[[0.0, 1.0, 2.0, 3.0, 4.0],
-                                    [5.0, 6.0, 7.0, 8.0, 9.0],
-                                    [10.0, 11.0, 12.0, 13.0, 14.0],
-                                    [15.0, 16.0, 17.0, 18.0, 19.0],
-                                    [20.0, 21.0, 22.0, 23.0, 24.0]]]]}
+                    "x1": "None"
                 },
                 "outputs": {
                     "y": "None"
@@ -67,7 +62,7 @@
             {
                 "graph_name": "Conv_sample",
                 "inputs": {
-                    "X1": {"data": "None"},
+                    "x1": "None",
                     "W": {"data": [[[[1.0]]]]},
                     "Bias": {"data": [5.0]}
                 },
@@ -80,7 +75,7 @@
                     "Category": "Node",
                     "Type": "Conv",
                     "inputs": {
-                        "x1": "X1",
+                        "x1": "x1",
                         "w": "W",
                         "B": "Bias"
                     },
@@ -95,7 +90,7 @@
             {
                 "graph_name": "Conv_sample_2",
                 "inputs": {
-                    "X1": {"data": "None"}
+                    "x1": "None"
                 },
                 "outputs": {
                     "Y": "None"
@@ -118,7 +113,7 @@
                     "Category": "Node",
                     "Type": "Conv",
                     "inputs": {
-                        "x1": "X1",
+                        "x1": "x1",
                         "w": "W",
                         "B": "Bias"
                     },
