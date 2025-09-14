@@ -1,0 +1,215 @@
+{
+    "Einsum": {
+        "list":
+        [
+            {
+                "graph_name": "Einsum_sample",
+                "inputs": {
+                    "X": {
+                        "data": {"dimensions": [4, 2, 100, 128]},
+                        "type": "float32"
+                    },
+                    "X2": {
+                        "data": {"dimensions": [2, 128, 64, 64]},
+                        "type": "float32"
+                    }
+                },
+                "outputs": {
+                    "Y": "None"
+                },
+                "Einsum_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Einsum",
+                    "inputs": {
+                        "X": "X",
+                        "X2": "X2"
+                    },
+                    "outputs": {
+                        "y": "Y"
+                    },
+                    "equation": "lbqc,bchw->lbqhw"
+                }
+            },
+            {
+                "graph_name": "Einsum_sample_2",
+                "inputs": {
+                    "X": {
+                        "data": "None"
+                    },
+                    "X2": {
+                        "data": "None"
+                    }
+                },
+                "outputs": {
+                    "Y": "None"
+                },
+                "shape_1":
+                {
+                    "Action": "Add",
+                    "Category": "Initializer",
+                    "tensor": {"data": [2,128,4096], "type": "int64"}
+                },
+                "Reshape_Node_1":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Reshape",
+                    "inputs": {
+                        "data": "X2",
+                        "shape": "shape_1"
+                    },
+                    "outputs": {
+                        "y": "Reshape_Node_1_output"
+                    }
+                },
+                "MatMul_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "MatMul",
+                    "inputs": {
+                        "A": "X",
+                        "B": "Reshape_Node_1_output"
+                    },
+                    "outputs": {
+                        "y": "MatMul_Node_output"
+                    }
+                },
+                "shape_2":
+                {
+                    "Action": "Add",
+                    "Category": "Initializer",
+                    "tensor": {"data": [4,2,100,64,64], "type": "int64"}
+                },
+                "Reshape_Node_2":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Reshape",
+                    "inputs": {
+                        "data": "MatMul_Node_output",
+                        "shape": "shape_2"
+                    },
+                    "outputs": {
+                        "y": "Y"
+                    }
+                }
+            }
+        ]
+    },
+    "Einsum_2": {
+        "list":
+        [
+            {
+                "graph_name": "Einsum_sample",
+                "inputs": {
+                    "X": {
+                        "data": {"dimensions": [1, 50, 100]},
+                        "type": "float32"
+                    },
+                    "X2": {
+                        "data": {"dimensions": [1, 50, 64, 64]},
+                        "type": "float32"
+                    }
+                },
+                "outputs": {
+                    "Y": "None"
+                },
+                "Einsum_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Einsum",
+                    "inputs": {
+                        "X": "X",
+                        "X2": "X2"
+                    },
+                    "outputs": {
+                        "y": "Y"
+                    },
+                    "equation": "bqc,bqhw->bchw"
+                }
+            },
+            {
+                "graph_name": "Einsum_sample_2",
+                "inputs": {
+                    "X": {
+                        "data": "None"
+                    },
+                    "X2": {
+                        "data": "None"
+                    }
+                },
+                "outputs": {
+                    "Y": "None"
+                },
+                "Transpose_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Transpose",
+                    "inputs": {
+                        "data": "X"
+                    },
+                    "outputs": {
+                        "y": "Transpose_Node_output"
+                    },
+                    "perm": [0, 2, 1]
+                },
+                "shape_1":
+                {
+                    "Action": "Add",
+                    "Category": "Initializer",
+                    "tensor": {"data": [1,50,4096], "type": "int64"}
+                },
+                "Reshape_Node_1":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Reshape",
+                    "inputs": {
+                        "data": "X2",
+                        "shape": "shape_1"
+                    },
+                    "outputs": {
+                        "y": "Reshape_Node_1_output"
+                    }
+                },
+                "MatMul_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "MatMul",
+                    "inputs": {
+                        "A": "Transpose_Node_output",
+                        "B": "Reshape_Node_1_output"
+                    },
+                    "outputs": {
+                        "y": "MatMul_Node_output"
+                    }
+                },
+                "shape_2":
+                {
+                    "Action": "Add",
+                    "Category": "Initializer",
+                    "tensor": {"data": [1,100,64,64], "type": "int64"}
+                },
+                "Reshape_Node_2":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Reshape",
+                    "inputs": {
+                        "data": "MatMul_Node_output",
+                        "shape": "shape_2"
+                    },
+                    "outputs": {
+                        "y": "Y"
+                    }
+                }
+            }
+        ]
+    }
+}
