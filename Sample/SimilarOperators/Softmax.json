@@ -90,6 +90,74 @@
                         "y": "Y"
                     }
                 }
+            },
+            {
+                "graph_name": "Softmax_sample_3",
+                "inputs": {
+                    "X": {
+                        "data": "None"
+                    }
+                },
+                "outputs": {
+                    "Y": "None"
+                },
+                "axes":
+                {
+                    "Action": "Add",
+                    "Category": "Initializer",
+                    "tensor": {"data": [0], "type": "int64"}
+                },
+                "ReduceMax_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "ReduceMax",
+                    "inputs": {
+                        "x": "X",
+                        "axes": "axes"
+                    },
+                    "outputs": {
+                        "y": "ReduceMax_Node_output"
+                    }
+                },
+                "Exp_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Exp",
+                    "inputs": {
+                        "x": "X"
+                    },
+                    "outputs": {
+                        "y": "Exp_Node_output"
+                    }
+                },
+                "ReduceSum_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "ReduceSum",
+                    "inputs": {
+                        "x": "Exp_Node_output",
+                        "axes": "axes"
+                    },
+                    "outputs": {
+                        "y": "ReduceSum_Node_output"
+                    }
+                },
+                "Div_Node":
+                {
+                    "Action": "Add",
+                    "Category": "Node",
+                    "Type": "Div",
+                    "inputs": {
+                        "x1": "Exp_Node_output",
+                        "x2": "ReduceSum_Node_output"
+                    },
+                    "outputs": {
+                        "y": "Y"
+                    }
+                }
             }
         ]
     },
