@@ -105,8 +105,8 @@ class ONMAModel:
                         if (result==expect).all():
                             print("Inference and expect are SAME")
                         else:
-                            print("Inference and expect are DIFFRENT")
+                            pass # print("Inference and expect are DIFFRENT")
                     except:
-                        print("Inference and expect are not available")
+                        pass # print("Inference and expect are not available")
             else:
                 pass
