@@ -4143,7 +4143,7 @@ def main():
 
     if args.input != "":
         # Use input from user
-        input_list = (args.input).split(" ")
+        input_list = (args.input).split(",")
 
         for i in range(0, len(input_list)):
             data_fromnpy = np.load(input_list[i], allow_pickle=True)
