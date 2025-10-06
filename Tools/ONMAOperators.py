@@ -67,10 +67,7 @@ default_input = \
             }
         },
         "outputs": {
-            "Y": {
-                "data": [[0.06329948, 1.0832994 , 0.37930292], [0.71035045, 1.6637981 , 1.0044696]],
-                "type": "float64"
-            }
+            "Y": None
         },
         "Abs_Node":
         {
@@ -4136,12 +4133,30 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--operator", "-op", help="Operator name", default="Abs")
+    parser.add_argument("--input", "-in", help="Input lists. Support: npy, png, jpg", default="")
     args = parser.parse_args()
 
     print(f'Running for operator {args.operator}')
+
+    default_input_of_node = default_input[args.operator]["inputs"]
+    default_input_of_node = list(default_input_of_node.keys())
+
+    if args.input != "":
+        # Use input from user
+        input_list = (args.input).split(" ")
+
+        for i in range(0, len(input_list)):
+            data_fromnpy = np.load(input_list[i], allow_pickle=True)
+            data = data_fromnpy.tolist()
+            data_dict = {}
+            data_dict['data'] = data
+            data_dict['type'] = str(data_fromnpy.dtype)
+            default_input[args.operator]["inputs"][default_input_of_node[i]] = data_dict
+
     model = ONMAModel()
     model.ONMAModel_CreateNetworkFromGraph(default_input[args.operator])
     inf1 = model.ONMAModel_Inference(default_input[args.operator]["inputs"])
+
     model.ONMAModel_DisplayInformation(inf1, **default_input[args.operator])
 
 if main() == False:
