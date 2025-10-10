@@ -4134,6 +4134,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--operator", "-op", help="Operator name", default="Abs")
     parser.add_argument("--input", "-in", help="Input lists. Support: npy, png, jpg", default="")
+    parser.add_argument("--attributes_list", "-al", help="JSON format that stores the list of attributes and value of 1 node", default="")
     args = parser.parse_args()
 
     print(f'Running for operator {args.operator}')
@@ -4152,6 +4153,26 @@ def main():
             data_dict['data'] = data
             data_dict['type'] = str(data_fromnpy.dtype)
             default_input[args.operator]["inputs"][default_input_of_node[i]] = data_dict
+
+    if args.attributes_list != "":
+        with open(args.attributes_list, 'r') as file:
+            attributes = json.load(file)
+
+            node_name = ""
+            node_attr = []
+            # Remove old attributes from node
+            for item in default_input[args.operator]:
+                if item not in ["graph_name", "inputs", "outputs"]:
+                    node_name = item
+                    for att_item in default_input[args.operator][item]:
+                        if att_item not in ["Action", "Category", "Type", "inputs", "outputs"]:
+                            node_attr.append(att_item)
+
+            for one_attr in node_attr: (default_input[args.operator][node_name]).pop(one_attr)
+
+            # Insert new attributes
+            for new_attr in attributes: default_input[args.operator][node_name][new_attr] = attributes[new_attr]
+            print(default_input[args.operator][node_name])
 
     model = ONMAModel()
     model.ONMAModel_CreateNetworkFromGraph(default_input[args.operator])
