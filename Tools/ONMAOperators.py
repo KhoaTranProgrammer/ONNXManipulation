@@ -4152,7 +4152,10 @@ def main():
             data_dict = {}
             data_dict['data'] = data
             data_dict['type'] = str(data_fromnpy.dtype)
-            default_input[args.operator]["inputs"][default_input_of_node[i]] = data_dict
+            try:
+                default_input[args.operator]["inputs"][default_input_of_node[i]] = data_dict
+            except:
+                default_input[args.operator]["inputs"][str(i)] = data_dict
 
     if args.attributes_list != "":
         with open(args.attributes_list, 'r') as file:
