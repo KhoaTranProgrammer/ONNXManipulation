@@ -5,6 +5,7 @@ import numpy as np
 import json
 import os
 from pathlib import Path
+import matplotlib.pyplot as plt
 
 file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 file_path = Path(file_path).as_posix()
@@ -62,8 +63,8 @@ default_input = \
         "graph_name": "Reshape_sample",
         "inputs": {
             "X": {
-                "data": [[0.06329948, -1.0832994 , 0.37930292], [0.71035045, -1.6637981 , 1.0044696]],
-                "type": "float64"
+                "data": np.random.rand(5, 5).astype(np.float32),
+                "type": "float32"
             }
         },
         "outputs": {
@@ -4128,6 +4129,62 @@ default_input = \
     },
 }
 
+def createBlankImage(l, c):
+    b = 12
+    w = 32
+    blank_image = np.empty((l, c))
+    for line in range(0, l):
+        if line % 2 == 0:
+            for column in range(0, c):
+                if column % 2 == 0: blank_image[line, column] = b
+                else: blank_image[line, column] = w
+        else:
+            for column in range(0, c):
+                if column % 2 == 0: blank_image[line, column] = w
+                else: blank_image[line, column] = b
+    return blank_image
+
+# Inputs is the json format. For example:
+# "inputs": {
+#             "X": {
+#                 "data": [[0.06329948, -1.0832994 , 0.37930292], [0.71035045, -1.6637981 , 1.0044696]],
+#                 "type": "float64"
+#             }
+#         }
+#
+# Outputs is the list of array. For example:
+# [
+#   [[0.06329948, -1.0832994, 0.37930292], [0.71035045, -1.6637981, 1.0044696]]
+# ]
+def showInputOutputAsImage(inputs, outputs):
+    
+    # Input
+    for one_input in inputs:
+        image_input = np.array(inputs[one_input]["data"])
+        blank_image = createBlankImage(image_input.shape[0], image_input.shape[1])
+        fig, ax = plt.subplots()
+        ax.imshow(blank_image, cmap='gray')
+        plt.title(f'Input: {one_input}')
+
+        for i in range(image_input.shape[0]):
+            for j in range(image_input.shape[1]):
+                ax.text(j, i, str(round(image_input[i, j], 2)), color='r', ha='center', va='center')
+
+    # Output
+    for i in range(0, len(outputs)):
+        image_output = np.array(outputs[i])
+        fig2, ax = plt.subplots()
+        blank_image = createBlankImage(image_output.shape[0], image_output.shape[1])
+        ax.imshow(blank_image, cmap='gray')
+        plt.title(f'Output: {i}')
+
+        for i in range(image_output.shape[0]):
+            for j in range(image_output.shape[1]):
+                ax.text(j, i, str(round(image_output[i, j], 2)), color='r', ha='center', va='center')
+
+    # Display images
+    plt.show()
+
 def main():
     global args
 
@@ -4182,6 +4239,8 @@ def main():
     inf1 = model.ONMAModel_Inference(default_input[args.operator]["inputs"])
 
     model.ONMAModel_DisplayInformation(inf1, **default_input[args.operator])
+
+    showInputOutputAsImage(default_input[args.operator]["inputs"], inf1)
 
 if main() == False:
     sys.exit(-1)
