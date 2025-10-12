@@ -20,7 +20,11 @@ from onnx.backend.test.case.node.layernormalization import calculate_normalized_
 Purpose: Tool to demonstrate ONNX behavior
 
 Usage:
+Tool supports the default input for operators.
 Run this tool by command: python Tools/ONMAOperators.py --operator Abs
+
+If user want to use custom input.
+Run this command: python Tools/ONMAOperators.py --input Sample/fp32_1x3x128x128.npy,Sample/fp32_1x3x3x3.npy -op Conv -al Sample/Conv_Attributes.json
 """
 
 global args
@@ -4176,10 +4180,12 @@ def showInputOutputAsImage(inputs, outputs):
         except: channel = 1
         for c in range(0, channel):
             one_channel = extractOneChannelFromImage(image_input, c)
-            print(f'Input type: {one_channel.dtype}')
+            one_channel = np.round(np.array(one_channel, dtype=inputs[one_input]["type"]), 2)
+            one_channel_color = one_channel.copy()
+            one_channel_color = np.where(one_channel_color < 0, one_channel_color * -1 + 0.1, one_channel_color)
             if one_channel.all() != None:
                 fig, ax = plt.subplots()
-                ax.imshow(one_channel, cmap='gray')
+                ax.imshow(one_channel_color, cmap='gray')
                 plt.title(f'Input: {one_input} - Channel: {c}')
 
                 for i in range(one_channel.shape[0]):
@@ -4193,15 +4199,17 @@ def showInputOutputAsImage(inputs, outputs):
         except: channel = 1
         for c in range(0, channel):
             one_channel = extractOneChannelFromImage(image_output, c)
-            print(f'Output type: {one_channel.dtype}')
+            one_channel = np.round(one_channel, 2)
+            one_channel_color = one_channel.copy()
+            one_channel_color = np.where(one_channel_color < 0, one_channel_color * -1 + 0.1, one_channel_color)
             if one_channel.all() != None:
-                fig2, ax = plt.subplots()
-                ax.imshow(one_channel, cmap='gray')
+                fig2, ax2 = plt.subplots()
+                ax2.imshow(one_channel_color, cmap='gray')
                 plt.title(f'Output: {i} - Channel: {c}')
 
                 for i in range(one_channel.shape[0]):
                     for j in range(one_channel.shape[1]):
-                        ax.text(j, i, str(round(one_channel[i, j], 2)), color='r', ha='center', va='center')
+                        ax2.text(j, i, str(round(one_channel[i, j], 2)), color='r', ha='center', va='center')
 
     # Display images
     plt.show()
