@@ -63,7 +63,11 @@ default_input = \
         "graph_name": "Reshape_sample",
         "inputs": {
             "X": {
-                "data": np.random.rand(5, 5).astype(np.float32),
+                "data":[[-0.40724117, 0.23223414, 0.13248764, 0.05342718, 0.72559434],
+                        [-0.01142746, 0.77058077, 0.14694664, 0.07952208, 0.08960304],
+                        [0.6720478,  -0.24536721, 0.42053947, -0.5573688,  0.8605512 ],
+                        [0.7270443,  0.2703279,  -0.1314828,  0.05537432, 0.30159864],
+                        [0.26211816, 0.45614058, 0.68328136, -0.6956254,  -0.28351885]],
                 "type": "float32"
             }
         },
@@ -4144,6 +4148,13 @@ def createBlankImage(l, c):
                 else: blank_image[line, column] = b
     return blank_image
 
+# Only support 4 dimension and 3 channel as maximum
+def extractOneChannelFromImage(images, c):
+    if len(images.shape) > 4: return None
+    if len(images.shape) == 2: return images
+    if len(images.shape) == 3: return images[c]
+    if len(images.shape) == 4: return images[0][c]
+
 # Inputs is the json format. For example:
 # "inputs": {
 #             "X": {
@@ -4157,30 +4168,40 @@ def createBlankImage(l, c):
 #   [[0.06329948, -1.0832994, 0.37930292], [0.71035045, -1.6637981, 1.0044696]]
 # ]
 def showInputOutputAsImage(inputs, outputs):
-    
+
     # Input
     for one_input in inputs:
         image_input = np.array(inputs[one_input]["data"])
-        blank_image = createBlankImage(image_input.shape[0], image_input.shape[1])
-        fig, ax = plt.subplots()
-        ax.imshow(blank_image, cmap='gray')
-        plt.title(f'Input: {one_input}')
+        try: channel = image_input.shape[-3]
+        except: channel = 1
+        for c in range(0, channel):
+            one_channel = extractOneChannelFromImage(image_input, c)
+            print(f'Input type: {one_channel.dtype}')
+            if one_channel.all() != None:
+                fig, ax = plt.subplots()
+                ax.imshow(one_channel, cmap='gray')
+                plt.title(f'Input: {one_input} - Channel: {c}')
 
-        for i in range(image_input.shape[0]):
-            for j in range(image_input.shape[1]):
-                ax.text(j, i, str(round(image_input[i, j], 2)), color='r', ha='center', va='center')
+                for i in range(one_channel.shape[0]):
+                    for j in range(one_channel.shape[1]):
+                        ax.text(j, i, str(round(one_channel[i, j], 2)), color='r', ha='center', va='center')
 
     # Output
     for i in range(0, len(outputs)):
         image_output = np.array(outputs[i])
-        fig2, ax = plt.subplots()
-        blank_image = createBlankImage(image_output.shape[0], image_output.shape[1])
-        ax.imshow(blank_image, cmap='gray')
-        plt.title(f'Output: {i}')
+        try: channel = image_output.shape[-3]
+        except: channel = 1
+        for c in range(0, channel):
+            one_channel = extractOneChannelFromImage(image_output, c)
+            print(f'Output type: {one_channel.dtype}')
+            if one_channel.all() != None:
+                fig2, ax = plt.subplots()
+                ax.imshow(one_channel, cmap='gray')
+                plt.title(f'Output: {i} - Channel: {c}')
 
-        for i in range(image_output.shape[0]):
-            for j in range(image_output.shape[1]):
-                ax.text(j, i, str(round(image_output[i, j], 2)), color='r', ha='center', va='center')
+                for i in range(one_channel.shape[0]):
+                    for j in range(one_channel.shape[1]):
+                        ax.text(j, i, str(round(one_channel[i, j], 2)), color='r', ha='center', va='center')
 
     # Display images
     plt.show()
