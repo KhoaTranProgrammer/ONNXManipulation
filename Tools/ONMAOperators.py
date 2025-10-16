@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import matplotlib.pyplot as plt
+from PIL import Image
 
 file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 file_path = Path(file_path).as_posix()
@@ -4159,6 +4160,12 @@ def extractOneChannelFromImage(images, c):
     if len(images.shape) == 3: return images[c]
     if len(images.shape) == 4: return images[0][c]
 
+# Only support 4 dimension and 3 channel as maximum
+def getChannelFromImage(images):
+    if len(images.shape) >= 4: return images.shape[-3]
+    if len(images.shape) == 2: return 1
+    if len(images.shape) == 3: return images.shape[0]
+
 # Inputs is the json format. For example:
 # "inputs": {
 #             "X": {
@@ -4171,12 +4178,12 @@ def extractOneChannelFromImage(images, c):
 # [
 #   [[0.06329948, -1.0832994, 0.37930292], [0.71035045, -1.6637981, 1.0044696]]
 # ]
-def showInputOutputAsImage(inputs, outputs):
+def showInputOutputAsImage(inputs, outputs, showValues=False):
 
     # Input
     for one_input in inputs:
         image_input = np.array(inputs[one_input]["data"])
-        try: channel = image_input.shape[-3]
+        try: channel = getChannelFromImage(image_input)
         except: channel = 1
         for c in range(0, channel):
             one_channel = extractOneChannelFromImage(image_input, c)
@@ -4188,14 +4195,15 @@ def showInputOutputAsImage(inputs, outputs):
                 ax.imshow(one_channel_color, cmap='gray')
                 plt.title(f'Input: {one_input} - Channel: {c}')
 
-                for i in range(one_channel.shape[0]):
-                    for j in range(one_channel.shape[1]):
-                        ax.text(j, i, str(round(one_channel[i, j], 2)), color='r', ha='center', va='center')
+                if showValues:
+                    for i in range(one_channel.shape[0]):
+                        for j in range(one_channel.shape[1]):
+                            ax.text(j, i, str(round(one_channel[i, j], 2)), color='r', ha='center', va='center')
 
     # Output
     for i in range(0, len(outputs)):
         image_output = np.array(outputs[i])
-        try: channel = image_output.shape[-3]
+        try: channel = channel = getChannelFromImage(image_output)
         except: channel = 1
         for c in range(0, channel):
             one_channel = extractOneChannelFromImage(image_output, c)
@@ -4207,12 +4215,21 @@ def showInputOutputAsImage(inputs, outputs):
                 ax2.imshow(one_channel_color, cmap='gray')
                 plt.title(f'Output: {i} - Channel: {c}')
 
-                for i in range(one_channel.shape[0]):
-                    for j in range(one_channel.shape[1]):
-                        ax2.text(j, i, str(round(one_channel[i, j], 2)), color='r', ha='center', va='center')
+                if showValues:
+                    for i in range(one_channel.shape[0]):
+                        for j in range(one_channel.shape[1]):
+                            ax2.text(j, i, str(round(one_channel[i, j], 2)), color='r', ha='center', va='center')
 
     # Display images
     plt.show()
+
+def is_valid_image_pillow(file_name):
+    try:
+        with Image.open(file_name) as img:
+            img.verify()
+            return True
+    except (IOError, SyntaxError):
+        return False
 
 def main():
     global args
@@ -4221,6 +4238,7 @@ def main():
     parser.add_argument("--operator", "-op", help="Operator name", default="Abs")
     parser.add_argument("--input", "-in", help="Input lists. Support: npy, png, jpg", default="")
     parser.add_argument("--attributes_list", "-al", help="JSON format that stores the list of attributes and value of 1 node", default="")
+    parser.add_argument("--showValues", "-sv", default=False, action="store_true", help="Shows output with pixel value")
     args = parser.parse_args()
 
     print(f'Running for operator {args.operator}')
@@ -4233,8 +4251,16 @@ def main():
         input_list = (args.input).split(",")
 
         for i in range(0, len(input_list)):
-            data_fromnpy = np.load(input_list[i], allow_pickle=True)
-            data = data_fromnpy.tolist()
+            if is_valid_image_pillow(input_list[i]):
+                img = Image.open(input_list[i])
+                data_fromnpy = np.array(img)
+                try: data_fromnpy = np.transpose(data_fromnpy, (2, 0, 1))
+                except: pass
+                data = data_fromnpy.tolist()
+            else:
+                data_fromnpy = np.load(input_list[i], allow_pickle=True)
+                data = data_fromnpy.tolist()
+
             data_dict = {}
             data_dict['data'] = data
             data_dict['type'] = str(data_fromnpy.dtype)
@@ -4269,7 +4295,7 @@ def main():
 
     model.ONMAModel_DisplayInformation(inf1, **default_input[args.operator])
 
-    showInputOutputAsImage(default_input[args.operator]["inputs"], inf1)
+    showInputOutputAsImage(default_input[args.operator]["inputs"], inf1, args.showValues)
 
 if main() == False:
     sys.exit(-1)
