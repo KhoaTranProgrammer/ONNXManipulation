@@ -302,6 +302,13 @@ class ONMAGraph:
         for item in data:
             try:
                 if data[item]["Category"] == "Initializer":
+                    if "dimensions" in data[item]["tensor"]["data"]:
+                        dimensions = data[item]["tensor"]["data"]["dimensions"]
+                        data_type = data[item]["tensor"]["type"]
+                        try:
+                            data[item]["tensor"]["data"] = np.random.randn(*dimensions).astype(data_type)
+                        except:
+                            data[item]["tensor"]["data"] = np.random.randn(*dimensions).astype("float32")
                     if type(data[item]["tensor"]) is list:
                         data[item]["tensor"] = np.array(data[item]["tensor"])
                     UpdateInitializer(self._graph.initializer, item, data[item])
@@ -328,7 +335,7 @@ class ONMAGraph:
                     except:
                         value_np = np.array(value["data"], dtype='float32')
                 refine_input[key] = value_np
-        
+
         # Create graph input
         graph_input = []
         for i in range(0, len(list(refine_input.keys()))):
