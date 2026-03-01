@@ -28,10 +28,11 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", "-in", help="ONNX file")
     parser.add_argument("--output", "-out", help="JSON file")
+    parser.add_argument("--store_npy", "-sn", default=False, action="store_true", help="Stores initializers to npy files")
     args = parser.parse_args()
     model = ONMAModel()
 
-    model.ONMAModel_ConvertONNXToJson(args.input, args.output)
+    model.ONMAModel_ConvertONNXToJson(args.input, args.output, args.store_npy)
 
 if main() == False:
     sys.exit(-1)

@@ -203,7 +203,7 @@ def GetAtrributeValue(attribute):
     if len(result) == 1: return result[0]
     else: return result
 
-def ConvertONNXToJson(graph, output_path):
+def ConvertONNXToJson(graph, output_path, store_npy=False):
     graph_dictionary = {}
     inputs = {}
     outputs = {}
@@ -217,7 +217,14 @@ def ConvertONNXToJson(graph, output_path):
 
         tensor_dic = {}
         data = onnx.numpy_helper.to_array(initializer)
-        tensor_dic["data"] = data.tolist()
+        if store_npy:
+            npy_data = {}
+            npy_data["npy"] = f'{initializer.name}.npy'
+            np.save(f'{initializer.name}.npy', data)
+            tensor_dic["data"] = npy_data
+        else:
+            data = onnx.numpy_helper.to_array(initializer)
+            tensor_dic["data"] = data.tolist()
         tensor_dic["type"] = str(data.dtype)
 
         init_dic["tensor"] = tensor_dic
@@ -309,6 +316,9 @@ class ONMAGraph:
                             data[item]["tensor"]["data"] = np.random.randn(*dimensions).astype(data_type)
                         except:
                             data[item]["tensor"]["data"] = np.random.randn(*dimensions).astype("float32")
+                    if "npy" in data[item]["tensor"]["data"]:
+                        data_fromnpy = np.load(data[item]["tensor"]["data"]["npy"], allow_pickle=True)
+                        data[item]["tensor"]["data"] = data_fromnpy.tolist()
                     if type(data[item]["tensor"]) is list:
                         data[item]["tensor"] = np.array(data[item]["tensor"])
                     UpdateInitializer(self._graph.initializer, item, data[item])
@@ -375,5 +385,5 @@ class ONMAGraph:
         for i, item in enumerate(output_name):
             self.ONMAGraph_GetGraph().output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(output_value[i].dtype), output_value[i].shape))
 
-    def ONMAModel_ConvertONNXToJson(self, output_path):
-        ConvertONNXToJson(self.ONMAGraph_GetGraph(), output_path)
+    def ONMAModel_ConvertONNXToJson(self, output_path, store_npy=False):
+        ConvertONNXToJson(self.ONMAGraph_GetGraph(), output_path, store_npy)

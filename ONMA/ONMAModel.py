@@ -24,11 +24,11 @@ class ONMAModel:
         onnx.checker.check_model(inferred_model)
         onnx.save(inferred_model, output_path)
 
-    def ONMAModel_ConvertONNXToJson(self, input_path, output_path):
+    def ONMAModel_ConvertONNXToJson(self, input_path, output_path, store_npy=False):
         self._model = onnx.load(input_path)
         onma_graph = ONMAGraph()
         onma_graph.ONMAGraph_SetGraph(self._model.graph)
-        onma_graph.ONMAModel_ConvertONNXToJson(output_path)
+        onma_graph.ONMAModel_ConvertONNXToJson(output_path, store_npy)
 
     def ONMAModel_Inference(self, infer_input):
         refine_input = {}
