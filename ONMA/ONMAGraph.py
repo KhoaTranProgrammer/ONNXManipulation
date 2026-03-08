@@ -133,7 +133,14 @@ def UpdateNode(graph, name, data):
         data.pop("Type")
         data.pop("inputs")
         data.pop("outputs")
-        
+
+        try:
+            if "values" in data:
+                if type(data["values"]) is list:
+                    data["values"] = np.array(data["values"])
+        except:
+            pass
+
         onma_node = ONMANode()
         onma_node.ONMANode_MakeNode(
             op_type, inputs=inputs, outputs=outputs, name=name, **data
@@ -280,9 +287,33 @@ def ConvertONNXToJson(graph, output_path, store_npy=False):
         node_dic["inputs"] = input_dic
         node_dic["outputs"] = output_dic
 
-        for attribute in node.attribute:
-            result = GetAtrributeValue(attribute)
-            node_dic[attribute.name] = result
+        if node.op_type == "Constant":
+            items = str((node.attribute[0]).t).split("\n")
+
+            dimension = []
+            data_type = 1
+            name = ""
+            data_list = []
+            for item in items:
+                item_list = str(item).split(": ")
+                if 'dims' in item:
+                    value = int(item_list[1])
+                    dimension.append(value)
+                elif 'data_type' in item:
+                    data_type = int(item_list[1])
+                elif 'name' in item:
+                    name = item_list[1]
+                else:
+                    if item != "":
+                        data_list.append(item_list[1])
+
+            data_list = np.array(data_list, dtype=NumpyDataTypeFromTensor(data_type))
+            data_list = data_list.reshape(dimension)
+            node_dic["values"] = data_list.tolist()
+        else:
+            for attribute in node.attribute:
+                result = GetAtrributeValue(attribute)
+                node_dic[attribute.name] = result
 
         graph_dictionary[node.name] = node_dic
 
