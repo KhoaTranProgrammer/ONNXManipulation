@@ -8,6 +8,7 @@ import onnxruntime
 import re
 import itertools
 import os
+import jsbeautifier
 from pathlib import Path
 from onnx.backend.test.case.node import _extract_value_info
 from onnx.backend.test.case.node.affinegrid import create_theta_2d
@@ -177,7 +178,7 @@ def convert2Dictionary(node_name, node_input, node_output, node_attri, network_i
         one_input["data"] = data
         one_input["type"] = str(data.dtype)
         inputs[input_name] = one_input
-
+        
     for i in range(0, len(node_output)):
         one_output = {}
         output_name = node_output[i] # X
@@ -460,7 +461,10 @@ def createTC(node_dict, node_name, input_special, attributes, test_spec):
             exclude_node.append(node)
 
     with open(test_spec, "w") as fp:
-        json.dump(output_dictionary, fp, indent = 4, cls=NumpyEncoder)
+        options = jsbeautifier.default_options()
+        options.indent_size = 4
+        refine_json = (jsbeautifier.beautify(json.dumps(output_dictionary, cls=NumpyEncoder), options))
+        fp.write(refine_json)
 
 def main():
     global args
