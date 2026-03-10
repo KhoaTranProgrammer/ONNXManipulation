@@ -1,0 +1,110 @@
+{
+    "HannWindow_000": {
+        "graph_name": "HannWindow_Graph",
+        "inputs": {
+            "size": {
+                "data": [10],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [0.0, 0.11697778105735779, 0.41317591071128845, 0.75, 0.9698463082313538, 0.9698463082313538, 0.75, 0.41317591071128845, 0.11697778105735779, 0.0],
+                "type": "float32"
+            }
+        },
+        "HannWindow_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "HannWindow",
+            "periodic": 0,
+            "inputs": {
+                "size": "size"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "HannWindow_001": {
+        "graph_name": "HannWindow_Graph",
+        "inputs": {
+            "size": {
+                "data": [10],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [0.0, 0.09549150615930557, 0.345491498708725, 0.6545084714889526, 0.9045084714889526, 1.0, 0.9045084714889526, 0.6545084714889526, 0.345491498708725, 0.09549150615930557],
+                "type": "float32"
+            }
+        },
+        "HannWindow_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "HannWindow",
+            "periodic": 1,
+            "inputs": {
+                "size": "size"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "HannWindow_002": {
+        "graph_name": "HannWindow_Graph",
+        "inputs": {
+            "size": {
+                "data": [10],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [0.0, 0.11697778105735779, 0.41317591071128845, 0.75, 0.9698463082313538, 0.9698463082313538, 0.75, 0.41317591071128845, 0.11697778105735779, 0.0],
+                "type": "float32"
+            }
+        },
+        "HannWindow_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "HannWindow",
+            "periodic": 0,
+            "inputs": {
+                "size": "size"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "HannWindow_003": {
+        "graph_name": "HannWindow_Graph",
+        "inputs": {
+            "size": {
+                "data": [10],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [0.0, 0.09549150615930557, 0.345491498708725, 0.6545084714889526, 0.9045084714889526, 1.0, 0.9045084714889526, 0.6545084714889526, 0.345491498708725, 0.09549150615930557],
+                "type": "float32"
+            }
+        },
+        "HannWindow_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "HannWindow",
+            "periodic": 1,
+            "inputs": {
+                "size": "size"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    }
+}

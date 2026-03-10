@@ -1,0 +1,326 @@
+{
+    "IsInf_000": {
+        "graph_name": "IsInf_Graph",
+        "inputs": {
+            "X": {
+                "data": [-1.7001953125, NaN, Infinity, -3.599609375, -Infinity, Infinity],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [false, false, true, false, true, true],
+                "type": "bool"
+            }
+        },
+        "IsInf_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "IsInf",
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "IsInf_001": {
+        "graph_name": "IsInf_Graph",
+        "inputs": {
+            "X": {
+                "data": [-1.7000000476837158, NaN, Infinity, -3.5999999046325684, -Infinity, Infinity],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [false, false, true, false, true, true],
+                "type": "bool"
+            }
+        },
+        "IsInf_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "IsInf",
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "IsInf_002": {
+        "graph_name": "IsInf_Graph",
+        "inputs": {
+            "X": {
+                "data": [-1.7, NaN, Infinity, -3.6, -Infinity, Infinity],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [false, false, true, false, true, true],
+                "type": "bool"
+            }
+        },
+        "IsInf_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "IsInf",
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "IsInf_003": {
+        "graph_name": "IsInf_Graph",
+        "inputs": {
+            "X": {
+                "data": [-1.7001953125, NaN, Infinity, -3.599609375, -Infinity, Infinity],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [false, false, true, false, true, true],
+                "type": "bool"
+            }
+        },
+        "IsInf_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "IsInf",
+            "detect_negative": 1,
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "IsInf_004": {
+        "graph_name": "IsInf_Graph",
+        "inputs": {
+            "X": {
+                "data": [-1.7000000476837158, NaN, Infinity, -3.5999999046325684, -Infinity, Infinity],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [false, false, true, false, true, true],
+                "type": "bool"
+            }
+        },
+        "IsInf_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "IsInf",
+            "detect_negative": 1,
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "IsInf_005": {
+        "graph_name": "IsInf_Graph",
+        "inputs": {
+            "X": {
+                "data": [-1.7, NaN, Infinity, -3.6, -Infinity, Infinity],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [false, false, true, false, true, true],
+                "type": "bool"
+            }
+        },
+        "IsInf_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "IsInf",
+            "detect_negative": 1,
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "IsInf_006": {
+        "graph_name": "IsInf_Graph",
+        "inputs": {
+            "X": {
+                "data": [-1.7001953125, NaN, Infinity, -3.599609375, -Infinity, Infinity],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [false, false, true, false, true, true],
+                "type": "bool"
+            }
+        },
+        "IsInf_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "IsInf",
+            "detect_positive": 1,
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "IsInf_007": {
+        "graph_name": "IsInf_Graph",
+        "inputs": {
+            "X": {
+                "data": [-1.7000000476837158, NaN, Infinity, -3.5999999046325684, -Infinity, Infinity],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [false, false, true, false, true, true],
+                "type": "bool"
+            }
+        },
+        "IsInf_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "IsInf",
+            "detect_positive": 1,
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "IsInf_008": {
+        "graph_name": "IsInf_Graph",
+        "inputs": {
+            "X": {
+                "data": [-1.7, NaN, Infinity, -3.6, -Infinity, Infinity],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [false, false, true, false, true, true],
+                "type": "bool"
+            }
+        },
+        "IsInf_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "IsInf",
+            "detect_positive": 1,
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "IsInf_009": {
+        "graph_name": "IsInf_Graph",
+        "inputs": {
+            "X": {
+                "data": [-1.7001953125, NaN, Infinity, -3.599609375, -Infinity, Infinity],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [false, false, true, false, true, true],
+                "type": "bool"
+            }
+        },
+        "IsInf_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "IsInf",
+            "detect_negative": 1,
+            "detect_positive": 1,
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "IsInf_010": {
+        "graph_name": "IsInf_Graph",
+        "inputs": {
+            "X": {
+                "data": [-1.7000000476837158, NaN, Infinity, -3.5999999046325684, -Infinity, Infinity],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [false, false, true, false, true, true],
+                "type": "bool"
+            }
+        },
+        "IsInf_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "IsInf",
+            "detect_negative": 1,
+            "detect_positive": 1,
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "IsInf_011": {
+        "graph_name": "IsInf_Graph",
+        "inputs": {
+            "X": {
+                "data": [-1.7, NaN, Infinity, -3.6, -Infinity, Infinity],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [false, false, true, false, true, true],
+                "type": "bool"
+            }
+        },
+        "IsInf_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "IsInf",
+            "detect_negative": 1,
+            "detect_positive": 1,
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    }
+}

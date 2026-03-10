@@ -1,0 +1,734 @@
+{
+    "Unsqueeze_000": {
+        "graph_name": "Unsqueeze_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [
+                            [255, 1, 1, 1, 1]
+                        ],
+                        [
+                            [255, 1, 1, 1, 255]
+                        ],
+                        [
+                            [1, 1, 1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            },
+            "axes": {
+                "data": [-2],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "expanded": {
+                "data": [
+                    [
+                        [
+                            [
+                                [255, 1, 1, 1, 1]
+                            ]
+                        ],
+                        [
+                            [
+                                [255, 1, 1, 1, 255]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, 1, 1, 1, 1]
+                            ]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            }
+        },
+        "Unsqueeze_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Unsqueeze",
+            "inputs": {
+                "data": "data",
+                "axes": "axes"
+            },
+            "outputs": {
+                "expanded": "expanded"
+            }
+        }
+    },
+    "Unsqueeze_001": {
+        "graph_name": "Unsqueeze_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1, 65534, 1]
+                        ],
+                        [
+                            [1, 1, 1, 65535, 1]
+                        ],
+                        [
+                            [1, 1, 1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint16"
+            },
+            "axes": {
+                "data": [-2],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "expanded": {
+                "data": [
+                    [
+                        [
+                            [
+                                [1, 1, 1, 65534, 1]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, 1, 1, 65535, 1]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, 1, 1, 1, 1]
+                            ]
+                        ]
+                    ]
+                ],
+                "type": "uint16"
+            }
+        },
+        "Unsqueeze_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Unsqueeze",
+            "inputs": {
+                "data": "data",
+                "axes": "axes"
+            },
+            "outputs": {
+                "expanded": "expanded"
+            }
+        }
+    },
+    "Unsqueeze_002": {
+        "graph_name": "Unsqueeze_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 2, 1, 1]
+                        ],
+                        [
+                            [1, 1, 1, 1, 4294967295]
+                        ],
+                        [
+                            [1, 1, 1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint32"
+            },
+            "axes": {
+                "data": [-2],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "expanded": {
+                "data": [
+                    [
+                        [
+                            [
+                                [1, 1, 2, 1, 1]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, 1, 1, 1, 4294967295]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, 1, 1, 1, 1]
+                            ]
+                        ]
+                    ]
+                ],
+                "type": "uint32"
+            }
+        },
+        "Unsqueeze_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Unsqueeze",
+            "inputs": {
+                "data": "data",
+                "axes": "axes"
+            },
+            "outputs": {
+                "expanded": "expanded"
+            }
+        }
+    },
+    "Unsqueeze_003": {
+        "graph_name": "Unsqueeze_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 1, 18446744073709551615, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint64"
+            },
+            "axes": {
+                "data": [-2],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "expanded": {
+                "data": [
+                    [
+                        [
+                            [
+                                [1, 1, 1, 1, 1]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, 1, 1, 1, 1]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, 1, 1, 18446744073709551615, 1]
+                            ]
+                        ]
+                    ]
+                ],
+                "type": "uint64"
+            }
+        },
+        "Unsqueeze_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Unsqueeze",
+            "inputs": {
+                "data": "data",
+                "axes": "axes"
+            },
+            "outputs": {
+                "expanded": "expanded"
+            }
+        }
+    },
+    "Unsqueeze_004": {
+        "graph_name": "Unsqueeze_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [
+                            [1, -1, 1, 1, -1]
+                        ],
+                        [
+                            [1, -1, 1, -2, 1]
+                        ],
+                        [
+                            [1, -1, 1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "int8"
+            },
+            "axes": {
+                "data": [-2],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "expanded": {
+                "data": [
+                    [
+                        [
+                            [
+                                [1, -1, 1, 1, -1]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, -1, 1, -2, 1]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, -1, 1, 1, 1]
+                            ]
+                        ]
+                    ]
+                ],
+                "type": "int8"
+            }
+        },
+        "Unsqueeze_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Unsqueeze",
+            "inputs": {
+                "data": "data",
+                "axes": "axes"
+            },
+            "outputs": {
+                "expanded": "expanded"
+            }
+        }
+    },
+    "Unsqueeze_005": {
+        "graph_name": "Unsqueeze_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [
+                            [-1, 1, -1, 1, 2]
+                        ],
+                        [
+                            [1, -1, 1, 1, 1]
+                        ],
+                        [
+                            [1, -1, 1, 1, -1]
+                        ]
+                    ]
+                ],
+                "type": "int16"
+            },
+            "axes": {
+                "data": [-2],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "expanded": {
+                "data": [
+                    [
+                        [
+                            [
+                                [-1, 1, -1, 1, 2]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, -1, 1, 1, 1]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, -1, 1, 1, -1]
+                            ]
+                        ]
+                    ]
+                ],
+                "type": "int16"
+            }
+        },
+        "Unsqueeze_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Unsqueeze",
+            "inputs": {
+                "data": "data",
+                "axes": "axes"
+            },
+            "outputs": {
+                "expanded": "expanded"
+            }
+        }
+    },
+    "Unsqueeze_006": {
+        "graph_name": "Unsqueeze_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 1, 1, -1]
+                        ],
+                        [
+                            [1, 1, 1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "int32"
+            },
+            "axes": {
+                "data": [-2],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "expanded": {
+                "data": [
+                    [
+                        [
+                            [
+                                [1, 1, 1, 1, 1]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, 1, 1, 1, -1]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, 1, 1, 1, 1]
+                            ]
+                        ]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "Unsqueeze_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Unsqueeze",
+            "inputs": {
+                "data": "data",
+                "axes": "axes"
+            },
+            "outputs": {
+                "expanded": "expanded"
+            }
+        }
+    },
+    "Unsqueeze_007": {
+        "graph_name": "Unsqueeze_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [
+                            [1, 1, -1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "int64"
+            },
+            "axes": {
+                "data": [-2],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "expanded": {
+                "data": [
+                    [
+                        [
+                            [
+                                [1, 1, -1, 1, 1]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, 1, 1, 1, 1]
+                            ]
+                        ],
+                        [
+                            [
+                                [1, 1, 1, 1, 1]
+                            ]
+                        ]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "Unsqueeze_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Unsqueeze",
+            "inputs": {
+                "data": "data",
+                "axes": "axes"
+            },
+            "outputs": {
+                "expanded": "expanded"
+            }
+        }
+    },
+    "Unsqueeze_008": {
+        "graph_name": "Unsqueeze_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [
+                            [0.67822265625, -1.59765625, 1.126953125, -0.131103515625, -2.517578125]
+                        ],
+                        [
+                            [-1.43359375, -1.265625, -1.2060546875, -1.07421875, -1.240234375]
+                        ],
+                        [
+                            [-1.3056640625, 0.1934814453125, 0.73583984375, -0.63818359375, -0.464111328125]
+                        ]
+                    ]
+                ],
+                "type": "float16"
+            },
+            "axes": {
+                "data": [-2],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "expanded": {
+                "data": [
+                    [
+                        [
+                            [
+                                [0.67822265625, -1.59765625, 1.126953125, -0.131103515625, -2.517578125]
+                            ]
+                        ],
+                        [
+                            [
+                                [-1.43359375, -1.265625, -1.2060546875, -1.07421875, -1.240234375]
+                            ]
+                        ],
+                        [
+                            [
+                                [-1.3056640625, 0.1934814453125, 0.73583984375, -0.63818359375, -0.464111328125]
+                            ]
+                        ]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "Unsqueeze_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Unsqueeze",
+            "inputs": {
+                "data": "data",
+                "axes": "axes"
+            },
+            "outputs": {
+                "expanded": "expanded"
+            }
+        }
+    },
+    "Unsqueeze_009": {
+        "graph_name": "Unsqueeze_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [
+                            [0.3490228056907654, 0.9842947125434875, -0.9692407846450806, -1.1674216985702515, 0.1301056146621704]
+                        ],
+                        [
+                            [-0.7301031351089478, -1.7919576168060303, 1.304116129875183, 1.164825677871704, -0.31230685114860535]
+                        ],
+                        [
+                            [-2.158834218978882, -0.07188110798597336, -1.989487886428833, 0.08427044004201889, 0.3684626519680023]
+                        ]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "axes": {
+                "data": [-2],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "expanded": {
+                "data": [
+                    [
+                        [
+                            [
+                                [0.3490228056907654, 0.9842947125434875, -0.9692407846450806, -1.1674216985702515, 0.1301056146621704]
+                            ]
+                        ],
+                        [
+                            [
+                                [-0.7301031351089478, -1.7919576168060303, 1.304116129875183, 1.164825677871704, -0.31230685114860535]
+                            ]
+                        ],
+                        [
+                            [
+                                [-2.158834218978882, -0.07188110798597336, -1.989487886428833, 0.08427044004201889, 0.3684626519680023]
+                            ]
+                        ]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "Unsqueeze_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Unsqueeze",
+            "inputs": {
+                "data": "data",
+                "axes": "axes"
+            },
+            "outputs": {
+                "expanded": "expanded"
+            }
+        }
+    },
+    "Unsqueeze_010": {
+        "graph_name": "Unsqueeze_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [
+                            [0.6412448488780055, -0.5770580219287369, 1.8468025765426312, 0.7722440499156382, -1.1372406720562445]
+                        ],
+                        [
+                            [-1.463943316176388, -0.21001758053924272, -1.5364109578355591, -0.06712367273968677, -0.68739593949093]
+                        ],
+                        [
+                            [0.7315432364120816, 0.6929094432579609, -0.18218376028507036, -0.6200305646347186, -0.5892811608795072]
+                        ]
+                    ]
+                ],
+                "type": "float64"
+            },
+            "axes": {
+                "data": [-2],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "expanded": {
+                "data": [
+                    [
+                        [
+                            [
+                                [0.6412448488780055, -0.5770580219287369, 1.8468025765426312, 0.7722440499156382, -1.1372406720562445]
+                            ]
+                        ],
+                        [
+                            [
+                                [-1.463943316176388, -0.21001758053924272, -1.5364109578355591, -0.06712367273968677, -0.68739593949093]
+                            ]
+                        ],
+                        [
+                            [
+                                [0.7315432364120816, 0.6929094432579609, -0.18218376028507036, -0.6200305646347186, -0.5892811608795072]
+                            ]
+                        ]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "Unsqueeze_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Unsqueeze",
+            "inputs": {
+                "data": "data",
+                "axes": "axes"
+            },
+            "outputs": {
+                "expanded": "expanded"
+            }
+        }
+    },
+    "Unsqueeze_011": {
+        "graph_name": "Unsqueeze_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [
+                            [true, true, true, true, true]
+                        ],
+                        [
+                            [true, true, true, true, true]
+                        ],
+                        [
+                            [true, true, true, true, true]
+                        ]
+                    ]
+                ],
+                "type": "bool"
+            },
+            "axes": {
+                "data": [-2],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "expanded": {
+                "data": [
+                    [
+                        [
+                            [
+                                [true, true, true, true, true]
+                            ]
+                        ],
+                        [
+                            [
+                                [true, true, true, true, true]
+                            ]
+                        ],
+                        [
+                            [
+                                [true, true, true, true, true]
+                            ]
+                        ]
+                    ]
+                ],
+                "type": "bool"
+            }
+        },
+        "Unsqueeze_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Unsqueeze",
+            "inputs": {
+                "data": "data",
+                "axes": "axes"
+            },
+            "outputs": {
+                "expanded": "expanded"
+            }
+        }
+    }
+}

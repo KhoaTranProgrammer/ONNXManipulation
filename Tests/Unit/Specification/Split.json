@@ -1,0 +1,39 @@
+{
+    "Split_000": {
+        "graph_name": "Split_Graph",
+        "inputs": {
+            "input": {
+                "data": [1, 1, 1, 1, 1, 1],
+                "type": "uint8"
+            },
+            "split(optional)": {
+                "data": [2, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "outputs(variadic)_1": {
+                "data": [1, 1],
+                "type": "uint8"
+            },
+            "outputs(variadic)_2": {
+                "data": [1, 1, 1, 1],
+                "type": "uint8"
+            }
+        },
+        "Split_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Split",
+            "axis": 0,
+            "inputs": {
+                "input": "input",
+                "split(optional)": "split(optional)"
+            },
+            "outputs": {
+                "outputs(variadic)_1": "outputs(variadic)_1",
+                "outputs(variadic)_2": "outputs(variadic)_2"
+            }
+        }
+    }
+}

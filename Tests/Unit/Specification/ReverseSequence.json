@@ -1,0 +1,2018 @@
+{
+    "ReverseSequence_000": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint8"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint8"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_001": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint16"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint16"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_002": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint32"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint32"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_003": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint64"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint64"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_004": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int8"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int8"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_005": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int16"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int16"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_006": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int32"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int32"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_007": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int64"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int64"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_008": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0],
+                    [12.0, 13.0, 14.0, 15.0]
+                ],
+                "type": "float16"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0.0, 5.0, 10.0, 15.0],
+                    [4.0, 1.0, 6.0, 11.0],
+                    [8.0, 9.0, 2.0, 7.0],
+                    [12.0, 13.0, 14.0, 3.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_009": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0],
+                    [12.0, 13.0, 14.0, 15.0]
+                ],
+                "type": "float32"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0.0, 5.0, 10.0, 15.0],
+                    [4.0, 1.0, 6.0, 11.0],
+                    [8.0, 9.0, 2.0, 7.0],
+                    [12.0, 13.0, 14.0, 3.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_010": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0],
+                    [12.0, 13.0, 14.0, 15.0]
+                ],
+                "type": "float64"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0.0, 5.0, 10.0, 15.0],
+                    [4.0, 1.0, 6.0, 11.0],
+                    [8.0, 9.0, 2.0, 7.0],
+                    [12.0, 13.0, 14.0, 3.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_011": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [false, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true]
+                ],
+                "type": "bool"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [false, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_012": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint8"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint8"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_013": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint16"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint16"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_014": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint32"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint32"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_015": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint64"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint64"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_016": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int8"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int8"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_017": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int16"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int16"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_018": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int32"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int32"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_019": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int64"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int64"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_020": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0],
+                    [12.0, 13.0, 14.0, 15.0]
+                ],
+                "type": "float16"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0.0, 5.0, 10.0, 15.0],
+                    [4.0, 1.0, 6.0, 11.0],
+                    [8.0, 9.0, 2.0, 7.0],
+                    [12.0, 13.0, 14.0, 3.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_021": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0],
+                    [12.0, 13.0, 14.0, 15.0]
+                ],
+                "type": "float32"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0.0, 5.0, 10.0, 15.0],
+                    [4.0, 1.0, 6.0, 11.0],
+                    [8.0, 9.0, 2.0, 7.0],
+                    [12.0, 13.0, 14.0, 3.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_022": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0],
+                    [12.0, 13.0, 14.0, 15.0]
+                ],
+                "type": "float64"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0.0, 5.0, 10.0, 15.0],
+                    [4.0, 1.0, 6.0, 11.0],
+                    [8.0, 9.0, 2.0, 7.0],
+                    [12.0, 13.0, 14.0, 3.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_023": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [false, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true]
+                ],
+                "type": "bool"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [false, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_024": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint8"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint8"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_025": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint16"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint16"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_026": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint32"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint32"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_027": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint64"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint64"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_028": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int8"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int8"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_029": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int16"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int16"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_030": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int32"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int32"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_031": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int64"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int64"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_032": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0],
+                    [12.0, 13.0, 14.0, 15.0]
+                ],
+                "type": "float16"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0.0, 5.0, 10.0, 15.0],
+                    [4.0, 1.0, 6.0, 11.0],
+                    [8.0, 9.0, 2.0, 7.0],
+                    [12.0, 13.0, 14.0, 3.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_033": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0],
+                    [12.0, 13.0, 14.0, 15.0]
+                ],
+                "type": "float32"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0.0, 5.0, 10.0, 15.0],
+                    [4.0, 1.0, 6.0, 11.0],
+                    [8.0, 9.0, 2.0, 7.0],
+                    [12.0, 13.0, 14.0, 3.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_034": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0],
+                    [12.0, 13.0, 14.0, 15.0]
+                ],
+                "type": "float64"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0.0, 5.0, 10.0, 15.0],
+                    [4.0, 1.0, 6.0, 11.0],
+                    [8.0, 9.0, 2.0, 7.0],
+                    [12.0, 13.0, 14.0, 3.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_035": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [false, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true]
+                ],
+                "type": "bool"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [false, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_036": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint8"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint8"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_037": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint16"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint16"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_038": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint32"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint32"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_039": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "uint64"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "uint64"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_040": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int8"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int8"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_041": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int16"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int16"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_042": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int32"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int32"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_043": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11],
+                    [12, 13, 14, 15]
+                ],
+                "type": "int64"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0, 5, 10, 15],
+                    [4, 1, 6, 11],
+                    [8, 9, 2, 7],
+                    [12, 13, 14, 3]
+                ],
+                "type": "int64"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_044": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0],
+                    [12.0, 13.0, 14.0, 15.0]
+                ],
+                "type": "float16"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0.0, 5.0, 10.0, 15.0],
+                    [4.0, 1.0, 6.0, 11.0],
+                    [8.0, 9.0, 2.0, 7.0],
+                    [12.0, 13.0, 14.0, 3.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_045": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0],
+                    [12.0, 13.0, 14.0, 15.0]
+                ],
+                "type": "float32"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0.0, 5.0, 10.0, 15.0],
+                    [4.0, 1.0, 6.0, 11.0],
+                    [8.0, 9.0, 2.0, 7.0],
+                    [12.0, 13.0, 14.0, 3.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_046": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0],
+                    [12.0, 13.0, 14.0, 15.0]
+                ],
+                "type": "float64"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [0.0, 5.0, 10.0, 15.0],
+                    [4.0, 1.0, 6.0, 11.0],
+                    [8.0, 9.0, 2.0, 7.0],
+                    [12.0, 13.0, 14.0, 3.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "ReverseSequence_047": {
+        "graph_name": "ReverseSequence_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [false, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true]
+                ],
+                "type": "bool"
+            },
+            "sequence_lens": {
+                "data": [1, 2, 3, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [false, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true],
+                    [true, true, true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "ReverseSequence_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReverseSequence",
+            "batch_axis": 1,
+            "time_axis": 0,
+            "inputs": {
+                "input": "input",
+                "sequence_lens": "sequence_lens"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    }
+}

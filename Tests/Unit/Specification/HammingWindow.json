@@ -1,0 +1,110 @@
+{
+    "HammingWindow_000": {
+        "graph_name": "HammingWindow_Graph",
+        "inputs": {
+            "size": {
+                "data": [10],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [0.08695650100708008, 0.19376230239868164, 0.4642040729522705, 0.77173912525177, 0.972468376159668, 0.972468376159668, 0.77173912525177, 0.4642040729522705, 0.19376230239868164, 0.08695650100708008],
+                "type": "float32"
+            }
+        },
+        "HammingWindow_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "HammingWindow",
+            "periodic": 0,
+            "inputs": {
+                "size": "size"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "HammingWindow_001": {
+        "graph_name": "HammingWindow_Graph",
+        "inputs": {
+            "size": {
+                "data": [10],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [0.08695650100708008, 0.17414440214633942, 0.4024052619934082, 0.6845512390136719, 0.9128121137619019, 1.0, 0.9128121137619019, 0.6845512390136719, 0.4024052619934082, 0.17414440214633942],
+                "type": "float32"
+            }
+        },
+        "HammingWindow_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "HammingWindow",
+            "periodic": 1,
+            "inputs": {
+                "size": "size"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "HammingWindow_002": {
+        "graph_name": "HammingWindow_Graph",
+        "inputs": {
+            "size": {
+                "data": [10],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [0.08695650100708008, 0.19376230239868164, 0.4642040729522705, 0.77173912525177, 0.972468376159668, 0.972468376159668, 0.77173912525177, 0.4642040729522705, 0.19376230239868164, 0.08695650100708008],
+                "type": "float32"
+            }
+        },
+        "HammingWindow_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "HammingWindow",
+            "periodic": 0,
+            "inputs": {
+                "size": "size"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "HammingWindow_003": {
+        "graph_name": "HammingWindow_Graph",
+        "inputs": {
+            "size": {
+                "data": [10],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [0.08695650100708008, 0.17414440214633942, 0.4024052619934082, 0.6845512390136719, 0.9128121137619019, 1.0, 0.9128121137619019, 0.6845512390136719, 0.4024052619934082, 0.17414440214633942],
+                "type": "float32"
+            }
+        },
+        "HammingWindow_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "HammingWindow",
+            "periodic": 1,
+            "inputs": {
+                "size": "size"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    }
+}

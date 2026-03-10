@@ -1,0 +1,472 @@
+{
+    "ReduceL2_000": {
+        "graph_name": "ReduceL2_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [1, -1],
+                        [1, -1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, -1]
+                    ],
+                    [
+                        [2, 1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [3]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "ReduceL2_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceL2",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceL2_001": {
+        "graph_name": "ReduceL2_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [-1, 1],
+                        [1, -1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [-1, 1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [3]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "ReduceL2_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceL2",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceL2_002": {
+        "graph_name": "ReduceL2_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [1.7265625, -0.98974609375],
+                        [0.92578125, 0.7607421875]
+                    ],
+                    [
+                        [-0.35888671875, -0.5283203125],
+                        [1.2412109375, -1.7333984375]
+                    ],
+                    [
+                        [1.2333984375, -0.11737060546875],
+                        [-0.46337890625, -0.446044921875]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [3.5078125]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "ReduceL2_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceL2",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceL2_003": {
+        "graph_name": "ReduceL2_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [-0.03363535553216934, 1.228376030921936],
+                        [-0.7311323881149292, -0.07512615621089935]
+                    ],
+                    [
+                        [-0.5653902888298035, -0.4890315532684326],
+                        [0.5832648277282715, 1.1669645309448242]
+                    ],
+                    [
+                        [-0.034204743802547455, 2.1307852268218994],
+                        [0.023873422294855118, 0.6558442711830139]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [3.046830654144287]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "ReduceL2_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceL2",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceL2_004": {
+        "graph_name": "ReduceL2_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [0.45730262526913257, -0.1798352989582735],
+                        [-1.1533204555175645, 0.7711207123713619]
+                    ],
+                    [
+                        [0.5648371417959264, 0.9382962115689611],
+                        [0.3219426923021308, -1.6912960711760294]
+                    ],
+                    [
+                        [0.30643083482465494, 0.2995734281891585],
+                        [0.2776176421432712, 0.427947641533945]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [2.602626896315313]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "ReduceL2_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceL2",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceL2_005": {
+        "graph_name": "ReduceL2_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, -1]
+                    ]
+                ],
+                "type": "int32"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "ReduceL2_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceL2",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceL2_006": {
+        "graph_name": "ReduceL2_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [1, 1],
+                        [2, -1]
+                    ],
+                    [
+                        [1, 2],
+                        [-1, 1]
+                    ],
+                    [
+                        [1, -1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int64"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [1, 2],
+                        [2, 1]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "ReduceL2_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceL2",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceL2_007": {
+        "graph_name": "ReduceL2_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [0.269287109375, -1.4775390625],
+                        [-0.224853515625, -0.55908203125]
+                    ],
+                    [
+                        [-1.03515625, 0.1468505859375],
+                        [-1.2734375, 0.318115234375]
+                    ],
+                    [
+                        [0.93359375, 0.44091796875],
+                        [-1.1015625, -2.65234375]
+                    ]
+                ],
+                "type": "float16"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [1.419921875, 1.548828125],
+                        [1.6982421875, 2.728515625]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "ReduceL2_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceL2",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceL2_008": {
+        "graph_name": "ReduceL2_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [-0.6588192582130432, 0.6370441317558289],
+                        [0.9931845664978027, -0.16362085938453674]
+                    ],
+                    [
+                        [-0.24646343290805817, -1.2576466798782349],
+                        [-0.5086984634399414, 0.09774889051914215]
+                    ],
+                    [
+                        [1.6841857433319092, -0.3260113298892975],
+                        [-0.3059559762477875, -1.249720811843872]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [1.8251763582229614, 1.4469913244247437],
+                        [1.15706467628479, 1.2641712427139282]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "ReduceL2_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceL2",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceL2_009": {
+        "graph_name": "ReduceL2_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [-0.9929321288172246, 0.028577059992545114],
+                        [-0.38868475432239424, -1.6848879261865155]
+                    ],
+                    [
+                        [0.8014684820930941, 0.6624309789372297],
+                        [-0.8535175004937606, 1.2827818103624513]
+                    ],
+                    [
+                        [-0.6627221703250611, 0.6227675235942892],
+                        [0.7530192200300093, 0.4009454729123391]
+                    ]
+                ],
+                "type": "float64"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [1.4378687753986708, 0.9096542412682511],
+                        [1.2027493120456898, 2.155257239647918]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "ReduceL2_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceL2",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    }
+}

@@ -1,0 +1,626 @@
+{
+    "OptionalGetElement_000": {
+        "graph_name": "OptionalGetElement_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [
+                        [
+                            [1, 255, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [1, 255, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            }
+        },
+        "OptionalGetElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalGetElement",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalGetElement_001": {
+        "graph_name": "OptionalGetElement_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [1, 65535, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [1, 65535, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint16"
+            }
+        },
+        "OptionalGetElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalGetElement",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalGetElement_002": {
+        "graph_name": "OptionalGetElement_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [
+                        [
+                            [4294967295, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [4294967295, 1, 1],
+                            [4294967295, 1, 1],
+                            [1, 1, 4294967295]
+                        ]
+                    ]
+                ],
+                "type": "uint32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [4294967295, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [4294967295, 1, 1],
+                            [4294967295, 1, 1],
+                            [1, 1, 4294967295]
+                        ]
+                    ]
+                ],
+                "type": "uint32"
+            }
+        },
+        "OptionalGetElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalGetElement",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalGetElement_003": {
+        "graph_name": "OptionalGetElement_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [
+                        [
+                            [18446744073709551615, 18446744073709551615, 1],
+                            [1, 1, 1],
+                            [1, 18446744073709551615, 1]
+                        ],
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [18446744073709551615, 18446744073709551615, 1],
+                            [1, 1, 1],
+                            [1, 18446744073709551615, 1]
+                        ],
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint64"
+            }
+        },
+        "OptionalGetElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalGetElement",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalGetElement_004": {
+        "graph_name": "OptionalGetElement_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 2],
+                            [1, 1, -1],
+                            [1, -1, 1]
+                        ]
+                    ]
+                ],
+                "type": "int8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 2],
+                            [1, 1, -1],
+                            [1, -1, 1]
+                        ]
+                    ]
+                ],
+                "type": "int8"
+            }
+        },
+        "OptionalGetElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalGetElement",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalGetElement_005": {
+        "graph_name": "OptionalGetElement_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [-2, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "int16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [-2, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "int16"
+            }
+        },
+        "OptionalGetElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalGetElement",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalGetElement_006": {
+        "graph_name": "OptionalGetElement_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1],
+                            [2, 1, 1],
+                            [-1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 2, -1]
+                        ]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1],
+                            [2, 1, 1],
+                            [-1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 2, -1]
+                        ]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "OptionalGetElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalGetElement",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalGetElement_007": {
+        "graph_name": "OptionalGetElement_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 2],
+                            [-1, 1, -1],
+                            [1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 2],
+                            [-1, 1, -1],
+                            [1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "OptionalGetElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalGetElement",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalGetElement_008": {
+        "graph_name": "OptionalGetElement_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [
+                        [
+                            [-1.8251953125, -1.134765625, -0.59716796875],
+                            [0.167236328125, -2.40625, -0.88720703125],
+                            [-0.0102386474609375, 0.76953125, 0.564453125]
+                        ],
+                        [
+                            [-1.09765625, 1.115234375, -0.1968994140625],
+                            [-0.271484375, 0.0924072265625, 0.57177734375],
+                            [-0.8759765625, -1.1591796875, 0.1259765625]
+                        ]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [-1.8251953125, -1.134765625, -0.59716796875],
+                            [0.167236328125, -2.40625, -0.88720703125],
+                            [-0.0102386474609375, 0.76953125, 0.564453125]
+                        ],
+                        [
+                            [-1.09765625, 1.115234375, -0.1968994140625],
+                            [-0.271484375, 0.0924072265625, 0.57177734375],
+                            [-0.8759765625, -1.1591796875, 0.1259765625]
+                        ]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OptionalGetElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalGetElement",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalGetElement_009": {
+        "graph_name": "OptionalGetElement_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [
+                        [
+                            [0.6770683526992798, -0.3870302140712738, 0.2834945023059845],
+                            [-1.8211501836776733, 0.15804319083690643, -1.6616804599761963],
+                            [-0.5129437446594238, 0.9867333769798279, -0.21411839127540588]
+                        ],
+                        [
+                            [-1.369798183441162, -0.5419228076934814, -1.924165964126587],
+                            [-0.698533833026886, 0.27073541283607483, -0.9160995483398438],
+                            [0.03481576591730118, -1.8363268375396729, -1.584760308265686]
+                        ]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [0.6770683526992798, -0.3870302140712738, 0.2834945023059845],
+                            [-1.8211501836776733, 0.15804319083690643, -1.6616804599761963],
+                            [-0.5129437446594238, 0.9867333769798279, -0.21411839127540588]
+                        ],
+                        [
+                            [-1.369798183441162, -0.5419228076934814, -1.924165964126587],
+                            [-0.698533833026886, 0.27073541283607483, -0.9160995483398438],
+                            [0.03481576591730118, -1.8363268375396729, -1.584760308265686]
+                        ]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OptionalGetElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalGetElement",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalGetElement_010": {
+        "graph_name": "OptionalGetElement_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [
+                        [
+                            [-0.5584460452960431, -0.09152396885710821, 1.023754173465129],
+                            [-1.2308293610583816, 0.19682684319751353, -1.3499162197628738],
+                            [-1.085880204769802, -0.11064316246129041, 0.1815740516786332]
+                        ],
+                        [
+                            [0.017850638325359443, -0.7261341698524301, 1.4811257992965619],
+                            [0.711367218066665, -1.136198141434449, -1.6593444455579318],
+                            [-0.03812034597124981, -0.2330047551270645, -0.14353598076204135]
+                        ]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [-0.5584460452960431, -0.09152396885710821, 1.023754173465129],
+                            [-1.2308293610583816, 0.19682684319751353, -1.3499162197628738],
+                            [-1.085880204769802, -0.11064316246129041, 0.1815740516786332]
+                        ],
+                        [
+                            [0.017850638325359443, -0.7261341698524301, 1.4811257992965619],
+                            [0.711367218066665, -1.136198141434449, -1.6593444455579318],
+                            [-0.03812034597124981, -0.2330047551270645, -0.14353598076204135]
+                        ]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "OptionalGetElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalGetElement",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalGetElement_011": {
+        "graph_name": "OptionalGetElement_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [
+                        [
+                            [true, true, true],
+                            [true, true, true],
+                            [true, true, true]
+                        ],
+                        [
+                            [true, true, true],
+                            [true, true, true],
+                            [true, true, true]
+                        ]
+                    ]
+                ],
+                "type": "bool"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [true, true, true],
+                            [true, true, true],
+                            [true, true, true]
+                        ],
+                        [
+                            [true, true, true],
+                            [true, true, true],
+                            [true, true, true]
+                        ]
+                    ]
+                ],
+                "type": "bool"
+            }
+        },
+        "OptionalGetElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalGetElement",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    }
+}

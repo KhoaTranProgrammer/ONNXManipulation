@@ -1,0 +1,72 @@
+{
+    "Xor_000": {
+        "graph_name": "Xor_Graph",
+        "inputs": {
+            "A": {
+                "data": [
+                    [
+                        [
+                            [true, true, true],
+                            [true, true, true],
+                            [true, true, true]
+                        ],
+                        [
+                            [true, true, true],
+                            [true, true, true],
+                            [true, true, true]
+                        ]
+                    ]
+                ],
+                "type": "bool"
+            },
+            "B": {
+                "data": [
+                    [
+                        [
+                            [true, true, true],
+                            [true, true, true],
+                            [true, true, true]
+                        ],
+                        [
+                            [true, true, true],
+                            [true, true, true],
+                            [true, true, true]
+                        ]
+                    ]
+                ],
+                "type": "bool"
+            }
+        },
+        "outputs": {
+            "C": {
+                "data": [
+                    [
+                        [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ]
+                    ]
+                ],
+                "type": "bool"
+            }
+        },
+        "Xor_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Xor",
+            "inputs": {
+                "A": "A",
+                "B": "B"
+            },
+            "outputs": {
+                "C": "C"
+            }
+        }
+    }
+}

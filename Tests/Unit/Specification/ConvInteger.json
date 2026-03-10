@@ -1,0 +1,316 @@
+{
+    "ConvInteger_000": {
+        "graph_name": "ConvInteger_Graph",
+        "inputs": {
+            "x": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 2, 1, 1],
+                            [255, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 255],
+                            [1, 1, 255, 1, 255]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            },
+            "w": {
+                "data": [
+                    [
+                        [
+                            [255, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 255]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "y": {
+                "data": [
+                    [
+                        [
+                            [772, 518, 772],
+                            [65287, 517, 65287],
+                            [65287, 771, 65795]
+                        ]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "ConvInteger_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ConvInteger",
+            "auto_pad": "NOTSET",
+            "dilations": [1, 1],
+            "group": 1,
+            "kernel_shape": [3, 3],
+            "strides": [1, 1],
+            "inputs": {
+                "x": "x",
+                "w": "w"
+            },
+            "outputs": {
+                "y": "y"
+            }
+        }
+    },
+    "ConvInteger_001": {
+        "graph_name": "ConvInteger_Graph",
+        "inputs": {
+            "x": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1, 1, 255],
+                            [1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            },
+            "w": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [255, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "y": {
+                "data": [
+                    [
+                        [
+                            [4, 260, 260, 514, 512],
+                            [6, 263, 263, 517, 514],
+                            [6, 263, 263, 263, 260],
+                            [6, 263, 263, 263, 260],
+                            [4, 6, 6, 6, 4]
+                        ]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "ConvInteger_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ConvInteger",
+            "auto_pad": "SAME_UPPER",
+            "dilations": [1, 1],
+            "group": 1,
+            "kernel_shape": [3, 3],
+            "strides": [1, 1],
+            "inputs": {
+                "x": "x",
+                "w": "w"
+            },
+            "outputs": {
+                "y": "y"
+            }
+        }
+    },
+    "ConvInteger_002": {
+        "graph_name": "ConvInteger_Graph",
+        "inputs": {
+            "x": {
+                "data": [
+                    [
+                        [
+                            [1, 3, 1, 1, 1],
+                            [1, 1, 255, 1, 1],
+                            [1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            },
+            "w": {
+                "data": [
+                    [
+                        [
+                            [255, 255, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "y": {
+                "data": [
+                    [
+                        [
+                            [6, 262, 262, 260, 4],
+                            [262, 1281, 1281, 771, 514],
+                            [260, 771, 65287, 65287, 514],
+                            [260, 517, 517, 517, 514],
+                            [258, 514, 514, 514, 512]
+                        ]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "ConvInteger_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ConvInteger",
+            "auto_pad": "SAME_LOWER",
+            "dilations": [1, 1],
+            "group": 1,
+            "kernel_shape": [3, 3],
+            "strides": [1, 1],
+            "inputs": {
+                "x": "x",
+                "w": "w"
+            },
+            "outputs": {
+                "y": "y"
+            }
+        }
+    },
+    "ConvInteger_003": {
+        "graph_name": "ConvInteger_Graph",
+        "inputs": {
+            "x": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1],
+                            [1, 1, 1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            },
+            "w": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 255],
+                            [1, 1, 1],
+                            [1, 1, 255]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "y": {
+                "data": [
+                    [
+                        [
+                            [517, 517, 517],
+                            [517, 517, 517],
+                            [517, 517, 517]
+                        ]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "ConvInteger_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ConvInteger",
+            "auto_pad": "VALID",
+            "dilations": [1, 1],
+            "group": 1,
+            "kernel_shape": [3, 3],
+            "strides": [1, 1],
+            "inputs": {
+                "x": "x",
+                "w": "w"
+            },
+            "outputs": {
+                "y": "y"
+            }
+        }
+    },
+    "ConvInteger_004": {
+        "graph_name": "ConvInteger_Graph",
+        "inputs": {
+            "x": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1, 1, 1],
+                            [1, 1, 254, 254, 1],
+                            [1, 1, 1, 1, 1],
+                            [255, 1, 254, 255, 1],
+                            [254, 1, 1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            },
+            "w": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1],
+                            [255, 255, 1],
+                            [1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "y": {
+                "data": [
+                    [
+                        [
+                            [770, 65285, 129547],
+                            [1277, 1530, 1530],
+                            [65793, 65286, 129802]
+                        ]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "ConvInteger_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ConvInteger",
+            "dilations": [1, 1],
+            "group": 1,
+            "kernel_shape": [3, 3],
+            "pads": [0, 0, 0, 0],
+            "strides": [1, 1],
+            "inputs": {
+                "x": "x",
+                "w": "w"
+            },
+            "outputs": {
+                "y": "y"
+            }
+        }
+    }
+}

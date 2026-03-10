@@ -1,0 +1,472 @@
+{
+    "ReduceLogSumExp_000": {
+        "graph_name": "ReduceLogSumExp_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [5, 1],
+                        [20, 2]
+                    ],
+                    [
+                        [30, 1],
+                        [40, 2]
+                    ],
+                    [
+                        [55, 1],
+                        [60, 2]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [60]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "ReduceLogSumExp_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceLogSumExp",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceLogSumExp_001": {
+        "graph_name": "ReduceLogSumExp_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [5, 1],
+                        [20, 2]
+                    ],
+                    [
+                        [30, 1],
+                        [40, 2]
+                    ],
+                    [
+                        [55, 1],
+                        [60, 2]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [60]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "ReduceLogSumExp_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceLogSumExp",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceLogSumExp_002": {
+        "graph_name": "ReduceLogSumExp_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [5.0, 1.0],
+                        [20.0, 2.0]
+                    ],
+                    [
+                        [30.0, 1.0],
+                        [40.0, 2.0]
+                    ],
+                    [
+                        [55.0, 1.0],
+                        [60.0, 2.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [60.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "ReduceLogSumExp_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceLogSumExp",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceLogSumExp_003": {
+        "graph_name": "ReduceLogSumExp_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [5.0, 1.0],
+                        [20.0, 2.0]
+                    ],
+                    [
+                        [30.0, 1.0],
+                        [40.0, 2.0]
+                    ],
+                    [
+                        [55.0, 1.0],
+                        [60.0, 2.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [60.0067138671875]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "ReduceLogSumExp_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceLogSumExp",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceLogSumExp_004": {
+        "graph_name": "ReduceLogSumExp_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [5.0, 1.0],
+                        [20.0, 2.0]
+                    ],
+                    [
+                        [30.0, 1.0],
+                        [40.0, 2.0]
+                    ],
+                    [
+                        [55.0, 1.0],
+                        [60.0, 2.0]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [60.00671535053657]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "ReduceLogSumExp_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceLogSumExp",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceLogSumExp_005": {
+        "graph_name": "ReduceLogSumExp_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [5, 1],
+                        [20, 2]
+                    ],
+                    [
+                        [30, 1],
+                        [40, 2]
+                    ],
+                    [
+                        [55, 1],
+                        [60, 2]
+                    ]
+                ],
+                "type": "int32"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [55, 2],
+                        [60, 3]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "ReduceLogSumExp_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceLogSumExp",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceLogSumExp_006": {
+        "graph_name": "ReduceLogSumExp_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [5, 1],
+                        [20, 2]
+                    ],
+                    [
+                        [30, 1],
+                        [40, 2]
+                    ],
+                    [
+                        [55, 1],
+                        [60, 2]
+                    ]
+                ],
+                "type": "int64"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [55, 2],
+                        [60, 3]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "ReduceLogSumExp_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceLogSumExp",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceLogSumExp_007": {
+        "graph_name": "ReduceLogSumExp_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [5.0, 1.0],
+                        [20.0, 2.0]
+                    ],
+                    [
+                        [30.0, 1.0],
+                        [40.0, 2.0]
+                    ],
+                    [
+                        [55.0, 1.0],
+                        [60.0, 2.0]
+                    ]
+                ],
+                "type": "float16"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [55.0, 2.09765625],
+                        [60.0, 3.09765625]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "ReduceLogSumExp_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceLogSumExp",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceLogSumExp_008": {
+        "graph_name": "ReduceLogSumExp_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [5.0, 1.0],
+                        [20.0, 2.0]
+                    ],
+                    [
+                        [30.0, 1.0],
+                        [40.0, 2.0]
+                    ],
+                    [
+                        [55.0, 1.0],
+                        [60.0, 2.0]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [55.0, 2.0986123085021973],
+                        [60.0, 3.0986123085021973]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "ReduceLogSumExp_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceLogSumExp",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceLogSumExp_009": {
+        "graph_name": "ReduceLogSumExp_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [5.0, 1.0],
+                        [20.0, 2.0]
+                    ],
+                    [
+                        [30.0, 1.0],
+                        [40.0, 2.0]
+                    ],
+                    [
+                        [55.0, 1.0],
+                        [60.0, 2.0]
+                    ]
+                ],
+                "type": "float64"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [55.00000000001389, 2.09861228866811],
+                        [60.00000000206116, 3.09861228866811]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "ReduceLogSumExp_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceLogSumExp",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    }
+}

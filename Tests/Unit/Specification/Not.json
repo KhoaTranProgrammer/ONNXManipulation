@@ -1,0 +1,54 @@
+{
+    "Not_000": {
+        "graph_name": "Not_Graph",
+        "inputs": {
+            "X": {
+                "data": [
+                    [
+                        [
+                            [true, true, true],
+                            [true, true, true],
+                            [true, true, true]
+                        ],
+                        [
+                            [true, true, true],
+                            [true, true, true],
+                            [true, true, true]
+                        ]
+                    ]
+                ],
+                "type": "bool"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [
+                    [
+                        [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ],
+                        [
+                            [false, false, false],
+                            [false, false, false],
+                            [false, false, false]
+                        ]
+                    ]
+                ],
+                "type": "bool"
+            }
+        },
+        "Not_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "Not",
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    }
+}

@@ -1,0 +1,489 @@
+{
+    "OptionalHasElement_000": {
+        "graph_name": "OptionalHasElement_Graph",
+        "inputs": {},
+        "outputs": {
+            "output": {
+                "data": false,
+                "type": "bool"
+            }
+        },
+        "OptionalHasElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalHasElement",
+            "inputs": {},
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalHasElement_001": {
+        "graph_name": "OptionalHasElement_Graph",
+        "inputs": {
+            "input (optional)": {
+                "data": [
+                    [
+                        [
+                            [255, 1, 1],
+                            [255, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [255, 1, 255],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": true,
+                "type": "bool"
+            }
+        },
+        "OptionalHasElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalHasElement",
+            "inputs": {
+                "input (optional)": "input (optional)"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalHasElement_002": {
+        "graph_name": "OptionalHasElement_Graph",
+        "inputs": {
+            "input (optional)": {
+                "data": [
+                    [
+                        [
+                            [65535, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [65534, 1, 65535],
+                            [1, 1, 1],
+                            [65535, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": true,
+                "type": "bool"
+            }
+        },
+        "OptionalHasElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalHasElement",
+            "inputs": {
+                "input (optional)": "input (optional)"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalHasElement_003": {
+        "graph_name": "OptionalHasElement_Graph",
+        "inputs": {
+            "input (optional)": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [4294967295, 1, 1]
+                        ],
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 4294967295, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": true,
+                "type": "bool"
+            }
+        },
+        "OptionalHasElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalHasElement",
+            "inputs": {
+                "input (optional)": "input (optional)"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalHasElement_004": {
+        "graph_name": "OptionalHasElement_Graph",
+        "inputs": {
+            "input (optional)": {
+                "data": [
+                    [
+                        [
+                            [2, 1, 1],
+                            [18446744073709551615, 18446744073709551614, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 1],
+                            [1, 2, 1],
+                            [1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": true,
+                "type": "bool"
+            }
+        },
+        "OptionalHasElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalHasElement",
+            "inputs": {
+                "input (optional)": "input (optional)"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalHasElement_005": {
+        "graph_name": "OptionalHasElement_Graph",
+        "inputs": {
+            "input (optional)": {
+                "data": [
+                    [
+                        [
+                            [1, -1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [-1, 1, -1]
+                        ]
+                    ]
+                ],
+                "type": "int8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": true,
+                "type": "bool"
+            }
+        },
+        "OptionalHasElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalHasElement",
+            "inputs": {
+                "input (optional)": "input (optional)"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalHasElement_006": {
+        "graph_name": "OptionalHasElement_Graph",
+        "inputs": {
+            "input (optional)": {
+                "data": [
+                    [
+                        [
+                            [1, 1, -1],
+                            [1, -1, -1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [-1, 1, 1],
+                            [1, 1, 1],
+                            [-1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "int16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": true,
+                "type": "bool"
+            }
+        },
+        "OptionalHasElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalHasElement",
+            "inputs": {
+                "input (optional)": "input (optional)"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalHasElement_007": {
+        "graph_name": "OptionalHasElement_Graph",
+        "inputs": {
+            "input (optional)": {
+                "data": [
+                    [
+                        [
+                            [1, 1, 1],
+                            [1, 1, 1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [1, 1, -2],
+                            [1, 1, 1],
+                            [1, 1, 2]
+                        ]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": true,
+                "type": "bool"
+            }
+        },
+        "OptionalHasElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalHasElement",
+            "inputs": {
+                "input (optional)": "input (optional)"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalHasElement_008": {
+        "graph_name": "OptionalHasElement_Graph",
+        "inputs": {
+            "input (optional)": {
+                "data": [
+                    [
+                        [
+                            [1, -1, 1],
+                            [1, 1, -1],
+                            [1, 1, 1]
+                        ],
+                        [
+                            [1, 1, 1],
+                            [1, 1, -1],
+                            [-1, 1, 1]
+                        ]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": true,
+                "type": "bool"
+            }
+        },
+        "OptionalHasElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalHasElement",
+            "inputs": {
+                "input (optional)": "input (optional)"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalHasElement_009": {
+        "graph_name": "OptionalHasElement_Graph",
+        "inputs": {
+            "input (optional)": {
+                "data": [
+                    [
+                        [
+                            [0.2000732421875, -0.5751953125, -0.1392822265625],
+                            [-0.07159423828125, -0.06304931640625, -0.2471923828125],
+                            [-1.0517578125, -1.6630859375, -1.9453125]
+                        ],
+                        [
+                            [0.306884765625, 0.056884765625, -1.228515625],
+                            [0.90771484375, -0.69580078125, -0.16357421875],
+                            [-0.68994140625, -0.5556640625, 0.06842041015625]
+                        ]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": true,
+                "type": "bool"
+            }
+        },
+        "OptionalHasElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalHasElement",
+            "inputs": {
+                "input (optional)": "input (optional)"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalHasElement_010": {
+        "graph_name": "OptionalHasElement_Graph",
+        "inputs": {
+            "input (optional)": {
+                "data": [
+                    [
+                        [
+                            [-0.49509337544441223, -1.1948624849319458, -1.0137333869934082],
+                            [0.6473202705383301, -0.3629583716392517, -2.0920658111572266],
+                            [-0.7687049508094788, -1.31242036819458, 1.335828423500061]
+                        ],
+                        [
+                            [0.6046512722969055, 0.7205593585968018, 0.12535233795642853],
+                            [-1.6212698221206665, 0.32864004373550415, 0.4098675847053528],
+                            [0.03892171382904053, -0.1638035923242569, -1.414070725440979]
+                        ]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": true,
+                "type": "bool"
+            }
+        },
+        "OptionalHasElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalHasElement",
+            "inputs": {
+                "input (optional)": "input (optional)"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalHasElement_011": {
+        "graph_name": "OptionalHasElement_Graph",
+        "inputs": {
+            "input (optional)": {
+                "data": [
+                    [
+                        [
+                            [0.5328338591280739, -0.9477867913918834, -1.1676410616012511],
+                            [-0.19246529428799639, 1.3425175462569405, -0.12057015462599892],
+                            [-0.5850020601686167, -0.12894763891419658, 1.00395625001287]
+                        ],
+                        [
+                            [0.6933072295388153, -1.0566889788852596, 1.4794433373971962],
+                            [1.7854379926117714, 0.18245143358851804, 0.05313993561831502],
+                            [-0.3927236882610004, 0.5999322868875966, -1.0755549175340673]
+                        ]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": true,
+                "type": "bool"
+            }
+        },
+        "OptionalHasElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalHasElement",
+            "inputs": {
+                "input (optional)": "input (optional)"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OptionalHasElement_012": {
+        "graph_name": "OptionalHasElement_Graph",
+        "inputs": {
+            "input (optional)": {
+                "data": [
+                    [
+                        [
+                            [true, true, true],
+                            [true, true, true],
+                            [true, true, true]
+                        ],
+                        [
+                            [true, true, true],
+                            [true, true, true],
+                            [true, true, true]
+                        ]
+                    ]
+                ],
+                "type": "bool"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": true,
+                "type": "bool"
+            }
+        },
+        "OptionalHasElement_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OptionalHasElement",
+            "inputs": {
+                "input (optional)": "input (optional)"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    }
+}

@@ -1,0 +1,257 @@
+{
+    "TopK_000": {
+        "graph_name": "TopK_Graph",
+        "inputs": {
+            "X": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11]
+                ],
+                "type": "int32"
+            },
+            "K": {
+                "data": [3],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Values": {
+                "data": [
+                    [3, 2, 1],
+                    [7, 6, 5],
+                    [11, 10, 9]
+                ],
+                "type": "int32"
+            },
+            "Indices": {
+                "data": [
+                    [3, 2, 1],
+                    [3, 2, 1],
+                    [3, 2, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "TopK_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "TopK",
+            "axis": 1,
+            "largest": 1,
+            "sorted": 1,
+            "inputs": {
+                "X": "X",
+                "K": "K"
+            },
+            "outputs": {
+                "Values": "Values",
+                "Indices": "Indices"
+            }
+        }
+    },
+    "TopK_001": {
+        "graph_name": "TopK_Graph",
+        "inputs": {
+            "X": {
+                "data": [
+                    [0, 1, 2, 3],
+                    [4, 5, 6, 7],
+                    [8, 9, 10, 11]
+                ],
+                "type": "int64"
+            },
+            "K": {
+                "data": [3],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Values": {
+                "data": [
+                    [3, 2, 1],
+                    [7, 6, 5],
+                    [11, 10, 9]
+                ],
+                "type": "int64"
+            },
+            "Indices": {
+                "data": [
+                    [3, 2, 1],
+                    [3, 2, 1],
+                    [3, 2, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "TopK_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "TopK",
+            "axis": 1,
+            "largest": 1,
+            "sorted": 1,
+            "inputs": {
+                "X": "X",
+                "K": "K"
+            },
+            "outputs": {
+                "Values": "Values",
+                "Indices": "Indices"
+            }
+        }
+    },
+    "TopK_002": {
+        "graph_name": "TopK_Graph",
+        "inputs": {
+            "X": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0]
+                ],
+                "type": "float16"
+            },
+            "K": {
+                "data": [3],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Values": {
+                "data": [
+                    [3.0, 2.0, 1.0],
+                    [7.0, 6.0, 5.0],
+                    [11.0, 10.0, 9.0]
+                ],
+                "type": "float16"
+            },
+            "Indices": {
+                "data": [
+                    [3, 2, 1],
+                    [3, 2, 1],
+                    [3, 2, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "TopK_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "TopK",
+            "axis": 1,
+            "largest": 1,
+            "sorted": 1,
+            "inputs": {
+                "X": "X",
+                "K": "K"
+            },
+            "outputs": {
+                "Values": "Values",
+                "Indices": "Indices"
+            }
+        }
+    },
+    "TopK_003": {
+        "graph_name": "TopK_Graph",
+        "inputs": {
+            "X": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0]
+                ],
+                "type": "float32"
+            },
+            "K": {
+                "data": [3],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Values": {
+                "data": [
+                    [3.0, 2.0, 1.0],
+                    [7.0, 6.0, 5.0],
+                    [11.0, 10.0, 9.0]
+                ],
+                "type": "float32"
+            },
+            "Indices": {
+                "data": [
+                    [3, 2, 1],
+                    [3, 2, 1],
+                    [3, 2, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "TopK_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "TopK",
+            "axis": 1,
+            "largest": 1,
+            "sorted": 1,
+            "inputs": {
+                "X": "X",
+                "K": "K"
+            },
+            "outputs": {
+                "Values": "Values",
+                "Indices": "Indices"
+            }
+        }
+    },
+    "TopK_004": {
+        "graph_name": "TopK_Graph",
+        "inputs": {
+            "X": {
+                "data": [
+                    [0.0, 1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0, 7.0],
+                    [8.0, 9.0, 10.0, 11.0]
+                ],
+                "type": "float64"
+            },
+            "K": {
+                "data": [3],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "Values": {
+                "data": [
+                    [3.0, 2.0, 1.0],
+                    [7.0, 6.0, 5.0],
+                    [11.0, 10.0, 9.0]
+                ],
+                "type": "float64"
+            },
+            "Indices": {
+                "data": [
+                    [3, 2, 1],
+                    [3, 2, 1],
+                    [3, 2, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "TopK_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "TopK",
+            "axis": 1,
+            "largest": 1,
+            "sorted": 1,
+            "inputs": {
+                "X": "X",
+                "K": "K"
+            },
+            "outputs": {
+                "Values": "Values",
+                "Indices": "Indices"
+            }
+        }
+    }
+}

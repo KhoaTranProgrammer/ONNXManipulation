@@ -1,0 +1,33 @@
+{
+    "StringConcat_000": {
+        "graph_name": "StringConcat_Graph",
+        "inputs": {
+            "X": {
+                "data": ["abc", "def"],
+                "type": "object"
+            },
+            "Y": {
+                "data": [".com", ".net"],
+                "type": "object"
+            }
+        },
+        "outputs": {
+            "Z": {
+                "data": ["abc.com", "def.net"],
+                "type": "object"
+            }
+        },
+        "StringConcat_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "StringConcat",
+            "inputs": {
+                "X": "X",
+                "Y": "Y"
+            },
+            "outputs": {
+                "Z": "Z"
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "RegexFullMatch_000": {
+        "graph_name": "RegexFullMatch_Graph",
+        "inputs": {
+            "X": {
+                "data": ["www.google.com", "www.facebook.com", "www.bbc.co.uk"],
+                "type": "object"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [false, false, false],
+                "type": "bool"
+            }
+        },
+        "RegexFullMatch_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "RegexFullMatch",
+            "pattern": "www\\.[\\w.-]+\\.\bcom\b",
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    }
+}

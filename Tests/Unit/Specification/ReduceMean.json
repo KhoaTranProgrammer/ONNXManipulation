@@ -1,0 +1,472 @@
+{
+    "ReduceMean_000": {
+        "graph_name": "ReduceMean_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [1, 1],
+                        [-1, 1]
+                    ],
+                    [
+                        [-1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [-1, 1],
+                        [1, -1]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [0]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "ReduceMean_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceMean",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceMean_001": {
+        "graph_name": "ReduceMean_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [1]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "ReduceMean_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceMean",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceMean_002": {
+        "graph_name": "ReduceMean_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [-0.51953125, 1.3837890625],
+                        [0.724609375, -0.55322265625]
+                    ],
+                    [
+                        [1.48828125, 1.41796875],
+                        [0.765625, 0.43994140625]
+                    ],
+                    [
+                        [-0.67919921875, 0.056915283203125],
+                        [-0.50341796875, -0.08892822265625]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [0.32763671875]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "ReduceMean_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceMean",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceMean_003": {
+        "graph_name": "ReduceMean_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [0.39886075258255005, -1.0807538032531738],
+                        [1.2325308322906494, 0.7730271816253662]
+                    ],
+                    [
+                        [1.116345763206482, 1.2836897373199463],
+                        [-0.364300400018692, -0.4123111069202423]
+                    ],
+                    [
+                        [0.5529438853263855, 0.6154093146324158],
+                        [-1.286411166191101, 0.11708768457174301]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [0.24550990760326385]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "ReduceMean_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceMean",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceMean_004": {
+        "graph_name": "ReduceMean_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [-1.5786282336094202, -0.4461899891097465],
+                        [0.936860519051795, -0.9754854342334868]
+                    ],
+                    [
+                        [-0.25310848303514105, -0.6348763755629537],
+                        [0.6601208668584913, -0.8495863397650862]
+                    ],
+                    [
+                        [-0.11029329921730467, -1.6319486022292644],
+                        [1.2343209106877369, -1.6192880980797102]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [-0.4390085465203408]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "ReduceMean_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceMean",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceMean_005": {
+        "graph_name": "ReduceMean_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [1, 2],
+                        [1, 1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int32"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "ReduceMean_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceMean",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceMean_006": {
+        "graph_name": "ReduceMean_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, -1]
+                    ]
+                ],
+                "type": "int64"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [1, 1],
+                        [1, 0]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "ReduceMean_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceMean",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceMean_007": {
+        "graph_name": "ReduceMean_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [0.08673095703125, -0.01031494140625],
+                        [-0.47216796875, 0.5830078125]
+                    ],
+                    [
+                        [-0.69921875, 0.763671875],
+                        [0.5615234375, 0.01055145263671875]
+                    ],
+                    [
+                        [-0.07025146484375, -1.6748046875],
+                        [1.4951171875, -2.0703125]
+                    ]
+                ],
+                "type": "float16"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [-0.2275390625, -0.30712890625],
+                        [0.5283203125, -0.4921875]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "ReduceMean_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceMean",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceMean_008": {
+        "graph_name": "ReduceMean_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [1.9562439918518066, 0.9279741644859314],
+                        [0.01848927140235901, 1.0681051015853882]
+                    ],
+                    [
+                        [-1.3109486103057861, 1.078589916229248],
+                        [-0.25476163625717163, 0.32770517468452454]
+                    ],
+                    [
+                        [-0.8385628461837769, 1.8353371620178223],
+                        [-0.11215969175100327, -2.027466297149658]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [-0.06442248821258545, 1.280633807182312],
+                        [-0.11614402383565903, -0.21055202186107635]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "ReduceMean_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceMean",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceMean_009": {
+        "graph_name": "ReduceMean_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [-0.3918372764495641, -0.19247798341734237],
+                        [-0.027488819875921278, 1.105111638248649]
+                    ],
+                    [
+                        [0.2741142588775088, 0.9497223694708747],
+                        [1.509985712900362, -0.24579882596252017]
+                    ],
+                    [
+                        [0.04179444805179794, 1.198145100984931],
+                        [-1.7298979430231525, -0.33378138444638383]
+                    ]
+                ],
+                "type": "float64"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [-0.02530952317341913, 0.6517964956794878],
+                        [-0.08246701666623728, 0.17517714261324835]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "ReduceMean_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceMean",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    }
+}

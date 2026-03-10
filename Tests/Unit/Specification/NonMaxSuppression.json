@@ -1,0 +1,238 @@
+{
+    "NonMaxSuppression_000": {
+        "graph_name": "NonMaxSuppression_Graph",
+        "inputs": {
+            "boxes": {
+                "data": [
+                    [
+                        [0.5, 0.5, 1.0, 1.0],
+                        [0.5, 0.6000000238418579, 1.0, 1.0],
+                        [0.5, 0.4000000059604645, 1.0, 1.0],
+                        [0.5, 10.5, 1.0, 1.0],
+                        [0.5, 10.600000381469727, 1.0, 1.0],
+                        [0.5, 100.5, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "scores": {
+                "data": [
+                    [
+                        [0.8999999761581421, 0.75, 0.6000000238418579, 0.949999988079071, 0.5, 0.30000001192092896]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "max_output_boxes_per_class (optional)": {
+                "data": [3],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "selected_indices": {
+                "data": [
+                    [0, 0, 3],
+                    [0, 0, 0],
+                    [0, 0, 5]
+                ],
+                "type": "int64"
+            }
+        },
+        "NonMaxSuppression_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "NonMaxSuppression",
+            "center_point_box": 1,
+            "inputs": {
+                "boxes": "boxes",
+                "scores": "scores",
+                "max_output_boxes_per_class (optional)": "max_output_boxes_per_class (optional)"
+            },
+            "outputs": {
+                "selected_indices": "selected_indices"
+            }
+        }
+    },
+    "NonMaxSuppression_001": {
+        "graph_name": "NonMaxSuppression_Graph",
+        "inputs": {
+            "boxes": {
+                "data": [
+                    [
+                        [0.5, 0.5, 1.0, 1.0],
+                        [0.5, 0.6000000238418579, 1.0, 1.0],
+                        [0.5, 0.4000000059604645, 1.0, 1.0],
+                        [0.5, 10.5, 1.0, 1.0],
+                        [0.5, 10.600000381469727, 1.0, 1.0],
+                        [0.5, 100.5, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "scores": {
+                "data": [
+                    [
+                        [0.8999999761581421, 0.75, 0.6000000238418579, 0.949999988079071, 0.5, 0.30000001192092896]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "max_output_boxes_per_class (optional)": {
+                "data": [3],
+                "type": "int64"
+            },
+            "iou_threshold (optional)": {
+                "data": [0.5],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "selected_indices": {
+                "data": [
+                    [0, 0, 3],
+                    [0, 0, 0],
+                    [0, 0, 5]
+                ],
+                "type": "int64"
+            }
+        },
+        "NonMaxSuppression_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "NonMaxSuppression",
+            "center_point_box": 1,
+            "inputs": {
+                "boxes": "boxes",
+                "scores": "scores",
+                "max_output_boxes_per_class (optional)": "max_output_boxes_per_class (optional)",
+                "iou_threshold (optional)": "iou_threshold (optional)"
+            },
+            "outputs": {
+                "selected_indices": "selected_indices"
+            }
+        }
+    },
+    "NonMaxSuppression_002": {
+        "graph_name": "NonMaxSuppression_Graph",
+        "inputs": {
+            "boxes": {
+                "data": [
+                    [
+                        [0.5, 0.5, 1.0, 1.0],
+                        [0.5, 0.6000000238418579, 1.0, 1.0],
+                        [0.5, 0.4000000059604645, 1.0, 1.0],
+                        [0.5, 10.5, 1.0, 1.0],
+                        [0.5, 10.600000381469727, 1.0, 1.0],
+                        [0.5, 100.5, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "scores": {
+                "data": [
+                    [
+                        [0.8999999761581421, 0.75, 0.6000000238418579, 0.949999988079071, 0.5, 0.30000001192092896]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "max_output_boxes_per_class (optional)": {
+                "data": [3],
+                "type": "int64"
+            },
+            "score_threshold (optional)": {
+                "data": [0.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "selected_indices": {
+                "data": [
+                    [0, 0, 3],
+                    [0, 0, 0],
+                    [0, 0, 5]
+                ],
+                "type": "int64"
+            }
+        },
+        "NonMaxSuppression_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "NonMaxSuppression",
+            "center_point_box": 1,
+            "inputs": {
+                "boxes": "boxes",
+                "scores": "scores",
+                "max_output_boxes_per_class (optional)": "max_output_boxes_per_class (optional)",
+                "score_threshold (optional)": "score_threshold (optional)"
+            },
+            "outputs": {
+                "selected_indices": "selected_indices"
+            }
+        }
+    },
+    "NonMaxSuppression_003": {
+        "graph_name": "NonMaxSuppression_Graph",
+        "inputs": {
+            "boxes": {
+                "data": [
+                    [
+                        [0.5, 0.5, 1.0, 1.0],
+                        [0.5, 0.6000000238418579, 1.0, 1.0],
+                        [0.5, 0.4000000059604645, 1.0, 1.0],
+                        [0.5, 10.5, 1.0, 1.0],
+                        [0.5, 10.600000381469727, 1.0, 1.0],
+                        [0.5, 100.5, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "scores": {
+                "data": [
+                    [
+                        [0.8999999761581421, 0.75, 0.6000000238418579, 0.949999988079071, 0.5, 0.30000001192092896]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "max_output_boxes_per_class (optional)": {
+                "data": [3],
+                "type": "int64"
+            },
+            "iou_threshold (optional)": {
+                "data": [0.5],
+                "type": "float32"
+            },
+            "score_threshold (optional)": {
+                "data": [0.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "selected_indices": {
+                "data": [
+                    [0, 0, 3],
+                    [0, 0, 0],
+                    [0, 0, 5]
+                ],
+                "type": "int64"
+            }
+        },
+        "NonMaxSuppression_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "NonMaxSuppression",
+            "center_point_box": 1,
+            "inputs": {
+                "boxes": "boxes",
+                "scores": "scores",
+                "max_output_boxes_per_class (optional)": "max_output_boxes_per_class (optional)",
+                "iou_threshold (optional)": "iou_threshold (optional)",
+                "score_threshold (optional)": "score_threshold (optional)"
+            },
+            "outputs": {
+                "selected_indices": "selected_indices"
+            }
+        }
+    }
+}

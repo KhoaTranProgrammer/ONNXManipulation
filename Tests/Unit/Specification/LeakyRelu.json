@@ -1,0 +1,56 @@
+{
+    "LeakyRelu_000": {
+        "graph_name": "LeakyRelu_Graph",
+        "inputs": {
+            "X": {
+                "data": [-1.0, 0.0, 1.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [-0.5, 0.0, 1.0],
+                "type": "float16"
+            }
+        },
+        "LeakyRelu_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "LeakyRelu",
+            "alpha": 0.5,
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    },
+    "LeakyRelu_001": {
+        "graph_name": "LeakyRelu_Graph",
+        "inputs": {
+            "X": {
+                "data": [-1.0, 0.0, 1.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "Y": {
+                "data": [-0.5, 0.0, 1.0],
+                "type": "float32"
+            }
+        },
+        "LeakyRelu_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "LeakyRelu",
+            "alpha": 0.5,
+            "inputs": {
+                "X": "X"
+            },
+            "outputs": {
+                "Y": "Y"
+            }
+        }
+    }
+}

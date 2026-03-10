@@ -1,0 +1,3053 @@
+{
+    "OneHot_000": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int32"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_001": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int32"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_002": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_003": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_004": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_005": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_006": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_007": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_008": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int64"
+            },
+            "values": {
+                "data": [1, 3],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1, 3, 1, 1, 1, 1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 1, 1, 1, 1, 1, 3]
+                    ],
+                    [
+                        [1, 1, 3, 1, 1, 1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 3, 1, 1, 1, 1, 1]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_009": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int64"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_010": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int64"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_011": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1, 3],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1, 3, 1, 1, 1, 1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 1, 1, 1, 1, 1, 3]
+                    ],
+                    [
+                        [1, 1, 3, 1, 1, 1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 3, 1, 1, 1, 1, 1]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_012": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_013": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_014": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1, 3],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1, 3, 1, 1, 1, 1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 1, 1, 1, 1, 1, 3]
+                    ],
+                    [
+                        [1, 1, 3, 1, 1, 1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 3, 1, 1, 1, 1, 1]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_015": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_016": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_017": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float16"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int64"
+            },
+            "values": {
+                "data": [1, 3],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1, 3, 1, 1, 1, 1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 1, 1, 1, 1, 1, 3]
+                    ],
+                    [
+                        [1, 1, 3, 1, 1, 1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 3, 1, 1, 1, 1, 1]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_018": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float16"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_019": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float16"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_020": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float16"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_021": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float16"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_022": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float32"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int64"
+            },
+            "values": {
+                "data": [1, 3],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1, 3, 1, 1, 1, 1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 1, 1, 1, 1, 1, 3]
+                    ],
+                    [
+                        [1, 1, 3, 1, 1, 1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 3, 1, 1, 1, 1, 1]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_023": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_024": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_025": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_026": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                        [1.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_027": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int32"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_028": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int32"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_029": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_030": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_031": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_032": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_033": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_034": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_035": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int64"
+            },
+            "values": {
+                "data": [1, 3],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1, 1],
+                        [3, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 3]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1],
+                        [3, 1],
+                        [1, 1],
+                        [1, 3],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_036": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int64"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_037": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int64"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_038": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1, 3],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1, 1],
+                        [3, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 3]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1],
+                        [3, 1],
+                        [1, 1],
+                        [1, 3],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_039": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_040": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_041": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1, 3],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1, 1],
+                        [3, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 3]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1],
+                        [3, 1],
+                        [1, 1],
+                        [1, 3],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_042": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_043": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1, 9],
+                    [2, 4]
+                ],
+                "type": "int64"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_044": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float16"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int64"
+            },
+            "values": {
+                "data": [1, 3],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1, 1],
+                        [3, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 3]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1],
+                        [3, 1],
+                        [1, 1],
+                        [1, 3],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_045": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float16"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_046": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float16"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_047": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float16"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_048": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float16"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_049": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float32"
+            },
+            "depth": {
+                "data": [10],
+                "type": "int64"
+            },
+            "values": {
+                "data": [1, 3],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1, 1],
+                        [3, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 3]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1],
+                        [3, 1],
+                        [1, 1],
+                        [1, 3],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_050": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_051": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float16"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_052": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "OneHot_053": {
+        "graph_name": "OneHot_Graph",
+        "inputs": {
+            "indices": {
+                "data": [
+                    [1.0, 9.0],
+                    [2.0, 4.0]
+                ],
+                "type": "float32"
+            },
+            "depth": {
+                "data": [10.0],
+                "type": "float32"
+            },
+            "values": {
+                "data": [1.0, 3.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0]
+                    ],
+                    [
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [3.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 3.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0],
+                        [1.0, 1.0]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "OneHot_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "OneHot",
+            "axis": 1,
+            "inputs": {
+                "indices": "indices",
+                "depth": "depth",
+                "values": "values"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    }
+}

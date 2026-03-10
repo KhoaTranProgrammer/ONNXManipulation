@@ -1,0 +1,240 @@
+{
+    "MaxUnpool_000": {
+        "graph_name": "MaxUnpool_Graph",
+        "inputs": {
+            "X": {
+                "data": [
+                    [
+                        [
+                            [1.0, 2.0],
+                            [3.0, 4.0]
+                        ]
+                    ]
+                ],
+                "type": "float16"
+            },
+            "I": {
+                "data": [
+                    [
+                        [
+                            [5, 7],
+                            [13, 15]
+                        ]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [0.0, 0.0, 0.0, 0.0],
+                            [0.0, 1.0, 0.0, 2.0],
+                            [0.0, 0.0, 0.0, 0.0],
+                            [0.0, 3.0, 0.0, 4.0]
+                        ]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "MaxUnpool_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "MaxUnpool",
+            "kernel_shape": [2, 2],
+            "pads": [0, 0, 0, 0],
+            "strides": [2, 2],
+            "inputs": {
+                "X": "X",
+                "I": "I"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "MaxUnpool_001": {
+        "graph_name": "MaxUnpool_Graph",
+        "inputs": {
+            "X": {
+                "data": [
+                    [
+                        [
+                            [1.0, 2.0],
+                            [3.0, 4.0]
+                        ]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "I": {
+                "data": [
+                    [
+                        [
+                            [5, 7],
+                            [13, 15]
+                        ]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [0.0, 0.0, 0.0, 0.0],
+                            [0.0, 1.0, 0.0, 2.0],
+                            [0.0, 0.0, 0.0, 0.0],
+                            [0.0, 3.0, 0.0, 4.0]
+                        ]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "MaxUnpool_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "MaxUnpool",
+            "kernel_shape": [2, 2],
+            "pads": [0, 0, 0, 0],
+            "strides": [2, 2],
+            "inputs": {
+                "X": "X",
+                "I": "I"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "MaxUnpool_002": {
+        "graph_name": "MaxUnpool_Graph",
+        "inputs": {
+            "X": {
+                "data": [
+                    [
+                        [
+                            [1.0, 2.0],
+                            [3.0, 4.0]
+                        ]
+                    ]
+                ],
+                "type": "float16"
+            },
+            "I": {
+                "data": [
+                    [
+                        [
+                            [5, 7],
+                            [13, 15]
+                        ]
+                    ]
+                ],
+                "type": "int64"
+            },
+            "output_shape(optional)": {
+                "data": [1, 1, 4, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [0.0, 0.0, 0.0, 0.0],
+                            [0.0, 1.0, 0.0, 2.0],
+                            [0.0, 0.0, 0.0, 0.0],
+                            [0.0, 3.0, 0.0, 4.0]
+                        ]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "MaxUnpool_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "MaxUnpool",
+            "kernel_shape": [2, 2],
+            "pads": [0, 0, 0, 0],
+            "strides": [2, 2],
+            "inputs": {
+                "X": "X",
+                "I": "I",
+                "output_shape(optional)": "output_shape(optional)"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "MaxUnpool_003": {
+        "graph_name": "MaxUnpool_Graph",
+        "inputs": {
+            "X": {
+                "data": [
+                    [
+                        [
+                            [1.0, 2.0],
+                            [3.0, 4.0]
+                        ]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "I": {
+                "data": [
+                    [
+                        [
+                            [5, 7],
+                            [13, 15]
+                        ]
+                    ]
+                ],
+                "type": "int64"
+            },
+            "output_shape(optional)": {
+                "data": [1, 1, 4, 4],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [
+                        [
+                            [0.0, 0.0, 0.0, 0.0],
+                            [0.0, 1.0, 0.0, 2.0],
+                            [0.0, 0.0, 0.0, 0.0],
+                            [0.0, 3.0, 0.0, 4.0]
+                        ]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "MaxUnpool_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "MaxUnpool",
+            "kernel_shape": [2, 2],
+            "pads": [0, 0, 0, 0],
+            "strides": [2, 2],
+            "inputs": {
+                "X": "X",
+                "I": "I",
+                "output_shape(optional)": "output_shape(optional)"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    }
+}

@@ -1,0 +1,1010 @@
+{
+    "GatherElements_000": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "uint8"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "uint8"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_001": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "uint8"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "uint8"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_002": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "uint16"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "uint16"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_003": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "uint16"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "uint16"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_004": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "uint32"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "uint32"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_005": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "uint32"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "uint32"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_006": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "uint64"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "uint64"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_007": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "uint64"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "uint64"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_008": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "int8"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "int8"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_009": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "int8"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "int8"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_010": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "int16"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "int16"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_011": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "int16"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "int16"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_012": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "int32"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "int32"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_013": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "int32"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "int32"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_014": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "int64"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "int64"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_015": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ],
+                "type": "int64"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4, 8, 3],
+                    [7, 2, 3]
+                ],
+                "type": "int64"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_016": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0],
+                    [7.0, 8.0, 9.0]
+                ],
+                "type": "float16"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4.0, 8.0, 3.0],
+                    [7.0, 2.0, 3.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_017": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0],
+                    [7.0, 8.0, 9.0]
+                ],
+                "type": "float16"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4.0, 8.0, 3.0],
+                    [7.0, 2.0, 3.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_018": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0],
+                    [7.0, 8.0, 9.0]
+                ],
+                "type": "float32"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4.0, 8.0, 3.0],
+                    [7.0, 2.0, 3.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_019": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0],
+                    [7.0, 8.0, 9.0]
+                ],
+                "type": "float32"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4.0, 8.0, 3.0],
+                    [7.0, 2.0, 3.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_020": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0],
+                    [7.0, 8.0, 9.0]
+                ],
+                "type": "float64"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4.0, 8.0, 3.0],
+                    [7.0, 2.0, 3.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_021": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0],
+                    [4.0, 5.0, 6.0],
+                    [7.0, 8.0, 9.0]
+                ],
+                "type": "float64"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [4.0, 8.0, 3.0],
+                    [7.0, 2.0, 3.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_022": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [true, true, true],
+                    [true, true, true],
+                    [true, true, true]
+                ],
+                "type": "bool"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [true, true, true],
+                    [true, true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "GatherElements_023": {
+        "graph_name": "GatherElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [true, true, true],
+                    [true, true, true],
+                    [true, true, true]
+                ],
+                "type": "bool"
+            },
+            "indices": {
+                "data": [
+                    [1, 2, 0],
+                    [2, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [true, true, true],
+                    [true, true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "GatherElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "GatherElements",
+            "axis": 0,
+            "inputs": {
+                "data": "data",
+                "indices": "indices"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    }
+}

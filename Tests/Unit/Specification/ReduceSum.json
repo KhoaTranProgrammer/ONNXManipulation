@@ -1,0 +1,472 @@
+{
+    "ReduceSum_000": {
+        "graph_name": "ReduceSum_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [12]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "ReduceSum_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceSum",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceSum_001": {
+        "graph_name": "ReduceSum_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, -1]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [10]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "ReduceSum_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceSum",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceSum_002": {
+        "graph_name": "ReduceSum_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [-1.6240234375, -0.81396484375],
+                        [2.23046875, 2.369140625]
+                    ],
+                    [
+                        [0.038909912109375, -1.171875],
+                        [1.4384765625, -1.5712890625]
+                    ],
+                    [
+                        [1.4013671875, -0.79833984375],
+                        [0.060516357421875, -0.7158203125]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [0.84375]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "ReduceSum_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceSum",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceSum_003": {
+        "graph_name": "ReduceSum_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [-0.017845535650849342, 0.1826455444097519],
+                        [-0.367328941822052, -1.5422658920288086]
+                    ],
+                    [
+                        [-1.4864675998687744, 1.8120149374008179],
+                        [-1.3463486433029175, 0.04082228243350983]
+                    ],
+                    [
+                        [-0.526488721370697, 1.2517390251159668],
+                        [-1.3386887311935425, -0.07255268841981888]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [-3.4107649326324463]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "ReduceSum_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceSum",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceSum_004": {
+        "graph_name": "ReduceSum_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [-0.21790210586867895, 0.19014427156374178],
+                        [-1.618616631204636, -2.593378544561445]
+                    ],
+                    [
+                        [-0.143679461760165, 0.4659158839456176],
+                        [-0.5006368473869999, 0.1613317358354279]
+                    ],
+                    [
+                        [0.41167134643667236, -0.08946002622143949],
+                        [-0.27779521231319293, 1.4049558318637603]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [-2.8074497596713375]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "ReduceSum_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceSum",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceSum_005": {
+        "graph_name": "ReduceSum_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int32"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [3, 3],
+                        [3, 3]
+                    ]
+                ],
+                "type": "int32"
+            }
+        },
+        "ReduceSum_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceSum",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceSum_006": {
+        "graph_name": "ReduceSum_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ],
+                    [
+                        [-1, 1],
+                        [1, -1]
+                    ],
+                    [
+                        [1, 1],
+                        [1, 1]
+                    ]
+                ],
+                "type": "int64"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [1, 3],
+                        [3, 1]
+                    ]
+                ],
+                "type": "int64"
+            }
+        },
+        "ReduceSum_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceSum",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceSum_007": {
+        "graph_name": "ReduceSum_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [1.4150390625, 0.306396484375],
+                        [0.06732177734375, -0.10284423828125]
+                    ],
+                    [
+                        [1.4404296875, 1.23046875],
+                        [-0.77490234375, -1.22265625]
+                    ],
+                    [
+                        [-1.130859375, 1.134765625],
+                        [0.54443359375, -0.52685546875]
+                    ]
+                ],
+                "type": "float16"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [1.724609375, 2.671875],
+                        [-0.1630859375, -1.8525390625]
+                    ]
+                ],
+                "type": "float16"
+            }
+        },
+        "ReduceSum_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceSum",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceSum_008": {
+        "graph_name": "ReduceSum_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [0.5088669061660767, -0.8376100659370422],
+                        [0.9045372009277344, 0.4630301296710968]
+                    ],
+                    [
+                        [0.21630831062793732, -1.5801044702529907],
+                        [-0.8012058138847351, -0.2777533531188965]
+                    ],
+                    [
+                        [0.0915205329656601, 0.08522772789001465],
+                        [0.44049271941185, -1.0833603143692017]
+                    ]
+                ],
+                "type": "float32"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [0.8166957497596741, -2.332486867904663],
+                        [0.5438240766525269, -0.8980835676193237]
+                    ]
+                ],
+                "type": "float32"
+            }
+        },
+        "ReduceSum_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceSum",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    },
+    "ReduceSum_009": {
+        "graph_name": "ReduceSum_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [
+                        [0.1146886064014811, 0.2829495218335866],
+                        [0.8584598760684049, -0.4975169279351902]
+                    ],
+                    [
+                        [0.5104896920821187, -0.315659243418234],
+                        [2.34572268699481, -0.3666843624068815]
+                    ],
+                    [
+                        [1.046898976084156, -0.5289221573799199],
+                        [0.790246018152563, 0.2555370035344324]
+                    ]
+                ],
+                "type": "float64"
+            },
+            "axes(optional)": {
+                "data": [0],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "reduced": {
+                "data": [
+                    [
+                        [1.672077274567756, -0.5616318789645672],
+                        [3.994428581215778, -0.6086642868076393]
+                    ]
+                ],
+                "type": "float64"
+            }
+        },
+        "ReduceSum_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ReduceSum",
+            "keepdims": 1,
+            "inputs": {
+                "data": "data",
+                "axes(optional)": "axes(optional)"
+            },
+            "outputs": {
+                "reduced": "reduced"
+            }
+        }
+    }
+}

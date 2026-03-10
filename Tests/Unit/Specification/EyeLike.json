@@ -1,0 +1,2617 @@
+{
+    "EyeLike_000": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [1, 1, 1],
+                    [2, 1, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_001": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [1, 1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_002": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [1, 1, -1],
+                    [1, 1, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_003": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.70703125, 0.88720703125, 0.77099609375],
+                    [0.93798828125, 0.10125732421875, -1.4375],
+                    [1.6318359375, 0.162109375, -0.420166015625]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_004": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.1766972690820694, -0.38709762692451477, -1.7650718688964844],
+                    [0.2643231451511383, -0.4229857623577118, -1.6673072576522827],
+                    [-1.5934362411499023, -1.31977117061615, -0.2741411328315735]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_005": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.04465765360063306, 1.453078699130154, -0.5918816948809308],
+                    [-1.024054265996647, 2.0323895077818026, 0.3641794894657276],
+                    [1.9166511082430446, 1.3362918842812066, -0.15351880379404548]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_006": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 18446744073709551615],
+                    [1, 1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 13,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_007": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [18446744073709551615, 1, 1],
+                    [1, 18446744073709551615, 1],
+                    [18446744073709551615, 1, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 6,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_008": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [18446744073709551615, 1, 1],
+                    [1, 18446744073709551615, 1],
+                    [18446744073709551615, 1, 18446744073709551615]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 7,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_009": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 18446744073709551615],
+                    [1, 1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_010": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [18446744073709551615, 1, 1],
+                    [1, 18446744073709551615, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 11,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_011": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [1, -1, 1],
+                    [1, -1, -1]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 13,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_012": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [1, -1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 6,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_013": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, -1],
+                    [1, 1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 7,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_014": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-3, 1, 1],
+                    [1, 1, 1],
+                    [-2, -1, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_015": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [1, 1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 11,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_016": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [1, 1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 13,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_017": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, -1],
+                    [1, 1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 6,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_018": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 2, 1],
+                    [1, 1, -1],
+                    [1, 1, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 7,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_019": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-2, 1, 1],
+                    [1, 1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_020": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [-1, 1, 1],
+                    [-1, 1, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 11,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_021": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.6220703125, -0.3740234375, -1.0693359375],
+                    [-0.2498779296875, -1.037109375, 1.0908203125],
+                    [-0.5556640625, -0.60498046875, -1.3525390625]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 13,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_022": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.623046875, -1.43359375, 1.359375],
+                    [0.14990234375, -0.54833984375, 0.1783447265625],
+                    [0.61669921875, -1.7255859375, 1.0615234375]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 6,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_023": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.7783203125, 0.79931640625, 1.22265625],
+                    [-1.5380859375, 0.63916015625, 0.397216796875],
+                    [1.1640625, 0.97607421875, -0.81005859375]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 7,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_024": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.7138671875, -0.2406005859375, 0.9013671875],
+                    [-0.5078125, -0.1416015625, -0.32763671875],
+                    [0.50439453125, 0.2421875, 1.064453125]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 10,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_025": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.921875, 0.014923095703125, 0.035308837890625],
+                    [1.533203125, -0.1612548828125, 0.92578125],
+                    [1.955078125, -0.2529296875, -0.64501953125]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_026": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-1.62890625, -0.11651611328125, -0.58251953125],
+                    [0.412109375, 0.67431640625, 0.95703125],
+                    [-0.68505859375, 1.26953125, -0.927734375]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 11,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_027": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.1991630643606186, -0.5861368179321289, 0.09859959036111832],
+                    [1.146848440170288, -1.3338605165481567, -0.5656089782714844],
+                    [0.6270740032196045, -1.9773366451263428, 0.47683078050613403]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 13,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_028": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-2.0523550510406494, 1.1362608671188354, -0.4647819697856903],
+                    [0.26805824041366577, -0.3837336003780365, 1.1196671724319458],
+                    [-0.49203726649284363, -0.29403528571128845, -2.24126935005188]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 6,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_029": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.5341646075248718, 0.244645893573761, 0.534085214138031],
+                    [-0.6424522995948792, 0.31659311056137085, 1.2387200593948364],
+                    [1.0000011920928955, 0.5178806185722351, 1.3328651189804077]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 7,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_030": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1.482317566871643, -0.34438225626945496, -0.15482956171035767],
+                    [0.39865803718566895, 1.867390513420105, 0.4755615293979645],
+                    [-0.64210444688797, -1.0025427341461182, 0.1712132692337036]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_031": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.3760775029659271, -1.9388468265533447, -2.8172342777252197],
+                    [0.6837697625160217, -0.05094869062304497, -0.19648639857769012],
+                    [0.3175868093967438, -0.1860339641571045, 0.200954407453537]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 11,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_032": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.07709685073278895, -0.3129363640669417, -1.5376944699994075],
+                    [0.908278714108003, -0.4687227178699288, 1.0894501390117446],
+                    [-0.24543242839829255, -1.2314218407057764, 0.11620707762957598]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 13,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_033": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-1.8425212131107596, -0.6955984406729112, -0.7779642335661181],
+                    [-0.9129367723142068, -0.4736402122791967, 0.12280849746563068],
+                    [-0.5921304034137443, -0.20545431838797176, -0.6847616151174175]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 6,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_034": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.39167693474007464, -1.4074045562195325, -0.4360911032619934],
+                    [0.06633461999623379, 0.40908815213277455, 1.7713494297667516],
+                    [-0.7557858948203703, 0.20418773230422146, -0.20724022884071286]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 0, 0],
+                    [0, 1, 0],
+                    [0, 0, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 7,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_035": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.12785146119016608, 0.9184281350960882, 0.16134995645414096],
+                    [-2.036353325458778, -0.10384600843887751, -0.8565822574596494],
+                    [-0.6867131110445888, -1.387273664763824, -0.3419875891116641]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_036": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.6406290327180412, -0.1894357945423603, 0.45810709211657125],
+                    [-0.12135768227222386, -1.1804394179066604, 2.1475603171108455],
+                    [1.2986807750922962, 0.19600665451357827, -0.5155773922488198]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 0.0, 0.0],
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 11,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_037": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [18446744073709551615, 1, 1],
+                    [1, 1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "uint64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_038": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, -1],
+                    [1, 1, 1],
+                    [1, 1, -1]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_039": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [1, 1, 2],
+                    [1, 1, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_040": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-2.623046875, -1.4375, 0.88671875],
+                    [-0.060211181640625, -0.2489013671875, 0.857421875],
+                    [-0.22216796875, -0.99072265625, 1.458984375]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_041": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-1.163408637046814, -2.102621555328369, -1.2255367040634155],
+                    [0.19732756912708282, 0.5173853635787964, -0.24542807042598724],
+                    [1.3899052143096924, 0.8777945041656494, 0.19765815138816833]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_042": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1.8228491709547079, -1.379514686085801, 1.583495175622685],
+                    [0.5529414321603252, 0.23265259697662188, -0.6876103368275183],
+                    [1.4530367607226955, -0.341311517621487, 0.8622072710005876]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_043": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [1, 1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "uint64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 13,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_044": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [18446744073709551614, 18446744073709551615, 1],
+                    [1, 18446744073709551614, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 6,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_045": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 18446744073709551614],
+                    [1, 1, 1],
+                    [1, 1, 2]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 7,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_046": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 18446744073709551615],
+                    [18446744073709551615, 1, 1],
+                    [1, 1, 18446744073709551614]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 1,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_047": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 18446744073709551615],
+                    [1, 1, 1],
+                    [1, 18446744073709551615, 1]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 11,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_048": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [1, 1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "uint64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 13,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_049": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, -1, 1],
+                    [1, -1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 6,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_050": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [1, 2, 1],
+                    [-1, 1, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 7,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_051": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [1, 1, 1],
+                    [-1, 1, 1]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 1,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_052": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 2],
+                    [-1, 1, 1],
+                    [1, 1, 2]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 11,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_053": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [1, -1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "uint64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 13,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_054": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [-1, 1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 6,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_055": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 2],
+                    [1, 1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 7,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_056": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [-1, 1, 1],
+                    [1, 1, 1]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 1,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_057": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1, 1, 1],
+                    [1, 1, -1],
+                    [1, -2, -2]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 11,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_058": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1.978515625, 1.1083984375, -0.3935546875],
+                    [0.548828125, 0.3857421875, 0.60302734375],
+                    [1.3310546875, 1.0615234375, 0.7607421875]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "uint64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 13,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_059": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.83837890625, -0.444580078125, 1.15234375],
+                    [0.732421875, -0.86669921875, 1.4111328125],
+                    [1.0126953125, -1.0927734375, 0.9892578125]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 6,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_060": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.0267486572265625, -0.72802734375, -1.671875],
+                    [0.08062744140625, 0.85302734375, 0.1029052734375],
+                    [-0.490478515625, 0.350341796875, 1.2529296875]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 7,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_061": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.1566162109375, 0.62353515625, 0.1781005859375],
+                    [-0.498291015625, -1.4404296875, -0.98583984375],
+                    [-1.119140625, -0.8740234375, -0.7763671875]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 10,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_062": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.49658203125, 0.69873046875, 0.0278778076171875],
+                    [0.84423828125, -0.441650390625, -0.54443359375],
+                    [0.09307861328125, -0.8095703125, -0.79638671875]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 1,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_063": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.45263671875, -0.56103515625, 0.260986328125],
+                    [0.1986083984375, 0.28125, 0.59521484375],
+                    [0.71728515625, 0.61962890625, -0.008453369140625]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 11,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_064": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [1.8410803079605103, 0.37940558791160583, -0.9971745610237122],
+                    [0.3772185444831848, -0.31703075766563416, -1.029379963874817],
+                    [0.8652355074882507, -0.741166889667511, -1.031177282333374]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "uint64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 13,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_065": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.9291180372238159, 0.15253207087516785, -1.0869848728179932],
+                    [0.5638971924781799, -1.0878758430480957, 0.053451403975486755],
+                    [-0.8034985065460205, -0.898436963558197, 0.2837907671928406]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 6,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_066": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.14670807123184204, -1.9913020133972168, -1.4817310571670532],
+                    [-0.390574187040329, 0.9240486025810242, 0.5713483691215515],
+                    [1.8012604713439941, 1.541127324104309, 0.501371443271637]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 7,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_067": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.665899932384491, 1.1114985942840576, 0.5629996061325073],
+                    [0.8206785321235657, 1.518288493156433, -0.47142234444618225],
+                    [-0.6771934032440186, -0.35380831360816956, -0.6263523697853088]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 1,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_068": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.30981868505477905, -0.6717799305915833, -0.5686055421829224],
+                    [0.8436552882194519, -1.176200270652771, -0.3625588119029999],
+                    [0.3381304442882538, -2.2301344871520996, -1.3513743877410889]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 11,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_069": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.7441386961469446, -0.6213600370966433, 0.7158627787581663],
+                    [-0.15410185207086435, 0.4198562516532901, 0.6243297912021092],
+                    [0.8045645304157172, -0.26672901683251815, -1.2051149632630034]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "uint64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 13,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_070": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-2.130306186826347, 1.8430360854642052, 0.9402103408033565],
+                    [-0.8302289095912095, -0.34751346108431697, 0.8275763796307368],
+                    [-2.49441364657159, 0.11351966637467549, 0.06659542569586775]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "int32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 6,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_071": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.3982759756443477, -3.146379094937703, -0.027194921752212473],
+                    [-0.6793541126441303, 1.3562084752091077, -1.9794722664100939],
+                    [-1.0792771438714852, -0.352702155544692, 0.7237239425976725]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0, 1, 0],
+                    [0, 0, 1],
+                    [0, 0, 0]
+                ],
+                "type": "int64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 7,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_072": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [-0.33605708066460754, 0.777622363923008, 0.22778755970863324],
+                    [-0.15209592126704688, 0.04282311484071268, 1.0785044906130712],
+                    [-0.4306908235981266, 0.2963492563257399, -0.0957778619143185]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 1,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "EyeLike_073": {
+        "graph_name": "EyeLike_Graph",
+        "inputs": {
+            "input": {
+                "data": [
+                    [0.5615059542679364, 0.6382404749400796, -0.6634978491416286],
+                    [0.630667905544838, 0.2612029280314835, 0.2537768212444687],
+                    [-0.48968885232475184, 0.4138589759790733, 1.0939031235945327]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [0.0, 1.0, 0.0],
+                    [0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "EyeLike_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "EyeLike",
+            "dtype": 11,
+            "k": 1,
+            "inputs": {
+                "input": "input"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    }
+}

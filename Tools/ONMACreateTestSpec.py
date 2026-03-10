@@ -438,9 +438,9 @@ def create_TCs_for_one_input_setting(node, node_data, one_special_input, output_
 
 def createTC(node_dict, node_name, input_special, attributes, test_spec):
     global exclude_node
-    output_dictionary = {}
     for node in node_dict:
         status = False
+        output_dictionary = {}
         if (node == node_name or node_name == "ALL") and node != "Attention" and node != "LSTM" and node != "Bernoulli" \
             and node != "RandomNormalLike" and node != "GlobalLpPool" \
             and node != "RandomUniformLike" \
@@ -459,22 +459,22 @@ def createTC(node_dict, node_name, input_special, attributes, test_spec):
                 status = create_TCs_for_one_input_setting(node, node_data, one_special_input, output_dictionary, attributes)
         if status == False:
             exclude_node.append(node)
-
-    with open(test_spec, "w") as fp:
-        options = jsbeautifier.default_options()
-        options.indent_size = 4
-        refine_json = (jsbeautifier.beautify(json.dumps(output_dictionary, cls=NumpyEncoder), options))
-        fp.write(refine_json)
+        else:
+            with open(f'{test_spec}/{node}.json', "w") as fp:
+                options = jsbeautifier.default_options()
+                options.indent_size = 4
+                refine_json = (jsbeautifier.beautify(json.dumps(output_dictionary, cls=NumpyEncoder), options))
+                fp.write(refine_json)
 
 def main():
     global args
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--operator", "-op", help="Operator name", default="ALL")
-    parser.add_argument("--onnxspec", help="ONNX spec in JSON format", default="Sample/ONNXOperatorsSpec.json")
-    parser.add_argument("--attributes_list", help="JSON format that stores the list of attributes and there value uses in testing", default="Sample/Attributes_Values.json")
-    parser.add_argument("--input_special", help="JSON format that stores the list of input for nodes", default="Sample/Input_Special.json")
-    parser.add_argument("--test_spec", help="JSON file that stores the test spec", default="Tests/reference_data.json")
+    parser.add_argument("--onnxspec", help="ONNX spec in JSON format", default="Tests/Unit/Configuration/ONNXOperatorsSpec.json")
+    parser.add_argument("--attributes_list", help="JSON format that stores the list of attributes and there value uses in testing", default="Tests/Unit/Configuration/Attributes_Values.json")
+    parser.add_argument("--input_special", help="JSON format that stores the list of input for nodes", default="Tests/Unit/Configuration/Input_Special.json")
+    parser.add_argument("--test_spec", help="JSON file that stores the test spec", default="Tests/Unit/Specification")
     args = parser.parse_args()
 
     # Open and read the JSON file

@@ -1,0 +1,226 @@
+{
+    "MelWeightMatrix_000": {
+        "graph_name": "MelWeightMatrix_Graph",
+        "inputs": {
+            "num_mel_bins": {
+                "data": [8],
+                "type": "int32"
+            },
+            "dft_length": {
+                "data": [16],
+                "type": "int32"
+            },
+            "sample_rate": {
+                "data": [8192],
+                "type": "int32"
+            },
+            "lower_edge_hertz": {
+                "data": [0.0],
+                "type": "float32"
+            },
+            "upper_edge_hertz": {
+                "data": [4096.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "MelWeightMatrix_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "MelWeightMatrix",
+            "inputs": {
+                "num_mel_bins": "num_mel_bins",
+                "dft_length": "dft_length",
+                "sample_rate": "sample_rate",
+                "lower_edge_hertz": "lower_edge_hertz",
+                "upper_edge_hertz": "upper_edge_hertz"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "MelWeightMatrix_001": {
+        "graph_name": "MelWeightMatrix_Graph",
+        "inputs": {
+            "num_mel_bins": {
+                "data": [8],
+                "type": "int32"
+            },
+            "dft_length": {
+                "data": [16],
+                "type": "int32"
+            },
+            "sample_rate": {
+                "data": [8192],
+                "type": "int32"
+            },
+            "lower_edge_hertz": {
+                "data": [0.0],
+                "type": "float16"
+            },
+            "upper_edge_hertz": {
+                "data": [4096.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "MelWeightMatrix_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "MelWeightMatrix",
+            "inputs": {
+                "num_mel_bins": "num_mel_bins",
+                "dft_length": "dft_length",
+                "sample_rate": "sample_rate",
+                "lower_edge_hertz": "lower_edge_hertz",
+                "upper_edge_hertz": "upper_edge_hertz"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "MelWeightMatrix_002": {
+        "graph_name": "MelWeightMatrix_Graph",
+        "inputs": {
+            "num_mel_bins": {
+                "data": [8],
+                "type": "int64"
+            },
+            "dft_length": {
+                "data": [16],
+                "type": "int64"
+            },
+            "sample_rate": {
+                "data": [8192],
+                "type": "int64"
+            },
+            "lower_edge_hertz": {
+                "data": [0.0],
+                "type": "float32"
+            },
+            "upper_edge_hertz": {
+                "data": [4096.0],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "MelWeightMatrix_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "MelWeightMatrix",
+            "inputs": {
+                "num_mel_bins": "num_mel_bins",
+                "dft_length": "dft_length",
+                "sample_rate": "sample_rate",
+                "lower_edge_hertz": "lower_edge_hertz",
+                "upper_edge_hertz": "upper_edge_hertz"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "MelWeightMatrix_003": {
+        "graph_name": "MelWeightMatrix_Graph",
+        "inputs": {
+            "num_mel_bins": {
+                "data": [8],
+                "type": "int64"
+            },
+            "dft_length": {
+                "data": [16],
+                "type": "int64"
+            },
+            "sample_rate": {
+                "data": [8192],
+                "type": "int64"
+            },
+            "lower_edge_hertz": {
+                "data": [0.0],
+                "type": "float16"
+            },
+            "upper_edge_hertz": {
+                "data": [4096.0],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "MelWeightMatrix_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "MelWeightMatrix",
+            "inputs": {
+                "num_mel_bins": "num_mel_bins",
+                "dft_length": "dft_length",
+                "sample_rate": "sample_rate",
+                "lower_edge_hertz": "lower_edge_hertz",
+                "upper_edge_hertz": "upper_edge_hertz"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    }
+}

@@ -1,0 +1,5154 @@
+{
+    "ScatterElements_000": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_001": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "uint8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_002": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "uint8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_003": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_004": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "uint8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_005": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_006": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "uint8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_007": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "uint8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_008": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_009": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "uint8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_010": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_011": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "uint16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_012": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "uint16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_013": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_014": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "uint16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_015": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_016": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "uint16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_017": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "uint16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_018": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_019": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "uint16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_020": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_021": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "uint32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_022": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "uint32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_023": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_024": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "uint32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_025": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_026": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "uint32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_027": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "uint32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_028": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_029": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "uint32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_030": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_031": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "uint64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_032": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "uint64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_033": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_034": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "uint64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_035": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_036": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "uint64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_037": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "uint64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_038": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_039": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "uint64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "uint64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "uint64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_040": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_041": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "int8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_042": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "int8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_043": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_044": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "int8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_045": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_046": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "int8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_047": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "int8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_048": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_049": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int8"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int8"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "int8"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_050": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_051": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "int16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_052": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "int16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_053": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_054": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "int16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_055": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_056": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "int16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_057": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "int16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_058": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_059": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "int16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_060": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_061": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "int32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_062": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "int32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_063": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_064": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "int32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_065": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_066": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "int32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_067": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "int32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_068": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_069": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "int32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_070": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_071": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "int64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_072": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "int64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_073": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_074": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "int64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_075": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_076": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 5, 3, 4, 5]
+                ],
+                "type": "int64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_077": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 4, 3, 4, 5]
+                ],
+                "type": "int64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_078": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_079": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1, 2, 3, 4, 5]
+                ],
+                "type": "int64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1, 2]
+                ],
+                "type": "int64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1, 1, 3, 4, 5]
+                ],
+                "type": "int64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_080": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1.099609375, 2.099609375]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 2.099609375, 3.0, 4.0, 5.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_081": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1.099609375, 2.099609375]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 2.099609375, 3.0, 4.0, 5.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_082": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1.099609375, 2.099609375]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 1.099609375, 3.0, 4.0, 5.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_083": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1.099609375, 2.099609375]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 2.099609375, 3.0, 4.0, 5.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_084": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1.099609375, 2.099609375]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 2.099609375, 3.0, 4.0, 5.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_085": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float16"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1.099609375, 2.099609375]
+                ],
+                "type": "float16"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 1.099609375, 3.0, 4.0, 5.0]
+                ],
+                "type": "float16"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_086": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1.100000023841858, 2.0999999046325684]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 2.0999999046325684, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_087": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1.100000023841858, 2.0999999046325684]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 5.199999809265137, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_088": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1.100000023841858, 2.0999999046325684]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 4.619999885559082, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_089": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1.100000023841858, 2.0999999046325684]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 2.0999999046325684, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_090": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1.100000023841858, 2.0999999046325684]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 1.100000023841858, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_091": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1.100000023841858, 2.0999999046325684]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 2.0999999046325684, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_092": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1.100000023841858, 2.0999999046325684]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 5.199999809265137, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_093": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1.100000023841858, 2.0999999046325684]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 4.619999885559082, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_094": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1.100000023841858, 2.0999999046325684]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 2.0999999046325684, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_095": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1.100000023841858, 2.0999999046325684]
+                ],
+                "type": "float32"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 1.100000023841858, 3.0, 4.0, 5.0]
+                ],
+                "type": "float32"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_096": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1.1, 2.1]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 2.1, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_097": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1.1, 2.1]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 5.2, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_098": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1.1, 2.1]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 4.620000000000001, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_099": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1.1, 2.1]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 2.1, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_100": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [1.1, 2.1]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 1.1, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_101": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1.1, 2.1]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 2.1, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_102": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1.1, 2.1]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 5.2, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_103": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1.1, 2.1]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 4.620000000000001, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_104": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1.1, 2.1]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 2.1, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "max",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_105": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [1.0, 2.0, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [1.1, 2.1]
+                ],
+                "type": "float64"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [1.0, 1.1, 3.0, 4.0, 5.0]
+                ],
+                "type": "float64"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "min",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_106": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [true, true, true, true, true]
+                ],
+                "type": "bool"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [true, true, true, true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_107": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [true, true, true, true, true]
+                ],
+                "type": "bool"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [true, true, true, true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_108": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [true, true, true, true, true]
+                ],
+                "type": "bool"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int32"
+            },
+            "updates": {
+                "data": [
+                    [true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [true, true, true, true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_109": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [true, true, true, true, true]
+                ],
+                "type": "bool"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [true, true, true, true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "none",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_110": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [true, true, true, true, true]
+                ],
+                "type": "bool"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [true, true, true, true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "add",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    },
+    "ScatterElements_111": {
+        "graph_name": "ScatterElements_Graph",
+        "inputs": {
+            "data": {
+                "data": [
+                    [true, true, true, true, true]
+                ],
+                "type": "bool"
+            },
+            "indices": {
+                "data": [
+                    [1, 1]
+                ],
+                "type": "int64"
+            },
+            "updates": {
+                "data": [
+                    [true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "outputs": {
+            "output": {
+                "data": [
+                    [true, true, true, true, true]
+                ],
+                "type": "bool"
+            }
+        },
+        "ScatterElements_Node": {
+            "Action": "Add",
+            "Category": "Node",
+            "Type": "ScatterElements",
+            "axis": 1,
+            "reduction": "mul",
+            "inputs": {
+                "data": "data",
+                "indices": "indices",
+                "updates": "updates"
+            },
+            "outputs": {
+                "output": "output"
+            }
+        }
+    }
+}
