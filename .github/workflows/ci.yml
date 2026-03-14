@@ -30,7 +30,7 @@ jobs:
           pip install numpy==2.2.5
           pip install onnx==1.17.0
           pip install onnxruntime==1.21.0
-          pytest Tests/unittesting.py | tee testlog.log
+          pytest Tests/Unit/ONMAUnitTesting.py --capture=no -v | tee testlog.log
       
       - name: 'Upload Artifact'
         if: always()
@@ -43,7 +43,7 @@ jobs:
       - name: 'Decide JOB Status'
         if: always()
         run: |
-          if grep "FAILED unittesting.py::testaccuracy" testlog.log
+          if grep "FAILED Tests/Unit/ONMAUnitTesting.py::test_execute" testlog.log
           then
               echo "JOB is FAILED"
               exit 1
