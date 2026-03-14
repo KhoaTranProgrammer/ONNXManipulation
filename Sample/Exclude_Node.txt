@@ -13,6 +13,7 @@ DeformConv
 DepthToSpace
 DequantizeLinear
 GRU
+GlobalLpPool
 If
 ImageDecoder
 LSTM
