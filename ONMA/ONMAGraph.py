@@ -1,6 +1,7 @@
 import numpy as np
 import onnx
 import json
+import ast
 from onnx.helper import (
     make_node, make_graph, make_model, make_tensor_value_info)
 from onnx.numpy_helper import from_array
@@ -347,11 +348,14 @@ class ONMAGraph:
                             data[item]["tensor"]["data"] = np.random.randn(*dimensions).astype(data_type)
                         except:
                             data[item]["tensor"]["data"] = np.random.randn(*dimensions).astype("float32")
-                    if "npy" in data[item]["tensor"]["data"]:
+                    elif "npy" in data[item]["tensor"]["data"]:
                         data_fromnpy = np.load(data[item]["tensor"]["data"]["npy"], allow_pickle=True)
                         data[item]["tensor"]["data"] = data_fromnpy.tolist()
-                    if type(data[item]["tensor"]) is list:
+                    elif type(data[item]["tensor"]) is list:
                         data[item]["tensor"] = np.array(data[item]["tensor"])
+                    else: # "data": "np.random.rand(1, 2, 16, 16).astype(np.float32)"
+                        data[item]["tensor"]["data"] = eval(data[item]["tensor"]["data"])
+                        data[item]["tensor"]["type"] = (str((data[item]["tensor"]["data"]).dtype))
                     UpdateInitializer(self._graph.initializer, item, data[item])
                 elif data[item]["Category"] == "Node":
                     UpdateNode(self._graph, item, data[item])

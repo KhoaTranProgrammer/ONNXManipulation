@@ -1,0 +1,30 @@
+{
+    "graph_name": "Pad_Graph",
+    "b":
+    {
+        "Action": "Add",
+        "Category": "Initializer",
+        "tensor": {"data": "np.random.randn(1, 2, 16, 16).astype(np.float32)"}
+    },
+    "inputs": {
+        "a": {
+            "data": {"dimensions": [1, 2, 16, 16]},
+            "type": "float32"
+        }
+    },
+    "outputs": {
+        "Y": "None"
+    },
+    "Add_Node": {
+        "Action": "Add",
+        "Category": "Node",
+        "Type": "Add",
+        "inputs": {
+            "a": "a",
+            "b": "b"
+        },
+        "outputs": {
+            "Y": "Y"
+        }
+    }
+}
