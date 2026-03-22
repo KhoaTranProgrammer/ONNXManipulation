@@ -228,7 +228,8 @@ def ConvertONNXToJson(graph, output_path, store_npy=False):
         if store_npy:
             npy_data = {}
             npy_data["npy"] = f'{initializer.name}.npy'
-            np.save(f'{initializer.name}.npy', data)
+            npy_data["npy"] = (npy_data["npy"]).replace("::", "_")
+            np.save(npy_data["npy"], data)
             tensor_dic["data"] = npy_data
         else:
             data = onnx.numpy_helper.to_array(initializer)
