@@ -351,8 +351,8 @@ class ONMAGraph:
                     elif "npy" in data[item]["tensor"]["data"]:
                         data_fromnpy = np.load(data[item]["tensor"]["data"]["npy"], allow_pickle=True)
                         data[item]["tensor"]["data"] = data_fromnpy.tolist()
-                    elif type(data[item]["tensor"]) is list:
-                        data[item]["tensor"] = np.array(data[item]["tensor"])
+                    elif type(data[item]["tensor"]["data"]) is list:
+                        data[item]["tensor"]["data"] = np.array(data[item]["tensor"]["data"], dtype=data[item]["tensor"]["type"])
                     else: # "data": "np.random.rand(1, 2, 16, 16).astype(np.float32)"
                         data[item]["tensor"]["data"] = eval(data[item]["tensor"]["data"])
                         data[item]["tensor"]["type"] = (str((data[item]["tensor"]["data"]).dtype))
