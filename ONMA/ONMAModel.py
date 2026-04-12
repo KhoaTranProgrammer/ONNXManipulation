@@ -38,7 +38,7 @@ class ONMAModel:
                 if "dimensions" in value["data"]:
                     dimensions = value["data"]["dimensions"]
                     try:
-                        value_np = np.random.randn(*dimensions).astype(value["data"]["type"])
+                        value_np = np.random.randn(*dimensions).astype(value["type"])
                     except:
                         value_np = np.random.randn(*dimensions).astype("float32")
                 else:
