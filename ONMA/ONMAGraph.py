@@ -397,7 +397,10 @@ class ONMAGraph:
         outputs = data["graph"]["outputs"]
         graph_output = []
         for item in outputs:
-            graph_output.append(self.ONMAGraph_CreateInput(item["name"], GetTensorDataTypeFromnp(item["data_type"]), item["shape"]))
+            if "shape" not in item and "data" not in item:
+                graph_output.append(self.ONMAGraph_CreateInput(item["name"], GetTensorDataTypeFromnp(np.array((list(refine_input.values())[0])).dtype), np.array(list(refine_input.values())[0]).shape))
+            else:
+                graph_output.append(self.ONMAGraph_CreateInput(item["name"], GetTensorDataTypeFromnp(item["data_type"]), item["shape"]))
 
             # if outputs[item] == None or outputs[item] == "None":
             #     graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(np.array((list(refine_input.values())[0])).dtype), np.array(list(refine_input.values())[0]).shape))

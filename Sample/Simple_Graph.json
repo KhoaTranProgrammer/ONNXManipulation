@@ -1,46 +1,40 @@
 {
-    "graph_name": "Abs_Graph",
-    "inputs": {
-        "X": {
-            "data": {"dimensions": [1, 2, 512, 512]},
-            "type": "float32"
-        }
-    },
-    "outputs": {
-        "Y": "None"
-    },
-    "Abs_Node": {
-        "Action": "Add",
-        "Category": "Node",
-        "Type": "Abs",
-        "inputs": {
-            "X": "X"
-        },
-        "outputs": {
-            "Y": "Abs_Node_output"
-        }
-    },
-    "Relu_Node": {
-        "Action": "Add",
-        "Category": "Node",
-        "Type": "Relu",
-        "inputs": {
-            "X": "Abs_Node_output"
-        },
-        "outputs": {
-            "Y": "Relu_Node_output"
-        }
-    },
-    "Softmax_Node": {
-        "Action": "Add",
-        "Category": "Node",
-        "Type": "Softmax",
-        "axis": 0,
-        "inputs": {
-            "input": "Relu_Node_output"
-        },
-        "outputs": {
-            "output": "Y"
-        }
+    "name": "Simple_Graph",
+    "graph": {
+        "inputs": [
+            {
+                "name": "X",
+                "shape": [1, 2, 512, 512],
+                "data_type": "float32"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "Y"
+            }
+        ],
+        "nodes": [
+            {
+                "name": "Abs_Node",
+                "op_type": "Abs",
+                "inputs": ["X"],
+                "outputs": ["Abs_Node_output"]
+            },
+            {
+                "name": "Relu_Node",
+                "op_type": "Relu",
+                "inputs": ["Abs_Node_output"],
+                "outputs": ["Relu_Node_output"]
+            },
+            {
+                "name": "Softmax_Node",
+                "op_type": "Softmax",
+                "inputs": ["Relu_Node_output"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "axis": 0
+                }
+            }
+        ]
     }
 }
