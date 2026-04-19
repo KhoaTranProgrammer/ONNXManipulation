@@ -101,9 +101,8 @@ def UpdateInitializer(initializers, name, data):
         else:
             pass
     else:
-        action = data["Action"]
-        if action == "Add":
-            values = np.array(data["tensor"]["data"], dtype=data["tensor"]["type"])
+        if "Action" not in data or data["Action"] == "Add":
+            values = np.array(data["data"], dtype=data["data_type"])
             # Create new initializer with new value
             new_initializer = CreateInitializerTensor(
                         name=name,
@@ -369,6 +368,12 @@ class ONMAGraph:
         #             UpdateNode(self._graph, item, data[item])
         #     except:
         #         pass
+        for initializer in data["graph"]["initializers"]:
+            print(initializer)
+            if "data" in initializer:
+                initializer["data"] = np.array(initializer["data"], dtype=initializer["data_type"])
+            UpdateInitializer(self._graph.initializer, initializer["name"], initializer)
+
         for node in data["graph"]["nodes"]:
             UpdateNode(self._graph, node["name"], node)
 
