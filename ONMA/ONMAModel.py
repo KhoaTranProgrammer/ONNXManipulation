@@ -33,20 +33,17 @@ class ONMAModel:
     def ONMAModel_Inference(self, infer_input):
         refine_input = {}
         inputs = infer_input
-        for key, value in inputs.items():
-            if key != "":
-                if "dimensions" in value["data"]:
-                    dimensions = value["data"]["dimensions"]
-                    try:
-                        value_np = np.random.randn(*dimensions).astype(value["type"])
-                    except:
-                        value_np = np.random.randn(*dimensions).astype("float32")
-                else:
-                    try:
-                        value_np = np.array(value["data"], dtype=value["type"])
-                    except:
-                        value_np = np.array(value["data"], dtype='float32')
-                refine_input[key] = value_np
+        for oneInput in inputs:
+            if "data" in oneInput:
+                try:
+                    refine_input[oneInput["name"]] = np.array(oneInput["data"], dtype=oneInput["data_type"])
+                except:
+                    pass
+            else:
+                try:
+                    refine_input[oneInput["name"]] = np.random.randn(*oneInput["shape"]).astype(oneInput["data_type"])
+                except:
+                    pass
 
         sess = InferenceSession(self._model.SerializeToString(), providers=["CPUExecutionProvider"])
         res = sess.run(None, refine_input)
@@ -65,7 +62,7 @@ class ONMAModel:
         self.ONMAModel_MakeModel(onma_graph.ONMAGraph_GetGraph())
         # Inference to update output
         onma_graph.ONMAGraph_SetGraph(self._model.graph)
-        res = self.ONMAModel_Inference(data["inputs"])
+        res = self.ONMAModel_Inference(data["graph"]["inputs"])
         onma_graph.ONMAGraph_UpdateOutputDimension(res)
 
     def ONMAModel_DisplayInformation(self, results, **argv):

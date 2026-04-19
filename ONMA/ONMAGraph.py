@@ -116,25 +116,25 @@ def GetPreviousNodeFromInputName(graph, inputs):
     node_ind = []
     for i, node in enumerate(graph.node):
         for input in inputs:
-            if inputs[input] in node.output:
+            if input in node.output:
                 node_res.append(node)
                 node_ind.append(i)
     return node_ind, node_res
 
 def UpdateNode(graph, name, data):
-    if data["Action"] == "Add":
-        op_type = data["Type"]
-        inputs=list((data["inputs"]).values())
-        outputs=list((data["outputs"]).values())
+    if "Action" not in data or data["Action"] == "Add":
+        op_type = data["op_type"]
+        inputs=data["inputs"]
+        outputs=data["outputs"]
 
-        node_ind,_ = GetPreviousNodeFromInputName(graph, data["inputs"])
+        node_ind,_ = GetPreviousNodeFromInputName(graph, inputs)
 
         # Simplify data
-        data.pop("Action")
-        data.pop("Category")
-        data.pop("Type")
-        data.pop("inputs")
-        data.pop("outputs")
+        # data.pop("Action")
+        # data.pop("Category")
+        # data.pop("Type")
+        # data.pop("inputs")
+        # data.pop("outputs")
 
         try:
             if "values" in data:
@@ -144,9 +144,15 @@ def UpdateNode(graph, name, data):
             pass
 
         onma_node = ONMANode()
-        onma_node.ONMANode_MakeNode(
-            op_type, inputs=inputs, outputs=outputs, name=name, **data
-        )
+        try:
+            onma_node.ONMANode_MakeNode(
+                op_type, inputs=inputs, outputs=outputs, name=name, **data["attributes"]
+            )
+        except:
+            onma_node.ONMANode_MakeNode(
+                op_type, inputs=inputs, outputs=outputs, name=name
+            )
+
         if len(node_ind) == 0:
             graph.node.append(onma_node.ONMANode_GetNode())
         else:
@@ -340,48 +346,47 @@ class ONMAGraph:
         return make_tensor_value_info(name, type, dimension)
 
     def ONMAModel_UpdateGraph(self, data):
-        for item in data:
-            try:
-                if data[item]["Category"] == "Initializer":
-                    if "dimensions" in data[item]["tensor"]["data"]:
-                        dimensions = data[item]["tensor"]["data"]["dimensions"]
-                        data_type = data[item]["tensor"]["type"]
-                        try:
-                            data[item]["tensor"]["data"] = np.random.randn(*dimensions).astype(data_type)
-                        except:
-                            data[item]["tensor"]["data"] = np.random.randn(*dimensions).astype("float32")
-                    elif "npy" in data[item]["tensor"]["data"]:
-                        data_fromnpy = np.load(data[item]["tensor"]["data"]["npy"], allow_pickle=True)
-                        data[item]["tensor"]["data"] = data_fromnpy.tolist()
-                    elif type(data[item]["tensor"]["data"]) is list:
-                        data[item]["tensor"]["data"] = np.array(data[item]["tensor"]["data"], dtype=data[item]["tensor"]["type"])
-                    else: # "data": "np.random.rand(1, 2, 16, 16).astype(np.float32)"
-                        data[item]["tensor"]["data"] = eval(data[item]["tensor"]["data"])
-                        data[item]["tensor"]["type"] = (str((data[item]["tensor"]["data"]).dtype))
-                    UpdateInitializer(self._graph.initializer, item, data[item])
-                elif data[item]["Category"] == "Node":
-                    UpdateNode(self._graph, item, data[item])
-            except:
-                pass
+        # for item in data:
+        #     try:
+        #         if data[item]["Category"] == "Initializer":
+        #             if "dimensions" in data[item]["tensor"]["data"]:
+        #                 dimensions = data[item]["tensor"]["data"]["dimensions"]
+        #                 data_type = data[item]["tensor"]["type"]
+        #                 try:
+        #                     data[item]["tensor"]["data"] = np.random.randn(*dimensions).astype(data_type)
+        #                 except:
+        #                     data[item]["tensor"]["data"] = np.random.randn(*dimensions).astype("float32")
+        #             elif "npy" in data[item]["tensor"]["data"]:
+        #                 data_fromnpy = np.load(data[item]["tensor"]["data"]["npy"], allow_pickle=True)
+        #                 data[item]["tensor"]["data"] = data_fromnpy.tolist()
+        #             elif type(data[item]["tensor"]["data"]) is list:
+        #                 data[item]["tensor"]["data"] = np.array(data[item]["tensor"]["data"], dtype=data[item]["tensor"]["type"])
+        #             else: # "data": "np.random.rand(1, 2, 16, 16).astype(np.float32)"
+        #                 data[item]["tensor"]["data"] = eval(data[item]["tensor"]["data"])
+        #                 data[item]["tensor"]["type"] = (str((data[item]["tensor"]["data"]).dtype))
+        #             UpdateInitializer(self._graph.initializer, item, data[item])
+        #         elif data[item]["Category"] == "Node":
+        #             UpdateNode(self._graph, item, data[item])
+        #     except:
+        #         pass
+        for node in data["graph"]["nodes"]:
+            UpdateNode(self._graph, node["name"], node)
 
     def ONMAGraph_CreateNetworkFromGraph(self, data):
         # Remove empty input
         refine_input = {}
-        inputs = data["inputs"]
-        for key, value in inputs.items():
-            if key != "":
-                if "dimensions" in value["data"]:
-                    dimensions = value["data"]["dimensions"]
-                    try:
-                        value_np = np.random.randn(*dimensions).astype(value["type"])
-                    except:
-                        value_np = np.random.randn(*dimensions).astype("float32")
-                else:
-                    try:
-                        value_np = np.array(value["data"], dtype=value["type"])
-                    except:
-                        value_np = np.array(value["data"], dtype='float32')
-                refine_input[key] = value_np
+        inputs = data["graph"]["inputs"]
+        for oneInput in inputs:
+            if "data" in oneInput:
+                try:
+                    refine_input[oneInput["name"]] = np.array(oneInput["data"], dtype=oneInput["data_type"])
+                except:
+                    pass
+            else:
+                try:
+                    refine_input[oneInput["name"]] = np.random.randn(*oneInput["shape"]).astype(oneInput["data_type"])
+                except:
+                    pass
 
         # Create graph input
         graph_input = []
@@ -389,25 +394,27 @@ class ONMAGraph:
             graph_input.append(self.ONMAGraph_CreateInput(list(refine_input.keys())[i], GetTensorDataTypeFromnp((list(refine_input.values())[i]).dtype), (list(refine_input.values())[i]).shape))
 
         # Create graph output
-        outputs = data["outputs"]
+        outputs = data["graph"]["outputs"]
         graph_output = []
         for item in outputs:
-            if outputs[item] == None or outputs[item] == "None":
-                graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(np.array((list(refine_input.values())[0])).dtype), np.array(list(refine_input.values())[0]).shape))
-            else:
-                try:
-                    dimensions = outputs[item]["data"]["dimensions"]
-                    try:
-                        graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(outputs[item]["type"]), dimensions))
-                    except:
-                        graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp("float32"), dimensions))
-                except:
-                    try:
-                        graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(outputs[item]["type"]), np.array(outputs[item]["data"]).shape))
-                    except:
-                        graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp("float32"), np.array(outputs[item]["data"]).shape))
+            graph_output.append(self.ONMAGraph_CreateInput(item["name"], GetTensorDataTypeFromnp(item["data_type"]), item["shape"]))
 
-        self.ONMAGraph_MakeGraph(data["graph_name"], [], graph_input, graph_output)
+            # if outputs[item] == None or outputs[item] == "None":
+            #     graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(np.array((list(refine_input.values())[0])).dtype), np.array(list(refine_input.values())[0]).shape))
+            # else:
+            #     try:
+            #         dimensions = outputs[item]["data"]["dimensions"]
+            #         try:
+            #             graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(outputs[item]["type"]), dimensions))
+            #         except:
+            #             graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp("float32"), dimensions))
+            #     except:
+            #         try:
+            #             graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp(outputs[item]["type"]), np.array(outputs[item]["data"]).shape))
+            #         except:
+            #             graph_output.append(self.ONMAGraph_CreateInput(item, GetTensorDataTypeFromnp("float32"), np.array(outputs[item]["data"]).shape))
+
+        self.ONMAGraph_MakeGraph(data["name"], [], graph_input, graph_output)
 
         self.ONMAModel_UpdateGraph(data)
 
