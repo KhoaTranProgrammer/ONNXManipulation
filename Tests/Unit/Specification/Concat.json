@@ -1,8 +1,9 @@
 {
     "Concat_000": {
-        "graph_name": "Concat_Graph",
-        "inputs": {
-            "inputs": {
+        "name": "Concat_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "inputs",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "concat_result": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "concat_result",
                 "data": [
                     [
                         [
@@ -36,26 +37,25 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Concat_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Concat",
-            "axis": 0,
-            "inputs": {
-                "inputs": "inputs"
-            },
-            "outputs": {
-                "concat_result": "concat_result"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Concat_Node",
+                "op_type": "Concat",
+                "inputs": ["inputs"],
+                "outputs": ["concat_result"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Concat_001": {
-        "graph_name": "Concat_Graph",
-        "inputs": {
-            "inputs": {
+        "name": "Concat_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "inputs",
                 "data": [
                     [
                         [
@@ -70,11 +70,11 @@
                         ]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "concat_result": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "concat_result",
                 "data": [
                     [
                         [
@@ -89,26 +89,25 @@
                         ]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "Concat_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Concat",
-            "axis": 0,
-            "inputs": {
-                "inputs": "inputs"
-            },
-            "outputs": {
-                "concat_result": "concat_result"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Concat_Node",
+                "op_type": "Concat",
+                "inputs": ["inputs"],
+                "outputs": ["concat_result"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Concat_002": {
-        "graph_name": "Concat_Graph",
-        "inputs": {
-            "inputs": {
+        "name": "Concat_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "inputs",
                 "data": [
                     [
                         [
@@ -123,11 +122,11 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "concat_result": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "concat_result",
                 "data": [
                     [
                         [
@@ -142,26 +141,25 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Concat_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Concat",
-            "axis": 0,
-            "inputs": {
-                "inputs": "inputs"
-            },
-            "outputs": {
-                "concat_result": "concat_result"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Concat_Node",
+                "op_type": "Concat",
+                "inputs": ["inputs"],
+                "outputs": ["concat_result"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Concat_003": {
-        "graph_name": "Concat_Graph",
-        "inputs": {
-            "inputs": {
+        "name": "Concat_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "inputs",
                 "data": [
                     [
                         [
@@ -176,11 +174,11 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "concat_result": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "concat_result",
                 "data": [
                     [
                         [
@@ -195,26 +193,25 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Concat_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Concat",
-            "axis": 0,
-            "inputs": {
-                "inputs": "inputs"
-            },
-            "outputs": {
-                "concat_result": "concat_result"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Concat_Node",
+                "op_type": "Concat",
+                "inputs": ["inputs"],
+                "outputs": ["concat_result"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Concat_004": {
-        "graph_name": "Concat_Graph",
-        "inputs": {
-            "inputs": {
+        "name": "Concat_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "inputs",
                 "data": [
                     [
                         [
@@ -229,11 +226,11 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "concat_result": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "concat_result",
                 "data": [
                     [
                         [
@@ -248,26 +245,25 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Concat_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Concat",
-            "axis": 0,
-            "inputs": {
-                "inputs": "inputs"
-            },
-            "outputs": {
-                "concat_result": "concat_result"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Concat_Node",
+                "op_type": "Concat",
+                "inputs": ["inputs"],
+                "outputs": ["concat_result"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Concat_005": {
-        "graph_name": "Concat_Graph",
-        "inputs": {
-            "inputs": {
+        "name": "Concat_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "inputs",
                 "data": [
                     [
                         [
@@ -282,11 +278,11 @@
                         ]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "concat_result": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "concat_result",
                 "data": [
                     [
                         [
@@ -301,26 +297,25 @@
                         ]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "Concat_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Concat",
-            "axis": 0,
-            "inputs": {
-                "inputs": "inputs"
-            },
-            "outputs": {
-                "concat_result": "concat_result"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Concat_Node",
+                "op_type": "Concat",
+                "inputs": ["inputs"],
+                "outputs": ["concat_result"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Concat_006": {
-        "graph_name": "Concat_Graph",
-        "inputs": {
-            "inputs": {
+        "name": "Concat_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "inputs",
                 "data": [
                     [
                         [
@@ -335,11 +330,11 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "concat_result": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "concat_result",
                 "data": [
                     [
                         [
@@ -354,26 +349,25 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Concat_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Concat",
-            "axis": 0,
-            "inputs": {
-                "inputs": "inputs"
-            },
-            "outputs": {
-                "concat_result": "concat_result"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Concat_Node",
+                "op_type": "Concat",
+                "inputs": ["inputs"],
+                "outputs": ["concat_result"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Concat_007": {
-        "graph_name": "Concat_Graph",
-        "inputs": {
-            "inputs": {
+        "name": "Concat_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "inputs",
                 "data": [
                     [
                         [
@@ -388,11 +382,11 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "concat_result": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "concat_result",
                 "data": [
                     [
                         [
@@ -407,26 +401,25 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Concat_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Concat",
-            "axis": 0,
-            "inputs": {
-                "inputs": "inputs"
-            },
-            "outputs": {
-                "concat_result": "concat_result"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Concat_Node",
+                "op_type": "Concat",
+                "inputs": ["inputs"],
+                "outputs": ["concat_result"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Concat_008": {
-        "graph_name": "Concat_Graph",
-        "inputs": {
-            "inputs": {
+        "name": "Concat_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "inputs",
                 "data": [
                     [
                         [
@@ -441,11 +434,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "concat_result": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "concat_result",
                 "data": [
                     [
                         [
@@ -460,26 +453,25 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Concat_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Concat",
-            "axis": 0,
-            "inputs": {
-                "inputs": "inputs"
-            },
-            "outputs": {
-                "concat_result": "concat_result"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Concat_Node",
+                "op_type": "Concat",
+                "inputs": ["inputs"],
+                "outputs": ["concat_result"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Concat_009": {
-        "graph_name": "Concat_Graph",
-        "inputs": {
-            "inputs": {
+        "name": "Concat_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "inputs",
                 "data": [
                     [
                         [
@@ -494,11 +486,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "concat_result": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "concat_result",
                 "data": [
                     [
                         [
@@ -513,26 +505,25 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Concat_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Concat",
-            "axis": 0,
-            "inputs": {
-                "inputs": "inputs"
-            },
-            "outputs": {
-                "concat_result": "concat_result"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Concat_Node",
+                "op_type": "Concat",
+                "inputs": ["inputs"],
+                "outputs": ["concat_result"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Concat_010": {
-        "graph_name": "Concat_Graph",
-        "inputs": {
-            "inputs": {
+        "name": "Concat_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "inputs",
                 "data": [
                     [
                         [
@@ -547,11 +538,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "concat_result": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "concat_result",
                 "data": [
                     [
                         [
@@ -566,26 +557,25 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Concat_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Concat",
-            "axis": 0,
-            "inputs": {
-                "inputs": "inputs"
-            },
-            "outputs": {
-                "concat_result": "concat_result"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Concat_Node",
+                "op_type": "Concat",
+                "inputs": ["inputs"],
+                "outputs": ["concat_result"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Concat_011": {
-        "graph_name": "Concat_Graph",
-        "inputs": {
-            "inputs": {
+        "name": "Concat_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "inputs",
                 "data": [
                     [
                         [
@@ -600,11 +590,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "concat_result": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "concat_result",
                 "data": [
                     [
                         [
@@ -619,20 +609,18 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Concat_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Concat",
-            "axis": 0,
-            "inputs": {
-                "inputs": "inputs"
-            },
-            "outputs": {
-                "concat_result": "concat_result"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Concat_Node",
+                "op_type": "Concat",
+                "inputs": ["inputs"],
+                "outputs": ["concat_result"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     }
 }

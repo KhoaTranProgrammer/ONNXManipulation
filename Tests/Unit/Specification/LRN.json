@@ -1,8 +1,9 @@
 {
     "LRN_000": {
-        "graph_name": "LRN_Graph",
-        "inputs": {
-            "X": {
+        "name": "LRN_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -190,11 +191,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [5, 5, 5, 5],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -382,29 +383,28 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "LRN_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "LRN",
-            "alpha": 0.0001,
-            "beta": 0.75,
-            "bias": 1.0,
-            "size": 3,
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [5, 5, 5, 5],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "LRN_Node",
+                "op_type": "LRN",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "alpha": 0.0001,
+                    "beta": 0.75,
+                    "bias": 1.0,
+                    "size": 3
+                }
+            }]
         }
     },
     "LRN_001": {
-        "graph_name": "LRN_Graph",
-        "inputs": {
-            "X": {
+        "name": "LRN_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -592,11 +592,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [5, 5, 5, 5],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -784,23 +784,21 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "LRN_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "LRN",
-            "alpha": 0.0001,
-            "beta": 0.75,
-            "bias": 1.0,
-            "size": 3,
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [5, 5, 5, 5],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "LRN_Node",
+                "op_type": "LRN",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "alpha": 0.0001,
+                    "beta": 0.75,
+                    "bias": 1.0,
+                    "size": 3
+                }
+            }]
         }
     }
 }

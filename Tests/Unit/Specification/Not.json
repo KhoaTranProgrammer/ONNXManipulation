@@ -1,8 +1,9 @@
 {
     "Not_000": {
-        "graph_name": "Not_Graph",
-        "inputs": {
-            "X": {
+        "name": "Not_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -36,19 +37,16 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Not_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Not",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Not_Node",
+                "op_type": "Not",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     }
 }

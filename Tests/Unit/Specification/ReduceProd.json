@@ -1,8 +1,9 @@
 {
     "ReduceProd_000": {
-        "graph_name": "ReduceProd_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceProd_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1],
@@ -17,36 +18,35 @@
                         [-2, -2]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [3, 2, 2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [4]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "ReduceProd_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceProd",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 1, 1],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "ReduceProd_Node",
+                "op_type": "ReduceProd",
+                "inputs": ["data"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceProd_001": {
-        "graph_name": "ReduceProd_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceProd_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1],
@@ -61,36 +61,35 @@
                         [1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [3, 2, 2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [-1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "ReduceProd_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceProd",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 1, 1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "ReduceProd_Node",
+                "op_type": "ReduceProd",
+                "inputs": ["data"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceProd_002": {
-        "graph_name": "ReduceProd_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceProd_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.2138671875, 0.2254638671875],
@@ -105,36 +104,35 @@
                         [-0.310546875, -1.38671875]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [3, 2, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [-0.0014848709106445312]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "ReduceProd_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceProd",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 1, 1],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "ReduceProd_Node",
+                "op_type": "ReduceProd",
+                "inputs": ["data"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceProd_003": {
-        "graph_name": "ReduceProd_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceProd_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1.381492257118225, 0.7538810968399048],
@@ -149,36 +147,35 @@
                         [-0.07072184979915619, 1.1603039503097534]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [3, 2, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [-7.797941361786798e-05]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "ReduceProd_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceProd",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 1, 1],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "ReduceProd_Node",
+                "op_type": "ReduceProd",
+                "inputs": ["data"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceProd_004": {
-        "graph_name": "ReduceProd_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceProd_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.3228282707217433, 0.9214175272076801],
@@ -193,36 +190,35 @@
                         [0.611864953617129, -0.3337766067665943]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [3, 2, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [0.001064078925054602]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "ReduceProd_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceProd",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 1, 1],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "ReduceProd_Node",
+                "op_type": "ReduceProd",
+                "inputs": ["data"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceProd_005": {
-        "graph_name": "ReduceProd_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceProd_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1],
@@ -237,42 +233,41 @@
                         [1, 1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [3, 2, 2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [1, 1],
                         [1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "ReduceProd_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceProd",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 2, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "ReduceProd_Node",
+                "op_type": "ReduceProd",
+                "inputs": ["data", "axes(optional)"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceProd_006": {
-        "graph_name": "ReduceProd_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceProd_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2],
@@ -287,42 +282,41 @@
                         [-1, -1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [3, 2, 2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [1, 2],
                         [-2, -1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "ReduceProd_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceProd",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 2, 2],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "ReduceProd_Node",
+                "op_type": "ReduceProd",
+                "inputs": ["data", "axes(optional)"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceProd_007": {
-        "graph_name": "ReduceProd_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceProd_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-2.130859375, -0.04803466796875],
@@ -337,42 +331,41 @@
                         [1.662109375, -1.2958984375]
                     ]
                 ],
-                "type": "float16"
-            },
-            "axes(optional)": {
+                "shape": [3, 2, 2],
+                "data_type": "float16"
+            }, {
+                "name": "axes(optional)",
                 "data": [0],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [-2.60546875, -0.0220489501953125],
                         [1.6552734375, -1.5400390625]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "ReduceProd_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceProd",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 2, 2],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "ReduceProd_Node",
+                "op_type": "ReduceProd",
+                "inputs": ["data", "axes(optional)"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceProd_008": {
-        "graph_name": "ReduceProd_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceProd_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.5031702518463135, -0.12441657483577728],
@@ -387,42 +380,41 @@
                         [1.235071063041687, 0.9454886317253113]
                     ]
                 ],
-                "type": "float32"
-            },
-            "axes(optional)": {
+                "shape": [3, 2, 2],
+                "data_type": "float32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [0.7460451126098633, 0.19401071965694427],
                         [0.3718208372592926, 1.995941162109375]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "ReduceProd_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceProd",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 2, 2],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "ReduceProd_Node",
+                "op_type": "ReduceProd",
+                "inputs": ["data", "axes(optional)"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceProd_009": {
-        "graph_name": "ReduceProd_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceProd_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.1499333736571561, -0.7787387733780722],
@@ -437,36 +429,34 @@
                         [-2.5845922644450527, 1.0933052425017975]
                     ]
                 ],
-                "type": "float64"
-            },
-            "axes(optional)": {
+                "shape": [3, 2, 2],
+                "data_type": "float64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [-0.04524079168891153, 1.5035952471998966],
                         [-0.0765095887320656, 1.1015536756731321]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "ReduceProd_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceProd",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 2, 2],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "ReduceProd_Node",
+                "op_type": "ReduceProd",
+                "inputs": ["data", "axes(optional)"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     }
 }

@@ -1,182 +1,172 @@
 {
     "Range_000": {
-        "graph_name": "Range_Graph",
-        "inputs": {
-            "start": {
+        "name": "Range_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "start",
                 "data": [1.0],
-                "type": "float32"
-            },
-            "limit": {
+                "shape": [1],
+                "data_type": "float32"
+            }, {
+                "name": "limit",
                 "data": [5.0],
-                "type": "float32"
-            },
-            "delta": {
+                "shape": [1],
+                "data_type": "float32"
+            }, {
+                "name": "delta",
                 "data": [2.0],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1.0, 3.0],
-                "type": "float32"
-            }
-        },
-        "Range_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Range",
-            "inputs": {
-                "start": "start",
-                "limit": "limit",
-                "delta": "delta"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Range_Node",
+                "op_type": "Range",
+                "inputs": ["start", "limit", "delta"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Range_001": {
-        "graph_name": "Range_Graph",
-        "inputs": {
-            "start": {
+        "name": "Range_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "start",
                 "data": [1.0],
-                "type": "float64"
-            },
-            "limit": {
+                "shape": [1],
+                "data_type": "float64"
+            }, {
+                "name": "limit",
                 "data": [5.0],
-                "type": "float64"
-            },
-            "delta": {
+                "shape": [1],
+                "data_type": "float64"
+            }, {
+                "name": "delta",
                 "data": [2.0],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1.0, 3.0],
-                "type": "float64"
-            }
-        },
-        "Range_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Range",
-            "inputs": {
-                "start": "start",
-                "limit": "limit",
-                "delta": "delta"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Range_Node",
+                "op_type": "Range",
+                "inputs": ["start", "limit", "delta"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Range_002": {
-        "graph_name": "Range_Graph",
-        "inputs": {
-            "start": {
+        "name": "Range_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "start",
                 "data": [1],
-                "type": "int16"
-            },
-            "limit": {
+                "shape": [1],
+                "data_type": "int16"
+            }, {
+                "name": "limit",
                 "data": [5],
-                "type": "int16"
-            },
-            "delta": {
+                "shape": [1],
+                "data_type": "int16"
+            }, {
+                "name": "delta",
                 "data": [2],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 3],
-                "type": "int16"
-            }
-        },
-        "Range_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Range",
-            "inputs": {
-                "start": "start",
-                "limit": "limit",
-                "delta": "delta"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Range_Node",
+                "op_type": "Range",
+                "inputs": ["start", "limit", "delta"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Range_003": {
-        "graph_name": "Range_Graph",
-        "inputs": {
-            "start": {
+        "name": "Range_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "start",
                 "data": [1],
-                "type": "int32"
-            },
-            "limit": {
+                "shape": [1],
+                "data_type": "int32"
+            }, {
+                "name": "limit",
                 "data": [5],
-                "type": "int32"
-            },
-            "delta": {
+                "shape": [1],
+                "data_type": "int32"
+            }, {
+                "name": "delta",
                 "data": [2],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 3],
-                "type": "int32"
-            }
-        },
-        "Range_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Range",
-            "inputs": {
-                "start": "start",
-                "limit": "limit",
-                "delta": "delta"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Range_Node",
+                "op_type": "Range",
+                "inputs": ["start", "limit", "delta"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Range_004": {
-        "graph_name": "Range_Graph",
-        "inputs": {
-            "start": {
+        "name": "Range_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "start",
                 "data": [1],
-                "type": "int64"
-            },
-            "limit": {
+                "shape": [1],
+                "data_type": "int64"
+            }, {
+                "name": "limit",
                 "data": [5],
-                "type": "int64"
-            },
-            "delta": {
+                "shape": [1],
+                "data_type": "int64"
+            }, {
+                "name": "delta",
                 "data": [2],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 3],
-                "type": "int64"
-            }
-        },
-        "Range_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Range",
-            "inputs": {
-                "start": "start",
-                "limit": "limit",
-                "delta": "delta"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Range_Node",
+                "op_type": "Range",
+                "inputs": ["start", "limit", "delta"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     }
 }

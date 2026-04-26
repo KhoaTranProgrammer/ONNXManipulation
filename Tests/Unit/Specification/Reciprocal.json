@@ -1,8 +1,9 @@
 {
     "Reciprocal_000": {
-        "graph_name": "Reciprocal_Graph",
-        "inputs": {
-            "X": {
+        "name": "Reciprocal_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -36,25 +37,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Reciprocal_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Reciprocal",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Reciprocal_Node",
+                "op_type": "Reciprocal",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "Reciprocal_001": {
-        "graph_name": "Reciprocal_Graph",
-        "inputs": {
-            "X": {
+        "name": "Reciprocal_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -69,11 +68,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -88,25 +87,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Reciprocal_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Reciprocal",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Reciprocal_Node",
+                "op_type": "Reciprocal",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "Reciprocal_002": {
-        "graph_name": "Reciprocal_Graph",
-        "inputs": {
-            "X": {
+        "name": "Reciprocal_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -121,11 +118,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -140,19 +137,16 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Reciprocal_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Reciprocal",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Reciprocal_Node",
+                "op_type": "Reciprocal",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     }
 }

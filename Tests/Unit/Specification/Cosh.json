@@ -1,8 +1,9 @@
 {
     "Cosh_000": {
-        "graph_name": "Cosh_Graph",
-        "inputs": {
-            "input": {
+        "name": "Cosh_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -36,25 +37,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Cosh_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Cosh",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Cosh_Node",
+                "op_type": "Cosh",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Cosh_001": {
-        "graph_name": "Cosh_Graph",
-        "inputs": {
-            "input": {
+        "name": "Cosh_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -69,11 +68,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -88,19 +87,16 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Cosh_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Cosh",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Cosh_Node",
+                "op_type": "Cosh",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     }
 }

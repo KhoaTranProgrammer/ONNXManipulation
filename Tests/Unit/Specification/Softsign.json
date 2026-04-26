@@ -1,8 +1,9 @@
 {
     "Softsign_000": {
-        "graph_name": "Softsign_Graph",
-        "inputs": {
-            "input": {
+        "name": "Softsign_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -36,25 +37,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Softsign_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Softsign",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Softsign_Node",
+                "op_type": "Softsign",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Softsign_001": {
-        "graph_name": "Softsign_Graph",
-        "inputs": {
-            "input": {
+        "name": "Softsign_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -69,11 +68,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -88,19 +87,16 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Softsign_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Softsign",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Softsign_Node",
+                "op_type": "Softsign",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     }
 }

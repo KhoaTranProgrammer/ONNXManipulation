@@ -1,8 +1,9 @@
 {
     "Celu_000": {
-        "graph_name": "Celu_Graph",
-        "inputs": {
-            "X": {
+        "name": "Celu_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -36,20 +37,18 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Celu_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Celu",
-            "alpha": 1.0,
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Celu_Node",
+                "op_type": "Celu",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "alpha": 1.0
+                }
+            }]
         }
     }
 }

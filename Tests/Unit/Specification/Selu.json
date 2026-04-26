@@ -1,8 +1,9 @@
 {
     "Selu_000": {
-        "graph_name": "Selu_Graph",
-        "inputs": {
-            "X": {
+        "name": "Selu_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -36,27 +37,26 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Selu_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Selu",
-            "alpha": 1.0,
-            "gamma": 1.0,
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Selu_Node",
+                "op_type": "Selu",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "alpha": 1.0,
+                    "gamma": 1.0
+                }
+            }]
         }
     },
     "Selu_001": {
-        "graph_name": "Selu_Graph",
-        "inputs": {
-            "X": {
+        "name": "Selu_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -71,11 +71,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -90,21 +90,19 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Selu_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Selu",
-            "alpha": 1.0,
-            "gamma": 1.0,
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Selu_Node",
+                "op_type": "Selu",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "alpha": 1.0,
+                    "gamma": 1.0
+                }
+            }]
         }
     }
 }

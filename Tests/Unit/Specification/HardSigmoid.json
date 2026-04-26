@@ -1,8 +1,9 @@
 {
     "HardSigmoid_000": {
-        "graph_name": "HardSigmoid_Graph",
-        "inputs": {
-            "X": {
+        "name": "HardSigmoid_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -36,27 +37,26 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "HardSigmoid_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "HardSigmoid",
-            "alpha": 1.0,
-            "beta": 0.5,
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "HardSigmoid_Node",
+                "op_type": "HardSigmoid",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "alpha": 1.0,
+                    "beta": 0.5
+                }
+            }]
         }
     },
     "HardSigmoid_001": {
-        "graph_name": "HardSigmoid_Graph",
-        "inputs": {
-            "X": {
+        "name": "HardSigmoid_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -71,11 +71,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -90,21 +90,19 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "HardSigmoid_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "HardSigmoid",
-            "alpha": 1.0,
-            "beta": 0.5,
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "HardSigmoid_Node",
+                "op_type": "HardSigmoid",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "alpha": 1.0,
+                    "beta": 0.5
+                }
+            }]
         }
     }
 }

@@ -1,8 +1,9 @@
 {
     "ReduceMax_000": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1],
@@ -17,36 +18,35 @@
                         [1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [3, 2, 2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 1, 1],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_001": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1],
@@ -61,36 +61,35 @@
                         [1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [3, 2, 2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 1, 1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_002": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.634765625, 0.28271484375],
@@ -105,36 +104,35 @@
                         [0.8388671875, 0.83544921875]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [3, 2, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [1.546875]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 1, 1],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_003": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.82990562915802, 0.13084319233894348],
@@ -149,36 +147,35 @@
                         [1.1447298526763916, 0.06682468950748444]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [3, 2, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [1.9802570343017578]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 1, 1],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_004": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.09564578363104696, -0.16613114823770825],
@@ -193,36 +190,35 @@
                         [-1.4544877354329608, -0.7694413003938789]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [3, 2, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [1.1576934377691641]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 1, 1],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_005": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 255],
@@ -237,36 +233,35 @@
                         [1, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [3, 2, 2],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [255]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 1, 1],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_006": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1, -1],
@@ -281,36 +276,35 @@
                         [1, 1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [3, 2, 2],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 1, 1],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_007": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true],
@@ -325,36 +319,35 @@
                         [true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [3, 2, 2],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 1, 1],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_008": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1],
@@ -369,42 +362,41 @@
                         [1, -2]
                     ]
                 ],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [3, 2, 2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [1, 1],
                         [1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 2, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data", "axes(optional)"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_009": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1],
@@ -419,42 +411,41 @@
                         [1, -1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [3, 2, 2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [1, 1],
                         [1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 2, 2],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data", "axes(optional)"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_010": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.501953125, -0.37158203125],
@@ -469,42 +460,41 @@
                         [-0.958984375, 1.546875]
                     ]
                 ],
-                "type": "float16"
-            },
-            "axes(optional)": {
+                "shape": [3, 2, 2],
+                "data_type": "float16"
+            }, {
+                "name": "axes(optional)",
                 "data": [0],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [2.529296875, 0.9072265625],
                         [2.736328125, 1.546875]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 2, 2],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data", "axes(optional)"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_011": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.7469247579574585, -0.07668223977088928],
@@ -519,42 +509,41 @@
                         [-0.14424192905426025, -0.5760615468025208]
                     ]
                 ],
-                "type": "float32"
-            },
-            "axes(optional)": {
+                "shape": [3, 2, 2],
+                "data_type": "float32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [1.7469247579574585, 0.2353459894657135],
                         [-0.14424192905426025, -0.015769993886351585]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 2, 2],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data", "axes(optional)"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_012": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.11901138917353336, 0.850834614392595],
@@ -569,42 +558,41 @@
                         [-0.7933782632101131, -1.4265671941087394]
                     ]
                 ],
-                "type": "float64"
-            },
-            "axes(optional)": {
+                "shape": [3, 2, 2],
+                "data_type": "float64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [0.23636892677650073, 0.850834614392595],
                         [0.49837082688594836, 0.24817186514852035]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 2, 2],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data", "axes(optional)"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_013": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1],
@@ -619,42 +607,41 @@
                         [1, 1]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "axes(optional)": {
+                "shape": [3, 2, 2],
+                "data_type": "uint8"
+            }, {
+                "name": "axes(optional)",
                 "data": [0],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [2, 1],
                         [254, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 2, 2],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data", "axes(optional)"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_014": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1],
@@ -669,42 +656,41 @@
                         [1, 1]
                     ]
                 ],
-                "type": "int8"
-            },
-            "axes(optional)": {
+                "shape": [3, 2, 2],
+                "data_type": "int8"
+            }, {
+                "name": "axes(optional)",
                 "data": [0],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [1, 1],
                         [1, 1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 2, 2],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data", "axes(optional)"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     },
     "ReduceMax_015": {
-        "graph_name": "ReduceMax_Graph",
-        "inputs": {
-            "data": {
+        "name": "ReduceMax_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true],
@@ -719,36 +705,34 @@
                         [true, true]
                     ]
                 ],
-                "type": "bool"
-            },
-            "axes(optional)": {
+                "shape": [3, 2, 2],
+                "data_type": "bool"
+            }, {
+                "name": "axes(optional)",
                 "data": [0],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "reduced": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "reduced",
                 "data": [
                     [
                         [true, true],
                         [true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "ReduceMax_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ReduceMax",
-            "keepdims": 1,
-            "inputs": {
-                "data": "data",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "reduced": "reduced"
-            }
+                "shape": [1, 2, 2],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "ReduceMax_Node",
+                "op_type": "ReduceMax",
+                "inputs": ["data", "axes(optional)"],
+                "outputs": ["reduced"],
+                "attributes": {
+                    "keepdims": 1
+                }
+            }]
         }
     }
 }

@@ -1,8 +1,9 @@
 {
     "Exp_000": {
-        "graph_name": "Exp_Graph",
-        "inputs": {
-            "input": {
+        "name": "Exp_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -36,25 +37,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Exp_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Exp",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Exp_Node",
+                "op_type": "Exp",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Exp_001": {
-        "graph_name": "Exp_Graph",
-        "inputs": {
-            "input": {
+        "name": "Exp_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -69,11 +68,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -88,25 +87,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Exp_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Exp",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Exp_Node",
+                "op_type": "Exp",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Exp_002": {
-        "graph_name": "Exp_Graph",
-        "inputs": {
-            "input": {
+        "name": "Exp_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -121,11 +118,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -140,19 +137,16 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Exp_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Exp",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Exp_Node",
+                "op_type": "Exp",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     }
 }

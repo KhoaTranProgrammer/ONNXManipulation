@@ -1,8 +1,9 @@
 {
     "GridSample_000": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -13,9 +14,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -68,11 +70,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -85,29 +87,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_001": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -118,9 +118,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -173,11 +174,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -190,29 +191,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_002": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -223,9 +222,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -278,11 +278,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -295,29 +295,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_003": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -328,9 +326,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -383,11 +382,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -400,29 +399,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_004": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -433,9 +430,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -488,11 +486,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -505,29 +503,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_005": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -538,9 +534,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -593,11 +590,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -610,29 +607,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_006": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -643,9 +638,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -698,11 +694,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -715,29 +711,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_007": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -748,9 +742,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -803,11 +798,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -820,29 +815,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_008": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -853,9 +846,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -908,11 +902,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -925,29 +919,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_009": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -958,9 +950,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -1013,11 +1006,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1030,29 +1023,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_010": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1063,9 +1054,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -1118,11 +1110,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1135,29 +1127,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_011": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1168,9 +1158,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -1223,11 +1214,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1240,29 +1231,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_012": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1273,9 +1262,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -1328,11 +1318,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1345,29 +1335,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_013": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1378,9 +1366,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -1433,11 +1422,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1450,29 +1439,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_014": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1483,9 +1470,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -1538,11 +1526,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1555,29 +1543,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_015": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1588,9 +1574,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -1643,11 +1630,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1660,29 +1647,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_016": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1693,9 +1678,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -1748,11 +1734,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1765,29 +1751,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_017": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1798,9 +1782,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -1853,11 +1838,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1870,29 +1855,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_018": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1903,9 +1886,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -1958,11 +1942,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1975,29 +1959,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_019": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2008,9 +1990,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -2063,11 +2046,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2080,29 +2063,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_020": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2113,9 +2094,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -2168,11 +2150,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2185,29 +2167,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_021": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2218,9 +2198,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -2273,11 +2254,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2290,29 +2271,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_022": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2323,9 +2302,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -2378,11 +2358,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2395,29 +2375,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_023": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2428,9 +2406,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -2483,11 +2462,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2500,29 +2479,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_024": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2533,9 +2510,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -2588,11 +2566,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2605,29 +2583,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_025": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2638,9 +2614,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -2693,11 +2670,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2710,29 +2687,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_026": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2743,9 +2718,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -2798,11 +2774,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2815,29 +2791,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_027": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2848,9 +2822,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -2903,11 +2878,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2920,29 +2895,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_028": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2953,9 +2926,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -3008,11 +2982,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -3025,29 +2999,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_029": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -3058,9 +3030,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -3113,11 +3086,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -3130,29 +3103,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_030": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -3163,9 +3134,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -3218,11 +3190,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -3235,29 +3207,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_031": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -3268,9 +3238,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -3323,11 +3294,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -3340,29 +3311,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_032": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -3373,9 +3342,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -3428,11 +3398,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -3445,29 +3415,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_033": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -3478,9 +3446,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -3533,11 +3502,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -3550,29 +3519,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_034": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -3583,9 +3550,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -3638,11 +3606,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -3655,29 +3623,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_035": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -3688,9 +3654,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -3743,11 +3710,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -3760,29 +3727,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_036": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -3793,9 +3758,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -3848,11 +3814,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -3865,29 +3831,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_037": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -3898,9 +3862,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -3953,11 +3918,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -3970,29 +3935,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_038": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -4003,9 +3966,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -4058,11 +4022,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -4075,29 +4039,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_039": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -4108,9 +4070,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -4163,11 +4126,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -4180,29 +4143,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_040": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -4213,9 +4174,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -4268,11 +4230,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -4285,29 +4247,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_041": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -4318,9 +4278,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -4373,11 +4334,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -4390,29 +4351,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_042": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -4423,9 +4382,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -4478,11 +4438,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -4495,29 +4455,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_043": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -4528,9 +4486,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -4583,11 +4542,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -4600,29 +4559,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_044": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -4633,9 +4590,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -4688,11 +4646,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -4705,29 +4663,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_045": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -4738,9 +4694,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -4793,11 +4750,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -4810,29 +4767,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_046": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -4843,9 +4798,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -4898,11 +4854,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -4915,29 +4871,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_047": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -4948,9 +4902,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -5003,11 +4958,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -5020,29 +4975,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_048": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -5053,9 +5006,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -5108,11 +5062,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -5125,29 +5079,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_049": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -5158,9 +5110,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -5213,11 +5166,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -5230,29 +5183,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_050": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -5263,9 +5214,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -5318,11 +5270,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -5335,29 +5287,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_051": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -5368,9 +5318,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -5423,11 +5374,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -5440,29 +5391,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_052": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -5473,9 +5422,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -5528,11 +5478,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -5545,29 +5495,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_053": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -5578,9 +5526,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -5633,11 +5582,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -5650,29 +5599,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_054": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -5683,9 +5630,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -5738,11 +5686,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -5755,29 +5703,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_055": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -5788,9 +5734,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -5843,11 +5790,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -5860,29 +5807,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_056": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -5893,9 +5838,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -5948,11 +5894,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -5965,29 +5911,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_057": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -5998,9 +5942,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -6053,11 +5998,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -6070,29 +6015,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_058": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -6103,9 +6046,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -6158,11 +6102,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -6175,29 +6119,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_059": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -6208,9 +6150,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -6263,11 +6206,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -6280,29 +6223,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_060": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -6313,9 +6254,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -6368,11 +6310,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -6385,29 +6327,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_061": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -6418,9 +6358,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -6473,11 +6414,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -6490,29 +6431,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_062": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -6523,9 +6462,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -6578,11 +6518,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -6595,29 +6535,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_063": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -6628,9 +6566,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -6683,11 +6622,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -6700,29 +6639,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_064": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -6733,9 +6670,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -6788,11 +6726,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -6805,29 +6743,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_065": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -6838,9 +6774,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -6893,11 +6830,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -6910,29 +6847,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_066": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -6943,9 +6878,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -6998,11 +6934,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -7015,29 +6951,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_067": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -7048,9 +6982,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -7103,11 +7038,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -7120,29 +7055,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_068": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -7153,9 +7086,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -7208,11 +7142,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -7225,29 +7159,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_069": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -7258,9 +7190,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -7313,11 +7246,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -7330,29 +7263,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_070": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -7363,9 +7294,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -7418,11 +7350,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -7435,29 +7367,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_071": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -7468,9 +7398,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -7523,11 +7454,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -7540,29 +7471,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_072": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -7573,9 +7502,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -7628,11 +7558,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -7645,29 +7575,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_073": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -7678,9 +7606,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -7733,11 +7662,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -7750,29 +7679,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_074": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -7783,9 +7710,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -7838,11 +7766,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -7855,29 +7783,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "linear",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "linear",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_075": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -7888,9 +7814,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -7943,11 +7870,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -7960,29 +7887,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_076": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -7993,9 +7918,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -8048,11 +7974,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -8065,29 +7991,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_077": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -8098,9 +8022,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -8153,11 +8078,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -8170,29 +8095,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "nearest",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "nearest",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_078": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -8203,9 +8126,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -8258,11 +8182,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -8275,29 +8199,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_079": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -8308,9 +8230,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -8363,11 +8286,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -8380,29 +8303,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_080": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -8413,9 +8334,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -8468,11 +8390,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -8485,29 +8407,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 0,
-            "mode": "cubic",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 0,
+                    "mode": "cubic",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_081": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -8518,9 +8438,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -8573,11 +8494,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -8590,29 +8511,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_082": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -8623,9 +8542,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -8678,11 +8598,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -8695,29 +8615,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_083": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -8728,9 +8646,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -8783,11 +8702,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -8800,29 +8719,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "linear",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "linear",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_084": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -8833,9 +8750,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -8888,11 +8806,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -8905,29 +8823,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_085": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -8938,9 +8854,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -8993,11 +8910,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -9010,29 +8927,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_086": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -9043,9 +8958,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -9098,11 +9014,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -9115,29 +9031,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "nearest",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "nearest",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     },
     "GridSample_087": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -9148,9 +9062,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -9203,11 +9118,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -9220,29 +9135,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "zeros",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "zeros"
+                }
+            }]
         }
     },
     "GridSample_088": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -9253,9 +9166,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -9308,11 +9222,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -9325,29 +9239,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "border",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "border"
+                }
+            }]
         }
     },
     "GridSample_089": {
-        "graph_name": "GridSample_Graph",
-        "inputs": {
-            "X": {
+        "name": "GridSample_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -9358,9 +9270,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "grid": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "grid",
                 "data": [
                     [
                         [
@@ -9413,11 +9326,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 6, 6, 2],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -9430,23 +9343,20 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GridSample_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GridSample",
-            "align_corners": 1,
-            "mode": "cubic",
-            "padding_mode": "reflection",
-            "inputs": {
-                "X": "X",
-                "grid": "grid"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 1, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GridSample_Node",
+                "op_type": "GridSample",
+                "inputs": ["X", "grid"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "align_corners": 1,
+                    "mode": "cubic",
+                    "padding_mode": "reflection"
+                }
+            }]
         }
     }
 }

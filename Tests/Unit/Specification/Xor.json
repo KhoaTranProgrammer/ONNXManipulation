@@ -1,8 +1,9 @@
 {
     "Xor_000": {
-        "graph_name": "Xor_Graph",
-        "inputs": {
-            "A": {
+        "name": "Xor_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -17,9 +18,10 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -34,11 +36,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -53,20 +55,16 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Xor_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Xor",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Xor_Node",
+                "op_type": "Xor",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     }
 }

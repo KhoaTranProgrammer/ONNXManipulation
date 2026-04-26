@@ -151,54 +151,62 @@ def find_index(output_dictionary, node):
 
 def convert2Dictionary(node_name, node_input, node_output, node_attri, network_input, network_output):
     graph_dictionary = {}
-    inputs = {}
-    outputs = {}
     node_data = {}
-    node_data["Action"] = "Add"
-    node_data["Category"] = "Node"
-    node_data["Type"] = node_name
-    node_data_input = {}
-    node_data_output = {}
+    node_data["name"] = f'{node_name}_Node'
+    node_data["op_type"] = node_name
+    node_data_input = []
+    node_data_output = []
 
     # Get node input
     for i in range(0, len(node_input)):
         one_input = {}
         input_name = node_input[i] # X
-        node_data_input[node_input[i]] = node_input[i]
-    
+        node_data_input.append(node_input[i])
+
     # Get network input
     node_input_refine = node_input
     if "" in node_input_refine:
         node_input_refine.remove("") # Remove empty input
 
+    network_inputs = []
     for i in range(0, len(node_input_refine)):
         one_input = {}
         input_name = node_input_refine[i] # X
         data = network_input[i]
+        one_input["name"] = input_name
         one_input["data"] = data
-        one_input["type"] = str(data.dtype)
-        inputs[input_name] = one_input
-        
+        one_input["shape"] = data.shape
+        one_input["data_type"] = str(data.dtype)
+        network_inputs.append(one_input)
+
+    network_outputs = []
     for i in range(0, len(node_output)):
         one_output = {}
         output_name = node_output[i] # X
-        node_data_output[node_output[i]] = node_output[i]
+        node_data_output.append(node_output[i])
         data = network_output[i]
+        one_output["name"] = output_name
         one_output["data"] = data
-        one_output["type"] = str(data.dtype)
-        outputs[output_name] = one_output
-    
+        one_output["shape"] = data.shape
+        one_output["data_type"] = str(data.dtype)
+        network_outputs.append(one_output)
+
+    node_attributes = {}
     for item in node_attri:
-        node_data[item] = node_attri[item]
+        node_attributes[item] = node_attri[item]
 
     node_data["inputs"] = node_data_input
     node_data["outputs"] = node_data_output
+    node_data["attributes"] = node_attributes
 
-    graph_dictionary["graph_name"] = f'{node_name}_Graph'
-    graph_dictionary["inputs"] = inputs
-    graph_dictionary["outputs"] = outputs
-    graph_dictionary[f'{node_name}_Node'] = node_data
-    
+    graph_dictionary["name"] = f'{node_name}_Graph'
+    graph_dictionary["graph"] = {}
+    graph_dictionary["graph"]["inputs"] = network_inputs
+    graph_dictionary["graph"]["outputs"] = network_outputs
+    nodes = []
+    nodes.append(node_data)
+    graph_dictionary["graph"]["nodes"] = nodes
+
     return graph_dictionary
 
 def createSampleData(dimentions, datatype, min=None, max=None):

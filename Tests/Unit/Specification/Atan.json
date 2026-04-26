@@ -1,8 +1,9 @@
 {
     "Atan_000": {
-        "graph_name": "Atan_Graph",
-        "inputs": {
-            "input": {
+        "name": "Atan_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -36,25 +37,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Atan_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Atan",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Atan_Node",
+                "op_type": "Atan",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Atan_001": {
-        "graph_name": "Atan_Graph",
-        "inputs": {
-            "input": {
+        "name": "Atan_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -69,11 +68,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -88,19 +87,16 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Atan_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Atan",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Atan_Node",
+                "op_type": "Atan",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     }
 }

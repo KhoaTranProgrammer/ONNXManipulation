@@ -1,8 +1,9 @@
 {
     "NonZero_000": {
-        "graph_name": "NonZero_Graph",
-        "inputs": {
-            "X": {
+        "name": "NonZero_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,36 +18,34 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                     [0, 0, 0, 1, 1, 1, 2, 2, 2, 0, 0, 0, 1, 1, 1, 2, 2, 2],
                     [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2]
                 ],
-                "type": "int64"
-            }
-        },
-        "NonZero_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NonZero",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 18],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "NonZero_Node",
+                "op_type": "NonZero",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "NonZero_001": {
-        "graph_name": "NonZero_Graph",
-        "inputs": {
-            "X": {
+        "name": "NonZero_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -61,36 +60,34 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                     [0, 0, 0, 1, 1, 1, 2, 2, 2, 0, 0, 0, 1, 1, 1, 2, 2, 2],
                     [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2]
                 ],
-                "type": "int64"
-            }
-        },
-        "NonZero_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NonZero",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 18],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "NonZero_Node",
+                "op_type": "NonZero",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "NonZero_002": {
-        "graph_name": "NonZero_Graph",
-        "inputs": {
-            "X": {
+        "name": "NonZero_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -105,36 +102,34 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                     [0, 0, 0, 1, 1, 1, 2, 2, 2, 0, 0, 0, 1, 1, 1, 2, 2, 2],
                     [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2]
                 ],
-                "type": "int64"
-            }
-        },
-        "NonZero_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NonZero",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 18],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "NonZero_Node",
+                "op_type": "NonZero",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "NonZero_003": {
-        "graph_name": "NonZero_Graph",
-        "inputs": {
-            "X": {
+        "name": "NonZero_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -149,36 +144,34 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                     [0, 0, 0, 1, 1, 1, 2, 2, 2, 0, 0, 0, 1, 1, 1, 2, 2, 2],
                     [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2]
                 ],
-                "type": "int64"
-            }
-        },
-        "NonZero_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NonZero",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 18],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "NonZero_Node",
+                "op_type": "NonZero",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "NonZero_004": {
-        "graph_name": "NonZero_Graph",
-        "inputs": {
-            "X": {
+        "name": "NonZero_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -193,36 +186,34 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                     [0, 0, 0, 1, 1, 1, 2, 2, 2, 0, 0, 0, 1, 1, 1, 2, 2, 2],
                     [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2]
                 ],
-                "type": "int64"
-            }
-        },
-        "NonZero_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NonZero",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 18],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "NonZero_Node",
+                "op_type": "NonZero",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "NonZero_005": {
-        "graph_name": "NonZero_Graph",
-        "inputs": {
-            "X": {
+        "name": "NonZero_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -237,30 +228,27 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                     [0, 0, 0, 1, 1, 1, 2, 2, 2, 0, 0, 0, 1, 1, 1, 2, 2, 2],
                     [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2]
                 ],
-                "type": "int64"
-            }
-        },
-        "NonZero_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NonZero",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 18],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "NonZero_Node",
+                "op_type": "NonZero",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     }
 }

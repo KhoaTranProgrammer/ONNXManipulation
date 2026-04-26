@@ -1,310 +1,299 @@
 {
     "Shrink_000": {
-        "graph_name": "Shrink_Graph",
-        "inputs": {
-            "input": {
+        "name": "Shrink_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [1, 2, 3, 4, 5],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [5],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 2, 3, 4, 5],
-                "type": "uint8"
-            }
-        },
-        "Shrink_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shrink",
-            "bias": 0.0,
-            "lambd": 0.5,
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [5],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Shrink_Node",
+                "op_type": "Shrink",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {
+                    "bias": 0.0,
+                    "lambd": 0.5
+                }
+            }]
         }
     },
     "Shrink_001": {
-        "graph_name": "Shrink_Graph",
-        "inputs": {
-            "input": {
+        "name": "Shrink_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [1, 2, 3, 4, 5],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [5],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 2, 3, 4, 5],
-                "type": "uint16"
-            }
-        },
-        "Shrink_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shrink",
-            "bias": 0.0,
-            "lambd": 0.5,
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [5],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Shrink_Node",
+                "op_type": "Shrink",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {
+                    "bias": 0.0,
+                    "lambd": 0.5
+                }
+            }]
         }
     },
     "Shrink_002": {
-        "graph_name": "Shrink_Graph",
-        "inputs": {
-            "input": {
+        "name": "Shrink_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [1, 2, 3, 4, 5],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [5],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 2, 3, 4, 5],
-                "type": "uint32"
-            }
-        },
-        "Shrink_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shrink",
-            "bias": 0.0,
-            "lambd": 0.5,
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [5],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Shrink_Node",
+                "op_type": "Shrink",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {
+                    "bias": 0.0,
+                    "lambd": 0.5
+                }
+            }]
         }
     },
     "Shrink_003": {
-        "graph_name": "Shrink_Graph",
-        "inputs": {
-            "input": {
+        "name": "Shrink_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [1, 2, 3, 4, 5],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [5],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 2, 3, 4, 5],
-                "type": "uint64"
-            }
-        },
-        "Shrink_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shrink",
-            "bias": 0.0,
-            "lambd": 0.5,
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [5],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Shrink_Node",
+                "op_type": "Shrink",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {
+                    "bias": 0.0,
+                    "lambd": 0.5
+                }
+            }]
         }
     },
     "Shrink_004": {
-        "graph_name": "Shrink_Graph",
-        "inputs": {
-            "input": {
+        "name": "Shrink_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [1, 2, 3, 4, 5],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [5],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 2, 3, 4, 5],
-                "type": "int8"
-            }
-        },
-        "Shrink_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shrink",
-            "bias": 0.0,
-            "lambd": 0.5,
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [5],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Shrink_Node",
+                "op_type": "Shrink",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {
+                    "bias": 0.0,
+                    "lambd": 0.5
+                }
+            }]
         }
     },
     "Shrink_005": {
-        "graph_name": "Shrink_Graph",
-        "inputs": {
-            "input": {
+        "name": "Shrink_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [1, 2, 3, 4, 5],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [5],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 2, 3, 4, 5],
-                "type": "int16"
-            }
-        },
-        "Shrink_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shrink",
-            "bias": 0.0,
-            "lambd": 0.5,
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [5],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Shrink_Node",
+                "op_type": "Shrink",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {
+                    "bias": 0.0,
+                    "lambd": 0.5
+                }
+            }]
         }
     },
     "Shrink_006": {
-        "graph_name": "Shrink_Graph",
-        "inputs": {
-            "input": {
+        "name": "Shrink_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [1, 2, 3, 4, 5],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [5],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 2, 3, 4, 5],
-                "type": "int32"
-            }
-        },
-        "Shrink_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shrink",
-            "bias": 0.0,
-            "lambd": 0.5,
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [5],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Shrink_Node",
+                "op_type": "Shrink",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {
+                    "bias": 0.0,
+                    "lambd": 0.5
+                }
+            }]
         }
     },
     "Shrink_007": {
-        "graph_name": "Shrink_Graph",
-        "inputs": {
-            "input": {
+        "name": "Shrink_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [1, 2, 3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [5],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 2, 3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shrink_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shrink",
-            "bias": 0.0,
-            "lambd": 0.5,
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [5],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shrink_Node",
+                "op_type": "Shrink",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {
+                    "bias": 0.0,
+                    "lambd": 0.5
+                }
+            }]
         }
     },
     "Shrink_008": {
-        "graph_name": "Shrink_Graph",
-        "inputs": {
-            "input": {
+        "name": "Shrink_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [1.0, 2.0, 3.0, 4.0, 5.0],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [5],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1.0, 2.0, 3.0, 4.0, 5.0],
-                "type": "float16"
-            }
-        },
-        "Shrink_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shrink",
-            "bias": 0.0,
-            "lambd": 0.5,
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [5],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Shrink_Node",
+                "op_type": "Shrink",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {
+                    "bias": 0.0,
+                    "lambd": 0.5
+                }
+            }]
         }
     },
     "Shrink_009": {
-        "graph_name": "Shrink_Graph",
-        "inputs": {
-            "input": {
+        "name": "Shrink_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [1.0, 2.0, 3.0, 4.0, 5.0],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [5],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1.0, 2.0, 3.0, 4.0, 5.0],
-                "type": "float32"
-            }
-        },
-        "Shrink_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shrink",
-            "bias": 0.0,
-            "lambd": 0.5,
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [5],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Shrink_Node",
+                "op_type": "Shrink",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {
+                    "bias": 0.0,
+                    "lambd": 0.5
+                }
+            }]
         }
     },
     "Shrink_010": {
-        "graph_name": "Shrink_Graph",
-        "inputs": {
-            "input": {
+        "name": "Shrink_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [1.0, 2.0, 3.0, 4.0, 5.0],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [5],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1.0, 2.0, 3.0, 4.0, 5.0],
-                "type": "float64"
-            }
-        },
-        "Shrink_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shrink",
-            "bias": 0.0,
-            "lambd": 0.5,
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [5],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Shrink_Node",
+                "op_type": "Shrink",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {
+                    "bias": 0.0,
+                    "lambd": 0.5
+                }
+            }]
         }
     }
 }

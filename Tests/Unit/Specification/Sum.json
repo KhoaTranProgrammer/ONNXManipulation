@@ -1,8 +1,9 @@
 {
     "Sum_000": {
-        "graph_name": "Sum_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Sum_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "sum": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "sum",
                 "data": [
                     [
                         [
@@ -36,25 +37,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Sum_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Sum",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "sum": "sum"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Sum_Node",
+                "op_type": "Sum",
+                "inputs": ["data_0"],
+                "outputs": ["sum"],
+                "attributes": {}
+            }]
         }
     },
     "Sum_001": {
-        "graph_name": "Sum_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Sum_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -69,11 +68,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "sum": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "sum",
                 "data": [
                     [
                         [
@@ -88,25 +87,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Sum_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Sum",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "sum": "sum"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Sum_Node",
+                "op_type": "Sum",
+                "inputs": ["data_0"],
+                "outputs": ["sum"],
+                "attributes": {}
+            }]
         }
     },
     "Sum_002": {
-        "graph_name": "Sum_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Sum_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -121,11 +118,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "sum": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "sum",
                 "data": [
                     [
                         [
@@ -140,19 +137,16 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Sum_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Sum",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "sum": "sum"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Sum_Node",
+                "op_type": "Sum",
+                "inputs": ["data_0"],
+                "outputs": ["sum"],
+                "attributes": {}
+            }]
         }
     }
 }

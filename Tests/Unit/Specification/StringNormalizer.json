@@ -1,31 +1,30 @@
 {
     "StringNormalizer_000": {
-        "graph_name": "StringNormalizer_Graph",
-        "inputs": {
-            "X": {
+        "name": "StringNormalizer_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": ["monday", "tuesday", "wednesday", "thursday"],
-                "type": "object"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [4],
+                "data_type": "object"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": ["tuesday", "wednesday", "thursday"],
-                "type": "object"
-            }
-        },
-        "StringNormalizer_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "StringNormalizer",
-            "case_change_action": "LOWER",
-            "is_case_sensitive": 1,
-            "stopwords": ["monday"],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [3],
+                "data_type": "object"
+            }],
+            "nodes": [{
+                "name": "StringNormalizer_Node",
+                "op_type": "StringNormalizer",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "case_change_action": "LOWER",
+                    "is_case_sensitive": 1,
+                    "stopwords": ["monday"]
+                }
+            }]
         }
     }
 }

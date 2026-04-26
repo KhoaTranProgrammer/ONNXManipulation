@@ -1,610 +1,591 @@
 {
     "Mod_000": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [252, 7, 5, 4, 249, 8],
-                "type": "uint8"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "uint8"
+            }, {
+                "name": "B",
                 "data": [2, 253, 8, 254, 3, 5],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, 7, 5, 4, 0, 3],
-                "type": "uint8"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 0,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 0
+                }
+            }]
         }
     },
     "Mod_001": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [252, 7, 5, 4, 249, 8],
-                "type": "uint8"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "uint8"
+            }, {
+                "name": "B",
                 "data": [2, 253, 8, 254, 3, 5],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, 7, 5, 4, 0, 3],
-                "type": "uint8"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 1,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 1
+                }
+            }]
         }
     },
     "Mod_002": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [65532, 7, 5, 4, 65529, 8],
-                "type": "uint16"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "uint16"
+            }, {
+                "name": "B",
                 "data": [2, 65533, 8, 65534, 3, 5],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, 7, 5, 4, 0, 3],
-                "type": "uint16"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 0,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 0
+                }
+            }]
         }
     },
     "Mod_003": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [65532, 7, 5, 4, 65529, 8],
-                "type": "uint16"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "uint16"
+            }, {
+                "name": "B",
                 "data": [2, 65533, 8, 65534, 3, 5],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, 7, 5, 4, 0, 3],
-                "type": "uint16"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 1,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 1
+                }
+            }]
         }
     },
     "Mod_004": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [4294967292, 7, 5, 4, 4294967289, 8],
-                "type": "uint32"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "uint32"
+            }, {
+                "name": "B",
                 "data": [2, 4294967293, 8, 4294967294, 3, 5],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, 7, 5, 4, 0, 3],
-                "type": "uint32"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 0,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 0
+                }
+            }]
         }
     },
     "Mod_005": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [4294967292, 7, 5, 4, 4294967289, 8],
-                "type": "uint32"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "uint32"
+            }, {
+                "name": "B",
                 "data": [2, 4294967293, 8, 4294967294, 3, 5],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, 7, 5, 4, 0, 3],
-                "type": "uint32"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 1,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 1
+                }
+            }]
         }
     },
     "Mod_006": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [18446744073709551612, 7, 5, 4, 18446744073709551609, 8],
-                "type": "uint64"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "uint64"
+            }, {
+                "name": "B",
                 "data": [2, 18446744073709551613, 8, 18446744073709551614, 3, 5],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, 7, 5, 4, 0, 3],
-                "type": "uint64"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 0,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 0
+                }
+            }]
         }
     },
     "Mod_007": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [18446744073709551612, 7, 5, 4, 18446744073709551609, 8],
-                "type": "uint64"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "uint64"
+            }, {
+                "name": "B",
                 "data": [2, 18446744073709551613, 8, 18446744073709551614, 3, 5],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, 7, 5, 4, 1, 3],
-                "type": "uint64"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 1,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 1
+                }
+            }]
         }
     },
     "Mod_008": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [-4, 7, 5, 4, -7, 8],
-                "type": "int8"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "int8"
+            }, {
+                "name": "B",
                 "data": [2, -3, 8, -2, 3, 5],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, -2, 5, 0, 2, 3],
-                "type": "int8"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 0,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 0
+                }
+            }]
         }
     },
     "Mod_009": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [-4, 7, 5, 4, -7, 8],
-                "type": "int8"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "int8"
+            }, {
+                "name": "B",
                 "data": [2, -3, 8, -2, 3, 5],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, 1, 5, 0, -1, 3],
-                "type": "int8"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 1,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 1
+                }
+            }]
         }
     },
     "Mod_010": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [-4, 7, 5, 4, -7, 8],
-                "type": "int16"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "int16"
+            }, {
+                "name": "B",
                 "data": [2, -3, 8, -2, 3, 5],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, -2, 5, 0, 2, 3],
-                "type": "int16"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 0,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 0
+                }
+            }]
         }
     },
     "Mod_011": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [-4, 7, 5, 4, -7, 8],
-                "type": "int16"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "int16"
+            }, {
+                "name": "B",
                 "data": [2, -3, 8, -2, 3, 5],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, 1, 5, 0, -1, 3],
-                "type": "int16"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 1,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 1
+                }
+            }]
         }
     },
     "Mod_012": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [-4, 7, 5, 4, -7, 8],
-                "type": "int32"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "int32"
+            }, {
+                "name": "B",
                 "data": [2, -3, 8, -2, 3, 5],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, -2, 5, 0, 2, 3],
-                "type": "int32"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 0,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 0
+                }
+            }]
         }
     },
     "Mod_013": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [-4, 7, 5, 4, -7, 8],
-                "type": "int32"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "int32"
+            }, {
+                "name": "B",
                 "data": [2, -3, 8, -2, 3, 5],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, 1, 5, 0, -1, 3],
-                "type": "int32"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 1,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 1
+                }
+            }]
         }
     },
     "Mod_014": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [-4, 7, 5, 4, -7, 8],
-                "type": "int64"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "int64"
+            }, {
+                "name": "B",
                 "data": [2, -3, 8, -2, 3, 5],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, -2, 5, 0, 2, 3],
-                "type": "int64"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 0,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 0
+                }
+            }]
         }
     },
     "Mod_015": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [-4, 7, 5, 4, -7, 8],
-                "type": "int64"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "int64"
+            }, {
+                "name": "B",
                 "data": [2, -3, 8, -2, 3, 5],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [0, 1, 5, 0, -1, 3],
-                "type": "int64"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 1,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 1
+                }
+            }]
         }
     },
     "Mod_016": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [-4.30078125, 7.19921875, 5.0, 4.30078125, -7.19921875, 8.0],
-                "type": "float16"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "float16"
+            }, {
+                "name": "B",
                 "data": [2.099609375, -3.400390625, 8.0, -2.099609375, 3.400390625, 5.0],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [-0.1015625, 0.3984375, 5.0, 0.1015625, -0.3984375, 3.0],
-                "type": "float16"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 1,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 1
+                }
+            }]
         }
     },
     "Mod_017": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [-4.300000190734863, 7.199999809265137, 5.0, 4.300000190734863, -7.199999809265137, 8.0],
-                "type": "float32"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "float32"
+            }, {
+                "name": "B",
                 "data": [2.0999999046325684, -3.4000000953674316, 8.0, -2.0999999046325684, 3.4000000953674316, 5.0],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [-0.10000038146972656, 0.39999961853027344, 5.0, 0.10000038146972656, -0.39999961853027344, 3.0],
-                "type": "float32"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 1,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 1
+                }
+            }]
         }
     },
     "Mod_018": {
-        "graph_name": "Mod_Graph",
-        "inputs": {
-            "A": {
+        "name": "Mod_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [-4.3, 7.2, 5.0, 4.3, -7.2, 8.0],
-                "type": "float64"
-            },
-            "B": {
+                "shape": [6],
+                "data_type": "float64"
+            }, {
+                "name": "B",
                 "data": [2.1, -3.4, 8.0, -2.1, 3.4, 5.0],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [6],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [-0.09999999999999964, 0.40000000000000036, 5.0, 0.09999999999999964, -0.40000000000000036, 3.0],
-                "type": "float64"
-            }
-        },
-        "Mod_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mod",
-            "fmod": 1,
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Mod_Node",
+                "op_type": "Mod",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {
+                    "fmod": 1
+                }
+            }]
         }
     }
 }

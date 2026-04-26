@@ -1,8 +1,9 @@
 {
     "Transpose_000": {
-        "graph_name": "Transpose_Graph",
-        "inputs": {
-            "data": {
+        "name": "Transpose_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -15,11 +16,11 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "transposed": {
+                "shape": [2, 3, 4],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "transposed",
                 "data": [
                     [
                         [1, 1, 254],
@@ -34,26 +35,25 @@
                         [1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Transpose_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Transpose",
-            "perm": [0, 2, 1],
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "transposed": "transposed"
-            }
+                "shape": [2, 4, 3],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Transpose_Node",
+                "op_type": "Transpose",
+                "inputs": ["data"],
+                "outputs": ["transposed"],
+                "attributes": {
+                    "perm": [0, 2, 1]
+                }
+            }]
         }
     },
     "Transpose_001": {
-        "graph_name": "Transpose_Graph",
-        "inputs": {
-            "data": {
+        "name": "Transpose_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 65535, 1],
@@ -66,11 +66,11 @@
                         [1, 1, 65535, 1]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "transposed": {
+                "shape": [2, 3, 4],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "transposed",
                 "data": [
                     [
                         [1, 3, 1],
@@ -85,26 +85,25 @@
                         [1, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "Transpose_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Transpose",
-            "perm": [0, 2, 1],
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "transposed": "transposed"
-            }
+                "shape": [2, 4, 3],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Transpose_Node",
+                "op_type": "Transpose",
+                "inputs": ["data"],
+                "outputs": ["transposed"],
+                "attributes": {
+                    "perm": [0, 2, 1]
+                }
+            }]
         }
     },
     "Transpose_002": {
-        "graph_name": "Transpose_Graph",
-        "inputs": {
-            "data": {
+        "name": "Transpose_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [4294967295, 1, 1, 1],
@@ -117,11 +116,11 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "transposed": {
+                "shape": [2, 3, 4],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "transposed",
                 "data": [
                     [
                         [4294967295, 1, 2],
@@ -136,26 +135,25 @@
                         [1, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Transpose_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Transpose",
-            "perm": [0, 2, 1],
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "transposed": "transposed"
-            }
+                "shape": [2, 4, 3],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Transpose_Node",
+                "op_type": "Transpose",
+                "inputs": ["data"],
+                "outputs": ["transposed"],
+                "attributes": {
+                    "perm": [0, 2, 1]
+                }
+            }]
         }
     },
     "Transpose_003": {
-        "graph_name": "Transpose_Graph",
-        "inputs": {
-            "data": {
+        "name": "Transpose_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [18446744073709551614, 1, 1, 1],
@@ -168,11 +166,11 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "transposed": {
+                "shape": [2, 3, 4],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "transposed",
                 "data": [
                     [
                         [18446744073709551614, 1, 1],
@@ -187,26 +185,25 @@
                         [1, 1, 1]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Transpose_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Transpose",
-            "perm": [0, 2, 1],
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "transposed": "transposed"
-            }
+                "shape": [2, 4, 3],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Transpose_Node",
+                "op_type": "Transpose",
+                "inputs": ["data"],
+                "outputs": ["transposed"],
+                "attributes": {
+                    "perm": [0, 2, 1]
+                }
+            }]
         }
     },
     "Transpose_004": {
-        "graph_name": "Transpose_Graph",
-        "inputs": {
-            "data": {
+        "name": "Transpose_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, -1, 1, -1],
@@ -219,11 +216,11 @@
                         [1, 1, -1, 1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "transposed": {
+                "shape": [2, 3, 4],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "transposed",
                 "data": [
                     [
                         [1, 1, 1],
@@ -238,26 +235,25 @@
                         [-1, 1, 1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Transpose_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Transpose",
-            "perm": [0, 2, 1],
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "transposed": "transposed"
-            }
+                "shape": [2, 4, 3],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Transpose_Node",
+                "op_type": "Transpose",
+                "inputs": ["data"],
+                "outputs": ["transposed"],
+                "attributes": {
+                    "perm": [0, 2, 1]
+                }
+            }]
         }
     },
     "Transpose_005": {
-        "graph_name": "Transpose_Graph",
-        "inputs": {
-            "data": {
+        "name": "Transpose_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, -1, 1],
@@ -270,11 +266,11 @@
                         [1, -1, 1, 1]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "transposed": {
+                "shape": [2, 3, 4],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "transposed",
                 "data": [
                     [
                         [1, 1, 1],
@@ -289,26 +285,25 @@
                         [1, -1, 1]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "Transpose_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Transpose",
-            "perm": [0, 2, 1],
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "transposed": "transposed"
-            }
+                "shape": [2, 4, 3],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Transpose_Node",
+                "op_type": "Transpose",
+                "inputs": ["data"],
+                "outputs": ["transposed"],
+                "attributes": {
+                    "perm": [0, 2, 1]
+                }
+            }]
         }
     },
     "Transpose_006": {
-        "graph_name": "Transpose_Graph",
-        "inputs": {
-            "data": {
+        "name": "Transpose_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 2, 1],
@@ -321,11 +316,11 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "transposed": {
+                "shape": [2, 3, 4],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "transposed",
                 "data": [
                     [
                         [1, 1, 1],
@@ -340,26 +335,25 @@
                         [1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Transpose_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Transpose",
-            "perm": [0, 2, 1],
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "transposed": "transposed"
-            }
+                "shape": [2, 4, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Transpose_Node",
+                "op_type": "Transpose",
+                "inputs": ["data"],
+                "outputs": ["transposed"],
+                "attributes": {
+                    "perm": [0, 2, 1]
+                }
+            }]
         }
     },
     "Transpose_007": {
-        "graph_name": "Transpose_Graph",
-        "inputs": {
-            "data": {
+        "name": "Transpose_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, -1, -4],
@@ -372,11 +366,11 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "transposed": {
+                "shape": [2, 3, 4],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "transposed",
                 "data": [
                     [
                         [1, 1, 1],
@@ -391,26 +385,25 @@
                         [1, -1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Transpose_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Transpose",
-            "perm": [0, 2, 1],
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "transposed": "transposed"
-            }
+                "shape": [2, 4, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Transpose_Node",
+                "op_type": "Transpose",
+                "inputs": ["data"],
+                "outputs": ["transposed"],
+                "attributes": {
+                    "perm": [0, 2, 1]
+                }
+            }]
         }
     },
     "Transpose_008": {
-        "graph_name": "Transpose_Graph",
-        "inputs": {
-            "data": {
+        "name": "Transpose_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.56591796875, 2.599609375, 1.4140625, -1.0126953125],
@@ -423,11 +416,11 @@
                         [0.13232421875, 0.08538818359375, -0.273193359375, 0.25390625]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "transposed": {
+                "shape": [2, 3, 4],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "transposed",
                 "data": [
                     [
                         [0.56591796875, 0.33740234375, -0.85595703125],
@@ -442,26 +435,25 @@
                         [-1.6318359375, 1.4365234375, 0.25390625]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Transpose_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Transpose",
-            "perm": [0, 2, 1],
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "transposed": "transposed"
-            }
+                "shape": [2, 4, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Transpose_Node",
+                "op_type": "Transpose",
+                "inputs": ["data"],
+                "outputs": ["transposed"],
+                "attributes": {
+                    "perm": [0, 2, 1]
+                }
+            }]
         }
     },
     "Transpose_009": {
-        "graph_name": "Transpose_Graph",
-        "inputs": {
-            "data": {
+        "name": "Transpose_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.6059938669204712, 0.32121339440345764, 1.0592632293701172, -0.33348336815834045],
@@ -474,11 +466,11 @@
                         [-0.08190446346998215, -1.2256227731704712, 0.22021345794200897, 2.432939291000366]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "transposed": {
+                "shape": [2, 3, 4],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "transposed",
                 "data": [
                     [
                         [0.6059938669204712, -0.5892110466957092, 1.4736250638961792],
@@ -493,26 +485,25 @@
                         [-2.485524892807007, 1.6965879201889038, 2.432939291000366]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Transpose_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Transpose",
-            "perm": [0, 2, 1],
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "transposed": "transposed"
-            }
+                "shape": [2, 4, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Transpose_Node",
+                "op_type": "Transpose",
+                "inputs": ["data"],
+                "outputs": ["transposed"],
+                "attributes": {
+                    "perm": [0, 2, 1]
+                }
+            }]
         }
     },
     "Transpose_010": {
-        "graph_name": "Transpose_Graph",
-        "inputs": {
-            "data": {
+        "name": "Transpose_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [2.4861033227925553, 1.465806932604891, -1.390119432573348, 2.046567408600938],
@@ -525,11 +516,11 @@
                         [0.3174698854390104, 0.069622411557471, 1.8504830070578622, -0.869188955873835]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "transposed": {
+                "shape": [2, 3, 4],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "transposed",
                 "data": [
                     [
                         [2.4861033227925553, -1.460170914847097, -0.8898373749424249],
@@ -544,26 +535,25 @@
                         [-0.9030819695161164, 0.5140399535111968, -0.869188955873835]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Transpose_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Transpose",
-            "perm": [0, 2, 1],
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "transposed": "transposed"
-            }
+                "shape": [2, 4, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Transpose_Node",
+                "op_type": "Transpose",
+                "inputs": ["data"],
+                "outputs": ["transposed"],
+                "attributes": {
+                    "perm": [0, 2, 1]
+                }
+            }]
         }
     },
     "Transpose_011": {
-        "graph_name": "Transpose_Graph",
-        "inputs": {
-            "data": {
+        "name": "Transpose_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true],
@@ -576,11 +566,11 @@
                         [true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "transposed": {
+                "shape": [2, 3, 4],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "transposed",
                 "data": [
                     [
                         [true, true, true],
@@ -595,20 +585,18 @@
                         [true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Transpose_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Transpose",
-            "perm": [0, 2, 1],
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "transposed": "transposed"
-            }
+                "shape": [2, 4, 3],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Transpose_Node",
+                "op_type": "Transpose",
+                "inputs": ["data"],
+                "outputs": ["transposed"],
+                "attributes": {
+                    "perm": [0, 2, 1]
+                }
+            }]
         }
     }
 }

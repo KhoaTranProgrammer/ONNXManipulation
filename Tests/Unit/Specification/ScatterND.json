@@ -1,8 +1,9 @@
 {
     "ScatterND_000": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -29,16 +30,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint8"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -53,11 +56,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -84,28 +87,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "none",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "ScatterND_001": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -132,16 +132,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint8"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -156,11 +158,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [7, 8, 9, 10],
@@ -187,28 +189,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "add",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "add"
+                }
+            }]
         }
     },
     "ScatterND_002": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -235,16 +234,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint8"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -259,11 +260,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 10, 15, 20],
@@ -290,28 +291,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "mul",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "mul"
+                }
+            }]
         }
     },
     "ScatterND_003": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -338,16 +336,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint8"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -362,11 +362,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -393,28 +393,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "max",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "max"
+                }
+            }]
         }
     },
     "ScatterND_004": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -441,16 +438,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint8"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -465,11 +464,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -496,28 +495,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "min",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "min"
+                }
+            }]
         }
     },
     "ScatterND_005": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -544,16 +540,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint16"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -568,11 +566,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -599,28 +597,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "none",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "ScatterND_006": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -647,16 +642,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint16"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -671,11 +668,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [7, 8, 9, 10],
@@ -702,28 +699,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "add",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "add"
+                }
+            }]
         }
     },
     "ScatterND_007": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -750,16 +744,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint16"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -774,11 +770,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 10, 15, 20],
@@ -805,28 +801,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "mul",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "mul"
+                }
+            }]
         }
     },
     "ScatterND_008": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -853,16 +846,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint16"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -877,11 +872,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -908,28 +903,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "max",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "max"
+                }
+            }]
         }
     },
     "ScatterND_009": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -956,16 +948,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint16"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -980,11 +974,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -1011,28 +1005,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "min",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "min"
+                }
+            }]
         }
     },
     "ScatterND_010": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -1059,16 +1050,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -1083,11 +1076,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -1114,28 +1107,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "none",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "ScatterND_011": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -1162,16 +1152,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -1186,11 +1178,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [7, 8, 9, 10],
@@ -1217,28 +1209,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "add",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "add"
+                }
+            }]
         }
     },
     "ScatterND_012": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -1265,16 +1254,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -1289,11 +1280,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 10, 15, 20],
@@ -1320,28 +1311,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "mul",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "mul"
+                }
+            }]
         }
     },
     "ScatterND_013": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -1368,16 +1356,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -1392,11 +1382,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -1423,28 +1413,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "max",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "max"
+                }
+            }]
         }
     },
     "ScatterND_014": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -1471,16 +1458,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -1495,11 +1484,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -1526,28 +1515,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "min",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "min"
+                }
+            }]
         }
     },
     "ScatterND_015": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -1574,16 +1560,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -1598,11 +1586,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -1629,28 +1617,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "none",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "ScatterND_016": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -1677,16 +1662,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -1701,11 +1688,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [7, 8, 9, 10],
@@ -1732,28 +1719,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "add",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "add"
+                }
+            }]
         }
     },
     "ScatterND_017": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -1780,16 +1764,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -1804,11 +1790,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 10, 15, 20],
@@ -1835,28 +1821,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "mul",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "mul"
+                }
+            }]
         }
     },
     "ScatterND_018": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -1883,16 +1866,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -1907,11 +1892,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -1938,28 +1923,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "max",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "max"
+                }
+            }]
         }
     },
     "ScatterND_019": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -1986,16 +1968,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "uint64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -2010,11 +1994,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -2041,28 +2025,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "min",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "min"
+                }
+            }]
         }
     },
     "ScatterND_020": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -2089,16 +2070,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int8"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int8"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -2113,11 +2096,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -2144,28 +2127,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "none",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "ScatterND_021": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -2192,16 +2172,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int8"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int8"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -2216,11 +2198,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [7, 8, 9, 10],
@@ -2247,28 +2229,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "add",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "add"
+                }
+            }]
         }
     },
     "ScatterND_022": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -2295,16 +2274,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int8"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int8"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -2319,11 +2300,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 10, 15, 20],
@@ -2350,28 +2331,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "mul",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "mul"
+                }
+            }]
         }
     },
     "ScatterND_023": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -2398,16 +2376,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int8"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int8"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -2422,11 +2402,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -2453,28 +2433,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "max",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "max"
+                }
+            }]
         }
     },
     "ScatterND_024": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -2501,16 +2478,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int8"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int8"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -2525,11 +2504,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -2556,28 +2535,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "min",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "min"
+                }
+            }]
         }
     },
     "ScatterND_025": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -2604,16 +2580,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int16"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int16"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -2628,11 +2606,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -2659,28 +2637,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "none",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "ScatterND_026": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -2707,16 +2682,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int16"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int16"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -2731,11 +2708,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [7, 8, 9, 10],
@@ -2762,28 +2739,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "add",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "add"
+                }
+            }]
         }
     },
     "ScatterND_027": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -2810,16 +2784,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int16"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int16"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -2834,11 +2810,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 10, 15, 20],
@@ -2865,28 +2841,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "mul",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "mul"
+                }
+            }]
         }
     },
     "ScatterND_028": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -2913,16 +2886,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int16"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int16"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -2937,11 +2912,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -2968,28 +2943,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "max",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "max"
+                }
+            }]
         }
     },
     "ScatterND_029": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -3016,16 +2988,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int16"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int16"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -3040,11 +3014,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -3071,28 +3045,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "min",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "min"
+                }
+            }]
         }
     },
     "ScatterND_030": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -3119,16 +3090,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -3143,11 +3116,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -3174,28 +3147,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "none",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "ScatterND_031": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -3222,16 +3192,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -3246,11 +3218,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [7, 8, 9, 10],
@@ -3277,28 +3249,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "add",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "add"
+                }
+            }]
         }
     },
     "ScatterND_032": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -3325,16 +3294,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -3349,11 +3320,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 10, 15, 20],
@@ -3380,28 +3351,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "mul",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "mul"
+                }
+            }]
         }
     },
     "ScatterND_033": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -3428,16 +3396,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -3452,11 +3422,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -3483,28 +3453,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "max",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "max"
+                }
+            }]
         }
     },
     "ScatterND_034": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -3531,16 +3498,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -3555,11 +3524,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -3586,28 +3555,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "min",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "min"
+                }
+            }]
         }
     },
     "ScatterND_035": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -3634,16 +3600,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -3658,11 +3626,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -3689,28 +3657,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "none",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "ScatterND_036": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -3737,16 +3702,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -3761,11 +3728,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [7, 8, 9, 10],
@@ -3792,28 +3759,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "add",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "add"
+                }
+            }]
         }
     },
     "ScatterND_037": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -3840,16 +3804,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -3864,11 +3830,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 10, 15, 20],
@@ -3895,28 +3861,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "mul",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "mul"
+                }
+            }]
         }
     },
     "ScatterND_038": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -3943,16 +3906,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -3967,11 +3932,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -3998,28 +3963,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "max",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "max"
+                }
+            }]
         }
     },
     "ScatterND_039": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 3, 4],
@@ -4046,16 +4008,18 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "int64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5, 5, 5, 5],
@@ -4070,11 +4034,11 @@
                         [4, 4, 4, 4]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -4101,28 +4065,25 @@
                         [5, 6, 7, 8]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "min",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "min"
+                }
+            }]
         }
     },
     "ScatterND_040": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.0, 2.0, 3.0, 4.0],
@@ -4149,16 +4110,18 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float16"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5.0, 5.0, 5.0, 5.0],
@@ -4173,11 +4136,11 @@
                         [4.0, 4.0, 4.0, 4.0]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1.0, 1.0, 1.0, 1.0],
@@ -4204,28 +4167,25 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "none",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "ScatterND_041": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.0, 2.0, 3.0, 4.0],
@@ -4252,16 +4212,18 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5.0, 5.0, 5.0, 5.0],
@@ -4276,11 +4238,11 @@
                         [4.0, 4.0, 4.0, 4.0]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1.0, 1.0, 1.0, 1.0],
@@ -4307,28 +4269,25 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "none",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "ScatterND_042": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.0, 2.0, 3.0, 4.0],
@@ -4355,16 +4314,18 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5.0, 5.0, 5.0, 5.0],
@@ -4379,11 +4340,11 @@
                         [4.0, 4.0, 4.0, 4.0]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [7.0, 8.0, 9.0, 10.0],
@@ -4410,28 +4371,25 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "add",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "add"
+                }
+            }]
         }
     },
     "ScatterND_043": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.0, 2.0, 3.0, 4.0],
@@ -4458,16 +4416,18 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5.0, 5.0, 5.0, 5.0],
@@ -4482,11 +4442,11 @@
                         [4.0, 4.0, 4.0, 4.0]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5.0, 10.0, 15.0, 20.0],
@@ -4513,28 +4473,25 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "mul",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "mul"
+                }
+            }]
         }
     },
     "ScatterND_044": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.0, 2.0, 3.0, 4.0],
@@ -4561,16 +4518,18 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5.0, 5.0, 5.0, 5.0],
@@ -4585,11 +4544,11 @@
                         [4.0, 4.0, 4.0, 4.0]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5.0, 5.0, 5.0, 5.0],
@@ -4616,28 +4575,25 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "max",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "max"
+                }
+            }]
         }
     },
     "ScatterND_045": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.0, 2.0, 3.0, 4.0],
@@ -4664,16 +4620,18 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float32"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5.0, 5.0, 5.0, 5.0],
@@ -4688,11 +4646,11 @@
                         [4.0, 4.0, 4.0, 4.0]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1.0, 1.0, 1.0, 1.0],
@@ -4719,28 +4677,25 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "min",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "min"
+                }
+            }]
         }
     },
     "ScatterND_046": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.0, 2.0, 3.0, 4.0],
@@ -4767,16 +4722,18 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5.0, 5.0, 5.0, 5.0],
@@ -4791,11 +4748,11 @@
                         [4.0, 4.0, 4.0, 4.0]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1.0, 1.0, 1.0, 1.0],
@@ -4822,28 +4779,25 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "none",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "ScatterND_047": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.0, 2.0, 3.0, 4.0],
@@ -4870,16 +4824,18 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5.0, 5.0, 5.0, 5.0],
@@ -4894,11 +4850,11 @@
                         [4.0, 4.0, 4.0, 4.0]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [7.0, 8.0, 9.0, 10.0],
@@ -4925,28 +4881,25 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "add",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "add"
+                }
+            }]
         }
     },
     "ScatterND_048": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.0, 2.0, 3.0, 4.0],
@@ -4973,16 +4926,18 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5.0, 5.0, 5.0, 5.0],
@@ -4997,11 +4952,11 @@
                         [4.0, 4.0, 4.0, 4.0]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5.0, 10.0, 15.0, 20.0],
@@ -5028,28 +4983,25 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "mul",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "mul"
+                }
+            }]
         }
     },
     "ScatterND_049": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.0, 2.0, 3.0, 4.0],
@@ -5076,16 +5028,18 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5.0, 5.0, 5.0, 5.0],
@@ -5100,11 +5054,11 @@
                         [4.0, 4.0, 4.0, 4.0]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [5.0, 5.0, 5.0, 5.0],
@@ -5131,28 +5085,25 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "max",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "max"
+                }
+            }]
         }
     },
     "ScatterND_050": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.0, 2.0, 3.0, 4.0],
@@ -5179,16 +5130,18 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float64"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [5.0, 5.0, 5.0, 5.0],
@@ -5203,11 +5156,11 @@
                         [4.0, 4.0, 4.0, 4.0]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1.0, 1.0, 1.0, 1.0],
@@ -5234,28 +5187,25 @@
                         [5.0, 6.0, 7.0, 8.0]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "min",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "min"
+                }
+            }]
         }
     },
     "ScatterND_051": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true],
@@ -5282,16 +5232,18 @@
                         [true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "bool"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [true, true, true, true],
@@ -5306,11 +5258,11 @@
                         [true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [true, true, true, true],
@@ -5337,28 +5289,25 @@
                         [true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "none",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "ScatterND_052": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true],
@@ -5385,16 +5334,18 @@
                         [true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "bool"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [true, true, true, true],
@@ -5409,11 +5360,11 @@
                         [true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [true, true, true, true],
@@ -5440,28 +5391,25 @@
                         [true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "add",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "add"
+                }
+            }]
         }
     },
     "ScatterND_053": {
-        "graph_name": "ScatterND_Graph",
-        "inputs": {
-            "data": {
+        "name": "ScatterND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true],
@@ -5488,16 +5436,18 @@
                         [true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            },
-            "indices": {
+                "shape": [4, 4, 4],
+                "data_type": "bool"
+            }, {
+                "name": "indices",
                 "data": [
                     [0],
                     [0]
                 ],
-                "type": "int64"
-            },
-            "updates": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }, {
+                "name": "updates",
                 "data": [
                     [
                         [true, true, true, true],
@@ -5512,11 +5462,11 @@
                         [true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 4, 4],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [true, true, true, true],
@@ -5543,22 +5493,18 @@
                         [true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "ScatterND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "ScatterND",
-            "reduction": "mul",
-            "inputs": {
-                "data": "data",
-                "indices": "indices",
-                "updates": "updates"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [4, 4, 4],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "ScatterND_Node",
+                "op_type": "ScatterND",
+                "inputs": ["data", "indices", "updates"],
+                "outputs": ["output"],
+                "attributes": {
+                    "reduction": "mul"
+                }
+            }]
         }
     }
 }

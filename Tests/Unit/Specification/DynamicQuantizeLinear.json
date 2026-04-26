@@ -1,8 +1,9 @@
 {
     "DynamicQuantizeLinear_000": {
-        "graph_name": "DynamicQuantizeLinear_Graph",
-        "inputs": {
-            "x": {
+        "name": "DynamicQuantizeLinear_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "x",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "y",
                 "data": [
                     [
                         [
@@ -36,29 +37,26 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "y_scale": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "y_scale",
                 "data": 0.014979472383856773,
-                "type": "float32"
-            },
-            "y_zero_point": {
+                "shape": [],
+                "data_type": "float32"
+            }, {
+                "name": "y_zero_point",
                 "data": 136,
-                "type": "uint8"
-            }
-        },
-        "DynamicQuantizeLinear_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "DynamicQuantizeLinear",
-            "inputs": {
-                "x": "x"
-            },
-            "outputs": {
-                "y": "y",
-                "y_scale": "y_scale",
-                "y_zero_point": "y_zero_point"
-            }
+                "shape": [],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "DynamicQuantizeLinear_Node",
+                "op_type": "DynamicQuantizeLinear",
+                "inputs": ["x"],
+                "outputs": ["y", "y_scale", "y_zero_point"],
+                "attributes": {}
+            }]
         }
     }
 }

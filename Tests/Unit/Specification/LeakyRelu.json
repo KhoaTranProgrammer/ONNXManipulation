@@ -1,56 +1,54 @@
 {
     "LeakyRelu_000": {
-        "graph_name": "LeakyRelu_Graph",
-        "inputs": {
-            "X": {
+        "name": "LeakyRelu_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [-1.0, 0.0, 1.0],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [-0.5, 0.0, 1.0],
-                "type": "float16"
-            }
-        },
-        "LeakyRelu_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "LeakyRelu",
-            "alpha": 0.5,
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "LeakyRelu_Node",
+                "op_type": "LeakyRelu",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "alpha": 0.5
+                }
+            }]
         }
     },
     "LeakyRelu_001": {
-        "graph_name": "LeakyRelu_Graph",
-        "inputs": {
-            "X": {
+        "name": "LeakyRelu_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [-1.0, 0.0, 1.0],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [-0.5, 0.0, 1.0],
-                "type": "float32"
-            }
-        },
-        "LeakyRelu_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "LeakyRelu",
-            "alpha": 0.5,
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "LeakyRelu_Node",
+                "op_type": "LeakyRelu",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "alpha": 0.5
+                }
+            }]
         }
     }
 }

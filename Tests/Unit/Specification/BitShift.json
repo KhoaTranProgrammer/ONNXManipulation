@@ -1,8 +1,9 @@
 {
     "BitShift_000": {
-        "graph_name": "BitShift_Graph",
-        "inputs": {
-            "X": {
+        "name": "BitShift_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,9 +18,10 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -34,11 +36,11 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -53,27 +55,25 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "BitShift_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BitShift",
-            "direction": "RIGHT",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "BitShift_Node",
+                "op_type": "BitShift",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {
+                    "direction": "RIGHT"
+                }
+            }]
         }
     },
     "BitShift_001": {
-        "graph_name": "BitShift_Graph",
-        "inputs": {
-            "X": {
+        "name": "BitShift_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -88,9 +88,10 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -105,11 +106,11 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -124,27 +125,25 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "BitShift_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BitShift",
-            "direction": "LEFT",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "BitShift_Node",
+                "op_type": "BitShift",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {
+                    "direction": "LEFT"
+                }
+            }]
         }
     },
     "BitShift_002": {
-        "graph_name": "BitShift_Graph",
-        "inputs": {
-            "X": {
+        "name": "BitShift_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -159,9 +158,10 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -176,11 +176,11 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -195,27 +195,25 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "BitShift_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BitShift",
-            "direction": "RIGHT",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "BitShift_Node",
+                "op_type": "BitShift",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {
+                    "direction": "RIGHT"
+                }
+            }]
         }
     },
     "BitShift_003": {
-        "graph_name": "BitShift_Graph",
-        "inputs": {
-            "X": {
+        "name": "BitShift_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -230,9 +228,10 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -247,11 +246,11 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -266,27 +265,25 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "BitShift_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BitShift",
-            "direction": "LEFT",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "BitShift_Node",
+                "op_type": "BitShift",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {
+                    "direction": "LEFT"
+                }
+            }]
         }
     },
     "BitShift_004": {
-        "graph_name": "BitShift_Graph",
-        "inputs": {
-            "X": {
+        "name": "BitShift_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -301,9 +298,10 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -318,11 +316,11 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -337,27 +335,25 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "BitShift_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BitShift",
-            "direction": "RIGHT",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "BitShift_Node",
+                "op_type": "BitShift",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {
+                    "direction": "RIGHT"
+                }
+            }]
         }
     },
     "BitShift_005": {
-        "graph_name": "BitShift_Graph",
-        "inputs": {
-            "X": {
+        "name": "BitShift_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -372,9 +368,10 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -389,11 +386,11 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -408,21 +405,18 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "BitShift_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BitShift",
-            "direction": "LEFT",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "BitShift_Node",
+                "op_type": "BitShift",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {
+                    "direction": "LEFT"
+                }
+            }]
         }
     }
 }

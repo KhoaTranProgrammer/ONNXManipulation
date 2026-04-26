@@ -1,8 +1,9 @@
 {
     "MatMul_000": {
-        "graph_name": "MatMul_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMul_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -17,9 +18,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -34,11 +36,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -53,26 +55,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "MatMul_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMul",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "MatMul_Node",
+                "op_type": "MatMul",
+                "inputs": ["A", "B"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMul_001": {
-        "graph_name": "MatMul_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMul_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -87,9 +86,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -104,11 +104,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -123,26 +123,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "MatMul_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMul",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "MatMul_Node",
+                "op_type": "MatMul",
+                "inputs": ["A", "B"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMul_002": {
-        "graph_name": "MatMul_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMul_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -157,9 +154,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -174,11 +172,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -193,26 +191,23 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "MatMul_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMul",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "MatMul_Node",
+                "op_type": "MatMul",
+                "inputs": ["A", "B"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMul_003": {
-        "graph_name": "MatMul_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMul_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -227,9 +222,10 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -244,11 +240,11 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -263,26 +259,23 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "MatMul_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMul",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "MatMul_Node",
+                "op_type": "MatMul",
+                "inputs": ["A", "B"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMul_004": {
-        "graph_name": "MatMul_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMul_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -297,9 +290,10 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -314,11 +308,11 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -333,26 +327,23 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "MatMul_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMul",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "MatMul_Node",
+                "op_type": "MatMul",
+                "inputs": ["A", "B"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMul_005": {
-        "graph_name": "MatMul_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMul_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -367,9 +358,10 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -384,11 +376,11 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -403,26 +395,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "MatMul_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMul",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "MatMul_Node",
+                "op_type": "MatMul",
+                "inputs": ["A", "B"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMul_006": {
-        "graph_name": "MatMul_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMul_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -437,9 +426,10 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -454,11 +444,11 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -473,20 +463,16 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MatMul_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMul",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MatMul_Node",
+                "op_type": "MatMul",
+                "inputs": ["A", "B"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     }
 }

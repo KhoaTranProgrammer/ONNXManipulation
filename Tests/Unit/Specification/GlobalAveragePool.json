@@ -1,8 +1,9 @@
 {
     "GlobalAveragePool_000": {
-        "graph_name": "GlobalAveragePool_Graph",
-        "inputs": {
-            "X": {
+        "name": "GlobalAveragePool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -32,25 +33,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GlobalAveragePool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GlobalAveragePool",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GlobalAveragePool_Node",
+                "op_type": "GlobalAveragePool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "GlobalAveragePool_001": {
-        "graph_name": "GlobalAveragePool_Graph",
-        "inputs": {
-            "X": {
+        "name": "GlobalAveragePool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -65,11 +64,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -80,19 +79,16 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GlobalAveragePool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GlobalAveragePool",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GlobalAveragePool_Node",
+                "op_type": "GlobalAveragePool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     }
 }

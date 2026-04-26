@@ -1,8 +1,9 @@
 {
     "Div_000": {
-        "graph_name": "Div_Graph",
-        "inputs": {
-            "A": {
+        "name": "Div_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -17,9 +18,10 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -34,11 +36,11 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -53,26 +55,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Div_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Div",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Div_Node",
+                "op_type": "Div",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     },
     "Div_001": {
-        "graph_name": "Div_Graph",
-        "inputs": {
-            "A": {
+        "name": "Div_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -87,9 +86,10 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -104,11 +104,11 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -123,26 +123,23 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Div_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Div",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Div_Node",
+                "op_type": "Div",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     },
     "Div_002": {
-        "graph_name": "Div_Graph",
-        "inputs": {
-            "A": {
+        "name": "Div_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -157,9 +154,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -174,11 +172,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -193,26 +191,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Div_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Div",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Div_Node",
+                "op_type": "Div",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     },
     "Div_003": {
-        "graph_name": "Div_Graph",
-        "inputs": {
-            "A": {
+        "name": "Div_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -227,9 +222,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -244,11 +240,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -263,26 +259,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Div_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Div",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Div_Node",
+                "op_type": "Div",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     },
     "Div_004": {
-        "graph_name": "Div_Graph",
-        "inputs": {
-            "A": {
+        "name": "Div_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -297,9 +290,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -314,11 +308,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -333,20 +327,16 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Div_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Div",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Div_Node",
+                "op_type": "Div",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     }
 }

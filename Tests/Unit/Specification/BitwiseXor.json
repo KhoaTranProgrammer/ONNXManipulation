@@ -1,8 +1,9 @@
 {
     "BitwiseXor_000": {
-        "graph_name": "BitwiseXor_Graph",
-        "inputs": {
-            "A": {
+        "name": "BitwiseXor_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -17,9 +18,10 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -34,11 +36,11 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -53,26 +55,23 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "BitwiseXor_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BitwiseXor",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "BitwiseXor_Node",
+                "op_type": "BitwiseXor",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     },
     "BitwiseXor_001": {
-        "graph_name": "BitwiseXor_Graph",
-        "inputs": {
-            "A": {
+        "name": "BitwiseXor_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -87,9 +86,10 @@
                         ]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint16"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -104,11 +104,11 @@
                         ]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -123,26 +123,23 @@
                         ]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "BitwiseXor_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BitwiseXor",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "BitwiseXor_Node",
+                "op_type": "BitwiseXor",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     },
     "BitwiseXor_002": {
-        "graph_name": "BitwiseXor_Graph",
-        "inputs": {
-            "A": {
+        "name": "BitwiseXor_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -157,9 +154,10 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -174,11 +172,11 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -193,26 +191,23 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "BitwiseXor_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BitwiseXor",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "BitwiseXor_Node",
+                "op_type": "BitwiseXor",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     },
     "BitwiseXor_003": {
-        "graph_name": "BitwiseXor_Graph",
-        "inputs": {
-            "A": {
+        "name": "BitwiseXor_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -227,9 +222,10 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -244,11 +240,11 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -263,26 +259,23 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "BitwiseXor_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BitwiseXor",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "BitwiseXor_Node",
+                "op_type": "BitwiseXor",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     },
     "BitwiseXor_004": {
-        "graph_name": "BitwiseXor_Graph",
-        "inputs": {
-            "A": {
+        "name": "BitwiseXor_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -297,9 +290,10 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -314,11 +308,11 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -333,26 +327,23 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "BitwiseXor_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BitwiseXor",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "BitwiseXor_Node",
+                "op_type": "BitwiseXor",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     },
     "BitwiseXor_005": {
-        "graph_name": "BitwiseXor_Graph",
-        "inputs": {
-            "A": {
+        "name": "BitwiseXor_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -367,9 +358,10 @@
                         ]
                     ]
                 ],
-                "type": "int16"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int16"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -384,11 +376,11 @@
                         ]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -403,26 +395,23 @@
                         ]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "BitwiseXor_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BitwiseXor",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "BitwiseXor_Node",
+                "op_type": "BitwiseXor",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     },
     "BitwiseXor_006": {
-        "graph_name": "BitwiseXor_Graph",
-        "inputs": {
-            "A": {
+        "name": "BitwiseXor_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -437,9 +426,10 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -454,11 +444,11 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -473,26 +463,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "BitwiseXor_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BitwiseXor",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "BitwiseXor_Node",
+                "op_type": "BitwiseXor",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     },
     "BitwiseXor_007": {
-        "graph_name": "BitwiseXor_Graph",
-        "inputs": {
-            "A": {
+        "name": "BitwiseXor_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -507,9 +494,10 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -524,11 +512,11 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -543,20 +531,16 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "BitwiseXor_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BitwiseXor",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "BitwiseXor_Node",
+                "op_type": "BitwiseXor",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     }
 }

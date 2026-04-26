@@ -1,602 +1,578 @@
 {
     "MatMulInteger_000": {
-        "graph_name": "MatMulInteger_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMulInteger_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [11, 7, 3],
                     [10, 6, 2],
                     [9, 5, 1],
                     [8, 4, 0]
                 ],
-                "type": "int8"
-            },
-            "B": {
+                "shape": [4, 3],
+                "data_type": "int8"
+            }, {
+                "name": "B",
                 "data": [
                     [1, 4],
                     [2, 5],
                     [3, 6]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3, 2],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [34, 97],
                     [28, 82],
                     [22, 67],
                     [16, 52]
                 ],
-                "type": "int32"
-            }
-        },
-        "MatMulInteger_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMulInteger",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "MatMulInteger_Node",
+                "op_type": "MatMulInteger",
+                "inputs": ["A", "B"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMulInteger_001": {
-        "graph_name": "MatMulInteger_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMulInteger_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [11, 7, 3],
                     [10, 6, 2],
                     [9, 5, 1],
                     [8, 4, 0]
                 ],
-                "type": "uint8"
-            },
-            "B": {
+                "shape": [4, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "B",
                 "data": [
                     [1, 4],
                     [2, 5],
                     [3, 6]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3, 2],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [34, 97],
                     [28, 82],
                     [22, 67],
                     [16, 52]
                 ],
-                "type": "int32"
-            }
-        },
-        "MatMulInteger_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMulInteger",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "MatMulInteger_Node",
+                "op_type": "MatMulInteger",
+                "inputs": ["A", "B"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMulInteger_002": {
-        "graph_name": "MatMulInteger_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMulInteger_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [11, 7, 3],
                     [10, 6, 2],
                     [9, 5, 1],
                     [8, 4, 0]
                 ],
-                "type": "uint8"
-            },
-            "B": {
+                "shape": [4, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "B",
                 "data": [
                     [1, 4],
                     [2, 5],
                     [3, 6]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3, 2],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [34, 97],
                     [28, 82],
                     [22, 67],
                     [16, 52]
                 ],
-                "type": "int32"
-            }
-        },
-        "MatMulInteger_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMulInteger",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "MatMulInteger_Node",
+                "op_type": "MatMulInteger",
+                "inputs": ["A", "B"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMulInteger_003": {
-        "graph_name": "MatMulInteger_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMulInteger_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [11, 7, 3],
                     [10, 6, 2],
                     [9, 5, 1],
                     [8, 4, 0]
                 ],
-                "type": "int8"
-            },
-            "B": {
+                "shape": [4, 3],
+                "data_type": "int8"
+            }, {
+                "name": "B",
                 "data": [
                     [1, 4],
                     [2, 5],
                     [3, 6]
                 ],
-                "type": "int8"
-            },
-            "a_zero_point(optional)": {
+                "shape": [3, 2],
+                "data_type": "int8"
+            }, {
+                "name": "a_zero_point(optional)",
                 "data": [12],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [-38, -83],
                     [-44, -98],
                     [-50, -113],
                     [-56, -128]
                 ],
-                "type": "int32"
-            }
-        },
-        "MatMulInteger_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMulInteger",
-            "inputs": {
-                "A": "A",
-                "B": "B",
-                "a_zero_point(optional)": "a_zero_point(optional)"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "MatMulInteger_Node",
+                "op_type": "MatMulInteger",
+                "inputs": ["A", "B", "a_zero_point(optional)"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMulInteger_004": {
-        "graph_name": "MatMulInteger_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMulInteger_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [11, 7, 3],
                     [10, 6, 2],
                     [9, 5, 1],
                     [8, 4, 0]
                 ],
-                "type": "uint8"
-            },
-            "B": {
+                "shape": [4, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "B",
                 "data": [
                     [1, 4],
                     [2, 5],
                     [3, 6]
                 ],
-                "type": "int8"
-            },
-            "a_zero_point(optional)": {
+                "shape": [3, 2],
+                "data_type": "int8"
+            }, {
+                "name": "a_zero_point(optional)",
                 "data": [12],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [-38, -83],
                     [-44, -98],
                     [-50, -113],
                     [-56, -128]
                 ],
-                "type": "int32"
-            }
-        },
-        "MatMulInteger_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMulInteger",
-            "inputs": {
-                "A": "A",
-                "B": "B",
-                "a_zero_point(optional)": "a_zero_point(optional)"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "MatMulInteger_Node",
+                "op_type": "MatMulInteger",
+                "inputs": ["A", "B", "a_zero_point(optional)"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMulInteger_005": {
-        "graph_name": "MatMulInteger_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMulInteger_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [11, 7, 3],
                     [10, 6, 2],
                     [9, 5, 1],
                     [8, 4, 0]
                 ],
-                "type": "uint8"
-            },
-            "B": {
+                "shape": [4, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "B",
                 "data": [
                     [1, 4],
                     [2, 5],
                     [3, 6]
                 ],
-                "type": "uint8"
-            },
-            "a_zero_point(optional)": {
+                "shape": [3, 2],
+                "data_type": "uint8"
+            }, {
+                "name": "a_zero_point(optional)",
                 "data": [12],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [-38, -83],
                     [-44, -98],
                     [-50, -113],
                     [-56, -128]
                 ],
-                "type": "int32"
-            }
-        },
-        "MatMulInteger_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMulInteger",
-            "inputs": {
-                "A": "A",
-                "B": "B",
-                "a_zero_point(optional)": "a_zero_point(optional)"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "MatMulInteger_Node",
+                "op_type": "MatMulInteger",
+                "inputs": ["A", "B", "a_zero_point(optional)"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMulInteger_006": {
-        "graph_name": "MatMulInteger_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMulInteger_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [11, 7, 3],
                     [10, 6, 2],
                     [9, 5, 1],
                     [8, 4, 0]
                 ],
-                "type": "int8"
-            },
-            "B": {
+                "shape": [4, 3],
+                "data_type": "int8"
+            }, {
+                "name": "B",
                 "data": [
                     [1, 4],
                     [2, 5],
                     [3, 6]
                 ],
-                "type": "int8"
-            },
-            "b_zero_point(optional)": {
+                "shape": [3, 2],
+                "data_type": "int8"
+            }, {
+                "name": "b_zero_point(optional)",
                 "data": [0],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [34, 97],
                     [28, 82],
                     [22, 67],
                     [16, 52]
                 ],
-                "type": "int32"
-            }
-        },
-        "MatMulInteger_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMulInteger",
-            "inputs": {
-                "A": "A",
-                "B": "B",
-                "b_zero_point(optional)": "b_zero_point(optional)"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "MatMulInteger_Node",
+                "op_type": "MatMulInteger",
+                "inputs": ["A", "B", "b_zero_point(optional)"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMulInteger_007": {
-        "graph_name": "MatMulInteger_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMulInteger_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [11, 7, 3],
                     [10, 6, 2],
                     [9, 5, 1],
                     [8, 4, 0]
                 ],
-                "type": "uint8"
-            },
-            "B": {
+                "shape": [4, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "B",
                 "data": [
                     [1, 4],
                     [2, 5],
                     [3, 6]
                 ],
-                "type": "int8"
-            },
-            "b_zero_point(optional)": {
+                "shape": [3, 2],
+                "data_type": "int8"
+            }, {
+                "name": "b_zero_point(optional)",
                 "data": [0],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [34, 97],
                     [28, 82],
                     [22, 67],
                     [16, 52]
                 ],
-                "type": "int32"
-            }
-        },
-        "MatMulInteger_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMulInteger",
-            "inputs": {
-                "A": "A",
-                "B": "B",
-                "b_zero_point(optional)": "b_zero_point(optional)"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "MatMulInteger_Node",
+                "op_type": "MatMulInteger",
+                "inputs": ["A", "B", "b_zero_point(optional)"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMulInteger_008": {
-        "graph_name": "MatMulInteger_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMulInteger_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [11, 7, 3],
                     [10, 6, 2],
                     [9, 5, 1],
                     [8, 4, 0]
                 ],
-                "type": "uint8"
-            },
-            "B": {
+                "shape": [4, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "B",
                 "data": [
                     [1, 4],
                     [2, 5],
                     [3, 6]
                 ],
-                "type": "uint8"
-            },
-            "b_zero_point(optional)": {
+                "shape": [3, 2],
+                "data_type": "uint8"
+            }, {
+                "name": "b_zero_point(optional)",
                 "data": [0],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [34, 97],
                     [28, 82],
                     [22, 67],
                     [16, 52]
                 ],
-                "type": "int32"
-            }
-        },
-        "MatMulInteger_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMulInteger",
-            "inputs": {
-                "A": "A",
-                "B": "B",
-                "b_zero_point(optional)": "b_zero_point(optional)"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "MatMulInteger_Node",
+                "op_type": "MatMulInteger",
+                "inputs": ["A", "B", "b_zero_point(optional)"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMulInteger_009": {
-        "graph_name": "MatMulInteger_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMulInteger_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [11, 7, 3],
                     [10, 6, 2],
                     [9, 5, 1],
                     [8, 4, 0]
                 ],
-                "type": "int8"
-            },
-            "B": {
+                "shape": [4, 3],
+                "data_type": "int8"
+            }, {
+                "name": "B",
                 "data": [
                     [1, 4],
                     [2, 5],
                     [3, 6]
                 ],
-                "type": "int8"
-            },
-            "a_zero_point(optional)": {
+                "shape": [3, 2],
+                "data_type": "int8"
+            }, {
+                "name": "a_zero_point(optional)",
                 "data": [12],
-                "type": "int8"
-            },
-            "b_zero_point(optional)": {
+                "shape": [1],
+                "data_type": "int8"
+            }, {
+                "name": "b_zero_point(optional)",
                 "data": [0],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [-38, -83],
                     [-44, -98],
                     [-50, -113],
                     [-56, -128]
                 ],
-                "type": "int32"
-            }
-        },
-        "MatMulInteger_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMulInteger",
-            "inputs": {
-                "A": "A",
-                "B": "B",
-                "a_zero_point(optional)": "a_zero_point(optional)",
-                "b_zero_point(optional)": "b_zero_point(optional)"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "MatMulInteger_Node",
+                "op_type": "MatMulInteger",
+                "inputs": ["A", "B", "a_zero_point(optional)", "b_zero_point(optional)"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMulInteger_010": {
-        "graph_name": "MatMulInteger_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMulInteger_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [11, 7, 3],
                     [10, 6, 2],
                     [9, 5, 1],
                     [8, 4, 0]
                 ],
-                "type": "uint8"
-            },
-            "B": {
+                "shape": [4, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "B",
                 "data": [
                     [1, 4],
                     [2, 5],
                     [3, 6]
                 ],
-                "type": "int8"
-            },
-            "a_zero_point(optional)": {
+                "shape": [3, 2],
+                "data_type": "int8"
+            }, {
+                "name": "a_zero_point(optional)",
                 "data": [12],
-                "type": "uint8"
-            },
-            "b_zero_point(optional)": {
+                "shape": [1],
+                "data_type": "uint8"
+            }, {
+                "name": "b_zero_point(optional)",
                 "data": [0],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [-38, -83],
                     [-44, -98],
                     [-50, -113],
                     [-56, -128]
                 ],
-                "type": "int32"
-            }
-        },
-        "MatMulInteger_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMulInteger",
-            "inputs": {
-                "A": "A",
-                "B": "B",
-                "a_zero_point(optional)": "a_zero_point(optional)",
-                "b_zero_point(optional)": "b_zero_point(optional)"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "MatMulInteger_Node",
+                "op_type": "MatMulInteger",
+                "inputs": ["A", "B", "a_zero_point(optional)", "b_zero_point(optional)"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "MatMulInteger_011": {
-        "graph_name": "MatMulInteger_Graph",
-        "inputs": {
-            "A": {
+        "name": "MatMulInteger_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [11, 7, 3],
                     [10, 6, 2],
                     [9, 5, 1],
                     [8, 4, 0]
                 ],
-                "type": "uint8"
-            },
-            "B": {
+                "shape": [4, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "B",
                 "data": [
                     [1, 4],
                     [2, 5],
                     [3, 6]
                 ],
-                "type": "uint8"
-            },
-            "a_zero_point(optional)": {
+                "shape": [3, 2],
+                "data_type": "uint8"
+            }, {
+                "name": "a_zero_point(optional)",
                 "data": [12],
-                "type": "uint8"
-            },
-            "b_zero_point(optional)": {
+                "shape": [1],
+                "data_type": "uint8"
+            }, {
+                "name": "b_zero_point(optional)",
                 "data": [0],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [-38, -83],
                     [-44, -98],
                     [-50, -113],
                     [-56, -128]
                 ],
-                "type": "int32"
-            }
-        },
-        "MatMulInteger_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MatMulInteger",
-            "inputs": {
-                "A": "A",
-                "B": "B",
-                "a_zero_point(optional)": "a_zero_point(optional)",
-                "b_zero_point(optional)": "b_zero_point(optional)"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [4, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "MatMulInteger_Node",
+                "op_type": "MatMulInteger",
+                "inputs": ["A", "B", "a_zero_point(optional)", "b_zero_point(optional)"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     }
 }

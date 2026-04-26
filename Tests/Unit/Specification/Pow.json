@@ -1,8 +1,9 @@
 {
     "Pow_000": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,9 +18,10 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -34,11 +36,11 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -53,26 +55,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_001": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -87,9 +86,10 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -104,11 +104,11 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -123,26 +123,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_002": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -157,9 +154,10 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -174,11 +172,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -193,26 +191,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_003": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -227,9 +222,10 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -244,11 +240,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -263,26 +259,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_004": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -297,9 +290,10 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -314,11 +308,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -333,26 +327,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_005": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -367,9 +358,10 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -384,11 +376,11 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -403,26 +395,23 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_006": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -437,9 +426,10 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -454,11 +444,11 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -473,26 +463,23 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_007": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -507,9 +494,10 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -524,11 +512,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -543,26 +531,23 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_008": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -577,9 +562,10 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -594,11 +580,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -613,26 +599,23 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_009": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -647,9 +630,10 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -664,11 +648,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -683,26 +667,23 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_010": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -717,9 +698,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -734,11 +716,11 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -753,26 +735,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_011": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -787,9 +766,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -804,11 +784,11 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -823,26 +803,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_012": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -857,9 +834,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -874,11 +852,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -893,26 +871,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_013": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -927,9 +902,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -944,11 +920,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -963,26 +939,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_014": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -997,9 +970,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1014,11 +988,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -1033,26 +1007,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_015": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1067,9 +1038,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1084,11 +1056,11 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -1103,26 +1075,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_016": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1137,9 +1106,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1154,11 +1124,11 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -1173,26 +1143,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_017": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1207,9 +1174,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1224,11 +1192,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -1243,26 +1211,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_018": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1277,9 +1242,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1294,11 +1260,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -1313,26 +1279,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_019": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1347,9 +1310,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1364,11 +1328,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -1383,26 +1347,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_020": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1417,9 +1378,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1434,11 +1396,11 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -1453,26 +1415,23 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_021": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1487,9 +1446,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1504,11 +1464,11 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -1523,26 +1483,23 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_022": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1557,9 +1514,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1574,11 +1532,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -1593,26 +1551,23 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_023": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1627,9 +1582,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1644,11 +1600,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -1663,26 +1619,23 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     },
     "Pow_024": {
-        "graph_name": "Pow_Graph",
-        "inputs": {
-            "X": {
+        "name": "Pow_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1697,9 +1650,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }, {
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1714,11 +1668,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Z": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Z",
                 "data": [
                     [
                         [
@@ -1733,20 +1687,16 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Pow_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Pow",
-            "inputs": {
-                "X": "X",
-                "Y": "Y"
-            },
-            "outputs": {
-                "Z": "Z"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Pow_Node",
+                "op_type": "Pow",
+                "inputs": ["X", "Y"],
+                "outputs": ["Z"],
+                "attributes": {}
+            }]
         }
     }
 }

@@ -1,39 +1,38 @@
 {
     "Split_000": {
-        "graph_name": "Split_Graph",
-        "inputs": {
-            "input": {
+        "name": "Split_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [1, 1, 1, 1, 1, 1],
-                "type": "uint8"
-            },
-            "split(optional)": {
+                "shape": [6],
+                "data_type": "uint8"
+            }, {
+                "name": "split(optional)",
                 "data": [2, 4],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "outputs(variadic)_1": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "outputs(variadic)_1",
                 "data": [1, 1],
-                "type": "uint8"
-            },
-            "outputs(variadic)_2": {
+                "shape": [2],
+                "data_type": "uint8"
+            }, {
+                "name": "outputs(variadic)_2",
                 "data": [1, 1, 1, 1],
-                "type": "uint8"
-            }
-        },
-        "Split_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Split",
-            "axis": 0,
-            "inputs": {
-                "input": "input",
-                "split(optional)": "split(optional)"
-            },
-            "outputs": {
-                "outputs(variadic)_1": "outputs(variadic)_1",
-                "outputs(variadic)_2": "outputs(variadic)_2"
-            }
+                "shape": [4],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Split_Node",
+                "op_type": "Split",
+                "inputs": ["input", "split(optional)"],
+                "outputs": ["outputs(variadic)_1", "outputs(variadic)_2"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     }
 }

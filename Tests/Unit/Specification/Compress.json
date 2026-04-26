@@ -1,8 +1,9 @@
 {
     "Compress_000": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -17,9 +18,10 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -34,32 +36,29 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 255, 1, 1, 255, 1, 255, 1, 1],
-                "type": "uint8"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [18],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Compress_001": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -74,9 +73,10 @@
                         ]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint16"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -91,32 +91,29 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 1, 1, 1, 1, 65535, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-                "type": "uint16"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [18],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Compress_002": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -131,9 +128,10 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -148,32 +146,29 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 1, 4294967294, 4294967295, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4294967295, 1, 1, 1],
-                "type": "uint32"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [18],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Compress_003": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -188,9 +183,10 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -205,32 +201,29 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-                "type": "uint64"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [18],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Compress_004": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -245,9 +238,10 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -262,32 +256,29 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 1, -1, 1, 1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1],
-                "type": "int8"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [18],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Compress_005": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -302,9 +293,10 @@
                         ]
                     ]
                 ],
-                "type": "int16"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int16"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -319,32 +311,29 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [-1, 1, 1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-                "type": "int16"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [18],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Compress_006": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -359,9 +348,10 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -376,32 +366,29 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, -1, 1, 1, 1, 1, 1, 1, 1, 1, -2, -1, 2, 1, 1, 1, 1, 1],
-                "type": "int32"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [18],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Compress_007": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -416,9 +403,10 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -433,32 +421,29 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [1, 1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, 1],
-                "type": "int64"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [18],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Compress_008": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -473,9 +458,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -490,32 +476,29 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [-1.6142578125, 0.1641845703125, -0.396240234375, 0.5712890625, 0.1328125, 0.1739501953125, 1.8740234375, 0.2305908203125, -0.0118865966796875, -0.3515625, -1.1669921875, -0.8955078125, -0.474853515625, -1.52734375, 1.58984375, 1.44921875, 0.6357421875, -0.70361328125],
-                "type": "float16"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [18],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Compress_009": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -530,9 +513,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -547,32 +531,29 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [-0.41764387488365173, -0.730282723903656, -1.385353446006775, 0.13588891923427582, 0.6976228356361389, -2.2208213806152344, 0.06638246774673462, 0.3656842112541199, -0.2628324031829834, 2.6158242225646973, 0.8297258019447327, -0.382331520318985, 0.10121317207813263, 0.11567843705415726, -1.0420122146606445, 1.3760123252868652, 0.6955840587615967, 0.1819915771484375],
-                "type": "float32"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [18],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Compress_010": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -587,9 +568,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -604,32 +586,29 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [0.9729926720504206, 0.7525907891962051, -1.3854761163457507, 1.844071793089209, -2.3189694550585225, -0.8174590802130783, -0.3799201239067901, -0.8468183124875858, -1.0332248680199538, 0.4273022162039665, 0.07902942862373324, 0.1881307047429647, -0.8541010143642703, 0.25414903602325056, 0.17223039235174142, -1.1226783686608768, 0.45463300009259416, -0.7223486640716298],
-                "type": "float64"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [18],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Compress_011": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -644,9 +623,10 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -661,32 +641,29 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-                "type": "bool"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [18],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Compress_012": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -701,9 +678,10 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -718,11 +696,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -737,27 +715,25 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "axis": 0,
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Compress_013": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -772,9 +748,10 @@
                         ]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint16"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -789,11 +766,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -808,27 +785,25 @@
                         ]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "axis": 0,
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Compress_014": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -843,9 +818,10 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -860,11 +836,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -879,27 +855,25 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "axis": 0,
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Compress_015": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -914,9 +888,10 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -931,11 +906,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -950,27 +925,25 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "axis": 0,
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Compress_016": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -985,9 +958,10 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -1002,11 +976,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1021,27 +995,25 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "axis": 0,
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Compress_017": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1056,9 +1028,10 @@
                         ]
                     ]
                 ],
-                "type": "int16"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int16"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -1073,11 +1046,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1092,27 +1065,25 @@
                         ]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "axis": 0,
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Compress_018": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1127,9 +1098,10 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -1144,11 +1116,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1163,27 +1135,25 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "axis": 0,
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Compress_019": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1198,9 +1168,10 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -1215,11 +1186,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1234,27 +1205,25 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "axis": 0,
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Compress_020": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1269,9 +1238,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -1286,11 +1256,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1305,27 +1275,25 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "axis": 0,
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Compress_021": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1340,9 +1308,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -1357,11 +1326,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1376,27 +1345,25 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "axis": 0,
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Compress_022": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1411,9 +1378,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -1428,11 +1396,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1447,27 +1415,25 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "axis": 0,
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Compress_023": {
-        "graph_name": "Compress_Graph",
-        "inputs": {
-            "input": {
+        "name": "Compress_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1482,9 +1448,10 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            },
-            "condition": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }, {
+                "name": "condition",
                 "data": [
                     [
                         [
@@ -1499,11 +1466,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1518,21 +1485,18 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Compress_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Compress",
-            "axis": 0,
-            "inputs": {
-                "input": "input",
-                "condition": "condition"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Compress_Node",
+                "op_type": "Compress",
+                "inputs": ["input", "condition"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     }
 }

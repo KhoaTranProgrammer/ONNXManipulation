@@ -1,8 +1,9 @@
 {
     "GatherND_000": {
-        "graph_name": "GatherND_Graph",
-        "inputs": {
-            "data": {
+        "name": "GatherND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0, 1],
@@ -13,18 +14,19 @@
                         [6, 7]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "indices": {
+                "shape": [2, 2, 2],
+                "data_type": "uint8"
+            }, {
+                "name": "indices",
                 "data": [
                     [1],
                     [0]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [4, 5],
@@ -35,27 +37,25 @@
                         [2, 3]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "GatherND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GatherND",
-            "batch_dims": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 2, 2],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "GatherND_Node",
+                "op_type": "GatherND",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "batch_dims": 0
+                }
+            }]
         }
     },
     "GatherND_001": {
-        "graph_name": "GatherND_Graph",
-        "inputs": {
-            "data": {
+        "name": "GatherND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0, 1],
@@ -66,18 +66,19 @@
                         [6, 7]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "indices": {
+                "shape": [2, 2, 2],
+                "data_type": "uint16"
+            }, {
+                "name": "indices",
                 "data": [
                     [1],
                     [0]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [4, 5],
@@ -88,27 +89,25 @@
                         [2, 3]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "GatherND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GatherND",
-            "batch_dims": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 2, 2],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "GatherND_Node",
+                "op_type": "GatherND",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "batch_dims": 0
+                }
+            }]
         }
     },
     "GatherND_002": {
-        "graph_name": "GatherND_Graph",
-        "inputs": {
-            "data": {
+        "name": "GatherND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0, 1],
@@ -119,18 +118,19 @@
                         [6, 7]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "indices": {
+                "shape": [2, 2, 2],
+                "data_type": "uint32"
+            }, {
+                "name": "indices",
                 "data": [
                     [1],
                     [0]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [4, 5],
@@ -141,27 +141,25 @@
                         [2, 3]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "GatherND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GatherND",
-            "batch_dims": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 2, 2],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "GatherND_Node",
+                "op_type": "GatherND",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "batch_dims": 0
+                }
+            }]
         }
     },
     "GatherND_003": {
-        "graph_name": "GatherND_Graph",
-        "inputs": {
-            "data": {
+        "name": "GatherND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0, 1],
@@ -172,18 +170,19 @@
                         [6, 7]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "indices": {
+                "shape": [2, 2, 2],
+                "data_type": "uint64"
+            }, {
+                "name": "indices",
                 "data": [
                     [1],
                     [0]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [4, 5],
@@ -194,27 +193,25 @@
                         [2, 3]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "GatherND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GatherND",
-            "batch_dims": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 2, 2],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "GatherND_Node",
+                "op_type": "GatherND",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "batch_dims": 0
+                }
+            }]
         }
     },
     "GatherND_004": {
-        "graph_name": "GatherND_Graph",
-        "inputs": {
-            "data": {
+        "name": "GatherND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0, 1],
@@ -225,18 +222,19 @@
                         [6, 7]
                     ]
                 ],
-                "type": "int8"
-            },
-            "indices": {
+                "shape": [2, 2, 2],
+                "data_type": "int8"
+            }, {
+                "name": "indices",
                 "data": [
                     [1],
                     [0]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [4, 5],
@@ -247,27 +245,25 @@
                         [2, 3]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "GatherND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GatherND",
-            "batch_dims": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 2, 2],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "GatherND_Node",
+                "op_type": "GatherND",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "batch_dims": 0
+                }
+            }]
         }
     },
     "GatherND_005": {
-        "graph_name": "GatherND_Graph",
-        "inputs": {
-            "data": {
+        "name": "GatherND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0, 1],
@@ -278,18 +274,19 @@
                         [6, 7]
                     ]
                 ],
-                "type": "int16"
-            },
-            "indices": {
+                "shape": [2, 2, 2],
+                "data_type": "int16"
+            }, {
+                "name": "indices",
                 "data": [
                     [1],
                     [0]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [4, 5],
@@ -300,27 +297,25 @@
                         [2, 3]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "GatherND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GatherND",
-            "batch_dims": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 2, 2],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "GatherND_Node",
+                "op_type": "GatherND",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "batch_dims": 0
+                }
+            }]
         }
     },
     "GatherND_006": {
-        "graph_name": "GatherND_Graph",
-        "inputs": {
-            "data": {
+        "name": "GatherND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0, 1],
@@ -331,18 +326,19 @@
                         [6, 7]
                     ]
                 ],
-                "type": "int32"
-            },
-            "indices": {
+                "shape": [2, 2, 2],
+                "data_type": "int32"
+            }, {
+                "name": "indices",
                 "data": [
                     [1],
                     [0]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [4, 5],
@@ -353,27 +349,25 @@
                         [2, 3]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "GatherND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GatherND",
-            "batch_dims": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 2, 2],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "GatherND_Node",
+                "op_type": "GatherND",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "batch_dims": 0
+                }
+            }]
         }
     },
     "GatherND_007": {
-        "graph_name": "GatherND_Graph",
-        "inputs": {
-            "data": {
+        "name": "GatherND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0, 1],
@@ -384,18 +378,19 @@
                         [6, 7]
                     ]
                 ],
-                "type": "int64"
-            },
-            "indices": {
+                "shape": [2, 2, 2],
+                "data_type": "int64"
+            }, {
+                "name": "indices",
                 "data": [
                     [1],
                     [0]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [4, 5],
@@ -406,27 +401,25 @@
                         [2, 3]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "GatherND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GatherND",
-            "batch_dims": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 2, 2],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "GatherND_Node",
+                "op_type": "GatherND",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "batch_dims": 0
+                }
+            }]
         }
     },
     "GatherND_008": {
-        "graph_name": "GatherND_Graph",
-        "inputs": {
-            "data": {
+        "name": "GatherND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.0, 1.0],
@@ -437,18 +430,19 @@
                         [6.0, 7.0]
                     ]
                 ],
-                "type": "float16"
-            },
-            "indices": {
+                "shape": [2, 2, 2],
+                "data_type": "float16"
+            }, {
+                "name": "indices",
                 "data": [
                     [1],
                     [0]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [4.0, 5.0],
@@ -459,27 +453,25 @@
                         [2.0, 3.0]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GatherND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GatherND",
-            "batch_dims": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 2, 2],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GatherND_Node",
+                "op_type": "GatherND",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "batch_dims": 0
+                }
+            }]
         }
     },
     "GatherND_009": {
-        "graph_name": "GatherND_Graph",
-        "inputs": {
-            "data": {
+        "name": "GatherND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.0, 1.0],
@@ -490,18 +482,19 @@
                         [6.0, 7.0]
                     ]
                 ],
-                "type": "float32"
-            },
-            "indices": {
+                "shape": [2, 2, 2],
+                "data_type": "float32"
+            }, {
+                "name": "indices",
                 "data": [
                     [1],
                     [0]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [4.0, 5.0],
@@ -512,27 +505,25 @@
                         [2.0, 3.0]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GatherND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GatherND",
-            "batch_dims": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 2, 2],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GatherND_Node",
+                "op_type": "GatherND",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "batch_dims": 0
+                }
+            }]
         }
     },
     "GatherND_010": {
-        "graph_name": "GatherND_Graph",
-        "inputs": {
-            "data": {
+        "name": "GatherND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.0, 1.0],
@@ -543,18 +534,19 @@
                         [6.0, 7.0]
                     ]
                 ],
-                "type": "float64"
-            },
-            "indices": {
+                "shape": [2, 2, 2],
+                "data_type": "float64"
+            }, {
+                "name": "indices",
                 "data": [
                     [1],
                     [0]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [4.0, 5.0],
@@ -565,27 +557,25 @@
                         [2.0, 3.0]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GatherND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GatherND",
-            "batch_dims": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 2, 2],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GatherND_Node",
+                "op_type": "GatherND",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "batch_dims": 0
+                }
+            }]
         }
     },
     "GatherND_011": {
-        "graph_name": "GatherND_Graph",
-        "inputs": {
-            "data": {
+        "name": "GatherND_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [false, true],
@@ -596,18 +586,19 @@
                         [true, true]
                     ]
                 ],
-                "type": "bool"
-            },
-            "indices": {
+                "shape": [2, 2, 2],
+                "data_type": "bool"
+            }, {
+                "name": "indices",
                 "data": [
                     [1],
                     [0]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2, 1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [true, true],
@@ -618,21 +609,18 @@
                         [true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "GatherND_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GatherND",
-            "batch_dims": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 2, 2],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "GatherND_Node",
+                "op_type": "GatherND",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "batch_dims": 0
+                }
+            }]
         }
     }
 }

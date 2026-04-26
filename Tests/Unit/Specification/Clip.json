@@ -1,8 +1,9 @@
 {
     "Clip_000": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -36,25 +37,23 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_001": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -69,11 +68,11 @@
                         ]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -88,25 +87,23 @@
                         ]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_002": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -121,11 +118,11 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -140,25 +137,23 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_003": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -173,11 +168,11 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -192,25 +187,23 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_004": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -225,11 +218,11 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -244,25 +237,23 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_005": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -277,11 +268,11 @@
                         ]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -296,25 +287,23 @@
                         ]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_006": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -329,11 +318,11 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -348,25 +337,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_007": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -381,11 +368,11 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -400,25 +387,23 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_008": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -433,11 +418,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -452,25 +437,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_009": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -485,11 +468,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -504,25 +487,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_010": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -537,11 +518,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -556,25 +537,23 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_011": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -589,15 +568,16 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "min(optional)",
                 "data": [1],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -612,26 +592,23 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_012": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -646,15 +623,16 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }, {
+                "name": "min(optional)",
                 "data": [1],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -669,26 +647,23 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_013": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -703,15 +678,16 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }, {
+                "name": "min(optional)",
                 "data": [1],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -726,26 +702,23 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_014": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -760,15 +733,16 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }, {
+                "name": "min(optional)",
                 "data": [-1],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -783,26 +757,23 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_015": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -817,15 +788,16 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }, {
+                "name": "min(optional)",
                 "data": [1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -840,26 +812,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_016": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -874,15 +843,16 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }, {
+                "name": "min(optional)",
                 "data": [1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -897,26 +867,23 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_017": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -931,15 +898,16 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "min(optional)",
                 "data": [0.282470703125],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -954,26 +922,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_018": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -988,15 +953,16 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "min(optional)",
                 "data": [-0.676590621471405],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1011,26 +977,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_019": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1045,15 +1008,16 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }, {
+                "name": "min(optional)",
                 "data": [-0.33377499830125773],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1068,26 +1032,23 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_020": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1102,15 +1063,16 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "max(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "max(optional)",
                 "data": [1],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1125,26 +1087,23 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_021": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1159,15 +1118,16 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "max(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }, {
+                "name": "max(optional)",
                 "data": [1],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1182,26 +1142,23 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_022": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1216,15 +1173,16 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "max(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }, {
+                "name": "max(optional)",
                 "data": [1],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1239,26 +1197,23 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_023": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1273,15 +1228,16 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            },
-            "max(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }, {
+                "name": "max(optional)",
                 "data": [1],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1296,26 +1252,23 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_024": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1330,15 +1283,16 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            },
-            "max(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }, {
+                "name": "max(optional)",
                 "data": [1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1353,26 +1307,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_025": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1387,15 +1338,16 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            },
-            "max(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }, {
+                "name": "max(optional)",
                 "data": [1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1410,26 +1362,23 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_026": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1444,15 +1393,16 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "max(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "max(optional)",
                 "data": [1.3896484375],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1467,26 +1417,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_027": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1501,15 +1448,16 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "max(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "max(optional)",
                 "data": [0.4512575566768646],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1524,26 +1472,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_028": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1558,15 +1503,16 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "max(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }, {
+                "name": "max(optional)",
                 "data": [-0.6842695878497757],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1581,26 +1527,23 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_029": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1615,19 +1558,21 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "min(optional)",
                 "data": [1],
-                "type": "uint8"
-            },
-            "max(optional)": {
+                "shape": [1],
+                "data_type": "uint8"
+            }, {
+                "name": "max(optional)",
                 "data": [1],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1642,27 +1587,23 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_030": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1677,19 +1618,21 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }, {
+                "name": "min(optional)",
                 "data": [1],
-                "type": "uint32"
-            },
-            "max(optional)": {
+                "shape": [1],
+                "data_type": "uint32"
+            }, {
+                "name": "max(optional)",
                 "data": [1],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1704,27 +1647,23 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_031": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1739,19 +1678,21 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }, {
+                "name": "min(optional)",
                 "data": [1],
-                "type": "uint64"
-            },
-            "max(optional)": {
+                "shape": [1],
+                "data_type": "uint64"
+            }, {
+                "name": "max(optional)",
                 "data": [1],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1766,27 +1707,23 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_032": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1801,19 +1738,21 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }, {
+                "name": "min(optional)",
                 "data": [1],
-                "type": "int8"
-            },
-            "max(optional)": {
+                "shape": [1],
+                "data_type": "int8"
+            }, {
+                "name": "max(optional)",
                 "data": [-1],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1828,27 +1767,23 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_033": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1863,19 +1798,21 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }, {
+                "name": "min(optional)",
                 "data": [1],
-                "type": "int32"
-            },
-            "max(optional)": {
+                "shape": [1],
+                "data_type": "int32"
+            }, {
+                "name": "max(optional)",
                 "data": [1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1890,27 +1827,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_034": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1925,19 +1858,21 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }, {
+                "name": "min(optional)",
                 "data": [1],
-                "type": "int64"
-            },
-            "max(optional)": {
+                "shape": [1],
+                "data_type": "int64"
+            }, {
+                "name": "max(optional)",
                 "data": [-1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -1952,27 +1887,23 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_035": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1987,19 +1918,21 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "min(optional)",
                 "data": [-1.1494140625],
-                "type": "float16"
-            },
-            "max(optional)": {
+                "shape": [1],
+                "data_type": "float16"
+            }, {
+                "name": "max(optional)",
                 "data": [1.060546875],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -2014,27 +1947,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_036": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -2049,19 +1978,21 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "min(optional)",
                 "data": [2.1366302967071533],
-                "type": "float32"
-            },
-            "max(optional)": {
+                "shape": [1],
+                "data_type": "float32"
+            }, {
+                "name": "max(optional)",
                 "data": [-2.2129342555999756],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -2076,27 +2007,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Clip_037": {
-        "graph_name": "Clip_Graph",
-        "inputs": {
-            "input": {
+        "name": "Clip_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -2111,19 +2038,21 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "min(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }, {
+                "name": "min(optional)",
                 "data": [-0.21182585511085594],
-                "type": "float64"
-            },
-            "max(optional)": {
+                "shape": [1],
+                "data_type": "float64"
+            }, {
+                "name": "max(optional)",
                 "data": [-2.22786466511458],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -2138,21 +2067,16 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Clip_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Clip",
-            "inputs": {
-                "input": "input",
-                "min(optional)": "min(optional)",
-                "max(optional)": "max(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["input", "min(optional)", "max(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     }
 }

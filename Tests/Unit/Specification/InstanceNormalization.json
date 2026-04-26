@@ -1,8 +1,9 @@
 {
     "InstanceNormalization_000": {
-        "graph_name": "InstanceNormalization_Graph",
-        "inputs": {
-            "input": {
+        "name": "InstanceNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -59,19 +60,21 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "scale": {
+                "shape": [3, 4, 2, 2],
+                "data_type": "float16"
+            }, {
+                "name": "scale",
                 "data": [0.3427734375, -0.1729736328125, 0.2286376953125, -0.71826171875],
-                "type": "float16"
-            },
-            "B": {
+                "shape": [4],
+                "data_type": "float16"
+            }, {
+                "name": "B",
                 "data": [-0.0963134765625, 1.291015625, -0.48486328125, 0.5888671875],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [4],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -128,28 +131,25 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "InstanceNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "InstanceNormalization",
-            "epsilon": 1e-05,
-            "inputs": {
-                "input": "input",
-                "scale": "scale",
-                "B": "B"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 4, 2, 2],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "InstanceNormalization_Node",
+                "op_type": "InstanceNormalization",
+                "inputs": ["input", "scale", "B"],
+                "outputs": ["output"],
+                "attributes": {
+                    "epsilon": 1e-05
+                }
+            }]
         }
     },
     "InstanceNormalization_001": {
-        "graph_name": "InstanceNormalization_Graph",
-        "inputs": {
-            "input": {
+        "name": "InstanceNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -206,19 +206,21 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "scale": {
+                "shape": [3, 4, 2, 2],
+                "data_type": "float32"
+            }, {
+                "name": "scale",
                 "data": [-0.9314165115356445, 1.049023985862732, 1.1527589559555054, -0.8772583603858948],
-                "type": "float32"
-            },
-            "B": {
+                "shape": [4],
+                "data_type": "float32"
+            }, {
+                "name": "B",
                 "data": [0.860231339931488, 0.00033096320112235844, 0.20553426444530487, -0.08260484784841537],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [4],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -275,22 +277,18 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "InstanceNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "InstanceNormalization",
-            "epsilon": 1e-05,
-            "inputs": {
-                "input": "input",
-                "scale": "scale",
-                "B": "B"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 4, 2, 2],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "InstanceNormalization_Node",
+                "op_type": "InstanceNormalization",
+                "inputs": ["input", "scale", "B"],
+                "outputs": ["output"],
+                "attributes": {
+                    "epsilon": 1e-05
+                }
+            }]
         }
     }
 }

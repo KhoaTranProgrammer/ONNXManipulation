@@ -1,8 +1,9 @@
 {
     "And_000": {
-        "graph_name": "And_Graph",
-        "inputs": {
-            "A": {
+        "name": "And_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -17,9 +18,10 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -34,11 +36,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -53,20 +55,16 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "And_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "And",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "And_Node",
+                "op_type": "And",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     }
 }

@@ -1,8 +1,9 @@
 {
     "AveragePool_000": {
-        "graph_name": "AveragePool_Graph",
-        "inputs": {
-            "X": {
+        "name": "AveragePool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -32,32 +33,31 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "AveragePool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "AveragePool",
-            "auto_pad": "NOTSET",
-            "ceil_mode": 0,
-            "count_include_pad": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "AveragePool_Node",
+                "op_type": "AveragePool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "NOTSET",
+                    "ceil_mode": 0,
+                    "count_include_pad": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "AveragePool_001": {
-        "graph_name": "AveragePool_Graph",
-        "inputs": {
-            "X": {
+        "name": "AveragePool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -72,11 +72,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -91,32 +91,31 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "AveragePool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "AveragePool",
-            "auto_pad": "SAME_UPPER",
-            "ceil_mode": 0,
-            "count_include_pad": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "AveragePool_Node",
+                "op_type": "AveragePool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "SAME_UPPER",
+                    "ceil_mode": 0,
+                    "count_include_pad": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "AveragePool_002": {
-        "graph_name": "AveragePool_Graph",
-        "inputs": {
-            "X": {
+        "name": "AveragePool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -131,11 +130,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -150,32 +149,31 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "AveragePool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "AveragePool",
-            "auto_pad": "SAME_LOWER",
-            "ceil_mode": 0,
-            "count_include_pad": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "AveragePool_Node",
+                "op_type": "AveragePool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "SAME_LOWER",
+                    "ceil_mode": 0,
+                    "count_include_pad": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "AveragePool_003": {
-        "graph_name": "AveragePool_Graph",
-        "inputs": {
-            "X": {
+        "name": "AveragePool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -190,11 +188,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -205,32 +203,31 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "AveragePool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "AveragePool",
-            "auto_pad": "VALID",
-            "ceil_mode": 0,
-            "count_include_pad": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "AveragePool_Node",
+                "op_type": "AveragePool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "VALID",
+                    "ceil_mode": 0,
+                    "count_include_pad": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "AveragePool_004": {
-        "graph_name": "AveragePool_Graph",
-        "inputs": {
-            "X": {
+        "name": "AveragePool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -245,11 +242,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -260,32 +257,31 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "AveragePool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "AveragePool",
-            "auto_pad": "NOTSET",
-            "ceil_mode": 0,
-            "count_include_pad": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "AveragePool_Node",
+                "op_type": "AveragePool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "NOTSET",
+                    "ceil_mode": 0,
+                    "count_include_pad": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "AveragePool_005": {
-        "graph_name": "AveragePool_Graph",
-        "inputs": {
-            "X": {
+        "name": "AveragePool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -300,11 +296,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -319,32 +315,31 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "AveragePool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "AveragePool",
-            "auto_pad": "SAME_UPPER",
-            "ceil_mode": 0,
-            "count_include_pad": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "AveragePool_Node",
+                "op_type": "AveragePool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "SAME_UPPER",
+                    "ceil_mode": 0,
+                    "count_include_pad": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "AveragePool_006": {
-        "graph_name": "AveragePool_Graph",
-        "inputs": {
-            "X": {
+        "name": "AveragePool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -359,11 +354,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -378,32 +373,31 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "AveragePool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "AveragePool",
-            "auto_pad": "SAME_LOWER",
-            "ceil_mode": 0,
-            "count_include_pad": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "AveragePool_Node",
+                "op_type": "AveragePool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "SAME_LOWER",
+                    "ceil_mode": 0,
+                    "count_include_pad": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "AveragePool_007": {
-        "graph_name": "AveragePool_Graph",
-        "inputs": {
-            "X": {
+        "name": "AveragePool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -418,11 +412,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -433,26 +427,24 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "AveragePool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "AveragePool",
-            "auto_pad": "VALID",
-            "ceil_mode": 0,
-            "count_include_pad": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "AveragePool_Node",
+                "op_type": "AveragePool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "VALID",
+                    "ceil_mode": 0,
+                    "count_include_pad": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     }
 }

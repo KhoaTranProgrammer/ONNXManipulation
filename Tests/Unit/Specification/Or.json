@@ -1,8 +1,9 @@
 {
     "Or_000": {
-        "graph_name": "Or_Graph",
-        "inputs": {
-            "A": {
+        "name": "Or_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "A",
                 "data": [
                     [
                         [
@@ -17,9 +18,10 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            },
-            "B": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }, {
+                "name": "B",
                 "data": [
                     [
                         [
@@ -34,11 +36,11 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "C": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "C",
                 "data": [
                     [
                         [
@@ -53,20 +55,16 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Or_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Or",
-            "inputs": {
-                "A": "A",
-                "B": "B"
-            },
-            "outputs": {
-                "C": "C"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Or_Node",
+                "op_type": "Or",
+                "inputs": ["A", "B"],
+                "outputs": ["C"],
+                "attributes": {}
+            }]
         }
     }
 }

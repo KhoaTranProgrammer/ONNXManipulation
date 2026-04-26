@@ -1,8 +1,9 @@
 {
     "Relu_000": {
-        "graph_name": "Relu_Graph",
-        "inputs": {
-            "X": {
+        "name": "Relu_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -36,25 +37,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Relu_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Relu",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Relu_Node",
+                "op_type": "Relu",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "Relu_001": {
-        "graph_name": "Relu_Graph",
-        "inputs": {
-            "X": {
+        "name": "Relu_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -69,11 +68,11 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -88,25 +87,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Relu_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Relu",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Relu_Node",
+                "op_type": "Relu",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "Relu_002": {
-        "graph_name": "Relu_Graph",
-        "inputs": {
-            "X": {
+        "name": "Relu_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -121,11 +118,11 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -140,25 +137,23 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Relu_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Relu",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Relu_Node",
+                "op_type": "Relu",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "Relu_003": {
-        "graph_name": "Relu_Graph",
-        "inputs": {
-            "X": {
+        "name": "Relu_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -173,11 +168,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -192,25 +187,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Relu_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Relu",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Relu_Node",
+                "op_type": "Relu",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "Relu_004": {
-        "graph_name": "Relu_Graph",
-        "inputs": {
-            "X": {
+        "name": "Relu_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -225,11 +218,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -244,19 +237,16 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Relu_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Relu",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Relu_Node",
+                "op_type": "Relu",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     }
 }

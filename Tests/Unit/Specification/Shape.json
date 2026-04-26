@@ -1,8 +1,9 @@
 {
     "Shape_000": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -23,31 +24,29 @@
                         [255, 1, 1, 1, 2]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {}
+            }]
         }
     },
     "Shape_001": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -68,31 +67,29 @@
                         [1, 1, 2, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {}
+            }]
         }
     },
     "Shape_002": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 4294967294, 1, 4294967295, 1],
@@ -113,31 +110,29 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {}
+            }]
         }
     },
     "Shape_003": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -158,31 +153,29 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {}
+            }]
         }
     },
     "Shape_004": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, -1],
@@ -203,31 +196,29 @@
                         [1, 1, 1, -1, 1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {}
+            }]
         }
     },
     "Shape_005": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, -1],
@@ -248,31 +239,29 @@
                         [-1, 1, -1, 1, 1]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {}
+            }]
         }
     },
     "Shape_006": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -293,31 +282,29 @@
                         [-1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {}
+            }]
         }
     },
     "Shape_007": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -338,31 +325,29 @@
                         [1, -1, -1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {}
+            }]
         }
     },
     "Shape_008": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.5654296875, 0.01372528076171875, -2.65625, -1.3828125, 1.8857421875],
@@ -383,31 +368,29 @@
                         [-0.95166015625, -1.0009765625, -0.59765625, 0.2496337890625, -0.029388427734375]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {}
+            }]
         }
     },
     "Shape_009": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.641330361366272, -0.5797713994979858, -0.26993170380592346, -0.9833829402923584, -1.2279595136642456],
@@ -428,31 +411,29 @@
                         [1.0755852460861206, 0.1727295070886612, 0.005342141259461641, -0.009357307106256485, -1.1440410614013672]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {}
+            }]
         }
     },
     "Shape_010": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.04737270023637899, -1.1718023022504485, 0.03886976949573371, -0.5182322270337139, -0.6871116645058405],
@@ -473,31 +454,29 @@
                         [0.27232936700922816, -0.4094096091547721, -0.6746575558787226, 0.9909940742793053, -3.3546030912801985]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {}
+            }]
         }
     },
     "Shape_011": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -518,31 +497,29 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {}
+            }]
         }
     },
     "Shape_012": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [255, 1, 1, 1, 1],
@@ -563,32 +540,31 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1
+                }
+            }]
         }
     },
     "Shape_013": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [2, 65535, 1, 1, 1],
@@ -609,32 +585,31 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1
+                }
+            }]
         }
     },
     "Shape_014": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -655,32 +630,31 @@
                         [1, 1, 2, 1, 4294967295]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1
+                }
+            }]
         }
     },
     "Shape_015": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 18446744073709551614],
@@ -701,32 +675,31 @@
                         [18446744073709551615, 18446744073709551615, 2, 1, 1]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1
+                }
+            }]
         }
     },
     "Shape_016": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -747,32 +720,31 @@
                         [1, 1, 1, 1, -2]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1
+                }
+            }]
         }
     },
     "Shape_017": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, -1, 1],
@@ -793,32 +765,31 @@
                         [1, 1, 1, 2, 1]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1
+                }
+            }]
         }
     },
     "Shape_018": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, -1, 1, 1],
@@ -839,32 +810,31 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1
+                }
+            }]
         }
     },
     "Shape_019": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -885,32 +855,31 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1
+                }
+            }]
         }
     },
     "Shape_020": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.1998291015625, 0.256591796875, 0.81591796875, -0.2418212890625, 2.029296875],
@@ -931,32 +900,31 @@
                         [-0.2218017578125, 0.3740234375, 0.873046875, 0.0540771484375, -0.22509765625]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1
+                }
+            }]
         }
     },
     "Shape_021": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.43295231461524963, -3.0089502334594727, 1.5792104005813599, -1.5885906219482422, 2.230780839920044],
@@ -977,32 +945,31 @@
                         [-0.5221540331840515, -1.3605812788009644, -1.6369831562042236, -1.613187551498413, 1.0092116594314575]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1
+                }
+            }]
         }
     },
     "Shape_022": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.2440279372429062, -0.5699796290437528, 1.7552855092487594, -1.4269152115273709, 1.7284729172135722],
@@ -1023,32 +990,31 @@
                         [0.8864146980756601, -0.9278027845055349, 0.0244763590717528, -0.6330529171340269, 0.22309640298543876]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1
+                }
+            }]
         }
     },
     "Shape_023": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -1069,32 +1035,31 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1
+                }
+            }]
         }
     },
     "Shape_024": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -1115,32 +1080,31 @@
                         [255, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_025": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 65534, 1, 1],
@@ -1161,32 +1125,31 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_026": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -1207,32 +1170,31 @@
                         [1, 1, 1, 4294967295, 1]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_027": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -1253,32 +1215,31 @@
                         [18446744073709551614, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_028": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -1299,32 +1260,31 @@
                         [1, 1, 1, -1, 1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_029": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1, 1, 1, -1, 1],
@@ -1345,32 +1305,31 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_030": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1, 1, 1, 1, 1],
@@ -1391,32 +1350,31 @@
                         [1, 1, 1, 1, 2]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_031": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -1437,32 +1395,31 @@
                         [1, -1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_032": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.6669921875, 0.74072265625, 0.73095703125, 0.251708984375, 0.94482421875],
@@ -1483,32 +1440,31 @@
                         [0.7587890625, -1.109375, -0.86328125, 0.93603515625, -0.7626953125]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_033": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.6128034591674805, 1.875188946723938, 0.5618235468864441, -1.0077683925628662, -1.8146342039108276],
@@ -1529,32 +1485,31 @@
                         [0.28175508975982666, -1.7780544757843018, 0.6370323896408081, 0.18499936163425446, 1.5870778560638428]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_034": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.28385349734566695, 0.2321174072593691, -0.3563440359914734, 0.10645549517024396, -1.5063820320044878],
@@ -1575,32 +1530,31 @@
                         [0.5297509206486901, 1.0458141373000753, 0.3218167803429837, 0.5858289262812072, -0.07912712071731864]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_035": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -1621,32 +1575,31 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3, 4, 5],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_036": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -1667,33 +1620,32 @@
                         [1, 1, 255, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1,
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_037": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 65535, 1],
@@ -1714,33 +1666,32 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint16"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1,
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_038": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -1761,33 +1712,32 @@
                         [1, 1, 4294967295, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1,
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_039": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -1808,33 +1758,32 @@
                         [1, 18446744073709551614, 1, 1, 18446744073709551614]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1,
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_040": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, -1],
@@ -1855,33 +1804,32 @@
                         [1, -1, -1, -1, 1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1,
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_041": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1, 1, 1, 1, 1],
@@ -1902,33 +1850,32 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int16"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1,
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_042": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -1949,33 +1896,32 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1,
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_043": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -1996,33 +1942,32 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1,
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_044": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.185546875, -1.8701171875, -1.890625, -0.697265625, -1.625],
@@ -2043,33 +1988,32 @@
                         [-1.0205078125, 2.259765625, 0.4453125, -0.9326171875, 1.87890625]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1,
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_045": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.158616304397583, -0.8784924745559692, -1.0893372297286987, 1.4019341468811035, -1.0266022682189941],
@@ -2090,33 +2034,32 @@
                         [-0.24225111305713654, -2.0761194229125977, 0.8667272925376892, -2.4282658100128174, -0.7241244316101074]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1,
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_046": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1.8020262381283767, 0.9134777212286677, 0.3679986859879933, 0.9231300340815601, 0.7452591151628692],
@@ -2137,33 +2080,32 @@
                         [-0.4405845411719944, 0.7913703755189722, -0.9876287765010601, -0.02425743771028453, 0.41777129011093117]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1,
+                    "start": 0
+                }
+            }]
         }
     },
     "Shape_047": {
-        "graph_name": "Shape_Graph",
-        "inputs": {
-            "data": {
+        "name": "Shape_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -2184,27 +2126,25 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "outputs": {
-            "shape": {
+                "shape": [3, 4, 5],
+                "data_type": "bool"
+            }],
+            "outputs": [{
+                "name": "shape",
                 "data": [3],
-                "type": "int64"
-            }
-        },
-        "Shape_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Shape",
-            "end": 1,
-            "start": 0,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "shape": "shape"
-            }
+                "shape": [1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Shape_Node",
+                "op_type": "Shape",
+                "inputs": ["data"],
+                "outputs": ["shape"],
+                "attributes": {
+                    "end": 1,
+                    "start": 0
+                }
+            }]
         }
     }
 }

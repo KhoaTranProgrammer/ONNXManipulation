@@ -1,8 +1,9 @@
 {
     "MaxPool_000": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -32,31 +33,30 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "NOTSET",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "NOTSET",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_001": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -71,11 +71,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -90,31 +90,30 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_UPPER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "SAME_UPPER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_002": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -129,11 +128,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -148,31 +147,30 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_LOWER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "SAME_LOWER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_003": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -187,11 +185,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -202,31 +200,30 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "VALID",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "VALID",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_004": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -241,11 +238,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -256,31 +253,30 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "NOTSET",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "NOTSET",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_005": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -295,11 +291,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -314,31 +310,30 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_UPPER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "SAME_UPPER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_006": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -353,11 +348,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -372,31 +367,30 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_LOWER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "SAME_LOWER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_007": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -411,11 +405,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -426,31 +420,30 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "VALID",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "VALID",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_008": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -465,11 +458,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -480,31 +473,30 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "NOTSET",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "NOTSET",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_009": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -519,11 +511,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -538,31 +530,30 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_UPPER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "SAME_UPPER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_010": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -577,11 +568,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -596,31 +587,30 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_LOWER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "SAME_LOWER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_011": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -635,11 +625,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -650,31 +640,30 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "VALID",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "VALID",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_012": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -689,11 +678,11 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -704,31 +693,30 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "NOTSET",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "NOTSET",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_013": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -743,11 +731,11 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -762,31 +750,30 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_UPPER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "SAME_UPPER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_014": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -801,11 +788,11 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -820,31 +807,30 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_LOWER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "SAME_LOWER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_015": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -859,11 +845,11 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -874,31 +860,30 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "VALID",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "VALID",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_016": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -913,11 +898,11 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -928,31 +913,30 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "NOTSET",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "NOTSET",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_017": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -967,11 +951,11 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -986,31 +970,30 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_UPPER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "SAME_UPPER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_018": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1025,11 +1008,11 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1044,31 +1027,30 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_LOWER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "SAME_LOWER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_019": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1083,11 +1065,11 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1098,31 +1080,30 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "VALID",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "auto_pad": "VALID",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_020": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1137,11 +1118,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1152,9 +1133,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 1, 1],
+                "data_type": "float16"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -1165,32 +1147,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "NOTSET",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "NOTSET",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_021": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1205,11 +1185,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1224,9 +1204,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -1241,32 +1222,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_UPPER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "SAME_UPPER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_022": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1281,11 +1260,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1300,9 +1279,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -1317,32 +1297,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_LOWER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "SAME_LOWER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_023": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1357,11 +1335,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1372,9 +1350,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 1, 1],
+                "data_type": "float16"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -1385,32 +1364,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "VALID",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "VALID",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_024": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1425,11 +1402,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1440,9 +1417,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 1, 1],
+                "data_type": "float32"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -1453,32 +1431,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "NOTSET",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "NOTSET",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_025": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1493,11 +1469,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1512,9 +1488,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -1529,32 +1506,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_UPPER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "SAME_UPPER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_026": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1569,11 +1544,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1588,9 +1563,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -1605,32 +1581,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_LOWER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "SAME_LOWER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_027": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1645,11 +1619,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1660,9 +1634,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 1, 1],
+                "data_type": "float32"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -1673,32 +1648,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "VALID",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "VALID",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_028": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1713,11 +1686,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1728,9 +1701,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 1, 1],
+                "data_type": "float64"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -1741,32 +1715,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "NOTSET",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "NOTSET",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_029": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1781,11 +1753,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1800,9 +1772,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -1817,32 +1790,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_UPPER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "SAME_UPPER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_030": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1857,11 +1828,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1876,9 +1847,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -1893,32 +1865,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_LOWER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "SAME_LOWER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_031": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1933,11 +1903,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1948,9 +1918,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 1, 1],
+                "data_type": "float64"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -1961,32 +1932,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "VALID",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "VALID",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_032": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2001,11 +1970,11 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2016,9 +1985,10 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 1, 1],
+                "data_type": "int8"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -2029,32 +1999,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "NOTSET",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "NOTSET",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_033": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2069,11 +2037,11 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2088,9 +2056,10 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -2105,32 +2074,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_UPPER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "SAME_UPPER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_034": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2145,11 +2112,11 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2164,9 +2131,10 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -2181,32 +2149,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_LOWER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "SAME_LOWER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_035": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2221,11 +2187,11 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2236,9 +2202,10 @@
                         ]
                     ]
                 ],
-                "type": "int8"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 1, 1],
+                "data_type": "int8"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -2249,32 +2216,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "VALID",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "VALID",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_036": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2289,11 +2254,11 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2304,9 +2269,10 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 1, 1],
+                "data_type": "uint8"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -2317,32 +2283,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "NOTSET",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "NOTSET",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_037": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2357,11 +2321,11 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2376,9 +2340,10 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -2393,32 +2358,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_UPPER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "SAME_UPPER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_038": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2433,11 +2396,11 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2452,9 +2415,10 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -2469,32 +2433,30 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "SAME_LOWER",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "SAME_LOWER",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     },
     "MaxPool_039": {
-        "graph_name": "MaxPool_Graph",
-        "inputs": {
-            "X": {
+        "name": "MaxPool_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2509,11 +2471,11 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint8"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2524,9 +2486,10 @@
                         ]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "Indices(optional)": {
+                "shape": [1, 2, 1, 1],
+                "data_type": "uint8"
+            }, {
+                "name": "Indices(optional)",
                 "data": [
                     [
                         [
@@ -2537,26 +2500,23 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "MaxPool_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "MaxPool",
-            "auto_pad": "VALID",
-            "ceil_mode": 0,
-            "dilations": [1, 1],
-            "kernel_shape": [3, 3],
-            "pads": [0, 0, 0, 0],
-            "strides": [1, 1],
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y",
-                "Indices(optional)": "Indices(optional)"
-            }
+                "shape": [1, 2, 1, 1],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "MaxPool_Node",
+                "op_type": "MaxPool",
+                "inputs": ["X"],
+                "outputs": ["Y", "Indices(optional)"],
+                "attributes": {
+                    "auto_pad": "VALID",
+                    "ceil_mode": 0,
+                    "dilations": [1, 1],
+                    "kernel_shape": [3, 3],
+                    "pads": [0, 0, 0, 0],
+                    "strides": [1, 1]
+                }
+            }]
         }
     }
 }

@@ -1,8 +1,9 @@
 {
     "BatchNormalization_000": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -45,27 +46,31 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }, {
+                "name": "scale",
                 "data": [0.51123046875, 1.712890625, 0.5],
-                "type": "float16"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "B",
                 "data": [0.5, 0.5, 1.2177734375],
-                "type": "float16"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_mean",
                 "data": [0.5, 0.424072265625, 0.5],
-                "type": "float16"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_var",
                 "data": [0.5, 0.5, 0.5],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -108,32 +113,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 0,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 0
+                }
+            }]
         }
     },
     "BatchNormalization_001": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -176,27 +176,31 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }, {
+                "name": "scale",
                 "data": [2.25390625, 0.1212158203125, 0.5380859375],
-                "type": "float16"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "B",
                 "data": [1.591796875, 2.09765625, 0.5],
-                "type": "float16"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_mean",
                 "data": [0.5, 0.0828324556350708, 0.05494547262787819],
-                "type": "float32"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_var",
                 "data": [0.5, 0.5, 2.050352096557617],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -239,32 +243,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 0,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 0
+                }
+            }]
         }
     },
     "BatchNormalization_002": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -307,27 +306,31 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }, {
+                "name": "scale",
                 "data": [0.5, 0.5, 0.9223341941833496],
-                "type": "float32"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "B",
                 "data": [0.5, 0.621484637260437, 0.5],
-                "type": "float32"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_mean",
                 "data": [0.5, 0.5, 0.5],
-                "type": "float16"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_var",
                 "data": [0.5, 1.328125, 1.3671875],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -370,32 +373,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 0,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 0
+                }
+            }]
         }
     },
     "BatchNormalization_003": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -438,27 +436,31 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }, {
+                "name": "scale",
                 "data": [0.6274951100349426, 0.5, 0.10322670638561249],
-                "type": "float32"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "B",
                 "data": [0.1786215603351593, 0.5, 0.5],
-                "type": "float32"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_mean",
                 "data": [0.2572505474090576, 2.9554412364959717, 1.5405741930007935],
-                "type": "float32"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_var",
                 "data": [0.5, 1.1396743059158325, 0.17709660530090332],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -501,32 +503,27 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 0,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 0
+                }
+            }]
         }
     },
     "BatchNormalization_004": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -569,27 +566,31 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }, {
+                "name": "scale",
                 "data": [0.7724609375, 0.010498046875, 0.5],
-                "type": "float16"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "B",
                 "data": [0.5, 0.5, 0.1702880859375],
-                "type": "float16"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_mean",
                 "data": [0.54638671875, 0.5, 0.5],
-                "type": "float16"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_var",
                 "data": [0.80712890625, 0.5, 0.5],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -632,32 +633,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 0,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 0
+                }
+            }]
         }
     },
     "BatchNormalization_005": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -700,27 +696,31 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }, {
+                "name": "scale",
                 "data": [1.216796875, 0.5, 1.025390625],
-                "type": "float16"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "B",
                 "data": [0.5, 0.5, 0.5],
-                "type": "float16"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_mean",
                 "data": [1.821542739868164, 0.3850964307785034, 1.2833306789398193],
-                "type": "float32"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_var",
                 "data": [0.5, 0.08208917081356049, 0.14237116277217865],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -763,32 +763,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 0,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 0
+                }
+            }]
         }
     },
     "BatchNormalization_006": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -831,27 +826,31 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }, {
+                "name": "scale",
                 "data": [0.06552749127149582, 0.41843101382255554, 1.8222843408584595],
-                "type": "float32"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "B",
                 "data": [0.5412403345108032, 0.5, 1.0378278493881226],
-                "type": "float32"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_mean",
                 "data": [0.5, 0.5, 0.5],
-                "type": "float16"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_var",
                 "data": [0.8095703125, 0.5, 0.52490234375],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -894,32 +893,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 0,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 0
+                }
+            }]
         }
     },
     "BatchNormalization_007": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -962,27 +956,31 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }, {
+                "name": "scale",
                 "data": [0.5, 1.5622470378875732, 0.5],
-                "type": "float32"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "B",
                 "data": [0.5, 0.5, 0.5],
-                "type": "float32"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_mean",
                 "data": [0.34187713265419006, 0.5, 0.43217363953590393],
-                "type": "float32"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_var",
                 "data": [0.5, 0.9913076162338257, 1.2578024864196777],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1025,32 +1023,27 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 0,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 0
+                }
+            }]
         }
     },
     "BatchNormalization_008": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1093,27 +1086,31 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float64"
+            }, {
+                "name": "scale",
                 "data": [1.2951481666249658, 0.07358253905014789, 0.7610500590453682],
-                "type": "float64"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float64"
+            }, {
+                "name": "B",
                 "data": [0.6562581422738967, 0.5, 0.5],
-                "type": "float64"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float64"
+            }, {
+                "name": "input_mean",
                 "data": [0.28056788370655994, 1.0638079259682693, 1.1316281756662991],
-                "type": "float64"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float64"
+            }, {
+                "name": "input_var",
                 "data": [0.5, 0.5, 0.2644231924784816],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1156,32 +1153,27 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 0,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [2, 3, 4, 5],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 0
+                }
+            }]
         }
     },
     "BatchNormalization_009": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1224,27 +1216,31 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }, {
+                "name": "scale",
                 "data": [0.5, 0.5, 0.69482421875],
-                "type": "float16"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "B",
                 "data": [0.132568359375, 0.5, 0.11053466796875],
-                "type": "float16"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_mean",
                 "data": [0.5, 0.5, 3.3046875],
-                "type": "float16"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_var",
                 "data": [0.5, 0.5, 0.5],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1287,42 +1283,37 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "running_mean(optional)": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }, {
+                "name": "running_mean(optional)",
                 "data": [0.5048828125, 0.5107421875, 3.03515625],
-                "type": "float16"
-            },
-            "running_var(optional)": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "running_var(optional)",
                 "data": [0.456787109375, 0.472412109375, 0.46240234375],
-                "type": "float16"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 1,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y",
-                "running_mean(optional)": "running_mean(optional)",
-                "running_var(optional)": "running_var(optional)"
-            }
+                "shape": [3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y", "running_mean(optional)", "running_var(optional)"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 1
+                }
+            }]
         }
     },
     "BatchNormalization_010": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1365,27 +1356,31 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }, {
+                "name": "scale",
                 "data": [0.67236328125, 0.515625, 1.17578125],
-                "type": "float16"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "B",
                 "data": [1.6279296875, 0.5, 0.5],
-                "type": "float16"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_mean",
                 "data": [0.7033900618553162, 2.716825485229492, 0.9899132251739502],
-                "type": "float32"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_var",
                 "data": [0.5, 0.0160541795194149, 0.5],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1428,42 +1423,37 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "running_mean(optional)": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }, {
+                "name": "running_mean(optional)",
                 "data": [0.7053672075271606, 2.5092639923095703, 0.9531071186065674],
-                "type": "float32"
-            },
-            "running_var(optional)": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "running_var(optional)",
                 "data": [0.4896310567855835, 0.029803229495882988, 0.4613287150859833],
-                "type": "float32"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 1,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y",
-                "running_mean(optional)": "running_mean(optional)",
-                "running_var(optional)": "running_var(optional)"
-            }
+                "shape": [3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y", "running_mean(optional)", "running_var(optional)"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 1
+                }
+            }]
         }
     },
     "BatchNormalization_011": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1506,27 +1496,31 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }, {
+                "name": "scale",
                 "data": [1.4964393377304077, 0.5, 0.5],
-                "type": "float32"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "B",
                 "data": [0.5, 0.5, 0.8691625595092773],
-                "type": "float32"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_mean",
                 "data": [0.276123046875, 0.5, 0.5],
-                "type": "float16"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_var",
                 "data": [2.8515625, 0.5, 0.5],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1569,42 +1563,37 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "running_mean(optional)": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }, {
+                "name": "running_mean(optional)",
                 "data": [0.313720703125, 0.509765625, 0.51513671875],
-                "type": "float16"
-            },
-            "running_var(optional)": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "running_var(optional)",
                 "data": [2.587890625, 0.46533203125, 0.46875],
-                "type": "float16"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 1,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y",
-                "running_mean(optional)": "running_mean(optional)",
-                "running_var(optional)": "running_var(optional)"
-            }
+                "shape": [3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y", "running_mean(optional)", "running_var(optional)"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 1
+                }
+            }]
         }
     },
     "BatchNormalization_012": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1647,27 +1636,31 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }, {
+                "name": "scale",
                 "data": [0.5, 3.3207459449768066, 0.2189246267080307],
-                "type": "float32"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "B",
                 "data": [2.8377275466918945, 0.5, 0.5],
-                "type": "float32"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_mean",
                 "data": [0.5, 0.5, 0.5],
-                "type": "float32"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_var",
                 "data": [0.7393649816513062, 1.048582673072815, 0.5795067548751831],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1710,42 +1703,37 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "running_mean(optional)": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float16"
+            }, {
+                "name": "running_mean(optional)",
                 "data": [0.5121180415153503, 0.5125404596328735, 0.5111226439476013],
-                "type": "float32"
-            },
-            "running_var(optional)": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "running_var(optional)",
                 "data": [0.6893811821937561, 0.9587652683258057, 0.5385608673095703],
-                "type": "float32"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 1,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y",
-                "running_mean(optional)": "running_mean(optional)",
-                "running_var(optional)": "running_var(optional)"
-            }
+                "shape": [3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y", "running_mean(optional)", "running_var(optional)"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 1
+                }
+            }]
         }
     },
     "BatchNormalization_013": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1788,27 +1776,31 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }, {
+                "name": "scale",
                 "data": [0.5, 0.5, 0.5],
-                "type": "float16"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "B",
                 "data": [0.5, 0.5, 0.5],
-                "type": "float16"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_mean",
                 "data": [0.5, 0.07244873046875, 1.1611328125],
-                "type": "float16"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_var",
                 "data": [0.3857421875, 0.5, 0.9287109375],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1851,42 +1843,37 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "running_mean(optional)": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }, {
+                "name": "running_mean(optional)",
                 "data": [0.53173828125, 0.1295166015625, 1.1064453125],
-                "type": "float16"
-            },
-            "running_var(optional)": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "running_var(optional)",
                 "data": [0.3798828125, 0.47216796875, 0.85546875],
-                "type": "float16"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 1,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y",
-                "running_mean(optional)": "running_mean(optional)",
-                "running_var(optional)": "running_var(optional)"
-            }
+                "shape": [3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y", "running_mean(optional)", "running_var(optional)"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 1
+                }
+            }]
         }
     },
     "BatchNormalization_014": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -1929,27 +1916,31 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }, {
+                "name": "scale",
                 "data": [0.5, 0.5, 0.5],
-                "type": "float16"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "B",
                 "data": [0.5, 1.6484375, 0.845703125],
-                "type": "float16"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_mean",
                 "data": [0.5, 0.07291718572378159, 0.5],
-                "type": "float32"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_var",
                 "data": [0.5, 0.5, 0.5],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -1992,42 +1983,37 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "running_mean(optional)": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }, {
+                "name": "running_mean(optional)",
                 "data": [0.5180131793022156, 0.1316506564617157, 0.518584132194519],
-                "type": "float32"
-            },
-            "running_var(optional)": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "running_var(optional)",
                 "data": [0.46679797768592834, 0.4667300581932068, 0.4688399136066437],
-                "type": "float32"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 1,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y",
-                "running_mean(optional)": "running_mean(optional)",
-                "running_var(optional)": "running_var(optional)"
-            }
+                "shape": [3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y", "running_mean(optional)", "running_var(optional)"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 1
+                }
+            }]
         }
     },
     "BatchNormalization_015": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2070,27 +2056,31 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }, {
+                "name": "scale",
                 "data": [0.3366372883319855, 0.5, 0.25923657417297363],
-                "type": "float32"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "B",
                 "data": [0.5, 0.09785595536231995, 0.5],
-                "type": "float32"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_mean",
                 "data": [0.5, 0.4560546875, 0.3876953125],
-                "type": "float16"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "input_var",
                 "data": [0.19384765625, 0.5, 0.5],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2133,42 +2123,37 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "running_mean(optional)": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }, {
+                "name": "running_mean(optional)",
                 "data": [0.5126953125, 0.465576171875, 0.433837890625],
-                "type": "float16"
-            },
-            "running_var(optional)": {
+                "shape": [3],
+                "data_type": "float16"
+            }, {
+                "name": "running_var(optional)",
                 "data": [0.1953125, 0.461181640625, 0.52734375],
-                "type": "float16"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 1,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y",
-                "running_mean(optional)": "running_mean(optional)",
-                "running_var(optional)": "running_var(optional)"
-            }
+                "shape": [3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y", "running_mean(optional)", "running_var(optional)"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 1
+                }
+            }]
         }
     },
     "BatchNormalization_016": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2211,27 +2196,31 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }, {
+                "name": "scale",
                 "data": [0.840910017490387, 0.2618217170238495, 1.3971960544586182],
-                "type": "float32"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "B",
                 "data": [0.0984196588397026, 0.4264162480831146, 2.3148021697998047],
-                "type": "float32"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_mean",
                 "data": [0.2478734701871872, 0.002437497489154339, 0.5],
-                "type": "float32"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "input_var",
                 "data": [0.5, 0.5, 0.5],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2274,42 +2263,37 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "running_mean(optional)": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float32"
+            }, {
+                "name": "running_mean(optional)",
                 "data": [0.28921037912368774, 0.06703224778175354, 0.5228344202041626],
-                "type": "float32"
-            },
-            "running_var(optional)": {
+                "shape": [3],
+                "data_type": "float32"
+            }, {
+                "name": "running_var(optional)",
                 "data": [0.4631214737892151, 0.4659806489944458, 0.4707036316394806],
-                "type": "float32"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 1,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y",
-                "running_mean(optional)": "running_mean(optional)",
-                "running_var(optional)": "running_var(optional)"
-            }
+                "shape": [3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y", "running_mean(optional)", "running_var(optional)"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 1
+                }
+            }]
         }
     },
     "BatchNormalization_017": {
-        "graph_name": "BatchNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "BatchNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -2352,27 +2336,31 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "scale": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float64"
+            }, {
+                "name": "scale",
                 "data": [2.136663608157244, 0.24400476834740734, 0.7145194892570332],
-                "type": "float64"
-            },
-            "B": {
+                "shape": [3],
+                "data_type": "float64"
+            }, {
+                "name": "B",
                 "data": [0.3585430019712129, 0.22271727448688608, 1.200769144872834],
-                "type": "float64"
-            },
-            "input_mean": {
+                "shape": [3],
+                "data_type": "float64"
+            }, {
+                "name": "input_mean",
                 "data": [1.9483333233638194, 0.5, 0.5],
-                "type": "float64"
-            },
-            "input_var": {
+                "shape": [3],
+                "data_type": "float64"
+            }, {
+                "name": "input_var",
                 "data": [0.5, 0.5, 0.9190837434487013],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -2415,36 +2403,30 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "running_mean(optional)": {
+                "shape": [2, 3, 4, 5],
+                "data_type": "float64"
+            }, {
+                "name": "running_mean(optional)",
                 "data": [1.81549784536808, 0.512722538768159, 0.5088951104687198],
-                "type": "float64"
-            },
-            "running_var(optional)": {
+                "shape": [3],
+                "data_type": "float64"
+            }, {
+                "name": "running_var(optional)",
                 "data": [0.4645042094368024, 0.4654637824893651, 0.838363837108832],
-                "type": "float64"
-            }
-        },
-        "BatchNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "BatchNormalization",
-            "epsilon": 1e-05,
-            "momentum": 0.9,
-            "training_mode": 1,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "B": "B",
-                "input_mean": "input_mean",
-                "input_var": "input_var"
-            },
-            "outputs": {
-                "Y": "Y",
-                "running_mean(optional)": "running_mean(optional)",
-                "running_var(optional)": "running_var(optional)"
-            }
+                "shape": [3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "BatchNormalization_Node",
+                "op_type": "BatchNormalization",
+                "inputs": ["X", "scale", "B", "input_mean", "input_var"],
+                "outputs": ["Y", "running_mean(optional)", "running_var(optional)"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "momentum": 0.9,
+                    "training_mode": 1
+                }
+            }]
         }
     }
 }

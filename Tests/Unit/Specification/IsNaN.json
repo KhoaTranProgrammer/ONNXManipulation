@@ -1,8 +1,9 @@
 {
     "IsNaN_000": {
-        "graph_name": "IsNaN_Graph",
-        "inputs": {
-            "X": {
+        "name": "IsNaN_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -36,25 +37,23 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "IsNaN_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "IsNaN",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "IsNaN_Node",
+                "op_type": "IsNaN",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "IsNaN_001": {
-        "graph_name": "IsNaN_Graph",
-        "inputs": {
-            "X": {
+        "name": "IsNaN_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -69,11 +68,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -88,25 +87,23 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "IsNaN_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "IsNaN",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "IsNaN_Node",
+                "op_type": "IsNaN",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "IsNaN_002": {
-        "graph_name": "IsNaN_Graph",
-        "inputs": {
-            "X": {
+        "name": "IsNaN_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -121,11 +118,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -140,19 +137,16 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "IsNaN_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "IsNaN",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "IsNaN_Node",
+                "op_type": "IsNaN",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     }
 }

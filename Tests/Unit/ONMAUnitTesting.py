@@ -32,30 +32,29 @@ def create_summary_for_one_test_case(tcname, graph_data, status):
     report_dictionary["inputs"] = {}
     report_dictionary["outputs"] = {}
     report_dictionary["attributes"] = {}
-    for item in graph_data:
+    for item in graph_data["graph"]:
         if item == "inputs":
-            for one_in in graph_data["inputs"]:
-                if graph_data["inputs"][one_in]["type"] not in inputs_type: inputs_type.append(graph_data["inputs"][one_in]["type"])
-                if graph_data["inputs"][one_in]["type"] not in report_dictionary["inputs"]:
-                    report_dictionary["inputs"][graph_data["inputs"][one_in]["type"]] = one_in
+            for one_in in graph_data["graph"]["inputs"]:
+                if one_in["data_type"] not in inputs_type: inputs_type.append(one_in["data_type"])
+                if one_in["data_type"] not in report_dictionary["inputs"]:
+                    report_dictionary["inputs"][one_in["data_type"]] = one_in["name"]
                 else:
-                    report_dictionary["inputs"][graph_data["inputs"][one_in]["type"]] = report_dictionary["inputs"][graph_data["inputs"][one_in]["type"]] + "/" + one_in
+                    report_dictionary["inputs"][one_in["data_type"]] = report_dictionary["inputs"][one_in["data_type"]] + "/" + one_in["name"]
         elif item == "outputs":
-            for one_out in graph_data["outputs"]:
-                if graph_data["outputs"][one_out]["type"] not in outputs_type: outputs_type.append(graph_data["outputs"][one_out]["type"])
-                if graph_data["outputs"][one_out]["type"] not in report_dictionary["outputs"]:
-                    report_dictionary["outputs"][graph_data["outputs"][one_out]["type"]] = one_out
+            for one_out in graph_data["graph"]["outputs"]:
+                if one_out["data_type"] not in outputs_type: outputs_type.append(one_out["data_type"])
+                if one_out["data_type"] not in report_dictionary["outputs"]:
+                    report_dictionary["outputs"][one_out["data_type"]] = one_out["name"]
                 else:
-                    report_dictionary["outputs"][graph_data["outputs"][one_out]["type"]] = report_dictionary["outputs"][graph_data["outputs"][one_out]["type"]] + "/" + one_out
-        elif item == "graph_name":
+                    report_dictionary["outputs"][one_out["data_type"]] = report_dictionary["outputs"][one_out["data_type"]] + "/" + one_out["name"]
+        elif item == "name":
             pass
-        else:
-            for node_item in graph_data[item]:
-                if node_item == "Action" or node_item == "Category" or node_item == "Type" or node_item == "inputs" or node_item == "outputs":
-                    pass
-                else:
-                    if node_item not in attributes_list: attributes_list.append(node_item)
-                    report_dictionary["attributes"][node_item] = graph_data[item][node_item]
+        elif item == "nodes":
+            for one_node in graph_data["graph"]["nodes"]:
+                if "attributes" in one_node:
+                    for attribute in one_node["attributes"]:
+                        if attribute not in attributes_list: attributes_list.append(attribute)
+                        report_dictionary["attributes"][attribute] = one_node["attributes"][attribute]
     summary_tc_list.append(copy.deepcopy(report_dictionary))
 
 def run_TC(tcname, graph_data, expect):
@@ -69,11 +68,11 @@ def run_TC(tcname, graph_data, expect):
     total_TC = total_TC + 1
     try:
         model.ONMAModel_CreateNetworkFromGraph(graph_data)
-        inf1 = model.ONMAModel_Inference(graph_data["inputs"])
-        outputs = list(expect.keys())
+        inf1 = model.ONMAModel_Inference(graph_data["graph"]["inputs"])
+        outputs = expect
         for index in range(0, len(outputs)):
             result = inf1[index]
-            if (result == expect[outputs[index]]["data"]).all():
+            if (result == outputs[index]["data"]).all():
                 pass
             else:
                 # Compare float32
@@ -141,7 +140,7 @@ for filepath in glob.glob(f'{test_spec_path}/*', recursive=False):
         file_contents = user_file.read()
     json_contents = json.loads(file_contents)
     for item in json_contents:
-        TEST_DATA.append([item, json_contents[item], json_contents[item]["outputs"]])
+        TEST_DATA.append([item, json_contents[item], json_contents[item]["graph"]["outputs"]])
 
 def pytest_generate_tests(metafunc):
     if {"tcname", "graph_data", "expected"} <= set(metafunc.fixturenames):

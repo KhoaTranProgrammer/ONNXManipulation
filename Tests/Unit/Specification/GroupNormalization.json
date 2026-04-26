@@ -1,8 +1,9 @@
 {
     "GroupNormalization_000": {
-        "graph_name": "GroupNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "GroupNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -59,19 +60,21 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "scale": {
+                "shape": [3, 4, 2, 2],
+                "data_type": "float16"
+            }, {
+                "name": "scale",
                 "data": [-0.215576171875, 0.196533203125, -1.298828125, -0.748046875],
-                "type": "float16"
-            },
-            "bias": {
+                "shape": [4],
+                "data_type": "float16"
+            }, {
+                "name": "bias",
                 "data": [0.2220458984375, 1.1015625, -0.6298828125, 1.9951171875],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [4],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -128,29 +131,26 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "GroupNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GroupNormalization",
-            "epsilon": 1e-05,
-            "num_groups": 2,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "bias": "bias"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [3, 4, 2, 2],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "GroupNormalization_Node",
+                "op_type": "GroupNormalization",
+                "inputs": ["X", "scale", "bias"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "num_groups": 2
+                }
+            }]
         }
     },
     "GroupNormalization_001": {
-        "graph_name": "GroupNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "GroupNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -207,19 +207,21 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "scale": {
+                "shape": [3, 4, 2, 2],
+                "data_type": "float32"
+            }, {
+                "name": "scale",
                 "data": [0.6530590057373047, 0.139977365732193, 0.32951048016548157, 0.8898463845252991],
-                "type": "float32"
-            },
-            "bias": {
+                "shape": [4],
+                "data_type": "float32"
+            }, {
+                "name": "bias",
                 "data": [0.8170499205589294, -0.2844190001487732, 0.6461712718009949, -1.051498293876648],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [4],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -276,29 +278,26 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "GroupNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GroupNormalization",
-            "epsilon": 1e-05,
-            "num_groups": 2,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "bias": "bias"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [3, 4, 2, 2],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "GroupNormalization_Node",
+                "op_type": "GroupNormalization",
+                "inputs": ["X", "scale", "bias"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "num_groups": 2
+                }
+            }]
         }
     },
     "GroupNormalization_002": {
-        "graph_name": "GroupNormalization_Graph",
-        "inputs": {
-            "X": {
+        "name": "GroupNormalization_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -355,19 +354,21 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "scale": {
+                "shape": [3, 4, 2, 2],
+                "data_type": "float64"
+            }, {
+                "name": "scale",
                 "data": [0.5981026120431501, 1.0508962410801803, -0.144215422865078, 0.8006882022558739],
-                "type": "float64"
-            },
-            "bias": {
+                "shape": [4],
+                "data_type": "float64"
+            }, {
+                "name": "bias",
                 "data": [1.351265362882112, -0.8889890576766546, 0.19889816138371313, 0.2312190425320941],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [4],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -424,23 +425,19 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "GroupNormalization_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "GroupNormalization",
-            "epsilon": 1e-05,
-            "num_groups": 2,
-            "inputs": {
-                "X": "X",
-                "scale": "scale",
-                "bias": "bias"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [3, 4, 2, 2],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "GroupNormalization_Node",
+                "op_type": "GroupNormalization",
+                "inputs": ["X", "scale", "bias"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "epsilon": 1e-05,
+                    "num_groups": 2
+                }
+            }]
         }
     }
 }

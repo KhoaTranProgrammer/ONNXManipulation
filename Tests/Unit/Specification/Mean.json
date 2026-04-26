@@ -1,8 +1,9 @@
 {
     "Mean_000": {
-        "graph_name": "Mean_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Mean_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "mean": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "mean",
                 "data": [
                     [
                         [
@@ -36,25 +37,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Mean_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mean",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "mean": "mean"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Mean_Node",
+                "op_type": "Mean",
+                "inputs": ["data_0"],
+                "outputs": ["mean"],
+                "attributes": {}
+            }]
         }
     },
     "Mean_001": {
-        "graph_name": "Mean_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Mean_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -69,11 +68,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "mean": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "mean",
                 "data": [
                     [
                         [
@@ -88,19 +87,16 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Mean_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Mean",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "mean": "mean"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Mean_Node",
+                "op_type": "Mean",
+                "inputs": ["data_0"],
+                "outputs": ["mean"],
+                "attributes": {}
+            }]
         }
     }
 }

@@ -1,8 +1,9 @@
 {
     "Det_000": {
-        "graph_name": "Det_Graph",
-        "inputs": {
-            "X": {
+        "name": "Det_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,33 +18,31 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [0.377685546875, -0.7451171875]
                 ],
-                "type": "float16"
-            }
-        },
-        "Det_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Det",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Det_Node",
+                "op_type": "Det",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "Det_001": {
-        "graph_name": "Det_Graph",
-        "inputs": {
-            "X": {
+        "name": "Det_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -58,27 +57,24 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [-1.7734090089797974, 0.7418918013572693]
                 ],
-                "type": "float32"
-            }
-        },
-        "Det_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Det",
-            "inputs": {
-                "X": "X"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Det_Node",
+                "op_type": "Det",
+                "inputs": ["X"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     }
 }

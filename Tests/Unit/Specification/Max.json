@@ -1,8 +1,9 @@
 {
     "Max_000": {
-        "graph_name": "Max_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Max_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "max": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "max",
                 "data": [
                     [
                         [
@@ -36,25 +37,23 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Max_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Max",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "max": "max"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Max_Node",
+                "op_type": "Max",
+                "inputs": ["data_0"],
+                "outputs": ["max"],
+                "attributes": {}
+            }]
         }
     },
     "Max_001": {
-        "graph_name": "Max_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Max_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -69,11 +68,11 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "max": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "max",
                 "data": [
                     [
                         [
@@ -88,25 +87,23 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Max_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Max",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "max": "max"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Max_Node",
+                "op_type": "Max",
+                "inputs": ["data_0"],
+                "outputs": ["max"],
+                "attributes": {}
+            }]
         }
     },
     "Max_002": {
-        "graph_name": "Max_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Max_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -121,11 +118,11 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "max": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "max",
                 "data": [
                     [
                         [
@@ -140,25 +137,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Max_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Max",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "max": "max"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Max_Node",
+                "op_type": "Max",
+                "inputs": ["data_0"],
+                "outputs": ["max"],
+                "attributes": {}
+            }]
         }
     },
     "Max_003": {
-        "graph_name": "Max_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Max_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -173,11 +168,11 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "max": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "max",
                 "data": [
                     [
                         [
@@ -192,25 +187,23 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Max_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Max",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "max": "max"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Max_Node",
+                "op_type": "Max",
+                "inputs": ["data_0"],
+                "outputs": ["max"],
+                "attributes": {}
+            }]
         }
     },
     "Max_004": {
-        "graph_name": "Max_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Max_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -225,11 +218,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "max": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "max",
                 "data": [
                     [
                         [
@@ -244,25 +237,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Max_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Max",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "max": "max"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Max_Node",
+                "op_type": "Max",
+                "inputs": ["data_0"],
+                "outputs": ["max"],
+                "attributes": {}
+            }]
         }
     },
     "Max_005": {
-        "graph_name": "Max_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Max_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -277,11 +268,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "max": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "max",
                 "data": [
                     [
                         [
@@ -296,25 +287,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Max_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Max",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "max": "max"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Max_Node",
+                "op_type": "Max",
+                "inputs": ["data_0"],
+                "outputs": ["max"],
+                "attributes": {}
+            }]
         }
     },
     "Max_006": {
-        "graph_name": "Max_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Max_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -329,11 +318,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "max": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "max",
                 "data": [
                     [
                         [
@@ -348,19 +337,16 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Max_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Max",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "max": "max"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Max_Node",
+                "op_type": "Max",
+                "inputs": ["data_0"],
+                "outputs": ["max"],
+                "attributes": {}
+            }]
         }
     }
 }

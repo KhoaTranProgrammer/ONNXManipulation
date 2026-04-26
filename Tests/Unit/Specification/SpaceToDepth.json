@@ -1,8 +1,9 @@
 {
     "SpaceToDepth_000": {
-        "graph_name": "SpaceToDepth_Graph",
-        "inputs": {
-            "input": {
+        "name": "SpaceToDepth_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -13,11 +14,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 6],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -38,26 +39,25 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "SpaceToDepth_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "SpaceToDepth",
-            "blocksize": 2,
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 4, 2, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "SpaceToDepth_Node",
+                "op_type": "SpaceToDepth",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {
+                    "blocksize": 2
+                }
+            }]
         }
     },
     "SpaceToDepth_001": {
-        "graph_name": "SpaceToDepth_Graph",
-        "inputs": {
-            "input": {
+        "name": "SpaceToDepth_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -68,11 +68,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 6],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -93,26 +93,25 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "SpaceToDepth_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "SpaceToDepth",
-            "blocksize": 2,
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 4, 2, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "SpaceToDepth_Node",
+                "op_type": "SpaceToDepth",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {
+                    "blocksize": 2
+                }
+            }]
         }
     },
     "SpaceToDepth_002": {
-        "graph_name": "SpaceToDepth_Graph",
-        "inputs": {
-            "input": {
+        "name": "SpaceToDepth_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -123,11 +122,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 6],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -148,20 +147,18 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "SpaceToDepth_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "SpaceToDepth",
-            "blocksize": 2,
-            "inputs": {
-                "input": "input"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 4, 2, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "SpaceToDepth_Node",
+                "op_type": "SpaceToDepth",
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "attributes": {
+                    "blocksize": 2
+                }
+            }]
         }
     }
 }

@@ -1,8 +1,9 @@
 {
     "Gather_000": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 254, 255],
@@ -20,15 +21,16 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "uint8"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -41,27 +43,25 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_001": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -79,15 +79,16 @@
                         [1, 1, 255, 1]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "uint8"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [255, 255, 2, 1],
@@ -100,27 +101,25 @@
                         [1, 1, 255, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_002": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -138,15 +137,16 @@
                         [1, 65535, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "uint16"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -159,27 +159,25 @@
                         [1, 65535, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_003": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 2, 1, 1],
@@ -197,15 +195,16 @@
                         [1, 1, 1, 2]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "uint16"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -218,27 +217,25 @@
                         [1, 1, 1, 2]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_004": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [4294967294, 4294967295, 2, 1],
@@ -256,15 +253,16 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "uint32"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [4294967294, 1, 4294967295, 4294967295],
@@ -277,27 +275,25 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_005": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [4294967295, 4294967295, 4294967295, 1],
@@ -315,15 +311,16 @@
                         [4294967295, 1, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "uint32"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -336,27 +333,25 @@
                         [4294967295, 1, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_006": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -374,15 +369,16 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "uint64"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -395,27 +391,25 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_007": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 18446744073709551615, 1],
@@ -433,15 +427,16 @@
                         [1, 1, 1, 18446744073709551614]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "uint64"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 18446744073709551614],
@@ -454,27 +449,25 @@
                         [1, 1, 1, 18446744073709551614]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_008": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-2, 1, 1, 1],
@@ -492,15 +485,16 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "int8"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "int8"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -513,27 +507,25 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_009": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -551,15 +543,16 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "int8"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "int8"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -572,27 +565,25 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_010": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1, 1, 1, 1],
@@ -610,15 +601,16 @@
                         [1, -2, 1, 2]
                     ]
                 ],
-                "type": "int16"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "int16"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, -2, 1, 1],
@@ -631,27 +623,25 @@
                         [1, -2, 1, 2]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_011": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, -1, 1],
@@ -669,15 +659,16 @@
                         [1, 1, -1, 1]
                     ]
                 ],
-                "type": "int16"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "int16"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, -1, 1, 1],
@@ -690,27 +681,25 @@
                         [1, 1, -1, 1]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_012": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -728,15 +717,16 @@
                         [1, -1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "int32"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -749,27 +739,25 @@
                         [1, -1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_013": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -787,15 +775,16 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "int32"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -808,27 +797,25 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_014": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -846,15 +833,16 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "int64"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, -1],
@@ -867,27 +855,25 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_015": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, -1],
@@ -905,15 +891,16 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "int64"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1],
@@ -926,27 +913,25 @@
                         [1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_016": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.53857421875, 0.285400390625, 0.0986328125, -0.1746826171875],
@@ -964,15 +949,16 @@
                         [0.241455078125, -0.01091766357421875, 1.3203125, 1.181640625]
                     ]
                 ],
-                "type": "float16"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "float16"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-0.30419921875, 0.369140625, 1.359375, -0.49462890625],
@@ -985,27 +971,25 @@
                         [0.241455078125, -0.01091766357421875, 1.3203125, 1.181640625]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_017": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.41943359375, -1.568359375, -1.2275390625, -0.00463104248046875],
@@ -1023,15 +1007,16 @@
                         [-0.1475830078125, 0.640625, -1.1826171875, 0.7109375]
                     ]
                 ],
-                "type": "float16"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "float16"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-0.904296875, -0.393310546875, -0.1103515625, 1.4775390625],
@@ -1044,27 +1029,25 @@
                         [-0.1475830078125, 0.640625, -1.1826171875, 0.7109375]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_018": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.7281937003135681, 0.6111571788787842, -1.460143804550171, -0.3388076722621918],
@@ -1082,15 +1065,16 @@
                         [0.2555755376815796, -0.7655084133148193, -0.4184562563896179, -1.0801467895507812]
                     ]
                 ],
-                "type": "float32"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "float32"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [0.3828870356082916, 0.9671688079833984, 0.4556752145290375, 0.1586352437734604],
@@ -1103,27 +1087,25 @@
                         [0.2555755376815796, -0.7655084133148193, -0.4184562563896179, -1.0801467895507812]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_019": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.996131420135498, -0.3951074779033661, -0.14111366868019104, -0.7196890711784363],
@@ -1141,15 +1123,16 @@
                         [1.2134199142456055, 0.8975669145584106, -0.406999796628952, -0.785058856010437]
                     ]
                 ],
-                "type": "float32"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "float32"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-0.466398686170578, 0.14175495505332947, -0.14522218704223633, -1.0115216970443726],
@@ -1162,27 +1145,25 @@
                         [1.2134199142456055, 0.8975669145584106, -0.406999796628952, -0.785058856010437]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_020": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.8964787432736363, 0.46466565811426447, 0.7544834788678644, 0.13978255156465885],
@@ -1200,15 +1181,16 @@
                         [1.8813779366934353, 0.07855663865611955, -0.8081035471775344, 0.383587953611581]
                     ]
                 ],
-                "type": "float64"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "float64"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [0.572164254757367, 1.183268175039277, -0.576281609348249, 2.151824225034557],
@@ -1221,27 +1203,25 @@
                         [1.8813779366934353, 0.07855663865611955, -0.8081035471775344, 0.383587953611581]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_021": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.7353835839828676, 1.1516938993054693, 0.3211076426077391, -0.02540955476694918],
@@ -1259,15 +1239,16 @@
                         [0.877133969942749, 0.8064112655508653, -1.5958942575248578, -0.3600129057616102]
                     ]
                 ],
-                "type": "float64"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "float64"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-1.0040301386566144, 0.8714645300571396, 0.3814922368047415, 0.05085250439928412],
@@ -1280,27 +1261,25 @@
                         [0.877133969942749, 0.8064112655508653, -1.5958942575248578, -0.3600129057616102]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_022": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true],
@@ -1318,15 +1297,16 @@
                         [true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "bool"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [true, true, true, true],
@@ -1339,27 +1319,25 @@
                         [true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     },
     "Gather_023": {
-        "graph_name": "Gather_Graph",
-        "inputs": {
-            "data": {
+        "name": "Gather_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true],
@@ -1377,15 +1355,16 @@
                         [true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            },
-            "indices": {
+                "shape": [3, 3, 4],
+                "data_type": "bool"
+            }, {
+                "name": "indices",
                 "data": [1, 2],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [true, true, true, true],
@@ -1398,21 +1377,18 @@
                         [true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Gather_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Gather",
-            "axis": 0,
-            "inputs": {
-                "data": "data",
-                "indices": "indices"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [2, 3, 4],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Gather_Node",
+                "op_type": "Gather",
+                "inputs": ["data", "indices"],
+                "outputs": ["output"],
+                "attributes": {
+                    "axis": 0
+                }
+            }]
         }
     }
 }

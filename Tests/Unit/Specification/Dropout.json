@@ -1,8 +1,9 @@
 {
     "Dropout_000": {
-        "graph_name": "Dropout_Graph",
-        "inputs": {
-            "data": {
+        "name": "Dropout_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [
@@ -13,11 +14,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -28,25 +29,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Dropout_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Dropout",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Dropout_Node",
+                "op_type": "Dropout",
+                "inputs": ["data"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Dropout_001": {
-        "graph_name": "Dropout_Graph",
-        "inputs": {
-            "data": {
+        "name": "Dropout_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [
@@ -57,11 +56,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -72,25 +71,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Dropout_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Dropout",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Dropout_Node",
+                "op_type": "Dropout",
+                "inputs": ["data"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Dropout_002": {
-        "graph_name": "Dropout_Graph",
-        "inputs": {
-            "data": {
+        "name": "Dropout_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [
@@ -101,11 +98,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -116,25 +113,23 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Dropout_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Dropout",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Dropout_Node",
+                "op_type": "Dropout",
+                "inputs": ["data"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Dropout_003": {
-        "graph_name": "Dropout_Graph",
-        "inputs": {
-            "data": {
+        "name": "Dropout_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [
@@ -145,11 +140,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -160,9 +155,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "mask(optional)": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "mask(optional)",
                 "data": [
                     [
                         [
@@ -173,26 +169,23 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Dropout_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Dropout",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "output": "output",
-                "mask(optional)": "mask(optional)"
-            }
+                "shape": [1, 1, 4, 4],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Dropout_Node",
+                "op_type": "Dropout",
+                "inputs": ["data"],
+                "outputs": ["output", "mask(optional)"],
+                "attributes": {}
+            }]
         }
     },
     "Dropout_004": {
-        "graph_name": "Dropout_Graph",
-        "inputs": {
-            "data": {
+        "name": "Dropout_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [
@@ -203,11 +196,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -218,9 +211,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "mask(optional)": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "mask(optional)",
                 "data": [
                     [
                         [
@@ -231,26 +225,23 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Dropout_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Dropout",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "output": "output",
-                "mask(optional)": "mask(optional)"
-            }
+                "shape": [1, 1, 4, 4],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Dropout_Node",
+                "op_type": "Dropout",
+                "inputs": ["data"],
+                "outputs": ["output", "mask(optional)"],
+                "attributes": {}
+            }]
         }
     },
     "Dropout_005": {
-        "graph_name": "Dropout_Graph",
-        "inputs": {
-            "data": {
+        "name": "Dropout_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [
@@ -261,11 +252,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -276,9 +267,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "mask(optional)": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "mask(optional)",
                 "data": [
                     [
                         [
@@ -289,26 +281,23 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Dropout_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Dropout",
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "output": "output",
-                "mask(optional)": "mask(optional)"
-            }
+                "shape": [1, 1, 4, 4],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Dropout_Node",
+                "op_type": "Dropout",
+                "inputs": ["data"],
+                "outputs": ["output", "mask(optional)"],
+                "attributes": {}
+            }]
         }
     },
     "Dropout_006": {
-        "graph_name": "Dropout_Graph",
-        "inputs": {
-            "data": {
+        "name": "Dropout_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [
@@ -319,11 +308,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -334,26 +323,25 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Dropout_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Dropout",
-            "seed": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Dropout_Node",
+                "op_type": "Dropout",
+                "inputs": ["data"],
+                "outputs": ["output"],
+                "attributes": {
+                    "seed": 1
+                }
+            }]
         }
     },
     "Dropout_007": {
-        "graph_name": "Dropout_Graph",
-        "inputs": {
-            "data": {
+        "name": "Dropout_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [
@@ -364,11 +352,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -379,26 +367,25 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Dropout_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Dropout",
-            "seed": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Dropout_Node",
+                "op_type": "Dropout",
+                "inputs": ["data"],
+                "outputs": ["output"],
+                "attributes": {
+                    "seed": 1
+                }
+            }]
         }
     },
     "Dropout_008": {
-        "graph_name": "Dropout_Graph",
-        "inputs": {
-            "data": {
+        "name": "Dropout_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [
@@ -409,11 +396,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -424,26 +411,25 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Dropout_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Dropout",
-            "seed": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Dropout_Node",
+                "op_type": "Dropout",
+                "inputs": ["data"],
+                "outputs": ["output"],
+                "attributes": {
+                    "seed": 1
+                }
+            }]
         }
     },
     "Dropout_009": {
-        "graph_name": "Dropout_Graph",
-        "inputs": {
-            "data": {
+        "name": "Dropout_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [
@@ -454,11 +440,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -469,9 +455,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "mask(optional)": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float16"
+            }, {
+                "name": "mask(optional)",
                 "data": [
                     [
                         [
@@ -482,27 +469,25 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Dropout_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Dropout",
-            "seed": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "output": "output",
-                "mask(optional)": "mask(optional)"
-            }
+                "shape": [1, 1, 4, 4],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Dropout_Node",
+                "op_type": "Dropout",
+                "inputs": ["data"],
+                "outputs": ["output", "mask(optional)"],
+                "attributes": {
+                    "seed": 1
+                }
+            }]
         }
     },
     "Dropout_010": {
-        "graph_name": "Dropout_Graph",
-        "inputs": {
-            "data": {
+        "name": "Dropout_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [
@@ -513,11 +498,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -528,9 +513,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "mask(optional)": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float32"
+            }, {
+                "name": "mask(optional)",
                 "data": [
                     [
                         [
@@ -541,27 +527,25 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Dropout_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Dropout",
-            "seed": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "output": "output",
-                "mask(optional)": "mask(optional)"
-            }
+                "shape": [1, 1, 4, 4],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Dropout_Node",
+                "op_type": "Dropout",
+                "inputs": ["data"],
+                "outputs": ["output", "mask(optional)"],
+                "attributes": {
+                    "seed": 1
+                }
+            }]
         }
     },
     "Dropout_011": {
-        "graph_name": "Dropout_Graph",
-        "inputs": {
-            "data": {
+        "name": "Dropout_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [
@@ -572,11 +556,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [
@@ -587,9 +571,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "mask(optional)": {
+                "shape": [1, 1, 4, 4],
+                "data_type": "float64"
+            }, {
+                "name": "mask(optional)",
                 "data": [
                     [
                         [
@@ -600,21 +585,18 @@
                         ]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Dropout_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Dropout",
-            "seed": 1,
-            "inputs": {
-                "data": "data"
-            },
-            "outputs": {
-                "output": "output",
-                "mask(optional)": "mask(optional)"
-            }
+                "shape": [1, 1, 4, 4],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Dropout_Node",
+                "op_type": "Dropout",
+                "inputs": ["data"],
+                "outputs": ["output", "mask(optional)"],
+                "attributes": {
+                    "seed": 1
+                }
+            }]
         }
     }
 }

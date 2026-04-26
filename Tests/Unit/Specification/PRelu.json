@@ -1,8 +1,9 @@
 {
     "PRelu_000": {
-        "graph_name": "PRelu_Graph",
-        "inputs": {
-            "X": {
+        "name": "PRelu_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -17,9 +18,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "slope": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }, {
+                "name": "slope",
                 "data": [
                     [
                         [
@@ -34,11 +36,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -53,26 +55,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "PRelu_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "PRelu",
-            "inputs": {
-                "X": "X",
-                "slope": "slope"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "PRelu_Node",
+                "op_type": "PRelu",
+                "inputs": ["X", "slope"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     },
     "PRelu_001": {
-        "graph_name": "PRelu_Graph",
-        "inputs": {
-            "X": {
+        "name": "PRelu_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "X",
                 "data": [
                     [
                         [
@@ -87,9 +86,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "slope": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }, {
+                "name": "slope",
                 "data": [
                     [
                         [
@@ -104,11 +104,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "Y": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "Y",
                 "data": [
                     [
                         [
@@ -123,20 +123,16 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "PRelu_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "PRelu",
-            "inputs": {
-                "X": "X",
-                "slope": "slope"
-            },
-            "outputs": {
-                "Y": "Y"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "PRelu_Node",
+                "op_type": "PRelu",
+                "inputs": ["X", "slope"],
+                "outputs": ["Y"],
+                "attributes": {}
+            }]
         }
     }
 }

@@ -1,8 +1,9 @@
 {
     "NegativeLogLikelihoodLoss_000": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -131,9 +132,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float16"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, -3, -1, 1],
@@ -160,11 +162,11 @@
                         [1, -1, 1, 1, 2, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": [
                     [
                         [-0.093505859375, -0.796875, 0.81201171875, -0.377685546875, -0.06268310546875, 1.2802734375],
@@ -191,28 +193,26 @@
                         [-0.962890625, 0.9306640625, -0.9091796875, -0.0267486572265625, -1.2294921875, -2.396484375]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "none",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [3, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_001": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -341,9 +341,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float16"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [-3, -1, 1, 1, 1, 1],
@@ -370,34 +371,32 @@
                         [1, 1, 1, -1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": 15.2265625,
-                "type": "float16"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "sum",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "sum"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_002": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -526,9 +525,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float16"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 1, 1, 1],
@@ -555,34 +555,32 @@
                         [1, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": -0.0330810546875,
-                "type": "float16"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "mean",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "mean"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_003": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -711,9 +709,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float16"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 1, 1, 1],
@@ -740,11 +739,11 @@
                         [1, 1, 1, 1, -1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": [
                     [
                         [0.427001953125, 0.18115234375, -0.8330078125, -0.2327880859375, -1.75, -0.66845703125],
@@ -771,28 +770,26 @@
                         [1.0654296875, -1.3447265625, -1.6201171875, -0.06634521484375, -1.0908203125, 0.65185546875]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "none",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [3, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_004": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -921,9 +918,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float16"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, -1, 1, 1],
@@ -950,34 +948,32 @@
                         [1, 1, 1, 1, -1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": -1.6865234375,
-                "type": "float16"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "sum",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "sum"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_005": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1106,9 +1102,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float16"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [-1, 1, 1, 2, 1, -1],
@@ -1135,34 +1132,32 @@
                         [1, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": 0.1407470703125,
-                "type": "float16"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "mean",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "mean"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_006": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1291,9 +1286,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float32"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, -1, 1, -2],
@@ -1320,11 +1316,11 @@
                         [-2, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": [
                     [
                         [0.43276047706604004, -0.7764917612075806, 0.49395421147346497, 0.5413388013839722, 1.4466311931610107, 1.0570857524871826],
@@ -1351,28 +1347,26 @@
                         [-1.622366189956665, 0.6496899724006653, -1.035022258758545, 0.8186004757881165, -0.942736029624939, -1.1251622438430786]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "none",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [3, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_007": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1501,9 +1495,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float32"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 1, 1, 1],
@@ -1530,34 +1525,32 @@
                         [1, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": 1.1422958374023438,
-                "type": "float32"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "sum",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "sum"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_008": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1686,9 +1679,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float32"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, -1, -1, 1, 1],
@@ -1715,34 +1709,32 @@
                         [-1, 1, 1, 1, -1, -1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": -0.05668618902564049,
-                "type": "float32"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "mean",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "mean"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_009": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -1871,9 +1863,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float32"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 2, -1, 1],
@@ -1900,11 +1893,11 @@
                         [1, 1, -1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": [
                     [
                         [-2.2506165504455566, 1.3534263372421265, -2.1812520027160645, 0.06769583374261856, -0.08273902535438538, 2.0776376724243164],
@@ -1931,28 +1924,26 @@
                         [1.1580978631973267, -0.7203717231750488, -1.0917377471923828, 0.7716270685195923, 0.2295622080564499, 0.5567634701728821]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "none",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [3, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_010": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -2081,9 +2072,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float32"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, -2, 1, 1, 1, -1],
@@ -2110,34 +2102,32 @@
                         [1, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": -9.859209060668945,
-                "type": "float32"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "sum",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "sum"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_011": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -2266,9 +2256,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float32"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, -1, 1, 1, 1, 1],
@@ -2295,34 +2286,32 @@
                         [1, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": 0.10588916391134262,
-                "type": "float32"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "mean",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "mean"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_012": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -2451,9 +2440,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float64"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [-1, -1, 1, 1, 1, -1],
@@ -2480,11 +2470,11 @@
                         [1, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": [
                     [
                         [-1.4646220711833675, -0.42880464251489353, 0.9652957973250487, -1.162202963193592, 1.0180370999580235, -1.2307975172776644],
@@ -2511,28 +2501,26 @@
                         [-1.206621473932861, -0.7130130303259686, 0.6724630669264021, 0.6377446116929802, -1.0483143630888432, -1.0522657718093833]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "none",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [3, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_013": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -2661,9 +2649,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float64"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, -1, 1, -1],
@@ -2690,34 +2679,32 @@
                         [1, 1, 2, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": 4.948120459086992,
-                "type": "float64"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "sum",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "sum"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_014": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -2846,9 +2833,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float64"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 1, 1, -1],
@@ -2875,34 +2863,32 @@
                         [1, 1, 1, -1, -2, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": -0.0785427453258851,
-                "type": "float64"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "mean",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "mean"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_015": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -3031,9 +3017,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float64"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 1, 1, 1],
@@ -3060,11 +3047,11 @@
                         [-1, 1, 1, 1, 1, -1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": [
                     [
                         [1.1526380758562447, -0.8571042775862221, 0.9203683986858314, 1.3460474719354572, 0.26819366560067937, 0.10492914803125399],
@@ -3091,28 +3078,26 @@
                         [-0.8437040334757923, 0.8017074448884212, 0.17068524483022898, 1.9175503065082375, -0.1797320094500594, 0.11909008826764422]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "none",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [3, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_016": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -3241,9 +3226,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float64"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [-1, 2, 1, 1, 1, 2],
@@ -3270,34 +3256,32 @@
                         [1, 1, -2, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": -8.383435531523492,
-                "type": "float64"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "sum",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "sum"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_017": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -3426,9 +3410,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float64"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 1, -2, 1],
@@ -3455,34 +3440,32 @@
                         [1, -1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": 0.1045156761554386,
-                "type": "float64"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "mean",
-            "inputs": {
-                "input": "input",
-                "target": "target"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "mean"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_018": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -3611,9 +3594,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float16"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, -1, -1, 1, 1, -1],
@@ -3640,15 +3624,16 @@
                         [1, 1, -1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }, {
+                "name": "weight(optional)",
                 "data": [0.99462890625, -0.059051513671875, -0.0701904296875, 0.84326171875, -2.03125],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": [
                     [
                         [-0.01580810546875, -0.603515625, 2.390625, 0.07952880859375, -0.004970550537109375, 0.3046875],
@@ -3675,29 +3660,26 @@
                         [0.06842041015625, 0.033477783203125, -1.52734375, 0.0201416015625, 0.0799560546875, 0.028564453125]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "none",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [3, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_019": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -3826,9 +3808,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float16"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 1, -1, 1],
@@ -3855,39 +3838,37 @@
                         [1, 1, 1, 1, -2, 1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }, {
+                "name": "weight(optional)",
                 "data": [0.1688232421875, -0.04974365234375, 1.13671875, 0.314208984375, -1.26171875],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": 7.35546875,
-                "type": "float16"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "sum",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "sum"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_020": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -4016,9 +3997,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float16"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, -1, 1, 1, 1],
@@ -4045,39 +4027,37 @@
                         [1, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }, {
+                "name": "weight(optional)",
                 "data": [0.36474609375, -1.212890625, 0.57666015625, 0.8056640625, 0.31787109375],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": -0.06494140625,
-                "type": "float16"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "mean",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "mean"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_021": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -4206,9 +4186,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float16"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 1, 1, 1],
@@ -4235,15 +4216,16 @@
                         [1, 1, -1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }, {
+                "name": "weight(optional)",
                 "data": [-0.09918212890625, -1.1435546875, 0.40380859375, 0.18994140625, -0.869140625],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": [
                     [
                         [0.2305908203125, -0.1181640625, -2.736328125, -0.27880859375, -1.1494140625, 0.470947265625],
@@ -4270,29 +4252,26 @@
                         [0.580078125, -0.8720703125, -0.388427734375, 0.0899658203125, 0.71533203125, 1.212890625]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "none",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [3, 6, 6],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_022": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -4421,9 +4400,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float16"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [-2, 1, 1, 1, 1, 1],
@@ -4450,39 +4430,37 @@
                         [2, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }, {
+                "name": "weight(optional)",
                 "data": [0.85693359375, -1.6201171875, -0.4970703125, 2.326171875, 1.1953125],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": -15.1796875,
-                "type": "float16"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "sum",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "sum"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_023": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -4611,9 +4589,10 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float16"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 1, 1, 1],
@@ -4640,39 +4619,37 @@
                         [1, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }, {
+                "name": "weight(optional)",
                 "data": [0.560546875, 1.05078125, -0.56396484375, 0.55517578125, -0.81298828125],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": -0.1134033203125,
-                "type": "float16"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "mean",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "mean"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_024": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -4801,9 +4778,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float32"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 1, 1, 1],
@@ -4830,15 +4808,16 @@
                         [1, 1, 1, 2, 1, -1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }, {
+                "name": "weight(optional)",
                 "data": [0.19403916597366333, -0.6178329586982727, 0.2816636264324188, 0.11847078800201416, -0.21446150541305542],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": [
                     [
                         [1.2463706731796265, 0.18924005329608917, -0.2994912564754486, 0.05469491705298424, -0.016438795253634453, 1.4724786281585693],
@@ -4865,29 +4844,26 @@
                         [-0.1570819914340973, -0.3690764307975769, -0.50077223777771, 0.3363229036331177, 0.4134361743927002, -0.28768816590309143]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "none",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [3, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_025": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -5016,9 +4992,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float32"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 1, 2, 1],
@@ -5045,39 +5022,37 @@
                         [1, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }, {
+                "name": "weight(optional)",
                 "data": [-0.7617284655570984, -0.5972654819488525, -1.5970032215118408, -0.938374936580658, 0.03466175124049187],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": -1.6653519868850708,
-                "type": "float32"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "sum",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "sum"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_026": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -5206,9 +5181,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float32"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 1, 1, 1],
@@ -5235,39 +5211,37 @@
                         [1, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }, {
+                "name": "weight(optional)",
                 "data": [0.23866084218025208, 0.7462618350982666, -0.5899905562400818, -0.5560261011123657, 0.12145105004310608],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": -0.05240650102496147,
-                "type": "float32"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "mean",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "mean"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_027": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -5396,9 +5370,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float32"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, -1, -1, 1],
@@ -5425,15 +5400,16 @@
                         [1, 1, 1, 1, 1, 2]
                     ]
                 ],
-                "type": "int64"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }, {
+                "name": "weight(optional)",
                 "data": [-0.4063906967639923, 1.0538727045059204, 0.06076323986053467, 0.17935335636138916, -1.0324132442474365],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": [
                     [
                         [0.5435497164726257, 0.9200533032417297, -0.5591213703155518, 0.12864001095294952, 1.301820158958435, -0.1585637480020523],
@@ -5460,29 +5436,26 @@
                         [0.1532774567604065, 0.15667223930358887, -0.653175413608551, -1.148795485496521, 0.8028331995010376, 0.05138430371880531]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "none",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [3, 6, 6],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_028": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -5611,9 +5584,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float32"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, -2, -1, 1, 1, 1],
@@ -5640,39 +5614,37 @@
                         [1, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }, {
+                "name": "weight(optional)",
                 "data": [0.7126622200012207, -0.010688167996704578, -0.6535486578941345, -1.08135187625885, 0.2802928686141968],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": 1.5261906385421753,
-                "type": "float32"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "sum",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "sum"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_029": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -5801,9 +5773,10 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float32"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, -1, 1, 1, 1, 1],
@@ -5830,39 +5803,37 @@
                         [1, 1, -1, 1, -1, 1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }, {
+                "name": "weight(optional)",
                 "data": [-0.2187952697277069, -0.46012839674949646, -0.6084913015365601, 1.373032569885254, -1.5672054290771484],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": 0.1121172234416008,
-                "type": "float32"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "mean",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "mean"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_030": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -5991,9 +5962,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float64"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 1, 1, 1],
@@ -6020,15 +5992,16 @@
                         [1, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }, {
+                "name": "weight(optional)",
                 "data": [0.6230789582258083, 0.060311382950013544, 0.9729936289246497, 0.7573412159915157, -1.1848376127691767],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": [
                     [
                         [-0.030856436997908215, 0.008587874347043093, 0.07122967622477389, -0.01681556431237967, -0.0072618579778237595, -0.0673360449224146],
@@ -6055,29 +6028,26 @@
                         [-0.0088105877580415, 0.04096917455474927, -0.032578398166572355, -0.11091093830241318, 0.015174682841773996, -0.016221078820177415]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "none",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [3, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_031": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -6206,9 +6176,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float64"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [-1, 2, 1, -1, 1, 1],
@@ -6235,39 +6206,37 @@
                         [2, -1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }, {
+                "name": "weight(optional)",
                 "data": [0.7697820599357459, 0.6075197523216844, -0.2652548127376408, -0.7484539774468012, 0.20708847502749284],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": 7.242230878234776,
-                "type": "float64"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "sum",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "sum"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_032": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -6396,9 +6365,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float64"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, 1, 1, 1, 1],
@@ -6425,39 +6395,37 @@
                         [1, 1, -1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int32"
+            }, {
+                "name": "weight(optional)",
                 "data": [-0.38095998651860674, -0.44905329978587727, -0.7518474057258964, -0.954332609859538, -0.4655838175697443],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": -0.06810830876488007,
-                "type": "float64"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "mean",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "mean"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_033": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -6586,9 +6554,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float64"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, -1, 1, -1, -1],
@@ -6615,15 +6584,16 @@
                         [1, 1, 1, 1, 1, 2]
                     ]
                 ],
-                "type": "int64"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }, {
+                "name": "weight(optional)",
                 "data": [-2.1533884705528332, 0.8059996747077521, -1.186194241056429, -1.840291827245234, -0.24612354956852675],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": [
                     [
                         [0.9246527412784452, -1.8577745408618647, 0.149549380966885, -0.24437559207868215, -0.25029359910590526, 0.1941940067936585],
@@ -6650,29 +6620,26 @@
                         [1.0996228195346398, 0.28540958530730404, 0.6054562047826909, -0.10275721705966295, -0.07353899551334901, -0.8653843417152611]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "none",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [3, 6, 6],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "none"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_034": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -6801,9 +6768,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float64"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, 1, -1, -1, 1, 1],
@@ -6830,39 +6798,37 @@
                         [1, 1, 1, 1, -1, 1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }, {
+                "name": "weight(optional)",
                 "data": [0.16203938331521867, -0.5305277168212744, -0.666010016753495, 0.5440563072986506, 2.090630206507216],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": 8.553291606546386,
-                "type": "float64"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "sum",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "sum"
+                }
+            }]
         }
     },
     "NegativeLogLikelihoodLoss_035": {
-        "graph_name": "NegativeLogLikelihoodLoss_Graph",
-        "inputs": {
-            "input": {
+        "name": "NegativeLogLikelihoodLoss_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "input",
                 "data": [
                     [
                         [
@@ -6991,9 +6957,10 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            },
-            "target": {
+                "shape": [3, 5, 6, 6],
+                "data_type": "float64"
+            }, {
+                "name": "target",
                 "data": [
                     [
                         [1, -1, 1, 1, 1, 1],
@@ -7020,33 +6987,30 @@
                         [1, 1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "weight(optional)": {
+                "shape": [3, 6, 6],
+                "data_type": "int64"
+            }, {
+                "name": "weight(optional)",
                 "data": [-0.5023370832722964, -0.21149077347204534, 0.5476391141878506, 0.18946341984243345, -0.3613642165561445],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "loss": {
+                "shape": [5],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "loss",
                 "data": 0.11193181022556288,
-                "type": "float64"
-            }
-        },
-        "NegativeLogLikelihoodLoss_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "NegativeLogLikelihoodLoss",
-            "ignore_index": 0,
-            "reduction": "mean",
-            "inputs": {
-                "input": "input",
-                "target": "target",
-                "weight(optional)": "weight(optional)"
-            },
-            "outputs": {
-                "loss": "loss"
-            }
+                "shape": [],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "NegativeLogLikelihoodLoss_Node",
+                "op_type": "NegativeLogLikelihoodLoss",
+                "inputs": ["input", "target", "weight(optional)"],
+                "outputs": ["loss"],
+                "attributes": {
+                    "ignore_index": 0,
+                    "reduction": "mean"
+                }
+            }]
         }
     }
 }

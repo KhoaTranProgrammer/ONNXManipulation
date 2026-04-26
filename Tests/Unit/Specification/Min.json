@@ -1,8 +1,9 @@
 {
     "Min_000": {
-        "graph_name": "Min_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Min_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -17,11 +18,11 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "outputs": {
-            "min": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "outputs": [{
+                "name": "min",
                 "data": [
                     [
                         [
@@ -36,25 +37,23 @@
                         ]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Min_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Min",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "min": "min"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Min_Node",
+                "op_type": "Min",
+                "inputs": ["data_0"],
+                "outputs": ["min"],
+                "attributes": {}
+            }]
         }
     },
     "Min_001": {
-        "graph_name": "Min_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Min_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -69,11 +68,11 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "outputs": {
-            "min": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "outputs": [{
+                "name": "min",
                 "data": [
                     [
                         [
@@ -88,25 +87,23 @@
                         ]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Min_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Min",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "min": "min"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Min_Node",
+                "op_type": "Min",
+                "inputs": ["data_0"],
+                "outputs": ["min"],
+                "attributes": {}
+            }]
         }
     },
     "Min_002": {
-        "graph_name": "Min_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Min_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -121,11 +118,11 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "min": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "min",
                 "data": [
                     [
                         [
@@ -140,25 +137,23 @@
                         ]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Min_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Min",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "min": "min"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Min_Node",
+                "op_type": "Min",
+                "inputs": ["data_0"],
+                "outputs": ["min"],
+                "attributes": {}
+            }]
         }
     },
     "Min_003": {
-        "graph_name": "Min_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Min_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -173,11 +168,11 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "min": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "min",
                 "data": [
                     [
                         [
@@ -192,25 +187,23 @@
                         ]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Min_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Min",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "min": "min"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Min_Node",
+                "op_type": "Min",
+                "inputs": ["data_0"],
+                "outputs": ["min"],
+                "attributes": {}
+            }]
         }
     },
     "Min_004": {
-        "graph_name": "Min_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Min_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -225,11 +218,11 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "outputs": {
-            "min": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "outputs": [{
+                "name": "min",
                 "data": [
                     [
                         [
@@ -244,25 +237,23 @@
                         ]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Min_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Min",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "min": "min"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Min_Node",
+                "op_type": "Min",
+                "inputs": ["data_0"],
+                "outputs": ["min"],
+                "attributes": {}
+            }]
         }
     },
     "Min_005": {
-        "graph_name": "Min_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Min_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -277,11 +268,11 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "outputs": {
-            "min": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "outputs": [{
+                "name": "min",
                 "data": [
                     [
                         [
@@ -296,25 +287,23 @@
                         ]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Min_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Min",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "min": "min"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Min_Node",
+                "op_type": "Min",
+                "inputs": ["data_0"],
+                "outputs": ["min"],
+                "attributes": {}
+            }]
         }
     },
     "Min_006": {
-        "graph_name": "Min_Graph",
-        "inputs": {
-            "data_0": {
+        "name": "Min_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data_0",
                 "data": [
                     [
                         [
@@ -329,11 +318,11 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "outputs": {
-            "min": {
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "outputs": [{
+                "name": "min",
                 "data": [
                     [
                         [
@@ -348,19 +337,16 @@
                         ]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Min_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Min",
-            "inputs": {
-                "data_0": "data_0"
-            },
-            "outputs": {
-                "min": "min"
-            }
+                "shape": [1, 2, 3, 3],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Min_Node",
+                "op_type": "Min",
+                "inputs": ["data_0"],
+                "outputs": ["min"],
+                "attributes": {}
+            }]
         }
     }
 }

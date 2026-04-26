@@ -1,8 +1,9 @@
 {
     "Slice_000": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -245,19 +246,21 @@
                         [1, 255, 1, 255, 1]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint8"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -296,27 +299,23 @@
                         [255, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_001": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 255, 1, 1],
@@ -559,19 +558,21 @@
                         [1, 1, 1, 255, 1]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint8"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 255, 1, 1],
@@ -610,27 +611,23 @@
                         [255, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_002": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 65535, 1, 1],
@@ -873,19 +870,21 @@
                         [1, 1, 1, 1, 65534]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 65535, 1, 1],
@@ -924,27 +923,23 @@
                         [1, 1, 65535, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_003": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 65535, 1],
@@ -1187,19 +1182,21 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 65535, 1],
@@ -1238,27 +1235,23 @@
                         [65535, 1, 1, 65535, 1]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_004": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [4294967295, 1, 1, 1, 1],
@@ -1501,19 +1494,21 @@
                         [4294967294, 1, 1, 4294967295, 1]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [4294967295, 1, 1, 1, 1],
@@ -1552,27 +1547,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_005": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -1815,19 +1806,21 @@
                         [1, 1, 4294967295, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -1866,27 +1859,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_006": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 18446744073709551615, 1],
@@ -2129,19 +2118,21 @@
                         [1, 1, 1, 18446744073709551615, 1]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 18446744073709551615, 1],
@@ -2180,27 +2171,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_007": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -2443,19 +2430,21 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -2494,27 +2483,23 @@
                         [18446744073709551615, 1, 1, 18446744073709551615, 18446744073709551615]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_008": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -2757,19 +2742,21 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int8"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int8"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -2808,27 +2795,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_009": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, -1, 1, 1, 1],
@@ -3071,19 +3054,21 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int8"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int8"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, -1, 1, 1, 1],
@@ -3122,27 +3107,23 @@
                         [1, 1, 1, 2, 1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_010": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, -1, 1, 1],
@@ -3385,19 +3366,21 @@
                         [1, -1, 1, 1, 1]
                     ]
                 ],
-                "type": "int16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, -1, 1, 1],
@@ -3436,27 +3419,23 @@
                         [1, 1, -1, 1, 1]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_011": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1, 1, 1, 1, 1],
@@ -3699,19 +3678,21 @@
                         [1, 1, 1, -1, 1]
                     ]
                 ],
-                "type": "int16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-1, 1, 1, 1, 1],
@@ -3750,27 +3731,23 @@
                         [1, 1, 1, -1, 1]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_012": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1, 1, 1, 1, 1],
@@ -4013,19 +3990,21 @@
                         [1, 1, -1, 1, -1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-1, 1, 1, 1, 1],
@@ -4064,27 +4043,23 @@
                         [-1, 1, -1, -1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_013": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, -2, 1, 1, 2],
@@ -4327,19 +4302,21 @@
                         [-1, 1, -1, 1, -1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, -2, 1, 1, 2],
@@ -4378,27 +4355,23 @@
                         [1, 1, 1, -1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_014": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -4641,19 +4614,21 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -4692,27 +4667,23 @@
                         [1, 1, 1, -1, -1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_015": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 2, 1],
@@ -4955,19 +4926,21 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 2, 1],
@@ -5006,27 +4979,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_016": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.376708984375, -0.60693359375, -1.005859375, 1.3095703125, -0.8935546875],
@@ -5269,19 +5238,21 @@
                         [1.6337890625, 1.0673828125, -2.01953125, -0.41650390625, -0.51123046875]
                     ]
                 ],
-                "type": "float16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [0.376708984375, -0.60693359375, -1.005859375, 1.3095703125, -0.8935546875],
@@ -5320,27 +5291,23 @@
                         [-0.04052734375, -1.6416015625, 0.525390625, -0.0400390625, -0.21240234375]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_017": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.1968994140625, 2.748046875, 2.21875, -0.05596923828125, -0.477783203125],
@@ -5583,19 +5550,21 @@
                         [-0.82080078125, -0.041473388671875, 0.923828125, 1.46484375, -0.1328125]
                     ]
                 ],
-                "type": "float16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [0.1968994140625, 2.748046875, 2.21875, -0.05596923828125, -0.477783203125],
@@ -5634,27 +5603,23 @@
                         [-2.322265625, 1.1611328125, -0.78466796875, 2.28515625, 1.87890625]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_018": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.6161774396896362, -2.8240861892700195, -0.9856268167495728, -0.6943060159683228, -0.7007105350494385],
@@ -5897,19 +5862,21 @@
                         [-1.2462505102157593, 0.6033547520637512, 1.4653797149658203, -1.3410512208938599, 0.9406365752220154]
                     ]
                 ],
-                "type": "float32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [0.6161774396896362, -2.8240861892700195, -0.9856268167495728, -0.6943060159683228, -0.7007105350494385],
@@ -5948,27 +5915,23 @@
                         [-0.5291489362716675, -0.21568027138710022, -0.60678631067276, 2.336439371109009, 0.28659388422966003]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_019": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1.8973623514175415, 0.7885615825653076, -0.09374738484621048, -0.5466481447219849, 0.9923396706581116],
@@ -6211,19 +6174,21 @@
                         [0.7169036865234375, -0.2635335922241211, -1.2496724128723145, 0.7159478068351746, 1.6552400588989258]
                     ]
                 ],
-                "type": "float32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-1.8973623514175415, 0.7885615825653076, -0.09374738484621048, -0.5466481447219849, 0.9923396706581116],
@@ -6262,27 +6227,23 @@
                         [-0.9671693444252014, -0.14382320642471313, 0.00820084661245346, 0.0581444650888443, -1.470898985862732]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_020": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.933158920093168, 0.15368073092087955, 0.9159406326384995, -1.1020280721423474, 2.009356048964374],
@@ -6525,19 +6486,21 @@
                         [-0.360401095260225, -0.436497835504585, -0.8476386814735718, -0.6456230477168817, 1.3077085587601438]
                     ]
                 ],
-                "type": "float64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [0.933158920093168, 0.15368073092087955, 0.9159406326384995, -1.1020280721423474, 2.009356048964374],
@@ -6576,27 +6539,23 @@
                         [2.4361204848002336, 0.5599918032933271, -0.558897358656097, 0.8598983037219184, -1.0532650673594817]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_021": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.06858985336785359, -0.02722593480793625, -1.8292319623612618, -0.3222609965330556, -1.2499763208804362],
@@ -6839,19 +6798,21 @@
                         [-0.5510512149298638, -0.33486267766083866, -0.7173085272112125, 0.5633449417537124, -0.4263519768519596]
                     ]
                 ],
-                "type": "float64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [0.06858985336785359, -0.02722593480793625, -1.8292319623612618, -0.3222609965330556, -1.2499763208804362],
@@ -6890,27 +6851,23 @@
                         [1.398850581083364, -1.1369578071876063, -1.1815297810423577, 0.5711130653040553, 0.9116014991395422]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_022": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -7153,19 +7110,21 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "bool"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -7204,27 +7163,23 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_023": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -7467,19 +7422,21 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "bool"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -7518,27 +7475,23 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_024": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -7781,23 +7734,26 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint8"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -7836,28 +7792,23 @@
                         [1, 1, 255, 2, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_025": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 254, 1, 1, 1],
@@ -8100,23 +8051,26 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint8"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 254, 1, 1, 1],
@@ -8155,28 +8109,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_026": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 65535],
@@ -8419,23 +8368,26 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 65535],
@@ -8474,28 +8426,23 @@
                         [65535, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_027": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -8738,23 +8685,26 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -8793,28 +8743,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_028": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [4294967295, 1, 1, 1, 1],
@@ -9057,23 +9002,26 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [4294967295, 1, 1, 1, 1],
@@ -9112,28 +9060,23 @@
                         [1, 4294967295, 1, 1, 4294967295]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_029": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -9376,23 +9319,26 @@
                         [4294967294, 1, 1, 4294967295, 1]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -9431,28 +9377,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_030": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -9695,23 +9636,26 @@
                         [1, 1, 18446744073709551615, 18446744073709551615, 1]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -9750,28 +9694,23 @@
                         [1, 1, 1, 18446744073709551615, 1]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_031": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -10014,23 +9953,26 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -10069,28 +10011,23 @@
                         [1, 18446744073709551615, 1, 1, 1]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_032": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, -1],
@@ -10333,23 +10270,26 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int8"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int8"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, -1],
@@ -10388,28 +10328,23 @@
                         [1, -1, 1, 1, 1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_033": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -10652,23 +10587,26 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int8"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int8"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -10707,28 +10645,23 @@
                         [1, 1, 1, -1, -1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_034": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, -1, -1, 1],
@@ -10971,23 +10904,26 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, -1, -1, 1],
@@ -11026,28 +10962,23 @@
                         [1, 1, -1, -1, 1]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_035": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, -1, 2, -2],
@@ -11290,23 +11221,26 @@
                         [1, -1, 1, -1, 1]
                     ]
                 ],
-                "type": "int16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, -1, 2, -2],
@@ -11345,28 +11279,23 @@
                         [1, 1, -2, 1, 1]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_036": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -11609,23 +11538,26 @@
                         [1, 1, 1, -1, 1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -11664,28 +11596,23 @@
                         [1, 1, -1, 1, -1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_037": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-2, 2, -2, -1, 1],
@@ -11928,23 +11855,26 @@
                         [1, 1, 1, 1, -1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-2, 2, -2, -1, 1],
@@ -11983,28 +11913,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_038": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -12247,23 +12172,26 @@
                         [2, 1, 1, 1, -1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -12302,28 +12230,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_039": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 2, 1],
@@ -12566,23 +12489,26 @@
                         [1, 1, 1, -1, 1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 2, 1],
@@ -12621,28 +12547,23 @@
                         [1, -1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_040": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1.9453125, -0.34716796875, -1.515625, -1.1337890625, 2.060546875],
@@ -12885,23 +12806,26 @@
                         [-0.260498046875, -0.54296875, 0.34130859375, 0.474609375, -0.433349609375]
                     ]
                 ],
-                "type": "float16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-1.9453125, -0.34716796875, -1.515625, -1.1337890625, 2.060546875],
@@ -12940,28 +12864,23 @@
                         [-0.29541015625, 1.990234375, -0.34228515625, -0.81201171875, 0.046478271484375]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_041": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.1640625, -0.646484375, 0.4853515625, -1.96484375, 1.6796875],
@@ -13204,23 +13123,26 @@
                         [0.58740234375, -0.54345703125, -0.453125, 0.177734375, 0.47216796875]
                     ]
                 ],
-                "type": "float16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [0.1640625, -0.646484375, 0.4853515625, -1.96484375, 1.6796875],
@@ -13259,28 +13181,23 @@
                         [0.210205078125, 0.7314453125, -0.83935546875, 0.595703125, 2.134765625]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_042": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [0.4947866201400757, 0.782294511795044, -0.11639236658811569, 0.6557225584983826, -0.6811439394950867],
@@ -13523,23 +13440,26 @@
                         [-2.7835912704467773, -2.1706244945526123, -0.19718647003173828, 1.6499009132385254, -0.29872867465019226]
                     ]
                 ],
-                "type": "float32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [0.4947866201400757, 0.782294511795044, -0.11639236658811569, 0.6557225584983826, -0.6811439394950867],
@@ -13578,28 +13498,23 @@
                         [-0.13867229223251343, -0.866379976272583, -0.07805747538805008, 0.47332972288131714, -0.41264137625694275]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_043": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.4323195219039917, -2.195422410964966, -0.9694768786430359, 1.0333884954452515, 1.9929022789001465],
@@ -13842,23 +13757,26 @@
                         [-0.8118075728416443, 2.0773465633392334, 0.01008234079927206, 0.23006005585193634, 0.19622623920440674]
                     ]
                 ],
-                "type": "float32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1.4323195219039917, -2.195422410964966, -0.9694768786430359, 1.0333884954452515, 1.9929022789001465],
@@ -13897,28 +13815,23 @@
                         [-0.48087620735168457, 0.43976226449012756, 0.0926014631986618, 0.2694685161113739, -0.1194574385881424]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_044": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.0307282127204656, 0.35888624072811703, -0.27511425060812783, -1.1604289264113412, -1.5765753247767909],
@@ -14161,23 +14074,26 @@
                         [0.119107127378224, -0.013471107557506565, 0.14379791891289498, 0.5979642194303991, -1.5777051815435463]
                     ]
                 ],
-                "type": "float64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1.0307282127204656, 0.35888624072811703, -0.27511425060812783, -1.1604289264113412, -1.5765753247767909],
@@ -14216,28 +14132,23 @@
                         [-0.8426835755195686, -0.4820387852138996, -0.37770082858068904, 1.4171517915126215, 1.59875690230047]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_045": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.7163740870985842, -0.8470502396785361, 0.31555107855270026, -0.2615461708895889, 1.0162164953942237],
@@ -14480,23 +14391,26 @@
                         [-0.374855848721577, -0.5547583231892417, 0.3054426539590714, -0.5179421762338464, -0.5825697915059632]
                     ]
                 ],
-                "type": "float64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-0.7163740870985842, -0.8470502396785361, 0.31555107855270026, -0.2615461708895889, 1.0162164953942237],
@@ -14535,28 +14449,23 @@
                         [-0.8406321248329426, 0.5709330395381119, 0.9077569396936417, 0.42046638674627046, 0.5250550003135154]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_046": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -14799,23 +14708,26 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "bool"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -14854,28 +14766,23 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_047": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -15118,23 +15025,26 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "bool"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -15173,28 +15083,23 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_048": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -15437,27 +15342,31 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint8"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -15496,29 +15405,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_049": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 3, 255, 1, 1],
@@ -15761,27 +15664,31 @@
                         [1, 3, 1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint8"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 3, 255, 1, 1],
@@ -15820,29 +15727,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint8"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint8"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_050": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [3, 1, 1, 1, 1],
@@ -16085,27 +15986,31 @@
                         [1, 1, 65535, 65535, 1]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [3, 1, 1, 1, 1],
@@ -16144,29 +16049,23 @@
                         [1, 65535, 1, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_051": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [65535, 1, 65535, 2, 65535],
@@ -16409,27 +16308,31 @@
                         [1, 1, 65535, 1, 1]
                     ]
                 ],
-                "type": "uint16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [65535, 1, 65535, 2, 65535],
@@ -16468,29 +16371,23 @@
                         [1, 1, 1, 65535, 1]
                     ]
                 ],
-                "type": "uint16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_052": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -16733,27 +16630,31 @@
                         [4294967295, 1, 2, 4294967294, 1]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -16792,29 +16693,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_053": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 4294967295, 1, 1],
@@ -17057,27 +16952,31 @@
                         [1, 4294967295, 4294967295, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 4294967295, 1, 1],
@@ -17116,29 +17015,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_054": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -17381,27 +17274,31 @@
                         [1, 1, 18446744073709551615, 2, 1]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, 1],
@@ -17440,29 +17337,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_055": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [18446744073709551615, 1, 1, 1, 1],
@@ -17705,27 +17596,31 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "uint64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [18446744073709551615, 1, 1, 1, 1],
@@ -17764,29 +17659,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "uint64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "uint64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_056": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1, 1, 1, 1, 1],
@@ -18029,27 +17918,31 @@
                         [-1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int8"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int8"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-1, 1, 1, 1, 1],
@@ -18088,29 +17981,23 @@
                         [1, 1, 1, 1, -1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_057": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1, 1, 1, -1, 1],
@@ -18353,27 +18240,31 @@
                         [1, 1, -1, -1, 1]
                     ]
                 ],
-                "type": "int8"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int8"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-1, 1, 1, -1, 1],
@@ -18412,29 +18303,23 @@
                         [1, -2, 1, 1, 1]
                     ]
                 ],
-                "type": "int8"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int8"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_058": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, -1, 1, 1, -1],
@@ -18677,27 +18562,31 @@
                         [-1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, -1, 1, 1, -1],
@@ -18736,29 +18625,23 @@
                         [1, 1, 1, 1, -1]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_059": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, 1, -2],
@@ -19001,27 +18884,31 @@
                         [1, 1, 1, 2, 1]
                     ]
                 ],
-                "type": "int16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, 1, -2],
@@ -19060,29 +18947,23 @@
                         [-1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_060": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [2, 1, 1, 1, 1],
@@ -19325,27 +19206,31 @@
                         [1, -1, 1, 1, -1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [2, 1, 1, 1, 1],
@@ -19384,29 +19269,23 @@
                         [-1, 1, 1, 2, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_061": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, 1, 1, -1, 1],
@@ -19649,27 +19528,31 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, 1, 1, -1, 1],
@@ -19708,29 +19591,23 @@
                         [1, 1, 1, 1, 1]
                     ]
                 ],
-                "type": "int32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_062": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1, -1, 1, 1, 1],
@@ -19973,27 +19850,31 @@
                         [1, -1, 1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-1, -1, 1, 1, 1],
@@ -20032,29 +19913,23 @@
                         [1, -1, -1, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_063": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1, -1, 1, 1, 1],
@@ -20297,27 +20172,31 @@
                         [2, 1, -2, 1, 1]
                     ]
                 ],
-                "type": "int64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "int64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1, -1, 1, 1, 1],
@@ -20356,29 +20235,23 @@
                         [1, -1, 1, -1, 1]
                     ]
                 ],
-                "type": "int64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "int64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_064": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.5615234375, -1.900390625, -2.25390625, 0.56396484375, 0.10723876953125],
@@ -20621,27 +20494,31 @@
                         [0.353759765625, -1.578125, 1.197265625, -0.59033203125, 0.370849609375]
                     ]
                 ],
-                "type": "float16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1.5615234375, -1.900390625, -2.25390625, 0.56396484375, 0.10723876953125],
@@ -20680,29 +20557,23 @@
                         [0.2242431640625, -0.496337890625, 0.1373291015625, -0.374755859375, 0.75537109375]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_065": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.060699462890625, -1.2783203125, 1.8388671875, -0.634765625, 0.4609375],
@@ -20945,27 +20816,31 @@
                         [-0.1871337890625, 0.44775390625, -1.2939453125, 0.387451171875, -0.1278076171875]
                     ]
                 ],
-                "type": "float16"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float16"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-0.060699462890625, -1.2783203125, 1.8388671875, -0.634765625, 0.4609375],
@@ -21004,29 +20879,23 @@
                         [-1.7958984375, 0.90771484375, 0.7890625, 1.7890625, 1.3017578125]
                     ]
                 ],
-                "type": "float16"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float16"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_066": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-0.7531061172485352, -1.3119231462478638, -2.00815486907959, 1.619869589805603, -2.318272829055786],
@@ -21269,27 +21138,31 @@
                         [-1.5247294902801514, -0.09299658238887787, -1.1445339918136597, -1.2328532934188843, -1.4930331707000732]
                     ]
                 ],
-                "type": "float32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-0.7531061172485352, -1.3119231462478638, -2.00815486907959, 1.619869589805603, -2.318272829055786],
@@ -21328,29 +21201,23 @@
                         [0.4620031714439392, -0.5455896258354187, -0.8525753617286682, 1.0389773845672607, 0.13113528490066528]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_067": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.3909614086151123, -0.3132772147655487, 0.7377251386642456, -1.1610405445098877, -0.07146510481834412],
@@ -21593,27 +21460,31 @@
                         [-0.32144272327423096, 0.2375359982252121, -1.3908499479293823, 0.9157744646072388, -0.0882665365934372]
                     ]
                 ],
-                "type": "float32"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float32"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1.3909614086151123, -0.3132772147655487, 0.7377251386642456, -1.1610405445098877, -0.07146510481834412],
@@ -21652,29 +21523,23 @@
                         [0.053809285163879395, 0.6407579183578491, 1.336782693862915, -0.12472240626811981, -0.8147452473640442]
                     ]
                 ],
-                "type": "float32"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float32"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_068": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [1.453944656372613, -0.18729553641926786, 0.8942936530985144, 1.6221446859390563, -0.23679260961775775],
@@ -21917,27 +21782,31 @@
                         [-1.0835928203546052, -2.50535877305826, -0.19757395428458394, 0.6251177804011063, 1.6160314523958235]
                     ]
                 ],
-                "type": "float64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [1.453944656372613, -0.18729553641926786, 0.8942936530985144, 1.6221446859390563, -0.23679260961775775],
@@ -21976,29 +21845,23 @@
                         [0.6978984542278232, -0.564716711173664, -1.2344870326959976, 0.4746205918430345, 1.2629003242206118]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_069": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [-1.5293852380694677, -0.8087585410766108, -0.028892335216845824, -0.031812620615421026, 0.13588441467381032],
@@ -22241,27 +22104,31 @@
                         [-0.4120078408835435, 0.8798765651383129, -1.3919143718249087, 1.0093026481705856, -0.5466340366017004]
                     ]
                 ],
-                "type": "float64"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "float64"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [-1.5293852380694677, -0.8087585410766108, -0.028892335216845824, -0.031812620615421026, 0.13588441467381032],
@@ -22300,29 +22167,23 @@
                         [-1.1854623621957867, -0.09770447331534497, 2.073641152482495, 1.187691408968838, 1.801101807567563]
                     ]
                 ],
-                "type": "float64"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "float64"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_070": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -22565,27 +22426,31 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "bool"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int32"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int32"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int32"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int32"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int32"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int32"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -22624,29 +22489,23 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     },
     "Slice_071": {
-        "graph_name": "Slice_Graph",
-        "inputs": {
-            "data": {
+        "name": "Slice_Graph",
+        "graph": {
+            "inputs": [{
+                "name": "data",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -22889,27 +22748,31 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            },
-            "starts": {
+                "shape": [20, 10, 5],
+                "data_type": "bool"
+            }, {
+                "name": "starts",
                 "data": [0, 0],
-                "type": "int64"
-            },
-            "ends": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "ends",
                 "data": [3, 10],
-                "type": "int64"
-            },
-            "axes(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "axes(optional)",
                 "data": [0, 1],
-                "type": "int64"
-            },
-            "steps(optional)": {
+                "shape": [2],
+                "data_type": "int64"
+            }, {
+                "name": "steps(optional)",
                 "data": [1, 1],
-                "type": "int64"
-            }
-        },
-        "outputs": {
-            "output": {
+                "shape": [2],
+                "data_type": "int64"
+            }],
+            "outputs": [{
+                "name": "output",
                 "data": [
                     [
                         [true, true, true, true, true],
@@ -22948,23 +22811,16 @@
                         [true, true, true, true, true]
                     ]
                 ],
-                "type": "bool"
-            }
-        },
-        "Slice_Node": {
-            "Action": "Add",
-            "Category": "Node",
-            "Type": "Slice",
-            "inputs": {
-                "data": "data",
-                "starts": "starts",
-                "ends": "ends",
-                "axes(optional)": "axes(optional)",
-                "steps(optional)": "steps(optional)"
-            },
-            "outputs": {
-                "output": "output"
-            }
+                "shape": [3, 10, 5],
+                "data_type": "bool"
+            }],
+            "nodes": [{
+                "name": "Slice_Node",
+                "op_type": "Slice",
+                "inputs": ["data", "starts", "ends", "axes(optional)", "steps(optional)"],
+                "outputs": ["output"],
+                "attributes": {}
+            }]
         }
     }
 }
