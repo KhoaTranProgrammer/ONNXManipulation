@@ -219,32 +219,36 @@ def GetAtrributeValue(attribute):
 
 def ConvertONNXToJson(graph, output_path, store_npy=False):
     graph_dictionary = {}
-    inputs = {}
-    outputs = {}
+    inputs = []
+    outputs = []
+    nodes = []
 
-    graph_dictionary["graph_name"] = graph.name
+    graph_dictionary["name"] = graph.name
+    graph_dictionary["graph"] = {}
 
+    # Create initializers
+    initializer_dic_array = []
     for initializer in graph.initializer:
         init_dic = {}
-        init_dic["Action"] = "Add"
-        init_dic["Category"] = "Initializer"
 
-        tensor_dic = {}
         data = onnx.numpy_helper.to_array(initializer)
         if store_npy:
             npy_data = {}
             npy_data["npy"] = f'{initializer.name}.npy'
             npy_data["npy"] = (npy_data["npy"]).replace("::", "_")
             np.save(npy_data["npy"], data)
-            tensor_dic["data"] = npy_data
+            init_dic["data"] = npy_data
         else:
             data = onnx.numpy_helper.to_array(initializer)
-            tensor_dic["data"] = data.tolist()
-        tensor_dic["type"] = str(data.dtype)
+            init_dic["data"] = data.tolist()
+        init_dic["name"] = initializer.name
+        init_dic["shape"] = data.shape
+        init_dic["data_type"] = str(data.dtype)
 
-        init_dic["tensor"] = tensor_dic
+        initializer_dic_array.append(init_dic)
 
-        graph_dictionary[initializer.name] = init_dic
+    if initializer_dic_array != []:
+        graph_dictionary["graph"]["initializers"] = initializer_dic_array
 
     for input in graph.input:
         input_shape = []
@@ -254,9 +258,13 @@ def ConvertONNXToJson(graph, output_path, store_npy=False):
             else:
                 input_shape.append(d.dim_value)
         input_dic = {}
-        input_dic["data"] = {"dimensions": input_shape}
-        input_dic["type"] = NumpyDataTypeFromTensor(input.type.tensor_type.elem_type)
-        inputs[input.name] = input_dic
+        input_dic["name"] = input.name
+        input_dic["shape"] = input_shape
+        input_dic["data_type"] = NumpyDataTypeFromTensor(input.type.tensor_type.elem_type)
+        inputs.append(input_dic)
+
+    if inputs != []:
+        graph_dictionary["graph"]["inputs"] = inputs
 
     for output in graph.output:
         output_shape = []
@@ -266,31 +274,26 @@ def ConvertONNXToJson(graph, output_path, store_npy=False):
             else:
                 output_shape.append(d.dim_value)
         output_dic = {}
-        output_dic["data"] = {"dimensions": output_shape}
-        output_dic["type"] = NumpyDataTypeFromTensor(output.type.tensor_type.elem_type)
-        outputs[output.name] = output_dic
-    
-    graph_dictionary["inputs"] = inputs
-    graph_dictionary["outputs"] = outputs
+        output_dic["name"] = output.name
+        output_dic["shape"] = output_shape
+        output_dic["data_type"] = NumpyDataTypeFromTensor(output.type.tensor_type.elem_type)
+        outputs.append(output_dic)
+
+    if outputs != []:
+        graph_dictionary["graph"]["outputs"] = outputs
 
     for node in graph.node:
         node_dic = {}
-        node_dic["Action"] = "Add"
-        node_dic["Category"] = "Node"
-        node_dic["Type"] = node.op_type
+        node_dic["name"] = node.name
+        node_dic["op_type"] = node.op_type
 
-        input_dic = {}
+        input_dic = []
         for nodeinput in node.input:
-            inputname = nodeinput
-            index = 0
-            while inputname in input_dic:
-                inputname = f'{nodeinput}_{index}'
-                index = index + 1
-            input_dic[inputname] = nodeinput
+            input_dic.append(nodeinput)
 
-        output_dic = {}
+        output_dic = []
         for nodeoutput in node.output:
-            output_dic[nodeoutput] = nodeoutput
+            output_dic.append(nodeoutput)
 
         node_dic["inputs"] = input_dic
         node_dic["outputs"] = output_dic
@@ -319,11 +322,16 @@ def ConvertONNXToJson(graph, output_path, store_npy=False):
             data_list = data_list.reshape(dimension)
             node_dic["values"] = data_list.tolist()
         else:
+            attributes = {}
             for attribute in node.attribute:
                 result = GetAtrributeValue(attribute)
-                node_dic[attribute.name] = result
+                attributes[attribute.name] = result
+            if attributes != {}:
+                node_dic["attributes"] = attributes
 
-        graph_dictionary[node.name] = node_dic
+        nodes.append(node_dic)
+
+    graph_dictionary["graph"]["nodes"] = nodes
 
     with open(output_path, "w") as fp:
         json.dump(graph_dictionary, fp, indent = 4)
@@ -345,20 +353,21 @@ class ONMAGraph:
         return make_tensor_value_info(name, type, dimension)
 
     def ONMAModel_UpdateGraph(self, data):
-        for initializer in data["graph"]["initializers"]:
-            if "data" in initializer:
-                try:
-                    initializer["data"] = np.array(initializer["data"], dtype=initializer["data_type"])
-                except:
-                    if "npy" in initializer["data"]:
-                        data_fromnpy = np.load(initializer["data"]["npy"], allow_pickle=True)
-                        initializer["data"] = data_fromnpy.tolist()
-                    else: # "data": "np.random.rand(1, 2, 16, 16).astype(np.float32)"
-                        initializer["data"] = eval(initializer["data"])
-                        initializer["data_type"] = (str((initializer["data"]).dtype))
-            else:
-                initializer["data"] = np.random.randn(*initializer["shape"]).astype(initializer["data_type"])
-            UpdateInitializer(self._graph.initializer, initializer["name"], initializer)
+        if "initializers" in data["graph"]:
+            for initializer in data["graph"]["initializers"]:
+                if "data" in initializer:
+                    try:
+                        initializer["data"] = np.array(initializer["data"], dtype=initializer["data_type"])
+                    except:
+                        if "npy" in initializer["data"]:
+                            data_fromnpy = np.load(initializer["data"]["npy"], allow_pickle=True)
+                            initializer["data"] = data_fromnpy.tolist()
+                        else: # "data": "np.random.rand(1, 2, 16, 16).astype(np.float32)"
+                            initializer["data"] = eval(initializer["data"])
+                            initializer["data_type"] = (str((initializer["data"]).dtype))
+                else:
+                    initializer["data"] = np.random.randn(*initializer["shape"]).astype(initializer["data_type"])
+                UpdateInitializer(self._graph.initializer, initializer["name"], initializer)
 
         for node in data["graph"]["nodes"]:
             UpdateNode(self._graph, node["name"], node)
