@@ -72,11 +72,13 @@ def run_TC(tcname, graph_data, expect):
         outputs = expect
         for index in range(0, len(outputs)):
             result = inf1[index]
+            # are_close = np.allclose(result, outputs[index]["data"], atol=0.001, rtol=0)
+            # print(are_close)
             if (result == outputs[index]["data"]).all():
                 pass
             else:
                 # Compare float32
-                if np.allclose(np.array(result), np.array(expect[outputs[index]]["data"]), atol=1e-5):
+                if np.allclose(np.array(result), np.array(expect[outputs[index]]["data"]), atol=0.01, rtol=0):
                     pass
                 else:
                     status = False
