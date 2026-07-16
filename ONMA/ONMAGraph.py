@@ -8,10 +8,10 @@ from onnx.numpy_helper import from_array
 from onnx.checker import check_model
 from onnxruntime import InferenceSession
 from ONMA.ONMANode import ONMANode
-from ONMA.ONMAGraph_Internal import (
-    NumpyDataTypeFromTensor, GetTensorDataTypeFromnp, CreateInitializerTensor,
-    GetInitializerByName, GetPreviousNodeFromInputName
-)
+from ONMA.ONMAGraph_Internal import \
+    NumpyDataTypeFromTensor, GetTensorDataTypeFromnp, CreateInitializerTensor,  \
+    GetInitializerByName, GetPreviousNodeFromInputName, NextNode, \
+    checkOneCondition, checkConditionOfSearchBy, UpdateGraphUsingPattern
 
 def UpdateInitializer(initializers, name, data):
     # Get the initializer by name
@@ -85,18 +85,18 @@ def UpdateNode(graph, name, data):
                 
                 # Decide input
                 try:
-                    if data["inputs"]: inputs = list((data["inputs"]).values())
+                    if data["inputs"]: inputs = data["inputs"]
                 except:
                     inputs = node.input
 
                 # Decide output
                 try:
-                    if data["outputs"]: outputs = list((data["outputs"]).values())
+                    if data["outputs"]: outputs = data["outputs"]
                 except:
                     outputs = node.output
 
                 onma_node.ONMANode_MakeNode(
-                    data["Type"], inputs=inputs, outputs=outputs, name=name
+                    node.op_type, inputs=inputs, outputs=outputs, name=name
                 )
 
                 for attribute in node.attribute:
@@ -271,24 +271,36 @@ class ONMAGraph:
         return make_tensor_value_info(name, type, dimension)
 
     def ONMAModel_UpdateGraph(self, data):
-        if "initializers" in data["graph"]:
-            for initializer in data["graph"]["initializers"]:
-                if "data" in initializer:
-                    try:
-                        initializer["data"] = np.array(initializer["data"], dtype=initializer["data_type"])
-                    except:
-                        if "npy" in initializer["data"]:
-                            data_fromnpy = np.load(initializer["data"]["npy"], allow_pickle=True)
-                            initializer["data"] = data_fromnpy.tolist()
-                        else: # "data": "np.random.rand(1, 2, 16, 16).astype(np.float32)"
-                            initializer["data"] = eval(initializer["data"])
-                            initializer["data_type"] = (str((initializer["data"]).dtype))
-                else:
-                    initializer["data"] = np.random.randn(*initializer["shape"]).astype(initializer["data_type"])
-                UpdateInitializer(self._graph.initializer, initializer["name"], initializer)
+        if "graph" in data:
+            if "initializers" in data["graph"]:
+                for initializer in data["graph"]["initializers"]:
+                    if "data" in initializer:
+                        try:
+                            initializer["data"] = np.array(initializer["data"], dtype=initializer["data_type"])
+                        except:
+                            if "npy" in initializer["data"]:
+                                data_fromnpy = np.load(initializer["data"]["npy"], allow_pickle=True)
+                                initializer["data"] = data_fromnpy.tolist()
+                            else: # "data": "np.random.rand(1, 2, 16, 16).astype(np.float32)"
+                                initializer["data"] = eval(initializer["data"])
+                                initializer["data_type"] = (str((initializer["data"]).dtype))
+                    else:
+                        initializer["data"] = np.random.randn(*initializer["shape"]).astype(initializer["data_type"])
+                    UpdateInitializer(self._graph.initializer, initializer["name"], initializer)
 
-        for node in data["graph"]["nodes"]:
-            UpdateNode(self._graph, node["name"], node)
+            if "nodes" in data["graph"]:
+                for node in data["graph"]["nodes"]:
+                    UpdateNode(self._graph, node["name"], node)
+        else:
+            for item in data:
+                if "SearchBy" in data[item] and "ReplaceBy" in data[item]:
+                    decompose_pattern = UpdateGraphUsingPattern(self._graph, data[item])
+                    if decompose_pattern != None:
+                        return self.ONMAModel_UpdateGraph(decompose_pattern)
+                    else:
+                        return False
+        
+        return True
 
     def ONMAGraph_CreateNetworkFromGraph(self, data):
         # Remove empty input
