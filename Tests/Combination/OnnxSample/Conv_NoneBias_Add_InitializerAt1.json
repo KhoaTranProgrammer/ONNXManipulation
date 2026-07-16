@@ -1,0 +1,47 @@
+{
+    "name": "Conv_Add_Graph",
+    "graph": {
+        "inputs": [
+            {
+                "name": "X",
+                "shape": [1, 2, 8, 8],
+                "data_type": "float32"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "Y",
+                "shape": [1, 2, 6, 6],
+                "data_type": "float32"
+            }
+        ],
+        "initializers": [
+            {
+                "name": "W",
+                "data_type": "float32",
+                "shape": [2, 2, 3, 3],
+                "data": "np.random.randn(2, 2, 3, 3).astype(np.float32)"
+            },
+            {
+                "name": "C",
+                "data_type": "float32",
+                "shape": [1],
+                "data": [3.0]
+            }
+        ],
+        "nodes": [
+            {
+                "name": "Conv_Node",
+                "op_type": "Conv",
+                "inputs": ["X", "W"],
+                "outputs": ["Conv_Node_output"]
+            },
+            {
+                "name": "Add_Node",
+                "op_type": "Add",
+                "inputs": ["Conv_Node_output", "C"],
+                "outputs": ["Y"]
+            }
+        ]
+    }
+}
