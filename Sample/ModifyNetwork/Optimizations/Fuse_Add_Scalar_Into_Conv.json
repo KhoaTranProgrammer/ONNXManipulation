@@ -1,0 +1,80 @@
+{
+    "Conv_Add":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Fuse Add Scalar Into Conv Operation",
+            "============================================================================",
+            "This transformation pattern searches for a Conv operation followed by an Add",
+            "operation where the Add node adds a scalar value to the Conv output. When",
+            "found, this pattern fuses these two operations by:",
+
+            "1. Modifying the Conv node's bias parameter by adding the scalar value",
+            "2. Removing the subsequent Add node",
+            "3. Directing the Conv output directly to the Add node's output",
+
+            "This optimization reduces model complexity and improves inference performance",
+            "by reducing the number of operations and memory allocations.",
+
+            "PRECONDITIONS:",
+            "- Add node must have its second input as an initializer (constant)",
+            "- Add node's second input must be a scalar value",
+            "- Conv node must directly feed into the Add node",
+
+            "RESULT: Single Conv operation with fused bias instead of Conv + Add",
+            "Example:",
+            "- BEFORE (SearchBy):",
+            "   input → Conv[weights, bias] → Add[scalar] → output",
+            "- AFTER (ReplaceBy):",
+            "   input → Conv[weights, fused_bias] → output",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes": [
+                {
+                    "op_type": "Conv"
+                },
+                {
+                    "var": "add_node",
+                    "op_type": "Add",
+                    "inputs": [
+                        "({add_node.input[0]} == {node.output[0]}) or ({add_node.input[1]} == {node.output[0]})",
+                        "((IsInitializer({add_node.input[1]}) == True) and (IsScalar({add_node.input[1]}) == True)) or ((IsInitializer({add_node.input[0]}) == True) and (IsScalar({add_node.input[0]}) == True))"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph": {
+                "initializers": [
+                    {
+                        "name": "rs_axes",
+                        "data": "numpy.add({node.input[2]}, {add_node.input[1]}) or numpy.add({node.input[2]}, {add_node.input[0]}) or numpy.tile(numpy.array({add_node.input[0]}), GetShape(({node.output[0]})[-3])) or numpy.tile(numpy.array({add_node.input[1]}), GetShape(({node.output[0]})[-3]))",
+                        "data_type": "float32"
+                    }
+                ],
+                "nodes": [
+                    {
+                        "name": "{node.name}",
+                        "Action": "Modify",
+                        "inputs": [
+                            "{node.input[0]}",
+                            "{node.input[1]}",
+                            "rs_axes"
+                        ],
+                        "outputs": [
+                            "{add_node.output[0]}"
+                        ]
+                    },
+                    {
+                        "name": "{add_node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}

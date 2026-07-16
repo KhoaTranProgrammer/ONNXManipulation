@@ -1,0 +1,109 @@
+{
+    "Conv_Add":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Softmax with Exp + ReduceSum + Div Operations",
+            "============================================================================",
+            "This transformation pattern replaces a Softmax operation with an equivalent",
+            "computation using three basic operations: Exp, ReduceSum, and Div.",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "Softmax(x, axis=k) = Exp(x) / ReduceSum(Exp(x), axis=k)",
+
+            "TRANSFORMATION STEPS:",
+            "1. Extract the axis attribute from the original Softmax node",
+            "2. Create an Exp operation on the input",
+            "3. Apply ReduceSum on the Exp output along the specified axis",
+            "4. Divide the Exp output by the ReduceSum result using Div",
+            "5. Remove the original Softmax node",
+
+            "BENEFITS:",
+            "- Enables optimization and fusion with other operations",
+            "- Allows backend-specific implementations of Exp, ReduceSum, and Div",
+            "- Supports decomposition for hardware with limited Softmax support",
+            "- Maintains numerical equivalence with the original Softmax",
+
+            "PRECONDITIONS:",
+            "- Input tensor must have the required shape for Softmax computation",
+            "- Axis attribute must be properly specified in the Softmax node",
+
+            "EXAMPLE:",
+            "Input: x = [1.0, 2.0, 3.0], axis=0",
+
+            "Original Softmax computation:",
+            "  Softmax(x) = [e^1, e^2, e^3] / (e^1 + e^2 + e^3)",
+            "            = [2.718, 7.389, 20.086] / 30.193",
+            "            = [0.0900, 0.2447, 0.6652]",
+
+            "Decomposed computation:",
+            "  1. Exp:        exp_result = [e^1, e^2, e^3] = [2.718, 7.389, 20.086]",
+            "  2. ReduceSum:  sum_result = 30.193",
+            "  3. Div:        output = [2.718, 7.389, 20.086] / 30.193",
+            "               = [0.0900, 0.2447, 0.6652]  ✓ Same result",
+
+            "RESULT: Equivalent computation using atomic operations instead of Softmax",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes": [
+                {
+                    "op_type": "Softmax"
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph": {
+                "initializers": [
+                    {
+                        "name": "rs_axes",
+                        "shape": [1],
+                        "data": "{node.attribute[axis]}",
+                        "data_type": "int64"
+                    }
+                ],
+                "nodes": [
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "Exp_replace_for_{node.name}_{node.index}",
+                        "op_type": "Exp",
+                        "inputs": [
+                            "{node.input[0]}"
+                        ],
+                        "outputs": [
+                            "Exp_replace_for_{node.name}_{node.index}_output"
+                        ]
+                    },
+                    {
+                        "name": "ReduceSum_replace_for_{node.name}_{node.index}",
+                        "op_type": "ReduceSum",
+                        "inputs": [
+                            "Exp_replace_for_{node.name}_{node.index}_output",
+                            "rs_axes"
+                        ],
+                        "outputs": [
+                            "ReduceSum_replace_for_{node.name}_{node.index}_output"
+                        ]
+                    },
+                    {
+                        "name": "Div_replace_for_{node.name}_{node.index}",
+                        "op_type": "Div",
+                        "inputs": [
+                            "Exp_replace_for_{node.name}_{node.index}_output",
+                            "ReduceSum_replace_for_{node.name}_{node.index}_output"
+                        ],
+                        "outputs": [
+                            "{node.output[0]}"
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
