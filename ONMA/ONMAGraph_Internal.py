@@ -262,6 +262,7 @@ patterns_replacement = {
     "IsInitializer": {"endWith": ")", "function": "IsInitializer(graph, node_io_value)"},
     "IsScalar": {"endWith": ")", "function": "IsScalar(graph, node_io_value)"},
     "GetShape": {"endWith": ")", "function": "GetShape(graph, function_pattern)"},
+    "GetDataType": {"endWith": ")", "function": "GetDataType(graph, function_pattern)"},
     "numpy": {"endWith": ")", "function": "NumpyProcessing(graph, data)"}
 }
 
@@ -277,6 +278,35 @@ def IsScalar(graph, node_io_value):
             except:
                 pass
     return False
+
+def GetDataType(graph, function_pattern):
+    print(f"GetDataType: {function_pattern}")
+
+    argument = function_pattern.replace("GetDataType", "")
+    argument = argument.replace("(", "")
+    argument = argument.replace(")", "") # GetDataType(X)
+
+    print(f"argument: {argument}")
+
+    data_type = None
+    for value in graph.input:
+        if value.name == argument:
+            data_type = NumpyDataTypeFromTensor(value.type.tensor_type.elem_type)
+    
+    for value in graph.output:
+        if value.name == argument:
+            data_type = NumpyDataTypeFromTensor(value.type.tensor_type.elem_type)
+
+    for vi in graph.value_info:
+        if vi.name == argument:
+            data_type = NumpyDataTypeFromTensor(vi.type.tensor_type.elem_type)
+    
+    for initializer in graph.initializer:
+        if initializer.name == argument:
+            data_type = NumpyDataTypeFromTensor(initializer.data_type)
+
+    return data_type
+
 
 def GetShape(graph, data):
     print(f"GetShape: {data}")
