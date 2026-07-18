@@ -1,0 +1,114 @@
+{
+    "Abs":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Abs with Mul + Relu + Add operations",
+            "============================================================================",
+            "This transformation pattern replaces an Abs operation with an equivalent",
+            "computation using three basic operations: Mul, Relu, and Add.",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "Abs(x) = Relu(x) + Relu(-x)",
+
+            "TRANSFORMATION STEPS:",
+            "1. Create a negation of the original input using Mul with -1",
+            "2. Apply Relu to the negated input",
+            "3. Apply Relu to the original input",
+            "4. Add the two Relu results together",
+            "5. Remove the original Abs node",
+
+            "BENEFITS:",
+            "- Enables backends that may not support Abs to use basic arithmetic operations",
+            "- Supports decomposition for hardware with limited Abs support",
+            "- Preserves semantic equivalence of the original Abs operation",
+
+            "PRECONDITIONS:",
+            "- Input tensor must be compatible with elementwise Mul, Relu, and Add",
+
+            "EXAMPLE:",
+            "Input: x = [1.0, -2.0, 0.5]",
+            "Original Abs computation:",
+            "  Abs(x) = [1.0, 2.0, 0.5]",
+            "Decomposed computation:",
+            "  Mul:        neg_x = x * -1 = [-1.0, 2.0, -0.5]",
+            "  Relu(neg_x)= [0.0, 2.0, 0.0]",
+            "  Relu(x):    [1.0, 0.0, 0.5]",
+            "  Add:        output = [1.0, 2.0, 0.5]",
+            "Result: Equivalent output preserved by Mul, Relu, and Add operations",
+
+            "RESULT: Equivalent computation using atomic operations instead of Abs",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes": [
+                {
+                    "op_type": "Abs"
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph": {
+                "initializers": [
+                    {
+                        "name": "mul_initializer",
+                        "shape": [1],
+                        "data": [-1],
+                        "data_type": "GetDataType({node.input[0]})"
+                    }
+                ],
+                "nodes": [
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "Mul_replace_for_{node.name}_{node.index}",
+                        "op_type": "Mul",
+                        "inputs": [
+                            "{node.input[0]}",
+                            "mul_initializer"
+                        ],
+                        "outputs": [
+                            "Mul_replace_for_{node.name}_{node.index}_output"
+                        ]
+                    },
+                    {
+                        "name": "Relu_1_replace_for_{node.name}_{node.index}",
+                        "op_type": "Relu",
+                        "inputs": [
+                            "Mul_replace_for_{node.name}_{node.index}_output"
+                        ],
+                        "outputs": [
+                            "Relu_1_replace_for_{node.name}_{node.index}_output"
+                        ]
+                    },
+                    {
+                        "name": "Relu_2_replace_for_{node.name}_{node.index}",
+                        "op_type": "Relu",
+                        "inputs": [
+                            "{node.input[0]}"
+                        ],
+                        "outputs": [
+                            "Relu_2_replace_for_{node.name}_{node.index}_output"
+                        ]
+                    },
+                    {
+                        "name": "Add_replace_for_{node.name}_{node.index}",
+                        "op_type": "Add",
+                        "inputs": [
+                            "Relu_1_replace_for_{node.name}_{node.index}_output",
+                            "Relu_2_replace_for_{node.name}_{node.index}_output"
+                        ],
+                        "outputs": [
+                            "{node.output[0]}"
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

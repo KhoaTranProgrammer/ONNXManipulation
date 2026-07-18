@@ -1,0 +1,90 @@
+{
+    "Abs":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Abs with Max and Mul operations",
+            "============================================================================",
+            "This transformation pattern replaces an Abs operation with an equivalent",
+            "computation using two basic operations: Mul and Max.",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "Abs(x) = Max(x, -x)",
+
+            "TRANSFORMATION STEPS:",
+            "1. Create a negation of the original input using Mul with -1",
+            "2. Compare the original input and the negated input using Max",
+            "3. Remove the original Abs node",
+
+            "BENEFITS:",
+            "- Enables backends that may not support Abs to use basic arithmetic operations",
+            "- Supports decomposition for hardware with limited Abs support",
+            "- Preserves semantic equivalence of the original Abs operation",
+
+            "PRECONDITIONS:",
+            "- Input tensor must be compatible with elementwise Mul and Max",
+
+            "EXAMPLE:",
+            "Input: x = [1.0, -2.0, 0.5]",
+            "Original Abs computation:",
+            "  Abs(x) = [1.0, 2.0, 0.5]",
+            "Decomposed computation:",
+            "  Mul:        neg_x = x * -1 = [-1.0, 2.0, -0.5]",
+            "  Max:        output = Max(x, neg_x) = [1.0, 2.0, 0.5]",
+            "Result: Equivalent output preserved by Mul and Max operations",
+
+            "RESULT: Equivalent computation using atomic operations instead of Abs",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes": [
+                {
+                    "op_type": "Abs"
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph": {
+                "initializers": [
+                    {
+                        "name": "mul_initializer",
+                        "shape": [1],
+                        "data": [-1],
+                        "data_type": "GetDataType({node.input[0]})"
+                    }
+                ],
+                "nodes": [
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "Mul_replace_for_{node.name}_{node.index}",
+                        "op_type": "Mul",
+                        "inputs": [
+                            "{node.input[0]}",
+                            "mul_initializer"
+                        ],
+                        "outputs": [
+                            "Mul_replace_for_{node.name}_{node.index}_output"
+                        ]
+                    },
+                    {
+                        "name": "Max_replace_for_{node.name}_{node.index}",
+                        "op_type": "Max",
+                        "inputs": [
+                            "{node.input[0]}",
+                            "Mul_replace_for_{node.name}_{node.index}_output"
+                        ],
+                        "outputs": [
+                            "{node.output[0]}"
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
