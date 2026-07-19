@@ -274,18 +274,19 @@ class ONMAGraph:
         if "graph" in data:
             if "initializers" in data["graph"]:
                 for initializer in data["graph"]["initializers"]:
-                    if "data" in initializer:
-                        try:
-                            initializer["data"] = np.array(initializer["data"], dtype=initializer["data_type"])
-                        except:
-                            if "npy" in initializer["data"]:
-                                data_fromnpy = np.load(initializer["data"]["npy"], allow_pickle=True)
-                                initializer["data"] = data_fromnpy.tolist()
-                            else: # "data": "np.random.rand(1, 2, 16, 16).astype(np.float32)"
-                                initializer["data"] = eval(initializer["data"])
-                                initializer["data_type"] = (str((initializer["data"]).dtype))
-                    else:
-                        initializer["data"] = np.random.randn(*initializer["shape"]).astype(initializer["data_type"])
+                    if "Action" not in initializer or initializer["Action"] != "Remove":
+                        if "data" in initializer:
+                            try:
+                                initializer["data"] = np.array(initializer["data"], dtype=initializer["data_type"])
+                            except:
+                                if "npy" in initializer["data"]:
+                                    data_fromnpy = np.load(initializer["data"]["npy"], allow_pickle=True)
+                                    initializer["data"] = data_fromnpy.tolist()
+                                else: # "data": "np.random.rand(1, 2, 16, 16).astype(np.float32)"
+                                    initializer["data"] = eval(initializer["data"])
+                                    initializer["data_type"] = (str((initializer["data"]).dtype))
+                        else:
+                            initializer["data"] = np.random.randn(*initializer["shape"]).astype(initializer["data_type"])
                     UpdateInitializer(self._graph.initializer, initializer["name"], initializer)
 
             if "nodes" in data["graph"]:
