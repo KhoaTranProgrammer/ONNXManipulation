@@ -582,6 +582,7 @@ def refineStringInReplaceBy(g_node, node, index, data):
             pass
         else:
             node_io_value = GetValueFromVariable(g_node, node_io_var)
+            print(f'node_io_value: {node_io_value}')
 
             if node_io_var not in pair_of_node_io_var and node_io_value is not None:
                 pair_of_node_io_var[node_io_var] = node_io_value
@@ -656,7 +657,7 @@ def UpdateGraphUsingPattern(graph, pattern):
                 # print(f'node: {node_dic}')
                 for item in node_dic:
                     # print(f'item: {node_dic[item]}')
-                    if 'inputs' in item or 'outputs' in item or 'attribute' in item:
+                    if 'inputs' in item or 'outputs' in item:
                         # print(f'item key: {item}')
                         refine_input = []
                         for io in node_dic[item]:
@@ -665,12 +666,21 @@ def UpdateGraphUsingPattern(graph, pattern):
                             refine_input.append(refinestring)
                             # node_dic[item][io] = refinestring
                         node_dic[item] = refine_input
+                    elif 'attributes' in item:
+                        for attribute in node_dic[item]:
+                            if isinstance(node_dic[item][attribute], str):
+                                refinestring = refineStringInReplaceBy(g_node, node, index, node_dic[item][attribute])
+                                result = ExecuteFunction(graph, node, refinestring)
+                                print(f'attribute: {attribute} - {refinestring} - result: {result}')
+                                if result is None:
+                                    node_dic[item][attribute] = refinestring
+                                else:
+                                    node_dic[item][attribute] = result
                     else:
                         refinestring = refineStringInReplaceBy(g_node, node, index, node_dic[item])
-                        # print(f'item: {refinestring}')
                         node_dic[item] = refinestring
 
-        print(f'initializers after refine: {pattern["ReplaceBy"]["graph"]["initializers"]}')
+        # print(f'initializers after refine: {pattern["ReplaceBy"]["graph"]["initializers"]}')
         print(f'Nodes after refine: {pattern["ReplaceBy"]["graph"]["nodes"]}')
 
     decompose_pattern = pattern["ReplaceBy"]

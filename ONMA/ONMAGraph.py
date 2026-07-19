@@ -59,7 +59,7 @@ def UpdateNode(graph, name, data):
                     data["values"] = np.array(data["values"])
         except:
             pass
-
+        print(f'UpdateNode: {data}')
         onma_node = ONMANode()
         try:
             onma_node.ONMANode_MakeNode(
@@ -69,7 +69,7 @@ def UpdateNode(graph, name, data):
             onma_node.ONMANode_MakeNode(
                 op_type, inputs=inputs, outputs=outputs, name=name
             )
-
+        print(onma_node.ONMANode_GetNode())
         if len(node_ind) == 0:
             graph.node.append(onma_node.ONMANode_GetNode())
         else:
