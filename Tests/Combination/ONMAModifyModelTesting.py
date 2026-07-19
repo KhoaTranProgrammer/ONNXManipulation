@@ -18,10 +18,15 @@ TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_WithBias_Add_InitializerAt1
 TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_NoneBias_Add_InitializerAt0.json", "Sample/ModifyNetwork/Optimizations/Fuse_Add_Scalar_Into_Conv.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_NoneBias_Add_InitializerAt1.json", "Sample/ModifyNetwork/Optimizations/Fuse_Add_Scalar_Into_Conv.json"])
 
-# Transformations
+# Transformations - Decompose
 TEST_DATA.append(["Tests/Combination/OnnxSample/Softmax.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Softmax_By_Exp_RS_Div.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Abs.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Abs_By_Mul_Max.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Abs.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Abs_By_Mul_Relu_Add.json"])
+
+# Transformations - Compose
+TEST_DATA.append(["Tests/Combination/OnnxSample/Mul_Max_Abs.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Mul_Max_By_Abs.json"])
+TEST_DATA.append(["Tests/Combination/OnnxSample/Mul_Relu_Add_Abs.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Mul_Relu_Add_By_Abs.json"])
+TEST_DATA.append(["Tests/Combination/OnnxSample/Exp_RS_Div_Softmax.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Exp_RS_Div_By_Softmax.json"])
 
 def pytest_generate_tests(metafunc):
     if {"onnxjson", "modifyjson"} <= set(metafunc.fixturenames):

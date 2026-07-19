@@ -1,0 +1,53 @@
+{
+    "name": "Mul_Relu_Add_Abs_Graph",
+    "graph": {
+        "inputs": [
+            {
+                "name": "X",
+                "shape": [1, 2, 8, 8],
+                "data_type": "float32"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "Y",
+                "shape": [1, 2, 8, 8],
+                "data_type": "float32"
+            }
+        ],
+        "initializers": [
+            {
+                "name": "neg_one",
+                "data_type": "float32",
+                "shape": [1],
+                "data": [-1.0]
+            }
+        ],
+        "nodes": [
+            {
+                "name": "Mul_Node",
+                "op_type": "Mul",
+                "inputs": ["X", "neg_one"],
+                "outputs": ["Neg_X"]
+            },
+            {
+                "name": "Relu_Neg_Node",
+                "op_type": "Relu",
+                "inputs": ["Neg_X"],
+                "outputs": ["Relu_Neg_X"]
+            },
+            {
+                "name": "Relu_Pos_Node",
+                "op_type": "Relu",
+                "inputs": ["X"],
+                "outputs": ["Relu_Pos_X"]
+            },
+            {
+                "name": "Add_Node",
+                "op_type": "Add",
+                "inputs": ["Relu_Neg_X", "Relu_Pos_X"],
+                "outputs": ["Y"]
+            }
+        ]
+    }
+}

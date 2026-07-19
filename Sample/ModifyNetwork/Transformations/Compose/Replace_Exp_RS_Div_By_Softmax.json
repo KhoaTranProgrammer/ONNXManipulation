@@ -1,0 +1,113 @@
+{
+    "Exp_RS_Div_Softmax":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Exp + ReduceSum + Div decomposition with Softmax operation",
+            "============================================================================",
+            "This transformation pattern searches for a Softmax decomposition implemented",
+            "as Exp, ReduceSum, and Div, then replaces it with a single Softmax operation.",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "Softmax(x, axis=k) = Exp(x) / ReduceSum(Exp(x), axis=k)",
+
+            "TRANSFORMATION STEPS:",
+            "1. Detect an Exp node on the original input",
+            "2. Detect a ReduceSum node applied to the Exp output along a scalar axis initializer",
+            "3. Detect a Div node that divides the Exp output by the ReduceSum output",
+            "4. Replace the full decomposition with a single Softmax node",
+
+            "BENEFITS:",
+            "- Simplifies the graph by restoring the original Softmax operation",
+            "- Reduces node count and improves readability",
+            "- Enables backend support for fused Softmax kernels",
+
+            "PRECONDITIONS:",
+            "- The ReduceSum node must reduce the Exp output along a scalar axis initializer",
+            "- The Div node must divide Exp(x) by the ReduceSum result",
+
+            "EXAMPLE:",
+            "Input: x = [1.0, 2.0, 3.0], axis=1",
+            "Decomposed computation:",
+            "  Exp:       exp_result = [e^1, e^2, e^3]",
+            "  ReduceSum: sum_result = e^1 + e^2 + e^3",
+            "  Div:       output = exp_result / sum_result",
+            "Restored Softmax computation:",
+            "  Softmax(x, axis=1)",
+
+            "RESULT: Equivalent Softmax node replaces the Exp + ReduceSum + Div decomposition",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes":
+            [
+                {
+                    "op_type": "Exp"
+                },
+                {
+                    "var": "reduce_sum_node",
+                    "op_type": "ReduceSum",
+                    "inputs":
+                    [
+                        "({node.output[0]} == {reduce_sum_node.input[0]})",
+                        "((IsInitializer({reduce_sum_node.input[1]}) == True) and (IsScalar({reduce_sum_node.input[1]}) == True))"
+                    ]
+                },
+                {
+                    "var": "div_node",
+                    "op_type": "Div",
+                    "inputs":
+                    [
+                        "({div_node.input[0]} == {node.output[0]})",
+                        "({div_node.input[1]} == {reduce_sum_node.output[0]})"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph":
+            {
+                "initializers":
+                [
+                    {
+                        "name": "{reduce_sum_node.input[1]}",
+                        "Action": "Remove"
+                    }
+                ],
+                "nodes":
+                [
+                    {
+                        "name": "Softmax_replace_for_{node.name}_{node.index}",
+                        "op_type": "Softmax",
+                        "inputs":
+                        [
+                            "{node.input[0]}"
+                        ],
+                        "outputs":
+                        [
+                            "{div_node.output[0]}"
+                        ],
+                        "attributes": {
+                            "axis": "numpy.array({reduce_sum_node.input[1]})[0]"
+                        }
+                    },
+                    {
+                        "name": "{div_node.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{reduce_sum_node.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
