@@ -430,7 +430,7 @@ def GetValueFromVariable(g_node, one_input):
 # Case 2: condition inside "IsInitializer({add_node.input[1]})"
 # Case 3: combination of 1&2 "{node.output[0]} and IsInitializer({add_node.input[1]})"
 def CheckIOCondition(graph, g_node, one_input):
-    # print(f"CheckIOCondition: {one_input}")
+    print(f"CheckIOCondition: {one_input}")
 
     # Detect and replace node_io_var to value "{node.output[0]}" -> "C"
     pattern = re.compile("{")
@@ -555,8 +555,9 @@ def checkConditionOfSearchBy(graph, pattern):
                         target_node = node
                         index = i
                         g_node["node"] = node
-                else:
-                    return status, target_node, index
+                    break
+                # else:
+                #     return status, target_node, index
 
     return status, target_node, index
 
@@ -582,7 +583,7 @@ def refineStringInReplaceBy(g_node, node, index, data):
             pass
         else:
             node_io_value = GetValueFromVariable(g_node, node_io_var)
-            print(f'node_io_value: {node_io_value}')
+            # print(f'node_io_value: {node_io_value}')
 
             if node_io_var not in pair_of_node_io_var and node_io_value is not None:
                 pair_of_node_io_var[node_io_var] = node_io_value
