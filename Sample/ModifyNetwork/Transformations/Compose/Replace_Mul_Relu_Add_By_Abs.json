@@ -52,7 +52,7 @@
                     "op_type": "Relu",
                     "inputs":
                     [
-                        "({node.output[0]} == {add_node.input[0]})"
+                        "({node.input[0]} == {relu2_node.output[0]})"
                     ]
                 },
                 {
@@ -60,8 +60,7 @@
                     "op_type": "Mul",
                     "inputs":
                     [
-                        "((IsInitializer({node.input[0]}) == True) and (IsScalar({node.input[0]}) == True)) or ((IsInitializer({node.input[1]}) == True) and (IsScalar({node.input[1]}) == True))",
-                        "(( {node.input[0]} == {relu2_node.input[0]} ) or ( {node.input[1]} == {relu2_node.input[0]} ))"
+                        "((IsInitializer({mul_node.input[0]}) == True) and (IsScalar({mul_node.input[0]}) == True)) or ((IsInitializer({mul_node.input[1]}) == True) and (IsScalar({mul_node.input[1]}) == True))"
                     ]
                 },
                 {
@@ -69,8 +68,7 @@
                     "op_type": "Relu",
                     "inputs":
                     [
-                        "({node.output[0]} == {add_node.input[1]})",
-                        "({node.input[0]} == {mul_node.output[0]})"
+                        "({node.input[1]} == {relu1_node.output[0]})"
                     ]
                 }
             ]
@@ -82,7 +80,7 @@
                 "initializers":
                 [
                     {
-                        "name": "neg_one",
+                        "name": "{mul_node.input[1]}",
                         "Action": "Remove"
                     }
                 ],
@@ -93,16 +91,12 @@
                         "op_type": "Abs",
                         "inputs":
                         [
-                            "{relu2_node.input[0]}"
+                            "{relu1_node.input[0]}"
                         ],
                         "outputs":
                         [
                             "{node.output[0]}"
                         ]
-                    },
-                    {
-                        "name": "{node.name}",
-                        "Action": "Remove"
                     },
                     {
                         "name": "{relu1_node.name}",
@@ -114,6 +108,10 @@
                     },
                     {
                         "name": "{mul_node.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{node.name}",
                         "Action": "Remove"
                     }
                 ]

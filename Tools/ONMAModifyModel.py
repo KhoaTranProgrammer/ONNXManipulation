@@ -75,7 +75,10 @@ def main():
 
     equivalent = compare_outputs(output1, output2)
 
-    if equivalent:
+    model_input = onnx.load(args.input)
+    model_output = onnx.load(args.output)
+    
+    if equivalent and (model_input.SerializeToString() != model_output.SerializeToString()):
         print("Result: Equivalent")
     else:
         print("Result: NOT Equivalent")
