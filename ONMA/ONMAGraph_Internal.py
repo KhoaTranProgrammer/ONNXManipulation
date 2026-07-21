@@ -271,8 +271,20 @@ patterns_replacement = {
     "IsScalar": {"endWith": ")", "function": "IsScalar(graph, node_io_value)"},
     "GetShape": {"endWith": ")", "function": "GetShape(graph, function_pattern)"},
     "GetDataType": {"endWith": ")", "function": "GetDataType(graph, function_pattern)"},
+    "CheckInitializer": {"endWith": ")", "function": "CheckInitializer(graph, function_pattern)"},
     "numpy": {"endWith": ")", "function": "NumpyProcessing(graph, data)"}
 }
+
+# CheckInitializer(neg_one)
+def CheckInitializer(graph, function_pattern):
+    # print(f'CheckInitializer: {function_pattern}')
+    argument = function_pattern.replace("CheckInitializer", "")
+    argument = argument.replace("(", "")
+    argument = argument.replace(")", "")
+
+    index, _ = GetInitializerByName(graph.initializer, argument)
+    if index == -1: return None
+    return argument
 
 # check initializer is scalar
 # single value is scalar, array with 1 item also scalar

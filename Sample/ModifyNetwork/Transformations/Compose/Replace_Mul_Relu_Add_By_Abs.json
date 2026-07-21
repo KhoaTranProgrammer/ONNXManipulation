@@ -80,7 +80,7 @@
                 "initializers":
                 [
                     {
-                        "name": "{mul_node.input[1]}",
+                        "name": "CheckInitializer({mul_node.input[0]}) or CheckInitializer({mul_node.input[1]})",
                         "Action": "Remove"
                     }
                 ],
