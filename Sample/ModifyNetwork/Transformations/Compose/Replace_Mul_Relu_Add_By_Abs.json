@@ -91,7 +91,7 @@
                         "op_type": "Abs",
                         "inputs":
                         [
-                            "{relu1_node.input[0]}"
+                            "CheckInput({mul_node.input[1]}) or CheckInput({mul_node.input[0]})"
                         ],
                         "outputs":
                         [

@@ -272,8 +272,19 @@ patterns_replacement = {
     "GetShape": {"endWith": ")", "function": "GetShape(graph, function_pattern)"},
     "GetDataType": {"endWith": ")", "function": "GetDataType(graph, function_pattern)"},
     "CheckInitializer": {"endWith": ")", "function": "CheckInitializer(graph, function_pattern)"},
+    "CheckInput": {"endWith": ")", "function": "CheckInput(graph, function_pattern)"},
     "numpy": {"endWith": ")", "function": "NumpyProcessing(graph, data)"}
 }
+
+def CheckInput(graph, function_pattern):
+    # print(f'CheckInput: {function_pattern}')
+    argument = function_pattern.replace("CheckInput", "")
+    argument = argument.replace("(", "")
+    argument = argument.replace(")", "")
+
+    index, _ = GetInitializerByName(graph.initializer, argument)
+    if index == -1: return argument
+    return None
 
 # CheckInitializer(neg_one)
 def CheckInitializer(graph, function_pattern):
@@ -676,7 +687,14 @@ def UpdateGraphUsingPattern(graph, pattern):
                         for io in node_dic[item]:
                             refinestring = refineStringInReplaceBy(g_node, node, index, io)
                             # print(f'io: {io} - {refinestring}')
-                            refine_input.append(refinestring)
+                            function_list = refinestring.split("or")
+                            for one_function in function_list:
+                                print(f'one_function: {one_function}')
+                                result = ExecuteFunction(graph, node, one_function)
+                                if result is not None:
+                                    refine_input.append(result)
+                                    break
+                            if refine_input == []: refine_input.append(refinestring)
                             # node_dic[item][io] = refinestring
                         node_dic[item] = refine_input
                     elif 'attributes' in item:
