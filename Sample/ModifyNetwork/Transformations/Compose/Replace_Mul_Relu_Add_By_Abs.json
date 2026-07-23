@@ -60,7 +60,7 @@
                     "op_type": "Mul",
                     "inputs":
                     [
-                        "((IsInitializer({mul_node.input[0]}) == True) and (IsScalar({mul_node.input[0]}) == True)) or ((IsInitializer({mul_node.input[1]}) == True) and (IsScalar({mul_node.input[1]}) == True))"
+                        "((IsInitializer({mul_node.input[0]}) == True) and (numpy.array_equal({mul_node.input[0]}, [-1]) == True)) or ((IsInitializer({mul_node.input[1]}) == True) and (numpy.array_equal({mul_node.input[1]}, [-1]) == True))"
                     ]
                 },
                 {

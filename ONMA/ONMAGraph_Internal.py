@@ -276,6 +276,12 @@ patterns_replacement = {
     "numpy": {"endWith": ")", "function": "NumpyProcessing(graph, data)"}
 }
 
+def checkPatternIsAvailable(function_pattern):
+    for item in patterns_replacement:
+        if item in function_pattern:
+            return True
+    return False
+
 def CheckInput(graph, function_pattern):
     # print(f'CheckInput: {function_pattern}')
     argument = function_pattern.replace("CheckInput", "")
@@ -365,6 +371,7 @@ def GetShape(graph, data):
 # Execute numpy function
 # Input: numpy.tile(numpy.array(C), 2)
 def NumpyProcessing(graph, data):
+    data = data.replace("\"", "")
     print(f"This is numpy data: {data}")
 
     pattern = re.compile("\\(")
@@ -388,6 +395,8 @@ def NumpyProcessing(graph, data):
 
     try:
         arr_final = eval(data)
+        if not isinstance(arr, np.ndarray):
+            return arr_final
         return arr_final.tolist()
     except Exception as e:
         print(f"Error occurred while evaluating numpy data: {e}")
@@ -501,7 +510,11 @@ def CheckIOCondition(graph, g_node, one_input):
                 # print(match)
                 function_pattern = substring_from_index_to_pattern(one_input, match.start(), ")")
                 node_io_value = cut_substring(function_pattern, "(", ")")
-                status = eval(patterns_replacement[item]["function"])
+                if "numpy" in item: # Block processing for numpy function
+                    data = function_pattern
+                    status = eval(patterns_replacement[item]["function"])
+                else:
+                    status = eval(patterns_replacement[item]["function"])
                 print(f'function_pattern: {function_pattern}, node_io_value: {node_io_value}, status: {status}')
                 if function_pattern not in pair_of_function_and_result:
                     pair_of_function_and_result[function_pattern] = status
@@ -569,10 +582,12 @@ def checkConditionOfSearchBy(graph, pattern):
 
     index = -1
     for item in nodes_list:
+        full_check_status = False
         for i, node in enumerate(graph.node):
             if node.op_type == item["op_type"]:
                 status = checkOneCondition(graph, node, item)
                 if status == True:
+                    full_check_status = True
                     if index == -1:
                         g_node["node"] = node
                         target_node = node
@@ -580,7 +595,9 @@ def checkConditionOfSearchBy(graph, pattern):
                         g_node["node"] = node
                     break
                 # else:
-                #     return status, target_node, index
+                    # return status, target_node, index
+        if full_check_status is False:
+            return False, target_node, index
 
     return status, target_node, index
 
@@ -639,6 +656,7 @@ def ExecuteFunction(graph, node, data):
             except Exception as e:
                 print(f"Error occurred while executing function for item '{item}': {e}")
     print(f"ExecuteFunction: {data} - result: {result}")
+    # if result == None: return data
     return result
 
 def UpdateGraphUsingPattern(graph, pattern):
@@ -687,13 +705,16 @@ def UpdateGraphUsingPattern(graph, pattern):
                         for io in node_dic[item]:
                             refinestring = refineStringInReplaceBy(g_node, node, index, io)
                             # print(f'io: {io} - {refinestring}')
-                            function_list = refinestring.split("or")
+                            function_list = refinestring.split(" or ")
                             for one_function in function_list:
-                                print(f'one_function: {one_function}')
-                                result = ExecuteFunction(graph, node, one_function)
-                                if result is not None:
-                                    refine_input.append(result)
-                                    break
+                                if checkPatternIsAvailable(one_function):
+                                    print(f'one_function: {one_function}')
+                                    result = ExecuteFunction(graph, node, one_function)
+                                    if result is not None:
+                                        refine_input.append(result)
+                                        break
+                                else:
+                                    refine_input.append(refinestring)
                             if refine_input == []: refine_input.append(refinestring)
                             # node_dic[item][io] = refinestring
                         node_dic[item] = refine_input
