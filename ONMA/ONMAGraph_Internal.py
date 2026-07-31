@@ -270,6 +270,9 @@ patterns_replacement = {
     "IsInitializer": {"endWith": ")", "function": "IsInitializer(graph, node_io_value)"},
     "IsScalar": {"endWith": ")", "function": "IsScalar(graph, node_io_value)"},
     "GetShape": {"endWith": ")", "function": "GetShape(graph, function_pattern)"},
+    "GetShapeLen": {"endWith": ")", "function": "GetShapeLen(graph, function_pattern)"},
+    "GetNodeInputScalar": {"endWith": ")", "function": "GetNodeInputScalar(graph, function_pattern)"},
+    "GetNodeInputNoneScalar": {"endWith": ")", "function": "GetNodeInputNoneScalar(graph, function_pattern)"},
     "GetDataType": {"endWith": ")", "function": "GetDataType(graph, function_pattern)"},
     "CheckInitializer": {"endWith": ")", "function": "CheckInitializer(graph, function_pattern)"},
     "CheckInput": {"endWith": ")", "function": "CheckInput(graph, function_pattern)"},
@@ -358,15 +361,75 @@ def GetShape(graph, data):
 
     print(f"argument: {argument} - argument_name: {argument_name} - index: {index}")
 
+    # Merge all value info entries
+    all_value_info = list(graph.value_info) + list(graph.input) + list(graph.output)
+
     shape = []
-    for vi in graph.value_info:
+    for vi in all_value_info:
+        tensor_type = vi.type.tensor_type
         if vi.name == argument_name:
-            shape = [dim.dim_value for dim in vi.type.tensor_type.shape.dim]
+            shape = [d.dim_value if d.HasField("dim_value") else None
+                    for d in tensor_type.shape.dim]
     
     if index is not None:
         shape = shape[int(index)]
 
     return shape
+
+def GetShapeLen(graph, function_pattern):
+    argument = function_pattern.replace("GetShapeLen", "")
+    argument = argument.replace("(", "")
+    argument = argument.replace(")", "") # Conv_Node_output[-3]
+    print(f'argument: {argument}')
+
+    # Merge all value info entries
+    all_value_info = list(graph.value_info) + list(graph.input) + list(graph.output)
+
+    shape = []
+    for vi in all_value_info:
+        tensor_type = vi.type.tensor_type
+        if vi.name == argument:
+            shape = [d.dim_value if d.HasField("dim_value") else None
+                 for d in tensor_type.shape.dim]
+
+    print(f'vi.name: {argument} - shape: {shape} - len: {len(shape)}')
+    return len(shape)
+
+def GetNodeInputScalar(graph, function_pattern):
+    argument = function_pattern.replace("GetNodeInputScalar", "")
+    argument = argument.replace("(", "")
+    argument = argument.replace(")", "")
+
+    # Merge all value info entries
+    all_value_info = list(graph.value_info) + list(graph.input)
+
+    shape = []
+    for vi in all_value_info:
+        tensor_type = vi.type.tensor_type
+        if vi.name == argument:
+            shape = [d.dim_value if d.HasField("dim_value") else None
+                    for d in tensor_type.shape.dim]
+
+    if len(shape) == 1: return argument
+    else: return None
+
+def GetNodeInputNoneScalar(graph, function_pattern):
+    argument = function_pattern.replace("GetNodeInputNoneScalar", "")
+    argument = argument.replace("(", "")
+    argument = argument.replace(")", "")
+    
+    # Merge all value info entries
+    all_value_info = list(graph.value_info) + list(graph.input)
+
+    shape = []
+    for vi in all_value_info:
+        tensor_type = vi.type.tensor_type
+        if vi.name == argument:
+            shape = [d.dim_value if d.HasField("dim_value") else None
+                    for d in tensor_type.shape.dim]
+
+    if len(shape) == 1: return None
+    else: return argument
 
 # Execute numpy function
 # Input: numpy.tile(numpy.array(C), 2)
