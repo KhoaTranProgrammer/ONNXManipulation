@@ -458,7 +458,7 @@ def NumpyProcessing(graph, data):
 
     try:
         arr_final = eval(data)
-        if not isinstance(arr, np.ndarray):
+        if not isinstance(arr_final, np.ndarray):
             return arr_final
         return arr_final.tolist()
     except Exception as e:
@@ -573,15 +573,19 @@ def CheckIOCondition(graph, g_node, one_input):
                 # print(match)
                 function_pattern = substring_from_index_to_pattern(one_input, match.start(), ")")
                 node_io_value = cut_substring(function_pattern, "(", ")")
+                function_pattern_name = function_pattern.replace(f'({node_io_value})', "")
+                # if item == function_pattern_name:
                 if "numpy" in item: # Block processing for numpy function
                     data = function_pattern
                     status = eval(patterns_replacement[item]["function"])
+                    if function_pattern not in pair_of_function_and_result:
+                        pair_of_function_and_result[function_pattern] = status
                 else:
-                    status = eval(patterns_replacement[item]["function"])
-                print(f'function_pattern: {function_pattern}, node_io_value: {node_io_value}, status: {status}')
-                if function_pattern not in pair_of_function_and_result:
-                    pair_of_function_and_result[function_pattern] = status
-                # one_input = one_input.replace(function_pattern, str(status))
+                    if item == function_pattern_name:
+                        status = eval(patterns_replacement[item]["function"])
+                        print(f'function_pattern: {function_pattern}, node_io_value: {node_io_value}, status: {status}')
+                        if function_pattern not in pair_of_function_and_result:
+                            pair_of_function_and_result[function_pattern] = status
 
     for one_function in pair_of_function_and_result:
         one_input = one_input.replace(one_function, str(pair_of_function_and_result[one_function]))
@@ -700,6 +704,7 @@ def refineStringInReplaceBy(g_node, node, index, data):
 # Execute function
 def ExecuteFunction(graph, node, data):
     result = None
+    function_pattern_history = {}
     for item in patterns_replacement:
         if item in data:
             # print(f"ExecuteFunction: {item} - {data}")
@@ -711,10 +716,15 @@ def ExecuteFunction(graph, node, data):
                     matches = re.finditer(pattern, data)
                     for match in matches:
                         function_pattern = substring_from_index_to_next_open_close_parentheses(data, match.start(), ")")
-                        result = eval(patterns_replacement[item]["function"])
-                        # print(f'function_pattern: {function_pattern} - result: {result}')
-                        data = data.replace(function_pattern, str(result))
-                        print(f"Update: {data} - result: {result}")
+                        if function_pattern not in function_pattern_history:
+                            # function_pattern_history.append(function_pattern)
+                            result = eval(patterns_replacement[item]["function"])
+                            print(f'function_pattern: {function_pattern} - result: {result}')
+                            function_pattern_history[function_pattern] = str(result)
+                            # data = data.replace(function_pattern, str(result))
+                            # print(f"Update: {data} - result: {result}")
+                    for one_pattern in function_pattern_history:
+                        data = data.replace(one_pattern, function_pattern_history[function_pattern])
 
             except Exception as e:
                 print(f"Error occurred while executing function for item '{item}': {e}")
