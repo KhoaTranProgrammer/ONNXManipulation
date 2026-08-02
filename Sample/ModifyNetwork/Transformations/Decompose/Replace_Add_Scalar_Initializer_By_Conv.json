@@ -1,0 +1,115 @@
+{
+    "Add_Scalar_Initializer_By_Conv":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Add Scalar Initializer by Conv Operation",
+            "============================================================================",
+            "This transformation pattern replaces an Add operation that adds a scalar initializer",
+            "to a 4D tensor by an equivalent Conv operation. The Conv uses a 1x1 identity kernel",
+            "and a bias tensor derived from the scalar initializer, preserving the original",
+            "elementwise addition semantics while expressing it through a convolution primitive.",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "Add(X, s) = Conv(X, W, b) where W is an identity kernel of shape [C, C, 1, 1]",
+            "and b is the scalar value broadcasted across output channels.",
+
+            "TRANSFORMATION STEPS:",
+            "1. Find an Add node with one input as a scalar initializer and the other input as a 4D tensor.",
+            "2. Remove the scalar initializer from the Add node.",
+            "3. Create an identity Conv weight tensor W of shape [C, C, 1, 1], where C is the number of channels.",
+            "4. Create a bias initializer b by tiling the scalar across the output channels.",
+            "5. Insert a Conv node that consumes the original tensor input, W, and b.",
+            "6. Remove the original Add node and preserve the same output tensor.",
+
+            "BENEFITS:",
+            "- Expresses scalar addition using a standard convolution primitive.",
+            "- Improves compatibility with backends that prefer Conv-based graph representations.",
+            "- Enables uniform handling of bias addition in graph transformation passes.",
+
+            "PRECONDITIONS:",
+            "- The Add node must have one input that is a scalar initializer.",
+            "- The other Add input must be a 4D tensor with shape [N, C, H, W].",
+            "- The scalar must be broadcastable to the Conv bias shape.",
+
+            "EXAMPLE:",
+            "Input tensor: X with shape [N, C, H, W]",
+            "Scalar initializer: s = 3.0",
+            "Original graph:",
+            "  X ----> Add ----> Y",
+            "            ^",
+            "            |",
+            "            s",
+            "Equivalent replacement:",
+            "  X ----> Conv(W=I_C, b=tile([s], C)) ----> Y",
+            "where W is an identity kernel of shape [C, C, 1, 1] and b is a bias vector",
+            "created by replicating the scalar initializer across C output channels.",
+
+            "RESULT: A Conv-based replacement that preserves the original Add semantics",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes":
+            [
+                {
+                    "op_type": "Add",
+                    "inputs":
+                    [
+                        "(GetShapeLen({node.input[0]}) == 4) or (GetShapeLen({node.input[1]}) == 4)",
+                        "((IsInitializer({node.input[1]}) == True) and (IsScalar({node.input[1]}) == True)) or ((IsInitializer({node.input[0]}) == True) and (IsScalar({node.input[0]}) == True))"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph":
+            {
+                "initializers": [
+                    {
+                        "name": "W",
+                        "data": "numpy.identity(GetShape(({node.output[0]})[-3])).reshape(GetShape(({node.output[0]})[-3]), GetShape(({node.output[0]})[-3]), 1, 1)",
+                        "data_type": "GetDataType({node.input[0]})"
+                    },
+                    {
+                        "name": "b",
+                        "data": "np.tile(numpy.array({node.input[0]}), GetShape(({node.output[0]})[-3])) or np.tile(numpy.array({node.input[1]}), GetShape(({node.output[0]})[-3]))",
+                        "data_type": "GetDataType({node.input[0]})"
+                    },
+                    {
+                        "name": "CheckInitializer({node.input[0]}) or CheckInitializer({node.input[1]})",
+                        "Action": "Remove"
+                    }
+                ],
+                "nodes":
+                [
+                    {
+                        "name": "Conv_replace_for_{node.name}_{node.index}",
+                        "op_type": "Conv",
+                        "inputs":
+                        [
+                            "CheckInput({node.input[1]}) or CheckInput({node.input[0]})",
+                            "W",
+                            "b"
+                        ],
+                        "outputs":
+                        [
+                            "{node.output[0]}"
+                        ],
+                        "attributes": {
+                            "kernel_shape": [1, 1],
+                            "pads": [0, 0, 0, 0],
+                            "strides": [1, 1]
+                        }
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
