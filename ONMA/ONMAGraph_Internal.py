@@ -716,15 +716,24 @@ def ExecuteFunction(graph, node, data):
                     matches = re.finditer(pattern, data)
                     for match in matches:
                         function_pattern = substring_from_index_to_next_open_close_parentheses(data, match.start(), ")")
-                        if function_pattern not in function_pattern_history:
-                            # function_pattern_history.append(function_pattern)
-                            result = eval(patterns_replacement[item]["function"])
-                            print(f'function_pattern: {function_pattern} - result: {result}')
-                            function_pattern_history[function_pattern] = str(result)
-                            # data = data.replace(function_pattern, str(result))
-                            # print(f"Update: {data} - result: {result}")
+                        function_pattern_name = function_pattern.split("(")[0]
+                        if item == function_pattern_name:
+                            # print(f'item: {item} - function_pattern: {function_pattern} - function_pattern_history: {function_pattern_history}')
+                            if function_pattern not in function_pattern_history:
+                                # function_pattern_history.append(function_pattern)
+                                result = eval(patterns_replacement[item]["function"])
+                                print(f'function_pattern: {function_pattern} - result: {result}')
+                                function_pattern_history[function_pattern] = str(result)
+                        else:
+                            # {node.attribute[axis]}
+                            if item == "{node.attribute":
+                                if function_pattern not in function_pattern_history:
+                                    result = eval(patterns_replacement[item]["function"])
+                                    print(f'function_pattern: {function_pattern} - result: {result}')
+                                    function_pattern_history[function_pattern] = str(result)
+
                     for one_pattern in function_pattern_history:
-                        data = data.replace(one_pattern, function_pattern_history[function_pattern])
+                        data = data.replace(one_pattern, function_pattern_history[one_pattern])
 
             except Exception as e:
                 print(f"Error occurred while executing function for item '{item}': {e}")
