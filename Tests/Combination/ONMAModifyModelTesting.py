@@ -23,6 +23,7 @@ TEST_DATA.append(["Tests/Combination/OnnxSample/Softmax.json", "Sample/ModifyNet
 TEST_DATA.append(["Tests/Combination/OnnxSample/Abs.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Abs_By_Mul_Max.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Abs.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Abs_By_Mul_Relu_Add.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Add_2_Input_Scalar.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Add_Scalar_By_Conv.json"])
+TEST_DATA.append(["Tests/Combination/OnnxSample/Add_1_Input_1_Initializer_Scalar.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Add_Scalar_Initializer_By_Conv.json"])
 
 # Transformations - Compose
 TEST_DATA.append(["Tests/Combination/OnnxSample/Mul_Max_Abs.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Mul_Max_By_Abs.json"])
