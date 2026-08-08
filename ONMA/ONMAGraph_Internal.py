@@ -276,8 +276,27 @@ patterns_replacement = {
     "GetDataType": {"endWith": ")", "function": "GetDataType(graph, function_pattern)"},
     "CheckInitializer": {"endWith": ")", "function": "CheckInitializer(graph, function_pattern)"},
     "CheckInput": {"endWith": ")", "function": "CheckInput(graph, function_pattern)"},
+    "CheckUniqueValuesInWidthHeight": {"endWith": ")", "function": "CheckUniqueValuesInWidthHeight(graph, function_pattern)"},
     "numpy": {"endWith": ")", "function": "NumpyProcessing(graph, data)"}
 }
+
+# Check example:
+# [[[[1,1,1],[1,1,1],[1,1,1]],[[2,2,2],[2,2,2],[2,2,2]],[[3,3,3],[3,3,3],[3,3,3]],[[4,4,4],[4,4,4],[4,4,4]],[[5,5,5],[5,5,5],[5,5,5]]]]
+# return True
+def CheckUniqueValuesInWidthHeight(graph, function_pattern):
+    argument = function_pattern.replace("CheckUniqueValuesInWidthHeight", "")
+    argument = argument.replace("(", "")
+    argument = argument.replace(")", "") # CheckUniqueValuesInWidthHeight(X)
+
+    arr = None
+    for initializer in graph.initializer:
+        if initializer.name == argument:
+            arr = numpy_helper.to_array(initializer)
+    
+    if arr is not None:
+        return np.all(arr == arr[..., [0]])
+    else:
+        return False
 
 def checkPatternIsAvailable(function_pattern):
     for item in patterns_replacement:

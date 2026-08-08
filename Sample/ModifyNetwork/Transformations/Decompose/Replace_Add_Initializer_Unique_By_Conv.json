@@ -1,0 +1,120 @@
+{
+    "Add_Scalar_Initializer_By_Conv":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Add Initializer Unique By Conv Operation",
+            "============================================================================",
+            "This transformation pattern replaces an Add operation where one input is an",
+            "initializer with unique values across width and height dimensions by an",
+            "equivalent Conv operation. It expresses the same elementwise addition",
+            "semantics through a convolution primitive that uses identity-like weights",
+            "and a bias tensor derived from the initializer.",
+            "",
+            "EQUIVALENCE:",
+            "Add(X, I) = Conv(X, W, b) when I is a constant initializer that can be",
+            "represented as a broadcastable bias over the convolution output channels.",
+            "",
+            "TRANSFORMATION STEPS:",
+            "1. Detect an Add node whose one input is an initializer and the other input",
+            "   is a tensor value.",
+            "2. Verify the initializer contains unique values in its spatial dimensions",
+            "   using CheckUniqueValuesInWidthHeight.",
+            "3. Create a Conv weight tensor W with shape [C, C, 1, 1, ..., 1] and values",
+            "   that preserve the input tensor channels.",
+            "4. Create a bias initializer b from the unique initializer values.",
+            "5. Replace the Add node with a Conv node that consumes the original tensor",
+            "   input, W, and b.",
+            "6. Remove the original Add node while preserving the Add output tensor.",
+            "",
+            "BENEFITS:",
+            "- Expresses the Add operation using a standard convolution primitive.",
+            "- Improves compatibility with backends that prefer Conv-based graphs.",
+            "- Preserves the original computation while enabling uniform graph",
+            "  transformations.",
+            "",
+            "PRECONDITIONS:",
+            "- One input of the Add node must be an initializer constant.",
+            "- The initializer must have unique spatial values in width and height.",
+            "- The non-initializer input must be compatible with Conv semantics.",
+            "",
+            "EXAMPLE:",
+            "Original graph:",
+            "  X ----> Add ----> Y",
+            "         ^",
+            "         |",
+            "         I (initializer with unique width/height values)",
+            "",
+            "Replacement graph:",
+            "  X ----> Conv(W=identity_kernel, b=converted_initializer) ----> Y",
+            "",
+            "In this example, the Conv uses an identity-like weight tensor W and a",
+            "bias tensor b built from the unique initializer values so that the output",
+            "remains the same as the original Add operation.",
+            "",
+            "RESULT: A Conv-based replacement that preserves the Add semantics",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes":
+            [
+                {
+                    "op_type": "Add",
+                    "inputs":
+                    [
+                        "((IsInitializer({node.input[1]}) == True) and (CheckUniqueValuesInWidthHeight({node.input[1]}) == True)) or ((IsInitializer({node.input[0]}) == True) and (CheckUniqueValuesInWidthHeight({node.input[0]}) == True))"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph":
+            {
+                "initializers": [
+                    {
+                        "name": "W",
+                        "data": "numpy.ones(GetShape(({node.output[0]})[1])).reshape(GetShape(({node.output[0]})[1]), *numpy.ones(GetShapeLen({node.output[0]}) - 1, dtype=int))",
+                        "data_type": "GetDataType({node.input[0]})"
+                    },
+                    {
+                        "name": "b",
+                        "data": "numpy.array(list(dict.fromkeys(numpy.array({node.input[0]}).flatten()))) or numpy.array(list(dict.fromkeys(numpy.array({node.input[1]}).flatten())))",
+                        "data_type": "GetDataType({node.input[0]})"
+                    },
+                    {
+                        "name": "CheckInitializer({node.input[0]}) or CheckInitializer({node.input[1]})",
+                        "Action": "Remove"
+                    }
+                ],
+                "nodes":
+                [
+                    {
+                        "name": "Conv_replace_for_{node.name}_{node.index}",
+                        "op_type": "Conv",
+                        "inputs":
+                        [
+                            "CheckInput({node.input[1]}) or CheckInput({node.input[0]})",
+                            "W",
+                            "b"
+                        ],
+                        "outputs":
+                        [
+                            "{node.output[0]}"
+                        ],
+                        "attributes": {
+                            "kernel_shape": "numpy.ones(GetShapeLen({node.output[0]}) - 2, dtype=int)",
+                            "group": "GetShape(({node.output[0]})[1]))"
+                        }
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
