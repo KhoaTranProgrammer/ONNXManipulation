@@ -1,0 +1,44 @@
+{
+    "name": "Conv_IdentityBias_Graph",
+    "graph": {
+        "inputs": [
+            {
+                "name": "X",
+                "shape": [1, 2, 8, 8],
+                "data_type": "float32"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "Y",
+                "shape": [1, 2, 8, 8],
+                "data_type": "float32"
+            }
+        ],
+        "initializers": [
+            {
+                "name": "W",
+                "shape": [2, 2, 1, 1],
+                "data_type": "float32",
+                "data": [[[[1.0]], [[0.0]]], [[[0.0]], [[1.0]]]]
+            },
+            {
+                "name": "b",
+                "shape": [2],
+                "data_type": "float32",
+                "data": [3.0, 3.0]
+            }
+        ],
+        "nodes": [
+            {
+                "name": "Conv_Node",
+                "op_type": "Conv",
+                "inputs": ["X", "W", "b"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "kernel_shape": [1, 1]
+                }
+            }
+        ]
+    }
+}

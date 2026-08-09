@@ -1,0 +1,105 @@
+{
+    "Conv_IdentityWeight_UniqueBias_By_Add_Scalar":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Conv with identity weights and constant bias by Add Scalar operation",
+            "============================================================================",
+            "This transformation pattern restores an Add operation from a Conv node that uses",
+            "an identity weight initializer and a constant bias initializer that is equivalent",
+            "to a tiled scalar value across the output channels.",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "Conv(X, W=I_C, b=tile([s], C)) = X + s",
+            "where W is an identity kernel of shape [C, C, 1, 1, ..., 1] and b is a bias",
+            "vector with the same repeated scalar value for every output channel.",
+
+            "TRANSFORMATION STEPS:",
+            "1. Detect a Conv node whose weight initializer is an identity kernel and whose",
+            "   bias initializer contains the same scalar repeated across channels.",
+            "2. Create a scalar initializer from the repeated bias value.",
+            "3. Replace the Conv node with an Add node consuming the original tensor input",
+            "   and the recovered scalar initializer.",
+            "4. Remove the Conv weights and the expanded bias initializer.",
+
+            "BENEFITS:",
+            "- Restores the original scalar Add representation.",
+            "- Simplifies the graph by removing a Conv-based bias expansion.",
+            "- Improves readability and enables backends that prefer Add over Conv semantics.",
+
+            "PRECONDITIONS:",
+            "- The Conv node must use an identity weight initializer W.",
+            "- The Conv node must have a bias initializer b that is constant across output channels.",
+            "- The first Conv input must be the tensor operand, not an initializer.",
+
+            "EXAMPLE:",
+            "Input tensor: X with shape [N, C, H, W]",
+            "Identity weights: W of shape [C, C, 1, 1]",
+            "Bias initializer: b = [s, s, ..., s] with length C",
+            "Original graph:",
+            "  X -> Conv(X, W, b) -> Y",
+            "Restored graph:",
+            "  X -> Add(X, s) -> Y",
+
+            "RESULT: Equivalent Add node replaces the Conv with identity bias expansion",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes":
+            [
+                {
+                    "op_type": "Conv",
+                    "inputs":
+                    [
+                        "((IsInitializer({node.input[1]}) == True) and (CheckIdentityTensor({node.input[1]}) == True))",
+                        "((IsInitializer({node.input[2]}) == True) and (CheckUniqueValuesInWidthHeight({node.input[2]}) == True))"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph":
+            {
+                "initializers":
+                [
+                    {
+                        "name": "scalar_{node.name}_{node.index}",
+                        "data": "numpy.array([numpy.array({node.input[2]})[0]])",
+                        "data_type": "GetDataType({node.input[2]})"
+                    },
+                    {
+                        "name": "{node.input[1]}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{node.input[2]}",
+                        "Action": "Remove"
+                    }
+                ],
+                "nodes":
+                [
+                    {
+                        "name": "Add_restore_for_{node.name}_{node.index}",
+                        "op_type": "Add",
+                        "inputs":
+                        [
+                            "{node.input[0]}",
+                            "scalar_{node.name}_{node.index}"
+                        ],
+                        "outputs":
+                        [
+                            "{node.output[0]}"
+                        ]
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
