@@ -277,8 +277,26 @@ patterns_replacement = {
     "CheckInitializer": {"endWith": ")", "function": "CheckInitializer(graph, function_pattern)"},
     "CheckInput": {"endWith": ")", "function": "CheckInput(graph, function_pattern)"},
     "CheckUniqueValuesInWidthHeight": {"endWith": ")", "function": "CheckUniqueValuesInWidthHeight(graph, function_pattern)"},
+    "CheckIdentityTensor": {"endWith": ")", "function": "CheckIdentityTensor(graph, function_pattern)"},
     "numpy": {"endWith": ")", "function": "NumpyProcessing(graph, data)"}
 }
+
+def CheckIdentityTensor(graph, function_pattern):
+    argument = function_pattern.replace("CheckIdentityTensor", "")
+    argument = argument.replace("(", "")
+    argument = argument.replace(")", "") # CheckIdentityTensor(X)
+
+    arr = None
+    for initializer in graph.initializer:
+        if initializer.name == argument:
+            arr = numpy_helper.to_array(initializer)
+
+    # [2, 2, 1, 1, 1] -> [2, 2]
+    arr = np.squeeze(arr)
+    if arr is not None:
+        return np.all(arr == np.eye(arr.shape[0]))
+    else:
+        return False
 
 # Check example:
 # [[[[1,1,1],[1,1,1],[1,1,1]],[[2,2,2],[2,2,2],[2,2,2]],[[3,3,3],[3,3,3],[3,3,3]],[[4,4,4],[4,4,4],[4,4,4]],[[5,5,5],[5,5,5],[5,5,5]]]]
