@@ -1,0 +1,96 @@
+{
+    "Conv_IdentityWeight_UniqueBias_By_Add_Initializer":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Conv with identity weights and unique bias by Add initializer",
+            "============================================================================",
+            "This transformation restores an Add operation from a Conv node that uses",
+            "identity weights and a bias initializer with distinct channel values. It",
+            "reverses the Replace_Add_Initializer_Unique_By_Conv decomposition by turning",
+            "the Conv into an Add node that consumes the original tensor input and a new",
+            "initializer that carries the bias values.",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "Conv(X, W=I_C, b) = X + b",
+            "where W is an identity kernel with shape [C, C, 1, 1, ..., 1] and b is a",
+            "bias initializer that encodes the distinct per-channel values.",
+
+            "TRANSFORMATION STEPS:",
+            "1. Detect a Conv node whose weight initializer is an identity kernel.",
+            "2. Ensure the Conv also has a bias initializer.",
+            "3. Replace the Conv with an Add node that consumes the original tensor input",
+            "   and a new initializer carrying the bias values.",
+            "4. Remove the original Conv weights and bias initializer.",
+
+            "BENEFITS:",
+            "- Restores the Add representation of the original initializer-based pattern.",
+            "- Simplifies the graph by removing the Conv-based decomposition.",
+            "- Preserves the original per-channel bias semantics.",
+
+            "PRECONDITIONS:",
+            "- The Conv node must use an identity weight initializer.",
+            "- The Conv node must have a bias initializer.",
+            "- The first Conv input must be the tensor operand.",
+
+            "RESULT: An equivalent Add node replaces the Conv with an initializer bias",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes":
+            [
+                {
+                    "op_type": "Conv",
+                    "inputs":
+                    [
+                        "((IsInitializer({node.input[1]}) == True) and (CheckIdentityTensor({node.input[1]}) == True))"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph":
+            {
+                "initializers":
+                [
+                    {
+                        "name": "Add_initializer_{node.name}_{node.index}",
+                        "data": "numpy.array({node.input[2]}).reshape(1, GetShape(({node.output[0]})[1]), *numpy.ones(GetShapeLen({node.output[0]}) - 2, dtype=int))",
+                        "data_type": "GetDataType({node.input[2]})"
+                    },
+                    {
+                        "name": "{node.input[1]}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{node.input[2]}",
+                        "Action": "Remove"
+                    }
+                ],
+                "nodes":
+                [
+                    {
+                        "name": "Add_restore_for_{node.name}_{node.index}",
+                        "op_type": "Add",
+                        "inputs":
+                        [
+                            "{node.input[0]}",
+                            "Add_initializer_{node.name}_{node.index}"
+                        ],
+                        "outputs":
+                        [
+                            "{node.output[0]}"
+                        ]
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
