@@ -1,0 +1,55 @@
+{
+    "name": "Conv_Scalar_Expand_Graph",
+    "graph": {
+        "inputs": [
+            {
+                "name": "X",
+                "shape": [2, 2, 3, 16, 16],
+                "data_type": "float32"
+            },
+            {
+                "name": "scalar",
+                "shape": [1],
+                "data_type": "float32"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "Y",
+                "shape": [2, 2, 3, 16, 16],
+                "data_type": "float32"
+            }
+        ],
+        "initializers": [
+            {
+                "name": "Expand_shape",
+                "shape": [1],
+                "data_type": "int64",
+                "data": [2]
+            },
+            {
+                "name": "W",
+                "shape": [2, 2, 1, 1, 1],
+                "data_type": "float32",
+                "data": [[[[[1]]],[[[0]]]],[[[[0]]],[[[1]]]]]
+            }
+        ],
+        "nodes": [
+            {
+                "name": "Expand_replace_for_Add_Node_0",
+                "op_type": "Expand",
+                "inputs": ["scalar", "Expand_shape"],
+                "outputs": ["Expand_replace_for_Add_Node_0_output"]
+            },
+            {
+                "name": "Conv_replace_for_Add_Node_0",
+                "op_type": "Conv",
+                "inputs": ["X", "W", "Expand_replace_for_Add_Node_0_output"],
+                "outputs": ["Y"],
+                "attributes": {
+                    "kernel_shape": [1, 1, 1]
+                }
+            }
+        ]
+    }
+}
