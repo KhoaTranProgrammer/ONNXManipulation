@@ -1,0 +1,99 @@
+{
+    "Conv_Mul":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Fuse Mul Scalar Into Conv Operation",
+            "============================================================================",
+            "This transformation pattern searches for a Conv operation followed by a Mul",
+            "operation where the Mul node multiplies the Conv output by a scalar value.",
+            "When found, this pattern fuses these two operations by:",
+
+            "1. Scaling the Conv node's weight initializer by the scalar value",
+            "2. Scaling the Conv node's bias initializer by the scalar value if present",
+            "3. Removing the subsequent Mul node",
+            "4. Directing the Conv output directly to the Mul node's output",
+
+            "This optimization reduces model complexity and improves inference performance",
+            "by reducing the number of operations and memory allocations.",
+
+            "PRECONDITIONS:",
+            "- Mul node must consume the Conv output as one input",
+            "- Mul node must have the other input as an initializer (constant)",
+            "- Mul node's initializer input must be a scalar value",
+            "- Conv node must directly feed into the Mul node",
+
+            "RESULT: Single Conv operation with fused weight/bias instead of Conv + Mul",
+            "Example:",
+            "- BEFORE (SearchBy):",
+            "   input → Conv[weights, bias] → Mul[scalar] → output",
+            "- AFTER (ReplaceBy):",
+            "   input → Conv[weights*scalar, bias*scalar] → output",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes": [
+                {
+                    "op_type": "Conv"
+                },
+                {
+                    "var": "mul_node",
+                    "op_type": "Mul",
+                    "inputs": [
+                        "({mul_node.input[0]} == {node.output[0]}) or ({mul_node.input[1]} == {node.output[0]})",
+                        "((IsInitializer({mul_node.input[0]}) == True) and (IsScalar({mul_node.input[0]}) == True)) or ((IsInitializer({mul_node.input[1]}) == True) and (IsScalar({mul_node.input[1]}) == True))"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph": {
+                "initializers": [
+                    {
+                        "name": "W_scaled",
+                        "data": "numpy.multiply({node.input[1]}, {mul_node.input[1]}) or numpy.multiply({node.input[1]}, {mul_node.input[0]})",
+                        "data_type": "GetDataType({node.output[0]})"
+                    },
+                    {
+                        "name": "{node.input[1]}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "B_scaled",
+                        "data": "numpy.multiply({node.input[2]}, {mul_node.input[1]}) or numpy.multiply({node.input[2]}, {mul_node.input[0]}) or numpy.multiply([0], {mul_node.input[0]}) or numpy.multiply([0], {mul_node.input[1]})",
+                        "data_type": "GetDataType({node.output[0]})"
+                    },
+                    {
+                        "name": "{node.input[2]}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "CheckInitializer({mul_node.input[0]}) or CheckInitializer({mul_node.input[1]})",
+                        "Action": "Remove"
+                    }
+                ],
+                "nodes": [
+                    {
+                        "name": "{node.name}",
+                        "Action": "Modify",
+                        "inputs": [
+                            "{node.input[0]}",
+                            "W_scaled",
+                            "B_scaled"
+                        ],
+                        "outputs": [
+                            "{mul_node.output[0]}"
+                        ]
+                    },
+                    {
+                        "name": "{mul_node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
