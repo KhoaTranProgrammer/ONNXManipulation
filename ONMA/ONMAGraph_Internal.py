@@ -609,7 +609,7 @@ def CheckIOCondition(graph, g_node, one_input):
             matches = re.finditer(pattern, one_input)
             for match in matches:
                 # print(match)
-                function_pattern = substring_from_index_to_pattern(one_input, match.start(), ")")
+                function_pattern = substring_from_index_to_next_open_close_parentheses(one_input, match.start(), ")")
                 node_io_value = cut_substring(function_pattern, "(", ")")
                 function_pattern_name = function_pattern.replace(f'({node_io_value})', "")
                 # if item == function_pattern_name:
