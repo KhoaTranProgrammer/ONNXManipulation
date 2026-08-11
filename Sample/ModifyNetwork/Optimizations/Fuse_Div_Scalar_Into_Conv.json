@@ -1,0 +1,99 @@
+{
+    "Conv_Div":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Fuse Div Scalar Into Conv Operation",
+            "============================================================================",
+            "This transformation pattern searches for a Conv operation followed by a Div",
+            "operation where the Div node divides the Conv output by a scalar value.",
+            "When found, this pattern fuses these two operations by:",
+
+            "1. Dividing the Conv node's weight initializer by the scalar value",
+            "2. Dividing the Conv node's bias initializer by the scalar value if present",
+            "3. Removing the subsequent Div node",
+            "4. Directing the Conv output directly to the Div node's output",
+
+            "This optimization reduces model complexity and improves inference performance",
+            "by reducing the number of operations and memory allocations.",
+
+            "PRECONDITIONS:",
+            "- Div node must consume the Conv output as its first input",
+            "- Div node must have its second input as an initializer (constant)",
+            "- Div node's second input must be a scalar value",
+            "- Conv node must directly feed into the Div node",
+
+            "RESULT: Single Conv operation with fused weight/bias instead of Conv + Div",
+            "Example:",
+            "- BEFORE (SearchBy):",
+            "   input → Conv[weights, bias] → Div[scalar] → output",
+            "- AFTER (ReplaceBy):",
+            "   input → Conv[weights/scalar, bias/scalar] → output",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes": [
+                {
+                    "op_type": "Conv"
+                },
+                {
+                    "var": "div_node",
+                    "op_type": "Div",
+                    "inputs": [
+                        "{div_node.input[0]} == {node.output[0]}",
+                        "(IsInitializer({div_node.input[1]}) == True) and (IsScalar({div_node.input[1]}) == True)"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph": {
+                "initializers": [
+                    {
+                        "name": "W_scaled",
+                        "data": "numpy.divide({node.input[1]}, {div_node.input[1]})",
+                        "data_type": "GetDataType({node.output[0]})"
+                    },
+                    {
+                        "name": "{node.input[1]}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "B_scaled",
+                        "data": "numpy.divide({node.input[2]}, {div_node.input[1]}) or numpy.divide([0], {div_node.input[1]})",
+                        "data_type": "GetDataType({node.output[0]})"
+                    },
+                    {
+                        "name": "{node.input[2]}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "CheckInitializer({div_node.input[1]})",
+                        "Action": "Remove"
+                    }
+                ],
+                "nodes": [
+                    {
+                        "name": "{node.name}",
+                        "Action": "Modify",
+                        "inputs": [
+                            "{node.input[0]}",
+                            "W_scaled",
+                            "B_scaled"
+                        ],
+                        "outputs": [
+                            "{div_node.output[0]}"
+                        ]
+                    },
+                    {
+                        "name": "{div_node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
