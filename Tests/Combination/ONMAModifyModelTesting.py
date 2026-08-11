@@ -20,6 +20,7 @@ TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_NoneBias_Add_InitializerAt1
 
 # Transformations - Decompose
 TEST_DATA.append(["Tests/Combination/OnnxSample/Softmax.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Softmax_By_Exp_RS_Div.json"])
+TEST_DATA.append(["Tests/Combination/OnnxSample/AveragePool.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_AveragePool_By_Conv.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Abs.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Abs_By_Mul_Max.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Abs.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Abs_By_Mul_Relu_Add.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Add_2_Input_Scalar.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Add_Scalar_By_Conv.json"])

@@ -1,0 +1,82 @@
+{
+    "AveragePool_By_Conv":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace AveragePool by Conv operation",
+            "============================================================================",
+            "This transformation pattern replaces an AveragePool node with an equivalent",
+            "Conv node that uses a uniform kernel and no bias, preserving the average",
+            "pooling semantics for simple 2D average pooling cases.",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "AveragePool(X) = Conv(X, W, b=0) where W contains equal weights over the", 
+            "pool window and b is zero.",
+
+            "TRANSFORMATION STEPS:",
+            "1. Detect an AveragePool node with a kernel_shape attribute.",
+            "2. Create a Conv weight initializer filled with uniform values.",
+            "3. Replace the AveragePool node with a Conv node using the new weights.",
+            "4. Remove the original AveragePool node.",
+
+            "BENEFITS:",
+            "- Enables backend support for Conv-based average pooling.",
+            "- Preserves pooling semantics in a standard convolution form.",
+            "- Simplifies lowering to backends that prefer Conv primitives.",
+
+            "PRECONDITIONS:",
+            "- The AveragePool node must have a kernel_shape attribute.",
+            "- The transformation targets the simple average-pooling case with no extra padding semantics.",
+
+            "RESULT: An equivalent Conv node replaces the AveragePool operation",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes":
+            [
+                {
+                    "op_type": "AveragePool"
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph":
+            {
+                "initializers":
+                [
+                    {
+                        "name": "W",
+                        "data": "numpy.full((1, 1, *{node.attribute[kernel_shape]}), 1 / numpy.prod({node.attribute[kernel_shape]}))",
+                        "data_type": "GetDataType({node.input[0]})"
+                    }
+                ],
+                "nodes":
+                [
+                    {
+                        "name": "Conv_replace_for_{node.name}_{node.index}",
+                        "op_type": "Conv",
+                        "inputs":
+                        [
+                            "{node.input[0]}",
+                            "W"
+                        ],
+                        "outputs":
+                        [
+                            "{node.output[0]}"
+                        ],
+                        "attributes": {
+                            "kernel_shape": "{node.attribute[kernel_shape]}"
+                        }
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
