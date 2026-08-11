@@ -514,7 +514,8 @@ def GetNodeAttributeValue(node, data):
     # print(f'GetNodeAttributeValue: {node.name} - {data}')
     attributeName = data.split("[")[1]
     attributeName = attributeName.split("]")[0]
-    
+
+    value = None
     for attr in node.attribute:
         if attr.name == attributeName:
             value = get_attribute_value(attr)
@@ -768,7 +769,7 @@ def ExecuteFunction(graph, node, data):
                                 # print(f'attribute function_pattern: {function_pattern}')
                                 if function_pattern not in function_pattern_history:
                                     result = eval(patterns_replacement[item]["function"])
-                                    print(f'function_pattern: {function_pattern} - result: {result}')
+                                    print(f'function_pattern attribute: {function_pattern} - result: {result}')
                                     function_pattern_history[function_pattern] = str(result)
 
                     for one_pattern in function_pattern_history:
@@ -840,15 +841,21 @@ def UpdateGraphUsingPattern(graph, pattern):
                             # node_dic[item][io] = refinestring
                         node_dic[item] = refine_input
                     elif 'attributes' in item:
+                        remove_attributes = [] # Sometimes, the attribute is not available in the node, so we need to remove it from the pattern
                         for attribute in node_dic[item]:
                             if isinstance(node_dic[item][attribute], str):
                                 refinestring = refineStringInReplaceBy(g_node, node, index, node_dic[item][attribute])
                                 result = ExecuteFunction(graph, node, refinestring)
                                 print(f'attribute: {attribute} - {refinestring} - result: {result}')
                                 if result is None:
-                                    node_dic[item][attribute] = refinestring
+                                    if "{node.attribute" in refinestring:
+                                        remove_attributes.append(attribute)
+                                    else:
+                                        node_dic[item][attribute] = refinestring
                                 else:
                                     node_dic[item][attribute] = result
+                        for remove_attr in remove_attributes:
+                            node_dic['attributes'].pop(remove_attr, None)  # Remove the attribute if result is None
                     else:
                         refinestring = refineStringInReplaceBy(g_node, node, index, node_dic[item])
                         node_dic[item] = refinestring
