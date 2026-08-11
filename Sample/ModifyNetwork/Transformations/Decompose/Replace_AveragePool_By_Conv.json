@@ -68,7 +68,8 @@
                             "{node.output[0]}"
                         ],
                         "attributes": {
-                            "kernel_shape": "{node.attribute[kernel_shape]}"
+                            "kernel_shape": "{node.attribute[kernel_shape]}",
+                            "pads": "{node.attribute[pads]}"
                         }
                     },
                     {
