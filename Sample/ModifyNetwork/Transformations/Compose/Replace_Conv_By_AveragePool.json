@@ -1,0 +1,83 @@
+{
+    "Conv_By_AveragePool":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Conv with uniform weights by AveragePool operation",
+            "============================================================================",
+            "This transformation pattern restores an AveragePool node from a Conv node",
+            "whose weights are uniform and whose behavior is equivalent to average pooling.",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "AveragePool(X) = Conv(X, W, b=0) where W contains equal weights over the",
+            "pool window and b is zero.",
+
+            "TRANSFORMATION STEPS:",
+            "1. Detect a Conv node whose weight initializer is uniform.",
+            "2. Replace the Conv node with an AveragePool node using the same kernel shape.",
+            "3. Remove the temporary Conv weight initializer.",
+
+            "BENEFITS:",
+            "- Restores the original AveragePool representation.",
+            "- Simplifies the graph and improves readability.",
+            "- Preserves the equivalent average-pooling semantics.",
+
+            "PRECONDITIONS:",
+            "- The Conv node must use a uniform initializer as its weight tensor.",
+            "- The Conv node must be equivalent to a simple average-pooling window.",
+
+            "RESULT: An equivalent AveragePool node replaces the Conv operation",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes":
+            [
+                {
+                    "op_type": "Conv",
+                    "inputs":
+                    [
+                        "((IsInitializer({node.input[1]}) == True) and (numpy.size(numpy.unique({node.input[1]})) == 1))"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph":
+            {
+                "initializers":
+                [
+                    {
+                        "name": "{node.input[1]}",
+                        "Action": "Remove"
+                    }
+                ],
+                "nodes":
+                [
+                    {
+                        "name": "AveragePool_restore_for_{node.name}_{node.index}",
+                        "op_type": "AveragePool",
+                        "inputs":
+                        [
+                            "{node.input[0]}"
+                        ],
+                        "outputs":
+                        [
+                            "{node.output[0]}"
+                        ],
+                        "attributes": {
+                            "kernel_shape": "{node.attribute[kernel_shape]}",
+                            "pads": "{node.attribute[pads]}"
+                        }
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}

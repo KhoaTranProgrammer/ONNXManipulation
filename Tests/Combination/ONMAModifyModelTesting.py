@@ -35,6 +35,7 @@ TEST_DATA.append(["Tests/Combination/OnnxSample/Exp_RS_Div_Softmax.json", "Sampl
 TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_Scalar_Expand.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Conv_Expand_By_Add_Scalar.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_IdentityWeight_UniqueBias.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Conv_IdentityWeight_UniqueBias_By_Add_Scalar.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_IdentityWeight.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Conv_IdentityWeight_By_Add_Initializer.json"])
+TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_Constant_AveragePool.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Conv_By_AveragePool.json"])
 
 def pytest_generate_tests(metafunc):
     if {"onnxjson", "modifyjson"} <= set(metafunc.fixturenames):
