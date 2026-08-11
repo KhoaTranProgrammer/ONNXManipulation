@@ -511,7 +511,7 @@ def IsInitializer(graph, node_io_value):
 
 # data: "{node.attribute[axis]}"
 def GetNodeAttributeValue(node, data):
-    print(f'{node.name} - {data}')
+    # print(f'GetNodeAttributeValue: {node.name} - {data}')
     attributeName = data.split("[")[1]
     attributeName = attributeName.split("]")[0]
     
@@ -764,6 +764,8 @@ def ExecuteFunction(graph, node, data):
                         else:
                             # {node.attribute[axis]}
                             if item == "{node.attribute":
+                                function_pattern = substring_from_index_to_pattern(data, match.start(), "}")
+                                # print(f'attribute function_pattern: {function_pattern}')
                                 if function_pattern not in function_pattern_history:
                                     result = eval(patterns_replacement[item]["function"])
                                     print(f'function_pattern: {function_pattern} - result: {result}')
