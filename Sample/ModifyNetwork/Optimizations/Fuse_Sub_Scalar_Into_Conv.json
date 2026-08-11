@@ -1,0 +1,81 @@
+{
+    "Conv_Sub":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Fuse Sub Scalar Into Conv Operation",
+            "============================================================================",
+            "This transformation pattern searches for a Conv operation followed by a Sub",
+            "operation where the Sub node subtracts a scalar value from the Conv output.",
+            "When found, this pattern fuses these two operations by:",
+
+            "1. Modifying the Conv node's bias parameter by subtracting the scalar value",
+            "2. Removing the subsequent Sub node",
+            "3. Directing the Conv output directly to the Sub node's output",
+
+            "This optimization reduces model complexity and improves inference performance",
+            "by reducing the number of operations and memory allocations.",
+
+            "PRECONDITIONS:",
+            "- Sub node must consume the Conv output as its first input",
+            "- Sub node must have its second input as an initializer (constant)",
+            "- Sub node's second input must be a scalar value",
+            "- Conv node must directly feed into the Sub node",
+
+            "RESULT: Single Conv operation with fused bias instead of Conv + Sub",
+            "Example:",
+            "- BEFORE (SearchBy):",
+            "   input → Conv[weights, bias] → Sub[scalar] → output",
+            "- AFTER (ReplaceBy):",
+            "   input → Conv[weights, fused_bias] → output",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes": [
+                {
+                    "op_type": "Conv"
+                },
+                {
+                    "var": "sub_node",
+                    "op_type": "Sub",
+                    "inputs": [
+                        "{sub_node.input[0]} == {node.output[0]}",
+                        "(IsInitializer({sub_node.input[1]}) == True) and (IsScalar({sub_node.input[1]}) == True)"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph": {
+                "initializers": [
+                    {
+                        "name": "rs_axes",
+                        "data": "numpy.subtract({node.input[2]}, {sub_node.input[1]}) or numpy.tile(numpy.multiply(numpy.array({sub_node.input[1]}), -1), GetShape(({node.output[0]})[-3]))",
+                        "data_type": "GetDataType({node.output[0]})"
+                    }
+                ],
+                "nodes": [
+                    {
+                        "name": "{node.name}",
+                        "Action": "Modify",
+                        "inputs": [
+                            "{node.input[0]}",
+                            "{node.input[1]}",
+                            "rs_axes"
+                        ],
+                        "outputs": [
+                            "{sub_node.output[0]}"
+                        ]
+                    },
+                    {
+                        "name": "{sub_node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
