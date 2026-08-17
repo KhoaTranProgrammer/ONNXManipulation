@@ -1,0 +1,96 @@
+{
+    "Conv_Mul":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Fuse Parent Mul Scalar Into Child Conv Operation",
+            "============================================================================",
+            "This transformation pattern searches for a scalar Mul operation that feeds",
+            "directly into a Conv node, where the Mul multiplies the input tensor by a",
+            "constant scalar before the Conv is applied. When found, this pattern fuses",
+            "the scalar multiplication into the Conv by:",
+
+            "1. Scaling the Conv node's weight initializer by the scalar value",
+            "2. Removing the preceding Mul node",
+            "3. Rewiring the Conv to consume the original input directly",
+
+            "This optimization reduces model complexity and improves inference performance",
+            "by eliminating an unnecessary multiply node and reducing memory traffic.",
+
+            "PRECONDITIONS:",
+            "- Mul node must produce the Conv input tensor",
+            "- Mul node must have one initializer input that is a scalar value",
+            "- The scalar Mul must directly feed the Conv node",
+            "- The Conv node must use the Mul output as its first input",
+
+            "RESULT: Single Conv operation with fused weight/bias instead of Mul + Conv",
+            "Example:",
+            "- BEFORE (SearchBy):",
+            "   input → Mul[scalar] → Conv[weights, bias] → output",
+            "- AFTER (ReplaceBy):",
+            "   input → Conv[weights*scalar, bias] → output",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes": [
+                {
+                    "op_type": "Conv"
+                },
+                {
+                    "var": "mul_node",
+                    "op_type": "Mul",
+                    "inputs": [
+                        "({mul_node.output[0]} == {node.input[0]})",
+                        "((IsInitializer({mul_node.input[0]}) == True) and (IsScalar({mul_node.input[0]}) == True)) or ((IsInitializer({mul_node.input[1]}) == True) and (IsScalar({mul_node.input[1]}) == True))"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph": {
+                "initializers": [
+                    {
+                        "name": "W_scaled",
+                        "data": "numpy.multiply({node.input[1]}, {mul_node.input[1]}) or numpy.multiply({node.input[1]}, {mul_node.input[0]})",
+                        "data_type": "GetDataType({node.output[0]})"
+                    },
+                    {
+                        "name": "B_scaled",
+                        "data": "numpy.multiply({node.input[2]}, [1]) or numpy.array([0])",
+                        "data_type": "GetDataType({node.output[0]})"
+                    },
+                    {
+                        "name": "CheckInitializer({mul_node.input[0]}) or CheckInitializer({mul_node.input[1]})",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{node.input[1]}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{node.input[2]}",
+                        "Action": "Remove"
+                    }
+                ],
+                "nodes": [
+                    {
+                        "name": "{node.name}",
+                        "Action": "Modify",
+                        "inputs": [
+                            "CheckInput({mul_node.input[1]}) or CheckInput({mul_node.input[0]})",
+                            "W_scaled",
+                            "B_scaled"
+                        ]
+                    },
+                    {
+                        "name": "{mul_node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
