@@ -357,7 +357,7 @@ def IsScalar(graph, node_io_value):
     return False
 
 def GetDataType(graph, function_pattern):
-    print(f"GetDataType: {function_pattern}")
+    # print(f"GetDataType: {function_pattern}")
 
     argument = function_pattern.replace("GetDataType", "")
     argument = argument.replace("(", "")
@@ -478,7 +478,9 @@ def NumpyProcessing(graph, data):
     matches = re.finditer(pattern, data)
 
     list_of_initializer_name = []
+    replace_dict = {}
     for match in matches:
+        print(f"match: {match} - start: {match.start()} - end: {match.end()}")
         initializer_names = substring_from_index_to_next_close_parentheses(data, match.start(), ")")
         initializer_names = initializer_names.replace(" ", "")
         initializer_names = initializer_names.split(",")
@@ -490,9 +492,13 @@ def NumpyProcessing(graph, data):
                 if index != -1:
                     # print(f"initializer_name: {initializer_name}")
                     arr = numpy_helper.to_array(initializer_data).tolist()
-                    data = data.replace(initializer_name, str(arr))
+                    # data = data.replace(initializer_name, str(arr))
+                    replace_dict[initializer_name] = str(arr)
                     # print(f"arr: {data}")
 
+    for initializer_name in replace_dict:
+        data = data.replace(initializer_name, replace_dict[initializer_name])
+    # print(f"Final numpy data: {data}")
     try:
         arr_final = eval(data)
         if not isinstance(arr_final, np.ndarray):
@@ -621,7 +627,7 @@ def CheckIOCondition(graph, g_node, one_input):
                 else:
                     if item == function_pattern_name:
                         status = eval(patterns_replacement[item]["function"])
-                        print(f'function_pattern: {function_pattern}, node_io_value: {node_io_value}, status: {status}')
+                        # print(f'function_pattern: {function_pattern}, node_io_value: {node_io_value}, status: {status}')
                         if function_pattern not in pair_of_function_and_result:
                             pair_of_function_and_result[function_pattern] = status
 
@@ -760,7 +766,7 @@ def ExecuteFunction(graph, node, data):
                             if function_pattern not in function_pattern_history:
                                 # function_pattern_history.append(function_pattern)
                                 result = eval(patterns_replacement[item]["function"])
-                                print(f'function_pattern: {function_pattern} - result: {result}')
+                                # print(f'function_pattern: {function_pattern} - result: {result}')
                                 function_pattern_history[function_pattern] = str(result)
                         else:
                             # {node.attribute[axis]}
@@ -797,18 +803,18 @@ def UpdateGraphUsingPattern(graph, pattern):
     if "graph" in pattern["ReplaceBy"]:
         if "initializers" in pattern["ReplaceBy"]["graph"]:
             for initializer in pattern["ReplaceBy"]["graph"]["initializers"]:
-                print(f'initializer: {initializer}')
+                # print(f'initializer: {initializer}')
                 for item in initializer:
                     if isinstance(initializer[item], str):
-                        print(f'item: {initializer[item]}')
+                        # print(f'item: {initializer[item]}')
                         refinestring = refineStringInReplaceBy(g_node, node, index, initializer[item])
                         # print(f'item: {refinestring}')
                         # Support: numpy.add(B, Conv_Node_output) or numpy.add(B, C)
                         refinestring = refinestring.replace(" ", "")
                         function_list = refinestring.split("or")
-                        print(f'function_list: {function_list}')
+                        # print(f'function_list: {function_list}')
                         for one_function in function_list:
-                            print(f'DEBUG one_function: {one_function}')
+                            # print(f'DEBUG one_function: {one_function}')
                             result = ExecuteFunction(graph, node, one_function)
                             if result is None:
                                 initializer[item] = one_function
