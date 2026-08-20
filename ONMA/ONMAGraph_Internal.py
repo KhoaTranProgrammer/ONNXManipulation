@@ -579,13 +579,15 @@ def CheckIOCondition(graph, g_node, one_input):
     for match in matches:
         node_io_var = substring_from_index_to_pattern(one_input, match.start(), "}")
         node_io_value = GetValueFromVariable(g_node, node_io_var)
-        # print(f"node_io_var: {node_io_var}")
-        # print(f"node_io_value: {node_io_value}")
+        print(f"node_io_var: {node_io_var}")
+        print(f"node_io_value: {node_io_value}")
 
         if node_io_var not in pair_of_node_io_var:
             pair_of_node_io_var[node_io_var] = node_io_value
 
-        if CheckValueInfor(graph, node_io_value) is False: # input or output is not available
+        if node_io_value == "":
+            pass
+        elif CheckValueInfor(graph, node_io_value) is False: # input or output is not available
             # print(f"CheckValueInfor: {node_io_value} is not available in graph")
             return False
 
