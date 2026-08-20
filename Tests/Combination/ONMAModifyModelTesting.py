@@ -28,6 +28,9 @@ TEST_DATA.append(["Tests/Combination/OnnxSample/Mul_InitializerAt1_Conv_WithBias
 TEST_DATA.append(["Tests/Combination/OnnxSample/Div_InitializerAt1_Conv_WithBias.json", "Sample/ModifyNetwork/Optimizations/Fuse_Parent_Div_Scalar_Into_Child_Conv.json"])
 
 # Transformations - Decompose
+TEST_DATA.append(["Tests/Combination/OnnxSample/Clip_Initializer.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Clip_By_Min_Max.json"])
+TEST_DATA.append(["Tests/Combination/OnnxSample/Clip_Initializer_NoneMax.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Clip_NoneMax_By_Max.json"])
+TEST_DATA.append(["Tests/Combination/OnnxSample/Clip_Initializer_NoneMin.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Clip_NoneMin_By_Min.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Softmax.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Softmax_By_Exp_RS_Div.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/AveragePool.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_AveragePool_By_Conv.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Abs.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Abs_By_Mul_Max.json"])

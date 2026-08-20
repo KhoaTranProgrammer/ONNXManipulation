@@ -1,0 +1,71 @@
+{
+    "Replace_Clip_NoneMin_By_Max":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Clip with no minimum value by a Min operation",
+            "============================================================================",
+            "This transformation finds a Clip node whose minimum input is omitted",
+            "and whose maximum input is provided. It replaces the Clip node with",
+            "an equivalent Min operation while preserving the original output name.",
+
+            "MATCH CONDITION:",
+            "- The node operator is Clip",
+            "- The minimum input is empty",
+            "- The maximum input is present",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "Clip(x, None, max) = Min(x, max)",
+
+            "TRANSFORMATION STEPS:",
+            "1. Find a Clip node with no minimum input and a maximum input",
+            "2. Remove the original Clip node",
+            "3. Create a Min node using the Clip data input and maximum input",
+            "4. Reuse the original Clip output name for the Min output",
+
+            "EXAMPLE:",
+            "Original graph: Clip(input, None, max_value)",
+            "input = [-2.0, 0.5, 4.0] and max_value = 1.5",
+            "Original output: Clip(input, None, 1.5) = [-2.0, 0.5, 1.5]",
+            "Replacement graph: Min(input, max_value)",
+            "Replacement output: Min([-2.0, 0.5, 4.0], 1.5) = [-2.0, 0.5, 1.5]",
+
+            "RESULT: Equivalent computation using Min instead of Clip",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes": [
+                {
+                    "op_type": "Clip",
+                    "inputs": [
+                        "({node.input[1]} == \"\") and ({node.input[2]} != \"\")"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph": {
+                "nodes": [
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "Min_replace_for_{node.name}_{node.index}",
+                        "op_type": "Min",
+                        "inputs": [
+                            "{node.input[0]}",
+                            "{node.input[2]}"
+                        ],
+                        "outputs": [
+                            "{node.output[0]}"
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

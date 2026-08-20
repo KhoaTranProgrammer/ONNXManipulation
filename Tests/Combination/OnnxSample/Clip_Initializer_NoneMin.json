@@ -1,0 +1,35 @@
+{
+    "name": "Clip_Graph",
+    "graph": {
+        "inputs": [
+            {
+                "name": "X",
+                "shape": [1, 2, 512, 512],
+                "data_type": "float32"
+            }
+        ],
+        "initializers": [
+            {
+                "name": "max",
+                "shape": [1],
+                "data_type": "float32",
+                "data": 0.8
+            }
+        ],
+        "outputs": [
+            {
+                "name": "Y",
+                "shape": [1, 2, 512, 512],
+                "data_type": "float32"
+            }
+        ],
+        "nodes": [
+            {
+                "name": "Clip_Node",
+                "op_type": "Clip",
+                "inputs": ["X", "", "max"],
+                "outputs": ["Y"]
+            }
+        ]
+    }
+}

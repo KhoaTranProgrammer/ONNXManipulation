@@ -1,0 +1,90 @@
+{
+    "Replace_Clip_By_Min_Max":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Clip with Min and Max operations",
+            "============================================================================",
+            "This transformation decomposes a Clip node with both minimum and",
+            "maximum inputs into two elementary operations: Min followed by Max.",
+            "The intermediate Min output is connected to the Max input, and the",
+            "final Max output keeps the original Clip output name.",
+
+            "MATCH CONDITION:",
+            "- The node operator is Clip",
+            "- The Clip data input is {node.input[0]}",
+            "- The minimum input is {node.input[1]}",
+            "- The maximum input is {node.input[2]}",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "Clip(x, min, max) = Max(Min(x, max), min)",
+            "The bounds must satisfy min <= max for the usual clipping behavior.",
+
+            "TRANSFORMATION STEPS:",
+            "1. Find a Clip node with data, minimum, and maximum inputs",
+            "2. Remove the original Clip node",
+            "3. Create a Min node using the data input and maximum input",
+            "4. Store the Min result in an intermediate tensor",
+            "5. Create a Max node using the intermediate tensor and minimum input",
+            "6. Reuse the original Clip output name for the final Max output",
+
+            "EXAMPLE:",
+            "Original graph: Clip(input, min_value, max_value)",
+            "input = [-2.0, 0.5, 4.0], min_value = 0.0, max_value = 1.5",
+            "Original output: Clip(input, 0.0, 1.5) = [0.0, 0.5, 1.5]",
+            "Replacement graph:",
+            "  1. Min(input, max_value) = Min([-2.0, 0.5, 4.0], 1.5)",
+            "                    = [-2.0, 0.5, 1.5]",
+            "  2. Max(min_result, min_value) = Max([-2.0, 0.5, 1.5], 0.0)",
+            "                              = [0.0, 0.5, 1.5]",
+
+            "RESULT: Equivalent computation using Min followed by Max",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes": [
+                {
+                    "op_type": "Clip",
+                    "inputs": [
+                        
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph": {
+                "nodes": [
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "Min_replace_for_{node.name}_{node.index}",
+                        "op_type": "Min",
+                        "inputs": [
+                            "{node.input[0]}",
+                            "{node.input[2]}"
+                        ],
+                        "outputs": [
+                            "Min_replace_for_{node.name}_{node.index}_output"
+                        ]
+                    },
+                    {
+                        "name": "Max_replace_for_{node.name}_{node.index}",
+                        "op_type": "Max",
+                        "inputs": [
+                            "Min_replace_for_{node.name}_{node.index}_output",
+                            "{node.input[1]}"
+                        ],
+                        "outputs": [
+                            "{node.output[0]}"
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
