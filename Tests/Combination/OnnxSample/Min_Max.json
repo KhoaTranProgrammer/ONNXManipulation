@@ -1,0 +1,47 @@
+{
+    "name": "Min_Max_Clip_Graph",
+    "graph": {
+        "inputs": [
+            {
+                "name": "X",
+                "shape": [1, 2, 8, 8],
+                "data_type": "float32"
+            }
+        ],
+        "initializers": [
+            {
+                "name": "min",
+                "shape": [1],
+                "data_type": "float32",
+                "data": 0.2
+            },
+            {
+                "name": "max",
+                "shape": [1],
+                "data_type": "float32",
+                "data": 0.8
+            }
+        ],
+        "outputs": [
+            {
+                "name": "Y",
+                "shape": [1, 2, 8, 8],
+                "data_type": "float32"
+            }
+        ],
+        "nodes": [
+            {
+                "name": "Min_Node",
+                "op_type": "Min",
+                "inputs": ["X", "max"],
+                "outputs": ["Min_X"]
+            },
+            {
+                "name": "Max_Node",
+                "op_type": "Max",
+                "inputs": ["Min_X", "min"],
+                "outputs": ["Y"]
+            }
+        ]
+    }
+}

@@ -1,0 +1,90 @@
+{
+    "Replace_Min_Max_By_Clip":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Min followed by Max with a Clip operation",
+            "============================================================================",
+            "This transformation recognizes the decomposition of Clip into a Min",
+            "operation followed by a Max operation. It restores the original Clip",
+            "node while preserving the final output name.",
+
+            "MATCH CONDITION:",
+            "- The first node is Min(data, max)",
+            "- The second node is Max(min_result, min)",
+            "- The Max data input is connected to the Min output",
+            "- The decomposition uses the same bound order as Clip(data, min, max)",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "Max(Min(x, max), min) = Clip(x, min, max)",
+            "The bounds must satisfy min <= max for the usual clipping behavior.",
+
+            "TRANSFORMATION STEPS:",
+            "1. Find a Min node that limits the data input by the maximum value",
+            "2. Find a Max node that consumes the Min output",
+            "3. Create a Clip node with inputs data, minimum, and maximum",
+            "4. Connect the Clip output to the original Max output",
+            "5. Remove the original Min and Max nodes",
+
+            "EXAMPLE:",
+            "Decomposed graph: Max(Min(input, max_value), min_value)",
+            "input = [-2.0, 0.5, 4.0], min_value = 0.0, max_value = 1.5",
+            "  1. Min(input, 1.5) = [-2.0, 0.5, 1.5]",
+            "  2. Max([-2.0, 0.5, 1.5], 0.0) = [0.0, 0.5, 1.5]",
+            "Restored graph: Clip(input, 0.0, 1.5)",
+            "Restored output: Clip([-2.0, 0.5, 4.0], 0.0, 1.5) = [0.0, 0.5, 1.5]",
+
+            "RESULT: Equivalent Clip node replaces the Min + Max decomposition",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes":
+            [
+                {
+                    "op_type": "Min"
+                },
+                {
+                    "var": "max_node",
+                    "op_type": "Max",
+                    "inputs":
+                    [
+                        "({node.output[0]} == {max_node.input[0]})"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph":
+            {
+                "nodes":
+                [
+                    {
+                        "name": "Clip_replace_for_{node.name}_{node.index}",
+                        "op_type": "Clip",
+                        "inputs":
+                        [
+                            "{node.input[0]}",
+                            "{max_node.input[1]}",
+                            "{node.input[1]}"
+                        ],
+                        "outputs":
+                        [
+                            "{max_node.output[0]}"
+                        ]
+                    },
+                    {
+                        "name": "{max_node.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}

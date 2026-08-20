@@ -41,6 +41,9 @@ TEST_DATA.append(["Tests/Combination/OnnxSample/Add_1_Input_1_Initializer_Unique
 TEST_DATA.append(["Tests/Combination/OnnxSample/Add_1_Input_1_Initializer_Unique_2.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Add_Initializer_Unique_By_Conv.json"])
 
 # Transformations - Compose
+TEST_DATA.append(["Tests/Combination/OnnxSample/Max.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Max_By_Clip_NoneMax.json"])
+TEST_DATA.append(["Tests/Combination/OnnxSample/Min.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Min_By_Clip_NoneMin.json"])
+TEST_DATA.append(["Tests/Combination/OnnxSample/Min_Max.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Min_Max_By_Clip.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Mul_Max_Abs.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Mul_Max_By_Abs.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Mul_Relu_Add_Abs.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Mul_Relu_Add_By_Abs.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Exp_RS_Div_Softmax.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Exp_RS_Div_By_Softmax.json"])

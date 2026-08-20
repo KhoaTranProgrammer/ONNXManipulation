@@ -1,0 +1,76 @@
+{
+    "Replace_Max_By_Clip_NoneMax":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Max with a Clip operation without a maximum value",
+            "============================================================================",
+            "This transformation restores the Clip form of a lower-bound-only",
+            "clipping operation. A Max node compares the input with a minimum",
+            "value, which is equivalent to Clip with an omitted maximum input.",
+
+            "MATCH CONDITION:",
+            "- The node operator is Max",
+            "- The first input is the data tensor",
+            "- The second input is the minimum value",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "Max(x, min) = Clip(x, min, None)",
+
+            "TRANSFORMATION STEPS:",
+            "1. Find a Max node with data and minimum inputs",
+            "2. Create a Clip node using the same data input",
+            "3. Use the Max second input as the Clip minimum input",
+            "4. Leave the Clip maximum input empty",
+            "5. Reuse the original Max output name",
+            "6. Remove the original Max node",
+
+            "EXAMPLE:",
+            "Original graph: Max(input, min_value)",
+            "input = [-2.0, 0.5, 4.0] and min_value = 1.0",
+            "Original output: Max([-2.0, 0.5, 4.0], 1.0) = [1.0, 1.0, 4.0]",
+            "Restored graph: Clip(input, 1.0, None)",
+            "Restored output: Clip([-2.0, 0.5, 4.0], 1.0, None) = [1.0, 1.0, 4.0]",
+
+            "RESULT: Equivalent Clip node replaces the lower-bound Max operation",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes":
+            [
+                {
+                    "op_type": "Max"
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph":
+            {
+                "nodes":
+                [
+                    {
+                        "name": "Clip_replace_for_{node.name}_{node.index}",
+                        "op_type": "Clip",
+                        "inputs":
+                        [
+                            "{node.input[0]}",
+                            "{node.input[1]}",
+                            ""
+                        ],
+                        "outputs":
+                        [
+                            "{node.output[0]}"
+                        ]
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
