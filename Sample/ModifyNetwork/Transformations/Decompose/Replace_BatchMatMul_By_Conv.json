@@ -1,0 +1,171 @@
+{
+    "Replace_BatchMatMul_By_Conv":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace BatchMatMul by Conv operation",
+            "============================================================================",
+            "This transformation pattern rewrites a BatchMatMul node whose second input",
+            "can be viewed as a convolutional weight tensor into an equivalent Conv",
+            "operation. The goal is to preserve the original matrix multiplication",
+            "result while expressing the same computation in a form that is easier to",
+            "handle with backends, graph optimizers, or Conv-first lowering pipelines.",
+            "",
+            "MATHEMATICAL EQUIVALENCE:",
+            "A batched matrix multiplication can be converted into a convolution by",
+            "reordering the tensor axes, reshaping the data into channel-first spatial",
+            "layouts, and reconstructing the original weight tensor as a convolution",
+            "kernel. After the Conv is applied, the output is rearranged back to the",
+            "expected batch-matrix layout so the semantics remain unchanged.",
+            "",
+            "TRANSFORMATION STEPS:",
+            "1. Detect a MatMul or BatchMatMul pattern where the second operand is",
+            "   compatible with a convolutional kernel layout.",
+            "2. Transpose the first input so the multiply dimension is positioned in a",
+            "   way that matches the Conv channel/spatial arrangement.",
+            "3. Reshape the tensor into the form expected by the kernel application.",
+            "4. Reshape the second input into a Conv-style filter tensor, such as",
+            "   [C_out, C_in, 1, 1] for the 1x1 case or the analogous grouped layout.",
+            "5. Replace the BatchMatMul node with a Conv node that applies the new",
+            "   filter to the transformed input tensor.",
+            "6. Restore the final output layout using a Reshape/Transpose pair and",
+            "   remove the original BatchMatMul node.",
+            "",
+            "BENEFITS:",
+            "- Converts a matrix multiplication to a standard Conv primitive.",
+            "- Improves compatibility with graph implementations that prefer Conv.",
+            "- Keeps the execution mathematically equivalent while normalizing the",
+            "  representation for downstream optimization passes.",
+            "",
+            "PRECONDITIONS:",
+            "- The second input must be compatible with the weight reshaping rules.",
+            "- The matrix multiplication must match the kernel layout used by the",
+            "  rewritten convolution form.",
+            "- The output tensor shape must be restored after the Conv to preserve the",
+            "  original BatchMatMul result.",
+            "",
+            "EXAMPLE:",
+            "Original computation:",
+            "  X: [B, M, K]",
+            "  W: [K, 1]  (or an equivalent batched matrix form)",
+            "  Y = BatchMatMul(X, W)",
+            "",
+            "Equivalent Conv-style flow:",
+            "  X --Transpose--> Reshape --> Conv(W') --> Reshape --> Transpose --> Y",
+            "",
+            "In this example, the input tensor is rearranged so the matrix multiply",
+            "acts like a per-channel convolution over the effective spatial dimension.",
+            "The weight matrix W is reshaped into a filter tensor W' with the same",
+            "values, but in a shape that Conv expects. After the convolution, the",
+            "output is reshaped and transposed back to the original BatchMatMul output",
+            "layout, so the final tensor matches the original result exactly.",
+            "",
+            "RESULT: A Conv-based replacement that preserves the original BatchMatMul semantics",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes": [
+                {
+                    "op_type": "MatMul",
+                    "inputs": [
+                        "GetShape(({node.input[1]})[-1]) == 1"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph": {
+                "initializers": [
+                    {
+                        "name": "Reshape_1_initializer",
+                        "data": "numpy.array([1, numpy.prod(GetShape({node.input[0]})) / GetShape({node.input[0]})[-2], GetShape({node.input[0]})[-2], 1])",
+                        "data_type": "int64"
+                    },
+                    {
+                        "name": "Reshape_2_initializer",
+                        "data": "SwapAxes1DArray(GetShape({node.output[0]}), -2, -1)",
+                        "data_type": "int64"
+                    },
+                    {
+                        "name": "W",
+                        "data": "numpy.reshape({node.input[1]}, [(int)(numpy.prod(GetShape({node.input[1]})) / GetShape({node.input[1]})[-2]), GetShape({node.input[1]})[-2], 1, 1])",
+                        "data_type": "float32"
+                    }
+                ],
+                "nodes": [
+                    {
+                        "name": "Transpose_1_replace_for_{node.name}_{node.index}",
+                        "op_type": "Transpose",
+                        "inputs": [
+                            "{node.input[0]}"
+                        ],
+                        "attributes": {
+                            "perm": "SwapAxes1DArray(numpy.arange(GetShapeLen({node.input[0]})), -2, -1)"
+                        },
+                        "outputs": [
+                            "Transpose_1_replace_for_{node.name}_{node.index}_output"
+                        ]
+                    },
+                    {
+                        "name": "Reshape_1_replace_for_{node.name}_{node.index}",
+                        "op_type": "Reshape",
+                        "inputs": [
+                            "Transpose_1_replace_for_{node.name}_{node.index}_output",
+                            "Reshape_1_initializer"
+                        ],
+                        "outputs": [
+                            "Reshape_1_replace_for_{node.name}_{node.index}_output"
+                        ]
+                    },
+                    {
+                        "name": "Conv_replace_for_{node.name}_{node.index}",
+                        "op_type": "Conv",
+                        "inputs":
+                        [
+                            "Reshape_1_replace_for_{node.name}_{node.index}_output",
+                            "W"
+                        ],
+                        "outputs":
+                        [
+                            "Conv_replace_for_{node.name}_{node.index}_output"
+                        ],
+                        "attributes": {
+                            "group": "(int)(numpy.prod(GetShape({node.input[1]})) / GetShape({node.input[1]})[-2])"
+                        }
+                    },
+                    {
+                        "name": "Reshape_2_replace_for_{node.name}_{node.index}",
+                        "op_type": "Reshape",
+                        "inputs": [
+                            "Conv_replace_for_{node.name}_{node.index}_output",
+                            "Reshape_2_initializer"
+                        ],
+                        "outputs": [
+                            "Reshape_2_replace_for_{node.name}_{node.index}_output"
+                        ]
+                    },
+                    {
+                        "name": "Transpose_2_replace_for_{node.name}_{node.index}",
+                        "op_type": "Transpose",
+                        "inputs": [
+                            "Reshape_2_replace_for_{node.name}_{node.index}_output"
+                        ],
+                        "attributes": {
+                            "perm": "SwapAxes1DArray(numpy.arange(GetShapeLen({node.input[0]})), -2, -1)"
+                        },
+                        "outputs": [
+                            "{node.output[0]}"
+                        ]
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
