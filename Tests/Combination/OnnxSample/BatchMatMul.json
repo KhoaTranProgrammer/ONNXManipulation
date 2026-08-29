@@ -11,7 +11,7 @@
         "initializers": [
             {
                 "name": "X2",
-                "shape": [4, 8, 500, 8, 1],
+                "shape": [4, 8, 500, 4, 1],
                 "data_type": "float32",
                 "data": "np.random.randn(4, 8, 500, 4, 1).astype(np.float32)"
             }
