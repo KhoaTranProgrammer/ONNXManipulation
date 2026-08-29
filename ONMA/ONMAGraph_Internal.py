@@ -278,8 +278,41 @@ patterns_replacement = {
     "CheckInput": {"endWith": ")", "function": "CheckInput(graph, function_pattern)"},
     "CheckUniqueValuesInWidthHeight": {"endWith": ")", "function": "CheckUniqueValuesInWidthHeight(graph, function_pattern)"},
     "CheckIdentityTensor": {"endWith": ")", "function": "CheckIdentityTensor(graph, function_pattern)"},
+    "SwapAxes1DArray": {"endWith": ")", "function": "SwapAxes1DArray(graph, function_pattern)"},
     "numpy": {"endWith": ")", "function": "NumpyProcessing(graph, data)"}
 }
+
+# Input: SwapAxes1DArray([4, 2, 800, 8, 2], -2, -1)
+# Output: [4, 2, 800, 2, 8]
+def SwapAxes1DArray(graph, function_pattern):
+    argument = function_pattern.replace("SwapAxes1DArray", "")
+    argument = argument.replace(" ", "")
+
+    array_data = cut_substring(argument, "[", "]") # [4, 2, 800, 8, 2]
+    if array_data is None:
+        # Get numpy function
+        pattern = re.compile("numpy")
+        matches = re.finditer(pattern, argument)
+        for match in matches:
+            data = substring_from_index_to_next_open_close_parentheses(argument, match.start(), ")")
+            array_data = eval(patterns_replacement["numpy"]["function"])
+    else:
+        array_data = [int(x) for x in array_data.split(",")]
+        array_data = np.array(array_data)
+
+    argument = argument.replace("(", "")
+    argument = argument.replace(")", "") # [4, 2, 800, 8, 2], -2, -1
+
+    first_index = argument.split(",")[-1] # -1
+    second_index = argument.split(",")[-2] # -2
+
+    first_index_value = array_data[int(first_index)]
+    second_index_value = array_data[int(second_index)]
+
+    array_data[int(first_index)] = second_index_value
+    array_data[int(second_index)] = first_index_value
+
+    return array_data
 
 def CheckIdentityTensor(graph, function_pattern):
     argument = function_pattern.replace("CheckIdentityTensor", "")
@@ -407,7 +440,13 @@ def GetShape(graph, data):
         if vi.name == argument_name:
             shape = [d.dim_value if d.HasField("dim_value") else None
                     for d in tensor_type.shape.dim]
-    
+
+    if shape == []: # Get Initializer Shape
+        for initializer in graph.initializer:
+            if initializer.name == argument_name:
+                arr = numpy_helper.to_array(initializer)
+                shape = list(arr.shape)
+
     if index is not None:
         shape = shape[int(index)]
 
@@ -620,6 +659,11 @@ def CheckIOCondition(graph, g_node, one_input):
                 function_pattern = substring_from_index_to_next_open_close_parentheses(one_input, match.start(), ")")
                 node_io_value = cut_substring(function_pattern, "(", ")")
                 function_pattern_name = function_pattern.replace(f'({node_io_value})', "")
+
+                # In case of index of array: GetShape[-1]
+                function_pattern_name = function_pattern_name.split("[")[0]
+
+                print(f'function_pattern: {function_pattern} - function_pattern_name: {function_pattern_name} - node_io_value: {node_io_value}')
                 # if item == function_pattern_name:
                 if "numpy" in item: # Block processing for numpy function
                     data = function_pattern
