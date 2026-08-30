@@ -70,7 +70,8 @@
                 {
                     "op_type": "MatMul",
                     "inputs": [
-                        "GetShape(({node.input[1]})[-1]) == 1"
+                        "GetShape(({node.input[1]})[-1]) == 1",
+                        "IsInitializer({node.input[1]}) == True"
                     ]
                 }
             ]
