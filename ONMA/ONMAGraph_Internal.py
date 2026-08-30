@@ -468,6 +468,12 @@ def GetShapeLen(graph, function_pattern):
             shape = [d.dim_value if d.HasField("dim_value") else None
                  for d in tensor_type.shape.dim]
 
+    if shape == []: # Get Initializer Shape
+        for initializer in graph.initializer:
+            if initializer.name == argument:
+                arr = numpy_helper.to_array(initializer)
+                shape = list(arr.shape)
+
     print(f'vi.name: {argument} - shape: {shape} - len: {len(shape)}')
     return len(shape)
 
