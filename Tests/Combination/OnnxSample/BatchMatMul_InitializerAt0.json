@@ -1,0 +1,35 @@
+{
+    "name": "BatchMatMul_Graph",
+    "graph": {
+        "inputs": [
+            {
+                "name": "X",
+                "shape": [4, 8, 500, 4, 3],
+                "data_type": "float32"
+            }
+        ],
+        "initializers": [
+            {
+                "name": "X2",
+                "shape": [4, 8, 500, 8, 4],
+                "data_type": "float32",
+                "data": "np.random.randn(4, 8, 500, 8, 4).astype(np.float32)"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "Y",
+                "shape": [4, 8, 500, 8, 3],
+                "data_type": "float32"
+            }
+        ],
+        "nodes": [
+            {
+                "name": "MatMul_Node",
+                "op_type": "MatMul",
+                "inputs": ["X2", "X"],
+                "outputs": ["Y"]
+            }
+        ]
+    }
+}
