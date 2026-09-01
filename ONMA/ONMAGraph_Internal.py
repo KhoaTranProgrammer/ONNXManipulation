@@ -859,7 +859,7 @@ def ExecuteFunction(graph, node, data):
                                 # print(f'attribute function_pattern: {function_pattern}')
                                 if function_pattern not in function_pattern_history:
                                     result = eval(patterns_replacement[item]["function"])
-                                    print(f'function_pattern attribute: {function_pattern} - result: {result}')
+                                    # print(f'function_pattern attribute: {function_pattern} - result: {result}')
                                     function_pattern_history[function_pattern] = str(result)
 
                     for one_pattern in function_pattern_history:
@@ -892,11 +892,11 @@ def UpdateGraphUsingPattern(graph, pattern):
                     if isinstance(initializer[item], str):
                         # print(f'item: {initializer[item]}')
                         refinestring = refineStringInReplaceBy(g_node, node, index, initializer[item])
-                        # print(f'item: {refinestring}')
+                        print(f'item: {refinestring}')
                         # Support: numpy.add(B, Conv_Node_output) or numpy.add(B, C)
-                        refinestring = refinestring.replace(" ", "")
-                        function_list = refinestring.split("or")
-                        # print(f'function_list: {function_list}')
+                        function_list = refinestring.split(" or ")
+                        function_list = [func.strip() for func in function_list]  # Strip whitespace from each function
+
                         for one_function in function_list:
                             # print(f'DEBUG one_function: {one_function}')
                             result = ExecuteFunction(graph, node, one_function)
@@ -950,11 +950,10 @@ def UpdateGraphUsingPattern(graph, pattern):
                         refinestring = refineStringInReplaceBy(g_node, node, index, node_dic[item])
                         node_dic[item] = refinestring
 
-        # print(f'initializers after refine: {pattern["ReplaceBy"]["graph"]["initializers"]}')
-        print(f'Nodes after refine: {pattern["ReplaceBy"]["graph"]["nodes"]}')
+        # print(f'Nodes after refine: {pattern["ReplaceBy"]["graph"]["nodes"]}')
 
     decompose_pattern = pattern["ReplaceBy"]
 
-    print(f'decompose_pattern: {decompose_pattern}')
+    # print(f'decompose_pattern: {decompose_pattern}')
 
     return decompose_pattern
