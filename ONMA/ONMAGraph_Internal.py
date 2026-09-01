@@ -273,6 +273,12 @@ def GetPreviousNodeFromInputName(graph, inputs):
                 node_ind.append(i)
     return node_ind, node_res
 
+def GetNodeIndex(graph, node):
+    for i, n in enumerate(graph.node):
+        if n == node:
+            return i
+    return -1
+
 patterns_replacement = {
     # "NextNode(node)": "NextNode(graph, node)"
     # Start - End - ReplaceBy
@@ -802,12 +808,23 @@ def getNodeAttribute(node, attri):
     print(attri)
 
 # refine graph variables by value, function by data
-def refineStringInReplaceBy(g_node, node, index, data):
+def refineStringInReplaceBy(graph, g_node, node, index, data):
+
     data = data.replace('{node.name}', node.name)
 
     if '{node.index}' in data:
         data = data.replace('{node.index}', str(index))
-    
+
+    # Replace name and index of node
+    for item in g_node:
+        name_value = g_node[item].name
+        node_index_var = f'{item}.index'
+        node_index_var = "{" + node_index_var + "}"
+        node_index_val = str(GetNodeIndex(graph, g_node[item]))
+        if node_index_var in data:
+            data = data.replace(node_index_var, node_index_val)
+        # print(f'refineStringInReplaceBy - node_index_var: {node_index_var} - node_index_val: {node_index_val}')
+
     # Replace variable by value
     # Detect and replace node_io_var to value "{node.output[0]}" -> "C"
     pattern = re.compile("{")
@@ -869,7 +886,7 @@ def ExecuteFunction(graph, node, data):
 
             except Exception as e:
                 print(f"Error occurred while executing function for item '{item}': {e}")
-    print(f"ExecuteFunction: {data} - result: {result}")
+    # print(f"ExecuteFunction: {data} - result: {result}")
     # if result == None: return data
     return result
 
@@ -893,7 +910,7 @@ def UpdateGraphUsingPattern(graph, pattern):
                 for item in initializer:
                     if isinstance(initializer[item], str):
                         # print(f'item: {initializer[item]}')
-                        refinestring = refineStringInReplaceBy(g_node, node, index, initializer[item])
+                        refinestring = refineStringInReplaceBy(graph, g_node, node, index, initializer[item])
                         print(f'item: {refinestring}')
                         # Support: numpy.add(B, Conv_Node_output) or numpy.add(B, C)
                         function_list = refinestring.split(" or ")
@@ -917,7 +934,7 @@ def UpdateGraphUsingPattern(graph, pattern):
                         # print(f'item key: {item}')
                         refine_input = []
                         for io in node_dic[item]:
-                            refinestring = refineStringInReplaceBy(g_node, node, index, io)
+                            refinestring = refineStringInReplaceBy(graph, g_node, node, index, io)
                             # print(f'io: {io} - {refinestring}')
                             function_list = refinestring.split(" or ")
                             for one_function in function_list:
@@ -936,7 +953,7 @@ def UpdateGraphUsingPattern(graph, pattern):
                         remove_attributes = [] # Sometimes, the attribute is not available in the node, so we need to remove it from the pattern
                         for attribute in node_dic[item]:
                             if isinstance(node_dic[item][attribute], str):
-                                refinestring = refineStringInReplaceBy(g_node, node, index, node_dic[item][attribute])
+                                refinestring = refineStringInReplaceBy(graph, g_node, node, index, node_dic[item][attribute])
                                 result = ExecuteFunction(graph, node, refinestring)
                                 print(f'attribute: {attribute} - {refinestring} - result: {result}')
                                 if result is None:
@@ -949,7 +966,7 @@ def UpdateGraphUsingPattern(graph, pattern):
                         for remove_attr in remove_attributes:
                             node_dic['attributes'].pop(remove_attr, None)  # Remove the attribute if result is None
                     else:
-                        refinestring = refineStringInReplaceBy(g_node, node, index, node_dic[item])
+                        refinestring = refineStringInReplaceBy(graph, g_node, node, index, node_dic[item])
                         node_dic[item] = refinestring
 
         # print(f'Nodes after refine: {pattern["ReplaceBy"]["graph"]["nodes"]}')
