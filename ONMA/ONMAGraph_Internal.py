@@ -737,8 +737,10 @@ def checkOneCondition(graph, node, item):
         if "var" in item:
             g_node[item["var"]] = node
 
+        isCheckedInput = False
         # Check input
         if "inputs" in item:
+            isCheckedInput = True
             for one_input in item["inputs"]:
                 # "{node.output[0]}"
                 status = CheckIOCondition(graph, g_node, one_input)
@@ -749,7 +751,7 @@ def checkOneCondition(graph, node, item):
                     print(f"The condition: {one_input} is OK")
 
         # Check attribute
-        if "attributes" in item:
+        if "attributes" in item and isCheckedInput == True and status == True:
             for one_attribute in item["attributes"]:
                 # "{node.attribute[axis]}"
                 status = CheckIOCondition(graph, g_node, one_attribute)
