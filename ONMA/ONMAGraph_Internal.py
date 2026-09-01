@@ -53,7 +53,7 @@ def _eval_ast(node):
             return all(_eval_ast(v) for v in node.values)
         elif isinstance(node.op, ast.Or):
             return any(_eval_ast(v) for v in node.values)
-    
+
     elif isinstance(node, ast.Compare):
         left = _eval_ast(node.left)
         for op, comparator in zip(node.ops, node.comparators):
@@ -62,10 +62,19 @@ def _eval_ast(node):
                 return False
             left = right
         return True
-    
+
+    elif isinstance(node, ast.List):
+        return [_eval_ast(item) for item in node.elts]
+
+    elif isinstance(node, ast.Tuple):
+        return tuple(_eval_ast(item) for item in node.elts)
+
+    elif isinstance(node, ast.Set):
+        return {_eval_ast(item) for item in node.elts}
+
     elif isinstance(node, ast.Constant):  # Python 3.8+
         return node.value
-    
+
     else:
         raise ValueError(f"Unsupported expression element: {type(node).__name__}")
 
@@ -226,6 +235,7 @@ def CheckValueInfor(graph, name):
     for vi in graph.value_info:
         if vi.name == name:
             return True
+
     for initializer in graph.initializer:
         if initializer.name == name:
             return True
@@ -601,6 +611,14 @@ def GetValueFromVariable(g_node, one_input):
             val = node_io_value
         except:
             val = None
+    elif "attribute" in one_input_split[1]:
+        node_attr = one_input_split[1].split("[")[0] # "attribute"
+        node_attr_name = one_input_split[1].split("[")[1] # "axis]"
+        node_attr_name = node_attr_name.replace("]", "")
+        val = None
+        for attr in getattr(g_node[node_var], node_attr):
+            if attr.name == node_attr_name:
+                val = get_attribute_value(attr)
     else:
         node_var_next = one_input_split[1] # add_node.name -> name
         val = getattr(g_node[node_var], node_var_next)
@@ -632,7 +650,7 @@ def CheckIOCondition(graph, g_node, one_input):
 
         if node_io_value == "":
             pass
-        elif CheckValueInfor(graph, node_io_value) is False: # input or output is not available
+        elif CheckValueInfor(graph, node_io_value) is False and "attribute" not in node_io_var: # input or output is not available
             # print(f"CheckValueInfor: {node_io_value} is not available in graph")
             return False
 
@@ -643,12 +661,16 @@ def CheckIOCondition(graph, g_node, one_input):
     # From: {node.output[0]}
     # To: True
     for one_node_io_var in pair_of_node_io_var:
-        # Replace var inside function: IsInitializer({add_node.input[1]}) -> IsInitializer(C)
-        one_input = one_input.replace(f'({one_node_io_var})', f'({pair_of_node_io_var[one_node_io_var]})')
+        if "attribute" not in one_node_io_var:
+            # Replace var inside function: IsInitializer({add_node.input[1]}) -> IsInitializer(C)
+            one_input = one_input.replace(f'({one_node_io_var})', f'({pair_of_node_io_var[one_node_io_var]})')
 
-        # Replace var by value
-        # one_input = one_input.replace(one_node_io_var, "True")
-        one_input = one_input.replace(f'{one_node_io_var}', f'"{pair_of_node_io_var[one_node_io_var]}"')
+            # Replace var by value
+            # one_input = one_input.replace(one_node_io_var, "True")
+            one_input = one_input.replace(f'{one_node_io_var}', f'"{pair_of_node_io_var[one_node_io_var]}"')
+        else:
+            # Replace var inside function: {node.attribute[perm]} -> [0, 1, 2, 4, 3]
+            one_input = one_input.replace(f'{one_node_io_var}', f'{pair_of_node_io_var[one_node_io_var]}')
 
     print(f'refine input: {one_input}')
 
@@ -661,16 +683,16 @@ def CheckIOCondition(graph, g_node, one_input):
             pattern = re.compile(item)
             matches = re.finditer(pattern, one_input)
             for match in matches:
-                # print(match)
                 function_pattern = substring_from_index_to_next_open_close_parentheses(one_input, match.start(), ")")
-                node_io_value = cut_substring(function_pattern, "(", ")")
+
+                node_io_value = substring_from_index_to_next_open_close_parentheses(function_pattern, function_pattern.index('('), ")")
+                node_io_value = node_io_value[1:-1]
                 function_pattern_name = function_pattern.replace(f'({node_io_value})', "")
 
                 # In case of index of array: GetShape[-1]
                 function_pattern_name = function_pattern_name.split("[")[0]
 
-                print(f'function_pattern: {function_pattern} - function_pattern_name: {function_pattern_name} - node_io_value: {node_io_value}')
-                # if item == function_pattern_name:
+                print(f'item: {item} - function_pattern: {function_pattern} - function_pattern_name: {function_pattern_name} - node_io_value: {node_io_value}')
                 if "numpy" in item: # Block processing for numpy function
                     data = function_pattern
                     status = eval(patterns_replacement[item]["function"])
@@ -679,12 +701,11 @@ def CheckIOCondition(graph, g_node, one_input):
                 else:
                     if item == function_pattern_name:
                         status = eval(patterns_replacement[item]["function"])
-                        # print(f'function_pattern: {function_pattern}, node_io_value: {node_io_value}, status: {status}')
                         if function_pattern not in pair_of_function_and_result:
                             pair_of_function_and_result[function_pattern] = status
 
-    for one_function in pair_of_function_and_result:
-        one_input = one_input.replace(one_function, str(pair_of_function_and_result[one_function]))
+            for one_function in pair_of_function_and_result:
+                one_input = one_input.replace(one_function, str(pair_of_function_and_result[one_function]))
     print(f'refine input last: {one_input}')
 
     result = safe_eval(one_input)
@@ -726,6 +747,17 @@ def checkOneCondition(graph, node, item):
                     break
                 else:
                     print(f"The condition: {one_input} is OK")
+
+        # Check attribute
+        if "attributes" in item:
+            for one_attribute in item["attributes"]:
+                # "{node.attribute[axis]}"
+                status = CheckIOCondition(graph, g_node, one_attribute)
+                if status == False:
+                    print(f"The condition: {one_attribute} is NG")
+                    break
+                else:
+                    print(f"The condition: {one_attribute} is OK")
 
     final_status = status
     if final_status == True: print("This is True")
