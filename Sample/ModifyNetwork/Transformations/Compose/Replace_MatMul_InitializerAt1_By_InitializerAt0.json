@@ -1,0 +1,149 @@
+{
+    "Replace_MatMul_InitializerAt1_By_InitializerAt0":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Optimize Transpose->MatMul->Transpose Pattern by Composing into",
+            "            a Direct MatMul with Transposed Initializer",
+            "============================================================================",
+            "This transformation pattern detects and optimizes a sequence of operations:",
+            "Transpose(X) -> MatMul(W_init, Transpose(X)) -> Transpose(result), where",
+            "W_init is an initializer in the second input position. The goal is to",
+            "eliminate redundant transpose operations while maintaining numerical",
+            "equivalence, reducing memory bandwidth, improving cache locality, and",
+            "enabling faster inference by collapsing multiple operations into one.",
+            "",
+            "MATHEMATICAL EQUIVALENCE:",
+            "The transformation exploits the property that successive transposes can be",
+            "composed with the initializer weight tensor:",
+            "  Transpose(MatMul(W^T, Transpose(X))) = MatMul(W, X)",
+            "",
+            "When an initializer appears as the second operand of a MatMul that is",
+            "wrapped by Transpose operations on both input and output, we can compose",
+            "the transposes into a single transformed initializer and eliminate the",
+            "runtime transpose operations entirely.",
+            "",
+            "TRANSFORMATION STEPS:",
+            "1. Identify a Transpose node on the input X.",
+            "2. Check if the next operation is a MatMul with the transposed input and",
+            "   an initializer W_init as the second input.",
+            "3. Verify that a final Transpose node is applied to the MatMul output.",
+            "4. Create a new initializer W_init_transposed by applying the transpose",
+            "   operation to the original initializer.",
+            "5. Replace the entire Transpose->MatMul->Transpose sequence with a single",
+            "   MatMul operation using W_init_transposed as the first input and the",
+            "   original X as the second input.",
+            "6. Remove the three original nodes (initial Transpose, MatMul, and final",
+            "   Transpose) and the original initializer from the graph.",
+            "",
+            "BENEFITS:",
+            "- Eliminates redundant transpose operations, reducing runtime overhead.",
+            "- Decreases memory bandwidth by avoiding intermediate tensor transposes.",
+            "- Improves cache locality by reducing the number of memory access patterns.",
+            "- Enables fusion with subsequent operations that can accept the composed",
+            "  MatMul directly.",
+            "- Reduces graph complexity and makes the computation easier for backends",
+            "  to optimize and schedule efficiently.",
+            "- Positions the initializer as the first operand of a direct MatMul,",
+            "  compatible with weight-on-left inference patterns.",
+            "",
+            "PRECONDITIONS:",
+            "- The pattern must match exactly: Transpose(X) -> MatMul(W_init, result)",
+            "  -> Transpose(output).",
+            "- The second input of MatMul must be a constant initializer.",
+            "- Both Transpose operations must swap the last two dimensions.",
+            "- The shapes must be compatible through the entire sequence.",
+            "",
+            "EXAMPLE: Batch Matrix Multiplication Optimization",
+            "Original computation (with redundant transposes):",
+            "  Input X: [B, M, K]",
+            "  Weight W_init (Initializer): [K, N]",
+            "  Step 1:  X_T = Transpose(X) -> [B, K, M]",
+            "  Step 2:  Y_T = MatMul(W_init, X_T) -> [B, N, M]",
+            "  Step 3:  Y = Transpose(Y_T) -> [B, M, N]",
+            "  Output Y: [B, M, N]",
+            "",
+            "After optimization (direct MatMul with composed initializer):",
+            "  Input X: [B, M, K]",
+            "  Weight W_init_T (new Initializer): Transpose(W_init) -> [N, K]",
+            "  Direct:  Y = MatMul(W_init_T, X) -> [B, M, N]",
+            "  Output Y: [B, M, N]",
+            "",
+            "Both computations produce identical numerical results. The optimized form",
+            "eliminates three operations (two Transposes and one MatMul instruction)",
+            "and replaces them with a single MatMul, significantly improving efficiency.",
+            ""
+        ],
+        "SearchBy":
+        {
+            "nodes": [
+                {
+                    "op_type": "Transpose",
+                    "attributes": [
+                        "{node.attribute[perm]} == SwapAxes1DArray(numpy.arange(GetShapeLen({node.input[0]})), -2, -1)"
+                    ]
+                },
+                {
+                    "var": "matmul_node_1",
+                    "op_type": "MatMul",
+                    "inputs": [
+                        "IsInitializer({matmul_node_1.input[1]}) == True",
+                        "{matmul_node_1.input[0]} == {node.output[0]}"
+                    ]
+                },
+                {
+                    "var": "transpose_node_2",
+                    "op_type": "Transpose",
+                    "inputs": [
+                        "{transpose_node_2.input[0]} == {matmul_node_1.output[0]}"
+                    ],
+                    "attributes": [
+                        "{transpose_node_2.attribute[perm]} == SwapAxes1DArray(numpy.arange(GetShapeLen({transpose_node_2.input[0]})), -2, -1)"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph": {
+                "initializers": [
+                    {
+                        "name": "New_MatMul_W_replace_for_{matmul_node_1.name}_{matmul_node_1.index}",
+                        "data": "numpy.transpose({matmul_node_1.input[1]}, SwapAxes1DArray(numpy.arange(GetShapeLen({matmul_node_1.input[1]})), -2, -1))",
+                        "data_type": "GetDataType({node.input[0]})"
+                    },
+                    {
+                        "name": "{matmul_node_1.input[1]}",
+                        "Action": "Remove"
+                    }
+                ],
+                "nodes": [
+                    {
+                        "name": "Matmul_replace_for_{matmul_node_1.name}_{matmul_node_1.index}",
+                        "op_type": "MatMul",
+                        "inputs": [
+                            "New_MatMul_W_replace_for_{matmul_node_1.name}_{matmul_node_1.index}",
+                            "{node.input[0]}"
+                        ],
+                        "outputs": [
+                            "{transpose_node_2.output[0]}"
+                        ]
+                    },
+                    {
+                        "name": "{transpose_node_2.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{matmul_node_1.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}

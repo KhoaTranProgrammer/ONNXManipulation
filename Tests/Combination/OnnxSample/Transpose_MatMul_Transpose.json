@@ -1,0 +1,96 @@
+{
+    "name": "BatchMatMul_Graph",
+    "graph": {
+        "initializers": [
+            {
+                "data": "np.random.randn(4, 8, 500, 4, 8).astype(np.float32)",
+                "name": "Initializer_Transpose",
+                "shape": [
+                    4,
+                    8,
+                    500,
+                    4,
+                    8
+                ],
+                "data_type": "float32"
+            }
+        ],
+        "inputs": [
+            {
+                "name": "X",
+                "shape": [
+                    4,
+                    8,
+                    500,
+                    4,
+                    1
+                ],
+                "data_type": "float32"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "Y",
+                "shape": [
+                    4,
+                    8,
+                    500,
+                    8,
+                    1
+                ],
+                "data_type": "float32"
+            }
+        ],
+        "nodes": [
+            {
+                "name": "Transpose_1_replace_for_MatMul_Node_0",
+                "op_type": "Transpose",
+                "inputs": [
+                    "X"
+                ],
+                "outputs": [
+                    "Transpose_1_replace_for_MatMul_Node_0_output"
+                ],
+                "attributes": {
+                    "perm": [
+                        0,
+                        1,
+                        2,
+                        4,
+                        3
+                    ]
+                }
+            },
+            {
+                "name": "MatMul_replace_for_MatMul_Node_0",
+                "op_type": "MatMul",
+                "inputs": [
+                    "Transpose_1_replace_for_MatMul_Node_0_output",
+                    "Initializer_Transpose"
+                ],
+                "outputs": [
+                    "MatMul_replace_for_MatMul_Node_0_output"
+                ]
+            },
+            {
+                "name": "Transpose_2_replace_for_MatMul_Node_0",
+                "op_type": "Transpose",
+                "inputs": [
+                    "MatMul_replace_for_MatMul_Node_0_output"
+                ],
+                "outputs": [
+                    "Y"
+                ],
+                "attributes": {
+                    "perm": [
+                        0,
+                        1,
+                        2,
+                        4,
+                        3
+                    ]
+                }
+            }
+        ]
+    }
+}
