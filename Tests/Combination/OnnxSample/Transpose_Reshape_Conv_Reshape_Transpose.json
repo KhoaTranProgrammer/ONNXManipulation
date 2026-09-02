@@ -1,0 +1,147 @@
+{
+    "name": "BatchMatMul_Graph",
+    "graph": {
+        "initializers": [
+            {
+                "data": [
+                    1,
+                    64000,
+                    8,
+                    1
+                ],
+                "name": "Reshape_1_initializer",
+                "shape": [
+                    4
+                ],
+                "data_type": "int64"
+            },
+            {
+                "data": [
+                    4,
+                    8,
+                    500,
+                    1,
+                    8
+                ],
+                "name": "Reshape_2_initializer",
+                "shape": [
+                    5
+                ],
+                "data_type": "int64"
+            },
+            {
+                "data": "np.random.randn(16000, 4, 1, 1).astype(np.float32)",
+                "name": "W",
+                "shape": [
+                    16000,
+                    4,
+                    1,
+                    1
+                ],
+                "data_type": "float32"
+            }
+        ],
+        "inputs": [
+            {
+                "name": "X",
+                "shape": [
+                    4,
+                    8,
+                    500,
+                    8,
+                    4
+                ],
+                "data_type": "float32"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "Y",
+                "shape": [
+                    4,
+                    8,
+                    500,
+                    8,
+                    1
+                ],
+                "data_type": "float32"
+            }
+        ],
+        "nodes": [
+            {
+                "name": "Transpose_1_replace_for_MatMul_Node_0",
+                "op_type": "Transpose",
+                "inputs": [
+                    "X"
+                ],
+                "outputs": [
+                    "Transpose_1_replace_for_MatMul_Node_0_output"
+                ],
+                "attributes": {
+                    "perm": [
+                        0,
+                        1,
+                        2,
+                        4,
+                        3
+                    ]
+                }
+            },
+            {
+                "name": "Reshape_1_replace_for_MatMul_Node_0",
+                "op_type": "Reshape",
+                "inputs": [
+                    "Transpose_1_replace_for_MatMul_Node_0_output",
+                    "Reshape_1_initializer"
+                ],
+                "outputs": [
+                    "Reshape_1_replace_for_MatMul_Node_0_output"
+                ]
+            },
+            {
+                "name": "Conv_replace_for_MatMul_Node_0",
+                "op_type": "Conv",
+                "inputs": [
+                    "Reshape_1_replace_for_MatMul_Node_0_output",
+                    "W"
+                ],
+                "outputs": [
+                    "Conv_replace_for_MatMul_Node_0_output"
+                ],
+                "attributes": {
+                    "group": 16000
+                }
+            },
+            {
+                "name": "Reshape_2_replace_for_MatMul_Node_0",
+                "op_type": "Reshape",
+                "inputs": [
+                    "Conv_replace_for_MatMul_Node_0_output",
+                    "Reshape_2_initializer"
+                ],
+                "outputs": [
+                    "Reshape_2_replace_for_MatMul_Node_0_output"
+                ]
+            },
+            {
+                "name": "Transpose_2_replace_for_MatMul_Node_0",
+                "op_type": "Transpose",
+                "inputs": [
+                    "Reshape_2_replace_for_MatMul_Node_0_output"
+                ],
+                "outputs": [
+                    "Y"
+                ],
+                "attributes": {
+                    "perm": [
+                        0,
+                        1,
+                        2,
+                        4,
+                        3
+                    ]
+                }
+            }
+        ]
+    }
+}

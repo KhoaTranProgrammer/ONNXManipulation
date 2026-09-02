@@ -1,0 +1,177 @@
+{
+    "Replace_Conv_By_BatchMatMul":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Conv by BatchMatMul operation",
+            "============================================================================",
+            "This transformation pattern rewrites a Conv node with compatible dimensions",
+            "into an equivalent BatchMatMul operation. The goal is to preserve the original",
+            "convolution result while expressing the same computation as a batched matrix",
+            "multiplication, which can be more efficient for certain backends or enable",
+            "fusion with subsequent matrix operations.",
+            "",
+            "MATHEMATICAL EQUIVALENCE:",
+            "A convolution operation can be converted into a batched matrix multiplication",
+            "by reordering the tensor axes, reshaping the data from channel-spatial layouts",
+            "into batch-matrix layouts, and reconstructing the convolution kernel as a",
+            "weight matrix. After the BatchMatMul is applied, the output is rearranged back",
+            "to the expected convolutional output layout so the semantics remain unchanged.",
+            "",
+            "TRANSFORMATION STEPS:",
+            "1. Detect a Conv pattern where the kernel dimensions are compatible with a",
+            "   matrix multiplication layout (e.g., [C_out, C_in, 1, 1] for 1x1 Conv).",
+            "2. Transpose the input tensor so that the channel and spatial dimensions align",
+            "   with the matrix multiplication operand format.",
+            "3. Reshape the input tensor into a 3D batch-matrix form [B, M, K] where B is",
+            "   batch, M is the multiply dimension, and K is the contraction dimension.",
+            "4. Reshape the convolution filter into a 2D weight matrix compatible with the",
+            "   matrix multiplication layout [K, N].",
+            "5. Replace the Conv node with a BatchMatMul node that performs the equivalent",
+            "   matrix multiplication operation.",
+            "6. Restore the final output layout using a Reshape/Transpose pair to match the",
+            "   expected convolution output dimensions and remove the original Conv node.",
+            "",
+            "BENEFITS:",
+            "- Converts a convolution operation to a standard matrix multiplication.",
+            "- Improves compatibility with backends that prefer BatchMatMul primitives.",
+            "- Enables fusion opportunities with subsequent matrix operations.",
+            "- Keeps the execution mathematically equivalent while normalizing the",
+            "  representation for downstream optimization passes.",
+            "",
+            "PRECONDITIONS:",
+            "- The convolution kernel must have spatial dimensions of 1x1 or be compatible",
+            "  with the matrix multiplication weight reshaping rules.",
+            "- The convolution attributes (group, pad, stride) must be compatible with a",
+            "  direct matrix multiplication interpretation.",
+            "- The output tensor shape must be restored after the BatchMatMul to preserve",
+            "  the original Conv result.",
+            "",
+            "EXAMPLE:",
+            "Original computation:",
+            "  Input X: [B, C_in, H, W]",
+            "  Filter W: [C_out, C_in, 1, 1]",
+            "  Output Y: Conv(X, W) = [B, C_out, H, W]",
+            "",
+            "Transformed computation:",
+            "  Transpose X to [B, H, W, C_in]",
+            "  Reshape X to [B*H*W, C_in]",
+            "  Reshape W to [C_in, C_out]",
+            "  Compute Y_mm = BatchMatMul([B*H*W, C_in], [C_in, C_out]) = [B*H*W, C_out]",
+            "  Reshape Y_mm to [B, H, W, C_out]",
+            "  Transpose to [B, C_out, H, W]",
+            "",
+            "Both paths produce identical results, enabling the use of matrix",
+            "multiplication primitives in place of convolution operations.",
+            ""
+        ],
+        "SearchBy":
+        {
+            "nodes": [
+                {
+                    "op_type": "Transpose",
+                    "attributes": [
+                        "{node.attribute[perm]} == SwapAxes1DArray(numpy.arange(GetShapeLen({node.input[0]})), -2, -1)"
+                    ]
+                },
+                {
+                    "var": "reshape_node_1",
+                    "op_type": "Reshape",
+                    "inputs": [
+                        "IsInitializer({reshape_node_1.input[1]}) == True",
+                        "{reshape_node_1.input[0]} == {node.output[0]}",
+                        "GetShape({reshape_node_1.output[0]}) == numpy.array([1, numpy.prod(GetShape({reshape_node_1.input[0]})) / GetShape({reshape_node_1.input[0]})[-1], GetShape({reshape_node_1.input[0]})[-1], 1])"
+                    ]
+                },
+                {
+                    "var": "conv_node",
+                    "op_type": "Conv",
+                    "inputs": [
+                        "{reshape_node_1.output[0]} == {conv_node.input[0]}",
+                        "GetShape({conv_node.input[1]}) == [GetShape(({conv_node.output[0]})[1]), GetShape(({reshape_node_1.input[0]})[-2]), 1, 1]"
+                    ],
+                    "attributes": [
+                        "{conv_node.attribute[group]} == GetShape(({conv_node.output[0]})[1]) or {conv_node.attribute[group]} == [GetShape(({conv_node.output[0]})[1])]"
+                    ]
+                },
+                {
+                    "var": "reshape_node_2",
+                    "op_type": "Reshape",
+                    "inputs": [
+                        "{reshape_node_2.input[0]} == {conv_node.output[0]}",
+                        "IsInitializer({reshape_node_2.input[1]}) == True",
+                        "GetShape({reshape_node_2.output[0]}) == numpy.array([GetShape(({node.output[0]})[0]), GetShape(({node.output[0]})[1]), GetShape(({node.output[0]})[2]), 1, GetShape(({node.output[0]})[-1])])"
+                    ]
+                },
+                {
+                    "var": "transpose_node_2",
+                    "op_type": "Transpose",
+                    "inputs": [
+                        "{transpose_node_2.input[0]} == {reshape_node_2.output[0]}"
+                    ],
+                    "attributes": [
+                        "{transpose_node_2.attribute[perm]} == SwapAxes1DArray(numpy.arange(GetShapeLen({transpose_node_2.input[0]})), -2, -1)"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph": {
+                "initializers": [
+                    {
+                        "name": "New_MatMul_W_replace_for_{conv_node.name}_{conv_node.index}",
+                        "data": "numpy.reshape({conv_node.input[1]}, [GetShape(({node.output[0]})[0]), GetShape(({node.output[0]})[1]), GetShape(({node.output[0]})[2]), GetShape(({node.output[0]})[3]), 1])",
+                        "data_type": "GetDataType({node.input[0]})"
+                    },
+                    {
+                        "name": "{reshape_node_1.input[1]}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{reshape_node_2.input[1]}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{conv_node.input[1]}",
+                        "Action": "Remove"
+                    }
+                ],
+                "nodes": [
+                    {
+                        "name": "Matmul_replace_for_{conv_node.name}_{conv_node.index}",
+                        "op_type": "MatMul",
+                        "inputs": [
+                            "{node.input[0]}",
+                            "New_MatMul_W_replace_for_{conv_node.name}_{conv_node.index}"
+                        ],
+                        "outputs": [
+                            "{transpose_node_2.output[0]}"
+                        ]
+                    },
+                    {
+                        "name": "{transpose_node_2.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{reshape_node_1.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{reshape_node_2.name}",
+                        "Action": "Remove"
+                    },
+                    {
+                        "name": "{conv_node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
