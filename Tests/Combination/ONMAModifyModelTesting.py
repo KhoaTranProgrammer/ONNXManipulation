@@ -42,6 +42,7 @@ TEST_DATA.append(["Tests/Combination/OnnxSample/Add_1_Input_1_Initializer_Unique
 TEST_DATA.append(["Tests/Combination/OnnxSample/Add_1_Input_1_Initializer_Unique_2.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Add_Initializer_Unique_By_Conv.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/BatchMatMul.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_BatchMatMul_By_Conv.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/BatchMatMul_InitializerAt0.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_MatMul_InitializerAt0_By_InitializerAt1.json"])
+TEST_DATA.append(["Tests/Combination/OnnxSample/Concat_Same_Input.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Concat_SameInput_By_Expand.json"])
 
 # Transformations - Compose
 TEST_DATA.append(["Tests/Combination/OnnxSample/Max.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Max_By_Clip_NoneMax.json"])

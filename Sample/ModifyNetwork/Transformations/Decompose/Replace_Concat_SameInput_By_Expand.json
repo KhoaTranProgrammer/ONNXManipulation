@@ -1,0 +1,88 @@
+{
+    "Concat_SameInput_By_Expand":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Concat with identical inputs by Expand operation",
+            "============================================================================",
+            "This transformation pattern replaces a Concat node that concatenates the",
+            "same input tensor multiple times with an equivalent Expand node that repeats",
+            "the tensor along the specified axis.",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "Concat([X, X, ..., X (n times)], axis=k) = Expand(X, new_shape)",
+            "where new_shape increases the dimension at axis k by a factor of n.",
+
+            "TRANSFORMATION STEPS:",
+            "1. Detect a Concat node where all inputs reference the same tensor.",
+            "2. Calculate the repetition count (number of identical inputs).",
+            "3. Compute the new shape by multiplying the dimension at the concat axis",
+            "   by the repetition count.",
+            "4. Create an Expand node with the computed shape as an initializer.",
+            "5. Replace the Concat node with the Expand node.",
+            "6. Remove the original Concat node.",
+
+            "BENEFITS:",
+            "- Reduces redundant tensor memory references in the graph.",
+            "- Enables backends optimized for Expand operations.",
+            "- Simplifies dataflow and improves memory efficiency.",
+            "- Canonical form for repeated concatenation patterns.",
+
+            "PRECONDITIONS:",
+            "- The Concat node must have multiple inputs that all reference the same tensor.",
+            "- The axis attribute must be present and valid for the input tensor rank.",
+            "- The input tensor shape must be known or inferrable.",
+
+            "RESULT: An equivalent Expand node replaces the Concat operation",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes":
+            [
+                {
+                    "op_type": "Concat",
+                    "inputs": [
+                        "CheckNodeSameInput({node}) == True",
+                        "GetShape(({node.input[0]}){node.attribute[axis]}) == 1"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph":
+            {
+                "initializers":
+                [
+                    {
+                        "name": "Expand_shape_for_{node.name}_{node.index}",
+                        "data": "UpdateArrayValueAtIndex(numpy.ones(GetShapeLen(({node.output[0]})), dtype=np.int64), numpy.array({node.attribute[axis]}).item(), GetShape(({node.output[0]}){node.attribute[axis]}))",
+                        "data_type": "int64"
+                    }
+                ],
+                "nodes":
+                [
+                    {
+                        "name": "Expand_replace_for_{node.name}_{node.index}",
+                        "op_type": "Expand",
+                        "inputs":
+                        [
+                            "{node.input[0]}",
+                            "Expand_shape_for_{node.name}_{node.index}"
+                        ],
+                        "outputs":
+                        [
+                            "{node.output[0]}"
+                        ]
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
