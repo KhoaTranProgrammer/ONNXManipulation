@@ -6,6 +6,7 @@ import ast
 import re
 import ast
 import operator
+import textwrap
 
 from onnx.helper import (
     make_node, make_graph, make_model, make_tensor_value_info)
@@ -30,6 +31,23 @@ OPERATORS = {
 
 # Global variable
 g_node = {}
+
+def parse_function_args(source_code: str):
+    """Parse the arguments from a function call string."""
+    try:
+        call_node = ast.parse(textwrap.dedent(source_code).strip(), mode="eval").body
+        if not isinstance(call_node, ast.Call):
+            raise ValueError("The provided code is not a function call.")
+
+        arguments = [ast.unparse(argument) for argument in call_node.args]
+        arguments.extend(
+            f"{keyword.arg}={ast.unparse(keyword.value)}"
+            for keyword in call_node.keywords
+        )
+        return arguments
+
+    except SyntaxError as e:
+        raise ValueError(f"Invalid Python code: {e}")
 
 def safe_eval(expr: str) -> bool:
     """
@@ -294,9 +312,42 @@ patterns_replacement = {
     "CheckInput": {"endWith": ")", "function": "CheckInput(graph, function_pattern)"},
     "CheckUniqueValuesInWidthHeight": {"endWith": ")", "function": "CheckUniqueValuesInWidthHeight(graph, function_pattern)"},
     "CheckIdentityTensor": {"endWith": ")", "function": "CheckIdentityTensor(graph, function_pattern)"},
+    "CheckNodeSameInput": {"endWith": ")", "function": "CheckNodeSameInput(graph, g_node, node_var)"},
     "SwapAxes1DArray": {"endWith": ")", "function": "SwapAxes1DArray(graph, function_pattern)"},
+    "UpdateArrayValueAtIndex": {"endWith": ")", "function": "UpdateArrayValueAtIndex(graph, node, function_pattern)"},
     "numpy": {"endWith": ")", "function": "NumpyProcessing(graph, data)"}
 }
+
+def CheckNodeSameInput(graph, g_node, node_var):
+    # print(f'CheckNodeSameInput: {g_node[node_var]}')
+
+    target_input = g_node[node_var].input[0]
+    for one_input in g_node[node_var].input:
+        if one_input != target_input:
+            return False
+
+    return True
+
+# Input: UpdateArrayValueAtIndex([1, 1, 1, 1], 1, 2)
+# Output: [1, 2, 1, 1]
+def UpdateArrayValueAtIndex(graph, node, function_pattern):
+    arguments = parse_function_args(function_pattern)
+
+    # Get array data from the first argument
+    array_data = ExecuteFunction(graph, node, arguments[0])
+    if array_data is None: array_data = arguments[0]
+
+    # Get index and new value from the second and third arguments
+    index = ExecuteFunction(graph, node, arguments[1])
+    if index is None: index = arguments[1]
+
+    new_value = ExecuteFunction(graph, node, arguments[2])
+    if new_value is None: new_value = arguments[2]
+
+    # Update the array at the specified index
+    array_data[index] = new_value
+
+    return array_data
 
 # Input: SwapAxes1DArray([4, 2, 800, 8, 2], -2, -1)
 # Output: [4, 2, 800, 2, 8]
@@ -607,7 +658,9 @@ def GetValueFromVariable(g_node, one_input):
     node_var = one_input_split[0] # "node"
     
     val = ""
-    if "input" in one_input_split[1] or "output" in one_input_split[1]:
+    if "." not in one_input:
+        val = one_input
+    elif "input" in one_input_split[1] or "output" in one_input_split[1]:
         node_io = one_input_split[1].split("[")[0] # "output"
         node_io_idx = one_input_split[1].split("[")[1] # "0]"
         node_io_idx = node_io_idx.replace("]", "")
@@ -656,7 +709,9 @@ def CheckIOCondition(graph, g_node, one_input):
 
         if node_io_value == "":
             pass
-        elif CheckValueInfor(graph, node_io_value) is False and "attribute" not in node_io_var: # input or output is not available
+        elif CheckValueInfor(graph, node_io_value) is False \
+            and "attribute" not in node_io_var \
+            and "." in node_io_var: # input or output is not available
             # print(f"CheckValueInfor: {node_io_value} is not available in graph")
             return False
 
@@ -693,6 +748,7 @@ def CheckIOCondition(graph, g_node, one_input):
 
                 node_io_value = substring_from_index_to_next_open_close_parentheses(function_pattern, function_pattern.index('('), ")")
                 node_io_value = node_io_value[1:-1]
+                node_var = node_io_value
                 function_pattern_name = function_pattern.replace(f'({node_io_value})', "")
 
                 # In case of index of array: GetShape[-1]
