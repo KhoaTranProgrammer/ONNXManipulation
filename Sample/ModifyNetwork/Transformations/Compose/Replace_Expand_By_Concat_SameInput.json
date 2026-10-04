@@ -1,0 +1,78 @@
+{
+    "Expand_By_Concat_SameInput":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace Expand with Concat of identical inputs",
+            "============================================================================",
+            "This transformation reverses the two-input form of",
+            "Replace_Concat_SameInput_By_Expand.json. It replaces an Expand node",
+            "whose shape initializer has one expanded dimension with a Concat node",
+            "that concatenates the original input twice along that dimension.",
+
+            "MATHEMATICAL EQUIVALENCE:",
+            "Expand(X, shape) = Concat([X, X], axis=k) for a two-times expansion",
+            "where k is the dimension whose target shape is greater than one.",
+
+            "PRECONDITIONS:",
+            "- The node must be an Expand operation.",
+            "- The Expand shape must be an initializer.",
+            "- The generated shape must contain exactly one value greater than one.",
+            "- This pattern restores the two-input form of the original Concat.",
+
+            "RESULT: A Concat node with two identical inputs replaces the Expand node",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes":
+            [
+                {
+                    "op_type": "Expand",
+                    "inputs":
+                    [
+                        "IsInitializer({node.input[1]}) == True",
+                        "numpy.count_nonzero(numpy.array({node.input[1]}) > 1) == 1"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph":
+            {
+                "initializers":
+                [
+                    {
+                        "name": "{node.input[1]}",
+                        "Action": "Remove"
+                    }
+                ],
+                "nodes":
+                [
+                    {
+                        "name": "Concat_restore_for_{node.name}_{node.index}",
+                        "op_type": "Concat",
+                        "inputs":
+                        [
+                            "DuplicateString({node.input[0]}, numpy.array({node.input[1]})[numpy.argmax(numpy.array({node.input[1]}))])"
+                        ],
+                        "outputs":
+                        [
+                            "{node.output[0]}"
+                        ],
+                        "attributes":
+                        {
+                            "axis": "numpy.argmax(numpy.array({node.input[1]}))"
+                        }
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}

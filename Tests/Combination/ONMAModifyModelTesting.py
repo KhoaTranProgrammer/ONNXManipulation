@@ -57,6 +57,7 @@ TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_IdentityWeight.json", "Samp
 TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_Constant_AveragePool.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Conv_By_AveragePool.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Transpose_Reshape_Conv_Reshape_Transpose.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Conv_By_BatchMatMul.json"])
 TEST_DATA.append(["Tests/Combination/OnnxSample/Transpose_MatMul_Transpose.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_MatMul_InitializerAt1_By_InitializerAt0.json"])
+TEST_DATA.append(["Tests/Combination/OnnxSample/Expand_1_Dimension.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Expand_By_Concat_SameInput.json"])
 
 def pytest_generate_tests(metafunc):
     if {"onnxjson", "modifyjson"} <= set(metafunc.fixturenames):
