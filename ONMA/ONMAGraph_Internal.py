@@ -315,8 +315,26 @@ patterns_replacement = {
     "CheckNodeSameInput": {"endWith": ")", "function": "CheckNodeSameInput(graph, g_node, node_var)"},
     "SwapAxes1DArray": {"endWith": ")", "function": "SwapAxes1DArray(graph, function_pattern)"},
     "UpdateArrayValueAtIndex": {"endWith": ")", "function": "UpdateArrayValueAtIndex(graph, node, function_pattern)"},
+    "DuplicateString": {"endWith": ")", "function": "DuplicateString(graph, node, function_pattern)"},
     "numpy": {"endWith": ")", "function": "NumpyProcessing(graph, data)"}
 }
+
+# Input: DuplicateString(X, 2)
+# Output: [X, X]
+def DuplicateString(graph, node, function_pattern):
+    arguments = parse_function_args(function_pattern)
+
+    # Get array data from the first argument
+    array_data = ExecuteFunction(graph, node, arguments[0])
+    if array_data is None: array_data = arguments[0]
+
+    index = ExecuteFunction(graph, node, arguments[1])
+    if index is None: index = arguments[1]
+
+    # Duplicate the string
+    duplicated_string = [array_data] * int(index)
+    print(f"DuplicateString: duplicated_string: {duplicated_string}")
+    return duplicated_string
 
 def CheckNodeSameInput(graph, g_node, node_var):
     # print(f'CheckNodeSameInput: {g_node[node_var]}')
@@ -995,10 +1013,11 @@ def UpdateGraphUsingPattern(graph, pattern):
                             function_list = refinestring.split(" or ")
                             for one_function in function_list:
                                 if checkPatternIsAvailable(one_function):
-                                    print(f'one_function: {one_function}')
                                     result = ExecuteFunction(graph, node, one_function)
                                     if result is not None:
-                                        refine_input.append(result)
+                                        if isinstance(result, np.ndarray) or isinstance(result, list):
+                                            refine_input.extend(result)
+                                        else: refine_input.append(result)
                                         break
                                 else:
                                     refine_input.append(refinestring)
