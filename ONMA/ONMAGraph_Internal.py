@@ -93,6 +93,15 @@ def _eval_ast(node):
     elif isinstance(node, ast.Constant):  # Python 3.8+
         return node.value
 
+    elif isinstance(node, ast.UnaryOp):
+        operand_value = _eval_ast(node.operand)
+        if isinstance(node.op, ast.Not):
+            return not operand_value
+        elif isinstance(node.op, ast.USub):
+            return -operand_value
+        elif isinstance(node.op, ast.UAdd):
+            return +operand_value
+
     else:
         raise ValueError(f"Unsupported expression element: {type(node).__name__}")
 
