@@ -4,6 +4,7 @@ import subprocess
 import numpy as np
 import os
 from pathlib import Path
+import csv
 
 file_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 file_path = Path(file_path).as_posix()
@@ -12,62 +13,18 @@ sys.path.append(file_path)
 # Format: Sample onnx json - Modify pattern json
 TEST_DATA = []
 
-# Optimizations
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_WithBias_Add_InitializerAt0.json", "Sample/ModifyNetwork/Optimizations/Fuse_Add_Scalar_Into_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_WithBias_Add_InitializerAt1.json", "Sample/ModifyNetwork/Optimizations/Fuse_Add_Scalar_Into_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_NoneBias_Add_InitializerAt0.json", "Sample/ModifyNetwork/Optimizations/Fuse_Add_Scalar_Into_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_NoneBias_Add_InitializerAt1.json", "Sample/ModifyNetwork/Optimizations/Fuse_Add_Scalar_Into_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_WithBias_Sub_InitializerAt1.json", "Sample/ModifyNetwork/Optimizations/Fuse_Sub_Scalar_Into_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_NoneBias_Sub_InitializerAt1.json", "Sample/ModifyNetwork/Optimizations/Fuse_Sub_Scalar_Into_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_WithBias_Mul_InitializerAt1.json", "Sample/ModifyNetwork/Optimizations/Fuse_Mul_Scalar_Into_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_NoneBias_Mul_InitializerAt1.json", "Sample/ModifyNetwork/Optimizations/Fuse_Mul_Scalar_Into_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_WithBias_Div_InitializerAt1.json", "Sample/ModifyNetwork/Optimizations/Fuse_Div_Scalar_Into_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_NoneBias_Div_InitializerAt1.json", "Sample/ModifyNetwork/Optimizations/Fuse_Div_Scalar_Into_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Mul_InitializerAt1_Conv_NoneBias.json", "Sample/ModifyNetwork/Optimizations/Fuse_Parent_Mul_Scalar_Into_Child_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Mul_InitializerAt1_Conv_WithBias.json", "Sample/ModifyNetwork/Optimizations/Fuse_Parent_Mul_Scalar_Into_Child_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Div_InitializerAt1_Conv_WithBias.json", "Sample/ModifyNetwork/Optimizations/Fuse_Parent_Div_Scalar_Into_Child_Conv.json"])
-
-# Transformations - Decompose
-TEST_DATA.append(["Tests/Combination/OnnxSample/Clip_Initializer.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Clip_By_Min_Max.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Clip_Initializer_NoneMax.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Clip_NoneMax_By_Max.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Clip_Initializer_NoneMin.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Clip_NoneMin_By_Min.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Softmax.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Softmax_By_Exp_RS_Div.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/AveragePool.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_AveragePool_By_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Abs.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Abs_By_Mul_Max.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Abs.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Abs_By_Mul_Relu_Add.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Add_2_Input_Scalar.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Add_Scalar_By_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Add_1_Input_1_Initializer_Scalar.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Add_Scalar_Initializer_By_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Add_1_Input_1_Initializer_Unique.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Add_Initializer_Unique_By_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Add_1_Input_1_Initializer_Unique_2.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Add_Initializer_Unique_By_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Add_1_Input_1_Initializer_Unique_2.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Add_Initializer_Unique_By_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/BatchMatMul.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_BatchMatMul_By_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/BatchMatMul_InitializerAt0.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_MatMul_InitializerAt0_By_InitializerAt1.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Concat_Same_Input.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_Concat_SameInput_By_Expand.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/ReduceSum_Axis_1.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_ReduceSum_Axis1_By_Conv.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/ReduceSum_LastAxis.json", "Sample/ModifyNetwork/Transformations/Decompose/Replace_ReduceSum_LastAxis_By_MatMul.json"])
-
-# Transformations - Compose
-TEST_DATA.append(["Tests/Combination/OnnxSample/Max.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Max_By_Clip_NoneMax.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Min.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Min_By_Clip_NoneMin.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Min_Max.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Min_Max_By_Clip.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Mul_Max_Abs.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Mul_Max_By_Abs.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Mul_Relu_Add_Abs.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Mul_Relu_Add_By_Abs.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Exp_RS_Div_Softmax.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Exp_RS_Div_By_Softmax.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_Scalar_Expand.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Conv_Expand_By_Add_Scalar.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_IdentityWeight_UniqueBias.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Conv_IdentityWeight_UniqueBias_By_Add_Scalar.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_IdentityWeight.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Conv_IdentityWeight_By_Add_Initializer.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_Constant_AveragePool.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Conv_By_AveragePool.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Transpose_Reshape_Conv_Reshape_Transpose.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Conv_By_BatchMatMul.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Transpose_MatMul_Transpose.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_MatMul_InitializerAt1_By_InitializerAt0.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Expand_1_Dimension.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Expand_By_Concat_SameInput.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/Conv_ReduceSum_Axis1.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_Conv_By_ReduceSum_Axis1.json"])
-TEST_DATA.append(["Tests/Combination/OnnxSample/MatMul_ReduceSum_LastAxis.json", "Sample/ModifyNetwork/Transformations/Compose/Replace_MatMul_By_ReduceSum_LastAxis.json"])
+# Open the test cases from the CSV file
+with open('Tests/Combination/ONMAModifyModelTesting.csv', 'r', newline='') as f:
+    reader = csv.reader(f)
+    next(reader)  # skip first row
+    for row in reader:
+        TEST_DATA.append(row)
 
 def pytest_generate_tests(metafunc):
-    if {"onnxjson", "modifyjson"} <= set(metafunc.fixturenames):
-        metafunc.parametrize("onnxjson,modifyjson", TEST_DATA)
+    if {"onnxjson", "modifyjson", "type"} <= set(metafunc.fixturenames):
+        metafunc.parametrize("onnxjson,modifyjson,type", TEST_DATA)
 
-def test_execute(onnxjson, modifyjson):
+def test_execute(onnxjson, modifyjson, type):
     # Create onnx from json
     # Run the called script with arguments
     log = subprocess.run(['python', 'Tools/ONMACreateGraph.py', \
