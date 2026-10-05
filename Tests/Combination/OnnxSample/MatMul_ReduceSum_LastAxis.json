@@ -1,0 +1,35 @@
+{
+    "name": "MatMul_LastAxis_ReduceSum_Graph",
+    "graph": {
+        "inputs": [
+            {
+                "name": "X",
+                "shape": [8, 6, 2, 4],
+                "data_type": "float32"
+            }
+        ],
+        "initializers": [
+            {
+                "name": "W",
+                "data_type": "float32",
+                "shape": [4, 1],
+                "data": [[1.0], [1.0], [1.0], [1.0]]
+            }
+        ],
+        "outputs": [
+            {
+                "name": "Y",
+                "shape": [8, 6, 2, 1],
+                "data_type": "float32"
+            }
+        ],
+        "nodes": [
+            {
+                "name": "MatMul_Node",
+                "op_type": "MatMul",
+                "inputs": ["X", "W"],
+                "outputs": ["Y"]
+            }
+        ]
+    }
+}
