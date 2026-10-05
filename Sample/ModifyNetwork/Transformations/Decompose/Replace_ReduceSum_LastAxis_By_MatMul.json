@@ -1,0 +1,100 @@
+{
+    "ReduceSum_LastAxis_By_MatMul":
+    {
+        "Introductions":
+        [
+            "============================================================================",
+            "DESCRIPTION: Replace ReduceSum over the last axis by MatMul operation",
+            "============================================================================",
+            "This transformation pattern rewrites a ReduceSum node that collapses the final",
+            "tensor axis into an equivalent MatMul operation. It is useful when a backend or",
+            "optimization pass prefers a matrix multiplication form for the same computation.",
+            "",
+            "MATHEMATICAL EQUIVALENCE:",
+            "For an input tensor X with shape [..., C] and keepdims=1,",
+            "ReduceSum(X, axes=[-1], keepdims=1) is equivalent to MatMul(X, W) where W is a",
+            "column vector of ones with shape [C, 1]. Each output element equals the sum of",
+            "the values along the last axis, matching the original reduction semantics.",
+            "",
+            "TRANSFORMATION STEPS:",
+            "1. Detect a ReduceSum node that reduces the final axis with keepdims enabled.",
+            "2. Build a constant weight matrix W of shape [C, 1] filled with ones.",
+            "3. Replace the reduction with a MatMul between X and W.",
+            "4. Remove the original ReduceSum axes initializer and node.",
+            "",
+            "BENEFITS:",
+            "- Re-expresses a reduction as a standard MatMul primitive.",
+            "- Preserves the reduced output shape when keepdims=1.",
+            "- Enables graph fusion or backend compatibility for matrix-multiplication-centric",
+            "  optimization pipelines.",
+            "",
+            "PRECONDITIONS:",
+            "- The ReduceSum node must reduce the last axis (axis=-1 or the last index).",
+            "- The output must preserve the reduced axis using keepdims=1.",
+            "- The input tensor must be compatible with standard ONNX MatMul semantics.",
+            "",
+            "EXAMPLE:",
+            "Input tensor: X with shape [N, C]",
+            "ReduceSum computation:",
+            "  Y = ReduceSum(X, axes=[-1], keepdims=1)",
+            "Equivalent MatMul form:",
+            "  W = ones([C, 1])",
+            "  Y = MatMul(X, W)",
+            "where each output row equals the sum of the corresponding input row.",
+            "",
+            "RESULT: A MatMul-based replacement that preserves the ReduceSum last-axis semantics",
+            "============================================================================"
+        ],
+        "SearchBy":
+        {
+            "nodes":
+            [
+                {
+                    "op_type": "ReduceSum",
+                    "inputs":
+                    [
+                        "((IsInitializer({node.input[1]}) == True) and (numpy.array({node.input[1]}) == [-1]))"
+                    ]
+                }
+            ]
+        },
+        "ReplaceBy":
+        {
+            "graph":
+            {
+                "initializers":
+                [
+                    {
+                        "name": "W_{node.name}_{node.index}",
+                        "data": "numpy.ones((GetShape({node.input[0]})[-1], 1), dtype=numpy.float32)",
+                        "data_type": "GetDataType({node.input[0]})"
+                    },
+                    {
+                        "name": "{node.input[1]}",
+                        "Action": "Remove"
+                    }
+                ],
+                "nodes":
+                [
+                    {
+                        "name": "MatMul_replace_for_{node.name}_{node.index}",
+                        "op_type": "MatMul",
+                        "inputs":
+                        [
+                            "{node.input[0]}",
+                            "W_{node.name}_{node.index}"
+                        ],
+                        "outputs":
+                        [
+                            "{node.output[0]}"
+                        ]
+                    },
+                    {
+                        "name": "{node.name}",
+                        "Action": "Remove"
+                    }
+                ]
+            }
+        }
+    }
+}
