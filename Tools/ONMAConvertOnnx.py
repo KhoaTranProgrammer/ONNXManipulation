@@ -15,11 +15,27 @@ file_path = Path(file_path).as_posix()
 sys.path.append(file_path)
 from ONMA.ONMAModel import ONMAModel
 
+# [Purpose]
 """
-Purpose: this script will convert onnx file to ONMA json format.
+Purpose: This tool converts ONNX models into human-readable JSON format, allowing you to easily inspect,
+edit, and analyze model architecture and weights.
+"""
 
+# [Usage]
+"""
 Usage:
-Run this script by command: python Tools/ONMAConvertOnnx.py --input yolop-640-640.onnx --output yolop-640-640.json
+python Tools/ONMAConvertOnnx.py --input Sample/Abs.onnx --output Sample/Abs.json
+"""
+
+# [Image]
+"""
+Sample/AbsSample.png
+"""
+
+# [Reference]
+"""
+Sample/Abs.json
+Sample/Abs.onnx
 """
 
 def main():
