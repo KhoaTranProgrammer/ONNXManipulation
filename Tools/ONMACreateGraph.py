@@ -15,19 +15,36 @@ file_path = Path(file_path).as_posix()
 sys.path.append(file_path)
 from ONMA.ONMAModel import ONMAModel
 
+# [Purpose]
 """
-Purpose: this script will generate onnx file from ONMA json format.
+This tool is designed to convert a model represented in the ONMA JSON format into an ONNX file.
+It reads and parses the input ONMA JSON file, processes the model structure and its associated parameters,
+and then generates an ONNX model file that can be used with ONNX-compatible frameworks and inference runtimes.
+"""
 
+# [Usage]
+"""
 Usage:
-Run this script by command: python Tools/ONMACreateGraph.py --input Abs.json --output Abs.onnx
+python Tools/ONMACreateGraph.py --input Sample/Conv.json --output Sample/Conv.onnx
+"""
+
+# [Image]
+"""
+Sample/ConvSample.gif
+"""
+
+# [Reference]
+"""
+Sample/Conv.json
+Sample/Conv.onnx
 """
 
 def main():
     global args
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", "-in", help="Create graph from json", default="Abs.json")
-    parser.add_argument("--output", "-ou", help="Output onnx file", default="Sample.onnx")
+    parser.add_argument("--input", "-in", help="Create graph from json", default="Sample/Conv.json")
+    parser.add_argument("--output", "-ou", help="Output onnx file", default="Sample/Conv.onnx")
     args = parser.parse_args()
 
     with open(args.input) as user_file:
