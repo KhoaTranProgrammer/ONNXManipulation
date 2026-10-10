@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conv.json explained</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+    body { max-width: 960px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
+    h1, h2 { line-height: 1.25; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { border: 1px solid #8886; padding: .6rem; text-align: left; vertical-align: top; }
+    th { background: #8882; }
+    pre { overflow-x: auto; padding: 1rem; border-radius: .4rem; background: #8882; }
+    code { font-family: ui-monospace, monospace; }
+    .note { border-left: .25rem solid #8888; padding: .5rem 1rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Understanding <code>Conv.json</code></h1>
+    <p>
+      This sample describes a small ONMA graph containing one two-dimensional
+      convolution. The graph has one input tensor, one constant weight tensor,
+      and one output tensor. It can be passed to
+      <a href="../Tools/ONMACreateGraph.py"><code>ONMACreateGraph.py</code></a>
+      to create an ONNX model.
+    </p>
+
+    <h2>Graph overview</h2>
+    <ol>
+      <li>Provide input tensor <code>X</code> with shape <code>[1, 1, 4, 4]</code>.</li>
+      <li>Apply the convolution node <code>Conv_Node</code> using constant weights <code>W</code>.</li>
+      <li>Produce output tensor <code>Y</code> with shape <code>[1, 1, 3, 3]</code>.</li>
+    </ol>
+
+    <h2>Top-level model</h2>
+    <table>
+      <thead><tr><th>Field</th><th>Meaning</th><th>Sample value</th></tr></thead>
+      <tbody>
+        <tr><td><code>name</code></td><td>Human-readable name for the model.</td><td><code>Conv_Sample</code></td></tr>
+        <tr><td><code>graph</code></td><td>Describes graph inputs, outputs, constant initializers, and computation nodes.</td><td>Object</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Input and output tensors</h2>
+    <p>Tensor shapes use ONNX's NCHW order: batch, channels, height, width.</p>
+    <table>
+      <thead><tr><th>Tensor</th><th>Shape</th><th>Interpretation</th><th>Data type</th></tr></thead>
+      <tbody>
+        <tr><td><code>X</code></td><td><code>[1, 1, 4, 4]</code></td><td>One batch containing one 4 × 4 input channel.</td><td><code>float32</code></td></tr>
+        <tr><td><code>Y</code></td><td><code>[1, 1, 3, 3]</code></td><td>One batch containing one 3 × 3 output channel.</td><td><code>float32</code></td></tr>
+      </tbody>
+    </table>
+    <p>
+      The input entry declares its name, shape, and type; it does not provide
+      runtime input values. Values for <code>X</code> must be supplied when the
+      generated model is run.
+    </p>
+
+    <h2>Weight initializer</h2>
+    <p>
+      <code>W</code> is a constant tensor with shape <code>[1, 1, 2, 2]</code>:
+      one output channel, one input channel, and a 2 × 2 kernel. All four kernel
+      values are <code>0.25</code>. There is no bias initializer or bias input.
+    </p>
+    <pre><code>W[0, 0] = [[0.25, 0.25],
+           [0.25, 0.25]]</code></pre>
+    <p>
+      For each output position, this kernel multiplies the corresponding 2 × 2
+      input region by 0.25 and sums the four results. Thus each output is the
+      average of that input region.
+    </p>
+
+    <h2>Convolution node</h2>
+    <table>
+      <thead><tr><th>Field</th><th>Value</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>name</code></td><td><code>Conv_Node</code></td><td>Name identifying this graph node.</td></tr>
+        <tr><td><code>op_type</code></td><td><code>Conv</code></td><td>ONNX convolution operator.</td></tr>
+        <tr><td><code>inputs</code></td><td><code>["X", "W"]</code></td><td>Input activation followed by the weight tensor.</td></tr>
+        <tr><td><code>outputs</code></td><td><code>["Y"]</code></td><td>The name of the tensor produced by the node.</td></tr>
+        <tr><td><code>kernel_shape</code></td><td><code>[2, 2]</code></td><td>Kernel height and width.</td></tr>
+        <tr><td><code>strides</code></td><td><code>[1, 1]</code></td><td>Move one element at a time vertically and horizontally.</td></tr>
+        <tr><td><code>pads</code></td><td><code>[0, 0, 0, 0]</code></td><td>No padding: beginning and end padding for both spatial axes are zero.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Why is the output 3 × 3?</h2>
+    <p>
+      With input height and width 4, kernel size 2, stride 1, and no padding,
+      each spatial output dimension is
+      <code>floor((4 - 2) / 1) + 1 = 3</code>. The batch and output-channel
+      dimensions are both 1, so <code>Y</code> has shape <code>[1, 1, 3, 3]</code>.
+    </p>
+    <div class="note">
+      <strong>Expected behavior:</strong> the model computes nine overlapping
+      2 × 2 averages from <code>X</code>. Numeric output values depend on the
+      runtime values supplied for <code>X</code>.
+    </div>
+
+    <h2>Original sample</h2>
+    <p><a href="Conv.json">Open the original <code>Conv.json</code></a>.</p>
+  </main>
+</body>
+</html>
