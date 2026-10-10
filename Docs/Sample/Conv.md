@@ -68,4 +68,4 @@ For input `[1, 1, 4, 4]`, kernel `[2, 2]`, stride `[1, 1]`, and padding `[0, 0, 
 
 ## Source file
 
-- [Conv.json](Sample/Conv.json)
+- [Conv.json](../../Sample/Conv.json)

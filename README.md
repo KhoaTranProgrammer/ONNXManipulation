@@ -23,12 +23,25 @@ In order to use this tool, user need to set up below software:
 Using the ONNX library to convert an ONNX model file into a human-readable JSON representation
 and explain the resulting structure.
 
-[Sample Conv](Docs/Sample/Conv.md)
+A JSON schema where general model information serves:
 
+| Item | Description |
+|------|-------------|
+| name | Describe network name |
+| graph | Outlines the graph structure encompassing inputs, outputs, initializers, and nodes. |
+| inputs | Maintains standard machine learning and ONNX schema terminology (name, shape, data_type, data). |
+| outputs | Maintains standard machine learning and ONNX schema terminology (name, shape, data_type, data). |
+| initializers | Specifies all network constants along with their name, shape, data type, and data. |
+| nodes | Specifies all nodes in the network along with key details such as name, op_type, inputs, outputs, and attributes. |
 
-| Abs.json  | Abs.onnx |
+Detail example: [Sample Conv](Docs/Sample/Conv.md)
+
+## Built-in Tools
+Provide a comprehensive guide to the most useful built-in standard library modules and utility functions in Python, complete with code examples.
+
+| Tools  | Description |
 |-------|-----|
-|![alt text](Sample/Abs_json.png)|![alt text](Sample/Abs.png)|
+|[ONMACreateGraph.py](Docs/Sample/ONMACreateGraph.md)|This tool is designed to convert a model represented in the ONMA JSON format into an ONNX file.<br>Usage: python Tools/ONMACreateGraph.py --input Sample/Conv.json --output Sample/Conv.onnx|
+|[ONMAConvertOnnx.py](Docs/Sample/ONMAConvertOnnx.md)|This tool converts ONNX models into human-readable JSON format.<br>Usage: python Tools/ONMAConvertOnnx.py --input Sample/Abs.onnx --output Sample/Abs.json|
 
-### Command: 
-python main.py --create_graph Sample/Abs.json --output_onnx Abs.onnx
+
