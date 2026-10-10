@@ -30,7 +30,7 @@ python Tools/ONMACreateGraph.py --input Sample/Conv.json --output Sample/Conv.on
 
 # [Image]
 """
-Sample/ConvSample.gif
+Docs/Sample/ConvSample.gif
 """
 
 # [Reference]
