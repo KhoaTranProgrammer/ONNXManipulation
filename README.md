@@ -43,5 +43,5 @@ Provide a comprehensive guide to the most useful built-in standard library modul
 |-------|-----|
 |[ONMACreateGraph.py](Docs/Sample/ONMACreateGraph.md)|This tool is designed to convert a model represented in the ONMA JSON format into an ONNX file.<br>Usage: python Tools/ONMACreateGraph.py --input Sample/Conv.json --output Sample/Conv.onnx|
 |[ONMAConvertOnnx.py](Docs/Sample/ONMAConvertOnnx.md)|This tool converts ONNX models into human-readable JSON format.<br>Usage: python Tools/ONMAConvertOnnx.py --input Sample/Abs.onnx --output Sample/Abs.json|
-
+|[ONMAModifyModel.py](Docs/Sample/ONMAModifyModel.md)|The command-line utility that applies a JSON-defined modification pattern to an input ONNX model.<br>Usage: python Tools/ONMAModifyModel.py --input yolop-640-640.onnx --output yolop-640-640_modify.onnx --modify Sample/Modify_Sample.json<br><br>Defined JSON pattern structure:<br>- User can define modifications in a [JSON file](Sample/Modify_Sample.json), specifying operations to add, remove, or change nodes and parameters in the ONNX model.<br>- Or use the sample JSON pattern provided in [Sample/ModifyNetwork](Docs/Sample/ModifyPattern/README.md).|
 
